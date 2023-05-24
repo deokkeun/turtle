@@ -3,6 +3,8 @@ Servers/
 jspwork/
 privateInfo.xml
 
+### log4j.xml ###
+log4j.xml
 
 # Created by https://www.toptal.com/developers/gitignore/api/java,windows,macos,eclipse,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,windows,macos,eclipse,visualstudiocode
