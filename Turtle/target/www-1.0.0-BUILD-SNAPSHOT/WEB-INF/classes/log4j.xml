@@ -28,8 +28,7 @@
 	<appender name="dailyRollingFile"  class="org.apache.log4j.DailyRollingFileAppender">
 	
 		<!-- ****************** 로그 기록 파일 경로 설정 ****************** -->
-		<param name="File"  value="/Users/sujinchoi/workspace/turtle/Turtle/logs/runtime-log.log" />
-		
+		<param name="File"  value="C:\\workspace\\turtle\\Turtle\\logs\\runtime-log.log" />
 		<param name="encoding" value="UTF-8" />
 		<param name="Append" value="true" />
 		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
