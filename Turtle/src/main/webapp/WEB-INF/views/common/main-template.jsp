@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turtle</title>
 	<!-- main-style.css -->
-    <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
+    <link rel="stylesheet" href="resources/css/main-style.css">
 	<!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
@@ -19,20 +19,9 @@
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
 
-		<!-- (index.jsp)/member/login -> (main.jsp)common/main.jsp -->
-        <H1>로그인 성공!!</H1>
-        <H1>민수 커밋 확인용</H1>
-        <H1>덕근 커밋 확인용</H1>
-        <H1>수진 커밋 확인용 '_'</H1>
+        <H1>Template</H1>
 
 
-        <div>로그인시(멤버정보)</div>
-        <div>회원번호 : ${loginMember.memberNo}</div>
-        <div>회원명 : ${loginMember.memberName}</div>
-        <div>프로필 이미지 : ${loginMember.profileImage}</div>
-        <div>회원 이메일 : ${loginMember.memberEmail}</div>
-        <div>회원 가입일 : ${loginMember.enrollDate}</div>
-        
 
     </main>
 
