@@ -10,13 +10,14 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class Member {
-	private int memberNo;
-	private String memberEmail;
-	private String memberPw;
-	private String memberNickname;
-	private String memberTel;
-	private String memberAddress;
-	private String profileImage;
-	private String enrollDate;
-	private String secessionFlag;
+	private int memberNo; // 회원번호
+	private String memberEmail; // 회원 이메일
+	private String memberPw; // 회원 비밀번호 
+	private String memberName; // 회원 이
+	private String memberGit; // 깃 레파지토리 주소
+	private String profileImage; // 프로필 사진
+	private String enrollDate; // 가입일
+	private String secessionFlag; // 탈퇴여부
+	
+	private String socialId; // 소셜 아이디
 }
