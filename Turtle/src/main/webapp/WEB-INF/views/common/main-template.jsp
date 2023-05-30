@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turtle</title>
 	<!-- main-style.css -->
-    <link rel="stylesheet" href="resources/css/main-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
 	<!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
@@ -19,7 +19,10 @@
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
 
-        <H1>Template</H1>
+
+
+        <div>main-template</div>
+
 
 
 
