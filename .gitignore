@@ -11,6 +11,9 @@ log4j.xml
 
 ### Eclipse ###
 .metadata
+.project
+.classpath
+target/
 bin/
 tmp/
 *.tmp
