@@ -8,33 +8,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turtle</title>
-	<!-- landing-style.css -->
-    <link rel="stylesheet" href="${contextPath}/resources/css/landing-style.css">
+	<!-- main-style.css -->
+    <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
 	<!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <main>
-        <!-- landing-header include -->
-       	<jsp:include page="/WEB-INF/views/common/landing-header.jsp" />
-		
+ 		<!-- header include -->
+       	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-        <h1>랜딩 페이지</h1>
-        
-  
-  	<c:if test="${!empty loginMember}">
-  		<div>로그인 성공 ${loginMember.memberName}</div>
-  	</c:if>
-  
-  
+
+
+
+        <div>main-template</div>
+
+
+
 
     </main>
 
-    <!-- landing-footer include -->
-   	<jsp:include page="/WEB-INF/views/common/landing-footer.jsp" />
+    <!-- footer include -->
+   	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
     <!-- jQuery 라이브러리 추가 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- landing.js 연결 -->
-    <script src="${contextPath}/resources/js/landing.js"></script>
+    <!-- main.js 연결 -->
+    <script src="${contextPath}/resources/js/main.js"></script>
 </body>
 </html>
