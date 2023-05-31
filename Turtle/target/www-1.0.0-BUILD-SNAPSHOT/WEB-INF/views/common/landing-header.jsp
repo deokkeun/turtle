@@ -61,14 +61,15 @@
 	<div class="text-center">
 		<a href="#"><img width="40" src="${contextPath}/resources/images/auth/naver-login-icon.png" alt="Naver Login" /></a>
 		<a href="https://accounts.google.com/o/oauth2/v2/auth?
- scope=https%3A//www.googleapis.com/auth/drive.metadata.readonly&
- access_type=offline&
- include_granted_scopes=true&
- response_type=code&
- state=security_token%3D138r5719ru3e1%26url%3Dhttps%3A%2F%2Foauth2-login-demo.example.com%2FmyHome&
- redirect_uri=http://localhost:8080/www/member/login&
- client_id=584967116999-s1skvhb03k99ueq3l69rhnbbrjc6c5bm.apps.googleusercontent.com"><img width="40" src="${contextPath}/resources/images/auth/google-login-icon.svg" alt="Google Login" /></a>
-	</div>	
+response_type=code&
+client_id=584967116999-s1skvhb03k99ueq3l69rhnbbrjc6c5bm.apps.googleusercontent.com&
+scope=openid%20email&
+redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fwww%2Fmember%2Flogin&
+state=security_token%3D138r5719ru3e1%26url%3Dhttps%3A%2F%2Foauth2-login-demo.example.com%2FmyHome&
+login_hint=jsmith@example.com&
+nonce=0394852-3190485-2490358&
+hd=gmail.com"><img width="40" src="${contextPath}/resources/images/auth/google-login-icon.svg" alt="Google Login" /></a>
+</div>	
 	<a class="login-modal-close fa-solid fa-xmark"></a>
 </section>
 
