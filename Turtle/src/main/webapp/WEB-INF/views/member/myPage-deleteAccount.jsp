@@ -18,11 +18,17 @@
  		<!-- header include -->
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-
-
-
-        <div>main-template</div>
-
+  
+        <!-- 회원탈퇴 테스트 -->
+        <section style="border: 1px solid black;">
+            <form action="../myPage/deleteAccount" method="POST" onsubmit="return deleteAccountValidate()">
+                비밀번호 입력<input type="password" name="memberPw" id="memberPw">
+                <div>회원 탈퇴 약관....</div>
+                <input type="checkbox" name="agree" id="agree">
+                <label for="agree">위 약관에 동의합니다.</label>
+                <button>회원 탈퇴</button>
+            </form>
+        </section>
 
 
 

@@ -34,9 +34,7 @@
 
 <!-- 로그인 모달창 -->
 <section id="login-modal">
-
-		<!-- Logo -->
-	<%-- <div class="login-modal-logo"><img src="${contextPath}/resources/images/auth/naver-login-icon.png" alt="logo" height="100px"></div> --%>
+	<!-- 구글 로그인 -->
 	<button id="google-btn" onclick="location.href='https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=584967116999-s1skvhb03k99ueq3l69rhnbbrjc6c5bm.apps.googleusercontent.com&scope=openid%20email&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fwww%2Fmember%2Flogin&state=security_token%3D138r5719ru3e1%26url%3Dhttps%3A%2F%2Foauth2-login-demo.example.com%2FmyHome&login_hint=jsmith@example.com&nonce=0394852-3190485-2490358&hd=gmail.com'">
 		<img width="20" src="${contextPath}/resources/images/auth/google-login-custom.png" alt="Google Login"/><div id="google-btn-name">Continue with Google</div>
 	</button>
@@ -66,13 +64,6 @@
 		<br><br>
 		<span class="question">회원이 아니신가요? </span><a href="${contextPath}/member/signUp"> 회원가입</a>
 	</p>
-	
-	
-	<%-- <div class="text-center">
-		<a href="#"><img width="40" src="${contextPath}/resources/images/auth/naver-login-icon.png" alt="Naver Login" /></a>
-		<a href="#"><img width="40" src="${contextPath}/resources/images/auth/google-login-icon.svg" alt="Naver Login" /></a>
-	</div> --%>	
-	
 	
 	<a class="login-modal-close fa-solid fa-xmark"></a>
 </section>

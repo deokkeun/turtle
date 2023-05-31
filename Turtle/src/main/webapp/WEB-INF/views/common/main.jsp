@@ -37,6 +37,13 @@
             <input type="text" name="access_token" value="" style="width: 600px;">
         </div>
         
+        
+       
+        <form action="myPage/info" method="GET">
+                <button>마이페이지 이동</button>
+        </form>
+        
+        
 
     </main>
 

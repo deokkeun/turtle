@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -53,9 +54,9 @@ public class MemberController {
 		Member loginMember = service.login(inputMember);
 		
 		if(loginMember != null) { // 로그인 성공 시
+			logger.debug(loginMember + "로그인 성공시 로그인 멤버 정보");
 			model.addAttribute("loginMember", loginMember); // == req.setAttribute("loginMember", loginMember);
 		
-			
 			// 로그인 성공 시 무조건 쿠키 생성
 			// 단, 아이디 저장 체크 여부에 따라서 쿠키의 유지시간을 조정
 			
@@ -74,7 +75,7 @@ public class MemberController {
 			// 쿠키를 응답 시 클라이언트에게 전달
 			resp.addCookie(cookie);
 		
-			return "common/main";
+			return "redirect:/";
 
 		} else {
 			// model.addAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
