@@ -22,17 +22,12 @@
         <h1>랜딩 페이지</h1>
         
         
-        <!-- 1. 로그인 세션이 있으면 메인페이지로 바로 이동 -->
-        <!-- 2. 로그인 세션이 없으면 현재 페이지 -->
-        <!-- (아이디 저장 쿠키 유지기간 1년) -->
-       	<c:if test="${!empty sessionScope.loginMember}">
-        	<!-- ( member/login -> common/main.jsp ) -->
-        	<!-- <button type="button" onclick="location.href='member/login';">프로젝트</button> -->
-        	 <jsp:forward page="member/login" /> 
-        	
-        </c:if>
+  	<c:if test="${!empty loginMember}">
+  		<div>로그인 성공 ${loginMember.memberName}</div>
+       	<!-- <button type="button" onclick="location.href='member/login';">프로젝트</button> -->
+  	</c:if>
+  
 
-		
     </main>
 
     <!-- landing-footer include -->

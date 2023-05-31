@@ -1,3 +1,11 @@
+// 로그인 클릭 시 이메일 포커스
+onload = function() {
+   document.getElementById("login-modal-btn").addEventListener("click", function() {
+        const memberEmail = document.getElementsByName("memberEmail");
+        memberEmail[0].focus();
+   });
+};
+
 
 // 아이디 저장 체크박스가 체크 되었을 때 이벤트 처리
 
