@@ -32,6 +32,10 @@
         <div>프로필 이미지 : ${loginMember.profileImage}</div>
         <div>회원 이메일 : ${loginMember.memberEmail}</div>
         <div>회원 가입일 : ${loginMember.enrollDate}</div>
+        <div>
+            access_token
+            <input type="text" name="access_token" value="" style="width: 600px;">
+        </div>
         
 
     </main>

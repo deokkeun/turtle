@@ -74,18 +74,19 @@ public class MemberController {
 			// 쿠키를 응답 시 클라이언트에게 전달
 			resp.addCookie(cookie);
 		
+			return "common/main";
 
 		} else {
 			// model.addAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
 			
-			// ra.addFlashAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
+			ra.addFlashAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
 			
 			// redirect 시에도 request scope로 세팅된 데이터가 유지될 수 있도록 하는 방법을 
 			// Spring에서 제공해줌
 			// -> RedirectAttributes 객체(컨트롤러 매개변수에 작성하면 사용 가능)
-
+			return "redirect:/";
 		}
-		return "common/main";
+		
 	}
 	
 	
