@@ -32,6 +32,9 @@ public class MemberServiceImpl implements MemberService {
 		Member loginMember = dao.login(inputMember);
 		
 		// ** Bcrypt 암호화를 사용하기 위해 이를 지원하는 Spring-security 모듈 추가 **
+		logger.debug(inputMember.getMemberPw() + " / " + bcrypt.encode(inputMember.getMemberPw()));
+		
+		// ** Bcrypt 암호화를 사용하기 위해 이를 지원하는 Spring-security 모듈 추가 **
 		// loginMember == null : 일치하는 이메일 없다
 		if(loginMember != null) { // 일치하는 이메일을 가진 회원 정보가 있을 경우
 //							입력된 비밀번호(평문), 조회된 비밀번호(암호화) 비교 -> 같으면 true

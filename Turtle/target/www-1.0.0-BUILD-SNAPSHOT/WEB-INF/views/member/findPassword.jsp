@@ -19,14 +19,15 @@
        	<jsp:include page="/WEB-INF/views/common/landing-header.jsp" />
 		
 
-        <h1>랜딩 페이지</h1>
-        
-  
-  	<c:if test="${!empty loginMember}">
-  		<div>로그인 성공 ${loginMember.memberName}</div>
-  	</c:if>
-  
-  
+        <h1>비밀번호 찾기 페이지</h1>
+        <!-- 1. 로그인 세션이 있으면 메인페이지로 바로 이동 -->
+        <!-- 2. 로그인 세션이 없으면 현재 페이지 -->
+        <%-- <c:if test="${!empty sessionScope.loginMember}">
+        	<!-- member/login -> common/main.jsp -->
+        	<jsp:forward page="member/login" />
+        </c:if> --%>
+
+		
 
     </main>
 
