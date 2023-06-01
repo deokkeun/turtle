@@ -128,9 +128,7 @@ public class MemberController {
 	public String findPassword() {
 		return "member/findPassword";
 	}
-<<<<<<< HEAD
-}
-=======
+
 	
 	// 테스트용 로그인(나중에 반드시 삭제!!!!!!)
 	@PostMapping("/testLogin")
@@ -148,4 +146,3 @@ public class MemberController {
 		return "redirect:/";
 	}
 }
->>>>>>> c39d39f01742abdb1be95becdcf55f5ad043f1ef
