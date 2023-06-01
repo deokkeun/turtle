@@ -138,8 +138,12 @@ public class MemberController {
 		if(loginMember != null) {
 			model.addAttribute("loginMember", loginMember);
 			ra.addFlashAttribute("message", loginMember.getMemberName() + "테스트 로그인 성공");
+			logger.info(loginMember.getMemberName() +" 로그인 성공");
+			System.out.println(loginMember.getMemberName() +" 로그인 성공");
 		} else {
 			ra.addFlashAttribute("message", "테스트 로그인 실패");
+			logger.info("로그인 실패");
+			System.out.println("로그인 실패");
 		}
 		
 		return "redirect:/";
