@@ -10,6 +10,8 @@
     <title>Turtle</title>
 	<!-- main-style.css -->
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
+	<!-- loadmap.css -->
+    <link rel="stylesheet" href="${contextPath}/resources/css/workspace/loadmap.css">
 	<!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
@@ -18,34 +20,17 @@
  		<!-- header include -->
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-
-		<!-- (index.jsp)/member/login -> (main.jsp)common/main.jsp -->
-        <H1>로그인 성공!!</H1>
-        <H1>민수 커밋 확인용</H1>
-        <H1>덕근 커밋 확인용</H1>
-        <H1>수진 커밋 확인용 '_'</H1>
-
-
-        <div>로그인시(멤버정보)</div>
-        <div>회원번호 : ${loginMember.memberNo}</div>
-        <div>회원명 : ${loginMember.memberName}</div>
-        <div>프로필 이미지 : ${loginMember.profileImage}</div>
-        <div>회원 이메일 : ${loginMember.memberEmail}</div>
-        <div>회원 가입일 : ${loginMember.enrollDate}</div>
-        <div>
-            access_token
-            <input type="text" name="access_token" value="" style="width: 600px;">
+        <div class="repos-container">
+            <div class="get-repos">
+                <input type="text" placeholder="Github Username">
+                <span class="get-button">Get Repos</span>
+            </div>
+            <div class="show-data">
+                <span>No Data To Show</span>
+            </div>
         </div>
-        
-        
-       
-        <form action="myPage/info" method="GET">
-                <button>마이페이지 이동</button>
-        </form>
-        
-        <form action="../workspace/loadmap" method="GET">
-            <button>git loadMap test(GET)</button>
-        </form>
+
+
 
     </main>
 
@@ -55,5 +40,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/main.js"></script>
+    <!-- loadmap.js 연결 -->
+    <script src="${contextPath}/resources/js/workspace/loadmap.js"></script>
 </body>
 </html>

@@ -25,8 +25,6 @@
   	<c:if test="${!empty loginMember}">
   		<div>로그인 성공 ${loginMember.memberName}</div>
   	</c:if>
-  
-  
 
     </main>
 
