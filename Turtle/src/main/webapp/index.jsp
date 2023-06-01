@@ -26,7 +26,7 @@
   		<div>로그인 성공 ${loginMember.memberName}</div>
        	<!-- <button type="button" onclick="location.href='member/login';">프로젝트</button> -->
   	</c:if>
-  
+
 
     </main>
 
