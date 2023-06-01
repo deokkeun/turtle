@@ -5,6 +5,14 @@
 
     <section id="header-box">
     
+    	<!-- 테스트로그인용 나중에 삭제할거임 -->
+    	<section>
+    		<form action="member/testLogin" method="POST">
+        		<input type="hidden" name="memberEmail" value="test01@gmail.com">
+        		<input type="hidden" name="memberPw" value="test01!">
+        		<button>테스트로그인</button>
+        	</form>
+    	</section>
         <section>
             <a href="${contextPath}"><img src="${contextPath}/resources/images/auth/naver-login-icon.png" alt="logo" height="55px"></a>
         </section>

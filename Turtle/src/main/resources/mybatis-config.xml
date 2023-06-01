@@ -14,6 +14,11 @@
 	<typeAliases>
 		<!-- VO 클래스의 패키지명 + 클래스명 모두 작성하는것이 불편하기 때문에 짧은 별칭 부여 -->
 		<typeAlias type="com.turtle.www.member.model.vo.Member" alias="member"/>
+		
+		<typeAlias type="com.turtle.www.chat.model.vo.ChatRoom" alias="chatRoom"/>
+		<typeAlias type="com.turtle.www.chat.model.vo.ChatRoomJoin" alias="chatRoomJoin"/>
+		<typeAlias type="com.turtle.www.chat.model.vo.ChatMessage" alias="chatMessage"/>
+		
 	</typeAliases>
 	
 	<!-- SQL이 작성되는 mapper 파일 위치를 등록 -->
@@ -22,6 +27,7 @@
 		경로를 작성하는 기준(시작지점)은 src/main/resources 폴더-->
 		<mapper resource="/mappers/member-mapper.xml"/>
 		<mapper resource="/mappers/myPage-mapper.xml"/>
+		<mapper resource="/mappers/chat-mapper.xml"/>
 	</mappers>
 
 </configuration>

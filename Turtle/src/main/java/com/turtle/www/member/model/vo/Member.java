@@ -17,7 +17,7 @@ public class Member {
 	private String memberGit; // 깃 레파지토리 주소
 	private String profileImage; // 프로필 사진
 	private String enrollDate; // 가입일
-	private String secessionFlag; // 탈퇴여부
+	private String memberDeleteFG; // 탈퇴여부
 	
 	private String socialId; // 소셜 아이디
 }

@@ -83,6 +83,13 @@ public class MyPageController {
 		return "redirect:/member/myPage/info";
 	}
 	
+	/** 비밀번호 변경
+	 * @return
+	 */
+	@GetMapping("/changePassword")
+	public String changePassword() {
+		return "member/myPage-changePassword";
+	}
 	
 	/** 회원 탈퇴 이동
 	 * @return

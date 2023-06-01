@@ -28,7 +28,15 @@
         
   
   	<c:if test="${!empty loginMember}">
-  		<div>로그인 성공 ${loginMember.memberName}</div>
+  		    <div>로그인시(멤버정보)</div>
+        <div>회원번호 : ${loginMember.memberNo}</div>
+        <div>회원명 : ${loginMember.memberName}</div>
+        <div>프로필 이미지 : ${loginMember.profileImage}</div>
+        <div>회원 이메일 : ${loginMember.memberEmail}</div>
+        <div>회원 가입일 : ${loginMember.enrollDate}</div>
+  	</c:if>
+  	<c:if test="${empty loginMember}">
+  		<div>empty loginMember</div>
   	</c:if>
 
     </main>
