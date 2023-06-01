@@ -61,7 +61,9 @@
 	        </form>
 		</section>
 
-
+        <form action="../myPage/changePassword" method="GET">
+            <button>비밀번호 변경</button>
+        </form>
 
         <form action="../myPage/deleteAccount" method="GET">
             <button>회원탈퇴</button>
