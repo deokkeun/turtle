@@ -61,7 +61,7 @@
 	        </form>
 		</section>
 
-        <form action="../myPage/changePassword" method="GET">
+        <form action="../myPage/changePw" method="GET">
             <button>비밀번호 변경</button>
         </form>
 

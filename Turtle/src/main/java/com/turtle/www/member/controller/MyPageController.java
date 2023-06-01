@@ -86,9 +86,9 @@ public class MyPageController {
 	/** 비밀번호 변경
 	 * @return
 	 */
-	@GetMapping("/changePassword")
+	@GetMapping("/changePw")
 	public String changePassword() {
-		return "member/myPage-changePassword";
+		return "member/myPage-changePw";
 	}
 	
 	/** 회원 탈퇴 이동
