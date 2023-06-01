@@ -128,4 +128,24 @@ public class MemberController {
 	public String findPassword() {
 		return "member/findPassword";
 	}
+<<<<<<< HEAD
 }
+=======
+	
+	// 테스트용 로그인(나중에 반드시 삭제!!!!!!)
+	@PostMapping("/testLogin")
+	public String testLogin(Member inputMember,
+									Model model,
+									RedirectAttributes ra) {
+		Member loginMember = service.login(inputMember);
+		if(loginMember != null) {
+			model.addAttribute("loginMember", loginMember);
+			ra.addFlashAttribute("message", loginMember.getMemberName() + "테스트 로그인 성공");
+		} else {
+			ra.addFlashAttribute("message", "테스트 로그인 실패");
+		}
+		
+		return "redirect:/";
+	}
+}
+>>>>>>> c39d39f01742abdb1be95becdcf55f5ad043f1ef

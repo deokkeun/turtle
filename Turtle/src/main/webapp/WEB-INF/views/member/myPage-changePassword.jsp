@@ -18,38 +18,10 @@
  		<!-- header include -->
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-
-		<!-- (index.jsp)/member/login -> (main.jsp)common/main.jsp -->
-        <H1>로그인 성공!!</H1>
-        <H1>민수 커밋 확인용</H1>
-        <H1>덕근 커밋 확인용</H1>
-        <H1>수진 커밋 확인용 '_'</H1>
+  
+        <div>비밀번호 변경 페이지</div>
 
 
-        <div>로그인시(멤버정보)</div>
-        <div>회원번호 : ${loginMember.memberNo}</div>
-        <div>회원명 : ${loginMember.memberName}</div>
-        <div>프로필 이미지 : ${loginMember.profileImage}</div>
-        <div>회원 이메일 : ${loginMember.memberEmail}</div>
-        <div>회원 가입일 : ${loginMember.enrollDate}</div>
-        <div>
-            access_token
-            <input type="text" name="access_token" value="" style="width: 600px;">
-        </div>
-        
-        
-       
-        <form action="myPage/info" method="GET">
-                <button>마이페이지 이동</button>
-        </form>
-        
-
-        <form action="../workspace/loadmap" method="GET">
-            <button>git loadMap test(GET)</button>
-        </form>
-      
-      
-        <a href="../chat/chatRoomList">채팅</a>
 
     </main>
 
