@@ -32,23 +32,6 @@
 </form>
 
 
-
-  <H1>TOTAL 협업툴</H1>
-      <H3>소개홍보 문구적기</H3>
-
-
-      <button type="button" class="btn btn-secondary">무료로 사용하기 ></button>
-
-
-
-   <div>
-        <h3> Turtle과 함께 업무 효율성을 높여보세요 </h3>
-        <button type="button" class="btn btn-secondary">무료로 사용하기 ></button>
-      </div>
-
-
-
-
 <!-- 로그인 모달창 -->
 <section id="login-modal">
 	<!-- 구글 로그인 -->

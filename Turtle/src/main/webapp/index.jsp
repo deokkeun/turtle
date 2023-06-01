@@ -17,9 +17,14 @@
     <main>
         <!-- landing-header include -->
        	<jsp:include page="/WEB-INF/views/common/landing-header.jsp" />
-		
 
-        <h1>랜딩 페이지</h1>
+       <!--  <h1>랜딩 페이지</h1>--> 
+        
+        
+        <br>
+        <br>
+        	 <!-- landing-body 임시로만든거 include -->
+        	<jsp:include page="/WEB-INF/views/common/landing-mainTemp.jsp" />
         
   
   	<c:if test="${!empty loginMember}">
