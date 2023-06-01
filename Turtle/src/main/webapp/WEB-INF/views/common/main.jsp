@@ -43,8 +43,15 @@
                 <button>마이페이지 이동</button>
         </form>
         
+
         <form action="../workspace/loadmap" method="GET">
             <button>git loadMap test(GET)</button>
+        </form>
+      
+      
+        <form action="chat/chatList" method="get">
+        	<button>채팅방 이동</button>
+
         </form>
 
     </main>
