@@ -49,10 +49,7 @@
         </form>
       
       
-        <form action="chat/chatList" method="get">
-        	<button>채팅방 이동</button>
-
-        </form>
+        <a href="../chat/chatRoomList">채팅</a>
 
     </main>
 

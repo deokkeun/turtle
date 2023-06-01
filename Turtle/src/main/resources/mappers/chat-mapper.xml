@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="chatMapper">
+	
+	<resultMap type="chatMessage" id="chatMessage_rm">
+		<id property="cmNo" column="CM_NO"/>
+		
+		<result property="chatMessage" column="CHAT_MESSAGE"/>
+		<result property="cmRegDate" column=""/>
+		<result property="chatRoomNo" column=""/>
+		<result property="pmNo" column=""/>
+		<result property="pmProfile" column=""/>
+		<result property="pmNickname" column=""/>
+		<result property="pmEmail" column=""/>
+	</resultMap>
+</mapper>
