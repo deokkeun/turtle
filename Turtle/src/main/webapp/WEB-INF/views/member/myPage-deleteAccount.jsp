@@ -31,6 +31,20 @@
         </section>
 
 
+<<<<<<< Updated upstream:Turtle/src/main/webapp/WEB-INF/views/member/myPage-deleteAccount.jsp
+=======
+        <div>로그인시(멤버정보)</div>
+        <div>회원번호 : ${loginMember.memberNo}</div>
+        <div>회원명 : ${loginMember.memberName}</div>
+        <div>프로필 이미지 : ${loginMember.profileImage}</div>
+        <div>회원 이메일 : ${loginMember.memberEmail}</div>
+        <div>회원 가입일 : ${loginMember.enrollDate}</div>
+        <div>
+            access_token
+            <input type="text" name="access_token" value="" style="width: 600px;">
+        </div>
+        
+>>>>>>> Stashed changes:Turtle/target/www-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/common/main.jsp
 
     </main>
 
