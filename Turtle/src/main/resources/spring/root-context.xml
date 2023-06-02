@@ -17,9 +17,9 @@
 	<!-- destroy-method="close" : 주어진 세션을 자동으로 반환(close)하는 설정 -->
 	<bean id="realDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-		<property name="username" value="community"/>
-		<property name="password" value="1234"/>
+		<property name="url" value="jdbc:oracle:thin:@112.220.137.37:1521:xe"/>
+		<property name="username" value="turtle"/>
+		<property name="password" value="turtle"/>
 		
 		<!-- SQL이 수행된 후 자동으로 Commit 되는것을 지정 -->
 		<property name="defaultAutoCommit" value="false"/>
@@ -86,11 +86,11 @@
 	
 	<!-- ******************************** 파일 업로드 ******************************** -->
 	
-<!-- 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		 <property name="maxUploadSize" value="104857600"/>
 		 <property name="maxUploadSizePerFile" value="104857600"/>
 		 <property name="maxInMemorySize" value="104857600"/>
-	</bean> -->
+	</bean>
 	
 	
 	
