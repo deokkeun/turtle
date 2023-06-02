@@ -24,7 +24,7 @@
         <br>
         <br>
         	 <!-- landing-body 임시로만든거 include -->
-        	<jsp:include page="/WEB-INF/views/common/landing-mainTemp.jsp" />
+        	<%-- <jsp:include page="/WEB-INF/views/common/landing-mainTemp.jsp" /> --%>
         
         
   	<c:if test="${!empty loginMember}">
