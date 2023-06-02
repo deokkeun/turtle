@@ -10,6 +10,6 @@
     <title>채팅방 목록</title>
 </head>
 <body>
-    채팅방 이동 확인
+    채팅방리스트 이동 확인
 </body>
 </html>
