@@ -1,20 +1,17 @@
-/target/
-.classpath
+*.sql
+Servers/
+jspwork/
+privateInfo.xml
 
-/META-INF/
+### log4j.xml ###
+log4j.xml
 
-target
-pom.properties
-.classpath
-MANIFEST.MF
-Servers
-
-# Created by https://www.toptal.com/developers/gitignore/api/java,eclipse,windows
-# Edit at https://www.toptal.com/developers/gitignore?templates=java,eclipse,windows
+# Created by https://www.toptal.com/developers/gitignore/api/java,windows,macos,eclipse,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=java,windows,macos,eclipse,visualstudiocode
 
 ### Eclipse ###
 .metadata
-.metadata/
+target/
 bin/
 tmp/
 *.tmp
@@ -73,7 +70,7 @@ local.properties
 
 # Uncomment this line if you wish to ignore the project description file.
 # Typically, this file would be tracked if it contains build/dependency configurations:
-.project
+#.project
 
 ### Eclipse Patch ###
 # Spring Boot Tooling
@@ -93,6 +90,7 @@ local.properties
 .mtj.tmp/
 
 # Package Files #
+*.jar
 *.war
 *.nar
 *.ear
@@ -102,10 +100,59 @@ local.properties
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+replay_pid*
 
-### Mac ###
-# MacOs
+### macOS ###
+# General
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### macOS Patch ###
+# iCloud generated files
+*.icloud
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
 
 ### Windows ###
 # Windows thumbnail cache files
@@ -133,4 +180,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/java,eclipse,windows
+# End of https://www.toptal.com/developers/gitignore/api/java,windows,macos,eclipse,visualstudiocode
