@@ -18,10 +18,16 @@
  		<!-- header include -->
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-  
-        <div>비밀번호 변경 페이지</div>
-
-
+  		
+        <div>비밀번호</div>
+       	<div>안전한 비밀번호를 만들고 같은 비밀번호를 다른 계정에 사용하지 마세요.</div>
+        <div>새 비밀번호 (인풋창에 눈모양 아이콘)</div>
+        <input type="password">
+        비밀번호 안정성: (글씨변경)
+        <div>8자 이상 입력하세요. 다른 사이트에서 쓰는 비밀번호나 애완동물의 이름처럼 추측하기 쉬운 이름은 사용하지 마세요.</div>
+        <div>새 비밀번호 확인(인풋창에 눈모양 아이콘)</div>
+        <input type="password">
+        <button>비밀번호 변경</button>
 
     </main>
 

@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -83,12 +84,27 @@ public class MyPageController {
 		return "redirect:/member/myPage/info";
 	}
 	
-	/** 비밀번호 변경
+	/** 현재 비밀번호 확인(ajax) 완료 -> 비밀번호 변경 페이지로 이동
 	 * @return
 	 */
-	@GetMapping("/changePassword")
-	public String changePassword() {
-		return "member/myPage-changePassword";
+	@PostMapping("/changePw")
+	public String currentPwCheck(@ModelAttribute("loginMember") Member loginMember,
+								String currentPw,
+								Model model) {
+		
+		int memberNo = loginMember.getMemberNo();
+		
+		int result = service.currentPwCheck(memberNo, currentPw);
+		
+		if(result > 0) {
+			// 비밀번호 일치 -> 비밀번호 변경 페이지로 이동
+			return "member/myPage-changePw";
+			
+		} else {
+			model.addAttribute("message", "비밀번호가 일치하지 않아 마이페이지로 돌아옵니다.");
+			// 비밀번호 불일치 시 마이페이지 이동
+			return "member/myPage-info";
+		}
 	}
 	
 	/** 회원 탈퇴 이동
@@ -105,6 +121,7 @@ public class MyPageController {
 	 */
 	@PostMapping("/deleteAccount")
 	public String deleteAccount(@ModelAttribute("loginMember") Member loginMember,
+							Model model,
 							RedirectAttributes ra,
 							SessionStatus status,
 							HttpServletRequest req,
@@ -130,7 +147,7 @@ public class MyPageController {
 			return "redirect:/";
 		} else {
 			// 탈퇴 실패 -> main
-			ra.addFlashAttribute("message", "현재 비밀번호가 일치하지 않습니다.");
+			model.addAttribute("message", "현재 비밀번호가 일치하지 않습니다.");
 			return "member/myPage-deleteAccount";
 		}
 	}

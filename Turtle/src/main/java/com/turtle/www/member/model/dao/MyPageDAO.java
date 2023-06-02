@@ -20,6 +20,14 @@ public class MyPageDAO {
 	public String selectEncPw(int memberNo) {
 		return sqlSession.selectOne("myPageMapper.selectEncPw", memberNo);
 	}
+	
+	/** 현재 비밀번호 일치 여부 확인
+	 * @param currentPw
+	 * @return
+	 */
+	public String currentPwCheck(String currentPw) {
+		return sqlSession.selectOne("myPageMapper.currentPwCheck", currentPw);
+	}
 
 
 	/** 회원 탈퇴 DAO
@@ -38,6 +46,9 @@ public class MyPageDAO {
 	public int updateProfile(Map<String, Object> map) {
 		return sqlSession.update("myPageMapper.updateProfile", map);
 	}
+
+
+
 
 
 }
