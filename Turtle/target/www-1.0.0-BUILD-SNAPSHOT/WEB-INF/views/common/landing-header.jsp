@@ -5,6 +5,14 @@
 
     <section id="header-box">
     
+    	<!-- 테스트로그인용 나중에 삭제할거임 -->
+    	<section>
+    		<form action="member/testLogin" method="POST">
+        		<input type="hidden" name="memberEmail" value="test01@gmail.com">
+        		<input type="hidden" name="memberPw" value="test01!">
+        		<button>테스트로그인</button>
+        	</form>
+    	</section>
         <section>
             <a href="${contextPath}"><img src="${contextPath}/resources/images/auth/naver-login-icon.png" alt="logo" height="55px"></a>
         </section>
@@ -30,6 +38,23 @@
 	<button style="width: 150px; height: 50px; background-color: orangered;">
 		main페이지 바로가기(landing-header.jsp)</button>
 </form>
+
+
+
+  <H1>TOTAL 협업툴</H1>
+      <H3>소개홍보 문구적기</H3>
+
+
+      <button type="button" class="btn btn-secondary">무료로 사용하기 ></button>
+
+
+
+   <div>
+        <h3> Turtle과 함께 업무 효율성을 높여보세요 </h3>
+        <button type="button" class="btn btn-secondary">무료로 사용하기 ></button>
+      </div>
+
+
 
 
 <!-- 로그인 모달창 -->

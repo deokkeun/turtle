@@ -1,5 +1,6 @@
 com\turtle\www\common\aop\AfterAspect.class
 com\turtle\www\alert\model\service\AlertService.class
+com\turtle\www\chat\model\service\ChatService.class
 com\turtle\www\project\model\service\ProjectServiceImpl.class
 com\turtle\www\workspace\model\service\WorkspaceService.class
 com\turtle\www\alert\controller\AlertController.class
@@ -34,3 +35,5 @@ com\turtle\www\common\aop\AroundAspect.class
 com\turtle\www\loadmap\model\dao\LoadmapDAO.class
 com\turtle\www\common\aop\TestAspect.class
 com\turtle\www\project\controller\ProjectController.class
+com\turtle\www\chat\model\service\ChatServiceImpl.class
+com\turtle\www\chat\controller\ChatController.class
