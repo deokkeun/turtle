@@ -10,8 +10,11 @@
     <title>Turtle</title>
 	<!-- main-style.css -->
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
+<<<<<<< Updated upstream:Turtle/src/main/webapp/WEB-INF/views/workspace/loadmap.jsp
 	<!-- loadmap.css -->
     <link rel="stylesheet" href="${contextPath}/resources/css/workspace/loadmap.css">
+=======
+>>>>>>> Stashed changes:Turtle/target/www-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/common/main-template.jsp
 	<!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
@@ -20,6 +23,7 @@
  		<!-- header include -->
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
+<<<<<<< Updated upstream:Turtle/src/main/webapp/WEB-INF/views/workspace/loadmap.jsp
         <div class="repos-container">
             <div class="get-repos">
                 <input type="text" placeholder="Github Username">
@@ -29,6 +33,13 @@
                 <span>No Data To Show</span>
             </div>
         </div>
+=======
+
+
+
+        <div>main-template</div>
+
+>>>>>>> Stashed changes:Turtle/target/www-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/common/main-template.jsp
 
 
 

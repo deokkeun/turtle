@@ -13,4 +13,7 @@ public interface MyPageService {
 	// 프로필 이미지 수정
 	int updateProfile(Map<String, Object> map) throws IOException;
 
+	// 현재 비밀번호 일치여부 확인
+	int currentPwCheck(int memberNo, String currentPw);
+
 }

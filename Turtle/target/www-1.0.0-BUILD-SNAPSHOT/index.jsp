@@ -17,20 +17,27 @@
     <main>
         <!-- landing-header include -->
        	<jsp:include page="/WEB-INF/views/common/landing-header.jsp" />
-		
 
-        <h1>원래랜딩 페이지</h1>
+       <!--  <h1>랜딩 페이지</h1>--> 
         
         
-        <!-- 1. 로그인 세션이 있으면 메인페이지로 바로 이동 -->
-        <!-- 2. 로그인 세션이 없으면 현재 페이지 -->
-        <!-- (아이디 저장 쿠키 유지기간 1년) -->
-       	<c:if test="${!empty sessionScope.loginMember}">
-        	<!-- ( member/login -> common/main.jsp ) -->
-        	<jsp:forward page="member/login" />
-        </c:if>
-
-		
+        <br>
+        <br>
+        	 <!-- landing-body 임시로만든거 include -->
+        	<jsp:include page="/WEB-INF/views/common/landing-mainTemp.jsp" />
+        
+  
+  	<c:if test="${!empty loginMember}">
+  		    <div>로그인시(멤버정보)</div>
+        <div>회원번호 : ${loginMember.memberNo}</div>
+        <div>회원명 : ${loginMember.memberName}</div>
+        <div>프로필 이미지 : ${loginMember.profileImage}</div>
+        <div>회원 이메일 : ${loginMember.memberEmail}</div>
+        <div>회원 가입일 : ${loginMember.enrollDate}</div>
+  	</c:if>
+  	<c:if test="${empty loginMember}">
+  		<div>empty loginMember</div>
+  	</c:if>
 
     </main>
 

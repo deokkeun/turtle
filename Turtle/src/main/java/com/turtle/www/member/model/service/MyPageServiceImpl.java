@@ -83,6 +83,26 @@ public class MyPageServiceImpl implements MyPageService {
 		
 		return result;
 	}
+
+
+
+	/** 현재 비밀번호 일치 여부 확인
+	 *
+	 */
+	@Override
+	public int currentPwCheck(int memberNo, String currentPw) {
+		
+		// 1) DB에서 암호화된 비밀번호를 조회하여 입력받은 비밀번호와 비교
+		String encPw = dao.selectEncPw(memberNo);
+		
+		if(bcrypt.matches(currentPw, encPw)) {
+			// 2) 비밀번호가 일치하면 1 리턴
+			return 1;
+		}
+		
+		// 3) 비밀번호가 일치하지 않으면 0 리턴
+		return 0;
+	}
 	
 
 	

@@ -12,6 +12,6 @@
     <title>채팅방</title>
 </head>
 <body>
-    
+    채팅방 이동확인
 </body>
 </html>
