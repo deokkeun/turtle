@@ -8,8 +8,8 @@
     	<!-- 테스트로그인용 나중에 삭제할거임 -->
     	<section>
     		<form action="member/testLogin" method="POST">
-        		<input type="hidden" name="memberEmail" value="test01@gmail.com">
-        		<input type="hidden" name="memberPw" value="test01!">
+        		<input type="hidden" name="memberEmail" value="user999@gmail.com">
+        		<input type="hidden" name="memberPw" value="password999!">
         		<button>테스트로그인</button>
         	</form>
     	</section>
