@@ -16,4 +16,7 @@ public interface MyPageService {
 	// 현재 비밀번호 일치여부 확인
 	int currentPwCheck(int memberNo, String currentPw);
 
+	// 비밀번호 변경
+	int newChangePw(Map<String, Object> paramMap);
+
 }

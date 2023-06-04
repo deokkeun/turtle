@@ -40,6 +40,11 @@
 		WHERE MEMBER_NO = ${memberNo}
 	 </update>
 	 
+	 <update id="newChangePw">
+	 	UPDATE MEMBER
+	 	SET MEMBER_PW = #{memberPw}
+	 	WHERE MEMBER_NO = #{memberNo}
+	 </update>
 	 
 
 </mapper>

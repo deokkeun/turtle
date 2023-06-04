@@ -103,6 +103,18 @@ public class MyPageServiceImpl implements MyPageService {
 		// 3) 비밀번호가 일치하지 않으면 0 리턴
 		return 0;
 	}
+
+
+
+	/** 비밀번호 변경
+	 *
+	 */
+	@Override
+	public int newChangePw(Map<String, Object> paramMap) {
+		paramMap.put("memberPw", bcrypt.encode((String)paramMap.get("newPw")));
+		
+		return dao.newChangePw(paramMap);
+	}
 	
 
 	

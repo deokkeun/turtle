@@ -47,6 +47,14 @@ public class MyPageDAO {
 		return sqlSession.update("myPageMapper.updateProfile", map);
 	}
 
+	/** 비밀번호 변경
+	 * @param paramMap
+	 * @return
+	 */
+	public int newChangePw(Map<String, Object> paramMap) {
+		return sqlSession.update("myPageMapper.newChangePw", paramMap);
+	}
+
 
 
 
