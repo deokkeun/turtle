@@ -21,6 +21,7 @@
     <!-- landing-header include -->
 	<jsp:include page="/WEB-INF/views/common/landing-header.jsp" />
 
+
       
     
 
@@ -28,6 +29,7 @@
          
     
   <!-- <c:if test="${!empty loginMember}">
+
   		    <div>로그인시(멤버정보)</div>
         <div>회원번호 : ${loginMember.memberNo}</div>
         <div>회원명 : ${loginMember.memberName}</div>

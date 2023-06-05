@@ -11,5 +11,10 @@
 </head>
 <body>
     채팅방리스트 이동 확인
+    
+    <c:forEach varStatus="chatRoom" items="${chatRoomList}">
+    	<a>${chatRoom.chatRoomTitle}</a>
+    </c:forEach>
+    
 </body>
 </html>
