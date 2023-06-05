@@ -72,7 +72,7 @@
 				비밀번호 임시 8자 이상 영어, 숫자, 특수문자 2가지 이상 조합
 				<fieldset id="currentPw-box">
 					<div class="currentPw-value">비밀번호 입력</div>
-					<input type="password" name="currentPw" class="currentPw">
+					<input type="password" name="currentPw" class="currentPw" autocomplete="false">
 				</fieldset>
 				<span id="currentPwMessage">현재 비밀번호를 입력해주세요.(변경 텍스트)</span>
 				<input type="checkbox" id="showPw"><label for="showPw">비밀번호 표시</label>

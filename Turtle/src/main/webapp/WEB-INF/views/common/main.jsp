@@ -48,6 +48,9 @@
             <button>git loadMap test(GET)</button>
         </form>
       
+        <form action="../calendar/calendar" method="GET">
+           <button>calendar</button>
+        </form>
       
         <a href="../chat/chatRoomList?projectNo=1">채팅</a>
 
