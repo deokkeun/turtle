@@ -49,7 +49,7 @@
         </form>
       
       
-        <a href="../chat/chatRoomList">채팅</a>
+        <a href="../chat/chatRoomList?projectNo=1">채팅</a>
 
     </main>
 
