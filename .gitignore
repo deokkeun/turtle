@@ -10,7 +10,6 @@ log4j.xml
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,windows,macos,eclipse,visualstudiocode
 
 ### Eclipse ###
-.classpath
 .metadata
 target/
 bin/
