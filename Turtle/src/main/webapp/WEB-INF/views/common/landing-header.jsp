@@ -8,21 +8,30 @@
     	<!-- 테스트로그인용 나중에 삭제할거임 -->
     	<section>
     		<form action="member/testLogin" method="POST">
+        		<input type="hidden" name="memberEmail" value="test01@gmail.com">
+        		<input type="hidden" name="memberPw" value="password999!">
+        		<button>일일맨테스트로그인</button>
+        	</form>
+        	<form action="member/testLogin" method="POST">
         		<input type="hidden" name="memberEmail" value="user999@gmail.com">
         		<input type="hidden" name="memberPw" value="password999!">
-        		<button>테스트로그인</button>
+        		<button>구구맨테스트로그인</button>
         	</form>
     	</section>
+    	
+    	<!-- 네이버아이콘  -->
         <section>
             <a href="${contextPath}"><img src="${contextPath}/resources/images/auth/naver-login-icon.png" alt="logo" height="55px"></a>
         </section>
-
+		
+		<!-- 로그인/회원가입 박스  -->
 	    <section>
 			<section id="login-box">
 				<button id="login-modal-btn">
 					<div><img src="${contextPath}/resources/image/common/login.png" alt="로그인"></div>
 					<div>Login</div>
 				</button>
+				
 				<form action="${contextPath}/member/signUp" method="GET">
 					<button id="signUp-btn">
 						<div>Sign up for free</div>
@@ -30,8 +39,10 @@
 				</form>
 			</section>
 	    </section>
+	    
     </section>
 </header>
+
 
 
 <form action="${contextPath}/member/login" method="GET">
@@ -40,21 +51,17 @@
 </form>
 
 
-
-  <H1>TOTAL 협업툴</H1>
-      <H3>소개홍보 문구적기</H3>
-
-
-      <button type="button" class="btn btn-secondary">무료로 사용하기 ></button>
-
-
-
-   <div>
-        <h3> Turtle과 함께 업무 효율성을 높여보세요 </h3>
-        <button type="button" class="btn btn-secondary">무료로 사용하기 ></button>
-      </div>
-
-
+	 <c:if test="${!empty loginMember}">
+  		    <div>로그인시(멤버정보)</div>
+        <div>회원번호 : ${loginMember.memberNo}</div>
+        <div>회원명 : ${loginMember.memberName}</div>
+        <div>프로필 이미지 : ${loginMember.profileImage}</div>
+        <div>회원 이메일 : ${loginMember.memberEmail}</div>
+        <div>회원 가입일 : ${loginMember.enrollDate}</div>
+  	</c:if>
+  	<c:if test="${empty loginMember}">
+  		<div>empty loginMember</div>
+  	</c:if> 
 
 
 <!-- 로그인 모달창 -->

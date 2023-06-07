@@ -67,8 +67,7 @@ public class MyPageServiceImpl implements MyPageService {
 			map.put("profileImage", map.get("webPath") + renameImage);
 			
 		} else {
-			
-			map.put("profileImage", null);
+			map.put("profileImage", "/resources/images/memberProfile/member.png");
 			
 		}
 		// DAO를 호출해서 프로필 이미지 수정
@@ -102,6 +101,18 @@ public class MyPageServiceImpl implements MyPageService {
 		
 		// 3) 비밀번호가 일치하지 않으면 0 리턴
 		return 0;
+	}
+
+
+
+	/** 비밀번호 변경
+	 *
+	 */
+	@Override
+	public int newChangePw(Map<String, Object> paramMap) {
+		paramMap.put("memberPw", bcrypt.encode((String)paramMap.get("newPw")));
+		
+		return dao.newChangePw(paramMap);
 	}
 	
 

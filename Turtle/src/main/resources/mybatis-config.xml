@@ -15,6 +15,8 @@
 		<!-- VO 클래스의 패키지명 + 클래스명 모두 작성하는것이 불편하기 때문에 짧은 별칭 부여 -->
 		<typeAlias type="com.turtle.www.member.model.vo.Member" alias="member"/>
 		
+		<typeAlias type="com.turtle.www.projectMember.model.vo.ProjectMember" alias="projectMember"/>
+		
 		<typeAlias type="com.turtle.www.chat.model.vo.ChatRoom" alias="chatRoom"/>
 		<typeAlias type="com.turtle.www.chat.model.vo.ChatRoomJoin" alias="chatRoomJoin"/>
 		<typeAlias type="com.turtle.www.chat.model.vo.ChatMessage" alias="chatMessage"/>
@@ -28,6 +30,7 @@
 		<mapper resource="/mappers/member-mapper.xml"/>
 		<mapper resource="/mappers/myPage-mapper.xml"/>
 		<mapper resource="/mappers/chat-mapper.xml"/>
+		<mapper resource="/mappers/projectMember-mapper.xml"/>
 	</mappers>
 
 </configuration>

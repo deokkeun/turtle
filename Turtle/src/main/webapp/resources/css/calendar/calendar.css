@@ -1,0 +1,17 @@
+/* 드래그 앤 드롭 */
+#external-events {
+    margin: 50px;
+    float: left;
+}
+.fc-event {
+    margin: 5px;
+    cursor: move;
+}
+
+/* calendar구간 */
+#calendar-box {
+    margin: 50px;
+    width: 50%;
+    height: 50%;
+    float: left;
+}

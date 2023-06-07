@@ -19,7 +19,7 @@
        	<jsp:include page="/WEB-INF/views/common/landing-header.jsp" />
 		
 
-        <h1>원래랜딩 페이지</h1>
+        <h1><mark>원래랜딩 페이지</mark></h1>
         
         
         <!-- 1. 로그인 세션이 있으면 메인페이지로 바로 이동 -->
