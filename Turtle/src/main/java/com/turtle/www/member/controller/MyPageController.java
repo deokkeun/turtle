@@ -107,6 +107,46 @@ public class MyPageController {
 		}
 	}
 	
+	/** 새로운 비밀번호로 변경
+	 * @return
+	 */
+	@PostMapping("/newChangePw")
+	public String newChangePw(@RequestParam Map<String, Object> paramMap,
+								Model model,
+								RedirectAttributes ra,
+								SessionStatus status,
+								@ModelAttribute("loginMember") Member loginMember) {
+		
+		paramMap.put("memberNo", loginMember.getMemberNo());
+		
+		int result = service.newChangePw(paramMap);
+		
+		if(result > 0) {
+			// 세션 없애기
+			status.setComplete();
+			
+			// 비밀번호 변경 성공 시
+			ra.addFlashAttribute("message", "비밀번호가 변경되었습니다.");
+			return "redirect:/";
+		} else {
+			model.addAttribute("message", "비밀번호 변경 중 오류가 발생하였습니다. 고객센터에 문의해주세요.");
+			// 비밀번호 변경 실패 시
+			return "member/myPage-changePw";
+		}
+	}
+//        1. js에서 유효성 검사, 비밀번호 일치 확인 후 여기로
+//        2. form 태그에 담아서 memberNo로 비밀번호 가져와 확인 후
+//       	일치하면 암호화해서 db에 저장
+//       	비밀번호 변경 성공 시 -> 로그아웃 세션 삭제, 랜딩페이지 이동
+//       	비밀번호 변경 실패 시 -> 현재 페이지
+		
+		// 비밀번호 변경 성공 시
+		//return "redirect:/";
+		
+		// 비밀번호 변경 실패 시
+		//return "member/myPage-changePw";
+
+	
 	/** 회원 탈퇴 이동
 	 * @return
 	 */
