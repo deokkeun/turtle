@@ -67,8 +67,7 @@ public class MyPageServiceImpl implements MyPageService {
 			map.put("profileImage", map.get("webPath") + renameImage);
 			
 		} else {
-			
-			map.put("profileImage", null);
+			map.put("profileImage", "/resources/images/memberProfile/member.png");
 			
 		}
 		// DAO를 호출해서 프로필 이미지 수정
