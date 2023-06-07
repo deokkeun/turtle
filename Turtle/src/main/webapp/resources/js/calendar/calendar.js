@@ -59,7 +59,50 @@ document.addEventListener('DOMContentLoaded', function() {
 // 1. 전체 이벤트 데이터를 추출해야 한다.
 function allSave() {
     var allEvent = calendar.getEvents();
-    console.log(allEvent);
+    var events = new Array();
+    for(var i = 0; i < allEvent.length; i++) {
+      var obj = new Object();
+
+      obj.title = allEvent[i]._def.title; // 이벤트 명칭
+      obj.allDay = allEvent[i]._def.allDay; // 하루종일의 이벤트인지 알려주는 boolean값 (true / false)
+      obj.start = allEvent[i]._instance.range.start; // 시작날짜 및 시간
+      obj.end = allEvent[i]._instance.range.end; // 마침날짜 및 시간
+
+      events.push(obj);
+    }
+    var jsondata = JSON.stringify(events);
+
+    console.log(jsondata);
+
+    savedata(jsondata);
 }
+
+function savedata(jsondata) {
+  $.ajax({
+    data: {'allData': jsondata},
+    type: 'POST',
+    dataType: 'text',
+    url: '', // 저장할 url
+    async: false
+  })
+  .done(function(result) {
+
+  })
+  .fail(function(request, status, error) {
+    alert("에러 발생 : " + error);
+  })
+}
+
+function addEvent() {
+const inputValue = document.querySelector(".inputValue").value;
+const startDate = document.querySelector(".startDate").value;
+const endDate = document.querySelector(".endDate").value;
+
+  calendar.addEvent({
+    title: inputValue,
+    start: startDate,
+    end: endDate});
+}
+
 // 2. ajax로 서버에 전송하여 DB에 저장해야 한다.
 

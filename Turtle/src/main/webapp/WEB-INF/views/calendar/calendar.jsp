@@ -23,12 +23,21 @@
  		<!-- header include -->
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-            
-        <div id='external-events'>
+        <section>
+          <div>
+            일정
+            <input type="text" class="inputValue" placeholder="Enter new To-do">
+            시작일
+            <input type="date" class="startDate">
+            종료일
+            <input type="date" class="endDate">
+            <button onclick="addEvent()">일정 추가</button>
+          </div>
+          <div id='external-events'>
             <p>
               <strong>아래 일정을 드래그하여 배정하세요.</strong>
             </p>
-        
+            
             <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
               <div class='fc-event-main'>일정 1</div>
             </div>
@@ -44,22 +53,23 @@
             <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
               <div class='fc-event-main'>일정 5</div>
             </div>
-        
+            
             <p>
               <input type='checkbox' id='drop-remove' />
               <label for='drop-remove'>드래그 앤 드롭 후 제거</label>
             </p>
-        </div>
-
-        <section>
+          </div>
+        </section>
+          
+          <section>
             <button onclick="allSave()">전체 저장</button>
-        </section>
-
-        <!-- calendar -->
-        <section id="calendar-box">
+          </section>
+          
+          <!-- calendar -->
+          <section id="calendar-box">
             <div id='calendar'></div>
-        </section>
-
+          </section>
+          
 
 
 
