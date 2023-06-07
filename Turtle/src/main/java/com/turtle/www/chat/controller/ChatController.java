@@ -11,11 +11,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.turtle.www.chat.model.service.ChatService;
+import com.turtle.www.chat.model.vo.ChatMessage;
 import com.turtle.www.chat.model.vo.ChatRoom;
 import com.turtle.www.member.model.vo.Member;
 import com.turtle.www.projectMember.model.service.ProjectMemberService;
@@ -33,12 +34,11 @@ public class ChatController {
 	private ProjectMemberService pmService;
 	
 	// 채팅방 목록 조회
-	@GetMapping("/chatRoomList")
+	@GetMapping("/chatRoomList/{projectNo}")
 	public String chatRoomList(@ModelAttribute("loginMember") Member loginMember, 
 			Model model,
-			int projectNo) {
+			@PathVariable("projectNo") int projectNo) {
 		
-		System.out.println(projectNo);
 		logger.info("projectNo : " + projectNo);
 		// memberNo와 projectNo로 pmNo확인
 		int memberNo = loginMember.getMemberNo();
@@ -51,6 +51,7 @@ public class ChatController {
 		
 		// 받아온 pmNo로 채팅방 리스트 조회
 		map.put("pmNo", pmNo);
+
 		List<ChatRoom> chatRoomList = cService.selectChatRoomList(map);
 		
 		model.addAttribute("chatRoomList", chatRoomList);
@@ -59,6 +60,19 @@ public class ChatController {
 		//개인 채팅방용 프로젝트 멤버 조회
 		
 		return "chat/chatRoomList";
+	}
+	
+	//채팅방 입장
+	@GetMapping("/chatRoom/{chatRoomNo}")
+	public String joinChatRoom(@ModelAttribute("loginMember") Member loginMember, 
+								Model model,
+								@PathVariable("chatRoomNo") int chatRoomNo) {
+		
+		// 채팅방 내 채팅 메세지 목록 조회
+		List<ChatMessage> chatMessageList = cService.selectChatMessageList(chatRoomNo);
+		model.addAttribute("chatMessageList", chatMessageList);
+		
+		return "chat/chatRoom";
 	}
 	
 	

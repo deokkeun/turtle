@@ -12,6 +12,15 @@
     <title>채팅방</title>
 </head>
 <body>
-    채팅방 이동확인
+	${chatMessage.memberName}님과의 채팅
+	<ul>
+		<c:forEach var="chatMessage" items="${chatMessageList}">
+			<li>
+				<span>${chatMessage.memberName}님 ${chatMessage.cmRegDate}</span>
+				<p>${chatMessage.chatMessage}</p>
+			</li>
+		</c:forEach>
+	</ul>
+	
 </body>
 </html>

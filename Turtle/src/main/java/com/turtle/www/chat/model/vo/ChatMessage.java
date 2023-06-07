@@ -19,7 +19,6 @@ public class ChatMessage {
 	private int chatRoomNo; // 채팅방 번호
 	private int pmNo; // 프로젝트 멤버 번호
 	private String pmProfile; // 프로젝트 멤버 프로필사진
-	private String pmNickname; // 프로젝트 멤버 닉네임
-	private String pmEmail; // 프로젝트 멤버 이메일
+	private String memberName; // 멤버 이름
 	
 }
