@@ -18,16 +18,38 @@
 		<result property="cmRegDate" column="CM_REG_DATE"/>
 		<result property="chatRoomNo" column="CHATROOM_NO"/>
 		<result property="pmNo" column="PM_NO"/>
+		<result property="memberName" column="MEMBER_NAME"/>
 	</resultMap>
 	
 	<!-- 채팅방 리스트 조회 -->
-	<select id="chatRoomList" resultMap="chatRoom_rm">
+	<select id="selectChatRoomList" resultMap="chatRoom_rm">
 		SELECT *
 		FROM CHATROOM
 		JOIN CHATROOM_JOIN USING (CHATROOM_NO)
 		WHERE PM_NO = ${pmNo}
 		AND PROJECT_NO = ${projectNo}
-		ORDER BY CHATROOM_TYPE
+		AND CHATROOM_ST = 'N'
+		ORDER BY CHATROOM_TYPE, CHATROOM_NO
+	</select>
+	
+	<!-- 개인 채팅방 제목 조회 -->
+	<select id="selectChatRoomJoinMember" resultType="string">
+		SELECT MEMBER_NAME
+		FROM MEMBER
+		JOIN PROJECT_MEMBER USING(MEMBER_NO)
+		JOIN CHATROOM_JOIN USING(PM_NO)
+		WHERE CHATROOM_NO = ${chatRoomNo}
+		AND PM_NO NOT IN ${pmNo}
+	</select>
+	
+	<!-- 채팅 메세지 목록 조회 -->
+	<select id="selectChatMessageList" resultMap="chatMessage_rm">
+	 	SELECT CHAT_MESSAGE, CM_REG_DATE, MEMBER_NAME
+		FROM CHAT_MESSAGE
+		JOIN PROJECT_MEMBER USING (PM_NO)
+		JOIN MEMBER USING (MEMBER_NO)
+		WHERE CHATROOM_NO = ${chatRoomNo}
+		ORDER BY CM_NO
 	</select>
 	
 	<!-- 채팅 메세지 삽입 -->
