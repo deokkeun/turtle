@@ -26,6 +26,7 @@ public class ChatWebsocket extends TextWebSocketHandler {
 	= Collections.synchronizedSet(new HashSet<WebSocketSession>());
 	
 	
+	
 	// 클라이언트와 연결이 완료되고, 통신할 준비가 되면 수행
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
@@ -36,6 +37,8 @@ public class ChatWebsocket extends TextWebSocketHandler {
 		sessions.add(session);
 		// WebSocketSession을 Set에 추가
 	}
+	
+	
 
 	// 클라이언트로부터 텍스트 메세지를 전달 받았을 때 수행
 	@Override
@@ -87,11 +90,15 @@ public class ChatWebsocket extends TextWebSocketHandler {
 	}
 
 
-	@Override
-	public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
-		// TODO Auto-generated method stub
-		super.afterConnectionClosed(session, status);
-	}
+	// 클라이언트와 연결이 종료되는 수행
+		@Override
+		public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
+			
+			sessions.remove(session);
+			// 웹소켓 연결이 종료되는 경우
+			// 종료된 WebSocketSession을 Set에서 제거
+			
+		}
 	
 	
 }
