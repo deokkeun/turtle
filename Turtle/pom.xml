@@ -22,9 +22,26 @@
 		사용자가 직접 받을 필요 없이 해당 태그 내에 지정된 형식으로 작성하면 네트워크를 통해 외부 저장소에서 자동으로 얻어와 세팅함. -->
 	<dependencies>
 	
-	
-		<!-- JDBC, Mybatis, DBCP 관련 라이브러리 -->
+ 		<!-- 이메일 인증 -->
+
+		<!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
+		<dependency>
+		    <groupId>com.sun.mail</groupId>
+		    <artifactId>javax.mail</artifactId>
+		    <version>1.6.2</version>
+		</dependency>
 		
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context-support</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency> 
+		
+		
+		
+		<!-- JDBC, Mybatis, DBCP 관련 라이브러리 -->
+	
 		<!-- JDBC 드라이버 (ojdbc11) -->
 		<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc11 -->
 		<dependency>
@@ -65,9 +82,25 @@
 		    <artifactId>commons-dbcp2</artifactId>
 		    <version>2.9.0</version>
 		</dependency>
+
 	
+		<!-- GSON 라이브러리 -->
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+		    <groupId>com.google.code.gson</groupId>
+		    <artifactId>gson</artifactId>
+		    <version>2.9.0</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+		<dependency>
+		    <groupId>commons-fileupload</groupId>
+		    <artifactId>commons-fileupload</artifactId>
+		    <version>1.4</version>
+		</dependency>
+		
 	
-		<!-- Spring security 모듈 추가 -->
+		<!-- Spring-security 모듈 추가 -->
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
 		<dependency>
 		    <groupId>org.springframework.security</groupId>
@@ -88,41 +121,29 @@
 		    <artifactId>spring-security-config</artifactId>
 		    <version>5.7.1</version>
 		</dependency>
-	
-	
-		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
-		<dependency>
-		    <groupId>com.google.code.gson</groupId>
-		    <artifactId>gson</artifactId>
-		    <version>2.9.0</version>
-		</dependency>
-	
-	
-		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
-		<dependency>
-		    <groupId>commons-fileupload</groupId>
-		    <artifactId>commons-fileupload</artifactId>
-		    <version>1.4</version>
-		</dependency>
-	
-	
-		<!-- Spring WebSocket -->
-	      <!-- https://mvnrepository.com/artifact/org.springframework/spring-websocket -->
-	      <dependency>
-	         <groupId>org.springframework</groupId>
-	         <artifactId>spring-websocket</artifactId>
-	         <version>${org.springframework-version}</version>
-	      </dependency>
-	
-	
-	      <!-- jackson bind -->
-	      <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
-	      <dependency>
-	         <groupId>com.fasterxml.jackson.core</groupId>
-	         <artifactId>jackson-databind</artifactId>
-	         <version>2.9.8</version>
-	      </dependency>
 		
+		
+	  <!-- Spring WebSocket -->
+      <!-- https://mvnrepository.com/artifact/org.springframework/spring-websocket -->
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-websocket</artifactId>
+         <version>${org.springframework-version}</version>
+      </dependency>
+
+
+      <!-- jackson bind -->
+      <!-- : json(javascript) -> 자바객체로 변환 후 vo에 세팅 -->
+      <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+      <dependency>
+         <groupId>com.fasterxml.jackson.core</groupId>
+         <artifactId>jackson-databind</artifactId>
+         <version>2.9.8</version>
+      </dependency>
+		
+		
+		
+	
 		<!-- lombok 라이브러리 -->
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
@@ -131,7 +152,6 @@
 		    <version>1.18.24</version>
 		    <scope>provided</scope>
 		</dependency>
-		
 		
 		<!-- JSTL 라이브러리 -->
 		<!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
@@ -173,6 +193,7 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 
+
 		<!-- AspectJ : AOP 기능을 사용하기 위한 언어 문법 -->
 		<!-- aspectjrt : AspectJ 런타임 프로그램 -->
 		<dependency>
@@ -192,6 +213,7 @@
 
 		<!-- Log4j (Logging) -->
 		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+		<!-- 실무에 나가면 syso로 콘솔에서 안찍고 로그 사용! 로그는 기록이 남음!  -->
 		<dependency>
 		    <groupId>org.apache.logging.log4j</groupId>
 		    <artifactId>log4j-core</artifactId>
@@ -215,13 +237,13 @@
 			<scope>runtime</scope>
 		</dependency>
 		
-		
 		<!-- https://mvnrepository.com/artifact/org.lazyluke/log4jdbc-remix -->
 		<dependency>
 		    <groupId>org.lazyluke</groupId>
 		    <artifactId>log4jdbc-remix</artifactId>
 		    <version>0.2.7</version>
 		</dependency>
+		
 		
 
 		<!-- @Inject -->
@@ -230,6 +252,7 @@
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
 		</dependency>
+
 
 		<!-- Servlet -->
 		<!-- Servlet 버전을 4.0으로 변경 -->
@@ -267,10 +290,10 @@
 	
 		<!-- pom.xml 에러 방지 -->
 		<dependency>
-      		<groupId>org.apache.maven.plugins</groupId>
-      		<artifactId>maven-resources-plugin</artifactId>
-    		<version>2.4.3</version>
-     	</dependency> 
+	        		<groupId>org.apache.maven.plugins</groupId>
+	        		<artifactId>maven-resources-plugin</artifactId>
+         			<version>2.4.3</version>
+        		</dependency> 
 	</dependencies>
 
 

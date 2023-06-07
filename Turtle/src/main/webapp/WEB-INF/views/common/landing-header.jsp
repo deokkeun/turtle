@@ -23,7 +23,7 @@
 	    <section>
 			<section id="login-box">
 				<button id="login-modal-btn">
-					<div><img src="${contextPath}/resources/image/common/login.png" alt="로그인"></div>
+					<div><img src="${contextPath}/resources/images/lock.png" alt="로그인" style="width:20px; height:20px"></div>
 					<div>Login</div>
 				</button>
 				
