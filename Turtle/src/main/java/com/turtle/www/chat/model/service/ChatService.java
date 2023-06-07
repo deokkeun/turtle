@@ -15,11 +15,19 @@ public interface ChatService {
 	 */
 	List<ChatRoom> selectChatRoomList(Map<String, Object> map);
 	
+	/** 채팅 메세지 목록 조회 서비스
+	 * @param chatRoomNo
+	 * @return chatMessageList
+	 */
+	List<ChatMessage> selectChatMessageList(int chatRoomNo);
+	
 	/** 채팅 메세지 삽입 서비스
 	 * @param chatMessage
 	 * @return result
 	 */
 	int insertMessage(ChatMessage chatMessage);
+
+	
 
 
 }

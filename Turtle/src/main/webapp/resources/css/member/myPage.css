@@ -1,12 +1,30 @@
+/* 구간 분할 */
+#myPage-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+}
+
+
+#memberName {
+    margin: 20px;
+    font-size: 21.33px;
+    font-weight: bold;
+}
+
+/* 이미지 구간 */
 .profile-image-area {
     width: 150px;
     height: 150px;
     border: 3px solid #ddd;
     border-radius: 50%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    margin: auto;
+}
+#camera {
+    position: absolute;
 }
 
 #profile-image {
@@ -15,8 +33,60 @@
     border-radius: 50%;
 }
 
+/* 모달 이미지 */
+#profile-modal > .profile-image-area {
+    margin: 30px auto;
+}
+
+/* 프로필 이미지(모달창) */
+#profile-image-modal {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #input-image {
     display: none;
+}
+#camera {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* ************************ 프로필 모달 ************************ */
+
+
+/* 프로필 모달창 */
+#profile-modal {
+    display: none;
+    position: relative;
+    width: 380px;
+    padding: 20px 40px;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 5px;
+}
+#profile-modal .profile-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+
+/* ************* 모달 버튼 ************** */
+.select-image {
+    font-size: 14px;
+    text-align: center;
+    width: 120px;
+    border: 1px solid black;
+    border-radius: 50px;
+    padding: 10px;
+    margin: 10px;
 }
 
 

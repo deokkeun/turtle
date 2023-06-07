@@ -51,8 +51,10 @@
         <form action="../calendar/calendar" method="GET">
            <button>calendar</button>
         </form>
-      
-        <a href="../chat/chatRoomList?projectNo=1">채팅</a>
+              
+        <form action="../chat/chatRoomList/1" method="get">
+        	<button>채팅 테스트</button>
+        </form>
 
     </main>
 
