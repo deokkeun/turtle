@@ -20,10 +20,9 @@
 		</div>
 		<ul class="display-chatting">
 			<c:set var="previousMemberName" value="" />
-			<c:set var="memberList" value="${chatMessage.memberName}"/>
 				
 			<c:forEach var="chatMessage" items="${chatMessageList}" varStatus="vs">
-				<fmt:formatDate var="chatDate" value="${msg.createDate }" pattern="yyyy년 MM월 dd일 HH:mm:ss"/>
+				<fmt:formatDate var="chatDate" value="${chatMessage.cmRegDate}" pattern="yyyy년 MM월 dd일 HH:mm:ss"/>
 				<c:choose>
 					<c:when test="${vs.first || chatMessage.memberName ne previousMemberName}">
 						<li>
@@ -62,7 +61,7 @@
 		const pmNo = "${pmNo}";
 		const chatRoomNo = "${chatRoomNo}";
 		const contextPath = "${contextPath}";
-		const currentMemberName = "${loginMember.memberName}";
+		const memberName = "${loginMember.memberName}";
 		const previousMemberName = "${previousMemberName}";
 
 		// 로그인이 되어 있을 경우에만

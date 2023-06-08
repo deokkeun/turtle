@@ -79,7 +79,7 @@ public class ChatWebsocketHandler extends TextWebSocketHandler {
 				// 메시지에 담겨있는 채팅방 번호가 같을경우
 				// 같은방 클라이언트다.				
 				if(chatRoomNo == chatMessage.getChatRoomNo())  {
-						
+					
 					// 같은방 클라이언트에게 JSON형식 메시지를 보냄
 					s.sendMessage(new TextMessage(new Gson().toJson(chatMessage)));
 						

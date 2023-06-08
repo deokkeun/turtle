@@ -34,7 +34,9 @@ function sendMessage(){
 		const chatMessage = {
 			"pmNo" : pmNo,
 			"chatRoomNo" : chatRoomNo,
+			"memberName" : memberName,
 			"chatMessage" : inputChatting.value
+			
 		};
 
 
@@ -63,7 +65,43 @@ chattingSock.onmessage = function(e){
 	const chatMessage = JSON.parse(e.data);  // JSON -> JS Object
 	console.log(chatMessage);
 	
-	location.reload();
+	const li = document.createElement("li");
+
+	const p = document.createElement("p");
+	p.classList.add("chat");
+	
+					// 줄바꿈
+	p.innerHTML = chatMessage.chatMessage.replace(/\\n/gm , "<br>" ) ; 
+	// 내용
+
+
+	const span = document.createElement("span");
+	span.classList.add("chatDate");
+	//span.innerText = chatMessage.createDate; // 날짜
+	span.innerText = currentTime(); // 날짜
+
+	
+	if( memberName == previousMemberName ){
+		li.append(p);
+		li.classList.add("myChat"); // 내가 쓴 글 스타일 적용
+
+	}else{
+		li.innerHTML = "<b>"  + memberName  +  "</b>";
+		li.append(span, p);
+		previousMemberName.value = memberName.value;
+	}
+
+
+	// 채팅창
+	const display = document.getElementsByClassName("display-chatting")[0];
+
+	// 채팅창에 채팅 추가
+	display.append(li);
+
+	// 채팅창 제일 밑으로 내리기
+	display.scrollTop = display.scrollHeight;
+	// scrollTop : 스크롤 이동
+	// scrollHeight : 스크롤되는 요소의 전체 높이
 	
 }
 
