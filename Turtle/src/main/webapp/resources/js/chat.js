@@ -64,6 +64,8 @@ chattingSock.onmessage = function(e){
 	// 전달 받은 메세지를 JS 객체로 변환
 	const chatMessage = JSON.parse(e.data);  // JSON -> JS Object
 	console.log(chatMessage);
+	console.log(chatMessage.memberName);
+	console.log(previousMemberName);
 	
 	const li = document.createElement("li");
 
@@ -79,18 +81,19 @@ chattingSock.onmessage = function(e){
 	span.classList.add("chatDate");
 	//span.innerText = chatMessage.createDate; // 날짜
 	span.innerText = currentTime(); // 날짜
+	const br = document.createElement("br"); // 개행
 
 	
-	if( memberName == previousMemberName ){
+	if( chatMessage.memberName == previousMemberName ){
 		li.append(p);
-		li.classList.add("myChat"); // 내가 쓴 글 스타일 적용
 
-	}else{
-		li.innerHTML = "<b>"  + memberName  +  "</b>";
-		li.append(span, p);
-		previousMemberName.value = memberName.value;
+	}else if(chatMessage.memberName != previousMemberName){
+		li.innerHTML = "<hr><b>"  + chatMessage.memberName  +  "</b>";
+		li.append(span, br, p);
+		
 	}
-
+	
+	previousMemberName = chatMessage.memberName;
 
 	// 채팅창
 	const display = document.getElementsByClassName("display-chatting")[0];
