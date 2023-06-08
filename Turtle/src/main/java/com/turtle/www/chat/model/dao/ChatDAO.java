@@ -54,6 +54,11 @@ public class ChatDAO {
 	 */
 	public int insertMessage(ChatMessage chatMessage) {
 		
+		// pmNo 받아와서 chatMessage에 담기
+		// 1. projectNo 받아오기
+		// 2. memberNo 받아오기
+		// 3. pmNo받아오기
+		
 		return sqlSession.insert("chatMapper.insertMessage", chatMessage);
 	}
 
