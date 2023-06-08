@@ -19,11 +19,23 @@ function modal(id) {
     });
     document.body.append(bg);
 
-    // 닫기 버튼 처리, 시꺼먼 레이어와 모달 div 지우기
-    modal.querySelector('.profile-modal-close').addEventListener('click', function() {
-        bg.remove();
-        modal.style.display = 'none';
-    });
+    if(id == 'profile-modal') {
+        // 닫기 버튼 처리, 시꺼먼 레이어와 모달 div 지우기 (프로필 모달 닫기)
+        modal.querySelector('.profile-modal-close').addEventListener('click', function() {
+            bg.remove();
+            modal.style.display = 'none';
+        });
+    }
+
+    if(id == 'changePw-modal') {
+        // 닫기 버튼 처리, 시꺼먼 레이어와 모달 div 지우기 (비밀번호 변경 모달 닫기)
+        modal.querySelector('.changePw-modal-close').addEventListener('click', function() {
+            bg.remove();
+            modal.style.display = 'none';
+        });
+    }
+
+
     modal.setStyle({
         position: 'fixed',
         display: 'block',
@@ -51,40 +63,23 @@ Element.prototype.setStyle = function(styles) {
 
 //-------------------------------------------------------
 
-
+// 프로필 이미지 변경 모달
 document.querySelector("#camera").addEventListener("click", function() {
     // 모달창 띄우기
     modal("profile-modal");
 });
 
-
+// 비밀번호 변경 모달
+document.querySelector("#changePw-btn").addEventListener("click", function() {
+    // 모달창 띄우기
+    modal("changePw-modal");
+});
 
 
 // --------------------------------------------------------------
 
 // 회원 프로필 이미지 변경(미리보기)
 const inputImage = document.getElementById("input-image");
-
-// if(inputImage != null) {
-
-//     inputImage.addEventListener("change", function() {
-
-//         if(this.files[0] != undefined) {
-
-//             const reader = new FileReader();
-
-//             reader.readAsDataURL(this.files[0]);
-            
-//             reader.onload = function(e) {
-//                 const profileImage = document.getElementById("profile-image");
-
-//                 profileImage.setAttribute("src", e.target.result);
-
-//                 document.getElementById("delete").value = 0;
-//             }
-//         }
-//     });
-// }
 
 // 회원 프로필 이미지 변경(미리보기)
 if(inputImage != null) {
@@ -124,24 +119,6 @@ function profileValidate() {
 }
 
 
-
-
-// // 프로필 이미지 삭제 버튼
-// document.getElementById("delete-image").addEventListener("click", function() {
-
-//     const del = document.getElementById("delete");
-
-//     if(del.value == 0) { // 눌리지 않았을 경우
-//         document.getElementById("profile-image").setAttribute("src", contextPath + "/resources/images/memberProfile/member.png");
-//     }
-
-//     document.getElementById("input-image").value = "";
-
-//     del.value = 1;
-// });
-
-
-
 // 프로필 이미지(모달) 삭제 버튼
 document.getElementById("delete-image").addEventListener("click", function() {
 
@@ -156,6 +133,13 @@ document.getElementById("delete-image").addEventListener("click", function() {
 
     del.value = 1;
 });
+
+
+
+// --------------------------------------------------------------
+
+
+
 
 // --------------------------------------------------------------
 
@@ -185,7 +169,7 @@ function currentPwValidate() {
     const currentPwMessage = document.getElementById("currentPwMessage");
     
     if(currentPw.value.trim().length == 0) {
-        currentPwMessage.innerHTML = "<span style='color: red;'><img src='" + contextPath + "/resources/images/member/exclamation.svg' alt='exclamation'>비밀번호 입력</span>";
+        currentPwMessage.innerHTML = "<span style='font-size: 14px;'><img src='" + contextPath + "/resources/images/member/exclamation.svg' alt='exclamation'> 비밀번호 입력</span>";
         currentPw.classList.add("error-border");
         currentPwValue.classList.add("error");
         currentPwMessage.classList.add("error");
@@ -196,7 +180,7 @@ function currentPwValidate() {
             return true;
 
         }else {
-            currentPwMessage.innerHTML = "<span style='color: red;'><img src='" + contextPath + "/resources/images/member/exclamation.svg' alt='exclamation'>잘못된 비밀번호입니다.<br>다시 시도하거나 비밀번호 찾기를 클릭하여 재설정 하세요.</span>";
+            currentPwMessage.innerHTML = "<span style='font-size: 14px;'><img src='" + contextPath + "/resources/images/member/exclamation.svg' alt='exclamation'> 잘못된 비밀번호입니다.<br>다시 시도하거나 비밀번호 찾기를 클릭하여 재설정 하세요.</span>";
             currentPw.classList.add("error-border");
             currentPwValue.classList.add("error");
             currentPwMessage.classList.add("error");
