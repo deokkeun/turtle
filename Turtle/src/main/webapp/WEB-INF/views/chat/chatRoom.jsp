@@ -3,6 +3,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,21 +13,29 @@
     <title>채팅방</title>
 </head>
 <body>
-	${chatMessage.memberName}님과의 채팅
+	채팅방 테스트
 	<div class="chatting-area">
+		<div id="back-area">
+			<button class="btn btn-outline-danger" id="back-btn">나가기</button>
+		</div>
 		<ul class="display-chatting">
-			<c:set var="previousMemberName" value="" />		
+			<c:set var="previousMemberName" value="" />
+			<c:set var="memberList" value="${chatMessage.memberName}"/>
+				
 			<c:forEach var="chatMessage" items="${chatMessageList}" varStatus="vs">
+				<fmt:formatDate var="chatDate" value="${msg.createDate }" pattern="yyyy년 MM월 dd일 HH:mm:ss"/>
 				<c:choose>
 					<c:when test="${vs.first || chatMessage.memberName ne previousMemberName}">
 						<li>
-							<span>${chatMessage.memberName}님 ${chatMessage.cmRegDate}</span>
-							<p>${chatMessage.chatMessage}</p>
+							<hr>
+							<b>${chatMessage.memberName}님</b>
+							<span class="chatDate">${chatMessage.cmRegDate}</span>
+							<p class="chat">${chatMessage.chatMessage}</p>
 						</li>
 					</c:when>
 					<c:otherwise>
 						<li>
-							<p>${chatMessage.chatMessage}</p>
+							<p class="chat">${chatMessage.chatMessage}</p>
 						</li>
 					</c:otherwise>
 				</c:choose>
@@ -50,10 +59,11 @@
 	<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
 	<script>
 		
-		const memberNo = "${loginMember.memberNo}";
-		const memberName = "${loginMember.memberName}";
+		const pmNo = "${pmNo}";
 		const chatRoomNo = "${chatRoomNo}";
 		const contextPath = "${contextPath}";
+		const currentMemberName = "${loginMember.memberName}";
+		const previousMemberName = "${previousMemberName}";
 
 		// 로그인이 되어 있을 경우에만
 		// /chat 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성

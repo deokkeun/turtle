@@ -17,7 +17,7 @@ import com.turtle.www.chat.model.service.ChatService;
 
 import com.turtle.www.chat.model.vo.ChatMessage;
 
-public class ChatWebsocket extends TextWebSocketHandler {
+public class ChatWebsocketHandler extends TextWebSocketHandler {
 	
 	@Autowired
 	private ChatService service;
