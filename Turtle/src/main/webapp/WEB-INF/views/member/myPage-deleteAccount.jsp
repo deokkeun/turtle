@@ -10,6 +10,8 @@
     <title>Turtle</title>
 	<!-- main-style.css -->
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
+	<!-- deleteAccount.css -->
+    <link rel="stylesheet" href="${contextPath}/resources/css/member/deleteAccount.css">
 	<!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
@@ -19,9 +21,10 @@
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
   
-        <!-- 회원탈퇴 테스트 -->
-        <section style="border: 1px solid black;">
+           <!-- 회원탈퇴 -->
+           <section id="deleteAccount-box" style="border: 1px solid black;">
             <form action="../myPage/deleteAccount" method="POST" onsubmit="return deleteAccountValidate()">
+                <div>회원탈퇴</div>
                 현재 비밀번호<input type="password" name="memberPw" id="memberPw">
                 <div>회원 탈퇴 약관....</div>
                 <input type="checkbox" name="agree" id="agree">
@@ -31,8 +34,7 @@
         </section>
 
 
-<<<<<<< Updated upstream:Turtle/src/main/webapp/WEB-INF/views/member/myPage-deleteAccount.jsp
-=======
+
         <div>로그인시(멤버정보)</div>
         <div>회원번호 : ${loginMember.memberNo}</div>
         <div>회원명 : ${loginMember.memberName}</div>
@@ -43,8 +45,6 @@
             access_token
             <input type="text" name="access_token" value="" style="width: 600px;">
         </div>
-        
->>>>>>> Stashed changes:Turtle/target/www-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/common/main.jsp
 
     </main>
 
