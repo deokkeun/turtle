@@ -13,6 +13,4 @@ public class CalendarController {
 		return "calendar/calendar";
 	}
 	
-	
-	
 }
