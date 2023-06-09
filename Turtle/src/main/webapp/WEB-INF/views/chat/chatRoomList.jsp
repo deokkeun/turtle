@@ -11,5 +11,15 @@
 </head>
 <body>
     채팅방리스트 이동 확인
+    <ul>
+    <c:forEach var="chatRoom" items="${chatRoomList}">
+    	<li>
+    		<form action="../chatRoom/${projectNo}/${chatRoom.chatRoomNo}">
+    			<button>${chatRoom.chatRoomTitle}</button>
+    		</form>
+    	</li>  	    	   	
+    </c:forEach>
+    </ul>
+    
 </body>
 </html>
