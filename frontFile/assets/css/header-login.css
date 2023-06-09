@@ -1,0 +1,245 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+}
+
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+
+.header {
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 20px 0;
+}
+
+
+.header.header-scrolled {
+  background: #fff;
+  padding: 15px 0;
+  box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+}
+
+
+/* 로고글씨 TURTLE */
+.header .logo span {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #012970;
+  font-family: "Nunito", sans-serif;
+  /* margin-top: 3px; */
+  margin-right: 30px;
+}
+
+
+.navbar {
+flex-wrap: nowrap;
+}
+
+
+/* 헤더 글씨 로고랑 맞추기 */
+nav > ul {
+  margin-bottom: 0rem;
+}
+
+
+/* 네비바 안에 a태그 */
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+/* 네비바 안에 a태그 호버시 */
+a:hover {
+  color:#317563;
+}
+
+
+
+/* 로고크기 */
+.logo img {
+  max-width: 60px;
+  margin-right: 10px;
+}
+
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  flex-basis: 70%;
+  
+}
+.nav-links li {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+
+.nav-links2 {
+  padding-left: 0px;
+  display: flex;
+  list-style: none;
+  flex-basis:26%;
+}
+
+.nav-links2 li {
+  padding: 8px 12px;
+  font-weight: bold;
+  /* font-size: 20px; */ 
+}
+
+.nav-links2 a:hover {
+  /* color: #a1b8be; */
+  transition: 50ms;
+}
+
+
+
+/* 무료로 이용하기 버튼 설정 */
+.nav-btn {
+  margin-top: 30px;
+  line-height: 0;
+  padding: 10px 15px;
+  border-radius: 4px;
+  color: #fff;
+  background: #a1b8be;;
+}
+
+/* 반응형시 보이는 햄버거버튼 */
+.bar {
+  display: none;
+  position: absolute;
+  right: 15px;
+  font-size: 24px;
+  color: black;
+  margin-top: 5px;
+  
+}
+
+
+
+@media (max-width: 1200px) {
+  .nav-links2 {
+    display: flex;
+    list-style: none;
+    flex-basis:30%;
+    background-attachment: fixed;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .nav-links {
+    font-size: 16px;
+  }
+
+  .nav-links2 {
+    display: flex;
+    list-style: none;
+    flex-basis: 54%;
+    /* background-attachment: fixed; */
+    font-size: 16px;
+  }
+}
+
+
+@media (max-width:768px) {
+  #allnav {
+    max-width:767px;
+  }
+
+  nav {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+     height: auto;
+  }
+ 
+  .logo img {
+      width: 60px;
+  }
+  .nav-links {
+     visibility: hidden;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 0vh;
+      margin: 0;
+      margin-top: 2vh;
+      flex-basis: auto;
+      font-size:16px;
+   
+  }
+  .nav-links li {
+      text-align: center;
+      margin: 0;  
+  }
+
+  .nav-links li:hover {
+    background-color: #a1b8be;
+   
+  } 
+  
+  
+  .nav-links li:hover a {
+    color:#fff;
+  }
+
+
+
+
+  .nav-links2 {
+     visibility: hidden;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      height: 0vh;
+      font-size:16px;
+      flex-basis: 32%;
+  }
+  .bar {
+      display: block;
+      
+  }
+
+  .nav-links.active {
+    overflow: hidden;
+    height: 25vh;
+    display: block;
+    visibility: visible;
+    transition: all 1s;
+    background-color: white;
+      
+  }
+  .nav-links2.active {
+    /* margin-top: 2vh; */
+    height: 7vh;
+    display: flex;
+    visibility: visible;
+    transition: all 1s;
+    background-color: white;
+  }
+
+}
+
+
