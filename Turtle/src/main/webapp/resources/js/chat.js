@@ -34,7 +34,9 @@ function sendMessage(){
 		const chatMessage = {
 			"pmNo" : pmNo,
 			"chatRoomNo" : chatRoomNo,
+			"memberName" : memberName,
 			"chatMessage" : inputChatting.value
+			
 		};
 
 
@@ -62,8 +64,47 @@ chattingSock.onmessage = function(e){
 	// 전달 받은 메세지를 JS 객체로 변환
 	const chatMessage = JSON.parse(e.data);  // JSON -> JS Object
 	console.log(chatMessage);
+	console.log(chatMessage.memberName);
+	console.log(previousMemberName);
 	
-	location.reload();
+	const li = document.createElement("li");
+
+	const p = document.createElement("p");
+	p.classList.add("chat");
+	
+					// 줄바꿈
+	p.innerHTML = chatMessage.chatMessage.replace(/\\n/gm , "<br>" ) ; 
+	// 내용
+
+
+	const span = document.createElement("span");
+	span.classList.add("chatDate");
+	//span.innerText = chatMessage.createDate; // 날짜
+	span.innerText = currentTime(); // 날짜
+	const br = document.createElement("br"); // 개행
+
+	
+	if( chatMessage.memberName == previousMemberName ){
+		li.append(p);
+
+	}else if(chatMessage.memberName != previousMemberName){
+		li.innerHTML = "<hr><b>"  + chatMessage.memberName  +  "</b>";
+		li.append(span, br, p);
+		
+	}
+	
+	previousMemberName = chatMessage.memberName;
+
+	// 채팅창
+	const display = document.getElementsByClassName("display-chatting")[0];
+
+	// 채팅창에 채팅 추가
+	display.append(li);
+
+	// 채팅창 제일 밑으로 내리기
+	display.scrollTop = display.scrollHeight;
+	// scrollTop : 스크롤 이동
+	// scrollHeight : 스크롤되는 요소의 전체 높이
 	
 }
 

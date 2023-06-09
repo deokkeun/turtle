@@ -1,0 +1,65 @@
+
+/* 채팅창 관련 */
+.chatting-area{ 
+		margin:auto;
+		height: 600px;  
+		width : 800px;
+		margin-top: 50px;
+		margin-bottom: 50px;
+		}
+	.display-chatting{
+		width: 100%;
+		height: 450px;
+		border : 1px solid black;
+		overflow: auto;
+		list-style : none;
+		padding : 10px 10px;
+	}
+	
+	.chat{
+		display: inline-block;
+		border-radius: 5px;
+		padding : 5px;
+		background-color: #eee;
+	}
+	
+	
+	.input-area{
+		width: 100%;
+		display: flex;
+	}
+	
+	#inputChatting{
+		width : 80%;
+		resize : none;
+	}
+	
+	#send{
+		width : 20%;
+	}
+	
+	.chatDate{
+		font-size: 9px;
+	}
+	
+	#back-area{
+		text-align: right;
+		margin-bottom : 10px;
+	}
+	
+	
+	.exit{
+		text-align: center;
+	}
+	
+	.exit > p{
+		background-color: rgba(0,0,0, 0.3);
+	}
+
+
+  .chat-exit{
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    color: white;
+  }

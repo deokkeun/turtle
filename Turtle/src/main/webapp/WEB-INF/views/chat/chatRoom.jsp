@@ -3,6 +3,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<c:set var="memberName" value="${loginMember.memberName}" />
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>채팅방</title>
+    
+    <link rel="stylesheet" href="${contextPath}/resources/css/chat-style.css">
 </head>
 <body>
 	채팅방 테스트
@@ -20,16 +23,15 @@
 		</div>
 		<ul class="display-chatting">
 			<c:set var="previousMemberName" value="" />
-			<c:set var="memberList" value="${chatMessage.memberName}"/>
 				
 			<c:forEach var="chatMessage" items="${chatMessageList}" varStatus="vs">
-				<fmt:formatDate var="chatDate" value="${msg.createDate }" pattern="yyyy년 MM월 dd일 HH:mm:ss"/>
+				<fmt:formatDate var="chatDate" value="${chatMessage.cmRegDate}" pattern="yyyy년 MM월 dd일 HH:mm:ss"/>
 				<c:choose>
 					<c:when test="${vs.first || chatMessage.memberName ne previousMemberName}">
 						<li>
 							<hr>
 							<b>${chatMessage.memberName}님</b>
-							<span class="chatDate">${chatMessage.cmRegDate}</span>
+							<span class="chatDate">${chatDate}</span><br>
 							<p class="chat">${chatMessage.chatMessage}</p>
 						</li>
 					</c:when>
@@ -62,8 +64,11 @@
 		const pmNo = "${pmNo}";
 		const chatRoomNo = "${chatRoomNo}";
 		const contextPath = "${contextPath}";
-		const currentMemberName = "${loginMember.memberName}";
-		const previousMemberName = "${previousMemberName}";
+		let memberName = '${memberName}';
+		
+		console.log(memberName);
+
+		let previousMemberName = '${previousMemberName}';
 
 		// 로그인이 되어 있을 경우에만
 		// /chat 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
