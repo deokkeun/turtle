@@ -124,35 +124,34 @@
 
 
 
-					<!-- 프로필 모달창 -->
-					<section id="changePw-modal">
-						<section id="changePw-modal-box">
-
-							
-							<form action="../myPage/changePw" method="POST" onsubmit="return currentPwValidate()">
-								<div id="changePw-modal-top">
-									<div>TURTLE</div>
-									<div>${loginMember.memberName}</div>
-									<div>${loginMember.memberEmail}</div>
-									<div>비밀번호를 변경하려면 본인임을 인증하세요.</div>
-								</div>
-								<fieldset id="currentPw-box">
-									<div class="currentPw-value">비밀번호 입력</div>
-									<input type="password" name="currentPw" class="currentPw" autocomplete="false">
-								</fieldset>
-								<span id="currentPwMessage"></span>
-								<div class="flex-left">
-									<input type="checkbox" id="showPw"><pre> </pre><label for="showPw">비밀번호 표시</label>
-									<input type="hidden" id="showPw-value" value="0">
-								</div>
-								<div class="next-box">
-									<a href="../findPassword" class="findPassword">비밀번호 찾기</a><button class="next">다음</button>
-								</div>
-							</form>
-						</section>
-						<!-- 프로필 모달 닫기 -->
-						<a class="changePw-modal-close fa-solid fa-xmark"></a>
-					</section>
+			<!-- 비밀번호 변경 모달창 -->
+			<section id="changePw-modal">
+				<section id="changePw-modal-box">
+					
+					<form action="../myPage/changePw" method="POST" onsubmit="return currentPwValidate()">
+						<div id="changePw-modal-top">
+							<div>TURTLE</div>
+							<div>${loginMember.memberName}</div>
+							<div>${loginMember.memberEmail}</div>
+							<div>비밀번호를 변경하려면 본인임을 인증하세요.</div>
+						</div>
+						<fieldset id="currentPw-box">
+							<div class="currentPw-value">비밀번호 입력</div>
+							<input type="password" name="currentPw" class="currentPw" autocomplete="false">
+						</fieldset>
+						<span id="currentPwMessage"></span>
+						<div class="flex-left">
+							<input type="checkbox" id="showPw"><pre> </pre><label for="showPw">비밀번호 표시</label>
+							<input type="hidden" id="showPw-value" value="0">
+						</div>
+						<div class="next-box">
+							<a href="../findPassword" class="findPassword">비밀번호 찾기</a><button class="next">다음</button>
+						</div>
+					</form>
+				</section>
+				<!-- 비밀번호 변경 모달 닫기 -->
+				<a class="changePw-modal-close fa-solid fa-xmark"></a>
+			</section>
 			
 		
 		</section>

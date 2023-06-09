@@ -24,15 +24,6 @@
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
         <section>
-          <div>
-            일정
-            <input type="text" class="inputValue" placeholder="Enter new To-do">
-            시작일
-            <input type="date" class="startDate">
-            종료일
-            <input type="date" class="endDate">
-            <button onclick="addEvent()">일정 추가</button>
-          </div>
           <div id='external-events'>
             <p>
               <strong>아래 일정을 드래그하여 배정하세요.</strong>
@@ -70,6 +61,25 @@
             <div id='calendar'></div>
           </section>
           
+
+
+
+
+        <!-- 일정 추가 모달창 -->
+        <section id="calendar-modal">
+          <div>
+            일정
+            <input type="text" class="inputValue" placeholder="Enter new To-do">
+            시작일
+            <input type="date" class="startDate">
+            종료일
+            <input type="date" class="endDate">
+            <button onclick="addEvent()">일정 추가</button>
+          </div>
+          <!-- 일정 추가 모달 닫기 -->
+          <a class="calendar-modal-close fa-solid fa-xmark"></a>
+        </section>
+
 
 
 

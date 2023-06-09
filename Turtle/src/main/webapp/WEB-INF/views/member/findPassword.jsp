@@ -19,13 +19,41 @@
        	<jsp:include page="/WEB-INF/views/common/landing-header.jsp" />
 		
 
-        <h1>비밀번호 찾기 페이지</h1>
-        <!-- 1. 로그인 세션이 있으면 메인페이지로 바로 이동 -->
-        <!-- 2. 로그인 세션이 없으면 현재 페이지 -->
-        <%-- <c:if test="${!empty sessionScope.loginMember}">
-        	<!-- member/login -> common/main.jsp -->
-        	<jsp:forward page="member/login" />
-        </c:if> --%>
+        <section>
+            <!-- 상단 -->
+            <section>
+                <a href="${contextPath}">TURTLE</a>
+            </section>
+            <!-- 중간 -->
+            <section>
+                <div>
+                    비밀번호를 찾고자하는 <strong>이메일 주소를 입력</strong>해주세요.
+                </div>
+                <div>
+                    <input type="text">
+                </div>
+                <form action="">
+                    <button>다음</button>
+                </form>
+                <div>
+                    <div>아이디가 기억나지 않는다면?</div>
+                    <div><a href="">아이디 찾기</a></div>
+                </div>
+            </section>
+            <!-- 하단 -->
+            <section>
+                <div>
+                    <a href="${contextPath}">TURTLE</a>
+                </div>
+                <div>
+                    <a href="">고객센터</a>
+                </div>
+            </section>
+
+
+        </section>
+        
+ 
 
 		
 
