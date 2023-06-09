@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.turtle.www.chat.model.service.ChatService;
@@ -21,7 +22,7 @@ import com.turtle.www.chat.model.vo.ChatRoom;
 import com.turtle.www.member.model.vo.Member;
 import com.turtle.www.projectMember.model.service.ProjectMemberService;
 
-@SessionAttributes({"loginMember"})
+@SessionAttributes({"loginMember", "chatRoomNo"})
 @RequestMapping("/chat")
 @Controller
 public class ChatController {
@@ -63,14 +64,26 @@ public class ChatController {
 	}
 	
 	//채팅방 입장
-	@GetMapping("/chatRoom/{chatRoomNo}")
-	public String joinChatRoom(@ModelAttribute("loginMember") Member loginMember, 
+	@GetMapping("/chatRoom/{projectNo}/{chatRoomNo}")
+	public String joinChatRoom(@ModelAttribute("loginMember") Member loginMember,
 								Model model,
+								@PathVariable("projectNo") int projectNo,
 								@PathVariable("chatRoomNo") int chatRoomNo) {
 		
 		// 채팅방 내 채팅 메세지 목록 조회
 		List<ChatMessage> chatMessageList = cService.selectChatMessageList(chatRoomNo);
 		model.addAttribute("chatMessageList", chatMessageList);
+		
+		int memberNo = loginMember.getMemberNo();
+		Map<String, Object> map = new HashMap<>();
+		map.put("memberNo", memberNo);
+		map.put("projectNo", projectNo);
+		int pmNo = pmService.selectPmNo(map);
+		
+		System.out.println("pmNo찾기 : " + pmNo);
+		
+		model.addAttribute("pmNo", pmNo);
+		model.addAttribute("chatRoomNo", chatRoomNo); // session에 올림
 		
 		return "chat/chatRoom";
 	}

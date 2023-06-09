@@ -14,7 +14,9 @@
     <ul>
     <c:forEach var="chatRoom" items="${chatRoomList}">
     	<li>
-    		<form action="../chatRoom/${chatRoom.chatRoomNo}"><button>${chatRoom.chatRoomTitle}</button></form>
+    		<form action="../chatRoom/${projectNo}/${chatRoom.chatRoomNo}">
+    			<button>${chatRoom.chatRoomTitle}</button>
+    		</form>
     	</li>  	    	   	
     </c:forEach>
     </ul>

@@ -14,4 +14,23 @@
     width: 50%;
     height: 50%;
     float: left;
+    cursor: pointer;
+}
+
+/* 켈린더 모달창 */
+#calendar-modal {
+    text-align: center;
+    display: none;
+    position: relative;
+    width: 380px;
+    padding: 20px 40px;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 5px;
+}
+#calendar-modal .calendar-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
 }
