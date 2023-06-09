@@ -1,0 +1,11 @@
+#memo-area {
+ 	display: flex;
+ }
+ 
+.memoContent {
+	width: 200px;
+	height: 200px;
+	margin: 5px;
+	overflow: auto;
+ 	white-space: nowrap;
+}
