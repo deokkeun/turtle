@@ -25,6 +25,27 @@
 		WHERE MEMBER_EMAIL = #{memberEmail}
 		AND MEMBER_DELETE_FG = 'N'
 	</select>
+	
+	<!-- 이메일 중복검사 -->
+	<select id="emailDupCheck" parameterType="string" resultType="_int">
+		SELECT count(*) FROM MEMBER 
+		WHERE MEMBER_EMAIL = #{memberEmail}
+		AND MEMBER_DELETE_FG = 'N'
+	</select>
+	
+	<!-- 회원가입 -->
+	<insert id="signUp" parameterType="member">
+		INSERT INTO MEMBER VALUES(
+			SEQ_MEMBER_NO.NEXTVAL,
+			#{memberEmail},
+			#{memberPw},
+			#{memberName},
+			NULL,
+			"/resources/images/memberProfile/member.png",
+			DEFAULT, DEFAULT, NULL
+	)
+	</insert>
+
 
 
 

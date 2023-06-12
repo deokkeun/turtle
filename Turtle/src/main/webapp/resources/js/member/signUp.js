@@ -31,22 +31,22 @@ function fn_join(){
  
 	$('#join').click(function(){
 		
-		if($('#id').val() == ""){
+		if($('#memberEmail').val() == ""){
 			alert("아이디를 입력해주세요.");
 			return false;
 		}
 		
-		if($('#nickname').val() == ""){
-			alert("닉네임을 입력해주세요.");
+		if($('#memberName').val() == ""){
+			alert("이름을 입력해주세요.");
 			return false;
 		}
 		
-		if($('#password').val() == ""){
+		if($('#memberPassword').val() == ""){
 			alert("비밀번호를 입력해주세요.");
 			return false;
 		}
 		
-		if($('#password').val() != $('#password_ck').val()){
+		if($('#memberPassword').val() != $('#password_ck').val()){
 			alert("비밀번호가 일치하지 않습니다.");
 			return false;
 		}
@@ -60,7 +60,7 @@ function fn_join(){
 	});
 	
 	$(".email_auth_btn").click(function(){	     	 
-    	 var email = $('#email').val();
+    	 var email = $('#memberEmail').val();
     	 
     	 if(email == ''){
     	 	alert("이메일을 입력해주세요.");
@@ -81,12 +81,13 @@ function fn_join(){
 		}); 
 	});
 	
+	// 이메일 중복검사
 	$('#email').focusout(function(){
-		var id = $('#email').val();
+		var id = $('#memberEmail').val();
 	
 		$.ajax({
 			type : "POST",
-			url : "/emailCheck",
+			url : "/emailDupCheck",
 			data : {email : email},
 			success: function(data){
 				console.log(data);
@@ -101,22 +102,5 @@ function fn_join(){
 		}); 
 	});
 	
-	$('#nickname').focusout(function(){
-		var nickname = $('#nickname').val();
-	
-		$.ajax({
-			type : "POST",
-			url : "/nicknameCheck",
-			data : {nickname : nickname},
-			success: function(data){
-				if(data == "Y"){
-					$('#nickname_ck').removeClass("dpn");
-				}else{
-					$('#nickname_ck').addClass("dpn");
-				}
-			},
-			error: function(data){
-			}
-		}); 
-	});
+
  });

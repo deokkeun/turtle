@@ -28,11 +28,10 @@
                     <div class="join_title">회원가입</div>
                     <div class="join_box">
                         <div class="email_auth">
-                            <input type="text" placeholder="이메일" name="email" id="email" class="email">
+                            <input type="text" placeholder="이메일" name="memberEmail" id="memberEmail" class="email">
                         </div>
-                        <input type="text" placeholder="닉네임" name="nickname" id="nickname">
-                        <span id="nickname_ck" class="dpn">이미 사용중인 닉네임입니다.</span>
-                        <input type="password" placeholder="비밀번호" name="password" id="password">
+                        <input type="text" placeholder="이름" name="memberName" id="memberName">
+                        <input type="password" placeholder="비밀번호" name="memberPassword" id="passmemberPasswordword">
                         <input type="password" placeholder="비밀번호  확인" id="password_ck"  style="
                         margin-bottom: 20px;"
 >				                       

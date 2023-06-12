@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -111,6 +112,55 @@ public class MemberController {
 	@GetMapping("/signUp")
 	public String signUp() {
 		return "member/signUp";
+	}
+	
+	
+	/** 이메일 중복검사
+	 * @param email
+	 * @return
+	 */
+	@ResponseBody
+	@GetMapping("/emailDupCheck")
+	public int emailDupCheck(@RequestParam("memberEmail") String memberEmail) {
+		
+		return service.emailDupCheck(memberEmail);
+		
+	}
+	
+	
+	
+	/** 회원가입 기능
+	 * @return
+	 */
+	@PostMapping("/signUp")
+	public String signUp(@ModelAttribute() Member inputMember,
+						HttpServletRequest req,
+						RedirectAttributes ra) {
+		
+		logger.info("회원가입 기능 수행됨");
+		
+		int result = service.signUp(inputMember);
+		
+		String message = null;
+		String path = null;
+		
+		if(result > 0) { // 회원가입 성공
+			
+			message = inputMember.getMemberName() + "님, 환영합니다!";
+			path = "redirect:/"; // 메인 페이지
+			
+		}else {
+			
+			message = "회원가입에 실패하였습니다. 잠시 후 다시 시도해주세요.";
+			path = "redirect:/member/signUp"; // 회원 가입 페이지
+		}
+		
+		ra.addFlashAttribute("message", message);
+		
+		return path;
+		
+		
+		
 	}
 	
 	/** 아이디 찾기

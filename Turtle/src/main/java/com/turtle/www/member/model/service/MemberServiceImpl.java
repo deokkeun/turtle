@@ -10,6 +10,10 @@ import org.springframework.stereotype.Service;
 import com.turtle.www.member.model.dao.MemberDAO;
 import com.turtle.www.member.model.vo.Member;
 
+/**
+ * @author sujinchoi
+ *
+ */
 @Service
 public class MemberServiceImpl implements MemberService {
 	
@@ -50,6 +54,39 @@ public class MemberServiceImpl implements MemberService {
 		// Spring에서 제어를 하기 때문에 Service구문이 간단해진다.
 	}
 
+
+
+	/** 이메일 중복 검사 서비스 구현
+	 *
+	 */
+	@Override
+	public int emailDupCheck(String memberEmail) {
+		
+		return dao.emailDupCheck(memberEmail);
+	}
+
+
+
+	/** 회원가입 서비스 구현
+	 *
+	 */
+	@Override
+	public int signUp(Member inputMember) {
+		logger.debug("암호화 전 : " + inputMember.getMemberPw() + " / 암호화 후 : " + bcrypt.encode(inputMember.getMemberPw()));
+		
+		inputMember.setMemberPw(bcrypt.encode(inputMember.getMemberPw())); 
+		
+		int result = dao.signUp(inputMember);
+		
+		return result;
+	}
+
+
+
+
+	
+	
+	
 	
 	
 	
