@@ -1,6 +1,9 @@
 package com.turtle.www.projectMember.model.service;
 
+import java.util.List;
 import java.util.Map;
+
+import com.turtle.www.member.model.vo.Member;
 
 public interface ProjectMemberService {
 
@@ -10,5 +13,7 @@ public interface ProjectMemberService {
 	 * @return pmNo
 	 */
 	int selectPmNo(Map<String, Object> map);
+
+	List<Member> searchmember(String input);
 
 }

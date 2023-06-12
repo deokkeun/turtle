@@ -25,7 +25,12 @@
 		WHERE MEMBER_EMAIL = #{memberEmail}
 		AND MEMBER_DELETE_FG = 'N'
 	</select>
-
+	
+	<select id="searchmember" resultMap = "member_rm">
+		SELECT MEMBER_EMAIL, MEMBER_NAME
+		FROM MEMBER
+		WHERE MEMBER_NAME = LIKE '%'||?||'%'
+	</select>
 
 
 
