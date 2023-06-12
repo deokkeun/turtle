@@ -60,6 +60,12 @@
         	<button>메모장 테스트</button>
         </form>
 
+        <form action="../project/createProject" method="get">
+        	<button>성훈 테스트</button>
+        </form>
+        
+
+
     </main>
 
     <!-- footer include -->

@@ -29,9 +29,9 @@ onload = function() {
         contentType: 'application/x-www-form-urlencoded',
         data: {
             code: code,
-            client_id: '584967116999-s1skvhb03k99ueq3l69rhnbbrjc6c5bm.apps.googleusercontent.com',
-            client_secret: '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',
-            redirect_uri: 'http://localhost:8080/www/member/login',
+            client_id: '713601013116-33sqneo96i1er8o2e6bs5a8o5522k2rq.apps.googleusercontent.com',
+            client_secret: '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',
+            redirect_uri: 'http://localhost:8080/login/oauth2/google',
             grant_type: 'authorization_code'
         },
         success: function(response) {
