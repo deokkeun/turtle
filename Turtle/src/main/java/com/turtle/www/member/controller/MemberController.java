@@ -1,5 +1,9 @@
 package com.turtle.www.member.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -7,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +25,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.google.gson.Gson;
 import com.turtle.www.member.model.service.MemberService;
 import com.turtle.www.member.model.vo.Member;
 
@@ -31,6 +38,10 @@ public class MemberController {
 	
 	@Autowired
 	private MemberService service;
+	
+	// 이메일 인증
+	@Autowired
+	private JavaMailSender mailSender;
 	
 	/** 로그인 세션이 있는 경우 바로 main페이지로 이동
 	 * @return
@@ -126,6 +137,105 @@ public class MemberController {
 		return service.emailDupCheck(memberEmail);
 		
 	}
+	
+	// mailSending 코드
+	@GetMapping("/sendEmail")
+	@ResponseBody
+	public String mailSending(String inputEmail) {
+
+		//뷰에서 넘어왔는지 확인
+		//System.out.println("이메일 전송");
+		
+//		//난수 생성(인증번호)
+//		Random r = new Random();
+//		int num = r.nextInt(888888) + 111111;  //111111 ~ 999999
+//		System.out.println("인증번호:" + num);
+		
+        // 인증번호 6자리 생성코드(영어 대/소문 + 숫자)
+        String cNumber = "";
+        for(int i=0 ; i< 6 ; i++) {
+           
+           int sel1 = (int)(Math.random() * 3); // 0:숫자 / 1,2:영어
+           
+           if(sel1 == 0) {
+              
+              int num = (int)(Math.random() * 10); // 0~9
+              cNumber += num;
+              
+           }else {
+              
+              char ch = (char)(Math.random() * 26 + 65); // A~Z
+              
+              int sel2 = (int)(Math.random() * 2); // 0:소문자 / 1:대문자
+              
+              if(sel2 == 0) {
+                 ch = (char)(ch + ('a' - 'A')); // 대문자로 변경
+              }
+              
+              cNumber += ch;
+           }
+           
+        }
+		
+		/* 이메일 보내기 */
+        String setFrom = "admin@gmail.com"; //보내는 이메일
+        String toMail = inputEmail; //받는 사람 이메일
+        String title = "회원가입 인증 이메일 입니다.";
+        String content = 
+        		"<p>안녕하세요, Turtle을 방문해주셔서 감사합니다.<br>" +
+                "아래 번호를 입력하여 인증 절차를 완료해 주세요.</p>" +
+                "<br>" + 
+                "<h3>인증 번호는  <span style='color:red'>" + cNumber + "</span> 입니다.</h3>" + 
+                "<br>" + 
+                "<p>해당 인증번호를 인증번호 확인란에 기입하여 주세요.</p>";
+        
+        int result = 0;
+        try {
+            
+            MimeMessage message = mailSender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
+            helper.setFrom(setFrom, "관리자"); // 보내는 사람 지정
+            helper.setTo(toMail);
+            helper.setSubject(title);
+            helper.setText(content,true);
+            mailSender.send(message);
+            
+            Map<String, Object> map = new HashMap<>();
+            map.put("inputEmail", inputEmail);
+            map.put("cNumber", cNumber);
+            
+            // 인증번호를 받은 이메일, 인증번호, 인증번호 발급 시간  -> DB 삽입
+            result = service.insertCertification(map);
+
+            
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+        
+//        String rnum = Integer.toString(cNumber);  //view로 다시 반환할 때 String만 가능
+        
+        return new Gson().toJson(result);
+		
+	}
+
+
+	// 이메일 인증번호 일치 확인 코드
+	@GetMapping("/checkNumber")
+	@ResponseBody
+	public String checkNumber(String inputEmail , String cNumber) {
+		
+	
+        Map<String, Object> map = new HashMap<>();
+        map.put("inputEmail", inputEmail);
+        map.put("cNumber", cNumber);
+		
+		int result = service.checkNumber(map);
+		
+		return new Gson().toJson(result);
+		
+	}
+		
+	
 	
 	
 	

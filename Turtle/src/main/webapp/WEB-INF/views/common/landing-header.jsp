@@ -33,7 +33,7 @@
 				</button>
 				
 				<form action="${contextPath}/member/signUp" method="GET">
-					<button id="signUp-btn">
+					<button id="header-signUp-btn">
 						<div>Sign up for free</div>
 					</button>
 				</form>
