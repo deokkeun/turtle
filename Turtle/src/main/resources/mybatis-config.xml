@@ -21,6 +21,8 @@
 		<typeAlias type="com.turtle.www.chat.model.vo.ChatRoomJoin" alias="chatRoomJoin"/>
 		<typeAlias type="com.turtle.www.chat.model.vo.ChatMessage" alias="chatMessage"/>
 		
+		<typeAlias type="com.turtle.www.memo.model.vo.Memo" alias="memo"/>
+		
 	</typeAliases>
 	
 	<!-- SQL이 작성되는 mapper 파일 위치를 등록 -->
@@ -31,6 +33,7 @@
 		<mapper resource="/mappers/myPage-mapper.xml"/>
 		<mapper resource="/mappers/chat-mapper.xml"/>
 		<mapper resource="/mappers/projectMember-mapper.xml"/>
+		<mapper resource="/mappers/memo-mapper.xml"/>
 	</mappers>
 
 </configuration>
