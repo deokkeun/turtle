@@ -74,7 +74,7 @@ public class MemberServiceImpl implements MemberService {
   //   -------------------------------------------------------------------------------------
   
 	/** [비밀번호]이메일 인증(회원인지 확인)
-	 *
+	 * @author deokkeun
 	 */
 	@Override
 	public String memberConfirmation(String inputEmail) {
@@ -82,7 +82,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	/** [비밀번호]인증 이메일 조회
-	 *
+	 * @author deokkeun
 	 */
 	@Override
 	public int passwordSelectCertification(String sendEmail) {
@@ -90,7 +90,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	/** [비밀번호]인증번호 추가(인증 없는경우)
-	 *
+	 * @author deokkeun
 	 */
 	@Override
 	public int passwordInsertCertification(String sendEmail) throws Exception{
@@ -142,8 +142,9 @@ public class MemberServiceImpl implements MemberService {
 		return result;
 	}
 
+
 	/** [비밀번호]인증번호 수정(인증 받은적 있는경우)
-	 *
+	 * @author deokkeun
 	 */
 	@Override
 	public int passwordUpdateCertification(String sendEmail) throws Exception {
@@ -196,6 +197,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	/** [비밀번호]인증번호 생성
+	 * @author deokkeun
 	 * @return
 	 */
 	public String authenticationNumber() {
@@ -221,7 +223,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	/** [비밀번호]인증번호 확인
-	 *
+	 * @author deokkeun
 	 */
 	@Override
 	public int certificationNumber(String certificationNumber) {

@@ -16,6 +16,7 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,15 +39,12 @@ public class MemberController {
 	
 	private Logger logger = LoggerFactory.getLogger(MemberController.class);
 	
+	// 이메일 인증
 	@Autowired
     private JavaMailSender mailSender;
 	
 	@Autowired
 	private MemberService service;
-	
-	// 이메일 인증
-	@Autowired
-	private JavaMailSender mailSender;
 	
 	/** 로그인 세션이 있는 경우 바로 main페이지로 이동
 	 * @return
