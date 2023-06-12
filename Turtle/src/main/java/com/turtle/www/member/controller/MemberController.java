@@ -1,5 +1,6 @@
 package com.turtle.www.member.controller;
 
+import javax.inject.Inject;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -7,19 +8,24 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.google.gson.Gson;
 import com.turtle.www.member.model.service.MemberService;
 import com.turtle.www.member.model.vo.Member;
+
+
+// @RestController // @Controller + @ResponseBody
 
 @Controller
 @RequestMapping("/member")
@@ -28,8 +34,13 @@ public class MemberController {
 	
 	private Logger logger = LoggerFactory.getLogger(MemberController.class);
 	
+	@Inject
+    JavaMailSender mailSender;
+	
 	@Autowired
 	private MemberService service;
+	
+	
 	
 	/** 로그인 세션이 있는 경우 바로 main페이지로 이동
 	 * @return
@@ -121,13 +132,108 @@ public class MemberController {
 		return "member/findAccount";
 	}
 	
-	/** 비밀번호 찾기
+	/** 비밀번호 찾기 (마이페이지 회원 경우)
 	 * @return
 	 */
 	@GetMapping("/findPassword")
 	public String findPassword() {
 		return "member/findPassword";
 	}
+	
+	/** 비밀번호 찾기 (랜딩페이지 비회원 경우)
+	 * @return
+	 */
+	@GetMapping("/changePw")
+	public String changePw(@RequestParam("memNo") int memNo,
+							Model model) {
+		
+		model.addAttribute("memNo", memNo);
+		
+		return "member/changePw";
+	}
+	
+	/** 이메일 인증(회원인지 확인)
+	 * @param inputEmail
+	 * @return
+	 */
+	@ResponseBody
+	@PostMapping("/findPassword")
+	public String emailDupCheck(@RequestParam("inputEmail") String inputEmail,
+								RedirectAttributes ra,
+								Model model) {
+		
+		String memberEmail = service.emailDupCheck(inputEmail);
+		
+		return new Gson().toJson(memberEmail);
+	}
+	
+	/** 인증번호 전송
+	 * @param toEmail
+	 * @return
+	 */
+	@ResponseBody
+	@GetMapping("/sendEmail")
+	public String sendEmail(@RequestParam("sendEmail") String sendEmail,
+							Model model) throws Exception{
+		
+		int result = 0;
+		
+		int select = service.selectCertification(sendEmail);
+		logger.debug("인증 받은적이 있는지 유무 확인 select = " + select);
+		
+		if(select > 0) {
+			result = service.updateCertification(sendEmail);
+			logger.debug("인증번호 수정(인증 받은적 있는경우) result = " + result);
+			
+			if(result > 0) {
+				model.addAttribute("message", "이메일 발송완료");
+			} else {
+				model.addAttribute("message", "이메일 발송완료");
+			}
+			
+		} else {
+			result = service.insertCertification(sendEmail);
+			logger.debug("인증번호 추가(인증 없는경우) result = " + result);
+			
+			if(result > 0) {
+				model.addAttribute("message", "이메일 발송완료");
+				
+			} else {
+				model.addAttribute("message", "이메일 발송 실패");			
+			}
+		}
+		
+		return new Gson().toJson(result);
+	}
+
+	/** 인증번호 확인
+	 * @param certificationNumber
+	 * @param model
+	 * @return
+	 * @throws Exception
+	 */
+	@ResponseBody
+	@PostMapping("/cNumberValidate")
+	public String certificationNumber(@RequestParam("certificationNumber") String certificationNumber,
+									Model model) throws Exception{
+		int memNo = 0;
+		
+		memNo = service.certificationNumber(certificationNumber);
+		
+		if(memNo > 0) {
+			model.addAttribute("memNo", memNo);
+			
+			logger.debug("인증번호 확인 후 회원 번호 조회 memberNo = " + memNo);
+		} else {
+			
+			logger.debug("인증번호 확인 후 회원 번호 조회 memberNo = " + memNo);
+		}
+		
+		return new Gson().toJson(memNo);
+	}
+	
+	
+	
 	
 	// 테스트용 로그인(나중에 반드시 삭제!!!!!!)
 	@PostMapping("/testLogin")
@@ -148,4 +254,9 @@ public class MemberController {
 		
 		return "redirect:/";
 	}
+	
+	
+	
+	
+	
 }

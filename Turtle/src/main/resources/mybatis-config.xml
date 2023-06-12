@@ -14,6 +14,7 @@
 	<typeAliases>
 		<!-- VO 클래스의 패키지명 + 클래스명 모두 작성하는것이 불편하기 때문에 짧은 별칭 부여 -->
 		<typeAlias type="com.turtle.www.member.model.vo.Member" alias="member"/>
+		<typeAlias type="com.turtle.www.member.model.vo.Certification" alias="certification"/>
 		
 		<typeAlias type="com.turtle.www.projectMember.model.vo.ProjectMember" alias="projectMember"/>
 		

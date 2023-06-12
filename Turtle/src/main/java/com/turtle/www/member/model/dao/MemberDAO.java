@@ -4,6 +4,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.turtle.www.member.model.vo.Certification;
 import com.turtle.www.member.model.vo.Member;
 
 @Repository
@@ -19,9 +20,50 @@ public class MemberDAO {
 	public Member login(Member inputMember) {
 		return sqlSession.selectOne("memberMapper.login", inputMember);
 	}
+
+	/** 이메일 인증(회원인지 확인)
+	 * @param inputEmail
+	 * @return
+	 */
+	public String emailDupCheck(String inputEmail) {
+		return sqlSession.selectOne("memberMapper.emailDupCheck", inputEmail);
+	}
+
+	/** 인증 이메일 조회
+	 * @param sendEmail
+	 * @return
+	 */
+	public int selectCertification(String sendEmail) {
+		return sqlSession.selectOne("memberMapper.selectCertification", sendEmail);
+	}
+
+	/** 인증번호 수정(인증 받은적 있는경우)
+	 * @param certification
+	 * @return
+	 */
+	public int updateCertification(Certification certification) {
+		return sqlSession.update("memberMapper.updateCertification", certification);
+	}
 	
-//	@Autowired
-//	private Logger logger = LoggerFactory.getLogger(MemberDAO.class);
+	/** 인증번호 추가(인증 받은적 없는 경우)
+	 * @param certification
+	 * @return
+	 */
+	public int insertCertification(Certification certification) {
+		return sqlSession.insert("memberMapper.insertCertification", certification);
+	}
+
+	/** 인증번호 확인
+	 * @param certificationNumber
+	 * @return
+	 */
+	public int certificationNumber(String certificationNumber) {
+		return sqlSession.selectOne("memberMapper.certificationNumber", certificationNumber);
+	}
+
+
+	
+
 	
 
 }

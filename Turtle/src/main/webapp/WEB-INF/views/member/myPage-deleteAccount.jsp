@@ -21,19 +21,17 @@
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
   
-           <!-- 회원탈퇴 -->
-           <section id="deleteAccount-box" style="border: 1px solid black;">
-            <form action="../myPage/deleteAccount" method="POST" onsubmit="return deleteAccountValidate()">
+        <!-- 회원탈퇴 -->
+        <form action="../myPage/deleteAccount" method="POST" onsubmit="return deleteAccountValidate()">
+            <section id="deleteAccount-box" style="border: 1px solid black;">
                 <div>회원탈퇴</div>
                 현재 비밀번호<input type="password" name="memberPw" id="memberPw">
                 <div>회원 탈퇴 약관....</div>
                 <input type="checkbox" name="agree" id="agree">
                 <label for="agree">위 약관에 동의합니다.</label>
                 <button>회원 탈퇴</button>
-            </form>
-        </section>
-
-
+            </section>
+        </form>
 
         <div>로그인시(멤버정보)</div>
         <div>회원번호 : ${loginMember.memberNo}</div>

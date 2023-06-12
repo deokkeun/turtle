@@ -17,6 +17,11 @@
         		<input type="hidden" name="memberPw" value="password999!">
         		<button>구구맨테스트로그인</button>
         	</form>
+        	<form action="member/testLogin" method="POST">
+        		<input type="hidden" name="memberEmail" value="deokk91@gmail.com">
+        		<input type="hidden" name="memberPw" value="deokkeun!">
+        		<button>emailTest</button>
+        	</form>
     	</section>
     	
     	<!-- 네이버아이콘  -->
@@ -28,7 +33,7 @@
 	    <section>
 			<section id="login-box">
 				<button id="login-modal-btn">
-					<div><img src="${contextPath}/resources/image/common/login.png" alt="로그인"></div>
+					<div><img style="width: 40px;" src="${contextPath}/resources/images/memberProfile/member.png" alt="로그인"></div>
 					<div>Login</div>
 				</button>
 				

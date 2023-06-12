@@ -16,6 +16,12 @@
 		<result property="socialId" column="SOCIAL_ID"/>
 	</resultMap>
 	
+ 	<resultMap type="certification" id="certification_rm">
+		<id property="email" column="EMAIL"/>
+		<result property="codeNumber" column="CODE_NUMBER"/>
+		<result property="issueDate" column="ISSUE_DATE"/>
+	</resultMap>
+	
 
 	<!-- 로그인(회원정보 가져오기) 프로필 이미지 추가하기 -->
 	<select id="login" parameterType="member" resultMap="member_rm">
@@ -26,7 +32,39 @@
 		AND MEMBER_DELETE_FG = 'N'
 	</select>
 
-
+	<!-- 이메일 인증(회원인지 확인) -->
+	<select id="emailDupCheck" parameterType="string" resultType="string">
+		SELECT MEMBER_EMAIL
+		FROM MEMBER
+		WHERE MEMBER_EMAIL = #{inputEmail}
+		AND MEMBER_DELETE_FG = 'N'
+	</select>
+	
+	<!-- 이메일 인증 유무 확인 -->
+	<select id="selectCertification" resultType="_int">
+		SELECT COUNT(*) FROM CERTIFICATION
+		WHERE EMAIL = #{email}
+	</select>
+	
+	<!-- 인증번호 수정(인증 받은적 있는경우) -->
+	<update id="updateCertification">
+		UPDATE CERTIFICATION 
+		SET CODE_NUMBER = #{codeNumber}, ISSUE_DATE = SYSDATE
+		WHERE EMAIL = #{email}
+	</update>
+	
+	<!-- 인증번호 추가(인증 없는경우) -->
+	<insert id="insertCertification">
+		INSERT INTO CERTIFICATION VALUES(#{email}, #{codeNumber}, SYSDATE)
+	</insert>
+	
+	<!-- 인증번호 확인 -->
+	<select id="certificationNumber" resultType="_int">
+		SELECT MEMBER_NO
+		FROM "MEMBER" m 
+		JOIN CERTIFICATION c  ON(m.MEMBER_EMAIL = c.EMAIL)
+		WHERE c.CODE_NUMBER = #{certificationNumber}
+	</select>
 
 
 </mapper>
