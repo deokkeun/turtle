@@ -1,15 +1,23 @@
 package com.turtle.www.member.model.service;
 
-
+import javax.mail.Multipart;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMessage.RecipientType;
+import javax.mail.internet.MimeMultipart;
 import java.util.Map;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.turtle.www.member.model.dao.MemberDAO;
+import com.turtle.www.member.model.vo.Certification;
 import com.turtle.www.member.model.vo.Member;
 
 /**
@@ -23,9 +31,14 @@ public class MemberServiceImpl implements MemberService {
 	private MemberDAO dao;
 	
 	@Autowired
+    private JavaMailSender mailSender;
+	
+	@Autowired
 	private BCryptPasswordEncoder bcrypt;
 
 	private Logger logger = LoggerFactory.getLogger(MemberServiceImpl.class);
+
+	private Object session;
 	
 	
 	
@@ -56,8 +69,169 @@ public class MemberServiceImpl implements MemberService {
 		// Spring에서 제어를 하기 때문에 Service구문이 간단해진다.
 	}
 
+  
+  
+  //   -------------------------------------------------------------------------------------
+  
+	/** [비밀번호]이메일 인증(회원인지 확인)
+	 *
+	 */
+	@Override
+	public String memberConfirmation(String inputEmail) {
+		return dao.memberConfirmation(inputEmail);
+	}
 
+	/** [비밀번호]인증 이메일 조회
+	 *
+	 */
+	@Override
+	public int passwordSelectCertification(String sendEmail) {
+		return dao.passwordSelectCertification(sendEmail);
+	}
 
+	/** [비밀번호]인증번호 추가(인증 없는경우)
+	 *
+	 */
+	@Override
+	public int passwordInsertCertification(String sendEmail) throws Exception{
+		
+		Certification certification = new Certification();
+		
+		int result = 0;
+
+			// 메일 송/수신 옵션 설정(1명 보내기)
+			MimeMessage message = mailSender.createMimeMessage();
+			message.setFrom(new InternetAddress("deokk91@gmail.com", "TURTLE")); 	// 송신자(보내는 사람) 지정
+			message.addRecipient(RecipientType.TO, new InternetAddress(sendEmail)); // 수신자(받는사람) 지정
+			message.setSubject("TURTLE 비밀번호를 찾기위한 인증번호 입니다."); // 이메일 제목 지정
+			
+			// 메일 콘텐츠 설정
+			Multipart mParts = new MimeMultipart();
+			MimeBodyPart mTextPart = new MimeBodyPart();
+
+			// 인증번호 생성
+			String cNumber = authenticationNumber();
+			
+			// 메일에 출력할 텍스트
+			StringBuffer sb = new StringBuffer(); // 가변성 문자열 저장 객체
+			sb.append("<h3>TURTLE 비밀번호를 찾기위한 인증번호 입니다.</h3>\n");
+			sb.append("<h3>인증 번호 : <span style='color:#2678f3'>"+ cNumber +"</span></h3>\n");
+			
+			String mailContent = sb.toString(); // 문자열로 반환
+			
+			// 메일 콘텐츠 - 내용 , 메일인코딩, "html" 추가 시 HTML 태그가 해석됨
+			mTextPart.setText(mailContent, "UTF-8", "html");
+			mParts.addBodyPart(mTextPart);
+			
+			// 메일 콘텐츠 지정
+			message.setContent(mParts);
+
+			certification.setEmail(sendEmail);
+			certification.setCodeNumber(cNumber);
+			
+			// 인증번호를 받은 이메일, 인증번호, 인증번호 발급 시간  -> DB 삽입
+			result = dao.passwordInsertCertification(certification);
+			
+			if(result > 0) {
+//				메일 전송
+				mailSender.send(message);				
+			} else {
+				logger.debug("memberServiceImpl - 이메일 인증 DB 추가 실패");
+			}
+			
+		return result;
+	}
+
+	/** [비밀번호]인증번호 수정(인증 받은적 있는경우)
+	 *
+	 */
+	@Override
+	public int passwordUpdateCertification(String sendEmail) throws Exception {
+
+		Certification certification = new Certification();
+		
+		int result = 0;
+
+			// 메일 송/수신 옵션 설정(1명 보내기)
+			MimeMessage message = mailSender.createMimeMessage();
+			message.setFrom(new InternetAddress("deokk91@gmail.com", "TURTLE")); 	// 송신자(보내는 사람) 지정
+			message.addRecipient(RecipientType.TO, new InternetAddress(sendEmail)); // 수신자(받는사람) 지정
+			message.setSubject("TURTLE 비밀번호를 찾기위한 인증번호 입니다."); // 이메일 제목 지정
+			
+			// 메일 콘텐츠 설정
+			Multipart mParts = new MimeMultipart();
+			MimeBodyPart mTextPart = new MimeBodyPart();
+
+			// 인증번호 생성
+			String cNumber = authenticationNumber();
+			
+			// 메일에 출력할 텍스트
+			StringBuffer sb = new StringBuffer(); // 가변성 문자열 저장 객체
+			sb.append("<h3>TURTLE 비밀번호를 찾기위한 인증번호 입니다.</h3>\n");
+			sb.append("<h3>인증 번호 : <span style='color:#2678f3'>"+ cNumber +"</span></h3>\n");
+			
+			String mailContent = sb.toString(); // 문자열로 반환
+			
+			// 메일 콘텐츠 - 내용 , 메일인코딩, "html" 추가 시 HTML 태그가 해석됨
+			mTextPart.setText(mailContent, "UTF-8", "html");
+			mParts.addBodyPart(mTextPart);
+			
+			// 메일 콘텐츠 지정
+			message.setContent(mParts);
+
+			certification.setEmail(sendEmail);
+			certification.setCodeNumber(cNumber);
+			
+			// 인증번호를 받은 이메일, 인증번호, 인증번호 발급 시간  -> DB 삽입
+			result = dao.passwordUpdateCertification(certification);
+			
+			if(result > 0) {
+//				메일 전송
+				mailSender.send(message);				
+			} else {
+				logger.debug("memberServiceImpl - 이메일 인증 DB 추가 실패");
+			}
+				
+		return result;
+	}
+
+	/** [비밀번호]인증번호 생성
+	 * @return
+	 */
+	public String authenticationNumber() {
+		// 인증번호 6자리 생성코드(영어 대/소문 + 숫자)
+		String cNumber = "";
+		for(int i = 0; i < 6; i++) {
+			int sel1 = (int)(Math.random() * 3);
+			
+				if(sel1 == 0) {
+					int num = (int)(Math.random() * 10);
+					cNumber += num;
+					
+				} else {
+					char ch = (char)(Math.random() * 26 + 65);
+					int sel2 = (int)(Math.random() * 2);
+					if(sel2 == 0) {
+						ch = (char)(ch + ('a' - 'A'));
+					}
+					cNumber += ch;
+				}
+		}
+		return cNumber;
+	}
+
+	/** [비밀번호]인증번호 확인
+	 *
+	 */
+	@Override
+	public int certificationNumber(String certificationNumber) {
+		return dao.certificationNumber(certificationNumber);
+	}
+
+  
+  //  -------------------------------------------------------------------------------------
+
+  
 	/** 이메일 중복 검사 서비스 구현
 	 *
 	 */
@@ -109,11 +283,7 @@ public class MemberServiceImpl implements MemberService {
 		return dao.checkNumber(map);
 	}
 	
-	
-	
-	
-	
-	
+
 	
 	
 	

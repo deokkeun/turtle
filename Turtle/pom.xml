@@ -129,8 +129,28 @@
 		    <artifactId>google-auth-library-oauth2-http</artifactId>
 		    <version>1.16.0</version>
 		</dependency>
+	      
+    
+		<!-- email -->
+		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+		<dependency>
+		    <groupId>javax.mail</groupId>
+		    <artifactId>mail</artifactId>
+		    <version>1.4.7</version>
+		</dependency>
 		
-		
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context-support</artifactId>
+		    <version>5.3.9</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-webmvc</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+			
 		
 	  <!-- Spring WebSocket -->
       <!-- https://mvnrepository.com/artifact/org.springframework/spring-websocket -->
@@ -150,9 +170,7 @@
          <version>2.9.8</version>
       </dependency>
 		
-		
-		
-	
+    
 		<!-- lombok 라이브러리 -->
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>

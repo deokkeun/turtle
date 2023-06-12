@@ -1,0 +1,881 @@
+2023-06-11 17:06:51 [INFO] 초기화 필터 생성
+2023-06-11 17:07:00 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 17:07:03 [DEBUG] password999! / $2a$10$VGEM0YOzhXPs7.66OD/qmuXuqse4mFyA/RAvyiyFxCosaaNQwb8Gu
+2023-06-11 17:07:04 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-11 17:07:04 [INFO] Running Time : 4015ms
+2023-06-11 17:07:04 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 17:07:04 [INFO] 구구맨 로그인 성공
+2023-06-11 17:07:16 [DEBUG] asdfsadfsadfsdf
+2023-06-11 17:07:42 [INFO] 초기화 필터 파괴
+2023-06-11 17:28:05 [INFO] 초기화 필터 생성
+2023-06-11 17:28:13 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 17:28:17 [DEBUG] password999! / $2a$10$Q4KAClQkCn1RLBVqnIYKZujwSryjwZ7phBNRpbkymzeIqpAlr4yam
+2023-06-11 17:28:17 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-11 17:28:17 [INFO] Running Time : 3535ms
+2023-06-11 17:28:17 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 17:28:17 [INFO] 구구맨 로그인 성공
+2023-06-11 17:30:19 [INFO] 초기화 필터 파괴
+2023-06-11 17:31:16 [INFO] 초기화 필터 생성
+2023-06-11 17:31:25 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 17:31:28 [DEBUG] password999! / $2a$10$gdrYTQb80.snlWH63YvmLO5lHzFdRXvQ8yARbizHcskzgbTSHItVG
+2023-06-11 17:31:29 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-11 17:31:29 [INFO] Running Time : 3726ms
+2023-06-11 17:31:29 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 17:31:29 [INFO] 구구맨 로그인 성공
+2023-06-11 17:33:54 [INFO] 초기화 필터 파괴
+2023-06-11 17:34:51 [INFO] 초기화 필터 생성
+2023-06-11 17:34:59 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 17:35:03 [DEBUG] password999! / $2a$10$k4VBpvYlRGjXTBXKWO5OQ..C5mGNAeRnryXRgbVg.YTidrdJ35tW2
+2023-06-11 17:35:03 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-11 17:35:03 [INFO] Running Time : 3672ms
+2023-06-11 17:35:03 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 17:35:03 [INFO] 구구맨 로그인 성공
+2023-06-11 17:35:24 [DEBUG] test01@gmail.comcontroller
+2023-06-11 17:35:24 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 17:35:24 [ERROR] <<exception>> : org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:93) - 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: ORA-04054: 데이터베이스 링크 'GMAIL.COM'가 존재하지 않습니다
+
+### The error may exist in /mappers/member-mapper.xml
+### The error may involve memberMapper.emailDupCheck-Inline
+### The error occurred while setting parameters
+### SQL: SELECT MEMBER_EMAIL   FROM MEMBER   WHERE MEMBER_EMAIL = test01@gmail.com
+### Cause: java.sql.SQLSyntaxErrorException: ORA-04054: 데이터베이스 링크 'GMAIL.COM'가 존재하지 않습니다
+
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: ORA-04054: 데이터베이스 링크 'GMAIL.COM'가 존재하지 않습니다
+
+
+2023-06-11 17:35:24 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 17:36:57 [DEBUG] test01@gmail.comcontroller
+2023-06-11 17:36:57 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 17:36:57 [ERROR] <<exception>> : org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:93) - 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: ORA-04054: 데이터베이스 링크 'GMAIL.COM'가 존재하지 않습니다
+
+### The error may exist in /mappers/member-mapper.xml
+### The error may involve memberMapper.emailDupCheck-Inline
+### The error occurred while setting parameters
+### SQL: SELECT MEMBER_EMAIL   FROM MEMBER   WHERE MEMBER_EMAIL = test01@gmail.com
+### Cause: java.sql.SQLSyntaxErrorException: ORA-04054: 데이터베이스 링크 'GMAIL.COM'가 존재하지 않습니다
+
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: ORA-04054: 데이터베이스 링크 'GMAIL.COM'가 존재하지 않습니다
+
+
+2023-06-11 17:36:57 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 17:39:05 [INFO] 초기화 필터 파괴
+2023-06-11 17:39:31 [INFO] 초기화 필터 생성
+2023-06-11 17:39:38 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 17:39:42 [DEBUG] password999! / $2a$10$704hVA2.J.q4YQOFANxR3.4vsDOlhCHep1y3nb3jHh90hUZwsVP9e
+2023-06-11 17:39:42 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-11 17:39:42 [INFO] Running Time : 3543ms
+2023-06-11 17:39:42 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 17:39:42 [INFO] 구구맨 로그인 성공
+2023-06-11 17:39:58 [INFO] 초기화 필터 파괴
+2023-06-11 17:40:24 [INFO] 초기화 필터 생성
+2023-06-11 17:40:31 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 17:40:34 [DEBUG] password999! / $2a$10$iy/Y4ylfXqZDFATPOLbU.uO7b0bHiH05qkN/v1O9.lQvvHTycmd9K
+2023-06-11 17:40:34 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-11 17:40:34 [INFO] Running Time : 3642ms
+2023-06-11 17:40:34 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 17:40:34 [INFO] 구구맨 로그인 성공
+2023-06-11 17:40:45 [DEBUG] asdfasdfcontroller
+2023-06-11 17:40:45 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [asdfasdf]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 17:40:45 [INFO] Return Value : null
+2023-06-11 17:40:45 [INFO] Running Time : 65ms
+2023-06-11 17:40:45 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 17:40:45 [DEBUG] nullcontroller
+2023-06-11 17:41:45 [DEBUG] test01@gmail.comcontroller
+2023-06-11 17:41:45 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 17:41:45 [INFO] Return Value : test01@gmail.com
+2023-06-11 17:41:45 [INFO] Running Time : 110ms
+2023-06-11 17:41:45 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 17:41:45 [DEBUG] test01@gmail.comcontroller
+2023-06-11 17:43:38 [INFO] 초기화 필터 파괴
+2023-06-11 17:45:19 [INFO] 초기화 필터 생성
+2023-06-11 17:45:26 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 17:45:30 [DEBUG] password999! / $2a$10$P0.OsPnG0aE801LXCcN5feKVMzypIyWes8Ns5aJZsGguThAXfNUea
+2023-06-11 17:45:30 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-11 17:45:30 [INFO] Running Time : 3539ms
+2023-06-11 17:45:30 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 17:45:30 [INFO] 구구맨 로그인 성공
+2023-06-11 17:45:32 [INFO] 로그아웃 수행됨
+2023-06-11 17:45:33 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 17:45:33 [DEBUG] password999! / $2a$10$GvnpyxW1jRg3jo.1qoHlluCWfwBDXm6VDHYywH/OhVctXjMjAVKmm
+2023-06-11 17:45:34 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-11 17:45:34 [INFO] Running Time : 235ms
+2023-06-11 17:45:34 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 17:45:34 [INFO] 구구맨 로그인 성공
+2023-06-11 17:45:40 [DEBUG] asdfsfcontroller
+2023-06-11 17:45:40 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [asdfsf]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 17:45:40 [INFO] Return Value : null
+2023-06-11 17:45:40 [INFO] Running Time : 60ms
+2023-06-11 17:45:40 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 17:45:40 [DEBUG] nullcontroller
+2023-06-11 17:45:52 [DEBUG] test01@gmail.comcontroller
+2023-06-11 17:45:52 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 17:45:52 [INFO] Return Value : test01@gmail.com
+2023-06-11 17:45:52 [INFO] Running Time : 67ms
+2023-06-11 17:45:52 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 17:45:52 [DEBUG] test01@gmail.comcontroller
+2023-06-11 17:48:21 [INFO] 초기화 필터 파괴
+2023-06-11 17:48:45 [INFO] 초기화 필터 생성
+2023-06-11 17:48:54 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 17:48:58 [DEBUG] password999! / $2a$10$T0MHYp5E1fIZB2Y/EiG36.bmMjOetJdOPgJUExL8WPzKCkpOtqeGy
+2023-06-11 17:48:58 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-11 17:48:58 [INFO] Running Time : 3578ms
+2023-06-11 17:48:58 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 17:48:58 [INFO] 구구맨 로그인 성공
+2023-06-11 17:49:10 [DEBUG] controller
+2023-06-11 17:49:10 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : []
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 17:49:10 [INFO] Return Value : null
+2023-06-11 17:49:10 [INFO] Running Time : 64ms
+2023-06-11 17:49:10 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 17:49:10 [DEBUG] nullcontroller
+2023-06-11 17:49:14 [DEBUG] asdfcontroller
+2023-06-11 17:49:14 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [asdf]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 17:49:14 [INFO] Return Value : null
+2023-06-11 17:49:14 [INFO] Running Time : 71ms
+2023-06-11 17:49:14 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 17:49:14 [DEBUG] nullcontroller
+2023-06-11 17:50:11 [DEBUG] asdfasdfcontroller
+2023-06-11 17:50:11 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [asdfasdf]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 17:50:11 [INFO] Return Value : null
+2023-06-11 17:50:11 [INFO] Running Time : 46ms
+2023-06-11 17:50:11 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 17:50:11 [DEBUG] nullcontroller
+2023-06-11 17:50:32 [DEBUG] asdfsadfcontroller
+2023-06-11 17:50:32 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [asdfsadf]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 17:50:32 [INFO] Return Value : null
+2023-06-11 17:50:32 [INFO] Running Time : 66ms
+2023-06-11 17:50:32 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 17:50:32 [DEBUG] nullcontroller
+2023-06-11 17:50:35 [INFO] 초기화 필터 파괴
+2023-06-11 17:51:43 [INFO] 초기화 필터 생성
+2023-06-11 17:51:51 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 17:51:54 [DEBUG] password999! / $2a$10$0Ik7qmYUc69NzT7qx.ge2.s6q82jD5qtli9/m6Xgqu9yO/3wOZU8W
+2023-06-11 17:51:54 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-11 17:51:54 [INFO] Running Time : 3533ms
+2023-06-11 17:51:54 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 17:51:54 [INFO] 구구맨 로그인 성공
+2023-06-11 17:52:09 [DEBUG] test01@gmail.comcontroller
+2023-06-11 17:52:09 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 17:52:09 [INFO] Return Value : test01@gmail.com
+2023-06-11 17:52:09 [INFO] Running Time : 70ms
+2023-06-11 17:52:09 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 17:52:09 [DEBUG] test01@gmail.comcontroller
+2023-06-11 17:52:17 [DEBUG] asdfsadfcontroller
+2023-06-11 17:52:17 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [asdfsadf]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 17:52:17 [INFO] Return Value : null
+2023-06-11 17:52:17 [INFO] Running Time : 62ms
+2023-06-11 17:52:17 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 17:52:17 [DEBUG] nullcontroller
+2023-06-11 17:52:17 [DEBUG] 이메일을 다시 입력해주세요.
+2023-06-11 17:52:47 [DEBUG] asdfasdfsafcontroller
+2023-06-11 17:52:47 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [asdfasdfsaf]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 17:52:47 [INFO] Return Value : null
+2023-06-11 17:52:47 [INFO] Running Time : 48ms
+2023-06-11 17:52:47 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 17:52:47 [DEBUG] nullcontroller
+2023-06-11 17:52:47 [DEBUG] 이메일을 다시 입력해주세요.
+2023-06-11 17:53:34 [INFO] 초기화 필터 파괴
+2023-06-11 17:54:32 [INFO] 초기화 필터 생성
+2023-06-11 17:54:39 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 17:54:43 [DEBUG] password999! / $2a$10$nqAVnUPOoWJ.4ymHikIoEu8tvTmfvWSUZDBhoxe90Jrhxcsl.g3ZO
+2023-06-11 17:54:43 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-11 17:54:43 [INFO] Running Time : 3598ms
+2023-06-11 17:54:43 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 17:54:43 [INFO] 구구맨 로그인 성공
+2023-06-11 17:54:56 [DEBUG] asdfasdfcontroller
+2023-06-11 17:54:56 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [asdfasdf]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 17:54:56 [INFO] Return Value : null
+2023-06-11 17:54:56 [INFO] Running Time : 53ms
+2023-06-11 17:54:56 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 17:54:56 [DEBUG] nullcontroller
+2023-06-11 17:54:56 [DEBUG] 이메일을 다시 입력해주세요.
+2023-06-11 17:55:47 [INFO] 초기화 필터 파괴
+2023-06-11 17:56:11 [INFO] 초기화 필터 생성
+2023-06-11 17:56:18 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 17:56:21 [DEBUG] password999! / $2a$10$oGJAo9lqaG/8IlRHEH0lHusJBlpUEJ2TR2QUCkiZQZ1wKUq9JHd5y
+2023-06-11 17:56:22 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-11 17:56:22 [INFO] Running Time : 3655ms
+2023-06-11 17:56:22 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 17:56:22 [INFO] 구구맨 로그인 성공
+2023-06-11 17:56:31 [DEBUG] asdfasdfcontroller
+2023-06-11 17:56:31 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [asdfasdf]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 17:56:31 [INFO] Return Value : null
+2023-06-11 17:56:31 [INFO] Running Time : 65ms
+2023-06-11 17:56:31 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 17:56:31 [DEBUG] nullcontroller
+2023-06-11 17:56:31 [DEBUG] 이메일을 다시 입력해주세요.
+2023-06-11 17:56:35 [DEBUG] asdfasdfcontroller
+2023-06-11 17:56:35 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [asdfasdf]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 17:56:35 [INFO] Return Value : null
+2023-06-11 17:56:35 [INFO] Running Time : 50ms
+2023-06-11 17:56:35 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 17:56:35 [DEBUG] nullcontroller
+2023-06-11 17:56:35 [DEBUG] 이메일을 다시 입력해주세요.
+2023-06-11 17:56:50 [INFO] 초기화 필터 파괴
+2023-06-11 17:57:23 [INFO] 초기화 필터 생성
+2023-06-11 17:57:30 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 17:57:34 [DEBUG] password999! / $2a$10$NEL7sXuTgXO/Loql9IYd1egUBd8L7g9N1xqxXg6txSpH659znHTpu
+2023-06-11 17:57:34 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-11 17:57:34 [INFO] Running Time : 3675ms
+2023-06-11 17:57:34 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 17:57:34 [INFO] 구구맨 로그인 성공
+2023-06-11 17:57:42 [DEBUG] asdfasdfcontroller
+2023-06-11 17:57:42 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [asdfasdf]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 17:57:42 [INFO] Return Value : null
+2023-06-11 17:57:42 [INFO] Running Time : 52ms
+2023-06-11 17:57:42 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 17:57:42 [DEBUG] nullcontroller
+2023-06-11 17:57:42 [DEBUG] 이메일을 다시 입력해주세요.
+2023-06-11 17:58:37 [INFO] 초기화 필터 파괴
+2023-06-11 18:01:29 [INFO] 초기화 필터 생성
+2023-06-11 18:01:37 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 18:01:40 [DEBUG] password999! / $2a$10$oNfAn.beunITus6fhg.idO4n761WUbfn5U3bnmDntoPAOxmnkJuf6
+2023-06-11 18:01:40 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-11 18:01:40 [INFO] Running Time : 3533ms
+2023-06-11 18:01:40 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 18:01:40 [INFO] 구구맨 로그인 성공
+2023-06-11 18:01:48 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [ㅁㄴㅇㄹㅁㄴㅇㄹ]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 18:01:48 [INFO] Return Value : null
+2023-06-11 18:01:48 [INFO] Running Time : 57ms
+2023-06-11 18:01:48 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 18:02:04 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 18:02:04 [INFO] Return Value : test01@gmail.com
+2023-06-11 18:02:04 [INFO] Running Time : 79ms
+2023-06-11 18:02:04 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 18:10:19 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.co]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 18:10:19 [INFO] Return Value : null
+2023-06-11 18:10:19 [INFO] Running Time : 62ms
+2023-06-11 18:10:19 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 18:10:28 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 18:10:28 [INFO] Return Value : test01@gmail.com
+2023-06-11 18:10:28 [INFO] Running Time : 46ms
+2023-06-11 18:10:28 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 18:27:26 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.co]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 18:27:27 [INFO] Return Value : null
+2023-06-11 18:27:27 [INFO] Running Time : 48ms
+2023-06-11 18:27:27 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 18:27:33 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 18:27:33 [INFO] Return Value : test01@gmail.com
+2023-06-11 18:27:33 [INFO] Running Time : 52ms
+2023-06-11 18:27:33 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 18:28:33 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 18:28:33 [INFO] Return Value : test01@gmail.com
+2023-06-11 18:28:33 [INFO] Running Time : 85ms
+2023-06-11 18:28:33 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 18:30:20 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 18:30:20 [INFO] Return Value : test01@gmail.com
+2023-06-11 18:30:20 [INFO] Running Time : 90ms
+2023-06-11 18:30:20 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 18:32:13 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 18:32:13 [INFO] Return Value : test01@gmail.com
+2023-06-11 18:32:13 [INFO] Running Time : 46ms
+2023-06-11 18:32:13 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 18:33:16 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 18:33:16 [INFO] Return Value : test01@gmail.com
+2023-06-11 18:33:16 [INFO] Running Time : 52ms
+2023-06-11 18:33:16 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 18:33:47 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 18:33:47 [INFO] Return Value : test01@gmail.com
+2023-06-11 18:33:47 [INFO] Running Time : 50ms
+2023-06-11 18:33:47 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 18:34:08 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 18:34:08 [INFO] Return Value : test01@gmail.com
+2023-06-11 18:34:08 [INFO] Running Time : 62ms
+2023-06-11 18:34:08 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 18:35:02 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 18:35:02 [INFO] Return Value : test01@gmail.com
+2023-06-11 18:35:02 [INFO] Running Time : 70ms
+2023-06-11 18:35:02 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 18:35:49 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 18:35:50 [INFO] Return Value : test01@gmail.com
+2023-06-11 18:35:50 [INFO] Running Time : 71ms
+2023-06-11 18:35:50 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 18:36:26 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 18:36:26 [INFO] Return Value : test01@gmail.com
+2023-06-11 18:36:26 [INFO] Running Time : 84ms
+2023-06-11 18:36:26 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 18:53:07 [INFO] 초기화 필터 파괴
+2023-06-11 19:58:53 [INFO] 초기화 필터 생성
+2023-06-11 20:01:05 [INFO] 초기화 필터 파괴
+2023-06-11 21:07:54 [INFO] 초기화 필터 생성
+2023-06-11 21:08:04 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 21:08:07 [DEBUG] password999! / $2a$10$JHRYuH2zEOAp8qT2zBEjBe6CviujWbIAAwF/p/obSKMj0zKfZZTAG
+2023-06-11 21:08:07 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-11 21:08:07 [INFO] Running Time : 3764ms
+2023-06-11 21:08:07 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 21:08:07 [INFO] 구구맨 로그인 성공
+2023-06-11 21:08:44 [INFO] 초기화 필터 파괴
+2023-06-11 21:15:46 [INFO] 초기화 필터 생성
+2023-06-11 21:15:53 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 21:15:57 [DEBUG] password999! / $2a$10$Wpc1WS3DtiVduAlRIgGQaOoCVxhLG5XrG2n0sb.ZchhAzBb4PFK1e
+2023-06-11 21:15:57 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-11 21:15:57 [INFO] Running Time : 3722ms
+2023-06-11 21:15:57 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 21:15:57 [INFO] 구구맨 로그인 성공
+2023-06-11 21:18:02 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 21:18:02 [DEBUG] password999! / $2a$10$KJCcE224ga.2lLawFjVrVu.DAisQlVK3.NKa4LGPOFo8QAMGl0lVu
+2023-06-11 21:18:03 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-11 21:18:03 [INFO] Running Time : 258ms
+2023-06-11 21:18:03 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 21:18:03 [INFO] 구구맨 로그인 성공
+2023-06-11 21:19:04 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.co]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 21:19:04 [INFO] Return Value : null
+2023-06-11 21:19:04 [INFO] Running Time : 45ms
+2023-06-11 21:19:04 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 21:19:10 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 21:19:10 [INFO] Return Value : deokk91@gmail.com
+2023-06-11 21:19:10 [INFO] Running Time : 74ms
+2023-06-11 21:19:10 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 21:19:11 [DEBUG] deokk91@gmail.comjs -> controller
+2023-06-11 21:20:46 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 21:20:46 [INFO] Return Value : test01@gmail.com
+2023-06-11 21:20:46 [INFO] Running Time : 86ms
+2023-06-11 21:20:46 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 21:20:47 [DEBUG] test01@gmail.comjs -> controller
+2023-06-11 21:22:47 [INFO] 초기화 필터 파괴
+2023-06-11 21:23:30 [INFO] 초기화 필터 생성
+2023-06-11 21:23:37 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 21:23:40 [DEBUG] password999! / $2a$10$nCbcVLapZaMYeU0Ii4/exOfvh5UzLCaGaUkMoKpJdk396.ktrk/fG
+2023-06-11 21:23:40 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-11 21:23:40 [INFO] Running Time : 3575ms
+2023-06-11 21:23:40 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 21:23:40 [INFO] 구구맨 로그인 성공
+2023-06-11 21:23:54 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 21:23:54 [INFO] Return Value : test01@gmail.com
+2023-06-11 21:23:54 [INFO] Running Time : 58ms
+2023-06-11 21:23:54 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 21:23:55 [DEBUG] test01@gmail.comjs -> controller
+2023-06-11 21:24:45 [INFO] 초기화 필터 파괴
+2023-06-11 21:25:27 [INFO] 초기화 필터 생성
+2023-06-11 21:25:34 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 21:25:37 [DEBUG] password999! / $2a$10$MwP83reKc6uaQlg3Diu73OvLPixOVxGXg.NtkMosJxhAB6oXZka/G
+2023-06-11 21:25:38 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-11 21:25:38 [INFO] Running Time : 3754ms
+2023-06-11 21:25:38 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 21:25:38 [INFO] 구구맨 로그인 성공
+2023-06-11 21:25:51 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [test01@gmail.com]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-11 21:25:51 [INFO] Return Value : test01@gmail.com
+2023-06-11 21:25:51 [INFO] Running Time : 72ms
+2023-06-11 21:25:51 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 21:25:52 [DEBUG] test01@gmail.comjs -> controller
+2023-06-11 21:27:17 [INFO] 초기화 필터 파괴
+2023-06-11 22:11:52 [INFO] 초기화 필터 생성
+2023-06-11 22:12:09 [INFO] 로그인 기능 수행됨
+2023-06-11 22:12:09 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 22:12:12 [DEBUG] deokkeun! / $2a$10$vtUyO1qIC2xTgQBXphCrsOMJBo9tlz9mxoNSZfcm5fVO1OIrDRa16
+2023-06-11 22:12:12 [INFO] Return Value : null
+2023-06-11 22:12:12 [INFO] Running Time : 3483ms
+2023-06-11 22:12:12 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 22:12:45 [INFO] 초기화 필터 파괴
+2023-06-11 22:14:45 [INFO] 초기화 필터 생성
+2023-06-11 22:14:54 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 22:14:57 [DEBUG] deokkeun! / $2a$10$4NAjZlv3fyKkBlP9nygYVOEl48zP7oY5n/tdJlFONMLXxdn9P8cFK
+2023-06-11 22:14:57 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-11 22:14:57 [INFO] Running Time : 3707ms
+2023-06-11 22:14:57 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 22:14:57 [INFO] 김덕근 로그인 성공
+2023-06-11 22:15:10 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-11 22:15:10 [INFO] Return Value : deokk91@gmail.com
+2023-06-11 22:15:10 [INFO] Running Time : 64ms
+2023-06-11 22:15:10 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 22:15:11 [INFO] ---------------------------------------
+Start : MemberServiceImpl - sendEmail
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-11 22:15:16 [INFO] Return Value : 0
+2023-06-11 22:15:16 [INFO] Running Time : 5146ms
+2023-06-11 22:15:16 [INFO] End : MemberServiceImpl - sendEmail
+---------------------------------------------
+
+2023-06-11 22:17:11 [INFO] 초기화 필터 파괴
+2023-06-11 22:42:14 [INFO] 초기화 필터 생성
+2023-06-11 22:44:24 [INFO] 초기화 필터 파괴
+2023-06-11 22:47:42 [INFO] 초기화 필터 생성
+2023-06-11 22:51:12 [INFO] 초기화 필터 파괴
+2023-06-11 22:51:48 [INFO] 초기화 필터 생성
+2023-06-11 22:51:56 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 22:51:59 [DEBUG] deokkeun! / $2a$10$Cwywc8jwbdnHSXLTpfF7M.d.dSYQid9qObcynUbBr9tvYRCXQj02W
+2023-06-11 22:51:59 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-11 22:52:00 [INFO] Running Time : 3762ms
+2023-06-11 22:52:00 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 22:52:00 [INFO] 김덕근 로그인 성공
+2023-06-11 22:52:13 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-11 22:52:13 [INFO] Return Value : deokk91@gmail.com
+2023-06-11 22:52:13 [INFO] Running Time : 75ms
+2023-06-11 22:52:13 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 22:52:14 [INFO] ---------------------------------------
+Start : MemberServiceImpl - sendEmail
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-11 22:52:14 [INFO] Return Value : 0
+2023-06-11 22:52:14 [INFO] Running Time : 100ms
+2023-06-11 22:52:14 [INFO] End : MemberServiceImpl - sendEmail
+---------------------------------------------
+
+2023-06-11 22:53:39 [INFO] 초기화 필터 파괴
+2023-06-11 22:56:19 [INFO] 초기화 필터 생성
+2023-06-11 22:56:27 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 22:56:31 [DEBUG] deokkeun! / $2a$10$U2tMU9Gylg1CvU57yYuEiuCIxjXiAj5Qwv/lkDRGUnStLlZGMlede
+2023-06-11 22:56:31 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-11 22:56:31 [INFO] Running Time : 3724ms
+2023-06-11 22:56:31 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 22:56:31 [INFO] 김덕근 로그인 성공
+2023-06-11 22:56:46 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-11 22:56:46 [INFO] Return Value : deokk91@gmail.com
+2023-06-11 22:56:46 [INFO] Running Time : 62ms
+2023-06-11 22:56:46 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 22:56:47 [INFO] ---------------------------------------
+Start : MemberServiceImpl - sendEmail
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-11 22:56:47 [INFO] Return Value : 0
+2023-06-11 22:56:47 [INFO] Running Time : 482ms
+2023-06-11 22:56:47 [INFO] End : MemberServiceImpl - sendEmail
+---------------------------------------------
+
+2023-06-11 22:58:10 [INFO] 초기화 필터 파괴
+2023-06-11 22:58:31 [INFO] 초기화 필터 생성
+2023-06-11 22:58:39 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 22:58:43 [DEBUG] deokkeun! / $2a$10$SaLrgOv.OUFtMikLtAm3vuvkc7aVIQiI55puZ4QhIhL0keExl4VOW
+2023-06-11 22:58:43 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-11 22:58:43 [INFO] Running Time : 3780ms
+2023-06-11 22:58:43 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 22:58:43 [INFO] 김덕근 로그인 성공
+2023-06-11 22:58:59 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-11 22:59:00 [INFO] Return Value : deokk91@gmail.com
+2023-06-11 22:59:00 [INFO] Running Time : 65ms
+2023-06-11 22:59:00 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 22:59:01 [INFO] ---------------------------------------
+Start : MemberServiceImpl - sendEmail
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-11 22:59:01 [INFO] Return Value : 0
+2023-06-11 22:59:01 [INFO] Running Time : 379ms
+2023-06-11 22:59:01 [INFO] End : MemberServiceImpl - sendEmail
+---------------------------------------------
+
+2023-06-11 23:00:28 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-11 23:00:28 [INFO] Return Value : deokk91@gmail.com
+2023-06-11 23:00:28 [INFO] Running Time : 79ms
+2023-06-11 23:00:28 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 23:00:29 [INFO] ---------------------------------------
+Start : MemberServiceImpl - sendEmail
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-11 23:00:35 [INFO] Return Value : 1
+2023-06-11 23:00:35 [INFO] Running Time : 5800ms
+2023-06-11 23:00:35 [INFO] End : MemberServiceImpl - sendEmail
+---------------------------------------------
+
+2023-06-11 23:05:48 [INFO] 초기화 필터 파괴
+2023-06-11 23:25:37 [INFO] 초기화 필터 생성
+2023-06-11 23:25:45 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-11 23:25:49 [DEBUG] deokkeun! / $2a$10$LZCWAQQiKIPtkLsCAVwqNOBl5YXWQ1C9TXuwkiVWHewkGYAVhyUGq
+2023-06-11 23:25:49 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-11 23:25:49 [INFO] Running Time : 3676ms
+2023-06-11 23:25:49 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-11 23:25:49 [INFO] 김덕근 로그인 성공
+2023-06-11 23:26:04 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-11 23:26:04 [INFO] Return Value : deokk91@gmail.com
+2023-06-11 23:26:04 [INFO] Running Time : 69ms
+2023-06-11 23:26:04 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 23:26:05 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-11 23:26:05 [INFO] Return Value : 1
+2023-06-11 23:26:05 [INFO] Running Time : 55ms
+2023-06-11 23:26:05 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-11 23:26:05 [DEBUG] 인증번호 수정(인증받은적이 있는경우)
+2023-06-11 23:26:29 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-11 23:26:29 [INFO] Return Value : deokk91@gmail.com
+2023-06-11 23:26:29 [INFO] Running Time : 52ms
+2023-06-11 23:26:29 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 23:26:30 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-11 23:26:30 [INFO] Return Value : 1
+2023-06-11 23:26:30 [INFO] Running Time : 46ms
+2023-06-11 23:26:30 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-11 23:26:30 [DEBUG] 인증번호 수정(인증받은적이 있는경우)
+2023-06-11 23:27:31 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-11 23:27:31 [INFO] Return Value : deokk91@gmail.com
+2023-06-11 23:27:31 [INFO] Running Time : 67ms
+2023-06-11 23:27:31 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-11 23:27:32 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-11 23:27:32 [INFO] Return Value : 0
+2023-06-11 23:27:32 [INFO] Running Time : 47ms
+2023-06-11 23:27:32 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-11 23:27:32 [DEBUG] 인증번호 추가(인증 없는경우)
+2023-06-11 23:27:32 [INFO] ---------------------------------------
+Start : MemberServiceImpl - insertCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-11 23:27:37 [INFO] Return Value : 1
+2023-06-11 23:27:37 [INFO] Running Time : 4607ms
+2023-06-11 23:27:37 [INFO] End : MemberServiceImpl - insertCertification
+---------------------------------------------
+
+2023-06-11 23:27:37 [DEBUG] 인증번호 추가(인증 없는경우) result = 1
+2023-06-11 23:28:40 [INFO] 초기화 필터 파괴

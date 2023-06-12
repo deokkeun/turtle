@@ -16,7 +16,6 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,12 +28,18 @@ import com.google.gson.Gson;
 import com.turtle.www.member.model.service.MemberService;
 import com.turtle.www.member.model.vo.Member;
 
+
+// @RestController // @Controller + @ResponseBody
+
 @Controller
 @RequestMapping("/member")
 @SessionAttributes({"loginMember"})
 public class MemberController {
 	
 	private Logger logger = LoggerFactory.getLogger(MemberController.class);
+	
+	@Autowired
+    private JavaMailSender mailSender;
 	
 	@Autowired
 	private MemberService service;
@@ -116,7 +121,6 @@ public class MemberController {
 	
 	
 	
-	
 	/** 회원가입 페이지 이동
 	 * @return
 	 */
@@ -125,7 +129,6 @@ public class MemberController {
 		return "member/signUp";
 	}
 	
-	
 	/** 이메일 중복검사
 	 * @param email
 	 * @return
@@ -133,9 +136,7 @@ public class MemberController {
 	@ResponseBody
 	@GetMapping("/emailDupCheck")
 	public int emailDupCheck(@RequestParam("memberEmail") String memberEmail) {
-		
 		return service.emailDupCheck(memberEmail);
-		
 	}
 	
 	// mailSending 코드
@@ -213,9 +214,7 @@ public class MemberController {
         }
         
 //        String rnum = Integer.toString(cNumber);  //view로 다시 반환할 때 String만 가능
-        
         return new Gson().toJson(result);
-		
 	}
 
 
@@ -235,9 +234,6 @@ public class MemberController {
 		
 	}
 		
-	
-	
-	
 	
 	/** 회원가입 기능
 	 * @return
@@ -268,11 +264,10 @@ public class MemberController {
 		ra.addFlashAttribute("message", message);
 		
 		return path;
-		
-		
-		
 	}
 	
+  
+  
 	/** 아이디 찾기
 	 * @return
 	 */
@@ -281,7 +276,7 @@ public class MemberController {
 		return "member/findAccount";
 	}
 	
-	/** 비밀번호 찾기
+	/** 비밀번호 찾기 (마이페이지 회원 경우)
 	 * @return
 	 */
 	@GetMapping("/findPassword")
@@ -289,6 +284,101 @@ public class MemberController {
 		return "member/findPassword";
 	}
 
+	
+	/** 비밀번호 찾기 (랜딩페이지 비회원 경우)
+	 * @return
+	 */
+	@GetMapping("/changePw")
+	public String changePw(@RequestParam("memNo") int memNo,
+							Model model) {
+		
+		model.addAttribute("memNo", memNo);
+		
+		return "member/changePw";
+	}
+	
+	/** [비밀번호]이메일 인증(회원인지 확인)
+	 * @param inputEmail
+	 * @return
+	 */
+	@ResponseBody
+	@PostMapping("/memberConfirmation")
+	public String memberConfirmation(@RequestParam("inputEmail") String inputEmail,
+								RedirectAttributes ra,
+								Model model) {
+		
+		String memberEmail = service.memberConfirmation(inputEmail);
+		
+		return new Gson().toJson(memberEmail);
+	}
+	
+	/** [비밀번호]인증번호 전송
+	 * @param toEmail
+	 * @return
+	 */
+	@ResponseBody
+	@GetMapping("/sendPasswordEmail")
+	public String sendPasswordEmail(@RequestParam("sendEmail") String sendEmail,
+							Model model) throws Exception{
+		
+		int result = 0;
+		
+		int select = service.passwordSelectCertification(sendEmail);
+		logger.debug("인증 받은적이 있는지 유무 확인 select = " + select);
+		
+		if(select > 0) {
+			result = service.passwordUpdateCertification(sendEmail);
+			logger.debug("인증번호 수정(인증 받은적 있는경우) result = " + result);
+			
+			if(result > 0) {
+				model.addAttribute("message", "이메일 발송완료");
+			} else {
+				model.addAttribute("message", "이메일 발송완료");
+			}
+			
+		} else {
+			result = service.passwordInsertCertification(sendEmail);
+			logger.debug("인증번호 추가(인증 없는경우) result = " + result);
+			
+			if(result > 0) {
+				model.addAttribute("message", "이메일 발송완료");
+				
+			} else {
+				model.addAttribute("message", "이메일 발송 실패");			
+			}
+		}
+		
+		return new Gson().toJson(result);
+	}
+
+	/** [비밀번호]인증번호 확인
+	 * @param certificationNumber
+	 * @param model
+	 * @return
+	 * @throws Exception
+	 */
+	@ResponseBody
+	@PostMapping("/cNumberValidate")
+	public String certificationNumber(@RequestParam("certificationNumber") String certificationNumber,
+									Model model) throws Exception{
+		int memNo = 0;
+		
+		memNo = service.certificationNumber(certificationNumber);
+		
+		if(memNo > 0) {
+			model.addAttribute("memNo", memNo);
+			
+			logger.debug("인증번호 확인 후 회원 번호 조회 memberNo = " + memNo);
+		} else {
+			
+			logger.debug("인증번호 확인 후 회원 번호 조회 memberNo = " + memNo);
+		}
+		
+		return new Gson().toJson(memNo);
+	}
+	
+	
+	
 	
 	// 테스트용 로그인(나중에 반드시 삭제!!!!!!)
 	@PostMapping("/testLogin")
@@ -309,4 +399,9 @@ public class MemberController {
 		
 		return "redirect:/";
 	}
+	
+	
+	
+	
+	
 }

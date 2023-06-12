@@ -12,6 +12,44 @@ public interface MemberService {
 	 */
 	Member login(Member inputMember);
 
+  
+  
+  
+	/** [비밀번호]이메일 인증(회원인지 확인)
+	 * @return
+	 */
+	String memberConfirmation(String inputEmail);
+
+	
+	/** [비밀번호]인증 이메일 조회
+	 * @param sendEmail
+	 * @return
+	 */
+	int passwordSelectCertification(String sendEmail);
+	
+	/** [비밀번호]인증번호 수정(인증 받은적 있는경우)
+	 * @param sendEmail
+	 * @param mode 
+	 * @return
+	 */
+	int passwordUpdateCertification(String sendEmail) throws Exception;
+	
+	/** [비밀번호]인증번호 추가(인증 없는경우)
+	 * @param toEmail
+	 * @return 
+	 * @throws Exception 
+	 */
+	int passwordInsertCertification(String sendEmail) throws Exception;
+
+	/** [비밀번호]인증번호 확인
+	 * @param certificationNumber
+	 * @return
+	 */
+	int certificationNumber(String certificationNumber);
+
+  
+  
+  
 	/** 이메일 중복 검사 서비스
 	 * @param memberEmail
 	 * @return
@@ -36,6 +74,7 @@ public interface MemberService {
 	 * @return
 	 */
 	int checkNumber(Map<String, Object> map);
+
 
 
 }

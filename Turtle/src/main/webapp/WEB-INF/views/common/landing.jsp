@@ -36,7 +36,6 @@
   	<c:if test="${empty loginMember}">
   		<div>empty loginMember</div>
   	</c:if>
-       	
        	      
        	<h1><mark>랜딩페이지입니다</mark></h1>
         <!-- 1. 로그인 세션이 있으면 메인페이지로 바로 이동 -->

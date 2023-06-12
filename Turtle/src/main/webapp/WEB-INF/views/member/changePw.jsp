@@ -20,9 +20,9 @@
  		<!-- header include -->
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-  		<!-- 로그인한 경우 비밀번호 확인 후 비밀번호 변경 -->
-        <form action="../myPage/newChangePw" method="POST" onsubmit="return newChangePwValidate()">
-
+        <!-- 비로그인의 경우 이메일 인증 후 비밀번호 변경 -->
+        <form action="myPage/newChangePw" method="POST" onsubmit="return newChangePwValidate()">
+          
             <section id="myPageChangePw-box">
 
                 <section>
@@ -57,15 +57,12 @@
                 
             </section>
 
+            <!-- memNo 비회원인 경우 이메일로 회원 번호 넘겨주고 비밀번호 변경 -->
+            <input type="hidden" name="memNo" value="${memNo}">
+
         </form>
-                
-        <!--   
-        1. 유효성 검사
-        2. form 태그에 담아서 memberNo로 비밀번호 가져와 확인 후
-       	일치하면 암호화해서 db에 저장
-       	비밀번호 변경 성공 시 -> 로그아웃 세션 삭제, 랜딩페이지 이동
-       	비밀번호 변경 실패 시 -> 현재 페이지
-         -->
+  		
+    
 
     </main>
 

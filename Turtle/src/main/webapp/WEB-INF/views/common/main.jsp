@@ -25,7 +25,6 @@
         <H1>덕근 커밋 확인용</H1>
         <H1>수진 커밋 확인용 '_'</H1>
 
-
         <div>로그인시(멤버정보)</div>
         <div>회원번호 : ${loginMember.memberNo}</div>
         <div>회원명 : ${loginMember.memberName}</div>

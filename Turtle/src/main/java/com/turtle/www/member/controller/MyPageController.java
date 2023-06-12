@@ -89,22 +89,39 @@ public class MyPageController {
 	 */
 	@PostMapping("/changePw")
 	public String currentPwCheck(@ModelAttribute("loginMember") Member loginMember,
+								@RequestParam(value="memNo", required=false, defaultValue="0") int memNo,
 								String currentPw,
 								Model model) {
+		int memberNo = 0;
 		
-		int memberNo = loginMember.getMemberNo();
-		
-		int result = service.currentPwCheck(memberNo, currentPw);
-		
-		if(result > 0) {
-			// 비밀번호 일치 -> 비밀번호 변경 페이지로 이동
-			return "member/myPage-changePw";
+		if(loginMember != null) {
+			memberNo = loginMember.getMemberNo();
+			int result = service.currentPwCheck(memberNo, currentPw);
 			
+			if(result > 0) {
+				// 비밀번호 일치 -> 비밀번호 변경 페이지로 이동
+				return "member/myPage-changePw";
+				
+			} else {
+				model.addAttribute("message", "비밀번호가 일치하지 않아 마이페이지로 돌아옵니다.");
+				// 비밀번호 불일치 시 마이페이지 이동
+				return "member/myPage-info";
+			}
 		} else {
-			model.addAttribute("message", "비밀번호가 일치하지 않아 마이페이지로 돌아옵니다.");
-			// 비밀번호 불일치 시 마이페이지 이동
-			return "member/myPage-info";
+			memberNo = memNo;
+			int result = service.currentPwCheck(memberNo, currentPw);
+			
+			if(result > 0) {
+				// 비밀번호 일치 -> 비밀번호 변경 페이지로 이동
+				return "myPage-changePw";
+				
+			} else {
+				model.addAttribute("message", "비밀번호가 일치하지 않아 마이페이지로 돌아옵니다.");
+				// 비밀번호 불일치 시 마이페이지 이동
+				return "myPage-info";
+			}
 		}
+		
 	}
 	
 	/** 새로운 비밀번호로 변경
