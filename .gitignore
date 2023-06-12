@@ -1,7 +1,7 @@
 *.sql
 Servers/
 jspwork/
-privateInfo.xml
+private-info.xml
 
 ### log4j.xml ###
 log4j.xml
