@@ -21,6 +21,13 @@ form[name="signUp-form"] > label{
     margin-top: 40px;
     font-size : 18px;
 }
+.signUp_title {
+    text-align: center;
+    font-size: 30px; 
+    padding-left: 10px; 
+    padding: 0 0 10px 10px;
+    margin-bottom: 30px;
+}
 
 /* input을 감싸고있는 div */
 .signUp-input-area{
