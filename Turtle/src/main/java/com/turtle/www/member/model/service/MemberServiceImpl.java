@@ -1,7 +1,6 @@
 package com.turtle.www.member.model.service;
 
 
-import javax.inject.Inject;
 import javax.mail.Multipart;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
@@ -26,8 +25,8 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private MemberDAO dao;
 	
-	@Inject
-    JavaMailSender mailSender;
+	@Autowired
+    private JavaMailSender mailSender;
 	
 	@Autowired
 	private BCryptPasswordEncoder bcrypt;
@@ -65,29 +64,29 @@ public class MemberServiceImpl implements MemberService {
 		// Spring에서 제어를 하기 때문에 Service구문이 간단해진다.
 	}
 
-	/** 이메일 인증(회원인지 확인)
+	/** [비밀번호]이메일 인증(회원인지 확인)
 	 *
 	 */
 	@Override
-	public String emailDupCheck(String inputEmail) {
-		return dao.emailDupCheck(inputEmail);
+	public String memberConfirmation(String inputEmail) {
+		return dao.memberConfirmation(inputEmail);
 	}
 
 
-	/** 인증 이메일 조회
+	/** [비밀번호]인증 이메일 조회
 	 *
 	 */
 	@Override
-	public int selectCertification(String sendEmail) {
-		return dao.selectCertification(sendEmail);
+	public int passwordSelectCertification(String sendEmail) {
+		return dao.passwordSelectCertification(sendEmail);
 	}
 
 
-	/** 인증번호 추가(인증 없는경우)
+	/** [비밀번호]인증번호 추가(인증 없는경우)
 	 *
 	 */
 	@Override
-	public int insertCertification(String sendEmail) throws Exception{
+	public int passwordInsertCertification(String sendEmail) throws Exception{
 		
 		Certification certification = new Certification();
 		
@@ -122,20 +121,11 @@ public class MemberServiceImpl implements MemberService {
 			// 메일 콘텐츠 지정
 			message.setContent(mParts);
 
-			// MIME 타입 설정 (이메일 내용이 깨질 때 사용)
-			/*MailcapCommandMap MailcapCmdMap = (MailcapCommandMap) CommandMap.getDefaultCommandMap();
-			MailcapCmdMap.addMailcap("text/html;; x-java-content-handler=com.sun.mail.handlers.text_html");
-			MailcapCmdMap.addMailcap("text/xml;; x-java-content-handler=com.sun.mail.handlers.text_xml");
-			MailcapCmdMap.addMailcap("text/plain;; x-java-content-handler=com.sun.mail.handlers.text_plain");
-			MailcapCmdMap.addMailcap("multipart/*;; x-java-content-handler=com.sun.mail.handlers.multipart_mixed");
-			MailcapCmdMap.addMailcap("message/rfc822;; x-java-content-handler=com.sun.mail.handlers.message_rfc822");
-			CommandMap.setDefaultCommandMap(MailcapCmdMap);*/
-
 			certification.setEmail(sendEmail);
 			certification.setCodeNumber(cNumber);
 			
 			// 인증번호를 받은 이메일, 인증번호, 인증번호 발급 시간  -> DB 삽입
-			result = dao.insertCertification(certification);
+			result = dao.passwordInsertCertification(certification);
 			
 			if(result > 0) {
 //				메일 전송
@@ -147,11 +137,11 @@ public class MemberServiceImpl implements MemberService {
 		return result;
 	}
 
-	/** 인증번호 수정(인증 받은적 있는경우)
+	/** [비밀번호]인증번호 수정(인증 받은적 있는경우)
 	 *
 	 */
 	@Override
-	public int updateCertification(String sendEmail) throws Exception {
+	public int passwordUpdateCertification(String sendEmail) throws Exception {
 
 		Certification certification = new Certification();
 		
@@ -186,20 +176,11 @@ public class MemberServiceImpl implements MemberService {
 			// 메일 콘텐츠 지정
 			message.setContent(mParts);
 
-			// MIME 타입 설정 (이메일 내용이 깨질 때 사용)
-			/*MailcapCommandMap MailcapCmdMap = (MailcapCommandMap) CommandMap.getDefaultCommandMap();
-			MailcapCmdMap.addMailcap("text/html;; x-java-content-handler=com.sun.mail.handlers.text_html");
-			MailcapCmdMap.addMailcap("text/xml;; x-java-content-handler=com.sun.mail.handlers.text_xml");
-			MailcapCmdMap.addMailcap("text/plain;; x-java-content-handler=com.sun.mail.handlers.text_plain");
-			MailcapCmdMap.addMailcap("multipart/*;; x-java-content-handler=com.sun.mail.handlers.multipart_mixed");
-			MailcapCmdMap.addMailcap("message/rfc822;; x-java-content-handler=com.sun.mail.handlers.message_rfc822");
-			CommandMap.setDefaultCommandMap(MailcapCmdMap);*/
-
 			certification.setEmail(sendEmail);
 			certification.setCodeNumber(cNumber);
 			
 			// 인증번호를 받은 이메일, 인증번호, 인증번호 발급 시간  -> DB 삽입
-			result = dao.updateCertification(certification);
+			result = dao.passwordUpdateCertification(certification);
 			
 			if(result > 0) {
 //				메일 전송
@@ -212,7 +193,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 
-	/** 인증번호 생성
+	/** [비밀번호]인증번호 생성
 	 * @return
 	 */
 	public String authenticationNumber() {
@@ -237,7 +218,7 @@ public class MemberServiceImpl implements MemberService {
 		return cNumber;
 	}
 
-	/** 인증번호 확인
+	/** [비밀번호]인증번호 확인
 	 *
 	 */
 	@Override

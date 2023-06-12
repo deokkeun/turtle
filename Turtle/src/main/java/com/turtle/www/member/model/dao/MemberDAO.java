@@ -21,39 +21,39 @@ public class MemberDAO {
 		return sqlSession.selectOne("memberMapper.login", inputMember);
 	}
 
-	/** 이메일 인증(회원인지 확인)
+	/** [비밀번호]이메일 인증(회원인지 확인)
 	 * @param inputEmail
 	 * @return
 	 */
-	public String emailDupCheck(String inputEmail) {
-		return sqlSession.selectOne("memberMapper.emailDupCheck", inputEmail);
+	public String memberConfirmation(String inputEmail) {
+		return sqlSession.selectOne("memberMapper.memberConfirmation", inputEmail);
 	}
 
-	/** 인증 이메일 조회
+	/** [비밀번호]인증 이메일 조회
 	 * @param sendEmail
 	 * @return
 	 */
-	public int selectCertification(String sendEmail) {
-		return sqlSession.selectOne("memberMapper.selectCertification", sendEmail);
+	public int passwordSelectCertification(String sendEmail) {
+		return sqlSession.selectOne("memberMapper.passwordSelectCertification", sendEmail);
 	}
 
-	/** 인증번호 수정(인증 받은적 있는경우)
+	/** [비밀번호]인증번호 수정(인증 받은적 있는경우)
 	 * @param certification
 	 * @return
 	 */
-	public int updateCertification(Certification certification) {
-		return sqlSession.update("memberMapper.updateCertification", certification);
+	public int passwordUpdateCertification(Certification certification) {
+		return sqlSession.update("memberMapper.passwordUpdateCertification", certification);
 	}
 	
-	/** 인증번호 추가(인증 받은적 없는 경우)
+	/** [비밀번호]인증번호 추가(인증 받은적 없는 경우)
 	 * @param certification
 	 * @return
 	 */
-	public int insertCertification(Certification certification) {
+	public int passwordInsertCertification(Certification certification) {
 		return sqlSession.insert("memberMapper.insertCertification", certification);
 	}
 
-	/** 인증번호 확인
+	/** [비밀번호]인증번호 확인
 	 * @param certificationNumber
 	 * @return
 	 */

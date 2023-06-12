@@ -22,7 +22,7 @@ findNext[0].addEventListener("click", function() {
     const regExp = /^[\w\-\_]{4,}@[\w\-\_]+(\.\w+){1,3}$/;
     if(regExp.test(inputType[0].value)) {
         $.ajax({
-            url: "findPassword",
+            url: "memberConfirmation",
             data: {"inputEmail" : inputType[0].value},
             type: "POST",
             dataType: "JSON",
@@ -33,7 +33,7 @@ findNext[0].addEventListener("click", function() {
 
                     // 이메일 전송
                     $.ajax({
-                        url : "sendEmail",
+                        url : "sendPasswordEmail",
                         data : {"sendEmail" : inputType[0].value},
                         type : "GET",
                         success : function(result) {

@@ -32,33 +32,33 @@
 		AND MEMBER_DELETE_FG = 'N'
 	</select>
 
-	<!-- 이메일 인증(회원인지 확인) -->
-	<select id="emailDupCheck" parameterType="string" resultType="string">
+	<!-- [비밀번호]이메일 인증(회원인지 확인) -->
+	<select id="memberConfirmation" parameterType="string" resultType="string">
 		SELECT MEMBER_EMAIL
 		FROM MEMBER
 		WHERE MEMBER_EMAIL = #{inputEmail}
 		AND MEMBER_DELETE_FG = 'N'
 	</select>
 	
-	<!-- 이메일 인증 유무 확인 -->
-	<select id="selectCertification" resultType="_int">
+	<!-- [비밀번호]이메일 인증 유무 확인(비회원 포함) -->
+	<select id="passwordSelectCertification" resultType="_int">
 		SELECT COUNT(*) FROM CERTIFICATION
 		WHERE EMAIL = #{email}
 	</select>
 	
-	<!-- 인증번호 수정(인증 받은적 있는경우) -->
-	<update id="updateCertification">
+	<!-- [비밀번호]인증번호 수정(인증 받은적 있는경우) -->
+	<update id="passwordUpdateCertification">
 		UPDATE CERTIFICATION 
 		SET CODE_NUMBER = #{codeNumber}, ISSUE_DATE = SYSDATE
 		WHERE EMAIL = #{email}
 	</update>
 	
-	<!-- 인증번호 추가(인증 없는경우) -->
-	<insert id="insertCertification">
+	<!-- [비밀번호]인증번호 추가(인증 없는경우) -->
+	<insert id="passwordInsertCertification">
 		INSERT INTO CERTIFICATION VALUES(#{email}, #{codeNumber}, SYSDATE)
 	</insert>
 	
-	<!-- 인증번호 확인 -->
+	<!-- [비밀번호]인증번호 확인 -->
 	<select id="certificationNumber" resultType="_int">
 		SELECT MEMBER_NO
 		FROM "MEMBER" m 

@@ -10,33 +10,33 @@ public interface MemberService {
 	 */
 	Member login(Member inputMember);
 
-	/** 이메일 인증(회원인지 확인)
+	/** [비밀번호]이메일 인증(회원인지 확인)
 	 * @return
 	 */
-	String emailDupCheck(String inputEmail);
+	String memberConfirmation(String inputEmail);
 
 	
-	/** 인증 이메일 조회
+	/** [비밀번호]인증 이메일 조회
 	 * @param sendEmail
 	 * @return
 	 */
-	int selectCertification(String sendEmail);
+	int passwordSelectCertification(String sendEmail);
 	
-	/** 인증번호 추가(인증 없는경우)
-	 * @param toEmail
-	 * @return 
-	 * @throws Exception 
-	 */
-	int insertCertification(String sendEmail) throws Exception;
-
-	/** 인증번호 수정(인증 받은적 있는경우)
+	/** [비밀번호]인증번호 수정(인증 받은적 있는경우)
 	 * @param sendEmail
 	 * @param mode 
 	 * @return
 	 */
-	int updateCertification(String sendEmail) throws Exception;
+	int passwordUpdateCertification(String sendEmail) throws Exception;
 	
-	/** 인증번호 확인
+	/** [비밀번호]인증번호 추가(인증 없는경우)
+	 * @param toEmail
+	 * @return 
+	 * @throws Exception 
+	 */
+	int passwordInsertCertification(String sendEmail) throws Exception;
+
+	/** [비밀번호]인증번호 확인
 	 * @param certificationNumber
 	 * @return
 	 */

@@ -1,6 +1,5 @@
 package com.turtle.www.member.controller;
 
-import javax.inject.Inject;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -34,8 +33,8 @@ public class MemberController {
 	
 	private Logger logger = LoggerFactory.getLogger(MemberController.class);
 	
-	@Inject
-    JavaMailSender mailSender;
+	@Autowired
+    private JavaMailSender mailSender;
 	
 	@Autowired
 	private MemberService service;
@@ -152,37 +151,37 @@ public class MemberController {
 		return "member/changePw";
 	}
 	
-	/** 이메일 인증(회원인지 확인)
+	/** [비밀번호]이메일 인증(회원인지 확인)
 	 * @param inputEmail
 	 * @return
 	 */
 	@ResponseBody
-	@PostMapping("/findPassword")
-	public String emailDupCheck(@RequestParam("inputEmail") String inputEmail,
+	@PostMapping("/memberConfirmation")
+	public String memberConfirmation(@RequestParam("inputEmail") String inputEmail,
 								RedirectAttributes ra,
 								Model model) {
 		
-		String memberEmail = service.emailDupCheck(inputEmail);
+		String memberEmail = service.memberConfirmation(inputEmail);
 		
 		return new Gson().toJson(memberEmail);
 	}
 	
-	/** 인증번호 전송
+	/** [비밀번호]인증번호 전송
 	 * @param toEmail
 	 * @return
 	 */
 	@ResponseBody
-	@GetMapping("/sendEmail")
-	public String sendEmail(@RequestParam("sendEmail") String sendEmail,
+	@GetMapping("/sendPasswordEmail")
+	public String sendPasswordEmail(@RequestParam("sendEmail") String sendEmail,
 							Model model) throws Exception{
 		
 		int result = 0;
 		
-		int select = service.selectCertification(sendEmail);
+		int select = service.passwordSelectCertification(sendEmail);
 		logger.debug("인증 받은적이 있는지 유무 확인 select = " + select);
 		
 		if(select > 0) {
-			result = service.updateCertification(sendEmail);
+			result = service.passwordUpdateCertification(sendEmail);
 			logger.debug("인증번호 수정(인증 받은적 있는경우) result = " + result);
 			
 			if(result > 0) {
@@ -192,7 +191,7 @@ public class MemberController {
 			}
 			
 		} else {
-			result = service.insertCertification(sendEmail);
+			result = service.passwordInsertCertification(sendEmail);
 			logger.debug("인증번호 추가(인증 없는경우) result = " + result);
 			
 			if(result > 0) {
@@ -206,7 +205,7 @@ public class MemberController {
 		return new Gson().toJson(result);
 	}
 
-	/** 인증번호 확인
+	/** [비밀번호]인증번호 확인
 	 * @param certificationNumber
 	 * @param model
 	 * @return
