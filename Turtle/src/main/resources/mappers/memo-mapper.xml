@@ -23,4 +23,13 @@
 		ORDER BY MEMO_UPDATE_DATE DESC
 	</select>
 	
+	<update id="updateMemo">
+		UPDATE MEMO SET 
+		UPDATE_PM_NO = ${updatePmNo},
+		MEMO_CONTENT = #{memoContent},
+		MEMO_UPDATE_DATE = SYSDATE,
+		MEMO_BG_COLOR = #{memoBgColor}
+		WHERE MEMO_NO = ${memoNo}
+	</update>
+	
 </mapper>

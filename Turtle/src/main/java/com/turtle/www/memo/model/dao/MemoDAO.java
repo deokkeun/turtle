@@ -23,4 +23,13 @@ public class MemoDAO {
 		return sqlSession.selectList("memoMapper.selectMemoList", workspaceNo);
 	}
 
+	/** 메모장 수정 dao
+	 * @param memo
+	 * @return result
+	 */
+	public int updateMemo(Memo memo) {
+
+		return sqlSession.update("memoMapper.updateMemo", memo);
+	}
+
 }

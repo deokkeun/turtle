@@ -21,4 +21,12 @@ public class MemoServiceImpl implements MemoService {
 		return dao.selectMemoList(workspaceNo);
 	}
 
+	// 메모장 수정 서비스 구현
+	@Override
+	public int updateMemo(Memo memo) {
+
+		return dao.updateMemo(memo);
+	}
+
+	
 }

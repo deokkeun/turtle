@@ -12,6 +12,12 @@ public interface MemoService {
 	 * @return memoList
 	 */
 	List<Memo> selectMemoList(int workspaceNo);
+
+	/** 메모장 수정 서비스
+	 * @param memo
+	 * @return result
+	 */
+	int updateMemo(Memo memo);
 	
 
 }
