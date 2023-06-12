@@ -47,6 +47,11 @@
 	)
 	</insert>
 
+	<select id="searchmember" resultMap = "member_rm">
+		SELECT MEMBER_EMAIL, MEMBER_NAME
+		FROM MEMBER
+		WHERE MEMBER_NAME = LIKE '%'||?||'%'
+	</select>
 
 	<insert id="insertCertification">
 	      INSERT INTO CERTIFICATION VALUES(#{inputEmail}, #{cNumber}, SYSDATE)
