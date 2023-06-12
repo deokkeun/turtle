@@ -31,7 +31,29 @@
 		WHERE MEMBER_EMAIL = #{memberEmail}
 		AND MEMBER_DELETE_FG = 'N'
 	</select>
+	
+	<!-- 이메일 중복검사 -->
+	<select id="emailDupCheck" parameterType="string" resultType="_int">
+		SELECT count(*) FROM MEMBER 
+		WHERE MEMBER_EMAIL = #{memberEmail}
+		AND MEMBER_DELETE_FG = 'N'
+	</select>
+	
+	<!-- 회원가입 -->
+	<insert id="signUp" parameterType="member">
+		INSERT INTO MEMBER VALUES(
+			SEQ_MEMBER_NO.NEXTVAL,
+			#{memberEmail},
+			#{memberPw},
+			#{memberName},
+			NULL,
+			DEFAULT,
+			'/resources/images/memberProfile/member.png',
+			DEFAULT, NULL
+	)
+	</insert>
 
+  
 	<!-- [비밀번호]이메일 인증(회원인지 확인) -->
 	<select id="memberConfirmation" parameterType="string" resultType="string">
 		SELECT MEMBER_EMAIL
@@ -65,6 +87,41 @@
 		JOIN CERTIFICATION c  ON(m.MEMBER_EMAIL = c.EMAIL)
 		WHERE c.CODE_NUMBER = #{certificationNumber}
 	</select>
+
+  
+  
+	<select id="searchmember" resultMap = "member_rm">
+		SELECT MEMBER_EMAIL, MEMBER_NAME
+		FROM MEMBER
+		WHERE MEMBER_NAME = LIKE '%'||?||'%'
+	</select>
+
+	<insert id="insertCertification">
+	      INSERT INTO CERTIFICATION VALUES(#{inputEmail}, #{cNumber}, SYSDATE)
+	</insert>
+	
+   <update id="updateCertification">
+      UPDATE CERTIFICATION SET
+      CODE_NUMBER =  #{cNumber},
+      ISSUE_DATE = SYSDATE
+      WHERE EMAIL = #{inputEmail}
+   </update>
+	
+	<select id="checkNumber" resultType="_int">
+		SELECT 
+         CASE WHEN (SELECT '1' FROM CERTIFICATION
+                  WHERE EMAIL = #{inputEmail}
+                  AND CODE_NUMBER = #{cNumber})  = 1
+         
+            THEN NVL( (SELECT '1' FROM CERTIFICATION
+                  WHERE EMAIL = #{inputEmail}
+                  AND ISSUE_DATE + (INTERVAL '5' MINUTE) >= SYSDATE) , '2') 
+      
+            ELSE '3'   
+         END         
+      FROM DUAL
+	</select>
+
 
 
 </mapper>

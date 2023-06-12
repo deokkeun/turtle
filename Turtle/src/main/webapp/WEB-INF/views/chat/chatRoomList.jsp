@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>채팅방 목록</title>
+    <title>Turtle</title>
 </head>
 <body>
     채팅방리스트 이동 확인

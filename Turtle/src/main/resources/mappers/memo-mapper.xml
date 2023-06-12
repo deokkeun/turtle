@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="memoMapper">
+	
+	<resultMap type="memo" id="memo_rm">
+		<id property="memoNo" column="MEMO_NO"/>
+		
+		<result property="workspaceNo" column="WORKSPACE_NO"/>
+		<result property="pmNo" column="PM_NO"/>
+		<result property="updatePmNo" column="UPDATE_PM_NO"/>
+		<result property="memoContent" column="MEMO_CONTENT"/>
+		<result property="memoRegDate" column="MEMO_REG_DATE"/>
+		<result property="memoUpdateDate" column="MEMO_UPDATE_DATE"/>
+		<result property="memoBgColor" column="MEMO_BG_COLOR"/>
+		<result property="memoSt" column="MEMO_ST"/>
+		
+	</resultMap>
+	
+	<select id="memoMapper.selectMemoList" resultMap="memo_rm">
+		SELECT *
+		FROM MEMO
+		WHERE WORKSPACE_NO = ${workspaceNo}
+		ORDER BY MEMO_UPDATE_DATE DESC
+	</select>
+	
+	<update id="updateMemo">
+		UPDATE MEMO SET 
+		UPDATE_PM_NO = ${updatePmNo},
+		MEMO_CONTENT = #{memoContent},
+		MEMO_UPDATE_DATE = SYSDATE,
+		MEMO_BG_COLOR = #{memoBgColor}
+		WHERE MEMO_NO = ${memoNo}
+	</update>
+	
+</mapper>

@@ -1,12 +1,13 @@
 package com.turtle.www.member.model.service;
 
-
 import javax.mail.Multipart;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMessage.RecipientType;
 import javax.mail.internet.MimeMultipart;
+import java.util.Map;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +20,10 @@ import com.turtle.www.member.model.dao.MemberDAO;
 import com.turtle.www.member.model.vo.Certification;
 import com.turtle.www.member.model.vo.Member;
 
+/**
+ * @author sujinchoi
+ *
+ */
 @Service
 public class MemberServiceImpl implements MemberService {
 	
@@ -64,6 +69,10 @@ public class MemberServiceImpl implements MemberService {
 		// Spring에서 제어를 하기 때문에 Service구문이 간단해진다.
 	}
 
+  
+  
+  //   -------------------------------------------------------------------------------------
+  
 	/** [비밀번호]이메일 인증(회원인지 확인)
 	 *
 	 */
@@ -72,7 +81,6 @@ public class MemberServiceImpl implements MemberService {
 		return dao.memberConfirmation(inputEmail);
 	}
 
-
 	/** [비밀번호]인증 이메일 조회
 	 *
 	 */
@@ -80,7 +88,6 @@ public class MemberServiceImpl implements MemberService {
 	public int passwordSelectCertification(String sendEmail) {
 		return dao.passwordSelectCertification(sendEmail);
 	}
-
 
 	/** [비밀번호]인증번호 추가(인증 없는경우)
 	 *
@@ -110,8 +117,6 @@ public class MemberServiceImpl implements MemberService {
 			sb.append("<h3>TURTLE 비밀번호를 찾기위한 인증번호 입니다.</h3>\n");
 			sb.append("<h3>인증 번호 : <span style='color:#2678f3'>"+ cNumber +"</span></h3>\n");
 			
-			//sb.append("<img src='https://cdn.wikifarmer.com/wp-content/uploads/2022/02/%ED%94%8C%EB%9F%BC%EB%B0%94%EA%B3%A0.jpg'>");
-
 			String mailContent = sb.toString(); // 문자열로 반환
 			
 			// 메일 콘텐츠 - 내용 , 메일인코딩, "html" 추가 시 HTML 태그가 해석됨
@@ -165,8 +170,6 @@ public class MemberServiceImpl implements MemberService {
 			sb.append("<h3>TURTLE 비밀번호를 찾기위한 인증번호 입니다.</h3>\n");
 			sb.append("<h3>인증 번호 : <span style='color:#2678f3'>"+ cNumber +"</span></h3>\n");
 			
-			//sb.append("<img src='https://cdn.wikifarmer.com/wp-content/uploads/2022/02/%ED%94%8C%EB%9F%BC%EB%B0%94%EA%B3%A0.jpg'>");
-
 			String mailContent = sb.toString(); // 문자열로 반환
 			
 			// 메일 콘텐츠 - 내용 , 메일인코딩, "html" 추가 시 HTML 태그가 해석됨
@@ -191,7 +194,6 @@ public class MemberServiceImpl implements MemberService {
 				
 		return result;
 	}
-
 
 	/** [비밀번호]인증번호 생성
 	 * @return
@@ -225,9 +227,63 @@ public class MemberServiceImpl implements MemberService {
 	public int certificationNumber(String certificationNumber) {
 		return dao.certificationNumber(certificationNumber);
 	}
+
+  
+  //  -------------------------------------------------------------------------------------
+
+  
+	/** 이메일 중복 검사 서비스 구현
+	 *
+	 */
+	@Override
+	public int emailDupCheck(String memberEmail) {
+		
+		return dao.emailDupCheck(memberEmail);
+	}
+
+
+
+	/** 회원가입 서비스 구현
+	 *
+	 */
+	@Override
+	public int signUp(Member inputMember) {
+		logger.debug("암호화 전 : " + inputMember.getMemberPw() + " / 암호화 후 : " + bcrypt.encode(inputMember.getMemberPw()));
+		
+		inputMember.setMemberPw(bcrypt.encode(inputMember.getMemberPw())); 
+		
+		int result = dao.signUp(inputMember);
+		
+		return result;
+	}
+
+
+
+
+	// 이메일 인증번호 전송 서비스 구현
+	@Override
+	public int insertCertification(Map<String, Object> map) {
+		
+		  // 1) 입력한 이메일과 일치하는 값이 있으면 수정(UPDATE)
+	     int result = dao.updateCertification(map);
+	     
+	     // 2) 일치하는 이메일이 없는경우 -> 처음으로 인증번호를 발급 받음 -> 삽입(INSERT)
+	     if( result == 0 ) {
+	        result = dao.insertCertification(map);
+	     }
+		
+		
+		return result;
+	}
 	
 	
+	// 이메일 인증번호 일치 확인 서비스 구현
+	@Override
+	public int checkNumber(Map<String, Object> map) {
+		return dao.checkNumber(map);
+	}
 	
+
 	
 	
 	
