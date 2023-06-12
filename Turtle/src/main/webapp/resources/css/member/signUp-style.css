@@ -1,0 +1,131 @@
+/* 회원가입 영역 */
+.signUp-content{
+    display: flex;
+    justify-content: center;
+}
+
+/* 필수 */
+.required{
+    color : red;
+    padding : 0 5px;
+}
+
+/* 회원가입 폼 */
+form[name="signUp-form"]{
+    margin-top: 30px;
+}
+
+/* 회원가입 폼 내부 input 제목(label) */
+form[name="signUp-form"] > label{
+    display: block;
+    margin-top: 40px;
+    font-size : 18px;
+}
+.signUp_title {
+    text-align: center;
+    font-size: 30px; 
+    padding-left: 10px; 
+    padding: 0 0 10px 10px;
+    margin-bottom: 30px;
+}
+
+/* input을 감싸고있는 div */
+.signUp-input-area{
+    width: 500px;
+    height: 50px;
+
+    margin-bottom : 10px;
+
+    border-bottom : 2px solid #ddd;
+
+    display: flex;
+    align-items: center; /* 세로 중앙 */
+}
+
+/* input에 포커스가 맞춰졌을 때 밑줄 색 변화 */
+/* :focus-within  : 내부 input에 포커스가 맞춰졌을 때  */
+.signUp-input-area:focus-within  {
+    border-bottom: 2px solid #455ba8;
+}
+
+/* input태그 */
+.signUp-input-area > input{
+    width: 70%;
+    height: 100%;
+    padding : 15px 10px 5px; /* 상, 좌우, 하 */
+
+    font-size: 16px;
+    font-weight: bold;
+
+    border : 0;
+    outline: 0; /* input 선택 시 테두리 */
+}
+
+
+/* button 태그 */
+.signUp-input-area > button{
+    width: 30%;
+    height: 70%;
+    background-color: white;
+    border : 1px solid gray;
+    cursor: pointer;
+}
+
+
+/* 회원가입 관련 메세지 */
+.signUp-message{
+    font-size: 14px;
+    letter-spacing: -1px; /* 자간 */
+}
+
+.confirm{ color : green;}
+.error{  color : red;  }
+
+
+/* 가입하기 버튼 */
+#signUp-btn{
+    width: 100%;
+    padding : 10px;
+    margin: 50px 0;
+    border : 0;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    color : white;
+    background-color: #455ba8;
+
+    cursor: pointer;
+}
+
+
+.hr-sect {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.35);
+    font-size: 12px;
+    margin: 8px 0px;
+  }
+  .hr-sect::before,
+  .hr-sect::after {
+    content: "";
+    flex-grow: 1;
+    background: rgba(0, 0, 0, 0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+    margin: 0px 16px;
+  }
+
+  #googlesignup{
+	display: block;
+    width: 100%;
+    padding: 17px 0 15px;
+    border-radius: 6px;
+    border: solid 1px rgba(0,0,0,.15);
+    background-color: rgb(255, 255, 255);
+    font-size: 19px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
