@@ -101,9 +101,10 @@
               </div>
             </div>
             <div id="calendar-modal-btn">
-              <button onclick="addEvent()">일정 추가</button>
-              <button onclick="updateEvent()">수정</button>
-              <button id="dEvent" onclick="deleteEvent()">삭제</button>
+              <button id="visibility-btn" style="visibility: hidden;"></button>
+              <button id="deleteEvent-btn" onclick="deleteEvent()">삭제</button>
+              <button id="updateEvent-btn" onclick="updateEvent()">수정</button>
+              <button id="addEvent-btn" onclick="addEvent()">일정 추가</button>
             </div>
           </section>
           <!-- 일정 추가 모달 닫기 -->
@@ -123,5 +124,6 @@
     <script src="${contextPath}/resources/js/main.js"></script>
     <!-- calendar.js 연결 -->
     <script src="${contextPath}/resources/js/calendar/calendar.js"></script>
+    
 </body>
 </html>

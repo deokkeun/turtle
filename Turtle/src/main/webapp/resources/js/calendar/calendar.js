@@ -88,6 +88,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // initialize the calendar
     // -----------------------------------------------------------------
 
+    // 삭제 시 id값 사용
+    var defId = 0;
+
+    // 버튼 컨트롤
+    const visibilityBtn = document.getElementById("visibility-btn");
+    const addEventBtn = document.getElementById("addEvent-btn");
+    const updateEventBtn = document.getElementById("updateEvent-btn");
+    const deleteEventBtn = document.getElementById("deleteEvent-btn");
 
 
     calendar = new Calendar(calendarEl, {
@@ -109,6 +117,15 @@ document.addEventListener('DOMContentLoaded', function() {
       dateClick: function(info) {
         // alert('Date: ' + info.dateStr);
         // alert('Resource ID: ' + info.resource.id);
+
+
+        // 일정 추가,수정,삭제버튼 컨트롤
+        visibilityBtn.style.display = "block";
+        addEventBtn.style.display = "block";
+        updateEventBtn.style.display = "none";
+        deleteEventBtn.style.display = "none";
+
+
         startDate.value = info.dateStr;
         // 모달창 띄우기
         modal("calendar-modal");
@@ -120,12 +137,43 @@ document.addEventListener('DOMContentLoaded', function() {
         // alert('startDate: ' + info.event.startStr);
         // alert('endDate: ' + info.event.endStr);
 
-        
-        console.log(info.event);
+        // 일정 추가,수정,삭제버튼 컨트롤
+        visibilityBtn.style.display = "none";
+        addEventBtn.style.display = "none";
+        updateEventBtn.style.display = "block";
+        deleteEventBtn.style.display = "block";
 
-        // 선택된 이벤트 삭제
+        // console.log(info);
+        defId = info.event._instance.defId;
+
         console.log(info.event._instance.defId);
+        // // 삭제 버튼
+        // const deleteEventBtn = document.getElementById("deleteEvent-btn");
 
+        deleteEventBtn.addEventListener("click", function () {
+
+          if (info.event._instance.defId == defId) {
+            if (confirm("'" + info.event.title + "' 일정을 삭제하시겠습니까?")) {
+              // 확인 클릭 시
+              info.event.remove();
+              
+              // 모달창 제거
+              var modal = document.getElementById("calendar-modal");
+              let removeBg = document.getElementById("bg");
+              // 모달 div 뒤에 희끄무레한 레이어
+              modal.style.display = 'none';
+              removeBg.remove();
+
+              // 초기화
+              inputValue.value = "";
+              startDate.value = "";
+              endDate.value = "";
+
+            }
+          }
+        });
+
+        console.log(info.event);
 
         // 선택한 이벤트(제목, 시작일, 종료일)
         inputValue.value = info.event.title;
@@ -140,14 +188,11 @@ document.addEventListener('DOMContentLoaded', function() {
         info.el.style.borderColor = '#d93025';
         // info.el.style.backgroundColor = '#d93025';
 
-        // 이벤트 삭제 하기 ㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜ
-          // info.event.remove();
-        
+        // 이벤트 삭제 하기
+        // info.event.remove();
        
       }
           
-     
-
     });
 
     calendar.render();
@@ -155,10 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
 // ------------------------------------------------------------------------------------------
-
 
 
 var BgColor = "";
@@ -207,9 +249,6 @@ function addEvent() {
     endDate.value = "";
 
 }
-
-
-
 
 
 // ------------------------------------------------------------------------------------------

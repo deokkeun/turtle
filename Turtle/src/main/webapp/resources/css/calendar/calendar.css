@@ -43,7 +43,7 @@
     flex-direction: column;
     text-align: left;
 }
-#calendar-modal-box > div {
+#calendar-modal-box > div:not(:last-child) {
     width: 100%;
     margin: 20px 0;
     color: rgba(0, 0, 0, 0.5);
