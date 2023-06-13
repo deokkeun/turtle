@@ -24,9 +24,8 @@
     		<span>메모넘버 : ${memo.memoNo}</span>
     		<span class="updatePmNo">최근 수정자 : ${memo.updatePmNo}</span><br>
     		<span class="memoUpdateDate">최근 수정일 : ${memoDate}</span><br>
-    		<div class="memoContent" contenteditable="true" style="background-color: ${memo.memoBgColor}">${memo.memoContent}</div>
+    		<div class="memoContent" contenteditable="true" style="background-color: ${memo.memoBgColor}" tabindex="0">${memo.memoContent}</div>
     	</div>
-    	<button class="test">보내기</button>
     </c:forEach>
     </div>
     
