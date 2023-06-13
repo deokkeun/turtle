@@ -89,11 +89,12 @@
 	</select>
 
   
-  
+  <!-- createProject페이지 회원찾기 -->
 	<select id="searchmember" resultMap = "member_rm">
-		SELECT MEMBER_EMAIL, MEMBER_NAME
+		SELECT *
 		FROM MEMBER
-		WHERE MEMBER_NAME = LIKE '%'||?||'%'
+		WHERE MEMBER_NAME LIKE '%'||#{input}||'%'
+		OR SUBSTR(MEMBER_EMAIL,1,INSTR(MEMBER_EMAIL,'@')-1) LIKE '%'||#{input}||'%'
 	</select>
 
 	<insert id="insertCertification">
