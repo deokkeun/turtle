@@ -12,6 +12,7 @@
     <script src="https://kit.fontawesome.com/0041fb1dcb.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="${contextPath}/resources/css/createWorkspace.css">
+
     <title>Document</title>
 </head>
 <body>
@@ -45,7 +46,7 @@
         </div>
 
         <div class="section1">
-            <a href="/createFroject.html"><i class="fa-solid fa-chevron-left"></i></a>
+            <a href="createProject"><i class="fa-solid fa-chevron-left"></i></a>
             <i class="fa-solid fa-layer-group">워크스페이스 관리</i>
         </div>
         <!-- 워크스페이스 이름 입력 section -->

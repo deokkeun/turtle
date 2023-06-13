@@ -34,8 +34,8 @@ public class ProjectMemberController {
 	
 	
 	@ResponseBody
-	@GetMapping("/searchmember")
-	public void searchmember(HttpServletRequest req, HttpServletResponse resp, @RequestParam("input") String input) throws Exception{
+	@GetMapping(value="/searchmember", produces="text/plain;charset=UTF-8")
+	public String searchmember(HttpServletRequest req, HttpServletResponse resp, @RequestParam("input") String input) throws Exception{
 		
 		
 		
@@ -43,7 +43,7 @@ public class ProjectMemberController {
 	
 		List<Member> mlist = service.searchmember(input);
 			
-		new Gson().toJson(mlist, resp.getWriter());
+		return new Gson().toJson(mlist);
 		
 	
 		

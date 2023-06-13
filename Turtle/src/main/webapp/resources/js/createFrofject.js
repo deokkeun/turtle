@@ -98,37 +98,38 @@ $(document).ready(function() {
 
 
 
-function searchm() {
+/*회원검색 */
 
-
+$('#search-txt').keyup(function() { 
     $.ajax({
 
         url : "searchmember",
         data : {"input" : $('.searchmember').val()},
         type : "GET",
-        datatype : "JSON",
+
 
         success : function(mlist) {
 
             let str = JSON.parse(mlist);
-
+            console.log(str);
             let rex = "";
-            for(let i=""; i<str.length; i++) {
-                rex += "<div class='user'><div type='button' class='btn'> <a class='user-plus'><i class='fa-solid fa-circle-plus'></i></a><span class='user-name'>"+str[i].mbmerName+"</span><span class='user-email' data-email='"+str[i].memberEmail+"'>"+str[i].memberEmail+"</span></div></div>";
+            for(let i=0; i<str.length; i++) {
+                rex += "<div class='user'><div type='button' class='btn'> <a class='user-plus'><i class='fa-solid fa-circle-plus'></i></a><span class='user-name'>"+str[i].memberName+"</span><span class='user-email' data-email='"+str[i].memberEmail+"'>"+str[i].memberEmail+"</span></div></div>";
             }
 
-            $('.user-content').html(rex);
+            $('.search-mem').html(rex);
 
 
         },
 
         error : function(request, status, error) {
         
-        	console.log("ajax 에러발생");
+            console.log("ajax 에러발생");
 
-			console.log("상태코드 : " + request.status); // 404, 500
+            console.log("상태코드 : " + request.status); // 404, 500
 
         }
 
     })
-}
+});
+
