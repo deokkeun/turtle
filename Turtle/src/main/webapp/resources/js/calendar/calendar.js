@@ -1,14 +1,14 @@
 
 //-----------------------------------------------------------
 
-// 로그인 모달 테스트
+// 모달
 function modal(id) {
   var zIndex = 9999;
   var modal = document.getElementById(id);
 
-
   // 모달 div 뒤에 희끄무레한 레이어
   var bg = document.createElement('div');
+  bg.setAttribute("id", "bg");
   bg.setStyle({
       position: 'fixed',
       zIndex: zIndex,
@@ -22,10 +22,11 @@ function modal(id) {
   });
   document.body.append(bg);
 
+
   // 닫기 버튼 처리, 시꺼먼 레이어와 모달 div 지우기
   modal.querySelector('.calendar-modal-close').addEventListener('click', function() {
-      bg.remove();
-      modal.style.display = 'none';
+    bg.remove();
+    modal.style.display = 'none';
   });
   modal.setStyle({
       position: 'fixed',
@@ -51,14 +52,14 @@ Element.prototype.setStyle = function(styles) {
 };
 
 
-
-//-------------------------------------------------------
-
+// ------------------------------------------------------------------------------------------
 
 
-const startDate = document.querySelector(".startDate");
 
-console.log(startDate.value);
+var inputValue = document.querySelector(".inputValue");
+var startDate = document.querySelector(".startDate");
+var endDate = document.querySelector(".endDate");
+
 
 var calendar = null;
 
@@ -82,8 +83,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
+
+
     // initialize the calendar
     // -----------------------------------------------------------------
+
+
 
     calendar = new Calendar(calendarEl, {
       headerToolbar: {
@@ -105,23 +110,109 @@ document.addEventListener('DOMContentLoaded', function() {
         // alert('Date: ' + info.dateStr);
         // alert('Resource ID: ' + info.resource.id);
         startDate.value = info.dateStr;
-
-
-
-
-          // 모달창 띄우기
+        // 모달창 띄우기
         modal("calendar-modal");
 
+      },eventClick: function(info) {
+        // alert('Event: ' + info.event.title);
+        // alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+        // alert('View: ' + info.view.type);
+        // alert('startDate: ' + info.event.startStr);
+        // alert('endDate: ' + info.event.endStr);
+
+        
+        console.log(info.event);
+
+        // 선택된 이벤트 삭제
+        console.log(info.event._instance.defId);
 
 
+        // 선택한 이벤트(제목, 시작일, 종료일)
+        inputValue.value = info.event.title;
+        startDate.value = info.event.startStr;
+        endDate.value = info.event.endStr;
 
+        // 색상선택 불러오기
 
+        modal("calendar-modal");
+
+        // change the border color just for fun
+        info.el.style.borderColor = '#d93025';
+        // info.el.style.backgroundColor = '#d93025';
+
+        // 이벤트 삭제 하기 ㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜ
+          // info.event.remove();
+        
+       
       }
+          
+     
+
     });
 
     calendar.render();
   });
 
+
+
+
+
+// ------------------------------------------------------------------------------------------
+
+
+
+var BgColor = "";
+
+// 색상 추출
+$(".BgColor").click(function() {
+  BgColor = $(this).attr("value");
+  alert(BgColor);
+});
+
+// const inputValue = document.querySelector(".inputValue");
+function addEvent() {
+  // if(inputValue.value == null) {
+  //   return;
+  // }
+
+    var startDay = document.querySelector(".startDate");
+    var endDay = document.querySelector(".endDate");
+
+    if(startDay.value > endDay.value) {
+      alert("종료일이 시작일보다 빠를수 없습니다.");
+      startDay.focus();
+
+      return false;
+    }
+
+
+  calendar.addEvent({
+    title: inputValue.value,
+    start: startDate.value,
+    end: endDate.value,
+    backgroundColor: BgColor});
+
+
+    // 모달창 제거
+    var modal = document.getElementById("calendar-modal");
+    let removeBg = document.getElementById("bg");
+    // 모달 div 뒤에 희끄무레한 레이어
+    modal.style.display = 'none';
+    removeBg.remove();
+
+
+     // 초기화
+    inputValue.value = "";
+    startDate.value = "";
+    endDate.value = "";
+
+}
+
+
+
+
+
+// ------------------------------------------------------------------------------------------
 
 // document.addEventListener('DOMContentLoaded', function() {
 //     var calendarEl = document.getElementById('calendar');
@@ -169,24 +260,6 @@ function savedata(jsondata) {
     alert("에러 발생 : " + error);
   })
 }
-// const inputValue = document.querySelector(".inputValue");
-function addEvent() {
-  // if(inputValue.value == null) {
-  //   return;
-  // }
-const inputValue = document.querySelector(".inputValue").value;
-const startDate = document.querySelector(".startDate").value;
-const endDate = document.querySelector(".endDate").value;
-
-  calendar.addEvent({
-    title: inputValue,
-    start: startDate,
-    end: endDate});
-}
-
-
-
-
 
 
 // 2. ajax로 서버에 전송하여 DB에 저장해야 한다.

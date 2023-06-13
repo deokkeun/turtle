@@ -75,9 +75,6 @@
 		<!-- SockJS 라이브러리를 이용해서 만들어진 웹소켓 객체임을 인식 -->
 		<websocket:sockjs></websocket:sockjs>
 		
-		
 	</websocket:handlers>
-	
-	
 	
 </beans:beans>
