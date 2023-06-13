@@ -91,7 +91,7 @@ $(document).ready(function() {
 
         let res = "";
 
-        res = " <div><div><a><i class='fa-solid fa-bars'></i></a></div><div class='workspace-name'><span>" + name +"</span><a class='change-text'><i class='fa-regular fa-pen-to-square'></i></a></div><div class='remove-btn'><a>삭제</a></div></div>"
+        res = " <div class='wor'><div><a><i class='fa-solid fa-bars'></i></a></div><div class='workspace-name'><span>" + name +"</span><a class='change-text'><i class='fa-regular fa-pen-to-square'></i></a></div><div class='remove-btn'><a>삭제</a></div></div>"
 
         $('.workspace').append(res);
 
@@ -137,9 +137,11 @@ $('.workspace-language a').click(function() {
     for(var i =0; i < cls.length; i++) {
         if(cls[i].getAttribute('id') == name) {
             cls[i].classList.add('active');
+            
+            
         }else {
             cls[i].classList.remove('active');
-            
+           
            
         }
     }
@@ -153,15 +155,6 @@ $(document).ready(function() {
 
     $('.img > a').on('click', function() {
         
-        /*var img = $(this).parent('img');
-        let res2 = "";
-        console.log(img);
-
-        res2 += "<div class='img'>"+img+ "<a><i class='fa-regular fa-circle-xmark' style='color: #ea5353;'></i></a></div>";
-        $('#SELECTED').append(res2);
-        
-        var d1 = $(this).parents('.img');
-        */
         $(this).parents('.img').addClass('animate'); /*클릭시 애니메이션 미완성*/
         $('#SELECTED').append($(this).parents('.img'));
         $('#SELECTED > div a i').attr('class' , "fa-solid fa-circle-xmark");
@@ -182,6 +175,32 @@ $(document).ready(function() {
         $('#'+id1 + '>div').attr('class','img');
     });
     
-   
-    /*a태그 삭제후 변경하기, 옮겨진 div에 click이벤트 바꾸기 */
+
 });
+
+
+/*추가된 워크스페이스 bar를 드래그해서 div 이동시키키(진행중,시간남으면하기) */
+/*
+let dragged = null;
+
+document.addEventListener("dragstart", (event) => {
+  // store a ref. on the dragged elem
+  dragged = event.target;
+});
+
+document.addEventListener("dragover", (event) => {
+  // prevent default to allow drop
+  event.preventDefault();
+});
+
+document.addEventListener("drop", (event) => {
+  // prevent default action (open as link for some elements)
+  event.preventDefault();
+  // move dragged element to the selected drop target
+  if (event.target.className == "dropzone") {
+    dragged.parentNode.removeChild(dragged);
+    event.target.appendChild(dragged);
+  }
+}); 
+*/
+    

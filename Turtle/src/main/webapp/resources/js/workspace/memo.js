@@ -1,25 +1,92 @@
-const memoContentDivs = document.querySelectorAll('.memoContent');
-const memoDetailDivs = document.querySelectorAll('.memoDetail');
-
 // 메모 메세지 테스트
+const memoDetails = document.querySelectorAll('.memoDetail');
 
 
+// 메모 색상
+const colors = ['#FEE182', '#F6A9B0', '#A1D5AE', '#9FDFEB', '#D8BBDC'];
 
-for(let i = 0; i < memoDetailDivs.length; i++) {
+
+// 각각의 memoContent 접근
+memoDetails.forEach((memoDetail) => {
 	
-	const memoDetailDiv = memoDetailDivs[i];
+	// 딜레이 2초 설정
+	let typingTimer;
+  	const delay = 1500; // 2초
 	
-	document.querySelector(".test").addEventListener("click", updateMemo);
+	let isFocused = false;
+	let isFirstClick = true;
+	let currentColor = '';
+	let memoContent = memoDetail.querySelector('.memoContent');
+	let memoBgColor = memoDetail.querySelector('.memoBgColor');
+	let memoNo =  memoDetail.querySelector('.memoNo');
 	
-	//메모 보내기 함수
+  	
+
+	memoContent.addEventListener('focus', function() {
+		isFocused = true;
+	});
+
+	memoContent.addEventListener('blur', function() { 	
+    	isFocused = false;
+    	isFirstClick = true;
+    	memoBgColor.value = currentColor;
+  	});
+
+  	memoContent.addEventListener('click', function() {
+  	
+    	if (isFocused) {
+      		if (isFirstClick) {
+		        currentColor = this.style.backgroundColor;
+		        isFirstClick = false;
+		        memoBgColor.value = currentColor;
+      		} else {
+		        const currentIndex = colors.indexOf(currentColor);
+		        const nextIndex = (currentIndex + 1) % colors.length;
+		        const nextColor = colors[nextIndex];
+		        this.style.backgroundColor = nextColor;
+		        currentColor = nextColor;
+		        memoBgColor.value = currentColor;
+		        
+		        clearTimeout(typingTimer);
+  		
+		  		typingTimer = setTimeout(function() {
+		  			// 1.5초동안 아무런 동작이 없으면 로직 실행  			
+		  			
+		  			changeColor();	
+		  			
+		  		}, delay);
+			}
+    	}    
+    	
+  	});
+  	
+  	memoContent.addEventListener('input', function() {
+  		clearTimeout(typingTimer);
+  		
+  		
+  	});
+  	
+  	memoContent.addEventListener('keyup', function() {
+  		clearTimeout(typingTimer);
+  		
+  		typingTimer = setTimeout(function() {
+  			// 1.5초동안 아무런 동작이 없으면 로직 실행
+  			
+  		updateMemo();	
+  			
+  		}, delay);
+  		
+  	});
+  	
+  	//메모 보내기 함수
 	function updateMemo() {
 				
 			let memo = {
 				"workspaceNo" : workspaceNo,
 				"updatePmNo" : pmNo,
-				"memoContent" : memoDetailDiv.querySelector(".memoContent").innerHTML,
-				"memoBgColor" : memoDetailDiv.querySelector(".memoBgColor").value,
-				"memoNo" : memoDetailDiv.querySelector(".memoNo").value
+				"memoContent" : memoContent.innerHTML,
+				"memoBgColor" : memoBgColor.value,
+				"memoNo" : memoNo.value
 			};
 			
 			
@@ -34,6 +101,16 @@ for(let i = 0; i < memoDetailDivs.length; i++) {
 					
 	}
 	
+	function changeColor() {
+		let memo = {
+			"workspaceNo" : workspaceNo,
+			"memoBgColor" : memoBgColor.value,
+			"memoNo" : memoNo.value
+		};
+		
+		memoSock.send( JSON.stringify(memo) );
+	}
+	
 	// 웹소켓 핸들러에서
 	// s.sendMessage( new TextMessage(message.getPayload()) );
 	// 구문이 수행되어 메세지가 전달된 경우
@@ -45,11 +122,13 @@ for(let i = 0; i < memoDetailDivs.length; i++) {
 		// 전달 받은 메세지를 JS 객체로 변환
 		const memo = JSON.parse(e.data);  // JSON -> JS Object
 		
-		memoDetailDiv.querySelector(".memoUpdateDate").innerHTML = "테스트";
-
-		console.log(memoUpdateDate);
+		memoContent.style.backgroundColor = memo.memoBgColor;
 		
-	}
-	
-	
-}
+  		
+  				
+		
+	};
+  	
+  	
+  	
+});
