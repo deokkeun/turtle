@@ -100,7 +100,7 @@ chattingSock.onmessage = function(e){
 
 	// 채팅창에 채팅 추가
 	display.append(li);
-
+	
 	// 채팅창 제일 밑으로 내리기
 	display.scrollTop = display.scrollHeight;
 	// scrollTop : 스크롤 이동

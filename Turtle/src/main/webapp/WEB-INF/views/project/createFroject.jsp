@@ -63,25 +63,10 @@
                     <div class="user-content">
                         <div class="select">
                             <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" placeholder="이름/이메일을 입력해주세요." class="searchmember" onkeypress="if(event.keyCode == 13) {searchm();}">
+                            <input type="text" placeholder="이름/이메일을 입력해주세요."id="search-txt" class="searchmember">
                         </div>
-                        <div class="user">
-                            <div type="button" class="btn">
-                        
-                                <a class="user-plus"><i class="fa-solid fa-circle-plus"></i></a>
-                                <span class="user-name">정성훈</span>
-                                <span class="user-email" data-email="lkayl9413@gamil.com">lkayl9413@gamil.com</span>
-                                
-                            </div>
-                        </div>
-                        <div class="user">
-                            <div type="button" class="btn">
-                            
-                                <a class="user-plus"><i class="fa-solid fa-circle-plus"></i></a>
-                                <span class="user-name">김덕근</span>
-                                <span class="user-email" data-email="lkayl9412@gamil.com">lkayl9412@gamil.com</span>
-                                
-                            </div>
+                        <div class="search-mem">
+                           
                         </div>
                     </div>
 
