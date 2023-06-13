@@ -73,6 +73,8 @@ document.querySelector("#camera").addEventListener("click", function() {
 document.querySelector("#changePw-btn").addEventListener("click", function() {
     // 모달창 띄우기
     modal("changePw-modal");
+
+    setTimeout(currentPwFocus, 300);
 });
 
 
@@ -147,6 +149,10 @@ document.getElementById("delete-image").addEventListener("click", function() {
 // 비밀번호 입력창
 const currentPw = document.getElementsByClassName("currentPw")[0];
 const currentPwValue = document.getElementsByClassName("currentPw-value")[0];
+
+function currentPwFocus() {
+    currentPw.focus();
+}
 
 currentPw.addEventListener("focus", function() {
     currentPw.classList.add("confirm-border");
