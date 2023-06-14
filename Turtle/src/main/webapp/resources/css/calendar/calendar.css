@@ -60,6 +60,7 @@
 #calendar-modal-btn {
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
 }
 #calendar-modal-btn > button {
     font-size: 14px;

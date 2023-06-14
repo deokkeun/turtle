@@ -61,6 +61,16 @@ var startDate = document.querySelector(".startDate");
 var endDate = document.querySelector(".endDate");
 
 
+var BgColor = "#1A73E8";
+
+// 색상 추출
+$(".BgColor").click(function() {
+  BgColor = $(this).attr("value");
+  alert(BgColor);
+});
+
+
+
 var calendar = null;
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -168,6 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
               inputValue.value = "";
               startDate.value = "";
               endDate.value = "";
+              BgColor = "#1A73E8";
 
             }
           }
@@ -203,14 +214,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // ------------------------------------------------------------------------------------------
 
 
-var BgColor = "";
-
-// 색상 추출
-$(".BgColor").click(function() {
-  BgColor = $(this).attr("value");
-  alert(BgColor);
-});
-
 // const inputValue = document.querySelector(".inputValue");
 function addEvent() {
   // if(inputValue.value == null) {
@@ -227,7 +230,7 @@ function addEvent() {
       return false;
     }
 
-
+  // 일정 추가 
   calendar.addEvent({
     title: inputValue.value,
     start: startDate.value,
@@ -243,10 +246,30 @@ function addEvent() {
     removeBg.remove();
 
 
+    $.ajax({
+      url: 'addEvent', // 저장할 url
+      data: {'title': inputValue.value,
+              'start': startDate.value,
+              'end': endDate.value,
+              'backgroundColor': BgColor},
+      type: 'POST',
+      dataType: 'JSON',
+      success: function(result) {
+        alert("addEvent 성공");
+      },
+      error: function(error) {
+        alert("addEvent 실패");
+
+      }
+    })
+
+
      // 초기화
     inputValue.value = "";
     startDate.value = "";
     endDate.value = "";
+    BgColor = "#1A73E8";
+
 
 }
 
@@ -271,7 +294,7 @@ function allSave() {
       var obj = new Object();
 
       obj.title = allEvent[i]._def.title; // 이벤트 명칭
-      obj.allDay = allEvent[i]._def.allDay; // 하루종일의 이벤트인지 알려주는 boolean값 (true / false)
+      // obj.allDay = allEvent[i]._def.allDay; // 하루종일의 이벤트인지 알려주는 boolean값 (true / false)
       obj.start = allEvent[i]._instance.range.start; // 시작날짜 및 시간
       obj.end = allEvent[i]._instance.range.end; // 마침날짜 및 시간
 
