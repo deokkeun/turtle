@@ -12,20 +12,18 @@
     <!-- <link rel="stylesheet" href="${contextPath}/resources/css/landing-style.css"> --> 
 	
 	<!-- fontawesome -->
-    <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
+    <!--  <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script> -->
     <title>index</title>
 </head>
 
 <body>
     <main>
     <!-- landing-header include -->
-	<jsp:include page="/WEB-INF/views/common/landing-header.jsp" />
+	<%-- <jsp:include page="/WEB-INF/views/common/landing-header.jsp" /> --%>
 
 
       
-    
-
-	<%-- <jsp:forward page="/WEB-INF/views/common/landing.jsp" />  --%>
+	<jsp:forward page="/WEB-INF/views/common/landing.jsp" />
          
     
   <!-- <c:if test="${!empty loginMember}">
@@ -47,9 +45,9 @@
  	<!-- <jsp:include page="/WEB-INF/views/common/landing-footer.jsp" />-->
    
     <!-- jQuery 라이브러리 추가 -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  	<!--  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
   
     <!-- landing.js 연결 -->
-    <script src="${contextPath}/resources/js/landing.js"></script>
+    <!-- <script src="${contextPath}/resources/js/landing.js"></script> -->
 </body>
 </html>
