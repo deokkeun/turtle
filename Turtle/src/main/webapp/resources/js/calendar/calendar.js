@@ -54,13 +54,11 @@ Element.prototype.setStyle = function(styles) {
 
 // ------------------------------------------------------------------------------------------
 
-
-
+const memberNo = document.getElementById("memberNo");
 var inputValue = document.querySelector(".inputValue");
 var startDate = document.querySelector(".startDate");
 var endDate = document.querySelector(".endDate");
-
-
+var textarea = document.querySelector("#textarea");
 var BgColor = "#1A73E8";
 
 // 색상 추출
@@ -128,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // alert('Date: ' + info.dateStr);
         // alert('Resource ID: ' + info.resource.id);
 
+        console.log(info);
 
         // 일정 추가,수정,삭제버튼 컨트롤
         visibilityBtn.style.display = "block";
@@ -135,11 +134,15 @@ document.addEventListener('DOMContentLoaded', function() {
         updateEventBtn.style.display = "none";
         deleteEventBtn.style.display = "none";
 
+        // 초기화
+        reset();
+
 
         startDate.value = info.dateStr;
         // 모달창 띄우기
         modal("calendar-modal");
 
+      
       },eventClick: function(info) {
         // alert('Event: ' + info.event.title);
         // alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
@@ -153,13 +156,15 @@ document.addEventListener('DOMContentLoaded', function() {
         updateEventBtn.style.display = "block";
         deleteEventBtn.style.display = "block";
 
+        // 일정 수정
+        updateEventBtn.addEventListener("click", function() {
+          alert("수정 클릭");
+        })
+        
         // console.log(info);
         defId = info.event._instance.defId;
 
-        console.log(info.event._instance.defId);
-        // // 삭제 버튼
-        // const deleteEventBtn = document.getElementById("deleteEvent-btn");
-
+        // 일정 삭제
         deleteEventBtn.addEventListener("click", function () {
 
           if (info.event._instance.defId == defId) {
@@ -175,32 +180,31 @@ document.addEventListener('DOMContentLoaded', function() {
               removeBg.remove();
 
               // 초기화
-              inputValue.value = "";
-              startDate.value = "";
-              endDate.value = "";
-              BgColor = "#1A73E8";
+              reset();
 
             }
+            return true;
           }
         });
 
         console.log(info.event);
+
+        // 캘린더 번호로 확인 하기
 
         // 선택한 이벤트(제목, 시작일, 종료일)
         inputValue.value = info.event.title;
         startDate.value = info.event.startStr;
         endDate.value = info.event.endStr;
 
-        // 색상선택 불러오기
+        // 내용 불러오기!!!!!!!!!!!!!
+        textarea.value = textarea.value;
 
+        // 모달창 열기
         modal("calendar-modal");
 
         // change the border color just for fun
-        info.el.style.borderColor = '#d93025';
+        // info.el.style.borderColor = '#d93025';
         // info.el.style.backgroundColor = '#d93025';
-
-        // 이벤트 삭제 하기
-        // info.event.remove();
        
       }
           
@@ -230,6 +234,9 @@ function addEvent() {
       return false;
     }
 
+
+    console.log(calendar);
+
   // 일정 추가 
   calendar.addEvent({
     title: inputValue.value,
@@ -246,32 +253,49 @@ function addEvent() {
     removeBg.remove();
 
 
-    $.ajax({
-      url: 'addEvent', // 저장할 url
-      data: {'title': inputValue.value,
-              'start': startDate.value,
-              'end': endDate.value,
-              'backgroundColor': BgColor},
-      type: 'POST',
-      dataType: 'JSON',
-      success: function(result) {
-        alert("addEvent 성공");
-      },
-      error: function(error) {
-        alert("addEvent 실패");
 
-      }
-    })
+    allSave();
+    reset();
+    // $.ajax({
+    //   url: 'addEvent', // 저장할 url
+    //   data: {'title': inputValue.value,
+    //           'start': startDate.value,
+    //           'end': endDate.value,
+    //           'textarea': textarea.value,
+    //           'backgroundColor': BgColor},
+    //   type: 'POST',
+    //   dataType: 'JSON',
+    //   success: function(result) {
+    //     alert("addEvent 성공");
 
-
-     // 초기화
-    inputValue.value = "";
-    startDate.value = "";
-    endDate.value = "";
-    BgColor = "#1A73E8";
-
+    //     // 초기화
+    //     reset();
+    //   },
+    //   error: function(error) {
+    //     alert("addEvent 실패");
+    //   }
+    // })
 
 }
+
+
+
+
+
+
+
+
+
+
+// 초기화
+function reset() {
+  inputValue.value = "";
+  startDate.value = "";
+  endDate.value = "";
+  textarea.value = "";
+  BgColor = "#1A73E8";
+} 
+
 
 
 // ------------------------------------------------------------------------------------------
@@ -293,10 +317,12 @@ function allSave() {
     for(var i = 0; i < allEvent.length; i++) {
       var obj = new Object();
 
+      obj.memberNo = memberNo.value;
       obj.title = allEvent[i]._def.title; // 이벤트 명칭
       // obj.allDay = allEvent[i]._def.allDay; // 하루종일의 이벤트인지 알려주는 boolean값 (true / false)
       obj.start = allEvent[i]._instance.range.start; // 시작날짜 및 시간
       obj.end = allEvent[i]._instance.range.end; // 마침날짜 및 시간
+      obj.textarea = textarea.value;
 
       events.push(obj);
     }
@@ -312,11 +338,12 @@ function savedata(jsondata) {
     data: {'allData': jsondata},
     type: 'POST',
     dataType: 'text',
-    url: '', // 저장할 url
+    url: 'addEvent', // 저장할 url
     async: false
   })
   .done(function(result) {
-
+    alert("addEvent  전송성공 : " + result);
+    
   })
   .fail(function(request, status, error) {
     alert("에러 발생 : " + error);
