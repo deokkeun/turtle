@@ -62,9 +62,6 @@
           </section>
           
 
-
-
-
         <!-- 일정 추가 모달창 -->
         <section id="calendar-modal">
           <section id="calendar-modal-box">
@@ -79,6 +76,10 @@
             <div>
               <div>종료일</div>
               <input type="date" class="endDate input-box">
+            </div>
+            <div>
+              <div>내용</div>
+              <textarea name="textarea" id="textarea" cols="30px" rows="3" placeholder="내용을 입력해주세요"></textarea>
             </div>
             <div>
               <div>색상</div>
@@ -101,10 +102,12 @@
               </div>
             </div>
             <div id="calendar-modal-btn">
-              <button onclick="addEvent()">일정 추가</button>
-              <button onclick="updateEvent()">수정</button>
-              <button id="dEvent" onclick="deleteEvent()">삭제</button>
-            </div>
+              <button id="visibility-btn" style="visibility: hidden;"></button>
+              <button id="deleteEvent-btn" onclick="deleteEvent()">삭제</button>
+              <button id="updateEvent-btn" onclick="updateEvent()">수정</button>
+              <button id="addEvent-btn" onclick="addEvent()">일정 추가</button>
+              <input type="hidden" id="memberNo" value="${loginMember.memberNo}">
+            </div> 
           </section>
           <!-- 일정 추가 모달 닫기 -->
           <a class="calendar-modal-close fa-solid fa-xmark"></a>
@@ -123,5 +126,6 @@
     <script src="${contextPath}/resources/js/main.js"></script>
     <!-- calendar.js 연결 -->
     <script src="${contextPath}/resources/js/calendar/calendar.js"></script>
+    
 </body>
 </html>
