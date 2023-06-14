@@ -14,6 +14,7 @@
 /* 헤더 전체 박스 */
 #header-landing-box {
     border: 1px solid black;
+    margin-top: 150px;
 }
 
 /* 헤더 박스 */
@@ -21,7 +22,7 @@
     width: 90%;
     height: 80px;
     display: flex;
-    justify-content: space-between;
+   /* justify-content: space-between;
     align-items: center;
     background-color: transparent;
     position: sticky;
@@ -190,4 +191,20 @@
     font-size: 12px;
     color:rgba(0, 0, 0, 0.5);
     margin-top: 10px;
+}
+
+
+/*결과값 확인용(임시로 늘려놓은거임)*/
+.empty {
+	margin-top: 20px;	
+}
+
+
+/*결과값 확인용(임시로 늘려놓은거임)*/
+.contentEmpty {
+	margin-top: 20px;
+}
+
+h1 {
+	margin-top: 20px;
 }
