@@ -7,19 +7,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turtle</title>
-	<!-- landing-style.css -->
-    <link rel="stylesheet" href="${contextPath}/resources/css/landing-style.css">
+    <meta content="" name="description">
+  	<meta content="" name="keywords">
+  	
+    <title>회원가입</title>
+    
+    <!-- Favicons -->
+  	<link href="${contextPath}/resources/favicon/favicon-16x16.png" rel="icon">
+  	<link href="${contextPath}/resources/favicon/apple-icon-60x60.png" rel="apple-touch-icon">
+    
 	<!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
+	
+	<!-- Vendor CSS Files -->
+	<link href="${contextPath}/resources/vendor/aos/aos.css" rel="stylesheet">
+	<link href="${contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="${contextPath}/resources/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+	<link href="${contextPath}/resources/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+	<link href="${contextPath}/resources/vendor/remixicon/remixicon.css" rel="stylesheet">
+	<link href="${contextPath}/resources/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
+	<!-- 헤더, 회원가입 css  -->
+    <link rel="stylesheet" href="${contextPath}/resources/css/common/landing-header.css" />
     <link rel="stylesheet" href="${contextPath}/resources/css/member/signUp-style.css" />
 
      <!-- 구글로그인 -->
      <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
+
 <body>
     <main>
-        <!-- landing-header include -->
+        <!-- 랜딩 헤더.jsp  -->
        	<jsp:include page="/WEB-INF/views/common/landing-header.jsp" />
 		
 
@@ -142,16 +160,23 @@
         </c:if> --%>
 
 		
-
     </main>
 
-    <!-- landing-footer include -->
-   	<jsp:include page="/WEB-INF/views/common/landing-footer.jsp" />
-    
-    <!-- jQuery 라이브러리 추가 -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<!-- jQuery 라이브러리 추가 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+    			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   
+   	<!-- Vendor JS Files -->	  
+	<script src="${contextPath}/resources/vendor/purecounter/purecounter_vanilla.js"></script>
+	<script src="${contextPath}/resources/vendor/aos/aos.js"></script>
+	<script src="${contextPath}/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="${contextPath}/resources/vendor/glightbox/js/glightbox.min.js"></script>
+	<script src="${contextPath}/resources/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+	<script src="${contextPath}/resources/vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="${contextPath}/resources/vendor/php-email-form/validate.js"></script>
+  
     <!-- landing.js 연결 -->
-    <script src="${contextPath}/resources/js/landing.js"></script>
+    <script src="${contextPath}/resources/js/landing2.js"></script>
     <script src="${contextPath}/resources/js/member/signUp.js"></script>
 
 </body>
