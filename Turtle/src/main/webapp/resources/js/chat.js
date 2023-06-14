@@ -85,7 +85,7 @@ chattingSock.onmessage = function(e){
 
 	
 	if( chatMessage.memberName == previousMemberName ){
-		li.append(p);
+		li.append(p,span);
 
 	}else if(chatMessage.memberName != previousMemberName){
 		li.innerHTML = "<hr><b>"  + chatMessage.memberName  +  "</b>";
@@ -106,8 +106,7 @@ chattingSock.onmessage = function(e){
 	// scrollTop : 스크롤 이동
 	// scrollHeight : 스크롤되는 요소의 전체 높이
 	
-}
-
+	
 
 
 // 현재 시간 출력 함수
@@ -115,12 +114,12 @@ chattingSock.onmessage = function(e){
 function currentTime(){
 	const now = new Date();
 
-	const time = now.getFullYear() + "년 " 
-			   + addZero( now.getMonth() + 1 ) + "월 "
-			   + addZero( now.getDate() ) + "일 "
-			   + addZero( now.getHours()  ) + ":" 
-			   + addZero( now.getMinutes() ) + ":" 
-			   + addZero( now.getSeconds() ) + " "; 
+	var hh= now.getHours();
+	var apm = hh > 12 ? "오후":"오전";
+
+	const time = " " + addZero( apm )
+				+ " "+ addZero(now.getHours() ) + ":" 
+			   + addZero( now.getMinutes() ); 
 
 	return time;
 }
@@ -128,6 +127,7 @@ function currentTime(){
 // 10보다 작을 경우 앞에 0을 붙이는 함수
 function addZero(temp){
 	return temp < 10 ? "0" + temp : temp;;
+}
 }
 
 
