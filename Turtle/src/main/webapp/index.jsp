@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 	<!-- landing-style.css -->
-    <link rel="stylesheet" href="${contextPath}/resources/css/landing-style.css"> 
+    <!-- <link rel="stylesheet" href="${contextPath}/resources/css/landing-style.css"> --> 
 	
 	<!-- fontawesome -->
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
