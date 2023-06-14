@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 100px auto;
+    margin: 80px auto;
 }
 /* 제목 */
 #myPageChangePw-box > section:nth-child(1){

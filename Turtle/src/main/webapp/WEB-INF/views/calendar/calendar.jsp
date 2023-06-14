@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
 	<!-- calendar.css -->
     <link rel="stylesheet" href="${contextPath}/resources/css/calendar/calendar.css">
-	<!-- fontawesome -->
-	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
-	<!-- fullcalendar -->
-	<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+    <!-- fullcalendar -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
     <script src="${contextPath}/resources/js/calendar/ko.global.js"></script>
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <main>
@@ -67,15 +67,45 @@
 
         <!-- 일정 추가 모달창 -->
         <section id="calendar-modal">
-          <div>
-            일정
-            <input type="text" class="inputValue" placeholder="Enter new To-do">
-            시작일
-            <input type="date" class="startDate">
-            종료일
-            <input type="date" class="endDate">
-            <button onclick="addEvent()">일정 추가</button>
-          </div>
+          <section id="calendar-modal-box">
+            <div>
+              <div>일정</div>
+              <input type="text" class="inputValue input-box" placeholder="Enter new To-do">
+            </div>
+            <div>
+              <div>시작일</div>
+              <input type="date" class="startDate input-box">
+            </div>
+            <div>
+              <div>종료일</div>
+              <input type="date" class="endDate input-box">
+            </div>
+            <div>
+              <div>색상</div>
+              <div id="color-box">
+                <div class="BgColor" value="red">
+                  <div style="background-color: red;"></div>
+                </div>
+                <div class="BgColor" value="orange">
+                  <div style="background-color: orange;"></div>
+                </div>
+                <div class="BgColor" value="yellow">
+                  <div style="background-color: yellow;"></div>
+                </div>
+                <div class="BgColor" value="yellowgreen">
+                  <div style="background-color: yellowgreen;"></div>
+                </div>
+                <div class="BgColor" value="green">
+                  <div style="background-color: green;"></div>
+                </div>
+              </div>
+            </div>
+            <div id="calendar-modal-btn">
+              <button onclick="addEvent()">일정 추가</button>
+              <button onclick="updateEvent()">수정</button>
+              <button id="dEvent" onclick="deleteEvent()">삭제</button>
+            </div>
+          </section>
           <!-- 일정 추가 모달 닫기 -->
           <a class="calendar-modal-close fa-solid fa-xmark"></a>
         </section>

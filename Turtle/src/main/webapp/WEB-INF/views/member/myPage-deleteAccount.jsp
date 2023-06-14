@@ -20,29 +20,39 @@
  		<!-- header include -->
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-  
-        <!-- 회원탈퇴 -->
-        <form action="../myPage/deleteAccount" method="POST" onsubmit="return deleteAccountValidate()">
-            <section id="deleteAccount-box" style="border: 1px solid black;">
-                <div>회원탈퇴</div>
-                현재 비밀번호<input type="password" name="memberPw" id="memberPw">
-                <div>회원 탈퇴 약관....</div>
-                <input type="checkbox" name="agree" id="agree">
-                <label for="agree">위 약관에 동의합니다.</label>
-                <button>회원 탈퇴</button>
+           <section id="deleteAccount-title">
+               <div>회원탈퇴</div>
+           </section>
+           
+           <!-- 회원탈퇴 -->
+           <form action="../myPage/deleteAccount" method="POST" onsubmit="return deleteAccountValidate()">
+            <section id="deleteAccount-box">
+                <section>
+                    <div>1. 회원 탈퇴 약관....</div>
+                    <div>2. 회원 탈퇴 약관....</div>
+                    <div>3. 회원 탈퇴 약관....</div>
+                    <div>4. 회원 탈퇴 약관....</div>
+                    <div>5. 회원 탈퇴 약관....</div>
+                </section>
+                <section>
+                    <input type="checkbox" name="agree" id="agree">
+                    <label for="agree">위 약관에 동의합니다.</label>
+                </section>
+                <section>
+                    <div>현재 비밀번호</div>
+                    <input type="password" name="memberPw" id="memberPw">
+                </section>
+                <section>
+                    <button id="deleteAccount-btn">회원 탈퇴</button>
+                </section>
             </section>
         </form>
 
         <div>로그인시(멤버정보)</div>
         <div>회원번호 : ${loginMember.memberNo}</div>
         <div>회원명 : ${loginMember.memberName}</div>
-        <div>프로필 이미지 : ${loginMember.profileImage}</div>
         <div>회원 이메일 : ${loginMember.memberEmail}</div>
-        <div>회원 가입일 : ${loginMember.enrollDate}</div>
-        <div>
-            access_token
-            <input type="text" name="access_token" value="" style="width: 600px;">
-        </div>
+
 
     </main>
 

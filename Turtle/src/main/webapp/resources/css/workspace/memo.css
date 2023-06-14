@@ -8,4 +8,9 @@
 	margin: 5px;
 	overflow: auto;
  	white-space: nowrap;
+ 	outline: none;
+ 	
+}
+.memoContent:focus {
+	outline: none;
 }
