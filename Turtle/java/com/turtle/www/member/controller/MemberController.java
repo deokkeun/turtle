@@ -105,6 +105,25 @@ public class MemberController {
 		
 	}
 	
+	/** 구글 로그인
+	 * @param inputMember
+	 * @param model
+	 * @param ra
+	 * @param resp
+	 * @param req
+	 * @param saveId
+	 * @return
+	 */
+	@PostMapping("/login/google")
+	public String loginGoogle() {
+		
+		logger.info("구글 로그인 기능 수행됨");
+		return "redirect:/main";
+		
+	}
+	
+	
+	
 	
 	/** 로그아웃
 	 * @param status

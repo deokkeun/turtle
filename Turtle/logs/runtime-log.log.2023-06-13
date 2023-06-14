@@ -1,0 +1,135 @@
+2023-06-13 09:01:16 [INFO] 초기화 필터 파괴
+2023-06-13 09:44:22 [INFO] 초기화 필터 생성
+2023-06-13 09:44:30 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-13 09:44:34 [DEBUG] password999! / $2a$10$JR/JpYz3p1gKG8pwBlscuu3r1vudoF3gdIRIUlmyyR1ACWz/SCdRu
+2023-06-13 09:44:34 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-13 09:44:34 [INFO] Running Time : 3910ms
+2023-06-13 09:44:34 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 09:44:34 [INFO] 일일맨 로그인 성공
+2023-06-13 12:27:44 [INFO] 초기화 필터 파괴
+2023-06-13 12:27:56 [INFO] 초기화 필터 생성
+2023-06-13 12:28:12 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmail.co]
+ip : 127.0.0.1
+2023-06-13 12:28:12 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmail.c]
+ip : 127.0.0.1
+2023-06-13 12:28:12 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmail.com]
+ip : 127.0.0.1
+2023-06-13 12:28:16 [INFO] Return Value : 0
+2023-06-13 12:28:16 [INFO] Return Value : 0
+2023-06-13 12:28:16 [INFO] Running Time : 4205ms
+2023-06-13 12:28:16 [INFO] Running Time : 4206ms
+2023-06-13 12:28:16 [INFO] Return Value : 1
+2023-06-13 12:28:16 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:28:16 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:28:16 [INFO] Running Time : 4010ms
+2023-06-13 12:28:16 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:29:35 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmail.c]
+ip : 127.0.0.1
+2023-06-13 12:29:35 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmail.co]
+ip : 127.0.0.1
+2023-06-13 12:29:35 [INFO] Return Value : 0
+2023-06-13 12:29:35 [INFO] Running Time : 136ms
+2023-06-13 12:29:35 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:29:35 [INFO] Return Value : 0
+2023-06-13 12:29:35 [INFO] Running Time : 104ms
+2023-06-13 12:29:35 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:29:35 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmail.com]
+ip : 127.0.0.1
+2023-06-13 12:29:35 [INFO] Return Value : 1
+2023-06-13 12:29:35 [INFO] Running Time : 38ms
+2023-06-13 12:29:35 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:30:15 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmal.c]
+ip : 127.0.0.1
+2023-06-13 12:30:15 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmal.co]
+ip : 127.0.0.1
+2023-06-13 12:30:15 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmal.com]
+ip : 127.0.0.1
+2023-06-13 12:30:15 [INFO] Return Value : 0
+2023-06-13 12:30:15 [INFO] Return Value : 0
+2023-06-13 12:30:15 [INFO] Running Time : 226ms
+2023-06-13 12:30:15 [INFO] Running Time : 317ms
+2023-06-13 12:30:15 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:30:15 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:30:15 [INFO] Return Value : 0
+2023-06-13 12:30:15 [INFO] Running Time : 23ms
+2023-06-13 12:30:15 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:33:25 [INFO] 초기화 필터 파괴
+2023-06-13 12:34:24 [INFO] 초기화 필터 생성
+2023-06-13 12:34:38 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmail.c]
+ip : 127.0.0.1
+2023-06-13 12:34:38 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmail.co]
+ip : 127.0.0.1
+2023-06-13 12:34:39 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmail.com]
+ip : 127.0.0.1
+2023-06-13 12:34:42 [INFO] Return Value : 0
+2023-06-13 12:34:42 [INFO] Return Value : 0
+2023-06-13 12:34:42 [INFO] Return Value : 0
+2023-06-13 12:34:42 [INFO] Running Time : 3776ms
+2023-06-13 12:34:42 [INFO] Running Time : 3573ms
+2023-06-13 12:34:42 [INFO] Running Time : 3776ms
+2023-06-13 12:34:42 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:34:42 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:34:42 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:34:50 [INFO] ---------------------------------------
+Start : MemberServiceImpl - insertCertification
+Parameter : [{inputEmail=98chltnwls@gmail.com, cNumber=o7P16Q}]
+ip : 127.0.0.1
+2023-06-13 12:34:50 [INFO] Return Value : 1
+2023-06-13 12:34:50 [INFO] Running Time : 67ms
+2023-06-13 12:34:50 [INFO] End : MemberServiceImpl - insertCertification
+---------------------------------------------
+
+2023-06-13 17:24:14 [INFO] 초기화 필터 파괴

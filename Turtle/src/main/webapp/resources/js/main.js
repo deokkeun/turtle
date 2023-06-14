@@ -1,7 +1,7 @@
 var code = "";
 const accessToken = document.getElementsByName("access_token");
 
-onload = function() {
+window.onload = function() {
 
     // http://localhost:8080/www/member/login?
     // state=security_token%3D138r5719ru3e1%26url%3Dhttps%3A%2F%2Foauth2-login-demo.example.com%2FmyHome&
@@ -31,7 +31,7 @@ onload = function() {
             code: code,
             client_id: '713601013116-33sqneo96i1er8o2e6bs5a8o5522k2rq.apps.googleusercontent.com',
             client_secret: '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',
-            redirect_uri: 'http://localhost:8080/login/oauth2/google',
+            redirect_uri: 'http://localhost:8080/login/google',
             grant_type: 'authorization_code'
         },
         success: function(response) {
