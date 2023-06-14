@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
 	<!-- deleteAccount.css -->
     <link rel="stylesheet" href="${contextPath}/resources/css/member/deleteAccount.css">
+    <!-- deleteAccountModal.css -->
+    <link rel="stylesheet" href="${contextPath}/resources/css/member/deleteAccountModal.css">
 	<!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
@@ -43,7 +45,8 @@
                     <input type="password" name="memberPw" id="memberPw">
                 </section>
                 <section>
-                    <button id="deleteAccount-btn">회원 탈퇴</button>
+                    <button id="deleteAccount-btn" onclick="openModal()">회원 탈퇴</button>
+                </section>
                 </section>
             </section>
         </form>
@@ -52,6 +55,18 @@
         <div>회원번호 : ${loginMember.memberNo}</div>
         <div>회원명 : ${loginMember.memberName}</div>
         <div>회원 이메일 : ${loginMember.memberEmail}</div>
+        
+          <!-- 모달창 -->
+          <div id="modal" class="modal">
+            <div class="modal-contentAccount">
+                <h2>정말 탈퇴하시겠습니까?</h2>
+                <p>탈퇴할 경우, TURTLE의 모든 서비스를 이용할 수 없습니다.</p>
+                <div class="modal-buttons">
+                    <button onclick="closeModal()" id="closeModal">아니오</button>
+                    <button onclick="confirmDelete()" id="confirmDelete">예, 탈퇴하겠습니다.</button>    
+                </div>
+            </div>
+        </div>
 
 
     </main>
