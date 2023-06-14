@@ -10,6 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script src="https://kit.fontawesome.com/0041fb1dcb.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>채팅방</title>
     
@@ -17,6 +18,9 @@
 </head>
 <body>
 	채팅방 테스트
+		<!-- 채팅입력 날짜와 이전채팅의 날짜가 다른경우 날짜를 보여주는 div 추가 -->
+		<!-- 이전 채팅과 현재 입력채팅의 입력시간이 다를 경우 시간 출력((AM || PM)시,분) ,이미지,이름과 같이 출력-->
+		<!-- 채팅입력한 멤버와 로그인멤버가 다를 경우 프로필 이미지하고 같이 출력, 같을경우는 채팅내용과 시간만 출력 -->
 	<div class="chatting-area">
 		<div id="back-area">
 			<button class="btn btn-outline-danger" id="back-btn">나가기</button>
@@ -25,23 +29,49 @@
 			<c:set var="previousMemberName" value="" />
 				
 			<c:forEach var="chatMessage" items="${chatMessageList}" varStatus="vs">
-				<fmt:formatDate var="chatDate" value="${chatMessage.cmRegDate}" pattern="yyyy년 MM월 dd일 HH:mm:ss"/>
+				<fmt:formatDate var="chatDate" value="${chatMessage.cmRegDate}" pattern="yyyy-MM-dd"/>
+				<fmt:formatDate var="chatDate2" value="${chatMessage.cmRegDate}" pattern="HH:mm"/>
+				<fmt:formatDate  var="chatDate3" value="${chatMessage.cmRegDate}" pattern="HH"/>
 				<c:choose>
-					<c:when test="${vs.first || chatMessage.memberName ne previousMemberName}">
-						<li>
-							<hr>
-							<b>${chatMessage.memberName}님</b>
-							<span class="chatDate">${chatDate}</span><br>
-							<p class="chat">${chatMessage.chatMessage}</p>
+
+			
+				
+					<c:when test="${chatMessage.memberName} ne ${memberName}">
+						<li class="yourChat">
+							<div class="chat-user">
+								<a class="user-img"><i class='fa-solid fa-circle-user'></i></a>
+								<b>${chatMessage.memberName}님</b>
+								<span class="chatDate">${chatDate}</span>
+							</div>
+								<p class="chat">${chatMessage.chatMessage}</p>
 						</li>
 					</c:when>
 					<c:otherwise>
 						<li>
-							<p class="chat">${chatMessage.chatMessage}</p>
+							<c:if test="${chatDate ne previousDate}"> 
+								
+								<div class="chatCalender"><i class="fa-regular fa-calendar-days">	<span>${chatDate}</span></i></div>
+							
+					
+							</c:if>
+							<br>
+
+							<p class="chat" id="myChat">${chatMessage.chatMessage}</p>
+							
+							<span class="chatDate">
+							
+
+								<span><c:if test="${chatDate3 >= 12}">오후</c:if>
+									<c:if test="${chatDate3 < 12}">오전</c:if>
+								</span>
+								${chatDate2}					
+								${chatDate}  <!--날짜 확인용-->
+							</span>	
 						</li>
 					</c:otherwise>
 				</c:choose>
 				<c:set var="previousMemberName" value="${chatMessage.memberName}" />
+				<c:set var="previousDate" value="${chatMessage.cmRegDate}" />
 			</c:forEach>
 		</ul>
 		
