@@ -19,16 +19,15 @@
 <body>
 
 <header id="header" class="header fixed-top d-flex align-items-center">
-	<section>
-		<div>메인페이지 헤더</div>
-	</section>
+
 	
-<div class="d-flex align-items-center justify-content-between">
-      <a href="main.jsp" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+      <a href="${contextPath}" class="logo d-flex align-items-center">
+        <img src="${contextPath}/resources/images/logo/turtleLogo-green.png" alt="Turtle"/>
         <span class="d-none d-lg-block">TURTLE</span>
       </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
     <div class="search-bar">
@@ -43,7 +42,7 @@
 		</form>
 	</section>
 
-    <nav class="header-nav ms-auto">
+     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
 
         <li class="nav-item d-block d-lg-none">
@@ -51,13 +50,7 @@
             <i class="bi bi-search"></i>
           </a>
         </li><!-- End Search Icon-->
-
-        <button class="sidebar-toggle" id="toggleButton">
-         
-          <i class="bx bxs-category"></i> <!-- 아이콘 추가 -->
-     
-        </button>
-
+       
         <li class="nav-item dropdown">
 
           <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
@@ -137,8 +130,8 @@
         <li class="nav-item dropdown">
 
           <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-chat-left-text"></i>
-            <span class="badge bg-success badge-number">3</span>
+            <i class="bx bxs-category"></i>
+            <span class="badge bg-success badge-number"></span>
           </a><!-- End Messages Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
@@ -199,10 +192,19 @@
           </ul><!-- End Messages Dropdown Items -->
 
         </li><!-- End Messages Nav -->
-        
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+          <button class="sidebar-toggle" id="toggleButton">
+           
+            <i class="bi bi-chat-left-text"></i> <!-- 아이콘 추가 -->
+       
+          </button>
+          </a>
+          </li>
        
       </ul>
     </nav><!-- End Icons Navigation -->
+
 
 
 	

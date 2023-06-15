@@ -18,7 +18,7 @@
     	<!-- header include -->
         <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-    <!-- ======= Sidebar(왼쪽 사이드바) ======= -->
+ <!-- ======= Sidebar(왼쪽 사이드바) ======= -->
   <aside id="sidebar" class="sidebar"> 
 
     <ul class="sidebar-nav" id="sidebar-nav">
@@ -87,15 +87,15 @@
   
         <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#project-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-menu-button-wide"></i><span>PROJECT</span><i class="bi bi-chevron-down ms-auto"></i>
-            <button class="add-file-button" onclick="addFile('project-nav', event)"><i class="bi bi-plus"></i></button>
+            <i class="bi bi-chevron-down" id="arrow"></i><i class="bi bi-menu-button-wide"></i><span>나의 프로젝트</span>
+            <button class="add-file-button ms-auto" onclick="addFile('project-nav', event)"><i class="bi bi-plus"></i></button>
           </a>
       
           <ul id="project-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
   
             <li>
               <a href="my-projects/project1.html">
-                <i class="bi bi-circle"></i><span>Dashboard</span>
+                <i class="bi bi-circle"></i><span>프로젝트 1</span>
                 <div class="file-menu">
                   <button class="rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i></button>
                   <button class="delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i></button>
@@ -110,13 +110,13 @@
   
         <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#shared-project-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-journal-text"></i><span>SHARED PROJECT</span><i class="bi bi-chevron-down ms-auto"></i>
-            <button class="add-file-button" onclick="addFile('shared-project-nav')"><i class="bi bi-plus"></i></button>
+            <i class="bi bi-chevron-down" id="arrow"></i> </i><span>공유 프로젝트</span>
+            <button class="add-file-button ms-auto" onclick="addFile('shared-project-nav')"><i class="bi bi-plus"></i></button>
           </a>
           <ul id="shared-project-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
               <a href="">
-                <i class="bi bi-circle"></i><span>Dashboard</span>
+                <i class="bi bi-circle"></i><span>프로젝트 1</span>
                 <div class="file-menu">
                   <button class="rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i></button>
                   <button class="delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i></button>
@@ -129,13 +129,13 @@
         </li><!-- End Shared Project Nav -->
         <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#workspace-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-layout-text-window-reverse"></i><span>WORKSPACE</span><i class="bi bi-chevron-down ms-auto"></i>
-            <button class="add-file-button" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button>
+            <i class="bi bi-chevron-down" id="arrow"></i><span>작업 공간</span>
+            <button class="add-file-button ms-auto" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button>
           </a>
           <ul id="workspace-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
             <li>
               <a href="">
-                <i class="bi bi-circle"></i><span>게시판</span>
+                <i class="bi bi-circle"></i><span>파일</span>
                 <div class="file-menu">
                   <button class="rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i></button>
                   <button class="delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i></button>
@@ -144,7 +144,7 @@
             </li>
             <li>
               <a href="">
-                <i class="bi bi-circle"></i><span>Back-end</span>
+                <i class="bi bi-circle"></i><span>할일 목록</span>
                 <div class="file-menu">
                   <button class="rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i></button>
                   <button class="delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i></button>
@@ -281,7 +281,7 @@
     <script src="${contextPath}/resources/js/main.js"></script>
      <!-- Vendor JS Files -->
 
-  <script src="${contextPath}/resources/js/bootstrap.bundle.min.js"></script>
+  <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.min.js"></script>
 
   <!-- Template Main JS File -->
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js"></script>
