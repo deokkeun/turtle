@@ -46,7 +46,10 @@ public class MemoController {
 		map.put("projectNo", projectNo);
 		int pmNo = pmService.selectPmNo(map);
 		
-		List<Memo> memoList = service.selectMemoList(workspaceNo);
+		map.put("pmNo", pmNo);
+		map.put("workspaceNo", workspaceNo);
+		
+		List<Memo> memoList = service.selectMemoList(map);
 
 		
 		model.addAttribute("workspaceNo", workspaceNo); // session에 올림
