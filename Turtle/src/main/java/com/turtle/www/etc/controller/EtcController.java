@@ -9,8 +9,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class EtcController {
 	
 	@GetMapping("/terms")
-	public String etcPage() {
+	public String termPage() {
 		
 		return "etc/terms";
+	}
+	
+	@GetMapping("/fee")
+	public String feePage() {
+		
+		return "etc/fee";
+	}
+	
+	@GetMapping("/faq")
+	public String faqPage() {
+		
+		return "etc/faq";
 	}
 }
