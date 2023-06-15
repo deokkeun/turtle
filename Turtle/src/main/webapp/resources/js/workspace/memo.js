@@ -1,16 +1,20 @@
 // 메모 메세지 테스트
-const memoDetails = document.querySelectorAll('.memoDetail');
+const workspaceMemoDetails = document.querySelectorAll('.workspaceMemoDetail');
 
+let memoContent;
+let memoBgColor;
+let memoNo;
+let ChangedMemoContent;
 
 // 메모 색상
 const colors = ['#FEE182', '#F6A9B0', '#A1D5AE', '#9FDFEB', '#D8BBDC'];
 
 // 각각의 memoContent 접근
-memoDetails.forEach((memoDetail) => {
+workspaceMemoDetails.forEach((workspaceMemoDetail) => {
 
-	let memoContent = memoDetail.querySelector('.memoContent');
-	let memoBgColor = memoDetail.querySelector('.memoBgColor');
-	let memoNo =  memoDetail.querySelector('.memoNo');
+	let memoContent = workspaceMemoDetail.querySelector('.memoContent');
+	let memoBgColor = workspaceMemoDetail.querySelector('.memoBgColor');
+	let memoNo =  workspaceMemoDetail.querySelector('.memoNo');
 
 	// 딜레이 2초 설정
 	let typingTimer;
@@ -21,20 +25,18 @@ memoDetails.forEach((memoDetail) => {
 	let currentColor = ''; 	
 
 	memoContent.addEventListener('focus', function() {
-		console.log(memoContent);
+
 		isFocused = true;
 	});
 
 	memoContent.addEventListener('blur', function() { 	
+
     	isFocused = false;
     	isFirstClick = true;
     	memoBgColor.value = currentColor;
   	});
 
   	memoContent.addEventListener('click', function() {
-
-		
-		console.log(memoContent);
 
     	if (isFocused) {
       		if (isFirstClick) {
@@ -54,7 +56,11 @@ memoDetails.forEach((memoDetail) => {
 		  		typingTimer = setTimeout(function() {
 		  			// 1.5초동안 아무런 동작이 없으면 로직 실행  			
 		  			
-		  			changeColor();	
+		  			changeColor();
+
+					
+
+					
 		  			
 		  		}, delay);
 				
@@ -68,20 +74,19 @@ memoDetails.forEach((memoDetail) => {
   	});
   	
   	memoContent.addEventListener('input', function() {
-		console.log(memoContent);
+		
   		clearTimeout(typingTimer);
   		
   		
   	});
   	
   	memoContent.addEventListener('keyup', function() {
-		console.log(memoContent);
   		clearTimeout(typingTimer);
   		
   		typingTimer = setTimeout(function() {
   			// 1.5초동안 아무런 동작이 없으면 로직 실행
   			
-  		updateMemo();	
+  		updateMemo();
   			
   		}, delay);
   		
@@ -107,7 +112,7 @@ memoDetails.forEach((memoDetail) => {
 			// memoSock(웹소켓 객체)을 이용하여 메세지 보내기
 			// memoSock.send(값) : 웹소켓 핸들러로 값을 보냄
 			memoSock.send( JSON.stringify(memo) );
-			
+			console.log(memoContent);
 			
 	}
 	
@@ -126,7 +131,7 @@ memoDetails.forEach((memoDetail) => {
 		console.log(JSON.stringify(memo));
 		
 		memoSock.send( JSON.stringify(memo) );
-
+		console.log(memoContent);
 		
 	}
 	
@@ -141,13 +146,14 @@ memoDetails.forEach((memoDetail) => {
 						// 전달 받은 메세지를 JS 객체로 변환
 						const memo = JSON.parse(e.data);  // JSON -> JS Object
 						
-						memoContent.style.backgroundColor = memo.memoBgColor;
 						
+
+						
+
+						memoContent.style.backgroundColor = memo.memobgColor;
 						console.log(memoContent);
 						
 					};
-
-					return false;
   	
   	
   	

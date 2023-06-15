@@ -13,6 +13,7 @@
 		<result property="memoUpdateDate" column="MEMO_UPDATE_DATE"/>
 		<result property="memoBgColor" column="MEMO_BG_COLOR"/>
 		<result property="memoSt" column="MEMO_ST"/>
+		<result property="memoType" column="MEMO_TYPE"/>
 		
 	</resultMap>
 	
@@ -20,7 +21,10 @@
 		SELECT *
 		FROM MEMO
 		WHERE WORKSPACE_NO = ${workspaceNo}
-		ORDER BY MEMO_UPDATE_DATE DESC
+		AND MEMO_TYPE = 'workspace'
+		OR (MEMO_TYPE = 'personal' AND PM_NO = ${pmNo})
+		AND MEMO_ST = 'N'
+		ORDER BY MEMO_TYPE DESC, MEMO_REG_DATE DESC
 	</select>
 	
 	<update id="updateMemo">
