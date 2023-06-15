@@ -22,4 +22,5 @@ public class Memo {
 	private Date memoUpdateDate; // 메모장 수정일
 	private String memoBgColor; // 메모장 색상
 	private String memoSt; // 메모 삭제 여부
+	private String memoType; // 메모타입
 }

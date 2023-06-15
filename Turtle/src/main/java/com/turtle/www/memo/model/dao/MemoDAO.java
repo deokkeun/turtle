@@ -1,6 +1,7 @@
 package com.turtle.www.memo.model.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +16,12 @@ public class MemoDAO {
 	private SqlSessionTemplate sqlSession;
 	
 	/** 메모장 리스트 조회 dao
-	 * @param workspaceNo
+	 * @param map
 	 * @return memoList
 	 */
-	public List<Memo> selectMemoList(int workspaceNo) {
+	public List<Memo> selectMemoList(Map<String, Object> map) {
 		
-		return sqlSession.selectList("memoMapper.selectMemoList", workspaceNo);
+		return sqlSession.selectList("memoMapper.selectMemoList", map);
 	}
 
 	/** 메모장 수정 dao
