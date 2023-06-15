@@ -17,10 +17,12 @@
     메모장 리스트 확인
     <div id="memo-area">
     <c:forEach var="memo" items="${memoList}">
-    	<fmt:formatDate var="memoDate" value="${memo.memoUpdateDate}" pattern="MM-dd HH:mm"/>
+    	<fmt:formatDate var="memoRegDate" value="${memo.memoRegDate}" pattern="MM-dd HH:mm"/>
+    	<fmt:formatDate var="memoUpdateDate" value="${memo.memoUpdateDate}" pattern="MM-dd HH:mm"/>
     	<c:choose>
     		<c:when test="${memo.memoType == 'workspace'}">
     			<div class="workspaceMemoDetail">
+    				<input type="hidden" name="pmNo" value="${pmNo}">
 		    		<input type="hidden" class="memoNo" value="${memo.memoNo}"/>
 		    		<input type="hidden" class="memoBgColor" value="${memo.memoBgColor}">
 		    		<span>메모넘버 : ${memo.memoNo}</span>
@@ -31,11 +33,18 @@
     		</c:when>
     		<c:otherwise>
     			<div class="personalMemoDetail">
+    			<input type="hidden" name="pmNo" value="${pmNo}">
 		    		<input type="hidden" class="memoNo" value="${memo.memoNo}"/>
 		    		<input type="hidden" class="memoBgColor" value="${memo.memoBgColor}">
-		    		<span>메모넘버 : ${memo.memoNo}</span>
-		    		<span class="updatePmNo">최근 수정자 : ${memo.updatePmNo}</span><br>
-		    		<span class="memoUpdateDate">최근 수정일 : ${memoDate}</span><br>
+		    		<c:choose>
+		    			<c:when test="${empty memoUpdateDate}">
+		    				<span class="memoUpdateDate">메모 생성일 : ${memoRegDate}</span><br>
+		    			</c:when>
+		    			<c:otherwise>
+		    				<span class="memoUpdateDate">최근 수정일 : ${memoUpdateDate}</span><br>
+		    			</c:otherwise>
+		    		</c:choose>
+		    		
     				<div class="memoContent" contenteditable="true" style="background-color: ${memo.memoBgColor}" tabindex="0">${memo.memoContent}</div>
     			</div>
     		</c:otherwise>
