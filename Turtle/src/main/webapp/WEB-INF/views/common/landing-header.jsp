@@ -43,37 +43,12 @@
 
 
 
-		<%-- if - else --%>
-   <%--      <c:choose>  
-       		로그인이 되어있지 않은 경우
-			<c:when test="${ empty sessionScope.loginMember }"> 
-            		
-       			<form action="member/login" method="POST" name="login-form" onsubmit="return loginValidate()">
-		                 
-            		
-           	</c:when>
+		<!-- 로그인 되있으면 로그아웃 + 프로젝트 글씨 -->          
+    <!-- <c:if test="${!empty loginMember}"> -->
+       	
+	
             	
-            	 --%>
-            <%-- 로그인이 되어있는 경우 --%>
-            <%-- <c:otherwise> --%>
-            			
-	            <!-- 로그아웃 + 프로젝트 글씨 -->                                       
-	          <%--   <div class="my-info">
-	               <div>
-	                   <a href="${contextPath}/member/myPage/info" id="nickname">${loginMember.memberNickname}</a>
-	
-	                   <a href="${contextPath}/member/logout" id="logout-btn">로그아웃</a>
-	               </div>
-	
-	               <p>
-	                   ${loginMember.memberEmail}
-	               </p>
-	            </div>
-            			
-            		
-           	</c:otherwise>
-        </c:choose> --%>
-		
+  
 		
         <ul class="nav-links2">
           <li>           
