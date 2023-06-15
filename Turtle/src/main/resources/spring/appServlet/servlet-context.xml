@@ -51,9 +51,10 @@
 	
 	
 	<!-- Websocket 요청 시 핸들러 클래스와 연결하기 -->
+	
 	<beans:bean id="chatHandler" class="com.turtle.www.chat.model.websocket.ChatWebsocketHandler"/>
 	<beans:bean id="memoHandler" class="com.turtle.www.memo.model.websocket.MemoWebsocketHandler"/>
-	
+
 	
 	<websocket:handlers>
 		

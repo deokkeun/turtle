@@ -1,12 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 
-<header id="header-landing-box">
 
-    <section id="header-box">
-    
-    	<!-- 테스트로그인용 나중에 삭제할거임 -->
-    	<section>
+<!-- ======= 최종작업용 Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div id="allnav" class="container-fluid container">
+      <nav id="navbar" class="navbar container-fluid">
+      
+      
+		 <!-- 로고그림 및 이름 -->	
+        <a href="${contextPath}" class="logo d-flex">
+          <img src="${contextPath}/resources/images/logo/turtleLogo-green.png" alt="로고안보임">
+          <span>TURTLE</span>
+        </a>
+
+        
+		<!-- 메뉴 -->
+        <ul class="nav-links">
+          <li><a href="#">소개</a></li>
+          <li><a href="#">요금제</a></li>
+          <li><a href="#">고객센터</a></li>
+        </ul>
+          
+		<!-- 자동로그인 테스트부분 (나중에 지울거임) -->
+    	<div class="auto-login">
     		<form action="member/testLogin" method="POST">
         		<input type="hidden" name="memberEmail" value="test01@gmail.com">
         		<input type="hidden" name="memberPw" value="password999!">
@@ -22,53 +39,27 @@
         		<input type="hidden" name="memberPw" value="deokkeun!">
         		<button>emailTest</button>
         	</form>
-    	</section>
-    	
-    	<!-- 네이버아이콘  -->
-        <section>
-            <a href="${contextPath}"><img src="${contextPath}/resources/images/auth/naver-login-icon.png" alt="logo" height="55px"></a>
-        </section>
-		
-		<!-- 로그인/회원가입 박스  -->
-	    <section>
-			<section id="login-box">
-				<button id="login-modal-btn">
-<!-- 					<div><img style="width: 40px;" src="${contextPath}/resources/images/memberProfile/member.png" alt="로그인"></div> -->
-					<div><img src="${contextPath}/resources/images/lock.png" alt="로그인" style="width:20px; height:20px"></div>
-					<div>Login</div>
-				</button>
-				
-				<form action="${contextPath}/member/signUp" method="GET">
-					<button id="header-signUp-btn">
-						<div>Sign up for free</div>
-					</button>
-				</form>
-			</section>
-	    </section>
-	    
-    </section>
-</header>
+    	</div>
 
 
-
-<form action="${contextPath}/member/login" method="GET">
-	<button style="width: 150px; height: 50px; background-color: orangered;">
-		main페이지 바로가기(landing-header.jsp)</button>
-</form>
-
-
-	 <c:if test="${!empty loginMember}">
-  		    <div>로그인시(멤버정보)</div>
-        <div>회원번호 : ${loginMember.memberNo}</div>
-        <div>회원명 : ${loginMember.memberName}</div>
-        <div>프로필 이미지 : ${loginMember.profileImage}</div>
-        <div>회원 이메일 : ${loginMember.memberEmail}</div>
-        <div>회원 가입일 : ${loginMember.enrollDate}</div>
-  	</c:if>
-  	<c:if test="${empty loginMember}">
-  		<div>empty loginMember</div>
-  	</c:if> 
-
+        <ul class="nav-links2">
+          <li>           
+          	<div id="login-box">
+          		<a id="login-modal-btn">로그인</a>
+          	</div>
+          </li>
+         
+          <li><a href="${contextPath}/member/signUp" class="nav-btn">무료로 사용하기</a></li> 
+        </ul>
+      
+        <!-- 반응형시 보이는 햄버거버튼 -->
+        <a href="#" class="bar">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+      </nav>
+    </div>
+  </header>
+ <!-- ======= End Header ======= -->
 
 <!-- 로그인 모달창 -->
 <section id="login-modal">
