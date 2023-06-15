@@ -1,9 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
-Built-By: woong
-=======
 Built-By: deokkeun
->>>>>>> 7281c8ecde830ea55e882ea7d2843c4d678e38ba
 Build-Jdk: 11.0.2
 Created-By: Maven Integration for Eclipse
 

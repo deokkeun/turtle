@@ -254,27 +254,32 @@ function addEvent() {
 
 
 
-    allSave();
-    reset();
-    // $.ajax({
-    //   url: 'addEvent', // 저장할 url
-    //   data: {'title': inputValue.value,
-    //           'start': startDate.value,
-    //           'end': endDate.value,
-    //           'textarea': textarea.value,
-    //           'backgroundColor': BgColor},
-    //   type: 'POST',
-    //   dataType: 'JSON',
-    //   success: function(result) {
-    //     alert("addEvent 성공");
 
-    //     // 초기화
-    //     reset();
-    //   },
-    //   error: function(error) {
-    //     alert("addEvent 실패");
-    //   }
-    // })
+    $.ajax({
+      url: 'addEvent', // 저장할 url
+      data: {'memberNo': memberNo.value,
+              'title': inputValue.value,
+              'start': startDate.value,
+              'end': endDate.value,
+              'textarea': textarea.value,
+              'backgroundColor': BgColor},
+      type: 'POST',
+      dataType: 'JSON',
+      success: function(result) {
+        alert("addEvent 성공");
+
+        // 초기화
+        reset();
+      },
+      error: function(error) {
+        alert("addEvent 실패");
+      }
+    })
+
+
+
+
+    
 
 }
 
