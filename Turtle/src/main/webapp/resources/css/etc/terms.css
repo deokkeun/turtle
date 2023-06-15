@@ -39,11 +39,13 @@ body {
 
 
 .features .feture-tabs {
-  margin-top: 120px;
+	 margin : auto;
+  margin-top: 180px;
+  margin-bottom: 50px;
 
   /* padding: 12px; */
-  margin-left: 12px;
-  margin-right: 50px; 
+  /* margin-left: 12px; */
+  /* margin-right: 12px; */
 }
 
 
