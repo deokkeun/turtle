@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-<<<<<<< HEAD
-Built-By: user1
-=======
-Built-By: woong
->>>>>>> 4cdd6b7532b1689a58360ec69d0bed39b5dd053c
-Build-Jdk: 11.0.2
-Created-By: Maven Integration for Eclipse
-
