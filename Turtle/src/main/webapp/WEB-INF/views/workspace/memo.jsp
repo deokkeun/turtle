@@ -14,58 +14,26 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/workspace/memo.css">
 </head>
 <body>
-    메모장 리스트 확인
     <div id="memo-area">
-    <c:forEach var="memo" items="${memoList}">
-    	<fmt:formatDate var="memoRegDate" value="${memo.memoRegDate}" pattern="MM-dd HH:mm"/>
-    	<fmt:formatDate var="memoUpdateDate" value="${memo.memoUpdateDate}" pattern="MM-dd HH:mm"/>
-    	<c:choose>
-    		<c:when test="${memo.memoType == 'workspace'}">
-    			<div class="workspaceMemoDetail">
-    				
-		    		<span>메모넘버 : ${memo.memoNo}</span>
-		    		<span class="updatePmNo">최근 수정자 : ${memo.updatePmNo}</span><br>
-		    		<c:choose>
-		    			<c:when test="${empty memoUpdateDate}">
-		    				<span class="memoUpdateDate">메모 생성일 : ${memoRegDate}</span><br>
-		    			</c:when>
-		    			<c:otherwise>
-		    				<span class="memoUpdateDate">최근 수정일 : ${memoUpdateDate}</span><br>
-		    			</c:otherwise>
-		    		</c:choose>
-    				<div class="memoContent" contenteditable="true" style="background-color: ${memo.memoBgColor}">
-    					<input type="hidden" name="pmNo" value="${pmNo}">
-		    			<input type="hidden" name="memoNo" value="${memo.memoNo}"/>
-		    			<input type="hidden" name="memoBgColor" value="${memo.memoBgColor}">
-		    			<input type="hidden" name="memoType" value="${memo.memoType}">
-    					${memo.memoContent}
-    				</div>
-    			</div>
-    		</c:when>
-    		<c:otherwise>
-    			<div class="personalMemoDetail">
-    			<input type="hidden" name="pmNo" value="${pmNo}">
-		    		
-		    		<c:choose>
-		    			<c:when test="${empty memoUpdateDate}">
-		    				<span class="memoUpdateDate">메모 생성일 : ${memoRegDate}</span><br>
-		    			</c:when>
-		    			<c:otherwise>
-		    				<span class="memoUpdateDate">최근 수정일 : ${memoUpdateDate}</span><br>
-		    			</c:otherwise>
-		    		</c:choose>
-		    		
-    				<div class="memoContent" contenteditable="true" style="background-color: ${memo.memoBgColor}">
-    					<input type="hidden" class="memoNo" value="${memo.memoNo}"/>
-		    			<input type="hidden" class="memoBgColor" value="${memo.memoBgColor}">
-		    			<input type="hidden" class="memoType" value="${memo.memoType}">
-    					${memo.memoContent}
-    				</div>
-    			</div>
-    		</c:otherwise>
-    	</c:choose>
-    	
-    </c:forEach>
+	    <c:forEach var="memo" items="${memoList}">
+	    	<fmt:formatDate var="memoRegDate" value="${memo.memoRegDate}" pattern="MM-dd HH:mm"/>
+	    	<fmt:formatDate var="memoUpdateDate" value="${memo.memoUpdateDate}" pattern="MM-dd HH:mm"/>
+	    	<div class="memoDetail">	    				
+	    		<span class="pmNo">최근 수정자 : ${memo.memberName}</span><br>
+	    		<c:choose>
+	    			<c:when test="${empty memoUpdateDate}">
+	    				<span class="memoUpdateDate">생성일 : ${memoRegDate}</span><br>
+	    			</c:when>
+	    			<c:otherwise>
+	    				<span class="memoUpdateDate">최근 수정일 : ${memoUpdateDate}</span><br>
+	    			</c:otherwise>
+	    		</c:choose>
+	  				<div class="memoContent" contenteditable="true" style="background-color: ${memo.memoBgColor}"
+	  					data-pmNo="${pmNo}" data-memoNo="${memo.memoNo}" data-memoBgColor="${memo.memoBgColor}" data-memoType="${memo.memoType}">    					
+	  					${memo.memoContent}
+	  				</div>
+	  			</div>    	
+	    </c:forEach>
     </div>
     
     
@@ -80,6 +48,8 @@
     	const pmNo = "${pmNo}";
     	const workspaceNo = "${workspaceNo}";
     	const contextPath = "${contextPath}";
+    	const memberName = "${loginMember.memberName}";
+    	
     	
     	
     	// 로그인이 되어 있을 경우에만
@@ -88,7 +58,7 @@
 			// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
     </script>
     
-    <!-- loadmap.js 연결 -->
+    <!-- memo.js 연결 -->
     <script src="${contextPath}/resources/js/workspace/memo.js"></script>
 </body>
 </html>
