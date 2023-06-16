@@ -362,7 +362,7 @@
             <i class="bi bi-dash-circle"></i>
             <span>Settings</span>
           </a>
-        </li><!-- End Error 404 Page Nav -->
+        </li><!-- End Error 404 Page Nav -->	
   
         <li class="nav-item">
           <a class="nav-link collapsed" href="">
@@ -376,6 +376,7 @@
 <!-- right sidebar(오른쪽 사이드바) --> 
 
 <aside class="right-sidebar" id="rightSidebar">
+
   <button class="sidebar-close-btn" onclick="toggleSidebar()"><i class="bi bi-chevron-double-right"></i></button>
   <ul class="right-sidebar-nav" id="right-sidebar-nav">
    
@@ -418,3 +419,5 @@
   <!-- Template Main JS File -->
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js"></script>
   <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script>
+  
+  
