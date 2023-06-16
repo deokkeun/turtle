@@ -135,5 +135,12 @@
     <script src="${contextPath}/resources/js/calendar/calendar.js"></script>
 
     
+    
+  <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js"></script>
+  <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script>
+
 </body>
 </html>

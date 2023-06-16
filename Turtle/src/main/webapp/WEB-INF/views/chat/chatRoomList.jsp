@@ -12,14 +12,19 @@
 <body>
     채팅방리스트 이동 확인
     <ul>
+        <input type="hidden" id="projectNo" value="${projectNo}">
     <c:forEach var="chatRoom" items="${chatRoomList}">
     	<li>
-    		<form action="../chatRoom/${projectNo}/${chatRoom.chatRoomNo}">
-    			<button>${chatRoom.chatRoomTitle}</button>
-    		</form>
+    		
+    			<button class="chatBtn" value="${chatRoom.chatRoomNo}">${chatRoom.chatRoomTitle}</button>
+    	
+         
     	</li>  	    	   	
     </c:forEach>
     </ul>
-    
+    <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script>
+    <script>
+          
+    </script>
 </body>
 </html>

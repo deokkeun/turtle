@@ -2,8 +2,8 @@
 /* 채팅창 관련 */
 .chatting-area{ 
 	margin:auto;
-	height: 600px;  
-	width : 800px;
+	height: 100%;  
+	max-width : 300px;
 	margin-top: 50px;
 	margin-bottom: 50px;
 }
