@@ -17,9 +17,9 @@
         
 		<!-- 메뉴 -->
         <ul class="nav-links">
-          <li><a href="#">소개</a></li>
-          <li><a href="#">요금제</a></li>
-          <li><a href="#">고객센터</a></li>
+          <li><a href="${contextPath}">소개</a></li>
+          <li><a href="${contextPath}/etc/fee">요금제</a></li>
+          <li><a href="${contextPath}/etc/faq">고객센터</a></li>
         </ul>
           
 		<!-- 자동로그인 테스트부분 (나중에 지울거임) -->
@@ -42,12 +42,47 @@
     	</div>
 
 
+
+		<%-- if - else --%>
+   <%--      <c:choose>  
+       		로그인이 되어있지 않은 경우
+			<c:when test="${ empty sessionScope.loginMember }"> 
+            		
+       			<form action="member/login" method="POST" name="login-form" onsubmit="return loginValidate()">
+		                 
+            		
+           	</c:when>
+            	
+            	 --%>
+            <%-- 로그인이 되어있는 경우 --%>
+            <%-- <c:otherwise> --%>
+            			
+	            <!-- 로그아웃 + 프로젝트 글씨 -->                                       
+	          <%--   <div class="my-info">
+	               <div>
+	                   <a href="${contextPath}/member/myPage/info" id="nickname">${loginMember.memberNickname}</a>
+	
+	                   <a href="${contextPath}/member/logout" id="logout-btn">로그아웃</a>
+	               </div>
+	
+	               <p>
+	                   ${loginMember.memberEmail}
+	               </p>
+	            </div>
+            			
+            		
+           	</c:otherwise>
+        </c:choose> --%>
+		
+		
         <ul class="nav-links2">
           <li>           
           	<div id="login-box">
           		<a id="login-modal-btn">로그인</a>
           	</div>
           </li>
+          
+          
          
           <li><a href="${contextPath}/member/signUp" class="nav-btn">무료로 사용하기</a></li> 
         </ul>

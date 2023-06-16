@@ -25,8 +25,10 @@
 		<div id="back-area">
 			<button class="btn btn-outline-danger" id="back-btn">나가기</button>
 		</div>
+		<input type="hidden" name="mName" value="${loginMember.memberName}">
+		
 		<ul class="display-chatting">
-			<c:set var="previousMemberName" value="" />
+			<c:set var="previousMemberName" value="${chatMessage.memberName}" />
 				
 			<c:forEach var="chatMessage" items="${chatMessageList}" varStatus="vs">
 				<fmt:formatDate var="chatDate" value="${chatMessage.cmRegDate}" pattern="yyyy-MM-dd"/>
@@ -36,18 +38,34 @@
 
 			
 				
-					<c:when test="${chatMessage.memberName} ne ${memberName}">
+					<c:when test="${chatMessage.memberName ne memberName}">
 						<li class="yourChat">
 							<div class="chat-user">
+								<c:if test="${chatDate ne previousDate}"> 
+								
+									<div class="chatCalender"><i class="fa-regular fa-calendar-days">	<span>${chatDate}</span></i></div>
+							
+					
+								</c:if>
 								<a class="user-img"><i class='fa-solid fa-circle-user'></i></a>
 								<b>${chatMessage.memberName}님</b>
-								<span class="chatDate">${chatDate}</span>
+								
 							</div>
 								<p class="chat">${chatMessage.chatMessage}</p>
+										
+								<span class="chatDate">
+								
+
+									<span><c:if test="${chatDate3 >= 12}">오후</c:if>
+										<c:if test="${chatDate3 < 12}">오전</c:if>
+									</span>
+									${chatDate2}					
+									
+								</span>	
 						</li>
 					</c:when>
 					<c:otherwise>
-						<li>
+						<li id="myChat">
 							<c:if test="${chatDate ne previousDate}"> 
 								
 								<div class="chatCalender"><i class="fa-regular fa-calendar-days">	<span>${chatDate}</span></i></div>
@@ -56,7 +74,7 @@
 							</c:if>
 							<br>
 
-							<p class="chat" id="myChat">${chatMessage.chatMessage}</p>
+							
 							
 							<span class="chatDate">
 							
@@ -65,8 +83,9 @@
 									<c:if test="${chatDate3 < 12}">오전</c:if>
 								</span>
 								${chatDate2}					
-								${chatDate}  <!--날짜 확인용-->
+								
 							</span>	
+							<p class="chat">${chatMessage.chatMessage}</p>
 						</li>
 					</c:otherwise>
 				</c:choose>
@@ -77,9 +96,9 @@
 		
 		<div class="input-area">
 			<textarea id="inputChatting" rows="3"></textarea>
-			<button id="send">보내기</button>
+			<button id="send"><i class="fa-regular fa-paper-plane"></i></button>
 		</div>
-	
+		<input type="hidden" name="date" value="${chatDate}">
 	</div>
 	
 	

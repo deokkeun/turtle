@@ -2,26 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 
 
-<!--  ====================== 백단 footer ======================= -->
-
-<!-- <footer>
-    <p>Copyright &copy; TURTLE Information Colaboration Company</p>
-
-    <article>
-        <a href="">푸터 알람이 안뜨네...</a>
-        <a href="#">프로젝트 소개</a>
-        <span>|</span>
-        <a href="#">이용약관</a>
-        <span>|</span>
-        <a href="#">개인정보처리방침</a>
-        <span>|</span>
-        <a href="#">고객센터</a>
-    </article>
-</footer>
-
--->
-
-
 <c:if test="${ !empty message }">
     <script>
         alert("${message}");
@@ -54,9 +34,9 @@
             
             
             <div class="copyright">
-              <a href="/etc/terms"><span><b>서비스 이용약관</b></span></a>&nbsp;&nbsp;&nbsp;
-              <a href="#"><span><b>개인정보 처리방침</b></span></a>&nbsp;&nbsp;&nbsp;
-              <a href="#"><span><b>전자금융거래 이용약관</b></span></a>&nbsp;&nbsp;&nbsp;
+              <a href="${contextPath}/etc/terms"><span><b>서비스 이용약관</b></span></a>&nbsp;&nbsp;&nbsp;
+              <a href="${contextPath}/etc/terms"><span><b>개인정보 처리방침</b></span></a>&nbsp;&nbsp;&nbsp;
+              <a href="${contextPath}/etc/terms"><span><b>전자금융거래 이용약관</b></span></a>&nbsp;&nbsp;&nbsp;
               &nbsp;&nbsp;&nbsp;
               &copy; Copyright <strong>TURTLE</strong>. All Rights Reserved
             </div>

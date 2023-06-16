@@ -31,9 +31,7 @@
 	<link href="${contextPath}/resources/vendor/remixicon/remixicon.css" rel="stylesheet">
 	<link href="${contextPath}/resources/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     
-	<!-- landing-style.css (백단작업용 css) -->
-    <!--  <link rel="stylesheet" href="${contextPath}/resources/css/landing-style.css"> -->
-    <!-- landing.css (프론트작업용 css) -->
+    <!-- 랜딩(헤더/본문/풋터).css -->
     <link rel="stylesheet" href="${contextPath}/resources/css/common/landing-header.css" />
     <link rel="stylesheet" href="${contextPath}/resources/css/common/landing.css" />
     <link rel="stylesheet" href="${contextPath}/resources/css/common/landing-footer.css" />
@@ -47,24 +45,24 @@
       
       
 	  <!-- 메인페이지 들어가는 버튼(나중에 지울거임) -->         
-	  <form action="${contextPath}/member/login" method="GET">
+	  <!-- <form action="${contextPath}/member/login" method="GET">
 		<button class="mainBtn" style="width: 200px; height: 50px; background-color: orangered; margin-top: 150px;">
 			main페이지 바로가기(landing-header.jsp)</button>
-	  </form>
+	  </form> -->
 
 	  <!-- 로그인한 회원정보 불러옴 -->
-	  <c:if test="${!empty loginMember}">
+	  <!--<c:if test="${!empty loginMember}">
   		    <div>로그인시(멤버정보)</div>
         <div>회원번호 : ${loginMember.memberNo}</div>
         <div>회원명 : ${loginMember.memberName}</div>
         <div>프로필 이미지 : ${loginMember.profileImage}</div>
         <div>회원 이메일 : ${loginMember.memberEmail}</div>
         <div>회원 가입일 : ${loginMember.enrollDate}</div>
-  	  </c:if>
+  	  </c:if>-->
   	
-	  <c:if test="${empty loginMember}">
+	 <!-- <c:if test="${empty loginMember}">
   		<div class="empty">empty loginMember(landing-header.jsp부분)</div>
-  	  </c:if> 
+  	  </c:if>  --> 
   	
     
 	  <!-- ======= Top banner Section (원래 Hero Section) ======= -->
@@ -91,7 +89,7 @@
 	          <!-- 무료로 사용하기 버튼 -->
 	          <div data-aos="fade-up" data-aos-delay="600">
 	            <div class="text-center text-lg-start">
-	              <a href="#" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+	              <a href="${contextPath}/member/login" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
 	                <span>무료로 사용하기</span>
 	                <i class="bi bi-arrow-right"></i>
 	              </a>
@@ -486,7 +484,7 @@
 	
 	            <div data-aos="zoom-out" data-aos-delay="500">
 	              <div class="text-center text-lg-center">
-	                <a href="#" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+	                <a href="${contextPath}/member/login" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
 	                  <span>무료로 사용하기</span>
 	                  <i class="bi bi-arrow-right"></i>
 	                </a>

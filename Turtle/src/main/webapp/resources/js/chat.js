@@ -66,7 +66,10 @@ chattingSock.onmessage = function(e){
 	console.log(chatMessage);
 	console.log(chatMessage.memberName);
 	console.log(previousMemberName);
-	
+	const mName = document.getElementsByName('mName')[0].value;
+	const cDate = document.getElementsByName('date')[0].value;
+	console.log(mName + "0");
+
 	const li = document.createElement("li");
 
 	const p = document.createElement("p");
@@ -83,16 +86,26 @@ chattingSock.onmessage = function(e){
 	span.innerText = currentTime(); // 날짜
 	const br = document.createElement("br"); // 개행
 
-	
-	if( chatMessage.memberName == previousMemberName ){
-		li.append(p,span);
-
-	}else if(chatMessage.memberName != previousMemberName){
-		li.innerHTML = "<hr><b>"  + chatMessage.memberName  +  "</b>";
-		li.append(span, br, p);
+	// 여기는 조건문 1개만 어차피 내가 치는 채팅이니깐 조건문을 날짜로 하면됨
+	if( cDate != currentTime2() ){
 		
+
+		li.innerHTML = "<div class='chatCalender'><i class='fa-regular fa-calendar-days'><span>"+cDate+"</span></i></div>";
+		li.append(span,p);
+		li.setAttribute('id','myChat');
+
+	}else if(chatMessage.memberName == previousMemberName){
+		li.setAttribute('id','myChat');
+		console.log(cDate);
+		console.log(currentTime2());
+		console.log(currentTime());
+		
+
+		
+		li.append(span,p);
 	}
 	
+
 	previousMemberName = chatMessage.memberName;
 
 	// 채팅창
@@ -122,6 +135,18 @@ function currentTime(){
 			   + addZero( now.getMinutes() ); 
 
 	return time;
+}
+
+function currentTime2() {
+	const now = new Date();
+	
+	const time = now.getFullYear()
+				+ "-" + addZero(now.getMonth()+1)
+				+ "-" + addZero(now.getDate());
+	
+	return time;
+
+
 }
 
 // 10보다 작을 경우 앞에 0을 붙이는 함수
