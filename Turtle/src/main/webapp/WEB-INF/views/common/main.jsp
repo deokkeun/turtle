@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turtle</title>
+    
+ 
+    
 	<!-- main-style.css -->
 
 	<!-- fontawesome -->
@@ -18,7 +22,8 @@
     	<!-- header include -->
         <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-    <!-- ======= Sidebar(왼쪽 사이드바) ======= -->
+
+ <!-- ======= Sidebar(왼쪽 사이드바) ======= -->
   <aside id="sidebar" class="sidebar"> 
 
     <ul class="sidebar-nav" id="sidebar-nav">
@@ -87,15 +92,15 @@
   
         <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#project-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-menu-button-wide"></i><span>PROJECT</span><i class="bi bi-chevron-down ms-auto"></i>
-            <button class="add-file-button" onclick="addFile('project-nav', event)"><i class="bi bi-plus"></i></button>
+            <i class="bi bi-chevron-down" id="arrow"></i><i class="bi bi-menu-button-wide"></i><span>나의 프로젝트</span>
+            <button class="add-file-button ms-auto" onclick="addFile('project-nav', event)"><i class="bi bi-plus"></i></button>
           </a>
       
           <ul id="project-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
   
             <li>
               <a href="my-projects/project1.html">
-                <i class="bi bi-circle"></i><span>Dashboard</span>
+                <i class="bi bi-circle"></i><span>프로젝트 1</span>
                 <div class="file-menu">
                   <button class="rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i></button>
                   <button class="delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i></button>
@@ -110,13 +115,13 @@
   
         <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#shared-project-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-journal-text"></i><span>SHARED PROJECT</span><i class="bi bi-chevron-down ms-auto"></i>
-            <button class="add-file-button" onclick="addFile('shared-project-nav')"><i class="bi bi-plus"></i></button>
+            <i class="bi bi-chevron-down" id="arrow"></i> </i><span>공유 프로젝트</span>
+            <button class="add-file-button ms-auto" onclick="addFile('shared-project-nav')"><i class="bi bi-plus"></i></button>
           </a>
           <ul id="shared-project-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
               <a href="">
-                <i class="bi bi-circle"></i><span>Dashboard</span>
+                <i class="bi bi-circle"></i><span>프로젝트 1</span>
                 <div class="file-menu">
                   <button class="rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i></button>
                   <button class="delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i></button>
@@ -129,13 +134,13 @@
         </li><!-- End Shared Project Nav -->
         <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#workspace-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-layout-text-window-reverse"></i><span>WORKSPACE</span><i class="bi bi-chevron-down ms-auto"></i>
-            <button class="add-file-button" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button>
+            <i class="bi bi-chevron-down" id="arrow"></i><span>작업 공간</span>
+            <button class="add-file-button ms-auto" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button>
           </a>
           <ul id="workspace-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
             <li>
               <a href="">
-                <i class="bi bi-circle"></i><span>게시판</span>
+                <i class="bi bi-circle"></i><span>파일</span>
                 <div class="file-menu">
                   <button class="rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i></button>
                   <button class="delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i></button>
@@ -144,7 +149,7 @@
             </li>
             <li>
               <a href="">
-                <i class="bi bi-circle"></i><span>Back-end</span>
+                <i class="bi bi-circle"></i><span>할일 목록</span>
                 <div class="file-menu">
                   <button class="rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i></button>
                   <button class="delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i></button>
@@ -186,6 +191,12 @@
 <!-- right sidebar(오른쪽 사이드바) --> 
 
 <aside class="right-sidebar" id="rightSidebar">
+    <form action="../chat/chatRoomList/1" method="get">
+        	<button>채팅 테스트</button>
+    </form>
+        
+ <jsp:include page="/WEB-INF/views/chat/chatRoomList.jsp"></jsp:include> 
+
   <button class="sidebar-close-btn" onclick="toggleSidebar()"><i class="bi bi-chevron-double-right"></i></button>
   <ul class="right-sidebar-nav" id="right-sidebar-nav">
    
@@ -220,8 +231,8 @@
     <!-- 추가적인 메뉴 항목들 -->
   </ul>
   
+
  
-</aside>
     <main id="main" class="main">
  	
 
@@ -253,7 +264,7 @@
             <button>git loadMap test(GET)</button>
         </form>
       
-        <form action="../calendar/calendar" method="GET">
+        <form action="../calendar/calendar/1/9" method="GET">
            <button>calendar</button>
         </form>
               
@@ -272,7 +283,10 @@
 
 
     </main>
+    <script>
+      const contextPath = "${contextPath}";
 
+    </script>
     <!-- footer include -->
    	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
     <!-- jQuery 라이브러리 추가 -->
@@ -281,11 +295,11 @@
     <script src="${contextPath}/resources/js/main.js"></script>
      <!-- Vendor JS Files -->
 
-  <script src="${contextPath}/resources/js/bootstrap.bundle.min.js"></script>
+	
+  <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.min.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js"></script>
-  <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script>
 
+  <!-- chat js -->
+  <script src="${contextPath}/resources/js/chat.js"></script>
 </body>
 </html>

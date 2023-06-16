@@ -51,7 +51,9 @@ function sendMessage(){
 
 		inputChatting.value = ""; // 입력된 채팅 내용 삭제
 	}
+	
 }
+
 
 // 웹소켓 핸들러에서
 // s.sendMessage( new TextMessage(message.getPayload()) );
@@ -87,6 +89,39 @@ chattingSock.onmessage = function(e){
 	const br = document.createElement("br"); // 개행
 
 	// 여기는 조건문 1개만 어차피 내가 치는 채팅이니깐 조건문을 날짜로 하면됨
+
+	if(mName != chatMessage.memberName) {
+		
+		if( cDate != currentTime2() ){
+			
+			li.innerHTML = "<div class='chatCalender'><i class='fa-regular fa-calendar-days'><span>"+cDate+"</span></i></div>";
+			li.innerHTML = "<div><a class='user-img'><i class='fa-solid fa-circle-user'></i></a><b>"+chatMessage.memberName+"님</b></div>";
+			li.append(p,span);
+			li.setAttribute('id','yourChat');
+
+		}else{
+			li.setAttribute('id','yourChat');
+			console.log(cDate);
+			li.innerHTML = "<div><a class='user-img'><i class='fa-solid fa-circle-user'></i></a><b>"+chatMessage.memberName+"님</b></div>";
+			li.append(p,span);
+		}
+
+	}else {
+		if( cDate != currentTime2() ){
+		
+
+			li.innerHTML = "<div class='chatCalender'><i class='fa-regular fa-calendar-days'><span>"+cDate+"</span></i></div>";
+			li.append(span,p);
+			li.setAttribute('id','myChat');
+	
+		}else{
+			li.setAttribute('id','myChat');
+			li.append(span,p);
+		}
+
+	}
+
+/*
 	if( cDate != currentTime2() ){
 		
 
@@ -104,7 +139,7 @@ chattingSock.onmessage = function(e){
 		
 		li.append(span,p);
 	}
-	
+*/
 
 	previousMemberName = chatMessage.memberName;
 
@@ -161,3 +196,19 @@ function addZero(temp){
 document.querySelector('#back-btn').onclick = function() {
   history.back();
 }
+
+//이모티콘
+ const button = document.querySelector("#emoji_btn");
+const picker = new EmojiButton({
+  position: 'bottom-start'
+});
+
+button.addEventListener('click', () => {
+  picker.togglePicker(button);
+});
+
+picker.on('emoji', emoji => {
+  const text_box = document.querySelector('#inputChatting');
+  text_box.value += emoji;
+});
+
