@@ -117,6 +117,7 @@ ul a:hover {
 /* 로그인, 로그아웃 버튼 */
 #login-modal-btn {
 	color: black;
+	text-decoration: none;
 }
 
 
