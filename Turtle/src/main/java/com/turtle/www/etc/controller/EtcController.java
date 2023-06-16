@@ -14,10 +14,10 @@ public class EtcController {
 		return "etc/terms";
 	}
 	
-	@GetMapping("/fee")
-	public String feePage() {
+	@GetMapping("/pricing")
+	public String pricingPage() {
 		
-		return "etc/fee";
+		return "etc/pricing";
 	}
 	
 	@GetMapping("/faq")

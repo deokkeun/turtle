@@ -4,7 +4,7 @@
 
 <!-- ======= 최종작업용 Header ======= -->
   <header id="header" class="header fixed-top">
-    <div id="allnav" class="container-fluid container">
+    <div id="allnav" class="container">
       <nav id="navbar" class="navbar container-fluid">
       
       
@@ -18,7 +18,7 @@
 		<!-- 메뉴 -->
         <ul class="nav-links">
           <li><a href="${contextPath}">소개</a></li>
-          <li><a href="${contextPath}/etc/fee">요금제</a></li>
+          <li><a href="${contextPath}/etc/pricing">요금제</a></li>
           <li><a href="${contextPath}/etc/faq">고객센터</a></li>
         </ul>
           
@@ -39,53 +39,58 @@
         		<input type="hidden" name="memberPw" value="deokkeun!">
         		<button>emailTest</button>
         	</form>
-    	</div>
+    	</div> 
 
-
-
-		<%-- if - else --%>
-   <%--      <c:choose>  
-       		로그인이 되어있지 않은 경우
-			<c:when test="${ empty sessionScope.loginMember }"> 
-            		
-       			<form action="member/login" method="POST" name="login-form" onsubmit="return loginValidate()">
-		                 
-            		
-           	</c:when>
-            	
-            	 --%>
-            <%-- 로그인이 되어있는 경우 --%>
-            <%-- <c:otherwise> --%>
-            			
-	            <!-- 로그아웃 + 프로젝트 글씨 -->                                       
-	          <%--   <div class="my-info">
-	               <div>
-	                   <a href="${contextPath}/member/myPage/info" id="nickname">${loginMember.memberNickname}</a>
-	
-	                   <a href="${contextPath}/member/logout" id="logout-btn">로그아웃</a>
-	               </div>
-	
-	               <p>
-	                   ${loginMember.memberEmail}
-	               </p>
-	            </div>
-            			
-            		
-           	</c:otherwise>
-        </c:choose> --%>
+          		
 		
-		
+		<!-- <ul class="nav-links2">		
+     		<li>          
+       			<div id="login-box">
+       				<a id="login-modal-btn">로그인</a>
+       			</div>
+       		</li>  
+       		<li><a href="/www/member/signUp" class="nav-btn">무료로 사용하기</a></li>	
+        </ul> -->
+
+
+	
         <ul class="nav-links2">
-          <li>           
-          	<div id="login-box">
-          		<a id="login-modal-btn">로그인</a>
-          	</div>
-          </li>
-          
-          
-         
-          <li><a href="${contextPath}/member/signUp" class="nav-btn">무료로 사용하기</a></li> 
+       		<!-- 로그인이 안되었을 경우 (비로그인 상태)  -->
+       		<c:if test="${empty loginMember}">
+        		<li>          
+          			<div id="login-box">
+          				<a id="login-modal-btn">로그인</a>
+          			</div>
+          		</li>  
+          		<li><a href="${contextPath}/member/signUp" class="nav-btn">무료사용</a></li> 
+       		</c:if>
+       		<!-- 로그인이 되었을 경우 (로그인 상태)  -->
+       		<c:if test="${!empty loginMember}">
+       			<li>
+       				<div id="login-box">
+       					<a href="${contextPath}/member/logout" id="login-modal-btn">로그아웃</a>
+       				</div>
+       			</li>
+       			<li><a href="${contextPath}/project/createProject" class="nav-btn">프로젝트</a></li>
+       		</c:if>	
         </ul>
+ 
+ 		<!--  로그인 상태일 때 특정 js 작동 안하게 하는 코드 -->
+		<script>
+			<c:if test="${empty loginMember}">
+		      	// 로그인버튼 이메일 포커스 js 
+		        window.onload = function() {
+		            document.getElementById("login-modal-btn").addEventListener("click", function() {
+		                const memberEmail = document.getElementsByName("memberEmail");
+		                memberEmail[0].focus();
+		            });
+		            //모달창 띄우는 js
+		            document.querySelector("#login-modal-btn").addEventListener("click", function() {
+		                modal("login-modal");
+		            });
+		        };
+			</c:if>  
+		</script>
       
         <!-- 반응형시 보이는 햄버거버튼 -->
         <a href="#" class="bar">
@@ -93,6 +98,11 @@
         </a>
       </nav>
     </div>
+    
+   
+	  
+    
+    
   </header>
  <!-- ======= End Header ======= -->
 

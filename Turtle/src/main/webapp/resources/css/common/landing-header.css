@@ -33,7 +33,7 @@ body {
   padding: 20px 0;
 }
 
-
+/* 헤더 스크롤 내릴 때 박스설정 */
 .header.header-scrolled {
   background: #fff;
   padding: 15px 0;
@@ -67,7 +67,7 @@ nav > ul {
 
 
 /* 네비바 안에 a태그 */
-li > a {
+nav > ul > li > a {
   text-decoration: none;
   color: black;
   cursor: pointer;
@@ -93,7 +93,6 @@ ul a:hover {
   padding-left: 0;
   margin-right: 100px;
   /* flex-basis: 20%; */
-  
 }
 
 .nav-links li {
@@ -101,7 +100,6 @@ ul a:hover {
   border-radius: 10px;
   font-weight: bold;
 }
-
 
 .nav-links2 {
   display: flex;
@@ -116,14 +114,19 @@ ul a:hover {
   /* font-size: 20px; */ 
 }
 
-.nav-links2 a:hover {
-/*   color: #a1b8be; 
- transition: 50ms;*/
+/* 로그인, 로그아웃 버튼 */
+#login-modal-btn {
+	color: black;
 }
 
 
+/* 로그인, 로그아웃 버튼 */
+#login-modal-btn:hover{
+	color: #317563; 
+ transition: 50ms;
+}
 
-/* 무료로 사용하기 버튼 설정 */
+/* 무료로 사용하기, 프로젝트 버튼 */
 .nav-btn {
   margin-top: 30px;
   line-height: 3;
@@ -142,7 +145,6 @@ ul a:hover {
   color: black;
   margin-top: 5px;
 }
-
 
 
 
@@ -438,5 +440,6 @@ h1 {
 
 
 g_id_signin {
+	margin: auto 0;
 	align-items: center;
 }

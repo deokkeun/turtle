@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="" name="description">
   	<meta content="" name="keywords">
@@ -32,7 +32,7 @@
 	<link href="${contextPath}/resources/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     
     <!-- 랜딩(헤더/본문/풋터).css -->
-    <link rel="stylesheet" href="${contextPath}/resources/css/common/landing-header.css" />
+    <link rel="stylesheet" href="${contextPath}/resources/css/common/landing-header.css?after" />
     <link rel="stylesheet" href="${contextPath}/resources/css/common/landing.css" />
     <link rel="stylesheet" href="${contextPath}/resources/css/common/landing-footer.css" />
 </head>
@@ -88,13 +88,37 @@
 	    
 	          <!-- 무료로 사용하기 버튼 -->
 	          <div data-aos="fade-up" data-aos-delay="600">
-	            <div class="text-center text-lg-start">
-	              <a href="${contextPath}/member/login" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-	                <span>무료로 사용하기</span>
-	                <i class="bi bi-arrow-right"></i>
-	              </a>
-	            </div>
+	          	<!-- 로그인이 안되었을 경우 (비로그인 상태)  -->
+	          	<c:if test="${empty loginMember}">
+		            <div class="text-center text-lg-start">
+		              <a href="${contextPath}/member/signUp" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+		                <span>무료로 사용하기</span>
+		                <i class="bi bi-arrow-right"></i>
+		              </a>
+		            </div>
+		        </c:if>  
+		        <!-- 로그인이 되었을 경우 (로그인 상태) && 프로젝트x : 프로젝트 생성(c:if and 조건으로)  -->
+		        <!-- 현재는 로그인되었을 경우 메인페이지 이동으로함. -->
+       			<c:if test="${!empty loginMember}">
+       				<div class="text-center text-lg-start">
+		              <a href="${contextPath}/member/login" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+		                <span>프로젝트로 이동</span>
+		                <i class="bi bi-arrow-right"></i>
+		              </a>
+		            </div>
+		         </c:if>	
+		         <!-- 로그인이 되었을 경우 (로그인 상태) && 프로젝트o : 메인페이지 이동  -->
+		         <!-- 아직 프로젝트 컨트롤러 없어서 코드 미작성중 -->
+		         <!--<c:if test="${!empty loginMember} && ">
+       				<div class="text-center text-lg-start">
+		              <a href="${contextPath}/member/login" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+		                <span>프로젝트</span>
+		                <i class="bi bi-arrow-right"></i>
+		              </a>
+		            </div>
+		         </c:if> -->	    
 	          </div>
+	          
 	        </div>
 	
 	        <!-- topbanner 오른쪽 사진설정 -->
@@ -481,19 +505,35 @@
 	          
 	          <div class="col-lg-12 text-center">
 	            <h4>Turtle과 함께 업무 효율성을 높여보세요</h4>
-	
-	            <div data-aos="zoom-out" data-aos-delay="500">
-	              <div class="text-center text-lg-center">
-	                <a href="${contextPath}/member/login" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-	                  <span>무료로 사용하기</span>
-	                  <i class="bi bi-arrow-right"></i>
-	                </a>
+
+	            
+	    		<!-- 무료로 사용하기 버튼 -->
+	            <div data-aos="zoom-out" data-aos-delay="400">
+	            	<!-- 로그인이 안되었을 경우 (비로그인 상태)  -->
+	          		<c:if test="${empty loginMember}">
+		              	<div class="text-center text-lg-center">
+		                	<a href="${contextPath}/member/signUp" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+		                  		<span>무료로 사용하기</span>
+		                  		<i class="bi bi-arrow-right"></i>
+		                  	</a>
+			            </div>
+		        	</c:if>  
+	              
+	              	<!-- 로그인이 되었을 경우 (로그인 상태) && 프로젝트x : 프로젝트 생성(c:if and 조건으로)  -->
+		        	<!-- 현재는 로그인되었을 경우 메인페이지 이동으로함. -->
+       				<c:if test="${!empty loginMember}">
+	       				<div class="text-center text-lg-center">
+			              <a href="${contextPath}/member/login" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+			                <span>프로젝트로 이동</span>
+			                <i class="bi bi-arrow-right"></i>
+			              </a>
+			            </div>
+		         	</c:if>	      
 	              </div>
+	              
 	            </div>
 	          </div>
-	
 	        </div>
-	      </div>
 	    </section>
        	
        
@@ -533,7 +573,5 @@
     
     <!-- landing2.js (프론트 최종작업용) 연결 -->
     <script src="${contextPath}/resources/js/landing2.js"></script>
-    <!-- landing.js (백단 작업용) 연결 -->
-    <!--  <script src="${contextPath}/resources/js/landing.js"></script> -->
 </body>
 </html>
