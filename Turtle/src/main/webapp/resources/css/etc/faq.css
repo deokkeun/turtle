@@ -116,7 +116,7 @@ section {
 
 
 .contact {
-  margin-top: 60px;
+  margin-top: 40px;
   margin-bottom: 60px;
   padding: 50px 0px 50px 0px;
 }
@@ -138,6 +138,7 @@ section {
 
 .textfaq h5 {
   margin-bottom: 0rem;
+  margin-top: 10px;
   font-weight: 530;
   color: #707070;
   
