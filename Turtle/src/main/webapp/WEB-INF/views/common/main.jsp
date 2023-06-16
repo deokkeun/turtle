@@ -253,7 +253,7 @@
             <button>git loadMap test(GET)</button>
         </form>
       
-        <form action="../calendar/calendar" method="GET">
+        <form action="../calendar/calendar/1/9" method="GET">
            <button>calendar</button>
         </form>
               

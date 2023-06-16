@@ -1,3 +1,4 @@
+
 2023-06-15 12:45:41 [INFO] 초기화 필터 생성
 2023-06-15 15:00:54 [INFO] 초기화 필터 파괴
 2023-06-15 15:01:14 [INFO] 초기화 필터 생성
@@ -24,3 +25,1084 @@ ip : 127.0.0.1
 2023-06-15 15:01:29 [INFO] 구구맨 로그인 성공
 2023-06-15 15:01:29 [INFO] 구구맨 로그인 성공
 2023-06-15 15:02:06 [INFO] 초기화 필터 파괴
+=======
+2023-06-15 11:12:19 [INFO] 초기화 필터 생성
+2023-06-15 11:12:27 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 11:12:33 [DEBUG] password999! / $2a$10$vdG50U3MH7ZMSeYU7TKVoOzAL74pbm49H24oMw6dFtMIfH3kt/Rfa
+2023-06-15 11:12:33 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-15 11:12:33 [INFO] Running Time : 5909ms
+2023-06-15 11:12:33 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 11:12:33 [INFO] 일일맨 로그인 성공
+2023-06-15 11:16:26 [INFO] 로그아웃 수행됨
+2023-06-15 11:16:39 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 11:16:39 [DEBUG] password999! / $2a$10$JqVOURPpNa5blKIDt2ZZDeQFoPl3xxW6W69xKXGx4wvU68vY2yoHe
+2023-06-15 11:16:39 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 11:16:39 [INFO] Running Time : 279ms
+2023-06-15 11:16:39 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 11:16:39 [INFO] 구구맨 로그인 성공
+2023-06-15 11:21:18 [INFO] 로그아웃 수행됨
+2023-06-15 11:21:24 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 11:21:25 [DEBUG] password999! / $2a$10$iqYkFdTb6LgHMhjLYUq26ebUqzw0WWcxm5TX3L0pAQOPCP9cG/4n.
+2023-06-15 11:21:25 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 11:21:25 [INFO] Running Time : 229ms
+2023-06-15 11:21:25 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 11:21:25 [INFO] 구구맨 로그인 성공
+2023-06-15 11:31:41 [DEBUG] allData[{"memberNo":"999","title":"aaaa","start":"2023-06-05T00:00:00.000Z","end":"2023-06-22T00:00:00.000Z","textarea":""}]
+2023-06-15 11:36:32 [INFO] 초기화 필터 파괴
+2023-06-15 11:47:50 [INFO] 초기화 필터 생성
+2023-06-15 11:47:58 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 11:48:03 [DEBUG] password999! / $2a$10$NeVoecGtc6dCdoWzJj3Sie8tSi2.43X2UdBPDaem8vSq7yKQ.ZLxO
+2023-06-15 11:48:03 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 11:48:03 [INFO] Running Time : 4643ms
+2023-06-15 11:48:03 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 11:48:03 [INFO] 구구맨 로그인 성공
+2023-06-15 11:48:13 [DEBUG] allData[{"memberNo":"999","title":"aaaa","start":"2023-06-12T00:00:00.000Z","end":"2023-06-23T00:00:00.000Z","textarea":""}]
+2023-06-15 11:49:08 [INFO] 초기화 필터 파괴
+2023-06-15 11:51:29 [INFO] 초기화 필터 생성
+2023-06-15 11:51:40 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 11:51:44 [DEBUG] password999! / $2a$10$p7.n.Nf9.RfS2c33vAkuju6hkE5BpQOdCg59mwprBFyJuim3lSmLW
+2023-06-15 11:51:44 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 11:51:44 [INFO] Running Time : 4151ms
+2023-06-15 11:51:44 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 11:51:44 [INFO] 구구맨 로그인 성공
+2023-06-15 11:51:58 [DEBUG] allData[{"memberNo":"999","title":"ddddd","start":"2023-06-05T00:00:00.000Z","end":"2023-06-28T00:00:00.000Z","textarea":""}]
+2023-06-15 11:52:31 [INFO] 초기화 필터 파괴
+2023-06-15 11:53:15 [INFO] 초기화 필터 생성
+2023-06-15 11:53:23 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 11:53:27 [DEBUG] password999! / $2a$10$iI9Je.rXloywWsti9EJZ4egkdviACzR2ZcV3rekh2uPZmwyDZ2TlO
+2023-06-15 11:53:27 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 11:53:27 [INFO] Running Time : 4004ms
+2023-06-15 11:53:27 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 11:53:27 [INFO] 구구맨 로그인 성공
+2023-06-15 11:53:39 [DEBUG] allData{allData=[{"memberNo":"999","title":"aaa","start":"2023-06-05T00:00:00.000Z","end":"2023-06-22T00:00:00.000Z","textarea":"aaa"}]}
+2023-06-15 11:53:39 [DEBUG] allDatanull
+2023-06-15 11:54:54 [INFO] 초기화 필터 파괴
+2023-06-15 12:00:49 [INFO] 초기화 필터 생성
+2023-06-15 12:00:57 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 12:01:01 [DEBUG] password999! / $2a$10$PyFMrgWeGWQnvqJBYM9EFeaxuxn6QmVJNYT7zRQH4wyUtrywLoUt2
+2023-06-15 12:01:02 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 12:01:02 [INFO] Running Time : 4335ms
+2023-06-15 12:01:02 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 12:01:02 [INFO] 구구맨 로그인 성공
+2023-06-15 12:01:12 [DEBUG] allData{allData=[{"memberNo":"999","title":"dd","start":"2023-06-06T00:00:00.000Z","end":"2023-06-21T00:00:00.000Z","textarea":"dd"}]}
+2023-06-15 12:01:40 [INFO] 초기화 필터 파괴
+2023-06-15 12:02:19 [INFO] 초기화 필터 생성
+2023-06-15 12:02:41 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 12:02:45 [DEBUG] password999! / $2a$10$8BOt14saT.ItyNe08ff5tuSD0XLknMFQpu0h36QUNeITu2kqrZsk2
+2023-06-15 12:02:45 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 12:02:45 [INFO] Running Time : 4011ms
+2023-06-15 12:02:45 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 12:02:45 [INFO] 구구맨 로그인 성공
+2023-06-15 12:02:54 [DEBUG] allData{memberNo=999, title=ddd, start=2023-06-05, end=2023-06-22, textarea=ddd, backgroundColor=#1A73E8}
+2023-06-15 12:03:22 [INFO] 초기화 필터 파괴
+2023-06-15 12:04:10 [INFO] 초기화 필터 생성
+2023-06-15 12:04:18 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 12:04:23 [DEBUG] password999! / $2a$10$4TkPrT2cGcSn1GrQ28Xjm.bFtC7c9fp5hTqjUTPwBnUor87cOPQlm
+2023-06-15 12:04:23 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 12:04:23 [INFO] Running Time : 4537ms
+2023-06-15 12:04:23 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 12:04:23 [INFO] 구구맨 로그인 성공
+2023-06-15 12:04:33 [DEBUG] allData{memberNo=999, title=ddd, start=2023-06-06, end=2023-06-15, textarea=dddd, backgroundColor=#1A73E8}
+2023-06-15 12:04:33 [DEBUG] allData999
+2023-06-15 12:05:13 [INFO] 초기화 필터 파괴
+2023-06-15 12:06:21 [INFO] 초기화 필터 생성
+2023-06-15 12:06:29 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 12:06:33 [DEBUG] password999! / $2a$10$uHFD.x744qVDg5fR3blz8u6mXTbytE2/GXXCTQjXSPFqXD/uy21R.
+2023-06-15 12:06:33 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 12:06:33 [INFO] Running Time : 4074ms
+2023-06-15 12:06:33 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 12:06:33 [INFO] 구구맨 로그인 성공
+2023-06-15 12:06:41 [DEBUG] allData{memberNo=999, title=dd, start=2023-06-12, end=2023-06-28, textarea=dd, backgroundColor=#1A73E8}
+2023-06-15 12:06:41 [DEBUG] allData999
+2023-06-15 12:07:24 [INFO] 초기화 필터 파괴
+2023-06-15 12:07:36 [INFO] 초기화 필터 생성
+2023-06-15 12:07:44 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 12:07:48 [DEBUG] password999! / $2a$10$z0f5QplZcI63fdYOsa5xIuRUBjvQA/QMuLNuA0Sc9iNsJr8q6OEAq
+2023-06-15 12:07:48 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 12:07:48 [INFO] Running Time : 4326ms
+2023-06-15 12:07:48 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 12:07:48 [INFO] 구구맨 로그인 성공
+2023-06-15 12:07:57 [DEBUG] allData{memberNo=999, title=dd, start=2023-06-05, end=2023-06-21, textarea=dd, backgroundColor=#1A73E8}
+2023-06-15 12:07:57 [DEBUG] allData999
+2023-06-15 12:08:27 [INFO] 초기화 필터 파괴
+2023-06-15 12:08:52 [INFO] 초기화 필터 생성
+2023-06-15 12:09:05 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 12:09:09 [DEBUG] password999! / $2a$10$2IbWPF1j8r00Fs2Y36MPf.fZdKsSHex0np2OHHPMmf589MX3XWIZS
+2023-06-15 12:09:09 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 12:09:09 [INFO] Running Time : 3678ms
+2023-06-15 12:09:09 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 12:09:09 [INFO] 구구맨 로그인 성공
+2023-06-15 12:09:17 [DEBUG] allData{memberNo=999, title=ddd, start=2023-06-06, end=2023-07-04, textarea=ddd, backgroundColor=#1A73E8}
+2023-06-15 12:09:17 [DEBUG] allData999
+2023-06-15 12:09:17 [DEBUG] allDataddd
+2023-06-15 12:10:43 [INFO] 초기화 필터 파괴
+2023-06-15 12:15:33 [INFO] 초기화 필터 생성
+2023-06-15 12:15:43 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 12:15:46 [DEBUG] password999! / $2a$10$MDju/jYQWtHlUhfE7eFCU.4hKI4a1EB8GMYYkqDHMbk42L0gVPM6W
+2023-06-15 12:15:46 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 12:15:46 [INFO] Running Time : 3878ms
+2023-06-15 12:15:46 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 12:15:46 [INFO] 구구맨 로그인 성공
+2023-06-15 12:29:04 [INFO] 초기화 필터 파괴
+2023-06-15 13:30:47 [INFO] 초기화 필터 생성
+2023-06-15 13:30:56 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 13:30:59 [DEBUG] password999! / $2a$10$wFPxCDyzD35mrp53jrvn6uO0E0Agf1w9qamLFoBInRXArcqNwQq6K
+2023-06-15 13:30:59 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 13:30:59 [INFO] Running Time : 3081ms
+2023-06-15 13:30:59 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 13:30:59 [INFO] 구구맨 로그인 성공
+2023-06-15 13:31:04 [INFO] projectNo : 1
+2023-06-15 13:31:04 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 13:31:04 [INFO] Return Value : 1
+2023-06-15 13:31:04 [INFO] Running Time : 73ms
+2023-06-15 13:31:04 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 13:31:04 [INFO] memberNo 999의 1번 프로젝트 안 PmNo : 1
+2023-06-15 13:31:04 [INFO] ---------------------------------------
+Start : ChatServiceImpl - selectChatRoomList
+Parameter : [{memberNo=999, projectNo=1, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 13:31:04 [INFO] Return Value : [ChatRoom(chatRoomNo=1, chatRoomTitle=Final 프로젝트, chatRoomST=N, projectNo=1, chatRoomType=1), ChatRoom(chatRoomNo=2, chatRoomTitle=Java, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=3, chatRoomTitle=Front, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=4, chatRoomTitle=DB, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=5, chatRoomTitle=삼삼맨, chatRoomST=N, projectNo=1, chatRoomType=3), ChatRoom(chatRoomNo=6, chatRoomTitle=오오맨, chatRoomST=N, projectNo=1, chatRoomType=3), ChatRoom(chatRoomNo=7, chatRoomTitle=일일맨, chatRoomST=N, projectNo=1, chatRoomType=3)]
+2023-06-15 13:31:04 [INFO] Running Time : 100ms
+2023-06-15 13:31:04 [INFO] End : ChatServiceImpl - selectChatRoomList
+---------------------------------------------
+
+2023-06-15 13:31:20 [INFO] ---------------------------------------
+Start : ChatServiceImpl - selectChatMessageList
+Parameter : [7]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 13:31:20 [INFO] Return Value : [ChatMessage(cmNo=0, chatMessage=구구맨 하이, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=뭐하고있음?, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=일일맨 안녕, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=나 테스트중이야, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=너는?, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=나도 테스트중, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=같이테스트하자, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=그래그래, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=화이팅구구맨, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=이상해, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇㅎ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇㅎ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇㅎㅇ<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=테스트테스트, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋㅋㅋㅋㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋㅋㅋㅋㅇㅁㄶㅁㅇㄶㅇㅁㅎㅁㅇㅎㅁ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=테스트세트스, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=??<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=??, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅁ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=헐<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=??, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=??<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅁㄶㅁㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=스고이<br>, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=dhdh, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=1231, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=1231, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=sdfs, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=rrnn<br>, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=2312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=22, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋㅋㅋ, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123<br>, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=5345, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=3234, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=567567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=5675, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=456, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=124124, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=12312312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=567567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=675675, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=3453, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=4535, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=345, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=345345, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=567567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=56757, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=567567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=57567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㄷㅈㄱㄷㄱ, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=456456, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=423423, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=56756, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=675, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=34534, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=5675, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=5675, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=5675, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=56756, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=456456, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=234, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=3453, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=23, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=223322, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=erw, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=werwe, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=werwer, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=werwer, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=567, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=567, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=567, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=234, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=34534, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=5675, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=567567, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=3453, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=345, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=456, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=345, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=234, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=234, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=234, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=345, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=1231231, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=1212412, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=124124123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=4564, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=345, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123<br><br>, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=456, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=456, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=456456, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=45645, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=45457, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=56756, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=567567, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=5645, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨)]
+2023-06-15 13:31:20 [INFO] Running Time : 324ms
+2023-06-15 13:31:20 [INFO] End : ChatServiceImpl - selectChatMessageList
+---------------------------------------------
+
+2023-06-15 13:31:20 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 13:31:20 [INFO] Return Value : 1
+2023-06-15 13:31:20 [INFO] Running Time : 24ms
+2023-06-15 13:31:20 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 13:31:25 [INFO] ---------------------------------------
+Start : ChatServiceImpl - insertMessage
+Parameter : [ChatMessage(cmNo=0, chatMessage=ASDFSDF, cmRegDate=2023-06-15, chatRoomNo=7, pmNo=1, pmProfile=null, memberName=구구맨)]
+[스케줄러 동작]
+2023-06-15 13:31:25 [INFO] Return Value : 1
+2023-06-15 13:31:25 [INFO] Running Time : 44ms
+2023-06-15 13:31:25 [INFO] End : ChatServiceImpl - insertMessage
+---------------------------------------------
+
+2023-06-15 13:31:42 [INFO] ---------------------------------------
+Start : ChatServiceImpl - selectChatMessageList
+Parameter : [7]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 13:31:43 [INFO] Return Value : [ChatMessage(cmNo=0, chatMessage=구구맨 하이, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=뭐하고있음?, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=일일맨 안녕, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=나 테스트중이야, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=너는?, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=나도 테스트중, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=같이테스트하자, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=그래그래, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=화이팅구구맨, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=이상해, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇㅎ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇㅎ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇㅎㅇ<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=테스트테스트, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋㅋㅋㅋㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋㅋㅋㅋㅇㅁㄶㅁㅇㄶㅇㅁㅎㅁㅇㅎㅁ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=테스트세트스, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=??<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=??, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅁ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=헐<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=??, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=??<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅁㄶㅁㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=스고이<br>, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=dhdh, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=1231, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=1231, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=sdfs, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=rrnn<br>, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=2312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=22, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋㅋㅋ, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123<br>, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=5345, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=3234, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=567567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=5675, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=456, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=124124, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=12312312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=567567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=675675, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=3453, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=4535, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=345, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=345345, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=567567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=56757, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=567567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=57567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㄷㅈㄱㄷㄱ, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=456456, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=423423, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=56756, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=675, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=34534, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=5675, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=5675, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=5675, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=56756, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=456456, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=234, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=3453, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=23, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=223322, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=erw, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=werwe, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=werwer, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=werwer, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=567, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=567, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=567, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=234, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=34534, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=5675, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=567567, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=3453, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=345, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=456, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=345, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=234, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=234, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=234, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=345, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=1231231, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=1212412, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=124124123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=4564, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=345, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123<br><br>, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=456, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=456, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=456456, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=45645, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=45457, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=56756, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=567567, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=5645, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ASDFSDF, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=345, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨)]
+2023-06-15 13:31:43 [INFO] Running Time : 284ms
+2023-06-15 13:31:43 [INFO] End : ChatServiceImpl - selectChatMessageList
+---------------------------------------------
+
+2023-06-15 13:31:43 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 13:31:43 [INFO] Return Value : 1
+2023-06-15 13:31:43 [INFO] Running Time : 19ms
+2023-06-15 13:31:43 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 13:31:48 [INFO] ---------------------------------------
+Start : ChatServiceImpl - selectChatMessageList
+Parameter : [7]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 13:31:49 [INFO] Return Value : [ChatMessage(cmNo=0, chatMessage=구구맨 하이, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=뭐하고있음?, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=일일맨 안녕, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=나 테스트중이야, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=너는?, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=나도 테스트중, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=같이테스트하자, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=그래그래, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=화이팅구구맨, cmRegDate=2023-06-07, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=이상해, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇㅎ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇㅎ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇㅎㅇ<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=테스트테스트, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋㅋㅋㅋㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋㅋㅋㅋㅇㅁㄶㅁㅇㄶㅇㅁㅎㅁㅇㅎㅁ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=테스트세트스, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=??<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=??, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅁ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=헐<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=??, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=??<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅁㄶㅁㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=스고이<br>, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=dhdh, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=1231, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=1231, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=sdfs, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=rrnn<br>, cmRegDate=2023-06-13, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=2312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=22, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋㅋㅋ, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123<br>, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=5345, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=3234, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=567567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=5675, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=456, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=124124, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=12312312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=567567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=675675, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=3453, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=4535, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=345, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=345345, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=567567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=56757, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=567567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=57567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㄷㅈㄱㄷㄱ, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=456456, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=423423, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=56756, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=675, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=34534, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=5675, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=5675, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=5675, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=56756, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=456456, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=567, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=234, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=3453, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=23, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=223322, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-14, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=erw, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=werwe, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=werwer, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=werwer, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=567, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=567, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=567, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=234, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=34534, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=5675, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=567567, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=3453, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=345, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=456, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=345, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=234, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=234, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=234, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=345, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=1231231, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=1212412, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=124124123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=4564, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=345, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123<br><br>, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=456, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=456, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=456456, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=45645, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=45457, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=56756, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=567567, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=5645, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=12312, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ASDFSDF, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=123123, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=345, cmRegDate=2023-06-15, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨)]
+2023-06-15 13:31:49 [INFO] Running Time : 242ms
+2023-06-15 13:31:49 [INFO] End : ChatServiceImpl - selectChatMessageList
+---------------------------------------------
+
+2023-06-15 13:31:49 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 13:31:49 [INFO] Return Value : 1
+2023-06-15 13:31:49 [INFO] Running Time : 25ms
+2023-06-15 13:31:49 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 13:31:57 [INFO] ---------------------------------------
+Start : ChatServiceImpl - insertMessage
+Parameter : [ChatMessage(cmNo=0, chatMessage=DD, cmRegDate=2023-06-15, chatRoomNo=7, pmNo=1, pmProfile=null, memberName=구구맨)]
+[스케줄러 동작]
+2023-06-15 13:31:57 [INFO] Return Value : 1
+2023-06-15 13:31:57 [INFO] Running Time : 51ms
+2023-06-15 13:31:57 [INFO] End : ChatServiceImpl - insertMessage
+---------------------------------------------
+
+2023-06-15 14:28:06 [INFO] 초기화 필터 파괴
+2023-06-15 14:28:12 [INFO] 초기화 필터 생성
+2023-06-15 14:29:12 [INFO] 초기화 필터 파괴
+2023-06-15 14:34:34 [INFO] 초기화 필터 생성
+2023-06-15 14:34:42 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 14:34:46 [DEBUG] password999! / $2a$10$ZYJSDaj3WIvWxX7eUs3KQOFIAMQpr49pYPs7/ohIx4PFBRk1xi1ja
+2023-06-15 14:34:46 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 14:34:46 [INFO] Running Time : 4169ms
+2023-06-15 14:34:46 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 14:34:46 [INFO] 구구맨 로그인 성공
+2023-06-15 14:36:37 [INFO] 초기화 필터 파괴
+2023-06-15 14:37:29 [INFO] 초기화 필터 생성
+2023-06-15 14:37:36 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 14:37:40 [DEBUG] password999! / $2a$10$NjbU/EGpQghGPNUad/SfNelBwmIMYW61cZPlno4LD./8RuLYAJtN6
+2023-06-15 14:37:40 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 14:37:40 [INFO] Running Time : 4002ms
+2023-06-15 14:37:40 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 14:37:40 [INFO] 구구맨 로그인 성공
+2023-06-15 14:37:44 [DEBUG] 0
+2023-06-15 14:39:07 [INFO] 초기화 필터 파괴
+2023-06-15 14:39:28 [INFO] 초기화 필터 생성
+2023-06-15 14:39:36 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 14:39:40 [DEBUG] password999! / $2a$10$FFRkMdh3pHvAf7jOZUHLROpsb8l1DityB0FsgzzUfRwyzszQuVjyO
+2023-06-15 14:39:40 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 14:39:40 [INFO] Running Time : 3833ms
+2023-06-15 14:39:40 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 14:39:40 [INFO] 구구맨 로그인 성공
+2023-06-15 14:39:43 [DEBUG] 999
+2023-06-15 14:41:05 [DEBUG] 999
+2023-06-15 14:58:15 [INFO] 초기화 필터 파괴
+2023-06-15 15:21:01 [INFO] 초기화 필터 생성
+2023-06-15 15:21:20 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 15:21:24 [DEBUG] password999! / $2a$10$Oepc5Df.1dkLHx9cygCQa.bgomMg6CVYMfxkAz9qcw7IDYqOnG8X6
+2023-06-15 15:21:24 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 15:21:24 [INFO] Running Time : 4097ms
+2023-06-15 15:21:24 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 15:21:24 [INFO] 구구맨 로그인 성공
+2023-06-15 15:21:47 [INFO] 초기화 필터 파괴
+2023-06-15 18:05:42 [INFO] 초기화 필터 생성
+2023-06-15 18:08:18 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 18:08:21 [DEBUG] password999! / $2a$10$yw2NKmYyG8vyIgdzFiEK1OI8AJqZ4izMZYIagNPuOnpK3VOjwSHHK
+2023-06-15 18:08:21 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 18:08:21 [INFO] Running Time : 3629ms
+2023-06-15 18:08:21 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 18:08:21 [INFO] 구구맨 로그인 성공
+2023-06-15 18:10:17 [DEBUG] 999
+2023-06-15 18:10:35 [DEBUG] allData{memberNo=999, title=aaa, start=2023-06-05, end=2023-06-29, textarea=aaa, backgroundColor=#1A73E8}
+2023-06-15 18:10:35 [DEBUG] allData999
+2023-06-15 18:10:35 [DEBUG] allDataaaa
+2023-06-15 18:10:35 [DEBUG] allDataaaa
+2023-06-15 18:24:59 [INFO] 초기화 필터 파괴
+2023-06-15 18:30:05 [INFO] 초기화 필터 생성
+2023-06-15 18:30:13 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 18:30:16 [DEBUG] password999! / $2a$10$OrFGOUcmXw72Jg6L7npV..5GNLve7UeVa2kyL7uYv4UOUZnIipM76
+2023-06-15 18:30:17 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 18:30:17 [INFO] Running Time : 3616ms
+2023-06-15 18:30:17 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 18:30:17 [INFO] 구구맨 로그인 성공
+2023-06-15 18:30:24 [DEBUG] 999
+2023-06-15 18:30:34 [DEBUG] addEvent{title=aa, start=2023-06-05, end=2023-06-23, textarea=aa, backgroundColor=#1A73E8}
+2023-06-15 18:30:34 [DEBUG] memberNo999
+2023-06-15 18:30:34 [DEBUG] titleaa
+2023-06-15 18:31:18 [DEBUG] 999
+2023-06-15 18:31:20 [DEBUG] 999
+2023-06-15 18:31:23 [INFO] 초기화 필터 파괴
+2023-06-15 18:32:27 [INFO] 초기화 필터 생성
+2023-06-15 18:32:42 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 18:32:46 [DEBUG] password999! / $2a$10$zYgquOb1SxUpXjXWyhFY..Y00nj.QEX5tBfiYJ8M/xrwn4NaZg4BO
+2023-06-15 18:32:46 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 18:32:46 [INFO] Running Time : 3644ms
+2023-06-15 18:32:46 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 18:32:46 [INFO] 구구맨 로그인 성공
+2023-06-15 18:32:56 [DEBUG] 999
+2023-06-15 18:33:04 [DEBUG] addEvent{title=ddd, start=2023-06-12, end=2023-06-15, textarea=ddd, backgroundColor=orange}
+2023-06-15 18:33:04 [DEBUG] memberNo999
+2023-06-15 18:33:04 [DEBUG] titleddd
+2023-06-15 18:33:04 [DEBUG] start2023-06-12
+2023-06-15 18:33:04 [DEBUG] end2023-06-15
+2023-06-15 18:33:04 [DEBUG] textareaddd
+2023-06-15 18:33:04 [DEBUG] backgroundColororange
+2023-06-15 18:33:57 [INFO] 초기화 필터 파괴
+2023-06-15 20:13:59 [INFO] 초기화 필터 생성
+2023-06-15 20:14:10 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 20:14:13 [DEBUG] password999! / $2a$10$KrMT1uweJKhhJS2TvJrh7.aeQJkmD7Y000TPMan2MI53FYXT.xOlS
+2023-06-15 20:14:13 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 20:14:13 [INFO] Running Time : 3517ms
+2023-06-15 20:14:13 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 20:14:13 [INFO] 구구맨 로그인 성공
+2023-06-15 20:14:26 [DEBUG] 999
+2023-06-15 20:14:32 [DEBUG] addEvent{title=aaa, start=2023-06-05, end=2023-06-22, textarea=aaa, backgroundColor=#1A73E8}
+2023-06-15 20:14:32 [DEBUG] memberNo999
+2023-06-15 20:14:32 [DEBUG] titleaaa
+2023-06-15 20:14:32 [DEBUG] start2023-06-05
+2023-06-15 20:14:32 [DEBUG] end2023-06-22
+2023-06-15 20:14:32 [DEBUG] textareaaaa
+2023-06-15 20:14:32 [DEBUG] backgroundColor#1A73E8
+2023-06-15 20:39:20 [INFO] 초기화 필터 파괴
+2023-06-15 21:47:59 [INFO] 초기화 필터 생성
+2023-06-15 21:48:32 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 21:48:35 [DEBUG] password999! / $2a$10$w5AwSyzXNhyo9LKtZyvcEuWFMmz.lK3SOeAm/NEt.k2biNh3r75TC
+2023-06-15 21:48:35 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 21:48:35 [INFO] Running Time : 3584ms
+2023-06-15 21:48:35 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 21:48:35 [INFO] 구구맨 로그인 성공
+2023-06-15 21:48:36 [DEBUG] 999
+2023-06-15 21:49:09 [DEBUG] 999
+2023-06-15 21:49:58 [DEBUG] 999
+2023-06-15 21:50:21 [DEBUG] addEvent{allData=[{"memberNo":"999","title":"aaa","start":"2023-06-05T00:00:00.000Z","end":"2023-06-22T00:00:00.000Z","textarea":"aaaaa"}]}
+2023-06-15 21:50:21 [DEBUG] memberNo999
+2023-06-15 21:50:21 [DEBUG] titlenull
+2023-06-15 21:50:21 [DEBUG] startnull
+2023-06-15 21:50:21 [DEBUG] endnull
+2023-06-15 21:50:21 [DEBUG] textareanull
+2023-06-15 21:50:21 [DEBUG] backgroundColornull
+2023-06-15 21:50:22 [DEBUG] addEvent{title=, start=, end=, textarea=, backgroundColor=#1A73E8}
+2023-06-15 21:50:22 [DEBUG] memberNo999
+2023-06-15 21:50:22 [DEBUG] title
+2023-06-15 21:50:22 [DEBUG] start
+2023-06-15 21:50:22 [DEBUG] end
+2023-06-15 21:50:22 [DEBUG] textarea
+2023-06-15 21:50:22 [DEBUG] backgroundColor#1A73E8
+2023-06-15 21:55:21 [DEBUG] 999
+2023-06-15 21:55:22 [DEBUG] 999
+2023-06-15 21:55:29 [INFO] 로그아웃 수행됨
+2023-06-15 21:55:31 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 21:55:31 [DEBUG] password999! / $2a$10$IY4qlQLQ.M.f9YOAGBBIVe6nu13ysbRJd7redvZAJuslmeu2eFuwO
+2023-06-15 21:55:31 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 21:55:31 [INFO] Running Time : 274ms
+2023-06-15 21:55:31 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 21:55:31 [INFO] 구구맨 로그인 성공
+2023-06-15 21:55:35 [DEBUG] 999
+2023-06-15 21:56:08 [DEBUG] 999
+2023-06-15 21:56:11 [INFO] 로그아웃 수행됨
+2023-06-15 21:56:13 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 21:56:13 [DEBUG] password999! / $2a$10$t0NV3piO9H2F4sRCpQaTVuDtRy1yay5G3lAZMAQxJ6EX6.LPNnFkm
+2023-06-15 21:56:14 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 21:56:14 [INFO] Running Time : 254ms
+2023-06-15 21:56:14 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 21:56:14 [INFO] 구구맨 로그인 성공
+2023-06-15 21:56:19 [DEBUG] 999
+2023-06-15 21:57:06 [DEBUG] 999
+2023-06-15 21:57:07 [DEBUG] 999
+2023-06-15 21:57:08 [INFO] 초기화 필터 파괴
+2023-06-15 21:57:29 [INFO] 초기화 필터 생성
+2023-06-15 21:57:39 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 21:57:42 [DEBUG] password999! / $2a$10$8eCt8CEUXdM1rfmWTNVK6uTC0S7lmcKWGhFG6ibElshi0ndUaWgXa
+2023-06-15 21:57:42 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 21:57:42 [INFO] Running Time : 3640ms
+2023-06-15 21:57:42 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 21:57:42 [INFO] 구구맨 로그인 성공
+2023-06-15 21:57:49 [DEBUG] 999
+2023-06-15 21:58:18 [DEBUG] 999
+2023-06-15 21:58:21 [DEBUG] 999
+2023-06-15 21:58:33 [DEBUG] 999
+2023-06-15 21:58:51 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 21:58:51 [DEBUG] password999! / $2a$10$Xza0deihi/pTpZxEwWjjveWoKpiOssbS2wKwERQHrNuUGnlOhivRG
+2023-06-15 21:58:51 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-15 21:58:51 [INFO] Running Time : 278ms
+2023-06-15 21:58:51 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 21:58:51 [INFO] 일일맨 로그인 성공
+2023-06-15 21:58:56 [DEBUG] 1
+2023-06-15 22:00:06 [DEBUG] 1
+2023-06-15 22:00:15 [DEBUG] addEvent{allData=[{"memberNo":"1","title":"ㅁㅁ","start":"2023-06-05T00:00:00.000Z","end":"2023-06-22T00:00:00.000Z","textarea":"ㅁㅁ"}]}
+2023-06-15 22:00:15 [DEBUG] memberNo1
+2023-06-15 22:00:15 [DEBUG] titlenull
+2023-06-15 22:00:15 [DEBUG] startnull
+2023-06-15 22:00:15 [DEBUG] endnull
+2023-06-15 22:00:15 [DEBUG] textareanull
+2023-06-15 22:00:15 [DEBUG] backgroundColornull
+2023-06-15 22:00:16 [DEBUG] addEvent{title=, start=, end=, textarea=, backgroundColor=#1A73E8}
+2023-06-15 22:00:16 [DEBUG] memberNo1
+2023-06-15 22:00:16 [DEBUG] title
+2023-06-15 22:00:16 [DEBUG] start
+2023-06-15 22:00:16 [DEBUG] end
+2023-06-15 22:00:16 [DEBUG] textarea
+2023-06-15 22:00:16 [DEBUG] backgroundColor#1A73E8
+2023-06-15 22:01:15 [DEBUG] 1
+2023-06-15 22:01:24 [DEBUG] addEvent{allData=[{"memberNo":"1","title":"ㅁㅁㅁ","start":"2023-06-05T00:00:00.000Z","end":"2023-06-21T00:00:00.000Z","textarea":"ㅁㅁㅁ"}]}
+2023-06-15 22:01:24 [DEBUG] memberNo1
+2023-06-15 22:01:24 [DEBUG] titlenull
+2023-06-15 22:01:24 [DEBUG] startnull
+2023-06-15 22:01:24 [DEBUG] endnull
+2023-06-15 22:01:24 [DEBUG] textareanull
+2023-06-15 22:01:24 [DEBUG] backgroundColornull
+2023-06-15 22:02:06 [INFO] 초기화 필터 파괴
+2023-06-15 22:10:58 [INFO] 초기화 필터 생성
+2023-06-15 22:11:06 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 22:11:09 [DEBUG] password999! / $2a$10$s1dCMTfRZ6rlGC6kPyP5QO5T0tEPqqy5VwaWqD1PLJH4tpRZCKRXu
+2023-06-15 22:11:09 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-15 22:11:09 [INFO] Running Time : 3680ms
+2023-06-15 22:11:09 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 22:11:09 [INFO] 일일맨 로그인 성공
+2023-06-15 22:11:14 [DEBUG] 1
+2023-06-15 22:11:22 [DEBUG] allData{allData=[{"workspaceNo":9,"pmNo":1,"calTitle":"aa","startDate":"2023-06-05T00:00:00.000Z","endDate":"2023-06-14T00:00:00.000Z","calContent":"aa","calColor":"blue"}]}
+2023-06-15 22:11:22 [DEBUG] memberNo1
+2023-06-15 22:11:22 [DEBUG] titlenull
+2023-06-15 22:11:22 [DEBUG] startnull
+2023-06-15 22:11:22 [DEBUG] endnull
+2023-06-15 22:11:22 [DEBUG] textareanull
+2023-06-15 22:11:22 [DEBUG] backgroundColornull
+2023-06-15 22:11:57 [DEBUG] allData{allData=[{"workspaceNo":9,"pmNo":1,"calTitle":"aa","startDate":"2023-06-05T00:00:00.000Z","endDate":"2023-06-14T00:00:00.000Z","calContent":"dd","calColor":"blue"},{"workspaceNo":9,"pmNo":1,"calTitle":"dd","startDate":"2023-06-06T00:00:00.000Z","endDate":"2023-06-13T00:00:00.000Z","calContent":"dd","calColor":"blue"}]}
+2023-06-15 22:11:57 [DEBUG] memberNo1
+2023-06-15 22:11:57 [DEBUG] titlenull
+2023-06-15 22:11:57 [DEBUG] startnull
+2023-06-15 22:11:57 [DEBUG] endnull
+2023-06-15 22:11:57 [DEBUG] textareanull
+2023-06-15 22:11:57 [DEBUG] backgroundColornull
+2023-06-15 22:16:24 [INFO] 초기화 필터 파괴
+2023-06-15 22:16:51 [INFO] 초기화 필터 생성
+2023-06-15 22:16:59 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 22:17:02 [DEBUG] password999! / $2a$10$WRQkG8HOudGpnukjCt92EO0Om0RKZnObiLT7aR25Wljkya8Cu0vCq
+2023-06-15 22:17:02 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-15 22:17:02 [INFO] Running Time : 3213ms
+2023-06-15 22:17:02 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 22:17:02 [INFO] 일일맨 로그인 성공
+2023-06-15 22:17:06 [DEBUG] 1
+2023-06-15 22:17:14 [DEBUG] addEvent{title=aaa, start=2023-06-05, end=2023-06-15, textarea=aaa, backgroundColor=#1A73E8}
+2023-06-15 22:17:14 [DEBUG] memberNo1
+2023-06-15 22:17:14 [DEBUG] titleaaa
+2023-06-15 22:17:14 [DEBUG] start2023-06-05
+2023-06-15 22:17:14 [DEBUG] end2023-06-15
+2023-06-15 22:17:14 [DEBUG] textareaaaa
+2023-06-15 22:17:14 [DEBUG] backgroundColor#1A73E8
+2023-06-15 22:20:25 [INFO] 초기화 필터 파괴
+2023-06-15 23:07:21 [INFO] 초기화 필터 생성
+2023-06-15 23:07:30 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 23:07:33 [DEBUG] password999! / $2a$10$U/mw76fjwRAXwu/HbVi4Zu/Dxw.0OOP1rs7SUJxHwbP6PEUNQunX6
+2023-06-15 23:07:33 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-15 23:07:33 [INFO] Running Time : 3598ms
+2023-06-15 23:07:33 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 23:07:33 [INFO] 일일맨 로그인 성공
+2023-06-15 23:07:39 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-15 23:07:40 [INFO] Return Value : 4
+2023-06-15 23:07:40 [INFO] Running Time : 92ms
+2023-06-15 23:07:40 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:07:40 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=9, pmNo=4}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-15 23:07:40 [ERROR] <<exception>> : com.turtle.www.calendar.model.dao.CalendarDAO.selectCalendarList(CalendarDAO.java:22) - null
+
+2023-06-15 23:07:40 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:09:16 [INFO] 초기화 필터 파괴
+2023-06-15 23:09:42 [INFO] 초기화 필터 생성
+2023-06-15 23:09:52 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 23:09:56 [DEBUG] password999! / $2a$10$aTWCic4nkgJ0.e7JjwpKsOaAlzA1/R12Amy6LTdXA345E9BCwTRfq
+2023-06-15 23:09:56 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-15 23:09:56 [INFO] Running Time : 3536ms
+2023-06-15 23:09:56 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 23:09:56 [INFO] 일일맨 로그인 성공
+2023-06-15 23:10:00 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-15 23:10:00 [INFO] Return Value : 4
+2023-06-15 23:10:00 [INFO] Running Time : 93ms
+2023-06-15 23:10:00 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:10:00 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=9, pmNo=4}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-15 23:10:00 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=Thu Jun 15 13:39:12 KST 2023, startDate=Sat Jun 03 00:00:00 KST 2023, endDate=Thu Jun 08 00:00:00 KST 2023)]
+2023-06-15 23:10:00 [INFO] Running Time : 51ms
+2023-06-15 23:10:00 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:10:00 [DEBUG] 1
+2023-06-15 23:12:42 [INFO] 로그아웃 수행됨
+2023-06-15 23:12:44 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 23:12:44 [DEBUG] password999! / $2a$10$VUop3wsDtqfDJ3qUF9LRjeLY8opaE0R2S6Wp4OuMmSYd6qFvLffyS
+2023-06-15 23:12:44 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 23:12:44 [INFO] Running Time : 274ms
+2023-06-15 23:12:44 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 23:12:44 [INFO] 구구맨 로그인 성공
+2023-06-15 23:12:49 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:12:49 [INFO] Return Value : 1
+2023-06-15 23:12:49 [INFO] Running Time : 65ms
+2023-06-15 23:12:49 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:12:49 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:12:49 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=Thu Jun 15 13:39:12 KST 2023, startDate=Sat Jun 03 00:00:00 KST 2023, endDate=Thu Jun 08 00:00:00 KST 2023)]
+2023-06-15 23:12:49 [INFO] Running Time : 53ms
+2023-06-15 23:12:49 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:12:49 [DEBUG] 999
+2023-06-15 23:15:53 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:15:53 [INFO] Return Value : 1
+2023-06-15 23:15:53 [INFO] Running Time : 77ms
+2023-06-15 23:15:53 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:15:53 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:15:53 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=Thu Jun 15 13:39:12 KST 2023, startDate=Sat Jun 03 00:00:00 KST 2023, endDate=Thu Jun 08 00:00:00 KST 2023)]
+2023-06-15 23:15:53 [INFO] Running Time : 53ms
+2023-06-15 23:15:53 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:15:53 [DEBUG] 999
+2023-06-15 23:16:18 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:16:18 [INFO] Return Value : 1
+2023-06-15 23:16:18 [INFO] Running Time : 50ms
+2023-06-15 23:16:18 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:16:18 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:16:18 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=Thu Jun 15 13:39:12 KST 2023, startDate=Sat Jun 03 00:00:00 KST 2023, endDate=Thu Jun 08 00:00:00 KST 2023)]
+2023-06-15 23:16:18 [INFO] Running Time : 48ms
+2023-06-15 23:16:18 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:16:18 [DEBUG] 999
+2023-06-15 23:16:33 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:16:33 [INFO] Return Value : 1
+2023-06-15 23:16:33 [INFO] Running Time : 73ms
+2023-06-15 23:16:33 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:16:33 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:16:33 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=Thu Jun 15 13:39:12 KST 2023, startDate=Sat Jun 03 00:00:00 KST 2023, endDate=Thu Jun 08 00:00:00 KST 2023)]
+2023-06-15 23:16:33 [INFO] Running Time : 51ms
+2023-06-15 23:16:33 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:16:33 [DEBUG] 999
+2023-06-15 23:22:47 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:22:47 [INFO] Return Value : 1
+2023-06-15 23:22:47 [INFO] Running Time : 52ms
+2023-06-15 23:22:47 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:22:47 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:22:48 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=Thu Jun 15 13:39:12 KST 2023, startDate=Sat Jun 03 00:00:00 KST 2023, endDate=Thu Jun 08 00:00:00 KST 2023)]
+2023-06-15 23:22:48 [INFO] Running Time : 36ms
+2023-06-15 23:22:48 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:22:48 [DEBUG] 999
+2023-06-15 23:24:26 [INFO] 초기화 필터 파괴
+2023-06-15 23:24:57 [INFO] 초기화 필터 생성
+2023-06-15 23:25:05 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 23:25:09 [DEBUG] password999! / $2a$10$hKnfeUZ8qNcB.6t897dd2.TnJle1zdpy12B9Oofadbbcxt6e3eCbG
+2023-06-15 23:25:09 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 23:25:09 [INFO] Running Time : 3623ms
+2023-06-15 23:25:09 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 23:25:09 [INFO] 구구맨 로그인 성공
+2023-06-15 23:25:14 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:25:14 [INFO] Return Value : 1
+2023-06-15 23:25:14 [INFO] Running Time : 81ms
+2023-06-15 23:25:14 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:25:14 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:25:14 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=Thu Jun 15 13:39:12 KST 2023, startDate=Sat Jun 03 00:00:00 KST 2023, endDate=Thu Jun 08 00:00:00 KST 2023)]
+2023-06-15 23:25:14 [INFO] Running Time : 42ms
+2023-06-15 23:25:14 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:25:14 [DEBUG] 999
+2023-06-15 23:29:47 [INFO] 초기화 필터 파괴
+2023-06-15 23:37:59 [INFO] 초기화 필터 생성
+2023-06-15 23:38:07 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 23:38:11 [DEBUG] password999! / $2a$10$hdSrKIeqMDVyFEebcJ7kOObavBzuX.GbLOkVmXNY287Uj7v0scmuW
+2023-06-15 23:38:11 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 23:38:11 [INFO] Running Time : 3560ms
+2023-06-15 23:38:11 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 23:38:11 [INFO] 구구맨 로그인 성공
+2023-06-15 23:38:16 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:38:16 [INFO] Return Value : 1
+2023-06-15 23:38:16 [INFO] Running Time : 91ms
+2023-06-15 23:38:16 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:38:16 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:38:16 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=Thu Jun 15 13:39:12 KST 2023, startDate=Sat Jun 03 00:00:00 KST 2023, endDate=Thu Jun 08 00:00:00 KST 2023)]
+2023-06-15 23:38:16 [INFO] Running Time : 49ms
+2023-06-15 23:38:16 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:38:16 [DEBUG] 999
+2023-06-15 23:39:17 [INFO] 초기화 필터 파괴
+2023-06-15 23:42:12 [INFO] 초기화 필터 생성
+2023-06-15 23:42:20 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 23:42:24 [DEBUG] password999! / $2a$10$vVwyg1avGL4PDivIW5/EGOOKncuNSyk7WE/ezcyYHp/LfY3cZ7rjm
+2023-06-15 23:42:24 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 23:42:24 [INFO] Running Time : 3635ms
+2023-06-15 23:42:24 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 23:42:24 [INFO] 구구맨 로그인 성공
+2023-06-15 23:42:28 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:42:28 [INFO] Return Value : 1
+2023-06-15 23:42:28 [INFO] Running Time : 94ms
+2023-06-15 23:42:28 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:42:28 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:42:28 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=Thu Jun 15 13:39:12 KST 2023, startDate=Sat Jun 03 00:00:00 KST 2023, endDate=Thu Jun 08 00:00:00 KST 2023)]
+2023-06-15 23:42:28 [INFO] Running Time : 47ms
+2023-06-15 23:42:28 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:42:28 [DEBUG] 999
+2023-06-15 23:43:30 [INFO] 초기화 필터 파괴
+2023-06-15 23:46:25 [INFO] 초기화 필터 생성
+2023-06-15 23:46:33 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 23:46:36 [DEBUG] password999! / $2a$10$GnbzdPffj9DpljF9//UxwOzPY9cQ.URgOezDL8c4RP2cTD7nKz/LS
+2023-06-15 23:46:37 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 23:46:37 [INFO] Running Time : 3436ms
+2023-06-15 23:46:37 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 23:46:37 [INFO] 구구맨 로그인 성공
+2023-06-15 23:46:41 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:46:41 [INFO] Return Value : 1
+2023-06-15 23:46:41 [INFO] Running Time : 94ms
+2023-06-15 23:46:41 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:46:41 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:46:41 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=Thu Jun 15 13:39:12 KST 2023, startDate=Sat Jun 03 00:00:00 KST 2023, endDate=Thu Jun 08 00:00:00 KST 2023)]
+2023-06-15 23:46:41 [INFO] Running Time : 45ms
+2023-06-15 23:46:41 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:46:41 [DEBUG] 999
+2023-06-15 23:48:33 [INFO] 초기화 필터 파괴
+2023-06-15 23:50:13 [INFO] 초기화 필터 생성
+2023-06-15 23:50:21 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 23:50:24 [DEBUG] password999! / $2a$10$f9Li1RucO8W1UWc.rCm8tuH0U.DqTGE.2cx/YrcJwuVmOApkKPT/6
+2023-06-15 23:50:24 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 23:50:24 [INFO] Running Time : 3491ms
+2023-06-15 23:50:24 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 23:50:24 [INFO] 구구맨 로그인 성공
+2023-06-15 23:50:30 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:50:30 [INFO] Return Value : 1
+2023-06-15 23:50:30 [INFO] Running Time : 84ms
+2023-06-15 23:50:30 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:50:30 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:50:30 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=Thu Jun 15 13:39:12 KST 2023, startDate=Sat Jun 03 00:00:00 KST 2023, endDate=Thu Jun 08 00:00:00 KST 2023)]
+2023-06-15 23:50:30 [INFO] Running Time : 41ms
+2023-06-15 23:50:30 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:50:30 [DEBUG] 999
+2023-06-15 23:51:37 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:51:37 [INFO] Return Value : 1
+2023-06-15 23:51:37 [INFO] Running Time : 59ms
+2023-06-15 23:51:37 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:51:37 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:51:37 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=Thu Jun 15 13:39:12 KST 2023, startDate=Sat Jun 03 00:00:00 KST 2023, endDate=Thu Jun 08 00:00:00 KST 2023)]
+2023-06-15 23:51:37 [INFO] Running Time : 38ms
+2023-06-15 23:51:37 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:51:37 [DEBUG] 999
+2023-06-15 23:51:52 [INFO] 로그아웃 수행됨
+2023-06-15 23:51:54 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-15 23:51:54 [DEBUG] password999! / $2a$10$oX0Xq2lL0IRTO0VdFzLD6.ji7dlzdUGJ1tzQ1VRLhHOt8jEHmEwdC
+2023-06-15 23:51:54 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-15 23:51:54 [INFO] Running Time : 257ms
+2023-06-15 23:51:54 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-15 23:51:54 [INFO] 구구맨 로그인 성공
+2023-06-15 23:51:58 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:51:58 [INFO] Return Value : 1
+2023-06-15 23:51:58 [INFO] Running Time : 64ms
+2023-06-15 23:51:58 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:51:58 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:51:58 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=Thu Jun 15 13:39:12 KST 2023, startDate=Sat Jun 03 00:00:00 KST 2023, endDate=Thu Jun 08 00:00:00 KST 2023)]
+2023-06-15 23:51:58 [INFO] Running Time : 51ms
+2023-06-15 23:51:58 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:51:58 [DEBUG] 999
+2023-06-15 23:55:21 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:55:21 [INFO] Return Value : 1
+2023-06-15 23:55:21 [INFO] Running Time : 50ms
+2023-06-15 23:55:21 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:55:21 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:55:21 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=Thu Jun 15 13:39:12 KST 2023, startDate=Sat Jun 03 00:00:00 KST 2023, endDate=Thu Jun 08 00:00:00 KST 2023)]
+2023-06-15 23:55:21 [INFO] Running Time : 48ms
+2023-06-15 23:55:21 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:55:21 [DEBUG] 999
+2023-06-15 23:56:19 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:56:19 [INFO] Return Value : 1
+2023-06-15 23:56:19 [INFO] Running Time : 56ms
+2023-06-15 23:56:19 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:56:19 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:56:19 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=Thu Jun 15 13:39:12 KST 2023, startDate=Sat Jun 03 00:00:00 KST 2023, endDate=Thu Jun 08 00:00:00 KST 2023)]
+2023-06-15 23:56:19 [INFO] Running Time : 40ms
+2023-06-15 23:56:19 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:56:19 [DEBUG] 999
+2023-06-15 23:56:49 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:56:50 [INFO] Return Value : 1
+2023-06-15 23:56:50 [INFO] Running Time : 55ms
+2023-06-15 23:56:50 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:56:50 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:56:50 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=Thu Jun 15 13:39:12 KST 2023, startDate=Sat Jun 03 00:00:00 KST 2023, endDate=Thu Jun 08 00:00:00 KST 2023)]
+2023-06-15 23:56:50 [INFO] Running Time : 36ms
+2023-06-15 23:56:50 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:56:50 [DEBUG] 999
+2023-06-15 23:57:46 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:57:46 [INFO] Return Value : 1
+2023-06-15 23:57:46 [INFO] Running Time : 57ms
+2023-06-15 23:57:46 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:57:46 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:57:46 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=Thu Jun 15 13:39:12 KST 2023, startDate=Sat Jun 03 00:00:00 KST 2023, endDate=Thu Jun 08 00:00:00 KST 2023)]
+2023-06-15 23:57:46 [INFO] Running Time : 37ms
+2023-06-15 23:57:46 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:57:46 [DEBUG] 999
+2023-06-15 23:58:36 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:58:36 [INFO] Return Value : 1
+2023-06-15 23:58:36 [INFO] Running Time : 67ms
+2023-06-15 23:58:36 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:58:36 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:58:36 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=Thu Jun 15 13:39:12 KST 2023, startDate=Sat Jun 03 00:00:00 KST 2023, endDate=Thu Jun 08 00:00:00 KST 2023)]
+2023-06-15 23:58:36 [INFO] Running Time : 46ms
+2023-06-15 23:58:36 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:58:36 [DEBUG] 999
+2023-06-15 23:58:50 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:58:50 [INFO] Return Value : 1
+2023-06-15 23:58:50 [INFO] Running Time : 68ms
+2023-06-15 23:58:50 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-15 23:58:50 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-15 23:58:50 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=Thu Jun 15 13:39:12 KST 2023, startDate=Sat Jun 03 00:00:00 KST 2023, endDate=Thu Jun 08 00:00:00 KST 2023)]
+2023-06-15 23:58:50 [INFO] Running Time : 50ms
+2023-06-15 23:58:50 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-15 23:58:50 [DEBUG] 999
+
