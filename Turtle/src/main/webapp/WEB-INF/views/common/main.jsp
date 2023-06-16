@@ -22,6 +22,7 @@
     	<!-- header include -->
         <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
+
  <!-- ======= Sidebar(왼쪽 사이드바) ======= -->
   <aside id="sidebar" class="sidebar"> 
 
@@ -230,8 +231,8 @@
     <!-- 추가적인 메뉴 항목들 -->
   </ul>
   
+
  
-</aside>
     <main id="main" class="main">
  	
 
@@ -293,12 +294,10 @@
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/main.js"></script>
      <!-- Vendor JS Files -->
+
 	
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.min.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js"></script>
-  <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script>
 
   <!-- chat js -->
   <script src="${contextPath}/resources/js/chat.js"></script>
