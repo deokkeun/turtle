@@ -22,20 +22,30 @@
     	<c:choose>
     		<c:when test="${memo.memoType == 'workspace'}">
     			<div class="workspaceMemoDetail">
-    				<input type="hidden" name="pmNo" value="${pmNo}">
-		    		<input type="hidden" class="memoNo" value="${memo.memoNo}"/>
-		    		<input type="hidden" class="memoBgColor" value="${memo.memoBgColor}">
+    				
 		    		<span>메모넘버 : ${memo.memoNo}</span>
 		    		<span class="updatePmNo">최근 수정자 : ${memo.updatePmNo}</span><br>
-		    		<span class="memoUpdateDate">최근 수정일 : ${memoDate}</span><br>
-    				<div class="memoContent" contenteditable="true" style="background-color: ${memo.memoBgColor}" tabindex="0">${memo.memoContent}</div>
+		    		<c:choose>
+		    			<c:when test="${empty memoUpdateDate}">
+		    				<span class="memoUpdateDate">메모 생성일 : ${memoRegDate}</span><br>
+		    			</c:when>
+		    			<c:otherwise>
+		    				<span class="memoUpdateDate">최근 수정일 : ${memoUpdateDate}</span><br>
+		    			</c:otherwise>
+		    		</c:choose>
+    				<div class="memoContent" contenteditable="true" style="background-color: ${memo.memoBgColor}">
+    					<input type="hidden" name="pmNo" value="${pmNo}">
+		    			<input type="hidden" name="memoNo" value="${memo.memoNo}"/>
+		    			<input type="hidden" name="memoBgColor" value="${memo.memoBgColor}">
+		    			<input type="hidden" name="memoType" value="${memo.memoType}">
+    					${memo.memoContent}
+    				</div>
     			</div>
     		</c:when>
     		<c:otherwise>
     			<div class="personalMemoDetail">
     			<input type="hidden" name="pmNo" value="${pmNo}">
-		    		<input type="hidden" class="memoNo" value="${memo.memoNo}"/>
-		    		<input type="hidden" class="memoBgColor" value="${memo.memoBgColor}">
+		    		
 		    		<c:choose>
 		    			<c:when test="${empty memoUpdateDate}">
 		    				<span class="memoUpdateDate">메모 생성일 : ${memoRegDate}</span><br>
@@ -45,7 +55,12 @@
 		    			</c:otherwise>
 		    		</c:choose>
 		    		
-    				<div class="memoContent" contenteditable="true" style="background-color: ${memo.memoBgColor}" tabindex="0">${memo.memoContent}</div>
+    				<div class="memoContent" contenteditable="true" style="background-color: ${memo.memoBgColor}">
+    					<input type="hidden" class="memoNo" value="${memo.memoNo}"/>
+		    			<input type="hidden" class="memoBgColor" value="${memo.memoBgColor}">
+		    			<input type="hidden" class="memoType" value="${memo.memoType}">
+    					${memo.memoContent}
+    				</div>
     			</div>
     		</c:otherwise>
     	</c:choose>

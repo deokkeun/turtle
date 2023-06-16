@@ -38,7 +38,7 @@ workspaceMemoDetails.forEach((workspaceMemoDetail) => {
     	memoBgColor.value = currentColor;
   	});
 
-  	memoContent.addEventListener('click', function() {
+  	memoContent.addEventListener('click', function(memoContent) {
 
     	if (isFocused) {
       		if (isFirstClick) {
@@ -58,7 +58,7 @@ workspaceMemoDetails.forEach((workspaceMemoDetail) => {
 		  		typingTimer = setTimeout(function() {
 		  			// 1.5초동안 아무런 동작이 없으면 로직 실행  			
 		  			
-		  			changeColor();
+		  			changeColor(memoContent);
 
 					
 
@@ -114,12 +114,11 @@ workspaceMemoDetails.forEach((workspaceMemoDetail) => {
 			// memoSock(웹소켓 객체)을 이용하여 메세지 보내기
 			// memoSock.send(값) : 웹소켓 핸들러로 값을 보냄
 			memoSock.send( JSON.stringify(memo) );
-			console.log(memoContent);
 			
 	}
 	
 	function changeColor() {
-		console.log(memoContent);
+
 		let memo = {
 			"workspaceNo" : workspaceNo,
 			"memoBgColor" : memoBgColor.value,
@@ -133,7 +132,7 @@ workspaceMemoDetails.forEach((workspaceMemoDetail) => {
 		console.log(JSON.stringify(memo));
 		
 		memoSock.send( JSON.stringify(memo) );
-		console.log(memoContent);
+
 		
 	}
 	
@@ -155,7 +154,8 @@ workspaceMemoDetails.forEach((workspaceMemoDetail) => {
 						memoContent.style.backgroundColor = memo.memobgColor;
 						console.log(memoContent);
 						
-					};  	
+					}; 
+	 	
 });
 
 
@@ -258,6 +258,7 @@ personalMemoDetails.forEach((personalMemoDetail) => {
 			"memoNo" : memoNo.value
 		};
 		
+		JSON.stringify(memo);
 		console.log(memo);
 			
 		// ajax 코드 작성
