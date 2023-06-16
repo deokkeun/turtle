@@ -1,14 +1,23 @@
 package com.turtle.www.calendar.controller;
 
-import java.util.ArrayList;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,41 +25,150 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.google.gson.Gson;
+import com.turtle.www.calendar.model.service.CalendarService;
 import com.turtle.www.calendar.model.vo.Calendar;
 import com.turtle.www.member.model.vo.Member;
+import com.turtle.www.projectMember.model.service.ProjectMemberService;
 
 @Controller
 @RequestMapping("/calendar")
-@SessionAttributes({"loginMember"})
+@SessionAttributes({"loginMember", "workspaceNo"})
 public class CalendarController {
 	
 	Logger logger = LoggerFactory.getLogger(CalendarController.class);
 	
-	@GetMapping("/calendar")
-	public String calendar(@ModelAttribute("loginMember") Member loginMember) {
+	@Autowired
+	private CalendarService service;
+	
+	@Autowired
+	private ProjectMemberService pmService;	
+	
+	
+	/** 캘린더 페이지 이동
+	 * @param loginMember
+	 * @return
+	 */
+	@GetMapping("/calendar/{projectNo}/{workspaceNo}")
+	public String calendarPage(@ModelAttribute("loginMember") Member loginMember,
+								Model model,
+								HttpServletResponse resp,
+								@PathVariable("projectNo") int projectNo,
+								@PathVariable("workspaceNo") int workspaceNo) {
+
+		Map<String, Object> map = new HashMap<>();
 		
-		logger.debug(loginMember.getMemberNo() + "");
+		// memberNo와 projectNo로 pmNo확인
+		int memberNo = loginMember.getMemberNo();
+		map.put("memberNo", memberNo);
+		map.put("projectNo", projectNo);
+		int pmNo = pmService.selectPmNo(map);
+		
+		map.put("pmNo", pmNo);
+		map.put("workspaceNo", workspaceNo);
+		
+		// 캘린더 리스트 조회
+		List<Calendar> calendarList = service.selectCalendarList(map);
+
+	
+		model.addAttribute("projectNo", projectNo); // session에 올림
+		model.addAttribute("workspaceNo", workspaceNo); // session에 올림
+		model.addAttribute("calendarList", calendarList);
+		model.addAttribute("pmNo", pmNo);
+		
+		
+		logger.debug(loginMember.getMemberNo() + "페이지 이동");
 		
 		return "calendar/calendar";
 	}
 	
+	/** 캘린더 데이터 가져오기(loadingEvents)
+	 * @param loginMember
+	 * @return
+	 */
+	@ResponseBody
+	@PostMapping("/calendar/{projectNo}/{workspaceNo}")
+	public String calendar(@ModelAttribute("loginMember") Member loginMember,
+							Model model,
+							@PathVariable("projectNo") int projectNo,
+							@PathVariable("workspaceNo") int workspaceNo) {
+
+		logger.debug(loginMember.getMemberNo() + "데이터가져오기 컨트롤러 전");
+		Map<String, Object> map = new HashMap<>();
+		
+		// memberNo와 projectNo로 pmNo확인
+		int memberNo = loginMember.getMemberNo();
+		map.put("memberNo", memberNo);
+		map.put("projectNo", projectNo);
+		int pmNo = pmService.selectPmNo(map);
+		
+		map.put("pmNo", pmNo);
+		map.put("workspaceNo", workspaceNo);
+		
+		
+		// 캘린더 리스트 조회
+		List<Calendar> calendarList = service.selectCalendarList(map);
+		
+	      JSONObject jsonObj = new JSONObject();
+		  JSONArray jsonArr = new JSONArray();
+		  
+		  logger.debug(calendarList.get(0) + "캘린더 리스트 0");
+		  logger.debug(calendarList.get(1) + "캘린더 리스트 1");
+		  
+		  HashMap<String, Object> hash = new HashMap<String, Object>();		
+			
+			for(int i=0; i < calendarList.size(); i++) {
+				hash.put("id", calendarList.get(i).getCalNo()); // id
+				hash.put("title", calendarList.get(i).getCalTitle()); //제목
+				hash.put("start", calendarList.get(i).getStartDate()); //시작일자
+				hash.put("end", calendarList.get(i).getEndDate()); //종료일자
+				hash.put("content", calendarList.get(i).getCalContent()); //내용
+				hash.put("color", calendarList.get(i).getCalColor()); //색상
+				
+				
+				jsonObj = new JSONObject(hash); //중괄호 {key:value , key:value, key:value}
+				jsonArr.add(jsonObj); // 대괄호 안에 넣어주기[{key:value , key:value, key:value},{key:value , key:value, key:value}]
+			}
+			
+			logger.info("jsonArrCheck: {}", jsonArr);
+		
+		model.addAttribute("workspaceNo", workspaceNo); // session에 올림
+		model.addAttribute("calendarList", calendarList);
+		model.addAttribute("pmNo", pmNo);
+		
+		
+		return new Gson().toJson(jsonArr);
+	}
+	
+	
+	/** 캘린더 일정 추가
+	 * @param loginMember
+	 * @param addEvent
+	 * @return
+	 */
 	@ResponseBody
 	@PostMapping("/addEvent")
-	public String addEvent(@RequestParam Map<String, Object> allData) {
+	public String addEvent(@ModelAttribute("loginMember") Member loginMember,
+							@RequestParam Map<String, Object> addEvent) {
 		
-		logger.debug("allData" + allData);
+//		logger.debug("addEvent" + addEvent);
 		Calendar calendar = new Calendar();
+		
+		int memberNo = loginMember.getMemberNo();
 	
-		logger.debug("allData" + Integer.parseInt((String) allData.get("memberNo")));
-		logger.debug("allData" + ((String) allData.get("title")));
-		logger.debug("allData" + ((String) allData.get("title")));
+		logger.debug("memberNo" + loginMember.getMemberNo());
+		logger.debug("title" + ((String) addEvent.get("title")));
+		logger.debug("start" + ((String) addEvent.get("start")));
+		logger.debug("end" + ((String) addEvent.get("end")));
+		logger.debug("textarea" + ((String) addEvent.get("textarea")));
+		logger.debug("backgroundColor" + ((String) addEvent.get("backgroundColor")));
 		
 		
-		List<Calendar> eventList = new ArrayList<>();
+		
+//		int result = service.addEvent(memberNo, addEvent);
+	
 		
 		
-		
-		return new Gson().toJson(allData);
+		return new Gson().toJson(addEvent);
 	}
 	
 }
