@@ -128,29 +128,27 @@
               <button type="submit" id="signUp-btn">가입하기</button>
               <div class="hr-sect">or</div>
 
-              <div id="g_id_onload"
-              data-client_id="713601013116-33sqneo96i1er8o2e6bs5a8o5522k2rq.apps.googleusercontent.com"
-              data-context="signup"
-              data-ux_mode="popup"
-              data-login_uri="http://localhost:8080/login/oauth2/google"
-              data-nonce=""
-              data-itp_support="true">
-            </div>
-            
-            <div class="g_id_signin"
-                data-type="standard"
-                data-shape="rectangular"
-                data-theme="outline"
-                data-text="signin_with"
-                data-size="large"
-                data-logo_alignment="left">
-            </div>
+				<div id="g_id_onload"
+				     data-client_id="713601013116-33sqneo96i1er8o2e6bs5a8o5522k2rq.apps.googleusercontent.com"
+				     data-context="signin"
+				     data-ux_mode="popup"
+				     data-login_uri="http://localhost:8080/www/member/login"
+				     data-auto_prompt="false">
+				</div>
+				
+				<div class="g_id_signin"
+				     data-type="standard"
+				     data-shape="rectangular"
+				     data-theme="outline"
+				     data-text="signup_with"
+				     data-size="large"
+				     data-locale="en-US"
+				     data-logo_alignment="center"
+				     data-width="700">
+				</div>	
               <!-- <button type="button" id="googlesignup" class="googlesignup_btn"><img src="${contextPath}/resources/images/auth/free-icon-google-300221.png" width="15" height="15">Google계정으로 가입</button> -->
             </form>
           </section>
-            </div>
-        </div>
-    </div>
 
         <!-- 1. 로그인 세션이 있으면 메인페이지로 바로 이동 -->
         <!-- 2. 로그인 세션이 없으면 현재 페이지 -->

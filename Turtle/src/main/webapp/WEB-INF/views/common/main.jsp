@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turtle</title>
+    
+ 
+    
 	<!-- main-style.css -->
 
 	<!-- fontawesome -->
@@ -186,6 +190,12 @@
 <!-- right sidebar(오른쪽 사이드바) --> 
 
 <aside class="right-sidebar" id="rightSidebar">
+    <form action="../chat/chatRoomList/1" method="get">
+        	<button>채팅 테스트</button>
+    </form>
+        
+ <jsp:include page="/WEB-INF/views/chat/chatRoomList.jsp"></jsp:include> 
+
   <button class="sidebar-close-btn" onclick="toggleSidebar()"><i class="bi bi-chevron-double-right"></i></button>
   <ul class="right-sidebar-nav" id="right-sidebar-nav">
    
@@ -253,7 +263,7 @@
             <button>git loadMap test(GET)</button>
         </form>
       
-        <form action="../calendar/calendar" method="GET">
+        <form action="../calendar/calendar/1/9" method="GET">
            <button>calendar</button>
         </form>
               
@@ -272,7 +282,10 @@
 
 
     </main>
+    <script>
+      const contextPath = "${contextPath}";
 
+    </script>
     <!-- footer include -->
    	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
     <!-- jQuery 라이브러리 추가 -->
@@ -280,12 +293,14 @@
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/main.js"></script>
      <!-- Vendor JS Files -->
-
+	
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.min.js"></script>
 
   <!-- Template Main JS File -->
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js"></script>
   <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script>
 
+  <!-- chat js -->
+  <script src="${contextPath}/resources/js/chat.js"></script>
 </body>
 </html>

@@ -800,6 +800,7 @@ h6 {
   scrollbar-color: #aab7cf transparent;
   box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
   background-color: #fff;
+  padding: 0;
 }
 
 .right-sidebar.sidebar-visible {

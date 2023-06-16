@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+2023-06-14 09:29:53 [INFO] 초기화 필터 생성
+2023-06-14 10:12:52 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-14 10:12:56 [DEBUG] deokkeun! / $2a$10$25i90TeI0TN8o3ndIslYBOV2TWcJDVLHrQ4RU/qMEB5GwjBE10TLi
+2023-06-14 10:12:56 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-14 10:12:56 [INFO] Running Time : 3390ms
+2023-06-14 10:12:56 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-14 10:12:56 [INFO] 김덕근 로그인 성공
+2023-06-14 10:13:13 [INFO] 로그아웃 수행됨
+2023-06-14 12:46:09 [INFO] 초기화 필터 파괴
+2023-06-14 14:36:33 [INFO] 초기화 필터 생성
+2023-06-14 14:48:57 [INFO] 초기화 필터 파괴
+2023-06-14 14:50:01 [INFO] 초기화 필터 생성
+2023-06-14 14:51:03 [INFO] 초기화 필터 파괴
+=======
 
 2023-06-14 07:57:11 [INFO] 초기화 필터 생성
 2023-06-14 07:57:21 [INFO] ---------------------------------------
@@ -1229,3 +1249,4 @@ ip : 0:0:0:0:0:0:0:1 (email : user999@gmail.com)
 2023-06-14 17:29:13 [INFO] 초기화 필터 생성
 2023-06-14 17:51:47 [INFO] 초기화 필터 생성
 
+>>>>>>> 2ec92537be2cd547d96733581df7d98391d26b32
