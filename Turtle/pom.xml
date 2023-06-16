@@ -160,6 +160,13 @@
          <version>${org.springframework-version}</version>
       </dependency>
 
+		<!-- json-simple -->
+		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<dependency>
+		    <groupId>com.googlecode.json-simple</groupId>
+		    <artifactId>json-simple</artifactId>
+		    <version>1.1.1</version>
+		</dependency>
 
       <!-- jackson bind -->
       <!-- : json(javascript) -> 자바객체로 변환 후 vo에 세팅 -->
