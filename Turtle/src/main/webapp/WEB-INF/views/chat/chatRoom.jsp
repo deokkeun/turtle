@@ -12,6 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<script src="https://kit.fontawesome.com/0041fb1dcb.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
     <title>채팅방</title>
     
     <link rel="stylesheet" href="${contextPath}/resources/css/chat-style.css">
@@ -96,6 +97,10 @@
 		
 		<div class="input-area">
 			<textarea id="inputChatting" rows="3"></textarea>
+			<script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
+			<button id="emoji_btn"><i class="fa-regular fa-face-smile"></i></button>
+		
+
 			<button id="send"><i class="fa-regular fa-paper-plane"></i></button>
 		</div>
 		<input type="hidden" name="date" value="${chatDate}">

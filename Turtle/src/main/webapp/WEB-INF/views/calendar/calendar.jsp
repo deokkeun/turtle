@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/calendar/calendar.css">
     <!-- fullcalendar -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
-    <script src="${contextPath}/resources/js/calendar/ko.global.js"></script>
+    <!-- <script src="${contextPath}/resources/js/calendar/ko.global.js"></script> -->
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
@@ -49,6 +49,12 @@
               <input type='checkbox' id='drop-remove' />
               <label for='drop-remove'>드래그 앤 드롭 후 제거</label>
             </p>
+
+        <!-- 캘린더 리스트 조회 -->
+        <input type="text" id="calendarList" value="${calendarList}">
+        <input type="text" id="calNo" value="${calNo}">
+        <input type="hidden" id="projectNo" value="${projectNo}">
+        <input type="hidden" id="workspaceNo" value="${workspaceNo}">
           </div>
         </section>
           
@@ -61,7 +67,7 @@
             <div id='calendar'></div>
           </section>
           
-
+          <input type="text" id="calNo">
         <!-- 일정 추가 모달창 -->
         <section id="calendar-modal">
           <section id="calendar-modal-box">
@@ -105,7 +111,7 @@
               <button id="visibility-btn" style="visibility: hidden;"></button>
               <button id="deleteEvent-btn" onclick="deleteEvent()">삭제</button>
               <button id="updateEvent-btn" onclick="updateEvent()">수정</button>
-              <button id="addEvent-btn" onclick="addEvent()">일정 추가</button>
+              <button id="addEvent-btn" onclick="addEvent('${projectNo}','${workspaceNo}' )">일정 추가</button>
               <input type="hidden" id="memberNo" value="${loginMember.memberNo}">
             </div> 
           </section>
@@ -113,10 +119,11 @@
           <a class="calendar-modal-close fa-solid fa-xmark"></a>
         </section>
 
-
-
-
     </main>
+
+    <script>
+      const contextPath = '${contextPath}';
+    </script>
 
     <!-- footer include -->
    	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
@@ -126,6 +133,14 @@
     <script src="${contextPath}/resources/js/main.js"></script>
     <!-- calendar.js 연결 -->
     <script src="${contextPath}/resources/js/calendar/calendar.js"></script>
+
     
+    
+  <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js"></script>
+  <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script>
+
 </body>
 </html>
