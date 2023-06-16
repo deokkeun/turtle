@@ -103,7 +103,7 @@
 	     data-client_id="713601013116-33sqneo96i1er8o2e6bs5a8o5522k2rq.apps.googleusercontent.com"
 	     data-context="signin"
 	     data-ux_mode="popup"
-	     data-login_uri="http://localhost:8080/login/google"
+	     data-login_uri="http://localhost:8080/www/member/login
 	     data-auto_prompt="false">
 	</div>
 	

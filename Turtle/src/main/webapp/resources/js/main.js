@@ -31,7 +31,7 @@ window.onload = function() {
             code: code,
             client_id: '713601013116-33sqneo96i1er8o2e6bs5a8o5522k2rq.apps.googleusercontent.com',
             client_secret: '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',
-            redirect_uri: 'http://localhost:8080/login/google',
+            redirect_uri: 'http://localhost:8080/www/member/login',
             grant_type: 'authorization_code'
         },
         success: function(response) {
