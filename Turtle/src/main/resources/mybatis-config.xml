@@ -22,6 +22,8 @@
 		<typeAlias type="com.turtle.www.chat.model.vo.ChatRoomJoin" alias="chatRoomJoin"/>
 		<typeAlias type="com.turtle.www.chat.model.vo.ChatMessage" alias="chatMessage"/>
 		
+		<typeAlias type="com.turtle.www.calendar.model.vo.Calendar" alias="calendar"/>
+		
 		<typeAlias type="com.turtle.www.memo.model.vo.Memo" alias="memo"/>
 		
 	</typeAliases>
@@ -33,7 +35,8 @@
 		<mapper resource="/mappers/member-mapper.xml"/>
 		<mapper resource="/mappers/myPage-mapper.xml"/>
 		<mapper resource="/mappers/chat-mapper.xml"/>
-		<mapper resource="/mappers/projectMember-mapper.xml"/>
+		<mapper resource="/mappers/projectMember-mapper.xml"/>		
+		<mapper resource="/mappers/calendar-mapper.xml"/>
 		<mapper resource="/mappers/memo-mapper.xml"/>
 	</mappers>
 
