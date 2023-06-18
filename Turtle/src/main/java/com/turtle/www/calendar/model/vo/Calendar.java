@@ -22,4 +22,5 @@ public class Calendar {
 	private Date calRegDate;  // 캘린더 생성일
 	private Date startDate;  // 캘린더 일정 시작일
 	private Date endDate;  // 캘린더 일정 종료일
+	private String calSt; // 삭제 상태
 }

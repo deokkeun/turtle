@@ -64,7 +64,8 @@ var BgColor = "#1A73E8";
 // 색상 추출
 $(".BgColor").click(function() {
   BgColor = $(this).attr("value");
-  alert(BgColor);
+  $(this).siblings().css("border", "2px solid #939597");
+  $(this).css("border", "2px solid red");
 });
 
 
@@ -93,11 +94,11 @@ document.addEventListener('DOMContentLoaded', function() {
    var all_events = null;
    all_events = loadingEvents(); // 함수 호출
 
-  alert("all_events 호출" + all_events);
-  console.log("all_events 호출" + all_events);
+  // alert("all_events 호출" + all_events);
   console.log(all_events);
 
-// all_events 배열 순회
+
+// all_events 배열 순회(날짜 형식 변환)
 for (let i = 0; i < all_events.length; i++) {
   const event = all_events[i];
   
@@ -145,6 +146,8 @@ function padZero(number) {
 
 
 
+
+
     new Draggable(containerEl, {
       itemSelector: '.fc-event',
       eventData: function(eventEl) {
@@ -153,6 +156,9 @@ function padZero(number) {
         };
       }
     });
+
+
+
 
 
 
@@ -216,6 +222,10 @@ function padZero(number) {
 
       
       },eventClick: function(info) {
+
+        // 선택된 일정 아이디 저장
+        defId = info.event._instance.defId;
+
         // alert('Event: ' + info.event.title);
         // alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
         // alert('View: ' + info.view.type);
@@ -230,18 +240,60 @@ function padZero(number) {
 
         // 일정 수정
         updateEventBtn.addEventListener("click", function() {
-          alert("수정 클릭");
+          if (info.event._instance.defId == defId) {
+
+            if(confirm("'" + info.event.title + "' 일정을 수정하시겠습니까?")) {
+              
+              const updateEvent = {
+                "calNo" : info.event.id, // 일정 ID 번호
+                "pmNo" : projectNo.value,// 프로젝트 멤버 번호
+                "workspaceNo" : workspaceNo.value,// 워크스페이스 번호
+                "calTitle" : inputValue.value,// 캘린더 제목
+                "calContent" : textarea.value, // 캘린더 내용
+                "calColor" : BgColor,// 배경 색상
+                "startDate" : startDate.value, // 일정 시작일
+                "endDate" : endDate.value,// 일정 종료일
+                "calSt" : "N" // 일정 삭제 여부
+              }
+
+            // 모달창 제거
+            var modal = document.getElementById("calendar-modal");
+            let removeBg = document.getElementById("bg");
+            // 모달 div 뒤에 희끄무레한 레이어
+            modal.style.display = 'none';
+            removeBg.remove();
+
+
+            console.log(updateEvent);
+            // JSON.stringify(객체) : JS Object -> JSON
+            console.log(JSON.stringify(updateEvent));
+
+            calendarSock.send(JSON.stringify(updateEvent));
+
+            // 초기화
+            reset()
+
+            }
+          }
         })
         
-        // console.log(info);
-        defId = info.event._instance.defId;
 
         // 일정 삭제
         deleteEventBtn.addEventListener("click", function () {
 
           if (info.event._instance.defId == defId) {
             if (confirm("'" + info.event.title + "' 일정을 삭제하시겠습니까?")) {
-              // 확인 클릭 시
+
+              const deleteEvent = {
+                "calNo" : info.event.id, // 일정 ID 번호
+                "pmNo" : projectNo.value,// 프로젝트 멤버 번호
+                "workspaceNo" : workspaceNo.value,// 워크스페이스 번호
+                "calTitle" : info.event.title, // 일정 제목
+                "calSt" : "Y" // 일정 삭제 여부
+              }
+              console.log(deleteEvent);
+
+              // 확인 클릭 시 일정 화면에서 제거
               info.event.remove();
               
               // 모달창 제거
@@ -250,6 +302,12 @@ function padZero(number) {
               // 모달 div 뒤에 희끄무레한 레이어
               modal.style.display = 'none';
               removeBg.remove();
+
+
+              // DB 일정 상태 변경 삭제하기
+              console.log(JSON.stringify(deleteEvent));
+              calendarSock.send(JSON.stringify(deleteEvent));
+
 
               // 초기화
               reset();
@@ -269,25 +327,18 @@ function padZero(number) {
         startDate.value = info.event.startStr;
         endDate.value = info.event.endStr;
         textarea.value = info.event._def.extendedProps.content;
-        BgColor.value = info.event._def.extendedProps.color;
+        BgColor = info.event._def.ui.backgroundColor;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        const selectColor = document.getElementsByClassName("BgColor");
+        for(let i = 0; i < selectColor.length; i++) {
+          if(BgColor == selectColor[i].getAttribute("value")) {
+            const siblings = Array.from(selectColor[i].parentNode.children);
+            siblings.forEach((sibling) => {
+              sibling.style.border = "2px solid #939597";
+            });
+            selectColor[i].style.border = "2px solid red";
+          }
+        }
 
         // 모달창 열기
         modal("calendar-modal");
@@ -301,17 +352,15 @@ function padZero(number) {
 
     });
 
-  
-
-
     calendar.render();
   });
 
 
 
 
+
   
-  // 데이터 가져오기
+  // 모든 일정 데이터 가져오기
   function loadingEvents() {
 
     $.ajax({
@@ -322,7 +371,9 @@ function padZero(number) {
       async: false,
       success: function(result) {
         console.log(result);
-        alert("loadingEvents 성공" + result);
+
+
+        // alert("loadingEvents 성공" + result);
 
 
         all_events = result; // 결과를 변수에 할당
@@ -338,68 +389,46 @@ function padZero(number) {
   }
   
 
+
+
 // ------------------------------------------------------------------------------------------
 
 
-// const inputValue = document.querySelector(".inputValue");
-function addEvent(pmNo, workspaceNo) {
-  // if(inputValue.value == null) {
-  //   return;
-  // }
-
-
-
-
-
-  
-
-  // 일정 생성
+// 캘린더 일정 추가
+function addEvent() {
+ 
     const addEvent = {
-      "pmNo" : pmNo.value,// 프로젝트 멤버 번호
+      "pmNo" : projectNo.value,// 프로젝트 멤버 번호
       "workspaceNo" : workspaceNo.value,// 워크스페이스 번호
       "calTitle" : inputValue.value,// 캘린더 제목
-      "BgColor" : BgColor.value,// 배경 색상
-      "startDate" : startDate.value, // 캘린더 일정 시작일
-      "endDate" : endDate.value,// 캘린더 일정 종료일
+      "calContent" : textarea.value, // 캘린더 내용
+      "calColor" : BgColor,// 배경 색상
+      "startDate" : startDate.value, // 일정 시작일
+      "endDate" : endDate.value,// 일정 종료일
+      "calSt" : "N" // 일정 삭제 여부
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 
     console.log(addEvent);
 
-    alert(pmNo);
-    alert(workspaceNo);
-    var startDay = document.querySelector(".startDate");
-    var endDay = document.querySelector(".endDate");
 
-    if(startDay.value > endDay.value) {
+    // 종료일정이 시작일정보다 빠른 경우
+    if(addEvent.startDate > addEvent.endDate) {
+      const endDate = document.querySelector(".endDate");
       alert("종료일이 시작일보다 빠를수 없습니다.");
-      startDay.focus();
-
+      endDate.focus();
       return false;
     }
 
-
     console.log(calendar);
 
-  // 일정 추가 
+  // 캘린더에 바로 추가
   calendar.addEvent({
     title: inputValue.value,
+    content: textarea.value,
     start: startDate.value,
     end: endDate.value,
-    backgroundColor: BgColor});
+    backgroundColor: BgColor
+  });
 
 
     // 모달창 제거
@@ -410,36 +439,43 @@ function addEvent(pmNo, workspaceNo) {
     removeBg.remove();
 
 
-    $.ajax({
-      url: contextPath + '/calendar/addEvent', // 저장할 url
-      data: {'title': inputValue.value,
-              'start': startDate.value,
-              'end': endDate.value,
-              'textarea': textarea.value,
-              'backgroundColor': BgColor},
-      type: 'POST',
-      dataType: 'JSON',
-      success: function(result) {
-        alert("addEvent 성공");
- 
-        // 초기화
-        reset();
-      },
-      error: function(error) {
-        alert("addEvent 실패");
-      }
-    })
+    console.log(addEvent);
+    // JSON.stringify(객체) : JS Object -> JSON
+    console.log(JSON.stringify(addEvent));
+
+    calendarSock.send(JSON.stringify(addEvent));
+
+
+    // 초기화
+    reset()
 
 }
 
 
 
+// 웹소캣으로 데이터 전송
+calendarSock.onmessage = function(e) {
+  const calendar = JSON.parse(e.data);
 
+  console.log("calSt = " + calendar.calSt);
+  if(calendar.calSt == 'Y') {
+    alert("'" + calendar.calTitle + "' 일정이 삭제되었습니다!");
+  }
 
+  if(calendar.calSt == 'N' && calendar.calNo == 0) {
+    alert("'" + calendar.calTitle + "' 일정이 추가되었습니다!");
+  } else if (calendar.calSt == 'N' && calendar.calNo != 0) {
+    alert("'" + calendar.calTitle + "' 일정이 수정되었습니다!");
+  }
 
+  // 데이터 가져오기
+  loadingEvents();
+  // 화면에 출력하기(새로고침)
+  location.reload();
 
+  // console.log("calendarSock = " + calendarSock);
 
-
+}
 
 
 
@@ -454,6 +490,9 @@ function reset() {
 
 
 
+
+
+
 // ------------------------------------------------------------------------------------------
 
 // document.addEventListener('DOMContentLoaded', function() {
@@ -464,51 +503,6 @@ function reset() {
 //     });
 //     calendar.render();
 //   });
-
-
-// // 1. 전체 이벤트 데이터를 추출해야 한다.
-// function allSave() {
-//     var allEvent = calendar.getEvents();
-//     var events = new Array();
-//     for(var i = 0; i < allEvent.length; i++) {
-//       var obj = new Object();
-//       obj.workspaceNo = 9;
-//       obj.pmNo = 1;
-//       obj.calTitle = allEvent[i]._def.title; // 이벤트 명칭
-//       // obj.allDay = allEvent[i]._def.allDay; // 하루종일의 이벤트인지 알려주는 boolean값 (true / false)
-//       obj.startDate = allEvent[i]._instance.range.start; // 시작날짜 및 시간
-//       obj.endDate = allEvent[i]._instance.range.end; // 마침날짜 및 시간
-//       obj.calContent = textarea.value;
-//       obj.calColor = 'blue';
-//       console.log(events[0]);
-//       events.push(obj);
-//     }
-//     var jsondata = JSON.stringify(events);
-
-//     console.log(jsondata);
-
-//     savedata(jsondata);
-// }
-
-// function savedata(jsondata) {
-//   $.ajax({
-//     data: {'allData': jsondata},
-//     type: 'POST',
-//     dataType: 'text',
-//     url: 'addEvent', // 저장할 url
-//     async: false
-//   })
-//   .done(function(result) {
-//     alert("addEvent  전송성공 : " + result);
-    
-//   })
-//   .fail(function(request, status, error) {
-//     alert("에러 발생 : " + error);
-//   })
-// }
-
-
-// 2. ajax로 서버에 전송하여 DB에 저장해야 한다.
 
 
 
