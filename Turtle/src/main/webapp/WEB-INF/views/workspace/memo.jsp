@@ -18,21 +18,49 @@
 	    <c:forEach var="memo" items="${memoList}">
 	    	<fmt:formatDate var="memoRegDate" value="${memo.memoRegDate}" pattern="MM-dd HH:mm"/>
 	    	<fmt:formatDate var="memoUpdateDate" value="${memo.memoUpdateDate}" pattern="MM-dd HH:mm"/>
-	    	<div class="memoDetail">	    				
-	    		<span class="pmNo">최근 수정자 : ${memo.memberName}</span><br>
-	    		<c:choose>
-	    			<c:when test="${empty memoUpdateDate}">
-	    				<span class="memoUpdateDate">생성일 : ${memoRegDate}</span><br>
-	    			</c:when>
-	    			<c:otherwise>
-	    				<span class="memoUpdateDate">최근 수정일 : ${memoUpdateDate}</span><br>
-	    			</c:otherwise>
-	    		</c:choose>
-	  				<div class="memoContent" contenteditable="true" style="background-color: ${memo.memoBgColor}"
-	  					data-pmNo="${pmNo}" data-memoNo="${memo.memoNo}" data-memoBgColor="${memo.memoBgColor}" data-memoType="${memo.memoType}">    					
-	  					${memo.memoContent}
-	  				</div>
-	  			</div>    	
+	    	<c:choose>
+	    		<c:when test="${memo.memoType eq 'workspace'}">
+	    			<div class="memoDetail" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
+	    		<div class="memoInfo">
+	    			${memo.memberName} 
+	    			<c:choose>
+		    			<c:when test="${empty memoUpdateDate}">
+		    				${memoRegDate} <br>
+		    			</c:when>
+		    			<c:otherwise>
+		    				${memoUpdateDate}
+		    			</c:otherwise>
+		    		</c:choose>	    			
+	    			<button>x</button>
+	    		</div>	    		
+  				<div class="memoContent" contenteditable="true"
+  					data-pmNo="${pmNo}" data-memoNo="${memo.memoNo}" data-memoType="${memo.memoType}">					
+  					${memo.memoContent}
+  				</div>
+	  		</div>
+	    		</c:when>
+	    		<c:otherwise>
+	    			<div class="memoDetail" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
+	    		<div class="memoInfo">
+	    			${memo.memberName} 
+	    			<c:choose>
+		    			<c:when test="${empty memoUpdateDate}">
+		    				${memoRegDate} <br>
+		    			</c:when>
+		    			<c:otherwise>
+		    				${memoUpdateDate}
+		    			</c:otherwise>
+		    		</c:choose>	    			
+	    			<button>x</button>
+	    		</div>	    		
+  				<div class="memoContent" contenteditable="true"
+  					data-pmNo="${pmNo}" data-memoNo="${memo.memoNo}" data-memoType="${memo.memoType}">					
+  					${memo.memoContent}
+  				</div>
+	  		</div>
+	    		</c:otherwise>
+	    	</c:choose>
+	    	    	
 	    </c:forEach>
     </div>
     

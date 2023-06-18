@@ -2,10 +2,21 @@
  	display: flex;
  }
 
-.memoContent {
+ .memoDetail {
 	width: 200px;
+	height: 230px;
+	margin-right: 5px;
+ }
+
+.memoInfo {
+	height: 30px;
+	
+}
+
+.memoContent {
+  
   height: 200px;
-  margin: 5px;
+  
   overflow: hidden;
 }
 .memoContent:focus {
