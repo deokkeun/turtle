@@ -8,9 +8,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turtle</title>
-	<!-- main-style.css -->
+	  <!-- main-style.css -->
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
-	<!-- calendar.css -->
+  <!-- bootstrap.css -->
+  <link href="${contextPath}/resources/css/booystrapcss/bootstrap.css" rel="stylesheet">
+  <link href="${contextPath}/resources/images/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="${contextPath}/resources/css/boxicons/css/boxicons.min.css" rel="stylesheet">
+	  <!-- calendar.css -->
     <link rel="stylesheet" href="${contextPath}/resources/css/calendar/calendar.css">
     <!-- fullcalendar -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
@@ -20,7 +24,7 @@
 </head>
 <body>
     <main>
- 		<!-- header include -->
+ 		    <!-- header include -->
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
         <section>
@@ -84,34 +88,34 @@
               <input type="date" class="endDate input-box">
             </div>
             <div>
-              <div>내용</div>
-              <textarea name="textarea" id="textarea" cols="30px" rows="3" placeholder="내용을 입력해주세요"></textarea>
-            </div>
-            <div>
               <div>색상</div>
               <div id="color-box">
-                <div class="BgColor" value="red">
-                  <div style="background-color: red;"></div>
+                <div class="BgColor" value="#BB2649">
+                  <div style="background-color: #BB2649;"></div>
                 </div>
-                <div class="BgColor" value="orange">
-                  <div style="background-color: orange;"></div>
+                <div class="BgColor" value="#dd4124">
+                  <div style="background-color: #dd4124;"></div>
                 </div>
-                <div class="BgColor" value="yellow">
-                  <div style="background-color: yellow;"></div>
+                <div class="BgColor" value="#009473">
+                  <div style="background-color: #009473;"></div>
                 </div>
-                <div class="BgColor" value="yellowgreen">
-                  <div style="background-color: yellowgreen;"></div>
+                <div class="BgColor" value="#0f4c81">
+                  <div style="background-color: #0f4c81;"></div>
                 </div>
-                <div class="BgColor" value="green">
-                  <div style="background-color: green;"></div>
+                <div class="BgColor" value="#6667AB">
+                  <div style="background-color: #6667AB;"></div>
                 </div>
               </div>
+            </div>
+            <div>
+              <div>내용</div>
+              <textarea name="textarea" id="textarea" cols="22" rows="4" placeholder="내용을 입력해주세요"></textarea>
             </div>
             <div id="calendar-modal-btn">
               <button id="visibility-btn" style="visibility: hidden;"></button>
               <button id="deleteEvent-btn" onclick="deleteEvent()">삭제</button>
               <button id="updateEvent-btn" onclick="updateEvent()">수정</button>
-              <button id="addEvent-btn" onclick="addEvent('${projectNo}','${workspaceNo}' )">일정 추가</button>
+              <button id="addEvent-btn" onclick="addEvent()">일정 추가</button>
               <input type="hidden" id="memberNo" value="${loginMember.memberNo}">
             </div> 
           </section>
@@ -121,12 +125,24 @@
 
     </main>
 
-    <script>
-      const contextPath = '${contextPath}';
-    </script>
-
     <!-- footer include -->
    	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+
+
+
+  
+    <!--------------------------------------- sockjs를 이용한 WebSocket 구현을 위해 라이브러리 추가 ---------------------------------------------->
+    <!-- https://github.com/sockjs/sockjs-client -->
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script>    
+      const contextPath = "${contextPath}";
+      // 로그인이 되어 있을 경우에만
+      // /calendar 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
+      let calendarSock = new SockJS(contextPath+"/calendar");
+      // -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
+    </script>
+
+
     <!-- jQuery 라이브러리 추가 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- main.js 연결 -->
@@ -141,6 +157,5 @@
   <!-- Template Main JS File -->
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js"></script>
   <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script>
-
 </body>
 </html>

@@ -23,6 +23,33 @@ public class CalendarDAO {
 	public List<Calendar> selectCalendarList(Map<String, Object> map) {
 		return sqlSession.selectList("calendarMapper.selectCalendarList", map);
 	}
+
+
+	/** 캘린더 일정 추가 dao
+	 * @param calendar
+	 * @return
+	 */
+	public int calendarAddEvent(Calendar calendar) {
+		return sqlSession.insert("calendarMapper.calendarAddEvent", calendar);
+	}
+
+
+	/** 캘린더 일정 삭제 dao
+	 * @param calendar
+	 * @return
+	 */
+	public int calendarDeleteEvent(Calendar calendar) {
+		return sqlSession.update("calendarMapper.calendarDeleteEvent", calendar);
+	}
+
+
+	/** 캘린더 일정 수정 dao
+	 * @param calendar
+	 * @return
+	 */
+	public int calendarUpdateEvent(Calendar calendar) {
+		return sqlSession.update("calendarMapper.calendarUpdateEvent", calendar);
+	}
 	
 	
 	
