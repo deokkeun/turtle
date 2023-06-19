@@ -45,7 +45,7 @@
         
         
        
-        <form action="myPage/info" method="GET">
+        <form action="${contextPath}/member/myPage/info" method="GET">
                 <button>마이페이지 이동</button>
         </form>
         
@@ -54,7 +54,7 @@
             <button>git loadMap test(GET)</button>
         </form>
       
-        <form action="../calendar/calendar/1/9" method="GET">
+        <form action="${contextPath}/calendar/calendar/1/9" method="GET">
            <button>calendar</button>
         </form>
               
