@@ -70,6 +70,10 @@
         	<button>성훈 테스트</button>
         </form>
         
+        <form action="../board/boardList/1/5" method="get">
+        	<button>게시판 테스트</button>
+        </form>
+        
 
 
     </main>

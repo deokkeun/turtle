@@ -21,43 +21,43 @@
 	    	<c:choose>
 	    		<c:when test="${memo.memoType eq 'workspace'}">
 	    			<div class="memoDetail" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
-	    		<div class="memoInfo">
-	    			${memo.memberName} 
-	    			<c:choose>
-		    			<c:when test="${empty memoUpdateDate}">
-		    				${memoRegDate} <br>
-		    			</c:when>
-		    			<c:otherwise>
-		    				${memoUpdateDate}
-		    			</c:otherwise>
-		    		</c:choose>	    			
-	    			<button>x</button>
-	    		</div>	    		
-  				<div class="memoContent" contenteditable="true"
-  					data-pmNo="${pmNo}" data-memoNo="${memo.memoNo}" data-memoType="${memo.memoType}">					
-  					${memo.memoContent}
-  				</div>
-	  		</div>
+			    		<div class="memoInfo">
+			    			${memo.memberName} 
+			    			<c:choose>
+				    			<c:when test="${empty memoUpdateDate}">
+				    				${memoRegDate} <br>
+				    			</c:when>
+				    			<c:otherwise>
+				    				${memoUpdateDate}
+				    			</c:otherwise>
+				    		</c:choose>	    			
+			    			<button>x</button>
+			    		</div>	    		
+		  				<div class="memoContent" contenteditable="true"
+		  					data-pmNo="${pmNo}" data-memoNo="${memo.memoNo}" data-memoType="${memo.memoType}">					
+		  					${memo.memoContent}
+		  				</div>
+			  		</div>
 	    		</c:when>
 	    		<c:otherwise>
 	    			<div class="memoDetail" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
-	    		<div class="memoInfo">
-	    			${memo.memberName} 
-	    			<c:choose>
-		    			<c:when test="${empty memoUpdateDate}">
-		    				${memoRegDate} <br>
-		    			</c:when>
-		    			<c:otherwise>
-		    				${memoUpdateDate}
-		    			</c:otherwise>
-		    		</c:choose>	    			
-	    			<button>x</button>
-	    		</div>	    		
-  				<div class="memoContent" contenteditable="true"
-  					data-pmNo="${pmNo}" data-memoNo="${memo.memoNo}" data-memoType="${memo.memoType}">					
-  					${memo.memoContent}
-  				</div>
-	  		</div>
+			    		<div class="memoInfo">
+			    			${memo.memberName} 
+			    			<c:choose>
+				    			<c:when test="${empty memoUpdateDate}">
+				    				${memoRegDate} <br>
+				    			</c:when>
+				    			<c:otherwise>
+				    				${memoUpdateDate}
+				    			</c:otherwise>
+				    		</c:choose>	    			
+			    			<button>x</button>
+			    		</div>	    		
+		  				<div class="memoContent" contenteditable="true"
+		  					data-pmNo="${pmNo}" data-memoNo="${memo.memoNo}" data-memoType="${memo.memoType}">					
+		  					${memo.memoContent}
+		  				</div>
+			  		</div>
 	    		</c:otherwise>
 	    	</c:choose>
 	    	    	
