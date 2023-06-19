@@ -8,12 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turtle</title>
-	  <!-- main-style.css -->
+	 <!-- main-style.css -->
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
-  <!-- bootstrap.css -->
-  <link href="${contextPath}/resources/css/booystrapcss/bootstrap.css" rel="stylesheet">
-  <link href="${contextPath}/resources/images/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="${contextPath}/resources/css/boxicons/css/boxicons.min.css" rel="stylesheet">
 	  <!-- calendar.css -->
     <link rel="stylesheet" href="${contextPath}/resources/css/calendar/calendar.css">
     <!-- fullcalendar -->
@@ -54,11 +50,11 @@
               <label for='drop-remove'>드래그 앤 드롭 후 제거</label>
             </p>
 
-        <!-- 캘린더 리스트 조회 -->
-        <input type="text" id="calendarList" value="${calendarList}">
-        <input type="text" id="calNo" value="${calNo}">
-        <input type="hidden" id="projectNo" value="${projectNo}">
-        <input type="hidden" id="workspaceNo" value="${workspaceNo}">
+            <!-- 캘린더 리스트 조회 -->
+            <input type="hidden" id="calendarList" value="${calendarList}">
+            <input type="hidden" id="calNo" value="${calNo}">
+            <input type="hidden" id="projectNo" value="${projectNo}">
+            <input type="hidden" id="workspaceNo" value="${workspaceNo}">
           </div>
         </section>
           
@@ -128,9 +124,6 @@
     <!-- footer include -->
    	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
-
-
-  
     <!--------------------------------------- sockjs를 이용한 WebSocket 구현을 위해 라이브러리 추가 ---------------------------------------------->
     <!-- https://github.com/sockjs/sockjs-client -->
     <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
@@ -142,7 +135,6 @@
       // -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
     </script>
 
-
     <!-- jQuery 라이브러리 추가 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- main.js 연결 -->
@@ -150,12 +142,5 @@
     <!-- calendar.js 연결 -->
     <script src="${contextPath}/resources/js/calendar/calendar.js"></script>
 
-    
-    
-  <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.min.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js"></script>
-  <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script>
 </body>
 </html>

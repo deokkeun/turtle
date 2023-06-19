@@ -284,10 +284,7 @@ public class MemberServiceImpl implements MemberService {
 	public int checkNumber(Map<String, Object> map) {
 		return dao.checkNumber(map);
 	}
-	
 
-	
-	
 	
 
 }
