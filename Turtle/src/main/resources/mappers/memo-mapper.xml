@@ -7,19 +7,22 @@
 		
 		<result property="workspaceNo" column="WORKSPACE_NO"/>
 		<result property="pmNo" column="PM_NO"/>
-		<result property="updatePmNo" column="UPDATE_PM_NO"/>
 		<result property="memoContent" column="MEMO_CONTENT"/>
 		<result property="memoRegDate" column="MEMO_REG_DATE"/>
 		<result property="memoUpdateDate" column="MEMO_UPDATE_DATE"/>
 		<result property="memoBgColor" column="MEMO_BG_COLOR"/>
 		<result property="memoSt" column="MEMO_ST"/>
 		<result property="memoType" column="MEMO_TYPE"/>
+		<result property="memberName" column="MEMBER_NAME"/>
 		
 	</resultMap>
 	
 	<select id="memoMapper.selectMemoList" resultMap="memo_rm">
-		SELECT *
+		SELECT MEMO_NO, WORKSPACE_NO, PM_NO, MEMO_CONTENT, MEMO_REG_DATE,
+		MEMO_UPDATE_DATE, MEMO_BG_COLOR, MEMO_ST, MEMO_TYPE, MEMBER_NAME
 		FROM MEMO
+		JOIN PROJECT_MEMBER USING (PM_NO)
+		JOIN "MEMBER" USING (MEMBER_NO)
 		WHERE WORKSPACE_NO = ${workspaceNo}
 		AND MEMO_TYPE = 'workspace'
 		OR (MEMO_TYPE = 'personal' AND PM_NO = ${pmNo})
@@ -27,23 +30,14 @@
 		ORDER BY MEMO_TYPE DESC, MEMO_REG_DATE DESC
 	</select>
 	
+	
 	<update id="updateMemo">
-		<choose>
-			<when test="memoContent != null">
-				UPDATE MEMO SET 
-				UPDATE_PM_NO = ${updatePmNo},
-				MEMO_CONTENT = #{memoContent},
-				MEMO_UPDATE_DATE = SYSDATE,
-				MEMO_BG_COLOR = #{memoBgColor}
-				WHERE MEMO_NO = ${memoNo}
-			</when>
-			<otherwise>
-				UPDATE MEMO SET
-				MEMO_BG_COLOR = #{memoBgColor}
-				WHERE MEMO_NO = ${memoNo}
-			</otherwise>
-		</choose>
-		
+		UPDATE MEMO SET 
+		PM_NO = ${pmNo},
+		MEMO_CONTENT = #{memoContent},
+		MEMO_UPDATE_DATE = SYSDATE,
+		MEMO_BG_COLOR = #{memoBgColor}
+		WHERE MEMO_NO = ${memoNo}
 	</update>
 	
 </mapper>
