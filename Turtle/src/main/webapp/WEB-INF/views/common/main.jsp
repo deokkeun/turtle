@@ -10,8 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turtle</title>
     
- 
-    
 	<!-- main-style.css -->
 
 	<!-- fontawesome -->
@@ -86,10 +84,6 @@
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/main.js"></script>
      <!-- Vendor JS Files -->
-
-	
- 
-
 
   <!-- chat js -->
   <script src="${contextPath}/resources/js/chat.js"></script>

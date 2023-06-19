@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turtle</title>
 	<!-- main-style.css -->
-<link href="${contextPath}/resources/css/main-style.css" rel="stylesheet">
-    <!-- bootstrap.css -->
-      <link href="${contextPath}/resources/css/booystrapcss/bootstrap.css" rel="stylesheet">
+  <link href="${contextPath}/resources/css/main-style.css" rel="stylesheet">
+  <!-- bootstrap.css -->
+  <link href="${contextPath}/resources/css/booystrapcss/bootstrap.css" rel="stylesheet">
   <link href="${contextPath}/resources/images/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="${contextPath}/resources/css/boxicons/css/boxicons.min.css" rel="stylesheet">
 	<!-- fontawesome -->
