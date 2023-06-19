@@ -144,10 +144,6 @@ function padZero(number) {
 }
 
 
-
-
-
-
     new Draggable(containerEl, {
       itemSelector: '.fc-event',
       eventData: function(eventEl) {
@@ -156,10 +152,6 @@ function padZero(number) {
         };
       }
     });
-
-
-
-
 
 
     // initialize the calendar
@@ -179,7 +171,7 @@ function padZero(number) {
       headerToolbar: {
         left: 'prev,next today',
         center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        right: 'dayGridMonth'  // ,timeGridWeek,timeGridDay 주, 일 (시간)
       },
       editable: true,
       droppable: true, // this allows things to be dropped onto the calendar
@@ -199,7 +191,7 @@ function padZero(number) {
 
 
       },
-      // locale: 'ko',
+      locale: 'ko',
       dateClick: function(info) {
         // alert('Date: ' + info.dateStr);
         // alert('Resource ID: ' + info.resource.id);
@@ -357,8 +349,6 @@ function padZero(number) {
 
 
 
-
-
   
   // 모든 일정 데이터 가져오기
   function loadingEvents() {
@@ -372,9 +362,7 @@ function padZero(number) {
       success: function(result) {
         console.log(result);
 
-
         // alert("loadingEvents 성공" + result);
-
 
         all_events = result; // 결과를 변수에 할당
       },
@@ -445,15 +433,13 @@ function addEvent() {
 
     calendarSock.send(JSON.stringify(addEvent));
 
-
     // 초기화
     reset()
 
 }
 
 
-
-// 웹소캣으로 데이터 전송
+// 웹소캣
 calendarSock.onmessage = function(e) {
   const calendar = JSON.parse(e.data);
 
@@ -490,19 +476,8 @@ function reset() {
 
 
 
-
-
-
 // ------------------------------------------------------------------------------------------
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     var calendarEl = document.getElementById('calendar');
-//     var calendar = new FullCalendar.Calendar(calendarEl, {
-//       initialView: 'dayGridMonth',
-//       locale: 'ko'
-//     });
-//     calendar.render();
-//   });
 
 
 

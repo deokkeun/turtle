@@ -8,9 +8,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turtle</title>
-	<!-- main-style.css -->
+	  <!-- main-style.css -->
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
-	<!-- calendar.css -->
+  <!-- bootstrap.css -->
+  <link href="${contextPath}/resources/css/booystrapcss/bootstrap.css" rel="stylesheet">
+  <link href="${contextPath}/resources/images/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="${contextPath}/resources/css/boxicons/css/boxicons.min.css" rel="stylesheet">
+	  <!-- calendar.css -->
     <link rel="stylesheet" href="${contextPath}/resources/css/calendar/calendar.css">
     <!-- fullcalendar -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
@@ -20,7 +24,7 @@
 </head>
 <body>
     <main>
- 		<!-- header include -->
+ 		    <!-- header include -->
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
         <section>
@@ -153,6 +157,5 @@
   <!-- Template Main JS File -->
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js"></script>
   <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script>
-
 </body>
 </html>

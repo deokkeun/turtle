@@ -22,7 +22,7 @@
           <li><a href="${contextPath}/etc/faq">고객센터</a></li>
         </ul>
           
-		<!-- 자동로그인 테스트부분 (나중에 지울거임) -->
+		자동로그인 테스트부분 (나중에 지울거임)
     	<div class="auto-login">
     		<form action="member/testLogin" method="POST">
         		<input type="hidden" name="memberEmail" value="test01@gmail.com">
@@ -33,11 +33,6 @@
         		<input type="hidden" name="memberEmail" value="user999@gmail.com">
         		<input type="hidden" name="memberPw" value="password999!">
         		<button>구구맨테스트로그인</button>
-        	</form>
-        	<form action="member/testLogin" method="POST">
-        		<input type="hidden" name="memberEmail" value="deokk91@gmail.com">
-        		<input type="hidden" name="memberPw" value="deokkeun!">
-        		<button>emailTest</button>
         	</form>
     	</div> 
 
