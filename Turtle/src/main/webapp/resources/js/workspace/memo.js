@@ -24,7 +24,9 @@ for (let i = 0; i < memoDivs.length; i++) {
   });
 }
 
-// 메모 색상
+
+
+// 메모 색상 동기화
 const colors = ['#FEE182', '#F6A9B0', '#A1D5AE', '#9FDFEB', '#D8BBDC'];
 
 memoDetails.forEach((memoDetail) => {
