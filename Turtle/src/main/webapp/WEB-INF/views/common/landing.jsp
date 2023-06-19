@@ -32,7 +32,7 @@
 	<link href="${contextPath}/resources/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     
     <!-- 랜딩(헤더/본문/풋터).css -->
-    <link rel="stylesheet" href="${contextPath}/resources/css/common/landing-header.css?after" />
+    <link rel="stylesheet" href="${contextPath}/resources/css/common/landing-header.css" />
     <link rel="stylesheet" href="${contextPath}/resources/css/common/landing.css" />
     <link rel="stylesheet" href="${contextPath}/resources/css/common/landing-footer.css" />
 </head>

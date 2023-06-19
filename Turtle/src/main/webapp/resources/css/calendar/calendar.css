@@ -45,7 +45,7 @@
 }
 #calendar-modal-box > div:not(:last-child) {
     width: 100%;
-    margin: 20px 0;
+    margin: 10px 0;
     color: rgba(0, 0, 0, 0.5);
     display: flex;
 }
@@ -60,9 +60,9 @@
 #calendar-modal-btn {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 30px;
 }
-#calendar-modal-btn > button {
+#calendar-modal-btn > button:not(:nth-child(2)) {
     font-size: 14px;
     width: 80px;
     height: 35px;
@@ -70,6 +70,18 @@
     border-radius: 5px;
     color: white;
     border: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-align: center;
+}
+#deleteEvent-btn {
+    font-size: 14px;
+    width: 80px;
+    height: 35px;
+    background-color: white;
+    border-radius: 5px;
+    color: #1A73E8;
+    border: 1px solid #1A73E8;
     letter-spacing: 1px;
     cursor: pointer;
     text-align: center;
@@ -95,13 +107,12 @@
     border-radius: 5px;
 }
 
-
 #color-box {
     display: flex;
 }
 #color-box > div {
-    border: 1px solid black;
-    margin: 0 10px;
+    border: 2px solid #939597;
+    margin-right: 10px;
     padding: 2px;
     cursor: pointer;
 }

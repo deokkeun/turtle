@@ -22,6 +22,31 @@ public class CalendarServiceImpl implements CalendarService{
 	public List<Calendar> selectCalendarList(Map<String, Object> map) {
 		return dao.selectCalendarList(map);
 	}
+
+	/** 캘린더 일정 추가
+	 *
+	 */
+	@Override
+	public int calendarAddEvent(Calendar calendar) {
+		return dao.calendarAddEvent(calendar);
+	}
+	
+	
+	/** 캘린더 일정 수정
+	 *
+	 */
+	@Override
+	public int calendarUpdateEvent(Calendar calendar) {
+		return dao.calendarUpdateEvent(calendar);
+	}
+
+	/** 캘린더 일정 삭제
+	 *
+	 */
+	@Override
+	public int calendarDeleteEvent(Calendar calendar) {
+		return dao.calendarDeleteEvent(calendar);
+	}
 	
 	
 	

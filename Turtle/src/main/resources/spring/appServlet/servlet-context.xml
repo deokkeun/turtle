@@ -54,6 +54,7 @@
 	
 	<beans:bean id="chatHandler" class="com.turtle.www.chat.model.websocket.ChatWebsocketHandler"/>
 	<beans:bean id="memoHandler" class="com.turtle.www.memo.model.websocket.MemoWebsocketHandler"/>
+	<beans:bean id="calendarHandler" class="com.turtle.www.calendar.model.websocket.CalendarWebsocketHandler"/>
 
 	
 	<websocket:handlers>
@@ -61,6 +62,7 @@
 		<!-- 웹소켓 요청을 처리한 bean 지정 -->
 		<websocket:mapping handler="chatHandler" path="/chat" />
 		<websocket:mapping handler="memoHandler" path="/memo"/>
+		<websocket:mapping handler="calendarHandler" path="/calendar"/>
 		
 		<websocket:handshake-interceptors>
 			<!-- interceptor : http 통신 req, resp 가로채는 역할 

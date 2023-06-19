@@ -69,8 +69,6 @@ public class CalendarController {
 		// 캘린더 리스트 조회
 		List<Calendar> calendarList = service.selectCalendarList(map);
 
-	
-		model.addAttribute("projectNo", projectNo); // session에 올림
 		model.addAttribute("workspaceNo", workspaceNo); // session에 올림
 		model.addAttribute("calendarList", calendarList);
 		model.addAttribute("pmNo", pmNo);
@@ -111,9 +109,6 @@ public class CalendarController {
 	      JSONObject jsonObj = new JSONObject();
 		  JSONArray jsonArr = new JSONArray();
 		  
-		  logger.debug(calendarList.get(0) + "캘린더 리스트 0");
-		  logger.debug(calendarList.get(1) + "캘린더 리스트 1");
-		  
 		  HashMap<String, Object> hash = new HashMap<String, Object>();		
 			
 			for(int i=0; i < calendarList.size(); i++) {
@@ -137,38 +132,6 @@ public class CalendarController {
 		
 		
 		return new Gson().toJson(jsonArr);
-	}
-	
-	
-	/** 캘린더 일정 추가
-	 * @param loginMember
-	 * @param addEvent
-	 * @return
-	 */
-	@ResponseBody
-	@PostMapping("/addEvent")
-	public String addEvent(@ModelAttribute("loginMember") Member loginMember,
-							@RequestParam Map<String, Object> addEvent) {
-		
-//		logger.debug("addEvent" + addEvent);
-		Calendar calendar = new Calendar();
-		
-		int memberNo = loginMember.getMemberNo();
-	
-		logger.debug("memberNo" + loginMember.getMemberNo());
-		logger.debug("title" + ((String) addEvent.get("title")));
-		logger.debug("start" + ((String) addEvent.get("start")));
-		logger.debug("end" + ((String) addEvent.get("end")));
-		logger.debug("textarea" + ((String) addEvent.get("textarea")));
-		logger.debug("backgroundColor" + ((String) addEvent.get("backgroundColor")));
-		
-		
-		
-//		int result = service.addEvent(memberNo, addEvent);
-	
-		
-		
-		return new Gson().toJson(addEvent);
 	}
 	
 }

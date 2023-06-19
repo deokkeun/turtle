@@ -1,0 +1,53 @@
+2023-06-17 14:52:09 [INFO] 초기화 필터 생성
+2023-06-17 14:52:18 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-17 14:52:22 [DEBUG] password999! / $2a$10$WNfHHGPIP/0nSvjTpB6vvuMusNI5fSrt/S4gq5b465qgKITBUBRKa
+2023-06-17 14:52:22 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230616231002_62836.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-17 14:52:22 [INFO] Running Time : 3741ms
+2023-06-17 14:52:22 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-17 14:52:22 [INFO] 구구맨 로그인 성공
+2023-06-17 14:52:27 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-17 14:52:27 [INFO] Return Value : 1
+2023-06-17 14:52:27 [INFO] Running Time : 144ms
+2023-06-17 14:52:27 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-17 14:52:27 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-17 14:52:27 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=2023-06-15, startDate=2023-06-03, endDate=2023-06-08, calSt=null), Calendar(calNo=3, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목2, calContent=내용2, calColor=ORANGE, calRegDate=2023-06-16, startDate=2023-06-10, endDate=2023-06-20, calSt=null), Calendar(calNo=4, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목3, calContent=제목3, calColor=yellowgreen, calRegDate=2023-06-16, startDate=2023-06-06, endDate=2023-06-10, calSt=null), Calendar(calNo=5, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=ff, calContent=ff, calColor=green, calRegDate=2023-06-16, startDate=2023-06-12, endDate=2023-06-14, calSt=null)]
+2023-06-17 14:52:27 [INFO] Running Time : 77ms
+2023-06-17 14:52:27 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-17 14:52:27 [DEBUG] 999페이지 이동
+2023-06-17 14:52:27 [DEBUG] 999데이터가져오기 컨트롤러 전
+2023-06-17 14:52:27 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-17 14:52:27 [INFO] Return Value : 1
+2023-06-17 14:52:27 [INFO] Running Time : 39ms
+2023-06-17 14:52:27 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-17 14:52:27 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=999, projectNo=1, workspaceNo=9, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-17 14:52:27 [INFO] Return Value : [Calendar(calNo=1, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목, calContent=내용, calColor=blue, calRegDate=2023-06-15, startDate=2023-06-03, endDate=2023-06-08, calSt=null), Calendar(calNo=3, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목2, calContent=내용2, calColor=ORANGE, calRegDate=2023-06-16, startDate=2023-06-10, endDate=2023-06-20, calSt=null), Calendar(calNo=4, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목3, calContent=제목3, calColor=yellowgreen, calRegDate=2023-06-16, startDate=2023-06-06, endDate=2023-06-10, calSt=null), Calendar(calNo=5, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=ff, calContent=ff, calColor=green, calRegDate=2023-06-16, startDate=2023-06-12, endDate=2023-06-14, calSt=null)]
+2023-06-17 14:52:27 [INFO] Running Time : 38ms
+2023-06-17 14:52:27 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-17 14:52:27 [INFO] jsonArrCheck: [{"color":"blue","start":2023-06-03,"end":2023-06-08,"id":1,"title":"제목","content":"내용"},{"color":"ORANGE","start":2023-06-10,"end":2023-06-20,"id":3,"title":"제목2","content":"내용2"},{"color":"yellowgreen","start":2023-06-06,"end":2023-06-10,"id":4,"title":"제목3","content":"제목3"},{"color":"green","start":2023-06-12,"end":2023-06-14,"id":5,"title":"ff","content":"ff"}]
+2023-06-17 14:54:24 [INFO] 로그아웃 수행됨
+2023-06-17 14:58:16 [INFO] 초기화 필터 파괴
