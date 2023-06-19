@@ -26,6 +26,8 @@
 		
 		<typeAlias type="com.turtle.www.memo.model.vo.Memo" alias="memo"/>
 		
+		<typeAlias type="com.turtle.www.board.model.vo.Board" alias="board"/>
+		
 	</typeAliases>
 	
 	<!-- SQL이 작성되는 mapper 파일 위치를 등록 -->
@@ -38,6 +40,7 @@
 		<mapper resource="/mappers/projectMember-mapper.xml"/>		
 		<mapper resource="/mappers/calendar-mapper.xml"/>
 		<mapper resource="/mappers/memo-mapper.xml"/>
+		<mapper resource="/mappers/board-mapper.xml"/>
 	</mappers>
 
 </configuration>

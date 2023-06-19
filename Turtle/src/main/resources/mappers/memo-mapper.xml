@@ -24,9 +24,9 @@
 		JOIN PROJECT_MEMBER USING (PM_NO)
 		JOIN "MEMBER" USING (MEMBER_NO)
 		WHERE WORKSPACE_NO = ${workspaceNo}
-		AND MEMO_TYPE = 'workspace'
-		OR (MEMO_TYPE = 'personal' AND PM_NO = ${pmNo})
 		AND MEMO_ST = 'N'
+		AND (MEMO_TYPE = 'workspace'
+		OR (MEMO_TYPE = 'personal' AND PM_NO = ${pmNo}))
 		ORDER BY MEMO_TYPE DESC, MEMO_REG_DATE DESC
 	</select>
 	
