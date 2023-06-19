@@ -1,26 +1,48 @@
-//---------------------------------------공용 메모 공간---------------------------------------
+//메모 메세지 업데이트
 
-// 메모 메세지 테스트
-const workspaceMemoDetails = document.querySelectorAll('.workspaceMemoDetail');
+const memoDetails = document.querySelectorAll(".memoDetail");
+const memoContents = document.querySelectorAll(".memoContent");
+const memoDivs = document.querySelectorAll('.memoContent');
+const memoInfos = document.querySelectorAll('.memoInfo');
 
-let memoContent;
-let memoBgColor;
-let memoNo;
-let ChangedMemoContent;
+for (let i = 0; i < memoDivs.length; i++) {
+  const div = memoDivs[i];
+  const maxContentHeight = 200; // 최대 높이 설정 (200px)
+
+  div.addEventListener('input', function() {
+    while (this.scrollHeight > maxContentHeight) {
+      const endIndex = this.textContent.length - 1;
+      this.textContent = this.textContent.substring(0, endIndex);
+    }
+    
+    // 텍스트가 영역을 초과할 경우에만 '...'을 추가
+    if (this.scrollHeight > this.offsetHeight) {
+      this.classList.add('ellipsis'); // 'ellipsis' 클래스 추가
+    } else {
+      this.classList.remove('ellipsis'); // 'ellipsis' 클래스 제거
+    }
+  });
+}
 
 // 메모 색상
 const colors = ['#FEE182', '#F6A9B0', '#A1D5AE', '#9FDFEB', '#D8BBDC'];
 
-// 각각의 memoContent 접근
-workspaceMemoDetails.forEach((workspaceMemoDetail) => {
+memoDetails.forEach((memoDetail) => {
 
-	let memoContent = workspaceMemoDetail.querySelector('.memoContent');
-	let memoBgColor = workspaceMemoDetail.querySelector('.memoBgColor');
-	let memoNo =  workspaceMemoDetail.querySelector('.memoNo');
+	const memoContent = memoDetail.querySelector(".memoContent");
+	const memoInfo = memoDetail.querySelector(".memoInfo");
 
-	// 딜레이 2초 설정
+	const pmNo = memoContent.dataset.pmno;
+	const memoNo = memoContent.dataset.memono;
+	let memoBgColor = memoDetail.dataset.memobgcolor;
+	const memoType = memoContent.dataset.memotype;
+
+	console.log(memoNo);
+
+
+	// 딜레이 1초 설정
 	let typingTimer;
-  	const delay = 1500; // 1.5초
+  	const delay = 1000; // 1초
 	
 	let isFocused = false;
 	let isFirstClick = true;
@@ -35,286 +57,152 @@ workspaceMemoDetails.forEach((workspaceMemoDetail) => {
 
     	isFocused = false;
     	isFirstClick = true;
-    	memoBgColor.value = currentColor;
+    	memoBgColor = currentColor;
   	});
 
-  	memoContent.addEventListener('click', function(memoContent) {
+	memoContent.addEventListener('click', function(memoContent) {
 
     	if (isFocused) {
       		if (isFirstClick) {
 		        currentColor = this.style.backgroundColor;
 		        isFirstClick = false;
-		        memoBgColor.value = currentColor;
+		        memoBgColor = currentColor;
       		} else {
 		        const currentIndex = colors.indexOf(currentColor);
 		        const nextIndex = (currentIndex + 1) % colors.length;
 		        const nextColor = colors[nextIndex];
 		        this.style.backgroundColor = nextColor;
+				memoInfo.style.backgroundColor = nextColor;
+				
+
 		        currentColor = nextColor;
-		        memoBgColor.value = currentColor;
+		        memoBgColor = currentColor;
 		        
 		        clearTimeout(typingTimer);
   		
+				const div = this;
+      			const text = div.textContent.trim(); // 공백 문자 제거
+      			memoContent.innerHTML = text; // 수정된 텍스트로 업데이트
+
 		  		typingTimer = setTimeout(function() {
-		  			// 1.5초동안 아무런 동작이 없으면 로직 실행  			
-		  			
-		  			changeColor(memoContent);
 
-					
-
-					
-		  			
-		  		}, delay);
-				
-				
-				
+		  			// 1초동안 아무런 동작이 없으면 로직 실행					  			
+		  			updateMemo();		  			
+		  		}, delay);				
 			}
-    	}
-		
-		
-    	
+    	}    	
   	});
-  	
-  	memoContent.addEventListener('input', function() {
+
+	memoContent.addEventListener('input', function() {
 		
-  		clearTimeout(typingTimer);
-  		
-  		
-  	});
-  	
-  	memoContent.addEventListener('keyup', function() {
-  		clearTimeout(typingTimer);
-  		
-  		typingTimer = setTimeout(function() {
-  			// 1.5초동안 아무런 동작이 없으면 로직 실행
-  			
-  		updateMemo();
-  			
-  		}, delay);
-  		
-  	});
-  	
-  	//메모 보내기 함수
+		clearTimeout(typingTimer);		
+	});
+
+	memoContent.addEventListener('keyup', function() {
+		clearTimeout(typingTimer);
+		
+		typingTimer = setTimeout(function() {
+		// 1초동안 아무런 동작이 없으면 로직 실행			
+			updateMemo();			
+		}, delay);		
+	});
+
+
+	//메모 보내기 함수
 	function updateMemo() {
-		console.log(memoContent);	
+		if(memoType == "workspace") {
 			let memo = {
 				"workspaceNo" : workspaceNo,
-				"updatePmNo" : pmNo,
+				"pmNo" : pmNo,
 				"memoContent" : memoContent.innerHTML,
-				"memoBgColor" : memoBgColor.value,
-				"memoNo" : memoNo.value
+				"memoBgColor" : memoBgColor,
+				"memoNo" : memoNo
 			};
-			
-			
+
 			// JSON.parse(문자열) : JSON -> JS Object
 			// JSON.stringify(객체) :  JS Object -> JSON
 			console.log(memo);
 			console.log(JSON.stringify(memo));
-			
+		
 			// memoSock(웹소켓 객체)을 이용하여 메세지 보내기
 			// memoSock.send(값) : 웹소켓 핸들러로 값을 보냄
 			memoSock.send( JSON.stringify(memo) );
-			
+		} else if(memoType == "personal") {
+			// ajax 코드 작성
+			$.ajax({
+				url : contextPath +"/workspace/memo/updateMemo",
+				data : {"workspaceNo" : workspaceNo,
+						"pmNo" : pmNo,
+						"memoContent" : memoContent.innerHTML,
+						"memoBgColor" : memoBgColor,
+						"memoNo" : memoNo
+				},
+				type : "get",
+
+				dataType : "JSON",
+
+				success : function(result) {
+					if(result == 1) {
+						location.reload();
+					} else{console.log("업로드 실패")}
+					
+				},
+				error : function(request, status, error){
+					console.log("AJAX 에러 발생");
+					console.log("상태코드 : " + request.status); // 404, 500
+				}
+			});
+		}					
 	}
+
 	
-	function changeColor() {
-
-		let memo = {
-			"workspaceNo" : workspaceNo,
-			"memoBgColor" : memoBgColor.value,
-			"memoNo" : memoNo.value
-		};
-
-
-		// JSON.parse(문자열) : JSON -> JS Object
-		// JSON.stringify(객체) :  JS Object -> JSON
-		console.log(memo);
-		console.log(JSON.stringify(memo));
-		
-		memoSock.send( JSON.stringify(memo) );
-
-		
-	}
-	
-	// 웹소켓 핸들러에서
-					// s.sendMessage( new TextMessage(message.getPayload()) );
-					// 구문이 수행되어 메세지가 전달된 경우
-
-					memoSock.onmessage = function(e){
-						// 매개변수 e : 발생한 이벤트에 대한 정보를 담고있는 객체
-						// e.data : 전달된 메세지 (message.getPayload())   (JSON 형태)
-
-						// 전달 받은 메세지를 JS 객체로 변환
-						const memo = JSON.parse(e.data);  // JSON -> JS Object
-						
-						
-
-						
-
-						memoContent.style.backgroundColor = memo.memobgColor;
-						console.log(memoContent);
-						
-					}; 
-	 	
 });
 
+// 웹소켓 핸들러에서
+	// s.sendMessage( new TextMessage(message.getPayload()) );
+	// 구문이 수행되어 메세지가 전달된 경우
 
-//---------------------------------------개인 메모 공간---------------------------------------
-const personalMemoDetails = document.querySelectorAll('.personalMemoDetail');
+	memoSock.onmessage = function(e){
+		// 매개변수 e : 발생한 이벤트에 대한 정보를 담고있는 객체
+		// e.data : 전달된 메세지 (message.getPayload())   (JSON 형태)
 
-
-// 각각의 memoContent 접근
-personalMemoDetails.forEach((personalMemoDetail) => {
-
-	let memoContent = personalMemoDetail.querySelector('.memoContent');
-	let memoBgColor = personalMemoDetail.querySelector('.memoBgColor');
-	let memoNo =  personalMemoDetail.querySelector('.memoNo');
-
-	// 딜레이 2초 설정
-	let typingTimer;
-  	const delay = 1500; // 1.5초
-	
-	let isFocused = false;
-	let isFirstClick = true;
-	let currentColor = ''; 	
-
-	memoContent.addEventListener('focus', function() {
-
-		isFocused = true;
-	});
-
-	memoContent.addEventListener('blur', function() { 	
-
-    	isFocused = false;
-    	isFirstClick = true;
-    	memoBgColor.value = currentColor;
-  	});
-
-  	memoContent.addEventListener('click', function() {
-
-    	if (isFocused) {
-      		if (isFirstClick) {
-		        currentColor = this.style.backgroundColor;
-		        isFirstClick = false;
-		        memoBgColor.value = currentColor;
-      		} else {
-		        const currentIndex = colors.indexOf(currentColor);
-		        const nextIndex = (currentIndex + 1) % colors.length;
-		        const nextColor = colors[nextIndex];
-		        this.style.backgroundColor = nextColor;
-		        currentColor = nextColor;
-		        memoBgColor.value = currentColor;
-		        
-		        clearTimeout(typingTimer);
-  		
-		  		typingTimer = setTimeout(function() {
-		  			// 1.5초동안 아무런 동작이 없으면 로직 실행  			
-		  			
-		  			changePersonalMemoColor();
-
-					
-
-					
-		  			
-		  		}, delay);
-				
-				
-				
-			}
-    	}
+		// 전달 받은 메세지를 JS 객체로 변환
+		const memo = JSON.parse(e.data);  // JSON -> JS Object
 		
-		
-    	
-  	});
-  	
-  	memoContent.addEventListener('input', function() {
-		
-  		clearTimeout(typingTimer);
-  		
-  		
-  	});
-  	
-  	memoContent.addEventListener('keyup', function() {
-  		clearTimeout(typingTimer);
-  		
-  		typingTimer = setTimeout(function() {
-  			// 1.5초동안 아무런 동작이 없으면 로직 실행
-  			
-  		updatePersonalMemo();
-  			
-  		}, delay);
-  		
-  	});
-  	
-  	//메모 보내기 함수
-	function updatePersonalMemo() {
-		
-		// memo에 정보담기
-		let memo = {
-			"workspaceNo" : workspaceNo,
-			"updatePmNo" : pmNo,
-			"memoContent" : memoContent.innerHTML,
-			"memoBgColor" : memoBgColor.value,
-			"memoNo" : memoNo.value
-		};
-		
-		JSON.stringify(memo);
-		console.log(memo);
+		memoDetails.forEach((memoDetail) => {
+			changedMemoContent = memoDetail.querySelector(".memoContent");
+
+			if(memo.memoNo == changedMemoContent.dataset.memono) {
 			
-		// ajax 코드 작성
-		$.ajax({
-			url : contextPath +"/workspace/memo/updateMemo",
-			data : {"memo" : memo},
-			type : "get",
-
-			dataType : "JSON",
-
-			success : function(result) {
-				if(result == 1) {
-					console.log("메모 수정 성공!" + memo)
-				} else{console.log("몰라")}
 				
-			},
-			error : function(request, status, error){
-				console.log("AJAX 에러 발생");
-				console.log("상태코드 : " + request.status); // 404, 500
+				memoDetail.style.backgroundColor = memo.memoBgColor;
+				memoDetail.dataset.memobgcolor = memo.memoBgColor;
+				const changedMemoInfo = memoDetail.querySelector(".memoInfo");
+				changedMemoInfo.innerHTML = memberName + " " + currentTime() + "<button>x</button>";
+				changedMemoContent.dataset.pmno = pmNo;
+
+				changedMemoContent.innerHTML = memo.memoContent;
+				console.log(memoDetail);
 			}
 
-		});
-			
-	}
+		})
+};
+
+function currentTime() {
+	const now = new Date();
 	
-	function changePersonalMemoColor() {
-		
-		let memo = {
-			"workspaceNo" : workspaceNo,
-			"memoBgColor" : memoBgColor.value,
-			"memoNo" : memoNo.value
-		};
+	const time = now.getFullYear()
+				+ "-" + addZero(now.getMonth()+1)
+				+ "-" + addZero(now.getDate());
+	
+	return time;
 
-		console.log(memo);
 
-		// ajax 코드 작성
-		$.ajax({
-			url : contextPath +"/workspace/memo/updateMemo",
-			data : {"memo" : memo},
-			type : "get",
+}
 
-			dataType : "JSON",
+// 10보다 작을 경우 앞에 0을 붙이는 함수
+function addZero(temp){
+	return temp < 10 ? "0" + temp : temp;;
+}
 
-			success : function(result) {
-				if(result == 1) {
-					console.log("색상 수정 성공!" + memo);
-				} else{console.log("몰라")}
-				
-			},
-			error : function(request, status, error){
-				console.log("AJAX 에러 발생");
-				console.log("상태코드 : " + request.status); // 404, 500
-			}
-
-		});
-		
-	}
-
-});
+	

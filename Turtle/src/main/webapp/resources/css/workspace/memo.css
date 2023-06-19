@@ -1,16 +1,30 @@
 #memo-area {
  	display: flex;
  }
- 
-.memoContent {
+
+ .memoDetail {
 	width: 200px;
-	height: 200px;
-	margin: 5px;
-	overflow: auto;
- 	white-space: nowrap;
- 	outline: none;
- 	
+	height: 230px;
+	margin-right: 5px;
+ }
+
+.memoInfo {
+	height: 30px;
+	
+}
+
+.memoContent {
+  
+  height: 200px;
+  
+  overflow: hidden;
 }
 .memoContent:focus {
 	outline: none;
 }
+
+.memoContent.ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: normal;
+  }
