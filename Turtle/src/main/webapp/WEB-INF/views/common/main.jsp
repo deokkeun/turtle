@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 
 <!DOCTYPE html>
@@ -8,6 +10,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--섬머노트 전용 css-->
+    <link rel="stylesheet" href="${contextPath}/resources/css/summernote/summernote-lite.css">
+    
     <title>Turtle</title>
     
 	<!-- main-style.css -->
@@ -21,7 +27,7 @@
         <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
 
-
+        
  
     <main id="main" class="main">
  	
@@ -44,7 +50,6 @@
         </div>
         
         
-       
         <form action="${contextPath}/member/myPage/info" method="GET">
                 <button>마이페이지 이동</button>
         </form>
@@ -73,8 +78,8 @@
         <form action="../board/boardList/1/5" method="get">
         	<button>게시판 테스트</button>
         </form>
-        
-
+        <div id="summernote"></div>
+     
 
     </main>
     <script>
@@ -88,8 +93,15 @@
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/main.js"></script>
      <!-- Vendor JS Files -->
+     <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js"></script>
+     <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.js"></script>
+    <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script>
+    <!-- chat js -->
+    <!-- <script src="${contextPath}/resources/js/chat.js"></script> -->
 
-  <!-- chat js -->
-  <script src="${contextPath}/resources/js/chat.js"></script>
+
+    <!--섬머노트 전용 js (css태그는 head에 있음)-->
+    <script src="${contextPath}/resources/js/summernote/summernote-lite.js"></script>
+    <script src="${contextPath}/resources/js/summernote/lang/summernote-ko-KR.js"></script>
 </body>
 </html>
