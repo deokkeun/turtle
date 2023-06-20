@@ -1,6 +1,7 @@
 package com.turtle.www.board.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.turtle.www.board.model.service.BoardService;
+import com.turtle.www.board.model.vo.Board;
 import com.turtle.www.member.model.vo.Member;
 import com.turtle.www.projectMember.model.service.ProjectMemberService;
 
@@ -25,8 +27,8 @@ public class BoardController {
 
 	Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
-	//@Autowired
-	//private BoardService service;
+	@Autowired
+	private BoardService service;
 	@Autowired
 	private ProjectMemberService pmService;
 	
@@ -47,7 +49,10 @@ public class BoardController {
 		map.put("pmNo", pmNo);
 		map.put("workspaceNo", workspaceNo);
 		
+		List<Board> boardList = service.selectBoardList(map);
 		
+		model.addAttribute("boardList", boardList);
+				
 		model.addAttribute("workspaceNo", workspaceNo); // session에 올림
 		model.addAttribute("pmNo", pmNo);
 		

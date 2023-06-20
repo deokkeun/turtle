@@ -28,6 +28,7 @@
 		<typeAlias type="com.turtle.www.memo.model.vo.Memo" alias="memo"/>
 		
 		<typeAlias type="com.turtle.www.board.model.vo.Board" alias="board"/>
+		<typeAlias type="com.turtle.www.board.model.vo.BoardDetail" alias="boardDetail"/>
 		
 	</typeAliases>
 	
