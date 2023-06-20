@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +14,7 @@
   <!-- bootstrap.css -->
   <link href="${contextPath}/resources/css/booystrapcss/bootstrap.css" rel="stylesheet">
   <link href="${contextPath}/resources/images/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <link href="${contextPath}/resources/css/boxicons/css/boxicons.min.css" rel="stylesheet">
 	<!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
@@ -382,9 +385,11 @@
       </ul>
   </aside><!-- End Sidebar-->
 <!-- right sidebar(오른쪽 사이드바) --> 
+  
+  <aside class="right-sidebar" id="rightSidebar" >
 
-<aside class="right-sidebar" id="rightSidebar">
-
+    <!-- <jsp:include page='/WEB-INF/views/chat/chatRoomList.jsp'/> -->
+    
   <button class="sidebar-close-btn" onclick="toggleSidebar()"><i class="bi bi-chevron-double-right"></i></button>
   <ul class="right-sidebar-nav" id="right-sidebar-nav">
    
@@ -421,11 +426,16 @@
   
  
 </aside>
-
+  <!-- <script src='${contextPath}/resources/js/chat.js'></script> -->
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.js"></script>
 
   <!-- Template Main JS File -->
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js"></script>
-  <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script>
+  <!-- <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script> -->
   
-  
+  <script>
+
+
+
+
+  </script>

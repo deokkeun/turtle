@@ -106,7 +106,7 @@
 		<input type="hidden" name="date" value="${chatDate}">
 	</div>
 	
-	
+
 	
 	<!--------------------------------------- sockjs를 이용한 WebSocket 구현을 위해 라이브러리 추가 ---------------------------------------------->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -126,7 +126,7 @@
 
 		// 로그인이 되어 있을 경우에만
 		// /chat 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
-		let chattingSock = new SockJS(contextPath+"/chat");
+		const chattingSock = new SockJS(contextPath+"/chat");
 			// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
 
 
@@ -144,7 +144,15 @@
 
 
 	</script>
-	
-	<script src="${contextPath}/resources/js/chat.js"></script>
+	<script src='${contextPath}/resources/js/chat.js'></script>
+	<!-- <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script> -->
+	<script>
+		// 페이지 로딩 완료 시 채팅창을 제일 밑으로 내리기
+
+
+
+
+
+	</script>
 </body>
 </html>

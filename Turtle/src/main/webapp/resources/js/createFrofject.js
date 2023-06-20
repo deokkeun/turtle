@@ -64,7 +64,7 @@ $(document).ready(function() {
 
         let res = "";
 
-        res = "<div class='checkeduser'><i class='fa-solid fa-circle-user'></i><span class='user-checked-name' data-email="+$(this).siblings('.user-email').text()+">"+$(this).siblings('.user-name').text()+"</span><a class='checked-btn'><i class='fa-solid fa-circle-xmark'></i></a></div>";
+        res = "<div class='checkeduser'><i class='fa-solid fa-circle-user'></i><span class='user-checked-name' name="+$(this).siblings('.user-name').text()+" id="+$(this).siblings('.user-email').text()+ " data-email="+$(this).siblings('.user-email').text()+">"+$(this).siblings('.user-name').text()+"</span><a class='checked-btn'><i class='fa-solid fa-circle-xmark'></i></a></div>";
 
     
         console.log($(this).siblings('.user-email').data('email'));
@@ -92,7 +92,43 @@ $(document).ready(function() {
     });
     
 
+    $('.user-checked').on('click','.uc-btn', function() {
 
+        const invitedUser = document.querySelectorAll('.user-checked-name');
+        const invitedEmail = document.querySelectorAll('.user-email2');
+
+
+        console.log(invitedUser[1].getAttribute('id'));
+
+        for(let i=0; i<invitedUser.length; i++) {
+            console.log(invitedUser[i].getAttribute('id'));
+            console.log(invitedUser[i].getAttribute('name'));
+
+            for(let v=0; v<invitedEmail.length; v++) {
+                console.log(invitedEmail[v].getAttribute('id'));
+
+                if(invitedUser[i].getAttribute('id') != invitedEmail[v].getAttribute('id')) {
+                    
+                res3= "<div class='user'><a class='invited-user'><i class='fa-solid fa-circle-user'></i></a><span class='user-name2'>"+invitedUser[i].getAttribute('name')+"</span><span class='user-email2' id="+invitedUser[i].getAttribute('id')+">"+invitedUser[i].getAttribute('id')+"</span></div>";
+                console.log(res3);
+                $('.invited-member').append(res3);
+
+                }
+            }
+
+
+
+
+        }
+      
+
+
+        res3= "<div class='user'><a class='invited-user'><i class='fa-solid fa-circle-user'></i></a><span class='user-name'>"+$(this).siblings('.checkeduser').children('.user-checked-name').text()+"</span><span class='user-email'>"+$(this).siblings('.checkeduser').children('.user-checked-name').data('email')+"</span></div>";
+        
+
+       
+
+    })
 
 });
 
