@@ -365,7 +365,7 @@
         </li><!-- End Error 404 Page Nav -->	
   
         <li class="nav-item">
-          <a class="nav-link collapsed" href="">
+          <a class="nav-link collapsed" href= "${contextPath}/payment/pay">
             <i class="bi bi-file-earmark"></i>
             <span>Payment Detailss</span>
           </a>

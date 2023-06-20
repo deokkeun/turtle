@@ -6199,9 +6199,7 @@
       }
       super.dispose();
     }
-    isShown() {
-      return this._element.classList.contains(CLASS_NAME_SHOW);
-    }
+   
 
     // Private
 
