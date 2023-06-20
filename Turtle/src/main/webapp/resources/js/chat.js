@@ -88,7 +88,7 @@ chattingSock.onmessage = function(e){
 	span.innerText = currentTime(); // 날짜
 	const br = document.createElement("br"); // 개행
 
-	// 여기는 조건문 1개만 어차피 내가 치는 채팅이니깐 조건문을 날짜로 하면됨
+	
 
 	if(mName != chatMessage.memberName) {
 		
@@ -198,13 +198,13 @@ document.querySelector('#back-btn').onclick = function() {
 }
 
 //이모티콘
- const button = document.querySelector("#emoji_btn");
+ let button2 = document.querySelector("#emoji_btn");
 const picker = new EmojiButton({
   position: 'bottom-start'
 });
 
-button.addEventListener('click', () => {
-  picker.togglePicker(button);
+button2.addEventListener('click', () => {
+  picker.togglePicker(button2);
 });
 
 picker.on('emoji', emoji => {
@@ -212,3 +212,4 @@ picker.on('emoji', emoji => {
   text_box.value += emoji;
 });
 
+//입력중
