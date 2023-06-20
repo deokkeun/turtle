@@ -6,7 +6,6 @@
   <link href="${contextPath}/resources/css/payment/payment.css" rel="stylesheet">
  <style>
 
-
  </style>
 </head>
 <body>
@@ -49,9 +48,8 @@
     </form>
   </div>
 
-  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+  <!-- <script src="https://developers.kakao.com/sdk/js/kakao.js"></script> -->
   <script src="${contextPath}/resources/js/payment.js">
- 
   </script>
 </body>
 </html>

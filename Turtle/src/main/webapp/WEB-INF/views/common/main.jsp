@@ -15,8 +15,11 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/summernote/summernote-lite.css">
     
     <title>Turtle</title>
+        
+    <!-- Favicons -->
+    <link href="${contextPath}/resources/favicon/favicon-16x16.png" rel="icon">
+    <link href="${contextPath}/resources/favicon/apple-icon-60x60.png" rel="apple-touch-icon">
     
-	<!-- main-style.css -->
 
 	<!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
@@ -100,6 +103,8 @@
     <!-- <script src="${contextPath}/resources/js/chat.js"></script> -->
 
 
+    <!-- chat js -->
+    <script src="${contextPath}/resources/js/chat.js"></script>
     <!--섬머노트 전용 js (css태그는 head에 있음)-->
     <script src="${contextPath}/resources/js/summernote/summernote-lite.js"></script>
     <script src="${contextPath}/resources/js/summernote/lang/summernote-ko-KR.js"></script>

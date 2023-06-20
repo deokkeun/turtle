@@ -345,8 +345,9 @@ sup {
 }
 
 a {
-  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
-  text-decoration: underline;
+  /* color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1)); */
+  color: black;
+  text-decoration: none;
 }
 a:hover {
   --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
@@ -3830,6 +3831,12 @@ textarea.form-control-lg {
   border: 0;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
+
+.nav-profile {
+  display: flex;
+  gap: 130px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .nav-link {
     transition: none;
@@ -8244,9 +8251,10 @@ textarea.form-control-lg {
   padding-right: 0.5rem !important;
 }
 
-.pe-3 {
+/* ********************************* 왼쪽 메뉴 프로필이미지 ********************************* */
+/* .pe-3 {
   padding-right: 1rem !important;
-}
+} */
 
 .pe-4 {
   padding-right: 1.5rem !important;
@@ -8998,7 +9006,9 @@ textarea.form-control-lg {
 }
 
 .rounded-circle {
-  border-radius: 50% !important;
+  border-radius: var(--bs-border-radius-lg);
+  width: 40px;
+  height: 40px;
 }
 
 .rounded-pill {

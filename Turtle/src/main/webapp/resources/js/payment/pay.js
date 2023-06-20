@@ -1,5 +1,6 @@
+function requestPay() {
 
-function kakaoPay() {
+    // const projectNo = document.getElementById("projectNo");
 
     // 현재 시간을 기반으로 주문번호를 생성합니다.
     const now = new Date();
@@ -16,44 +17,43 @@ function kakaoPay() {
     
     // 주문번호를 숫자형으로 변환합니다.
     const payNo = Number(payNumberString);
-    console.log("payNo");
-    console.log("결제 번호 날라갑니다" + payNo);
-
-
-
   	// 주문번호 생성 예시
 	console.log(payNo); // 예시 출력: 230408112154951
+    alert(payNo);
 
+    // const IMP = window.IMP; // 생략 가능
+    // IMP.init(""); // 예: imp00000000a
 
+    // IMP.request_pay({
+    //     pg : 'html5_inicis.INIpayTest', //테스트 시 html5_inicis.INIpayTest 기재 
+    //     pay_method : 'card',
+    //     merchant_uid: payNo, //상점에서 생성한 고유 주문번호
+    //     name : '주문명:Standard',
+    //     amount : 8900,
+    //     buyer_email : 'test@gmail.com',
+    //     buyer_name : '구매자',
+    //     buyer_tel : '010-1234-5678',   //필수 파라미터 입니다.
+    //     buyer_addr : '서울특별시 강남구 삼성동',
+    //     buyer_postcode : '123-456',
+    //     m_redirect_url : 'http://localhost:8080/www/payment/payConfirm',
+    //     escrow : true, //에스크로 결제인 경우 설정
+    //     vbank_due : 'YYYYMMDD', // 결제 기간 미지정시 30일
+    //     // bypass : {
+    //     //     acceptmethod : "noeasypay", // 간편결제 버튼을 통합결제창에서 제외(PC)
+    //     //     P_RESERVED: "noeasypay=Y",  // 간편결제 버튼을 통합결제창에서 제외(모바일)
+    //     //     acceptmethod: 'cardpoint',  // 카드포인트 사용시 설정(PC)
+    //     //     P_RESERVED : 'cp_yn=Y',     // 카드포인트 사용시 설정(모바일)
+    //     // },
+    //     period : {
+    //     from : "20230618", //YYYYMMDD
+    //     to : "20230720"   //YYYYMMDD
+    //     }
+    // }, function(rsp) { // callback 로직
 
-    // 결제정보 모두 추가 후 카카오 결제 시도	
+    //     // location.href="";
+    //     console.log(rsp);
 
-    // 백단에서 상품 데이터 긁어오기 선행 후 카카오페이 결제 요청
-    const adminkey = "";
-    $.ajax({
-        url : "https://kapi.kakao.com/v1/payment/ready",
-        type: "post",
-        headers : {Authorization : "KakaoAK " + adminkey},
-        dataType : "JSON",
-        data: {
-            cid: "TC0ONETIME",
-            partner_order_id: '${payNo}',
-            partner_user_id: 'Turtle',
-            item_name: 'Standard',
-            quantity: '12,900원',
-            total_amount: '12,900원',
-            tax_free_amount: 500,
-            approval_url: "http://localhost:8080/www/payment/pay",
-            cancel_url: "http://localhost:8080/www/payment/pay",
-            fail_url: "http://localhost:8080/www/payment/pay"
-        },
-        success: function(result) {
-            console.log("카카오페이 결제 성공");
-            window.open(result.next_redirect_pc_url);
-        },
-        error: function() {
-            alert("카카오페이 결제 실패");
-        }
-    });
+    //     //* ...중략... *//
+    // });
 
 }

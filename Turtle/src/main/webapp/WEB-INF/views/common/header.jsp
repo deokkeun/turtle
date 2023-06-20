@@ -148,7 +148,7 @@
 
             <li class="message-item">
               <a href="#">
-                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <img src="${contextPath}/resources/images/memberProfile/member.png" alt="" class="rounded-circle">
                 <div>
                   <h4>Maria Hudson</h4>
                   <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -162,7 +162,7 @@
 
             <li class="message-item">
               <a href="#">
-                <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                <img src="${contextPath}/resources/images/memberProfile/member.png" alt="" class="rounded-circle">
                 <div>
                   <h4>Anna Nelson</h4>
                   <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -176,7 +176,7 @@
 
             <li class="message-item">
               <a href="#">
-                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <img src="${contextPath}/resources/images/memberProfile/member.png" alt="" class="rounded-circle">
                 <div>
                   <h4>David Muldon</h4>
                   <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -215,16 +215,23 @@
   <aside id="sidebar" class="sidebar"> 
 
     <ul class="sidebar-nav" id="sidebar-nav">
-      <li class="nav-item dropdown pe-3"> <!-- 프로필 --> 
-
-        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-          <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-          <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+      <li class="nav-item dropdown pe-3"> 
+        <!-- 프로필 --> 
+        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="${contextPath}/member/myPage/info" data-bs-toggle="dropdown">
+          <c:if test="${empty loginMember.profileImage}">
+            <img src="${contextPath}/resources/images/memberProfile/member.png" alt="Profile" class="rounded-circle">
+          </c:if>
+  
+          <c:if test="${!empty loginMember.profileImage}">
+            <img src="${contextPath}${loginMember.profileImage}" alt="Profile" class="rounded-circle">
+          </c:if>
+          <!-- <img src="${loginMember.profileImage}" alt="Profile" class="rounded-circle"> -->
+          <span class="d-none d-md-block dropdown-toggle ps-2">${loginMember.memberName}</span>
         </a><!-- End Profile Iamge Icon -->
 
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
           <li class="dropdown-header">
-            <h6>Kevin Anderson</h6>
+            <h6>${loginMember.memberName}</h6>
             <span>Web Designer</span>
           </li>
           <li>
@@ -232,7 +239,8 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="">
+            <!-- 마이페이지 -->
+            <a class="dropdown-item d-flex align-items-center" href="${contextPath}/member/myPage/info">
               <i class="bi bi-person"></i>
               <span>My Profile</span>
             </a>
@@ -262,7 +270,7 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="#">
+            <a class="dropdown-item d-flex align-items-center" href="${contextPath}/member/logout">
               <i class="bi bi-box-arrow-right"></i>
               <span>Sign Out</span>
             </a>
@@ -368,7 +376,7 @@
         </li><!-- End Error 404 Page Nav -->	
   
         <li class="nav-item">
-          <a class="nav-link collapsed" href= "${contextPath}/payment/pay">
+          <a class="nav-link collapsed" href= "${contextPath}/payment/pay/1">
             <i class="bi bi-file-earmark"></i>
             <span>Payment Detailss</span>
           </a>
