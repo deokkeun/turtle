@@ -6,7 +6,8 @@
 <header id="header" class="header fixed-top">
     <div id="allnav" class="container">
       	<nav id="navbar" class="navbar container-fluid">
-    
+
+			
 			<!-- 로고그림 및 이름 -->	
 			<a href="${contextPath}" class="logo d-flex">
 				<img src="${contextPath}/resources/images/logo/turtleLogo-green.png" alt="로고안보임">
@@ -20,23 +21,7 @@
 				<li><a href="${contextPath}/etc/faq">고객센터</a></li>
 			</ul>
           
-
-		자동로그인 테스트부분 (나중에 지울거임)
-    	<div class="auto-login">
-    		<form action="member/testLogin" method="POST">
-        		<input type="hidden" name="memberEmail" value="test01@gmail.com">
-        		<input type="hidden" name="memberPw" value="password999!">
-        		<button>일일맨테스트로그인</button>
-        	</form>
-        	<form action="member/testLogin" method="POST">
-        		<input type="hidden" name="memberEmail" value="user999@gmail.com">
-        		<input type="hidden" name="memberPw" value="password999!">
-        		<button>구구맨테스트로그인</button>
-        	</form>
-    	</div> 
-
-
-		
+			
 			<!-- <ul class="nav-links2">		
 				<li>          
 					<div id="login-box">
@@ -118,9 +103,7 @@
 	     data-logo_alignment="center"
 	     data-width="300">
 	</div>
-	<!-- <button id="google-btn" onclick="location.href='https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=584967116999-s1skvhb03k99ueq3l69rhnbbrjc6c5bm.apps.googleusercontent.com&scope=openid%20email&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fwww%2Fmember%2Flogin&state=security_token%3D138r5719ru3e1%26url%3Dhttps%3A%2F%2Foauth2-login-demo.example.com%2FmyHome&login_hint=jsmith@example.com&nonce=0394852-3190485-2490358&hd=gmail.com'">
-		<img width="20" src="${contextPath}/resources/images/auth/google-login-custom.png" alt="Google Login"/><div id="google-btn-name">Continue with Google</div>
-	</button> -->
+	
 	<div class="login-divider">or</div>
 	<form action="${contextPath}/member/login" method="POST" onsubmit="return loginValidate()">
 		<div>

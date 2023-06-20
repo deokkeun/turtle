@@ -11,9 +11,10 @@
 /* calendar구간 */
 #calendar-box {
     margin: 50px;
-    width: 50%;
-    height: 50%;
-    float: left;
+    /* width: 80%;
+    height: 80%; */
+    /* float: left; */
+    text-align: center;
     cursor: pointer;
 }
 

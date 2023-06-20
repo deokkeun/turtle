@@ -9,8 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turtle</title>
+        
+    <!-- Favicons -->
+    <link href="${contextPath}/resources/favicon/favicon-16x16.png" rel="icon">
+    <link href="${contextPath}/resources/favicon/apple-icon-60x60.png" rel="apple-touch-icon">
     
-	<!-- main-style.css -->
 
 	<!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
@@ -89,7 +92,7 @@
     <script src="${contextPath}/resources/js/main.js"></script>
      <!-- Vendor JS Files -->
 
-  <!-- chat js -->
-  <script src="${contextPath}/resources/js/chat.js"></script>
+    <!-- chat js -->
+    <script src="${contextPath}/resources/js/chat.js"></script>
 </body>
 </html>

@@ -24,7 +24,7 @@
         <form action="../myPage/newChangePw" method="POST" onsubmit="return newChangePwValidate()">
 
             <section id="myPageChangePw-box">
-
+                
                 <section>
                     <div class="changePw-title">비밀번호</div>
                     <div class="changePw-subTitle">안전한 비밀번호를 만들고 같은 비밀번호를 다른 계정에 사용하지 마세요.</div>

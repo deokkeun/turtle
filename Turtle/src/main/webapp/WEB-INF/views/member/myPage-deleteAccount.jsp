@@ -18,7 +18,7 @@
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <main>
+    <main id="main" class="main">
  		<!-- header include -->
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
@@ -51,11 +51,6 @@
             </section>
         </form>
 
-        <div>로그인시(멤버정보)</div>
-        <div>회원번호 : ${loginMember.memberNo}</div>
-        <div>회원명 : ${loginMember.memberName}</div>
-        <div>회원 이메일 : ${loginMember.memberEmail}</div>
-        
           <!-- 모달창 -->
           <div id="modal" class="modal">
             <div class="modal-contentAccount">

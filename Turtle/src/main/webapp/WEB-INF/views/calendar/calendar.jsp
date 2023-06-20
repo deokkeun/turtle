@@ -19,11 +19,11 @@
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <main>
+    <main id="main" class="main">
  		    <!-- header include -->
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-        <section>
+        <!-- <section>
           <div id='external-events'>
             <p>
               <strong>아래 일정을 드래그하여 배정하세요.</strong>
@@ -50,24 +50,27 @@
               <label for='drop-remove'>드래그 앤 드롭 후 제거</label>
             </p>
 
-            <!-- 캘린더 리스트 조회 -->
-            <input type="hidden" id="calendarList" value="${calendarList}">
-            <input type="hidden" id="calNo" value="${calNo}">
-            <input type="hidden" id="projectNo" value="${projectNo}">
-            <input type="hidden" id="workspaceNo" value="${workspaceNo}">
           </div>
         </section>
-          
-          <section>
-            <button onclick="allSave()">전체 저장</button>
-          </section>
+        
+        <section>
+          <button onclick="allSave()">전체 저장</button>
+        </section> -->
+
+
+
+
+        <!-- 캘린더 리스트 조회 -->
+        <input type="hidden" id="calendarList" value="${calendarList}">
+        <input type="hidden" id="calNo" value="${calNo}">
+        <input type="hidden" id="projectNo" value="${projectNo}">
+        <input type="hidden" id="workspaceNo" value="${workspaceNo}">
           
           <!-- calendar -->
           <section id="calendar-box">
             <div id='calendar'></div>
           </section>
           
-          <input type="text" id="calNo">
         <!-- 일정 추가 모달창 -->
         <section id="calendar-modal">
           <section id="calendar-modal-box">

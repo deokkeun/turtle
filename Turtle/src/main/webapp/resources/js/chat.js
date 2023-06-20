@@ -10,8 +10,11 @@
 })();
 
 
+const send = document.getElementById("send");
+
 // 채팅 메세지 보내기
-document.getElementById("send").addEventListener("click", sendMessage);
+if(send != null) {
+send.addEventListener("click", sendMessage);
 
 
 // 채팅 보내기 함수
@@ -53,12 +56,11 @@ function sendMessage(){
 	}
 	
 }
-
+}
 
 // 웹소켓 핸들러에서
 // s.sendMessage( new TextMessage(message.getPayload()) );
 // 구문이 수행되어 메세지가 전달된 경우
-
 chattingSock.onmessage = function(e){
 	// 매개변수 e : 발생한 이벤트에 대한 정보를 담고있는 객체
 	// e.data : 전달된 메세지 (message.getPayload())   (JSON 형태)
@@ -120,7 +122,6 @@ chattingSock.onmessage = function(e){
 		}
 
 	}
-
 /*
 	if( cDate != currentTime2() ){
 		
