@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper>
-  <cache-ref namespace=""/>
+<mapper namespace="projectMapper">
+
+	<resultMap type="project" id="project_rm">
+		<id property="projectNo" column="PROJECT_NO"/>
+		
+		<result property="projectName"  column="PROJECT_NAME"/>
+		<result property="projectEmoji"  column="PROJECT_EMOJI"/>
+		<result property="projectDescription"  column="PROJECT_DESCRIPTION"/>
+		<result property="inviteCode"  column="INVITE_CODE"/>
+		<result property="projectDeleteFG"  column="PROJECT_DELETE_FG"/>
+		<result property="regDate"  column="REG_DATE"/>
+	</resultMap>
+	
+<!-- 	<insert id="createProject" parameterType="project">
+		INSERT INTO PROJECT VALUES(
+			SEQ_PROJECT_NO.NEXTVAL,
+			#{project_name},
+			#{projectEmoji},
+			#{projectDescription},
+			#{inviteCode},
+			DEFAULT, DEFAULT
+		)
+	
+	</insert> -->
 </mapper>
