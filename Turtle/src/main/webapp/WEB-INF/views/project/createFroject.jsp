@@ -72,9 +72,9 @@
 
                     <div class="user-checked">
                        
-                        <a class="uc-btn">완료</a>
+                       
                     </div>
-                    
+                    <a class="uc-btn">완료</a>
                 </div>
             </div>
             
