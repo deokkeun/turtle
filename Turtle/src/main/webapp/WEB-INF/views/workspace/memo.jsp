@@ -19,8 +19,9 @@
 	    	<fmt:formatDate var="memoRegDate" value="${memo.memoRegDate}" pattern="MM-dd HH:mm"/>
 	    	<fmt:formatDate var="memoUpdateDate" value="${memo.memoUpdateDate}" pattern="MM-dd HH:mm"/>
 	    	<c:choose>
+	    		
 	    		<c:when test="${memo.memoType eq 'workspace'}">
-	    			<div class="memoDetail" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
+	    			<div class="memoDetail workspace" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
 			    		<div class="memoInfo">
 			    			${memo.memberName} 
 			    			<c:choose>
@@ -39,6 +40,7 @@
 		  				</div>
 			  		</div>
 	    		</c:when>
+	    		
 	    		<c:otherwise>
 	    			<div class="memoDetail" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
 			    		<div class="memoInfo">
