@@ -19,4 +19,6 @@ public class ProjectMember {
 	private String pmST;
 	private String regDate;
 	
+	private String profileImg;
+	
 }

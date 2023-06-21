@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.turtle.www.member.model.vo.Member;
 import com.turtle.www.projectMember.model.dao.ProjectMemberDAO;
+import com.turtle.www.projectMember.model.vo.ProjectMember;
 
 @Service
 public class ProjectMemberServiceImpl implements ProjectMemberService {
@@ -26,6 +27,12 @@ public class ProjectMemberServiceImpl implements ProjectMemberService {
 	public List<Member> searchmember(String input) {
 		// TODO Auto-generated method stub
 		return dao.searchmember(input);
+	}
+
+	// 메모 업데이트 멤버 정보 조회 서비스 구현
+	@Override
+	public ProjectMember selectMemoProjectMember(int memoNo) {
+		return dao.selectMemoProjectMember(memoNo);
 	}
 
 

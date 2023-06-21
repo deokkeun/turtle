@@ -54,7 +54,7 @@ public class MemoWebsocketHandler extends TextWebSocketHandler {
 		Memo memo = objectMapper.readValue(message.getPayload(), Memo.class);
 				
 		// 시간세팅
-		memo.setMemoRegDate(new Date(System.currentTimeMillis()));
+		memo.setMemoUpdateDate(new Date(System.currentTimeMillis()));
 				
 		System.out.println(memo);
 		
@@ -88,12 +88,12 @@ public class MemoWebsocketHandler extends TextWebSocketHandler {
 
 
 	// 클라이언트와 연결이 종료되는 수행
-		@Override
-		public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
-			
-			sessions.remove(session);
-			// 웹소켓 연결이 종료되는 경우
-			// 종료된 WebSocketSession을 Set에서 제거
-			
-		}
+	@Override
+	public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
+		
+		sessions.remove(session);
+		// 웹소켓 연결이 종료되는 경우
+		// 종료된 WebSocketSession을 Set에서 제거
+		
+	}
 }

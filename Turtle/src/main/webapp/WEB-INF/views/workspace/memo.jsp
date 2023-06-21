@@ -3,6 +3,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<c:set var="memberName" value="${loginMember.memberName}" />
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +25,7 @@
 	    		<c:when test="${memo.memoType eq 'workspace'}">
 	    			<div class="memoDetail workspace" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
 			    		<div class="memoInfo">
+							<span class="profile-image"><img src="${contextPath}${memo.profileImg}"></span>
 			    			${memo.memberName} 
 			    			<c:choose>
 				    			<c:when test="${empty memoUpdateDate}">
@@ -44,6 +47,7 @@
 	    		<c:otherwise>
 	    			<div class="memoDetail" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
 			    		<div class="memoInfo">
+							<span class="profile-image"><img src="${contextPath}${memo.profileImg}"></span>
 			    			${memo.memberName} 
 			    			<c:choose>
 				    			<c:when test="${empty memoUpdateDate}">
@@ -78,12 +82,9 @@
     	const pmNo = "${pmNo}";
     	const workspaceNo = "${workspaceNo}";
     	const contextPath = "${contextPath}";
-    	const memberName = "${loginMember.memberName}";
-    	
-    	
-    	
+		
     	// 로그인이 되어 있을 경우에만
-		// /chat 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
+		// /memo 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
 		let memoSock = new SockJS(contextPath+"/memo");
 			// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
     </script>

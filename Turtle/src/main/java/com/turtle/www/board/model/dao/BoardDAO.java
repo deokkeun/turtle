@@ -24,4 +24,13 @@ public class BoardDAO {
 		return sqlSession.selectList("boardMapper.selectBoardList", map);
 	}
 
+	/** 게시글 제목 수정 dao
+	 * @param board
+	 * @return result
+	 */
+	public int updateBoardTitle(Board board) {
+
+		return sqlSession.update("boardMapper.updateBoardTitle", board);
+	}
+
 }
