@@ -66,11 +66,17 @@ boards.forEach((board) => {
 
     // 제목 변경 함수
     function updateBoardTitle() {
+
+        // 개행 제거
+        const cleanedBoardTitle = boardTitle.innerHTML.replace(/\n|\t/g, "");
+
         let board = {
             "workspaceNo" : workspaceNo,
             "boardNo" : boardNo,
             "pmNo" : pmNo,
-            "boardTitle" : boardTitle.innerHTML
+            "boardTitle" : cleanedBoardTitle,
+            "updateMemberName" : memberName,
+            "updateProfileImg" : profileImage
         };
 
         // JSON.parse(문자열) : JSON -> JS Object
@@ -104,9 +110,14 @@ boardListSock.onmessage = function(e) {
         const changedBoardUpdateDate = board.querySelector(".updateDate")
 
         if(changedBoard.boardNo == changedBoardTitle.dataset.boardno) {
-            changedBoardTitle.innerHTML = changedBoard.boardTitle;
-            changedProfileImage.src = contextPath + profileImage;
+
+            // 수정한 멤버 정보 반영
+            changedBoardTitle.dataset.pmno = changedBoard.pmNo;
+            changedProfileImage.src = contextPath + changedBoard.updateProfileImg;
             changedBoardUpdateDate.innerHTML = currentTime();
+
+            // 수정된 제목 변경
+            changedBoardTitle.innerHTML = changedBoard.boardTitle;
             
         }
     });

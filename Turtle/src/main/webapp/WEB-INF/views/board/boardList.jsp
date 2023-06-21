@@ -3,6 +3,9 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<c:set var="memberName" value="${loginMember.memberName}" />
+<c:set var="profileImage" value="${loginMember.profileImage}"/>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,6 +70,9 @@
     	const pmNo = "${pmNo}";
     	const workspaceNo = "${workspaceNo}";
     	const contextPath = "${contextPath}";
+    	
+    	let memberName = "${memberName}";
+    	let profileImage = "${profileImage}";
     	
     	// 로그인이 되어 있을 경우에만
 		// /boardList 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
