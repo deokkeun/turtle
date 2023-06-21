@@ -35,6 +35,11 @@ function modal(id) {
         });
     }
 
+    // 배경 레이어 클릭 시 모달 닫기
+    bg.addEventListener('click', function() {
+        bg.remove();
+        modal.style.display = 'none';
+    });
 
     modal.setStyle({
         position: 'fixed',
