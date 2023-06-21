@@ -10,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
@@ -57,16 +56,13 @@ public class PayController {
 		// 결제 유형 상태 확인
 		logger.debug("paymentType" + paymentType);
 		
-		
-		
-		
 		return "payment/pay";
 	}
 	
 	/** 결제 성공 시
 	 * @return
 	 */
-	@PostMapping("/payConfirm")
+	@GetMapping("/payConfirm")
 	public String payConfirm() {
 		return "payment/payConfirm";
 	}
