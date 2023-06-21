@@ -200,6 +200,9 @@ section {
     border: 1px solid #a1b8be;
     
 }
+.hidden {
+    display: none;
+}
 .user > div{
     display: flex;
     align-items: center;
@@ -231,6 +234,9 @@ section {
 .user-checked {
     align-items: center;
    padding-top: 4vh;
+   position: relative; 
+   max-height: 500px;
+   overflow: auto;
    position: relative;
 
 }
@@ -278,7 +284,9 @@ section {
     padding: 5px;
     position: absolute;
     bottom: 5%;
-    left: 27%;
+   
+    left: 73%;
+
 }
 .uc-btn:hover {
     background-color: black;
@@ -298,6 +306,38 @@ section {
     background-color: black;
 }
 
+
+.invited-member {
+    overflow: auto;
+    margin: 0 auto;
+    width: 320px;
+    max-height: 200px;
+    margin-top: 20px;
+    position: relative;
+    
+
+}
+.invited-member > div {
+    display: flex;
+    background-color: #F8F8F8;
+    font-size: 20px;
+    padding: 5px 15px;
+    position: relative;
+    margin-bottom: 10px;
+    
+}
+.invited-member i {
+    font-size: 30px;
+}
+.user-email2 {
+    font-size: 15px;
+    padding-top: 3px;
+    margin-left: 20px;
+}
+.user-name2 {
+    font-weight: bold;
+    margin-left: 15px;
+}
 
 @media screen and (max-width:768px) {
  
