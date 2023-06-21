@@ -5,6 +5,7 @@ const memoContents = document.querySelectorAll(".memoContent");
 const memoDivs = document.querySelectorAll('.memoContent');
 const memoInfos = document.querySelectorAll('.memoInfo');
 
+
 for (let i = 0; i < memoDivs.length; i++) {
   const div = memoDivs[i];
   const maxContentHeight = 200; // 최대 높이 설정 (200px)
@@ -177,9 +178,29 @@ memoSock.onmessage = function(e){
 
 	// 전달 받은 메세지를 JS 객체로 변환
 	const memo = JSON.parse(e.data);  // JSON -> JS Object
-		
+
+	// 받은 memo 정보로 멤버정보 받아오기
+	$.ajax({
+		url : contextPath + "/project/selectProjectMember",
+		data : {"memoNo" : memo.memoNo},
+		type : "get",
+		dataType : "JSON",
+		success : function(projectMember) {
+			if(projectMember != null) {
+				changedMemberName = projectMember.memberName;
+				changedProfileImg = projectMember.profileImg;
+				changedPmNo = projectMember.pmNo;
+			}
+		},
+		error : function(request, status, error){
+			console.log("AJAX 에러 발생");
+			console.log("상태코드 : " + request.status); // 404, 500
+		}
+	});
+
 	memoDetails.forEach((memoDetail) => {
-		changedMemoContent = memoDetail.querySelector(".memoContent");
+		const changedMemoContent = memoDetail.querySelector(".memoContent");
+		const changedProfileImage = board.querySelector(".profile-image > img");
 
 		if(memo.memoNo == changedMemoContent.dataset.memono) {
 		
@@ -187,8 +208,10 @@ memoSock.onmessage = function(e){
 			memoDetail.style.backgroundColor = memo.memoBgColor;
 			memoDetail.dataset.memobgcolor = memo.memoBgColor;
 			const changedMemoInfo = memoDetail.querySelector(".memoInfo");
-			changedMemoInfo.innerHTML = memberName + " " + currentTime() + "<button>x</button>";
-			changedMemoContent.dataset.pmno = pmNo;
+
+			changedProfileImage.src = contextPath + changedProfileImg;
+			changedMemoInfo.innerHTML = changedMemberName + " " + currentTime() + "<button>x</button>";
+			changedMemoContent.dataset.pmno = changedPmNo;
 
 			changedMemoContent.innerHTML = memo.memoContent;
 			console.log(memoDetail);

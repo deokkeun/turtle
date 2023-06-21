@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.turtle.www.member.model.vo.Member;
+import com.turtle.www.projectMember.model.vo.ProjectMember;
 
 @Repository
 public class ProjectMemberDAO {
@@ -28,6 +29,15 @@ public class ProjectMemberDAO {
 	public List<Member> searchmember(String input) {
 		// TODO Auto-generated method stub
 		return sqlSession.selectList("memberMapper.searchmember", input);
+	}
+
+
+	/** 메모 업데이트 멤버 정보 조회 dao
+	 * @param memoNo
+	 * @return projectMember
+	 */
+	public ProjectMember selectMemoProjectMember(int memoNo) {
+		return sqlSession.selectOne("projectMemberMapper.selectProjectMember", memoNo);
 	}
 
 }

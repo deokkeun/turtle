@@ -39,5 +39,10 @@
 		WHERE WORKSPACE_NO = ${workspaceNo} AND BOARD_ST = 'N'
 		ORDER BY BOARD_SORT
 	</select>
+	
+	<update id="updateBoardTitle">
+		UPDATE BOARD SET BOARD_TITLE = #{boardTitle}, BOARD_UPDATE_DATE = SYSDATE, UPDATE_PM_NO = ${pmNo}
+		WHERE BOARD_NO = ${boardNo}
+	</update>
 
 </mapper>

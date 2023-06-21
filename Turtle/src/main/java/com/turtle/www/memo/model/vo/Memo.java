@@ -23,4 +23,5 @@ public class Memo {
 	private String memoSt; // 메모 삭제 여부
 	private String memoType; // 메모타입
 	private String memberName; // 멤버 이름
+	private String profileImg; // 멤버 프로필
 }

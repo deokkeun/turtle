@@ -22,4 +22,13 @@ public class BoardServiceImpl implements BoardService {
 		return dao.selectBoardList(map);
 	}
 
+	// 게시글 제목 수정 서비스 구현
+	@Override
+	public int updateBoardTitle(Board board) {
+
+		return dao.updateBoardTitle(board);
+	}
+	
+	
+
 }
