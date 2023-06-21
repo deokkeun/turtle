@@ -311,8 +311,8 @@
   
         <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#shared-project-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-chevron-down" id="arrow"></i> </i><span>SHARED PROJECT</span>
-            <button class="add-file-button ms-auto" onclick="addFile('shared-project-nav')"><i class="bi bi-plus"></i></button>
+            <i class="bi bi-chevron-down" id="arrow"></i> <i class="bi-share-fill"></i><span>SHARED PROJECT</span>
+          <button class="add-file-button ms-auto" onclick="addFile('shared-project-nav')"><i class="bi bi-plus"></i></button>
           </a>
           <ul id="shared-project-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
@@ -330,7 +330,7 @@
         </li><!-- End Shared Project Nav -->
         <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#workspace-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-chevron-down" id="arrow"></i><span>WORKSPACE</span>
+            <i class="bi bi-chevron-down" id="arrow"></i><i class="bx bx-desktop"></i><span>WORKSPACE</span>
             <button class="add-file-button ms-auto" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button>
           </a>
           <ul id="workspace-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
@@ -430,8 +430,8 @@
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js"></script>
-  <!-- <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script> -->
+  <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js?ver=1"></script>
+ 
   
   <script>
 

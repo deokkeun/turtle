@@ -96,12 +96,10 @@
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/main.js"></script>
      <!-- Vendor JS Files -->
-     <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js"></script>
-     <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.js"></script>
-    <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script>
+
     <!-- chat js -->
     <!-- <script src="${contextPath}/resources/js/chat.js"></script> -->
-
+<script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js?ver=1"></script>
 
     <!-- chat js -->
     <script src="${contextPath}/resources/js/chat.js"></script>

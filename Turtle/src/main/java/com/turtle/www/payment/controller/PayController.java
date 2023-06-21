@@ -23,6 +23,11 @@ import com.turtle.www.payment.model.vo.Pay;
 @SessionAttributes({"loginMember", "workspaceCount", "projectMemberCount", "paymentType"})
 public class PayController {
 	
+	  @GetMapping("/payment")
+	  public String showPaymentPage() {
+	    return "payment/payment";
+	  }
+	
 	@Autowired
 	private PayService service;
 	
