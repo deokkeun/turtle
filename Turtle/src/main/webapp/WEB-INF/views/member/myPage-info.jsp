@@ -16,7 +16,7 @@
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <main>
+    <main id="main" class="main">
  		<!-- header include -->
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
@@ -41,7 +41,6 @@
 		
 					<!-- 프로필 모달창 -->
 					<section id="profile-modal">
-
 						<div class="profile-image-area">
 							<c:if test="${empty loginMember.profileImage}">
 								<img src="${contextPath}/resources/images/memberProfile/member.png" alt="profile-image" id="profile-image-modal">
@@ -71,11 +70,10 @@
 						<!-- 삭제버튼 안눌러짐(0), 눌러짐(1)  -->
 						<input type="hidden" name="delete" id="delete" value="0">
 			
-	
+
 						<!-- 프로필 모달 닫기 -->
 						<a class="profile-modal-close fa-solid fa-xmark"></a>
 					</section>
-					
 				</form>
 			</section>
 

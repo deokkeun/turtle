@@ -93,6 +93,19 @@
 									<a href="${contextPath}/member/signUp" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
 										<span>무료로 사용하기</span> <i class="bi bi-arrow-right"></i>
 									</a>
+									<!-- 자동로그인 테스트부분 (나중에 지울거임) -->
+									<div class="auto-login">
+										<form action="member/testLogin" method="POST">
+											<input type="hidden" name="memberEmail" value="test01@gmail.com">
+											<input type="hidden" name="memberPw" value="password999!">
+											<button>일일맨테스트로그인</button>
+										</form>
+										<form action="member/testLogin" method="POST">
+											<input type="hidden" name="memberEmail" value="user999@gmail.com">
+											<input type="hidden" name="memberPw" value="password999!">
+											<button>구구맨테스트로그인</button>
+										</form>
+									</div> 
 								</div>
 							</c:if>  
 							<!-- 로그인이 되었을 경우 (로그인 상태) && 프로젝트x : 프로젝트 생성(c:if and 조건으로)  -->

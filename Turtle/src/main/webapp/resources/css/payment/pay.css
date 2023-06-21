@@ -175,7 +175,7 @@
       text-decoration: line-through;
     }
     
-    .pricing .btn-buy {
+    .pricing .btn-buy-using {
       display: inline-block;
       padding: 10px 90px 10px 90px;
       margin: 20px;
@@ -190,11 +190,31 @@
       border: 1px solid #a1b8be;
       text-decoration: none;
     }
+
+    .pricing .btn-buy {
+      display: inline-block;
+      padding: 10px 90px 10px 90px;
+      margin: 20px;
+      border-radius: 4px;
+      color: white;
+      background-color: #1A73E8;
+      transition: none;
+      font-size: 16px;
+      font-weight: 400;
+      font-family: "Nunito", sans-serif;
+      font-weight: 600;
+      transition: 0.3s;
+      border: 1px solid #1A73E8;
+      text-decoration: none;
+    }
     
-    
-    .pricing .btn-buy:hover {
+    .pricing .btn-buy-using:hover {
       background: #a1b8be;
       color: #fff;
+    }
+    .pricing .btn-buy:hover {
+      background: white;
+      color: #1A73E8;
     }
     
     .pricing .featured {
@@ -210,3 +230,141 @@
       color: #fff;
     }
     
+
+
+
+
+
+
+
+
+
+
+
+    /* 결제 모달창 */
+#pay-modal {
+  display: none;
+  position: relative;
+  /* width: 700px; */
+  /* padding: 20px 40px; */
+  background-color: #fefefe;
+  border: 1px solid #888;
+  border-radius: 5px;
+}
+#pay-modal .pay-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+
+
+
+
+.modal__container {
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 675px;
+  min-height: 400px;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1); }
+  
+.modal__featured {
+  position: relative;
+  -ms-flex: 1;
+      flex: 1;
+  min-width: 230px;
+  padding: 20px;
+}
+
+.modal__content {
+  -ms-flex: 3;
+      flex: 3;
+  padding: 40px 30px; }
+
+.modal__circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fbcf34;}
+
+.modal__circle_box {
+  padding: 30px;
+}
+
+
+
+
+input {
+  width: calc(100% - 10px);
+  min-height: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  letter-spacing: .5px;
+  border: 0;
+  border-bottom: 2px solid #f0f0f0; }
+
+  input:focus {
+    outline: none;
+    border-color: #fbcf34; }
+
+    .confirm {
+      border-bottom: 2px solid #88b04b;
+    }
+    .error {
+      border-bottom: 2px solid #bb2649;
+    }
+
+.form-list {
+  padding-left: 0;
+  list-style: none; }
+  .form-list__row {
+    margin-bottom: 25px; }
+    .form-list__row label {
+      position: relative;
+      display: block;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: .5px;
+      color: #939393; }
+
+
+
+
+
+
+.pay-btn-box {
+  float: right;
+}
+.pay-btn {
+  padding: 10px 40px 10px 40px;
+  margin: auto;
+  border-radius: 5px;
+  color: #1A73E8;
+  background-color: white;
+  transition: none;
+  font-size: 16px;
+  letter-spacing: 4px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  transition: 0.3s;
+  border: 1px solid #1A73E8;
+}
+.pay-btn:hover {
+  background: #1A73E8;
+  color: white;
+}
+
+
+#fromTo {
+  font-size: 14px;
+  color: rgba(0,0,0,0.5);
+}
+
+#pay-modal-price {
+  display: inline-block;
+}

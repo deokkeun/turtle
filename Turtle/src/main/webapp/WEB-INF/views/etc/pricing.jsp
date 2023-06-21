@@ -61,7 +61,7 @@
                         <div class="box">
                             <h3 style="color: #07d5c0;">Basic</h3>
                             <div class="price"><sup></sup>무료<span></span></div>
-                            <a href="#" class="btn-buy">시작하기</a>
+                            <a href="payment/pay" class="btn-buy">시작하기</a>
                             <div class="intro">
                                 <p>협업툴을 처음으로 사용해보는</p>
                                 <p class="intro2"><b>소규모팀에 추천</b>합니다</p>
@@ -81,7 +81,7 @@
                             <span class="featured">best</span>
                             <h3 style="color: #65c600;">Standard</h3>
                             <div class="price"><sup>￦</sup>8,900<span> / 월</span></div>
-                            <a href="#" class="btn-buy">가입하기</a>
+                            <a href="${contextPath}/payment/payment" class="btn-buy">가입하기</a>
                             <div class="intro">
                                 <p>프로젝트를 여러팀과 진행하는</p>
                                 <p><b>중간 규모팀에 추천</b>합니다</p>

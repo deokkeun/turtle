@@ -2,4 +2,47 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="boardMapper">
 
+	<resultMap type="board" id="board_rm">
+		<id property="boardNo" column="BOARD_NO"/>
+		
+		<result property="workspaceNo" column="WORKSPACE_NO"/>
+		<result property="boardTitle" column="BOARD_TITLE"/>
+		<result property="pmNo" column="PM_NO"/>
+		<result property="updatePmNo" column="UPDATE_PM_NO"/>
+		<result property="boardRegDate" column="BOARD_REG_DATE"/>
+		<result property="boardUpdateDate" column="BOARD_UPDATE_DATE"/>
+		<result property="eventStartDate" column="EVENT_START_DATE"/>
+		<result property="eventEndDate" column="EVENT_END_DATE"/>
+		<result property="boardSort" column="BOARD_SORT"/>
+		<result property="boardSt" column="BOARD_ST"/>
+		<result property="regMemberName" column="REG_MEMBER_NAME"/>
+		<result property="updateMemberName" column="UPDATE_MEMBER_NAME"/>
+		<result property="regProfileImg" column="REG_PROFILE_IMG"/>
+		<result property="updateProfileImg" column="UPDATE_PROFILE_IMG"/>
+	</resultMap>
+	
+	<resultMap type="boardDetail" id="boardDetail_rm">
+		<id property="boardDetailNo" column="BOARD_DETAIL_NO"/>
+		
+		<result property="boardNo" column="BOARD_NO"/>
+		<result property="boardContent" column="BOARD_CONTENT"/>
+		<result property="boardDetailSort" column="BOARD_DETAIL_SORT"/>
+	</resultMap>
+	
+	<select id="selectBoardList" resultMap="board_rm">
+		SELECT BOARD_NO, BOARD_TITLE, BOARD_REG_DATE, BOARD_UPDATE_DATE, EVENT_START_DATE, EVENT_END_DATE,
+		    (SELECT MEMBER_NAME FROM "BOARD" b JOIN PROJECT_MEMBER USING (PM_NO) JOIN "MEMBER" m USING (MEMBER_NO) WHERE b.BOARD_NO = BOARD.BOARD_NO) AS "REG_MEMBER_NAME",
+		    (SELECT PROFILE_IMG FROM "BOARD" b JOIN PROJECT_MEMBER USING (PM_NO) JOIN "MEMBER" m USING (MEMBER_NO) WHERE b.BOARD_NO = BOARD.BOARD_NO) AS "REG_PROFILE_IMG",
+		    (SELECT MEMBER_NAME FROM "BOARD" b JOIN PROJECT_MEMBER pm ON (pm.PM_NO = b.UPDATE_PM_NO) JOIN "MEMBER" m USING (MEMBER_NO) WHERE b.BOARD_NO = BOARD.BOARD_NO) AS "UPDATE_MEMBER_NAME",
+		    (SELECT PROFILE_IMG FROM "BOARD" b JOIN PROJECT_MEMBER pm ON (pm.PM_NO = b.UPDATE_PM_NO) JOIN "MEMBER" m USING (MEMBER_NO) WHERE b.BOARD_NO = BOARD.BOARD_NO) AS "UPDATE_PROFILE_IMG"
+		FROM BOARD
+		WHERE WORKSPACE_NO = ${workspaceNo} AND BOARD_ST = 'N'
+		ORDER BY BOARD_SORT
+	</select>
+	
+	<update id="updateBoardTitle">
+		UPDATE BOARD SET BOARD_TITLE = #{boardTitle}, BOARD_UPDATE_DATE = SYSDATE, UPDATE_PM_NO = ${pmNo}
+		WHERE BOARD_NO = ${boardNo}
+	</update>
+
 </mapper>

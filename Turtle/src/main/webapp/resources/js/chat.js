@@ -10,8 +10,11 @@
 })();
 
 
+const send = document.getElementById("send");
+
 // 채팅 메세지 보내기
-document.getElementById("send").addEventListener("click", sendMessage);
+if(send != null) {
+send.addEventListener("click", sendMessage);
 
 
 // 채팅 보내기 함수
@@ -53,12 +56,11 @@ function sendMessage(){
 	}
 	
 }
-
+}
 
 // 웹소켓 핸들러에서
 // s.sendMessage( new TextMessage(message.getPayload()) );
 // 구문이 수행되어 메세지가 전달된 경우
-
 chattingSock.onmessage = function(e){
 	// 매개변수 e : 발생한 이벤트에 대한 정보를 담고있는 객체
 	// e.data : 전달된 메세지 (message.getPayload())   (JSON 형태)
@@ -88,7 +90,7 @@ chattingSock.onmessage = function(e){
 	span.innerText = currentTime(); // 날짜
 	const br = document.createElement("br"); // 개행
 
-	// 여기는 조건문 1개만 어차피 내가 치는 채팅이니깐 조건문을 날짜로 하면됨
+	
 
 	if(mName != chatMessage.memberName) {
 		
@@ -120,7 +122,6 @@ chattingSock.onmessage = function(e){
 		}
 
 	}
-
 /*
 	if( cDate != currentTime2() ){
 		
@@ -198,13 +199,13 @@ document.querySelector('#back-btn').onclick = function() {
 }
 
 //이모티콘
- const button = document.querySelector("#emoji_btn");
+ let button2 = document.querySelector("#emoji_btn");
 const picker = new EmojiButton({
   position: 'bottom-start'
 });
 
-button.addEventListener('click', () => {
-  picker.togglePicker(button);
+button2.addEventListener('click', () => {
+  picker.togglePicker(button2);
 });
 
 picker.on('emoji', emoji => {
@@ -212,3 +213,4 @@ picker.on('emoji', emoji => {
   text_box.value += emoji;
 });
 
+//입력중

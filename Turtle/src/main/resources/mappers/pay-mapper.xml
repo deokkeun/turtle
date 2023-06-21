@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="payMapper">
+
+ 	<resultMap type="pay" id="pay_rm">
+		<id property="payNo" column="PAY_NO"/>
+		
+		<result property="projectNo" column="PROJECT_NO"/>
+		<result property="payType" column="PAY_TYPE"/>
+		<result property="payRegDate" column="PAY_REG_DATE"/>
+		<result property="payName" column="PAY_NAME"/>
+	</resultMap>
+	
+	<select id="paymentType" resultMap="pay_rm">
+		SELECT * 
+		FROM PAYMENT
+		WHERE PROJECT_NO = ${projectNo}
+	</select>
+	
+	<!-- 워크스페이스 개수 조회 -->
+	<select id="workspaceCount" resultType="_int">
+		SELECT COUNT(*) 
+		FROM PROJECT p 
+		JOIN WORKSPACE w ON(p.PROJECT_NO = w.PROJECT_NO)
+		WHERE w.WORKSPACE_DELETE_ST = 'N'
+		AND w.PROJECT_NO = ${projectNo}
+	</select>
+	
+	<!-- 프로젝트 멤버 참여자 수 조회 -->
+	<select id="projectMemberCount" resultType="_int">
+		SELECT COUNT(*) FROM PROJECT p 
+		JOIN PROJECT_MEMBER pm ON(p.PROJECT_NO = pm.PROJECT_NO)
+		WHERE pm.PM_ST = 'N'
+		AND pm.PROJECT_NO = ${projectNo}
+	</select>
+	
+	
+	
+
+</mapper>

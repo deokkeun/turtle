@@ -54,10 +54,10 @@
 	
 	<beans:bean id="chatHandler" class="com.turtle.www.chat.model.websocket.ChatWebsocketHandler"/>
 	<beans:bean id="memoHandler" class="com.turtle.www.memo.model.websocket.MemoWebsocketHandler"/>
-	<beans:bean id="calendarHandler" class="com.turtle.www.calendar.model.websocket.CalendarWebsocketHandler"/>
+	<beans:bean id="calendarHandler" class="com.turtle.www.calendar.model.websocket.CalendarWebsocketHandler"/>	
+	<beans:bean id="boardListHandler" class="com.turtle.www.board.model.websocket.BoardListWebsocketHandler"/>
 	
 	<!--
-	<beans:bean id="boardListHandler" class="com.turtle.www.board.model.websocket.BoardListWebsocketHandler"/>
 	<beans:bean id="boardDetailHandler" class="com.turtle.www.board.model.websocket.BoardDetailWebsocketHandler"/>
 	 -->
 	
@@ -66,10 +66,11 @@
 		<!-- 웹소켓 요청을 처리한 bean 지정 -->
 		<websocket:mapping handler="chatHandler" path="/chat" />
 		<websocket:mapping handler="memoHandler" path="/memo"/>
-		<websocket:mapping handler="calendarHandler" path="/calendar"/>
+		<websocket:mapping handler="calendarHandler" path="/calendar"/>		
+		<websocket:mapping handler="boardListHandler" path="/boardList"/>
+		
 		<!-- 
-		<websocket:mapping handler="boardListHander" path="/board"/>
-		<websocket:mapping handler="boardDetailHandler" path="/board"/>
+		<websocket:mapping handler="boardDetailHandler" path="/boardDetail"/>
 		 -->
 		
 		<websocket:handshake-interceptors>

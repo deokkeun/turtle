@@ -1,23 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>카카오 결제 페이지</title>
-  <link href="${contextPath}/resources/css/payment/payment.css" rel="stylesheet">
+  <title>결제 페이지</title>
+  <link href="${contextPath}/resources/css/payment/payment.css?ver=1" rel="stylesheet">
  <style>
-
 
  </style>
 </head>
 <body>
   <jsp:include page="/WEB-INF/views/common/header.jsp" />
-  <h1>카카오 결제 페이지</h1>
+  <main id="main" class="main">
+  <h1>결제 페이지</h1>
 
   <div class="container">
     <form id="payment-form">
       <div class="form-group">
         <label for="payment-info">결제 정보</label>
-        <input type="text" id="payment-info" name="payment-info" requiredreadonly>
+        <input type="text" id="payment-info" name="payment-info" readonly>
       </div>
 
       <div class="form-group">
@@ -48,10 +53,9 @@
       <button type="submit" class="submit-button">구매하기</button>
     </form>
   </div>
-
-  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-  <script src="${contextPath}/resources/js/payment.js">
- 
-  </script>
+</main>
+  <!-- <script src="https://developers.kakao.com/sdk/js/kakao.js"></script> -->
+  <script src="${contextPath}/resources/js/payment.js"> </script>
+  <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js?ver=1"></script>
 </body>
 </html>

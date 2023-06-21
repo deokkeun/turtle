@@ -16,12 +16,10 @@ body {
     max-width: 850px;
     width: 100%;
     margin: 0 auto;
+    text-align: center; /* 가운데 정렬 추가 */
   }
 
 
-#payment-info {
-    width: 97%;
-}
 
   .form-group {
     margin-bottom: 20px;
@@ -64,6 +62,7 @@ body {
 
   .radio-box input[type="radio"] {
     display: none;
+    
   }
 
   .radio-box label {

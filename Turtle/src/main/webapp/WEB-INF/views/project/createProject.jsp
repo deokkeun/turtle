@@ -72,13 +72,18 @@
 
                     <div class="user-checked">
                        
-                        <a class="uc-btn">완료</a>
+                       
                     </div>
-                    
+                    <a class="uc-btn">완료</a>
                 </div>
             </div>
             
         </div>
+        <form>
+            <div class="invited-member">
+
+            </div>
+        </form>
 
         <div class="next-btn">
             <a class="next-btn" href="createWorkspace">다음</a>

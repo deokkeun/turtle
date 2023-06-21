@@ -1,0 +1,32 @@
+.board {
+	display: flex;
+	width:700px;
+	height:30px;
+}
+
+.edit-board-area {
+	flex-basis: 55%;
+	display: flex;
+}
+
+.add-board {
+	flex-basis: 5%;
+}
+
+.boardTitle {
+	flex-basis: 80%;
+}
+
+.edit-boardTitle {
+	flex-basis: 15%;
+}
+
+
+.board-info {
+	flex-basis: 45%;
+}
+.profile-image > img {
+	width: 20px;
+	height: 20px;
+}
+

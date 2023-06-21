@@ -23,10 +23,12 @@
 		<typeAlias type="com.turtle.www.chat.model.vo.ChatMessage" alias="chatMessage"/>
 		
 		<typeAlias type="com.turtle.www.calendar.model.vo.Calendar" alias="calendar"/>
+		<typeAlias type="com.turtle.www.payment.model.vo.Pay" alias="pay"/>
 		
 		<typeAlias type="com.turtle.www.memo.model.vo.Memo" alias="memo"/>
 		
 		<typeAlias type="com.turtle.www.board.model.vo.Board" alias="board"/>
+		<typeAlias type="com.turtle.www.board.model.vo.BoardDetail" alias="boardDetail"/>
 		
 	</typeAliases>
 	
@@ -39,6 +41,7 @@
 		<mapper resource="/mappers/chat-mapper.xml"/>
 		<mapper resource="/mappers/projectMember-mapper.xml"/>		
 		<mapper resource="/mappers/calendar-mapper.xml"/>
+		<mapper resource="/mappers/pay-mapper.xml"/>
 		<mapper resource="/mappers/memo-mapper.xml"/>
 		<mapper resource="/mappers/board-mapper.xml"/>
 	</mappers>

@@ -13,6 +13,11 @@
 	
 }
 
+.profile-image > img {
+	width: 20px;
+	height: 20px;
+}
+
 .memoContent {
   
   height: 200px;

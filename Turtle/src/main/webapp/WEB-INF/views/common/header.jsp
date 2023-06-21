@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +14,7 @@
   <!-- bootstrap.css -->
   <link href="${contextPath}/resources/css/booystrapcss/bootstrap.css" rel="stylesheet">
   <link href="${contextPath}/resources/images/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <link href="${contextPath}/resources/css/boxicons/css/boxicons.min.css" rel="stylesheet">
 	<!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
@@ -145,7 +148,7 @@
 
             <li class="message-item">
               <a href="#">
-                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <img src="${contextPath}/resources/images/memberProfile/member.png" alt="" class="rounded-circle">
                 <div>
                   <h4>Maria Hudson</h4>
                   <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -159,7 +162,7 @@
 
             <li class="message-item">
               <a href="#">
-                <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                <img src="${contextPath}/resources/images/memberProfile/member.png" alt="" class="rounded-circle">
                 <div>
                   <h4>Anna Nelson</h4>
                   <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -173,7 +176,7 @@
 
             <li class="message-item">
               <a href="#">
-                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <img src="${contextPath}/resources/images/memberProfile/member.png" alt="" class="rounded-circle">
                 <div>
                   <h4>David Muldon</h4>
                   <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -212,16 +215,23 @@
   <aside id="sidebar" class="sidebar"> 
 
     <ul class="sidebar-nav" id="sidebar-nav">
-      <li class="nav-item dropdown pe-3"> <!-- 프로필 --> 
-
-        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-          <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-          <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+      <li class="nav-item dropdown pe-3"> 
+        <!-- 프로필 --> 
+        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="${contextPath}/member/myPage/info" data-bs-toggle="dropdown">
+          <c:if test="${empty loginMember.profileImage}">
+            <img src="${contextPath}/resources/images/memberProfile/member.png" alt="Profile" class="rounded-circle">
+          </c:if>
+  
+          <c:if test="${!empty loginMember.profileImage}">
+            <img src="${contextPath}${loginMember.profileImage}" alt="Profile" class="rounded-circle">
+          </c:if>
+          <!-- <img src="${loginMember.profileImage}" alt="Profile" class="rounded-circle"> -->
+          <span class="d-none d-md-block dropdown-toggle ps-2">${loginMember.memberName}</span>
         </a><!-- End Profile Iamge Icon -->
 
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
           <li class="dropdown-header">
-            <h6>Kevin Anderson</h6>
+            <h6>${loginMember.memberName}</h6>
             <span>Web Designer</span>
           </li>
           <li>
@@ -229,7 +239,8 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="">
+            <!-- 마이페이지 -->
+            <a class="dropdown-item d-flex align-items-center" href="${contextPath}/member/myPage/info">
               <i class="bi bi-person"></i>
               <span>My Profile</span>
             </a>
@@ -259,7 +270,7 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="#">
+            <a class="dropdown-item d-flex align-items-center" href="${contextPath}/member/logout">
               <i class="bi bi-box-arrow-right"></i>
               <span>Sign Out</span>
             </a>
@@ -300,8 +311,8 @@
   
         <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#shared-project-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-chevron-down" id="arrow"></i> </i><span>SHARED PROJECT</span>
-            <button class="add-file-button ms-auto" onclick="addFile('shared-project-nav')"><i class="bi bi-plus"></i></button>
+            <i class="bi bi-chevron-down" id="arrow"></i> <i class="bi-share-fill"></i><span>SHARED PROJECT</span>
+          <button class="add-file-button ms-auto" onclick="addFile('shared-project-nav')"><i class="bi bi-plus"></i></button>
           </a>
           <ul id="shared-project-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
@@ -319,7 +330,7 @@
         </li><!-- End Shared Project Nav -->
         <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#workspace-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-chevron-down" id="arrow"></i><span>WORKSPACE</span>
+            <i class="bi bi-chevron-down" id="arrow"></i><i class="bx bx-desktop"></i><span>WORKSPACE</span>
             <button class="add-file-button ms-auto" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button>
           </a>
           <ul id="workspace-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
@@ -365,7 +376,7 @@
         </li><!-- End Error 404 Page Nav -->	
   
         <li class="nav-item">
-          <a class="nav-link collapsed" href= "${contextPath}/payment/pay">
+          <a class="nav-link collapsed" href= "${contextPath}/payment/pay/1">
             <i class="bi bi-file-earmark"></i>
             <span>Payment Detailss</span>
           </a>
@@ -374,9 +385,11 @@
       </ul>
   </aside><!-- End Sidebar-->
 <!-- right sidebar(오른쪽 사이드바) --> 
+  
+  <aside class="right-sidebar" id="rightSidebar" >
 
-<aside class="right-sidebar" id="rightSidebar">
-
+    <!-- <jsp:include page='/WEB-INF/views/chat/chatRoomList.jsp'/> -->
+    
   <button class="sidebar-close-btn" onclick="toggleSidebar()"><i class="bi bi-chevron-double-right"></i></button>
   <ul class="right-sidebar-nav" id="right-sidebar-nav">
    
@@ -413,11 +426,16 @@
   
  
 </aside>
-
+  <!-- <script src='${contextPath}/resources/js/chat.js'></script> -->
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js"></script>
-  <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script>
+  <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js?ver=1"></script>
+ 
   
-  
+  <script>
+
+
+
+
+  </script>
