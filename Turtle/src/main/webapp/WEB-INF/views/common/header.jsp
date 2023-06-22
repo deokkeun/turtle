@@ -388,7 +388,20 @@
   
   <aside class="right-sidebar" id="rightSidebar" >
 
-    <!-- <jsp:include page='/WEB-INF/views/chat/chatRoomList.jsp'/> -->
+        <!-- <jsp:include page='/WEB-INF/views/chat/chatRoomList.jsp'/> -->
+    <div>${projectNo}</div>
+    <ul>
+        <input type="hidden" id="projectNo" value="${projectNo}">
+    <c:forEach var="chatRoom" items="${chatRoomList}">
+    	<li>
+            <form action="../chatRoom/${projectNo}/${chatRoom.chatRoomNo}">
+    			<button class="chatBtn" value="${chatRoom.chatRoomNo}">${chatRoom.chatRoomTitle}</button>
+            </form>
+         
+    	</li>  	    	   	
+    </c:forEach>
+    </ul>
+  
     
   <button class="sidebar-close-btn" onclick="toggleSidebar()"><i class="bi bi-chevron-double-right"></i></button>
   <ul class="right-sidebar-nav" id="right-sidebar-nav">
