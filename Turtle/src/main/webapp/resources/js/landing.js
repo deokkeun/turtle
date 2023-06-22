@@ -97,6 +97,19 @@ document.querySelector("#login-modal-btn").addEventListener("click", function() 
 });
 
 
+
+
+document.querySelector("#login-modal-btn1").addEventListener("click", function() {
+    // 모달창 띄우기 
+    modal("login-modal");
+});
+
+document.querySelector("#login-modal-btn2").addEventListener("click", function() {
+    // 모달창 띄우기 
+    modal("login-modal");
+});
+
+
 //-------------------------------------------------------
 
 
