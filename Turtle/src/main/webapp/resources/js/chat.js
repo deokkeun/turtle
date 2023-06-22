@@ -96,10 +96,12 @@ chattingSock.onmessage = function(e){
 		
 		if( cDate != currentTime2() ){
 			
-			li.innerHTML = "<div class='chatCalender'><i class='fa-regular fa-calendar-days'><span>"+cDate+"</span></i></div>";
+			li.innerHTML = "<div class='chatCalender'><i class='fa-regular fa-calendar-days'><span>"+currentTime2()+"</span></i></div>";
 			li.innerHTML = "<div><a class='user-img'><i class='fa-solid fa-circle-user'></i></a><b>"+chatMessage.memberName+"님</b></div>";
 			li.append(p,span);
 			li.setAttribute('id','yourChat');
+			location.reload();
+			
 
 		}else{
 			li.setAttribute('id','yourChat');
@@ -112,9 +114,10 @@ chattingSock.onmessage = function(e){
 		if( cDate != currentTime2() ){
 		
 
-			li.innerHTML = "<div class='chatCalender'><i class='fa-regular fa-calendar-days'><span>"+cDate+"</span></i></div>";
+			li.innerHTML = "<div class='chatCalender'><i class='fa-regular fa-calendar-days'><span>"+currentTime2()+"</span></i></div>";
 			li.append(span,p);
 			li.setAttribute('id','myChat');
+			location.reload();
 	
 		}else{
 			li.setAttribute('id','myChat');

@@ -18,6 +18,9 @@
   <link href="${contextPath}/resources/css/boxicons/css/boxicons.min.css" rel="stylesheet">
 	<!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
+  <!-- Favicons -->
+  <link href="${contextPath}/resources/favicon/favicon-16x16.png" rel="icon">
+  <link href="${contextPath}/resources/favicon/apple-icon-60x60.png" rel="apple-touch-icon">
 </head>
 <body>
 
@@ -279,7 +282,7 @@
         </ul><!-- End Profile Dropdown Items -->
       </li><!-- End Profile Nav -->
       <li class="nav-item">
-        <a class="nav-link " href="">
+        <a class="nav-link " href="${contextPath}/member/login">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -388,7 +391,20 @@
   
   <aside class="right-sidebar" id="rightSidebar" >
 
-    <!-- <jsp:include page='/WEB-INF/views/chat/chatRoomList.jsp'/> -->
+        <!-- <jsp:include page='/WEB-INF/views/chat/chatRoomList.jsp'/> -->
+    <div>${projectNo}</div>
+    <ul>
+        <input type="hidden" id="projectNo" value="${projectNo}">
+    <c:forEach var="chatRoom" items="${chatRoomList}">
+    	<li>
+            <form action="../chatRoom/${projectNo}/${chatRoom.chatRoomNo}">
+    			<button class="chatBtn" value="${chatRoom.chatRoomNo}">${chatRoom.chatRoomTitle}</button>
+            </form>
+         
+    	</li>  	    	   	
+    </c:forEach>
+    </ul>
+  
     
   <button class="sidebar-close-btn" onclick="toggleSidebar()"><i class="bi bi-chevron-double-right"></i></button>
   <ul class="right-sidebar-nav" id="right-sidebar-nav">

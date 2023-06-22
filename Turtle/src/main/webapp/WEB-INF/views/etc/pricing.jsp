@@ -61,16 +61,16 @@
                         <div class="box">
                             <h3 style="color: #07d5c0;">Basic</h3>
                             <div class="price"><sup></sup>무료<span></span></div>
-                            <a href="payment/pay" class="btn-buy">시작하기</a>
+                            <a href="#" class="btn-buy-using">사용중</a>
                             <div class="intro">
                                 <p>협업툴을 처음으로 사용해보는</p>
                                 <p class="intro2"><b>소규모팀에 추천</b>합니다</p>
                             </div>
                             <ul>
-                                <li><i class="fa-solid fa-check"></i>프로젝트 1개 생성</li>
+                                <!--  <li><i class="fa-solid fa-check"></i>프로젝트 1개 생성</li> -->
                                 <li><i class="fa-solid fa-check"></i>워크스페이스 최대 3개 생성</li>
                                 <li><i class="fa-solid fa-check"></i>멤버 초대 최대 5명</li>
-                                <li><i class="fa-solid fa-check"></i>기초 단체 채팅방, 개인 채팅방 제공 </li>
+                                <!--  <li><i class="fa-solid fa-check"></i>기초 단체 채팅방, 개인 채팅방 제공 </li> -->
                             </ul>
                         </div>
                     </div>
@@ -81,16 +81,24 @@
                             <span class="featured">best</span>
                             <h3 style="color: #65c600;">Standard</h3>
                             <div class="price"><sup>￦</sup>8,900<span> / 월</span></div>
-                            <a href="${contextPath}/payment/payment" class="btn-buy">가입하기</a>
+                            <!-- 로그인이 안되었을 경우 (비로그인 상태) : 로그인모달창 띄우기  -->
+							<c:if test="${empty loginMember}">
+								<!-- <a id="login-modal-btn">가입하기</a> -->
+								<button id="login-modal-btn1" class="btn-buy">가입하기</button>
+							</c:if>
+							<!-- 로그인이 되었을 경우 (로그인 상태) : 결제페이지 이동  -->
+							<c:if test="${!empty loginMember}">
+                            	<a href="${contextPath}/payment/payment" class="btn-buy">가입하기</a>
+                            </c:if>
                             <div class="intro">
                                 <p>프로젝트를 여러팀과 진행하는</p>
                                 <p><b>중간 규모팀에 추천</b>합니다</p>
                             </div>
                             <ul>
-                                <li><i class="fa-solid fa-check"></i>프로젝트 5개 생성</li>
-                                <li><i class="fa-solid fa-check"></i>워크스페이스 최대 10개 생성</li>
-                                <li><i class="fa-solid fa-check"></i>멤버 초대 최대 30명</li>
-                                <li><i class="fa-solid fa-check"></i>Basic + 그룹별 채팅방 5개 생성 가능</li>
+                                <!--  <li><i class="fa-solid fa-check"></i>프로젝트 5개 생성</li> -->
+                                <li><i class="fa-solid fa-check"></i>워크스페이스 최대 5개 생성</li>
+                                <li><i class="fa-solid fa-check"></i>멤버 초대 최대 10명</li>
+                               <!-- <li><i class="fa-solid fa-check"></i>Basic + 그룹별 채팅방 5개 생성 가능</li> -->
                             </ul>
                         </div>
                     </div>
@@ -100,16 +108,25 @@
                         <div class="box">
                             <h3 style="color: #ff0071;">Pro</h3>
                             <div class="price"><sup>￦</sup>12,900<span> / 월</span></div>
-                            <a href="#" class="btn-buy">가입하기</a>
+                             <!-- 로그인이 안되었을 경우 (비로그인 상태) : 로그인모달창 띄우기  -->
+							<c:if test="${empty loginMember}">
+								<button id="login-modal-btn2" class="btn-buy">가입하기</button>
+							</c:if>
+                            <!-- 로그인이 되었을 경우 (로그인 상태) : 결제페이지 이동  -->
+							<c:if test="${!empty loginMember}">
+                            	<a href="${contextPath}/payment/payment" class="btn-buy">가입하기</a>
+                            </c:if>
+                            
+                      
                             <div class="intro">
                                 <p>조직을 운영하는</p>
                                 <p><b>대규모팀에 추천</b>합니다</p>
                             </div>
                             <ul>
-                                <li><i class="fa-solid fa-check"></i> 프로젝트 무제한 생성</li>
+                               <!--  <li><i class="fa-solid fa-check"></i> 프로젝트 무제한 생성</li> --> 
                                 <li><i class="fa-solid fa-check"></i> 워크스페이스 무제한 생성</li>
                                 <li><i class="fa-solid fa-check"></i> 멤버 초대 제한 없음</li>
-                                <li><i class="fa-solid fa-check"></i> Basic + 그룹별 채팅방 무제한 생성</li>
+                               <!--  <li><i class="fa-solid fa-check"></i> Basic + 그룹별 채팅방 무제한 생성</li>  --> 
                             </ul>
                         </div>
                     </div>
@@ -118,6 +135,8 @@
             </div>
         </section>
         <!-- End Pricing Section -->
+       
+        
 
     </main>
     <!-- End #main -->
@@ -138,5 +157,7 @@
 	
 	<!-- landing2.js 연결 -->
 	<script src="${contextPath}/resources/js/landing2.js"></script>
+	<!-- landing.js (로그인모달창) 연결 -->
+	<script src="${contextPath}/resources/js/landing.js"></script>
 </body>
 </html>

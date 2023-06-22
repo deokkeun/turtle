@@ -9,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turtle</title>
-    <!-- payConfirm -->
-    <link href="${contextPath}/resources/css/payment/payConfirm.css" rel="stylesheet">
+    <!-- payList -->
+    <link href="${contextPath}/resources/css/payment/payList.css" rel="stylesheet">
 	<!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
      <!-- Favicons -->
@@ -23,24 +23,42 @@
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
     <main id="main" class="main">
+    
+        <section id="payList-content">
 
-        <div class="container">
-            <div class="pay-confirm-title">결제가 완료되었습니다!</div>
-            <div class="horizontal-line"></div>
-            <div class="details">
-              <p>결제번호: <span id="transaction-date">${payInfo.payNo}</span></p>
-              <p>거래일시: <span id="transaction-date">${payInfo.payRegDate}</span></p>
-              <p>구매자: <span id="seller">${payInfo.payName}</span></p>
-              <p>상품명: <span id="product">${payInfo.payType}</span></p>
-              <p>금액: <span id="amount"><sup>￦</sup>${payInfo.price}</span></p>
-            </div>
-            <p class="pay-result">결제가 성공적으로 완료되었습니다. 감사합니다.</p>
-            <div class="back-button-container">
-              <a href="${contextPath}/member/login" class="back-button">돌아가기</a>
-            </div>
-          </div>
+            <section>
+                <div>결제 내역</div>
+                <hr>
+            </section>
+    
 
+            <section>
+                <table id="payList-table">
+                    <thead id="payList-table-head">
+                        <tr>
+                            <th>결제 번호</th>
+                            <th>거래일시</th>
+                            <th>구매자</th>
+                            <th>상품명</th>
+                            <th>금액</th>
+                        </tr>
+                    </thead>
+                    <tbody id="payList-table-body">
+                        <c:forEach var="pay" items="${payList}">
+                            <tr>
+                                <td>${pay.payNo}</td>
+                                <td>${pay.payRegDate}</td>
+                                <td>${pay.payName}</td>
+                                <td>${pay.payType}</td>
+                                <td>${pay.price}</td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+            </section>
 
+        </section>
+            
     </main>
     <script>
       const contextPath = "${contextPath}";

@@ -35,7 +35,7 @@ function toggleSubMenu(id) {
   subMenu.classList.toggle("active");
 }
 
-
+/*
 
 $('.sidebar-toggle').on('click', function() {
 
@@ -57,7 +57,7 @@ $('.sidebar-toggle').on('click', function() {
 
  
 });
-/*
+
 
 $('.chatBtn').on('click', function() {
 
