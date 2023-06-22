@@ -14,7 +14,6 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.turtle.www.chat.model.service.ChatService;
-
 import com.turtle.www.chat.model.vo.ChatMessage;
 
 public class ChatWebsocketHandler extends TextWebSocketHandler {

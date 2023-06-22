@@ -1,3 +1,8 @@
+const memberNo = document.getElementById("memberNo");
+const projectNo = document.getElementById("projectNo");
+
+console.log(memberNo.value);
+console.log(projectNo.value);
 
 //-----------------------------------------------------------
 
@@ -8,6 +13,7 @@ function modal(id) {
 
     // 모달 div 뒤에 희끄무레한 레이어
     var bg = document.createElement('div');
+    bg.setAttribute("id", "bg");
     bg.setStyle({
         position: 'fixed',
         zIndex: zIndex,
@@ -119,16 +125,32 @@ function payValidate() {
 
 var payType;
 
+const memberEmail = document.getElementById("memberEmail"); // 이메일 작성
+const emailMessage = document.querySelector("#emailMessage"); // 이메일 유효성 검사
+
+const memberName = document.getElementById("memberName"); // 이름 작성
+const nameMessage = document.getElementById("nameMessage"); // 이름 유효성 검사
+
+const memberTel = document.getElementById("memberTel"); // 전화번호 작성
+const telMessage = document.getElementById("telMessage"); // 전화번호 유효성 검사
+
+function reset() {
+    memberEmail.value = "";
+    memberName.value = "";
+    telMessage.value = "";
+}
+
 
 function requestPay(Type) {
+
+    // 초기화
+    reset();
 
     // 모달창 띄우기
     modal("pay-modal");
 
     // 결제 타입
     payType = Type;
-    alert(Type);
-
 
     const payModalType = document.getElementById("pay-modal-type");
     payModalType.innerText = Type;
@@ -154,14 +176,11 @@ function requestPay(Type) {
 
     
     // 이메일 유효성 검사
-    const memberEmail = document.getElementById("memberEmail");
-    const emailMessage = document.querySelector("#emailMessage");
-
     memberEmail.addEventListener("input", function(){
 
         // 입력이 되지 않은 경우
         if( memberEmail.value.length == 0 ){
-            emailMessage.innerText = "메일을 받을 수 있는 이메일을 입력해주세요.";
+            emailMessage.innerText = "이메일을 입력해주세요.";
             memberEmail.classList.remove("confirm", "error");
 
             checkObj.memberEmail = false; // 유효 X 기록
@@ -189,15 +208,13 @@ function requestPay(Type) {
     });
 
 
+    
     // 이름 유효성 검사
-    const memberName = document.getElementById("memberName");
-    const nameMessage = document.getElementById("nameMessage");
-
     memberName.addEventListener("input", function(){
 
         // 입력되지 않은 경우
         if(memberName.value.length == 0){
-            nameMessage.innerText = "영어/숫자/한글 2~10글자 사이로 작성해주세요.";
+            nameMessage.innerText = "이름을 입력해주세요.";
             memberName.classList.remove("confirm", "error");
 
             checkObj.memberName = false; // 유효 X 기록
@@ -208,14 +225,14 @@ function requestPay(Type) {
 
         if( regExp.test(memberName.value) ){ // 유효한 경우
             
-            nameMessage.innerText = "사용 가능한 닉네임 입니다.";
+            nameMessage.innerText = "사용 가능한 이름 입니다.";
             memberName.classList.add("confirm");
             memberName.classList.remove("error");
             checkObj.memberName = true; // 유효 O 기록
 
 
         }else{
-            nameMessage.innerText = "닉네임 형식이 유효하지 않습니다.";
+            nameMessage.innerText = "이름 형식이 유효하지 않습니다.";
             memberName.classList.add("error");
             memberName.classList.remove("confirm");
 
@@ -226,8 +243,6 @@ function requestPay(Type) {
 
 
     // 전화번호 유효성 검사
-    const memberTel = document.getElementById("memberTel");
-    const telMessage = document.getElementById("telMessage");
     // ** input 이벤트 **
     // -> 입력과 관련된 모든 동작(key관련, mouse관련, 붙여넣기)
     memberTel.addEventListener("input", function(){
@@ -362,7 +377,7 @@ function pay() {
 
 
         const IMP = window.IMP; // 생략 가능
-        IMP.init(""); // 예: imp00000000a
+        IMP.init("imp50444256"); // 예: imp00000000a
 
         IMP.request_pay({
             pg : 'html5_inicis.INIpayTest', //테스트 시 html5_inicis.INIpayTest 기재 
@@ -378,41 +393,76 @@ function pay() {
             // m_redirect_url : 'http://localhost:8080/www/payment/payConfirm', 
             escrow : true, //에스크로 결제인 경우 설정
             vbank_due : 'YYYYMMDD', // 결제 기간 미지정시 30일
-            bypass : {
-                acceptmethod : "noeasypay", // 간편결제 버튼을 통합결제창에서 제외(PC)
-                P_RESERVED: "noeasypay=Y",  // 간편결제 버튼을 통합결제창에서 제외(모바일)
-                acceptmethod: 'cardpoint',  // 카드포인트 사용시 설정(PC)
-                P_RESERVED : 'cp_yn=Y',     // 카드포인트 사용시 설정(모바일)
-            },
+            // bypass : {
+            //     acceptmethod : "noeasypay", // 간편결제 버튼을 통합결제창에서 제외(PC)
+            //     P_RESERVED: "noeasypay=Y",  // 간편결제 버튼을 통합결제창에서 제외(모바일)
+            //     acceptmethod: 'cardpoint',  // 카드포인트 사용시 설정(PC)
+            //     P_RESERVED : 'cp_yn=Y',     // 카드포인트 사용시 설정(모바일)
+            // },
             period : {
             from : payInfo.fromDate, //YYYYMMDD
             to : payInfo.toDate   //YYYYMMDD
             }
         }, function(rsp) { // callback 로직
+            if(rsp.success) {
+                uid = rsp.imp_uid;
 
-            alert("결제가 완료되었습니다.");
-            console.log(rsp);
+                console.log(rsp);
 
+                $.ajax({
+                    url: contextPath + '/payment/veryfyIamport/' + rsp.imp_uid,
+                    type: 'POST',
+                    success: function(data) {
+                        alert("정상결제 완료" + data);
+                        console.log("결제 완료");
+                        console.log(data);
 
-
-            // 결제검증
-            $.ajax({
-                type : "POST",
-                url : "/verifyIamport/" + res.imp_uid
-            }).done(function(data) {
-                
-                if(res.paid_amount == data.response.amount){
-                    alert("결제 및 결제검증완료");
-                    
-                    // location.href= contextPath + "/payment/payConfirm";
-                    //결제 성공 시 비즈니스 로직
-
-                } else {
-                    alert("결제 실패");
-                }
-            });
+                        if(payInfo.amount == data.response.amount) {
+                            alert("금액 일치 ");
 
 
+                            data = JSON.stringify({
+                                "payNo" : rsp.merchant_uid, //주문번호
+                                "projectNo" : projectNo.value, //프로젝트 번호(상품 번호)
+                                "payType" : rsp.name, // 결제 타입
+                                "payName" : rsp.buyer_name, //결제자
+                                "memberNo" : memberNo.value, //회원번호
+                                "price" : rsp.paid_amount, // 가격
+                                "impUid" : rsp.imp_uid // 거래 고유번호(취소, 환불)
+                            });
+
+                            
+                            $.ajax({
+                                url: contextPath + '/payment/complete',
+                                data: data,
+                                type: 'POST',
+                                dataType: 'JSON',
+                                contentType: 'application/json',
+                                success: function(result) {
+
+                                    if(result > 0) {
+
+
+                                    alert("주문정보 저장 성공");
+
+
+                                    // 모달창 제거
+                                    var modal = document.getElementById("pay-modal");
+                                    let removeBg = document.getElementById("bg");
+                                    // 모달 div 뒤에 희끄무레한 레이어
+                                    modal.style.display = 'none';
+                                    removeBg.remove();
+
+
+
+
+
+
+                                        // 로딩 구현
+
+
+                                        location.href = contextPath + '/payment/payConfirm/' + projectNo.value;// 결제 완료 페이지로 이동
+                                        
 
 
 
@@ -421,10 +471,28 @@ function pay() {
 
 
 
+                                    } else {
+                                        alert("주문정보 저장 실패");
+                                    }
 
+                                },error: function(error) {
+                                    alert("에러 발생! 관리자 문의 : 02-1234-1234");
+                                }
+                            });
 
+                        } else {
+                            alert("결제 도중 장애가 발생했습니다. 관리자에게 문의해주세요.");
+                        }
 
-            //* ...중략... *//
+                    }, error: function(error) {
+                        alert("결제가 실패 되었습니다." + error);
+                    }
+                });
+
+            } else {
+                alert("결제가 취소되었습니다.");
+            }
+
         });
 
     }

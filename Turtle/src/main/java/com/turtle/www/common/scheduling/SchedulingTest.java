@@ -2,7 +2,6 @@ package com.turtle.www.common.scheduling;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 // 특정 시간마다 스프링이 알아서 코드를 수행할 수 있도록 bean 등록

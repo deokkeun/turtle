@@ -323,11 +323,30 @@
 	
 		<!-- pom.xml 에러 방지 -->
 		<dependency>
-	        		<groupId>org.apache.maven.plugins</groupId>
-	        		<artifactId>maven-resources-plugin</artifactId>
-         			<version>2.4.3</version>
-        		</dependency> 
+       		<groupId>org.apache.maven.plugins</groupId>
+       		<artifactId>maven-resources-plugin</artifactId>
+   			<version>2.4.3</version>
+  		</dependency> 
+  		
+  		<!-- iamport -->
+		<dependency>
+		    <groupId>com.github.iamport</groupId>
+		    <artifactId>iamport-rest-client-java</artifactId>
+		    <version>0.2.23</version>
+		</dependency>
+	
 	</dependencies>
+	
+	<!-- iamport -->
+	<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+
+
+	
 
 
 	<!-- build : 프로젝트 빌드 시 사용되는 플러그인 추가 및 버전 정보 설정 -->
