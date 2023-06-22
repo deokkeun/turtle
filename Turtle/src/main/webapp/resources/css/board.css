@@ -1,11 +1,24 @@
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.board-area {
+	width: 550px;
+}
+
 .board {
 	display: flex;
-	width:700px;
 	height:30px;
+}
+
+.board:hover {
+	font-weight: bolder;
 }
 
 .edit-board-area {
 	flex-basis: 55%;
+	height: 100%;
 	display: flex;
 }
 
@@ -15,6 +28,8 @@
 
 .boardTitle {
 	flex-basis: 80%;
+	width: 308px;
+	height: 30px;
 }
 
 .edit-boardTitle {
@@ -23,10 +38,15 @@
 
 
 .board-info {
-	flex-basis: 45%;
+	flex-basis: 40%;
+	height: 100%;
 }
 .profile-image > img {
 	width: 20px;
 	height: 20px;
+}
+
+.delete-board {
+	flex-basis: 5%;
 }
 

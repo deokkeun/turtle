@@ -44,19 +44,5 @@ public class ProjectMemberController {
 		return new Gson().toJson(mlist);
 		
 	}
-	
-	
-	/** 메모 업데이트 멤버 정보 조회
-	 * @param memoNo
-	 * @return projectMember
-	 */
-	@ResponseBody
-	@GetMapping("/selectMemoProjectMember")
-	public String selectMemoProjectMember(int memoNo) {
-		
-		ProjectMember projectMember = service.selectMemoProjectMember(memoNo);
-		
-		return new Gson().toJson(projectMember);
-	}
 
 }

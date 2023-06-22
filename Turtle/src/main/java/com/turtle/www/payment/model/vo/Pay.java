@@ -12,9 +12,12 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class Pay {
-	private String payNo;
-	private int projectNo;
-	private String payType;
-	private Date payRegDate;
-	private String payName;
+	private String payNo; // 주문번호
+	private int projectNo; // 프로젝트 번호
+	private String payType; // 결제 타입
+	private Date payRegDate; // 결제일
+	private String payName; // 결제자
+	private int memberNo; // 회원번호
+	private int price; // 가격
+	private String impUid; // 거래 고유번호(취소, 환불)
 }

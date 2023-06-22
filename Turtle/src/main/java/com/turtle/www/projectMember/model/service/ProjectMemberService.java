@@ -17,10 +17,4 @@ public interface ProjectMemberService {
 
 	List<Member> searchmember(String input);
 
-	/** 메모 업데이트 멤버 정보 조회 서비스
-	 * @param memoNo
-	 * @return projectMember
-	 */
-	ProjectMember selectMemoProjectMember(int memoNo);
-
 }

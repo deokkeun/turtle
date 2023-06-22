@@ -1,4 +1,4 @@
-package com.turtle.www.chat.model.websocket;
+package com.turtle.www.board.model.websocket;
 
 import java.sql.Date;
 import java.util.Collections;
@@ -13,32 +13,29 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
-import com.turtle.www.chat.model.service.ChatService;
-import com.turtle.www.chat.model.vo.ChatMessage;
+import com.turtle.www.board.model.service.BoardService;
+import com.turtle.www.board.model.vo.Board;
 
-public class ChatWebsocketHandler extends TextWebSocketHandler {
-	
+public class InsertBoardWebsocketHandler extends TextWebSocketHandler {
+
 	@Autowired
-	private ChatService service;
+	private BoardService service;
 	
 	private Set<WebSocketSession> sessions
 	= Collections.synchronizedSet(new HashSet<WebSocketSession>());
 	
 	
-	
 	// 클라이언트와 연결이 완료되고, 통신할 준비가 되면 수행
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
-			
+				
 		// WebSocketSession : 웹소켓에 접속/요청한 클라이언트의 세션
 		System.out.println(session.getId() + " 연결됨");		
-			
+				
 		sessions.add(session);
 		// WebSocketSession을 Set에 추가
 	}
 	
-	
-
 	// 클라이언트로부터 텍스트 메세지를 전달 받았을 때 수행
 	@Override
 	protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
@@ -53,16 +50,18 @@ public class ChatWebsocketHandler extends TextWebSocketHandler {
 				
 		ObjectMapper objectMapper = new ObjectMapper();
 				
-		ChatMessage chatMessage = objectMapper.readValue(message.getPayload(), ChatMessage.class);
+		Board board = objectMapper.readValue(message.getPayload(), Board.class);
 				
 		// 시간세팅
-		chatMessage.setCmRegDate(new Date(System.currentTimeMillis()));
+		board.setBoardUpdateDate(new Date(System.currentTimeMillis()));
 				
-		System.out.println(chatMessage);
+		System.out.println(board);
 		
-		// 채팅 메세지 DB삽입
+		// 수정된 메모 DB삽입
 		
-		int result = service.insertMessage(chatMessage);
+		board.setBoardSort(board.getBoardSort() + 1);
+		
+		int result = service.insertBoard(board);
 			
 		if(result > 0) {
 					
@@ -71,33 +70,30 @@ public class ChatWebsocketHandler extends TextWebSocketHandler {
 					
 			for(WebSocketSession s : sessions) {
 					
-				// WebSocketSession == HttpSession(로그인정보, 채팅방번호)을 가로챈 것
-				int chatRoomNo = (Integer)s.getAttributes().get("chatRoomNo");
+				// WebSocketSession == HttpSession(로그인정보, 워크스페이스번호)을 가로챈 것
+				int workspaceNo = (Integer)s.getAttributes().get("workspaceNo");
 					
-				// WebSocketSession에 담겨있는 채팅방번호와
-				// 메시지에 담겨있는 채팅방 번호가 같을경우
-				// 같은방 클라이언트다.				
-				if(chatRoomNo == chatMessage.getChatRoomNo())  {
+				// WebSocketSession에 담겨있는 워크스페이스넘버와
+				// 메시지에 담겨있는 워크스페이스넘버가 같을경우
+				// 같은 워크스페이스넘버 클라이언트다.				
+				if(workspaceNo == board.getWorkspaceNo())  {
 					
-					// 같은방 클라이언트에게 JSON형식 메시지를 보냄
-					s.sendMessage(new TextMessage(new Gson().toJson(chatMessage)));
+					// 같은 워크스페이스넘버 클라이언트에게 JSON형식 메시지를 보냄
+					s.sendMessage(new TextMessage(new Gson().toJson(board)));
 						
 				}
 					
 			}
 		}
 	}
-
-
+	
 	// 클라이언트와 연결이 종료되는 수행
-		@Override
-		public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
-			
-			sessions.remove(session);
-			// 웹소켓 연결이 종료되는 경우
-			// 종료된 WebSocketSession을 Set에서 제거
-			
-		}
-	
-	
+	@Override
+	public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
+		
+		sessions.remove(session);
+		// 웹소켓 연결이 종료되는 경우
+		// 종료된 WebSocketSession을 Set에서 제거
+		
+	}
 }

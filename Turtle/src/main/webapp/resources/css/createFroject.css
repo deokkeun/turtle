@@ -203,14 +203,18 @@ section {
 .hidden {
     display: none;
 }
+.user:hover {
+    background-color: #eeeaf5;
+}
 .user > div{
     display: flex;
     align-items: center;
     padding: 5px 30px 5px 30px;
-    
-    
  
 }
+
+
+
 .user-check {
     font-size: 20px;
     margin-right: 10px;
@@ -220,14 +224,17 @@ section {
     margin-right: 5px;
 }
 .user-name {
+    font-weight: bold;
     margin-right: 5px;
 }
 .user-email {
     font-size: 12px;
 }
-
+.user-plus {
+    color : #bd9ff0;
+}
 .user-plus:hover {
-    color: blue;
+    color: #834edf;
 }
 
 
@@ -244,22 +251,32 @@ section {
     margin: 0px 10px;
 }
 .user-checked > div{
-    width: 50%;
-    
+    width: 50%;   
     margin: 0 auto;
     border-radius: 8px;
     padding: 4px 0px;
-    background-color: rgb(155, 155, 155);
+    background-color: #eeeaf5;
+    border: 1px solid #eeeaf5;
 }
 .user-checked > div  {
-   margin-top : 20px;
+   margin-top : 10px;
+   box-sizing: border-box;
+   
+}
+.user-checked > div > a {
+    color: rgb(151, 151, 151);
 }
 .user-checked > div > a:hover {
-    color: red;
+    color: #bd9ff0;
 }
 .user-checked > div > i {
+    color: #bd9ff0;
     font-size: 18px;
 
+}
+
+.user-checked > div:hover {
+    border: 0.1px solid #bd9ff0;
 }
 .user-checked > div > span {
     font-weight: bold;

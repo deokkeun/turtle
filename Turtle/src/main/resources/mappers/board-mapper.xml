@@ -29,19 +29,44 @@
 		<result property="boardDetailSort" column="BOARD_DETAIL_SORT"/>
 	</resultMap>
 	
+	<!-- 게시글 목록 조회 -->
 	<select id="selectBoardList" resultMap="board_rm">
 		SELECT BOARD_NO, BOARD_TITLE, BOARD_REG_DATE, BOARD_UPDATE_DATE, EVENT_START_DATE, EVENT_END_DATE,
 		    (SELECT MEMBER_NAME FROM "BOARD" b JOIN PROJECT_MEMBER USING (PM_NO) JOIN "MEMBER" m USING (MEMBER_NO) WHERE b.BOARD_NO = BOARD.BOARD_NO) AS "REG_MEMBER_NAME",
 		    (SELECT PROFILE_IMG FROM "BOARD" b JOIN PROJECT_MEMBER USING (PM_NO) JOIN "MEMBER" m USING (MEMBER_NO) WHERE b.BOARD_NO = BOARD.BOARD_NO) AS "REG_PROFILE_IMG",
 		    (SELECT MEMBER_NAME FROM "BOARD" b JOIN PROJECT_MEMBER pm ON (pm.PM_NO = b.UPDATE_PM_NO) JOIN "MEMBER" m USING (MEMBER_NO) WHERE b.BOARD_NO = BOARD.BOARD_NO) AS "UPDATE_MEMBER_NAME",
-		    (SELECT PROFILE_IMG FROM "BOARD" b JOIN PROJECT_MEMBER pm ON (pm.PM_NO = b.UPDATE_PM_NO) JOIN "MEMBER" m USING (MEMBER_NO) WHERE b.BOARD_NO = BOARD.BOARD_NO) AS "UPDATE_PROFILE_IMG"
+		    (SELECT PROFILE_IMG FROM "BOARD" b JOIN PROJECT_MEMBER pm ON (pm.PM_NO = b.UPDATE_PM_NO) JOIN "MEMBER" m USING (MEMBER_NO) WHERE b.BOARD_NO = BOARD.BOARD_NO) AS "UPDATE_PROFILE_IMG", BOARD_SORT
 		FROM BOARD
 		WHERE WORKSPACE_NO = ${workspaceNo} AND BOARD_ST = 'N'
 		ORDER BY BOARD_SORT
 	</select>
 	
+	<!-- 게시글 제목 수정 -->
 	<update id="updateBoardTitle">
 		UPDATE BOARD SET BOARD_TITLE = #{boardTitle}, BOARD_UPDATE_DATE = SYSDATE, UPDATE_PM_NO = ${pmNo}
+		WHERE BOARD_NO = ${boardNo}
+	</update>
+	
+	<!-- 기존 게시글들 번호 수정(게시글추가) -->
+	<update id="addBoardSort">
+		UPDATE BOARD SET BOARD_SORT = BOARD_SORT + 1
+		WHERE BOARD_SORT >= ${boardSort}
+		AND WORKSPACE_NO = ${workspaceNo}
+	</update>
+	
+	<!-- 게시글 추가 -->
+	<insert id="insertBoard" useGeneratedKeys="true">
+		
+		<selectKey keyProperty="boardNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_BOARD_NO.NEXTVAL FROM DUAL
+		</selectKey>
+		
+		INSERT INTO BOARD VALUES(${boardNo}, ${workspaceNo}, NULL, ${pmNo}, NULL, DEFAULT, NULL, NULL, NULL, ${boardSort}, DEFAULT)
+	</insert>
+	
+	<!-- 게시글 삭제 -->
+	<update id="deleteBoard">
+		UPDATE BOARD SET BOARD_ST = 'Y'
 		WHERE BOARD_NO = ${boardNo}
 	</update>
 

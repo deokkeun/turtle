@@ -43,6 +43,8 @@ public class MyPageController {
 		return "member/myPage-info";
 	}
 	
+	
+	
 	/** 프로필 수정
 	 * @return
 	 * @throws IOException 
