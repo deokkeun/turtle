@@ -79,9 +79,9 @@
             </div>
             
         </div>
-        <form>
+        <form action="" method="post">
             <div class="invited-member">
-
+                
             </div>
         </form>
 
