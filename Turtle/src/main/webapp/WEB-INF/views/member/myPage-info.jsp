@@ -16,6 +16,10 @@
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+
+	<input type="hidden" id="memberNo" value="${loginMember.memberNo}">
+
     <main id="main" class="main">
  		<!-- header include -->
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
@@ -111,13 +115,17 @@
 					</div>
 					<button type="button" id="changePw-btn">비밀번호 변경</button>
 				</section>
-					<form action="../myPage/deleteAccount" method="GET">
+					<form action="${contextPath}/member/myPage/deleteAccount" method="GET">
 						<button class="deleteAccount-btn">Turtle 계정 삭제</button>
 					</form>
 			</section>
 	
 
-
+			<section>
+				<form action="${contextPath}/payment/payList/1" method="GET">
+					<button>결제내역</button>
+				</form>
+			</section>
 
 
 

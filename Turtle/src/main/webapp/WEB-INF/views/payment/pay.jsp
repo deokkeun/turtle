@@ -32,17 +32,6 @@
                 <header class="section-header">
                     <p>팀 규모에 따라</p>
                     <p>다양한 <span>요금제</span>로 사용해보세요</p>
-                    <!-- <h2>규모에 따라 다양한 요금제로</h2> -->
-
-                    <div>workspaceCount = ${workspaceCount}</div>
-                    <div>projectMemberCount =  ${projectMemberCount}</div>
-                    <div>paymentType =  ${paymentType}</div>
-                    <div>${paymentType.payNo}</div>
-                    <div>${paymentType.projectNo}</div>
-                    <div>${paymentType.payType}</div>
-                    <div>${paymentType.payRegDate}</div>
-                    <div>${paymentType.payName}</div>
-                    <input id="loginMember" type="hidden" value="${loginMember}">
                 </header>
 
                 <section class="row gy-4" data-aos="fade-left">
@@ -161,9 +150,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <input type="hidden" name="memberName" value="${loginMember.memberName}">
                         </div>
                     </div>
+                    
 
 
                   <div class="modal__content">
@@ -196,7 +185,20 @@
             <a class="pay-modal-close fa-solid fa-xmark"></a>
         </article> 
 
-        <div id="address-modal"></div>
+
+
+        <input type="text" id="memberNo" value="${loginMember.memberNo}">
+        <input type="text" id="projectNo" value="${projectNo}">
+        <div>workspaceCount = ${workspaceCount}</div>
+        <div>projectMemberCount =  ${projectMemberCount}</div>
+        <div>paymentType =  ${paymentType}</div>
+        <div>${paymentType.payNo}</div>
+        <div>${paymentType.projectNo}</div>
+        <div>${paymentType.payType}</div>
+        <div>${paymentType.payRegDate}</div>
+        <div>${paymentType.payName}</div>
+        <input id="loginMember" type="hidden" value="${loginMember}">
+
 
     </main>
     <script>

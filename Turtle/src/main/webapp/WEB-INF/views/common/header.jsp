@@ -18,6 +18,9 @@
   <link href="${contextPath}/resources/css/boxicons/css/boxicons.min.css" rel="stylesheet">
 	<!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
+  <!-- Favicons -->
+  <link href="${contextPath}/resources/favicon/favicon-16x16.png" rel="icon">
+  <link href="${contextPath}/resources/favicon/apple-icon-60x60.png" rel="apple-touch-icon">
 </head>
 <body>
 
@@ -279,7 +282,7 @@
         </ul><!-- End Profile Dropdown Items -->
       </li><!-- End Profile Nav -->
       <li class="nav-item">
-        <a class="nav-link " href="">
+        <a class="nav-link " href="${contextPath}/member/login">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
