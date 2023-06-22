@@ -281,7 +281,7 @@
 .modal__content {
   -ms-flex: 3;
       flex: 3;
-  padding: 40px 30px; }
+  padding: 50px 30px 30px 30px; }
 
 .modal__circle {
   position: absolute;
@@ -292,7 +292,7 @@
   background-color: #fbcf34;}
 
 .modal__circle_box {
-  padding: 30px;
+  padding: 50px 20px;
 }
 
 

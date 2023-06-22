@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: #333;
+  }
+
+  .container {
+    max-width: 850px;
+    width: 50% !important; 
+    margin: 0 auto;
+    padding: 100px;
+  }
+
+  .pay-confirm-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .details {
+    margin-bottom: 30px;
+  }
+
+  .details p {
+    font-size: 21.33px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .details p span {
+    text-align: right;
+  }
+
+  .back-button-container {
+    text-align: center;
+    margin: 50px;
+  }
+
+  .back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 4px;
+    outline: none;
+  }
+  .back-button:hover {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #333;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  .horizontal-line {
+    height: 1px;
+    background-color: #ccc;
+    margin: 30px 0
+  }
+
+  .pay-result {
+    font-size: 14px;
+  }
