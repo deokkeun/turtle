@@ -332,6 +332,26 @@
           </ul>
         </li><!-- End Shared Project Nav -->
         <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#shared-project-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-chevron-down" id="arrow"></i><i class="bi-share-fill"></i> <span>SHARED PROJECT</span>
+            <button class="add-file-button ms-auto" onclick="addFile('shared-project-nav')"><i class="bi bi-plus"></i></button>
+          </a>
+          <ul id="shared-project-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+              <a href="">
+                </i><span>project 1</span>
+                <div class="file-menu">
+                  <button class="rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i></button>
+                  <button class="delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i></button>
+                  <button class="duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i></button>
+                </div>
+              </a>
+            </li>
+       
+            <!-- 추가적인 프로젝트 항목들 -->
+          </ul>
+        </li><!-- End Shared Project Nav -->
+        <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#workspace-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-chevron-down" id="arrow"></i><i class="bx bx-desktop"></i><span>WORKSPACE</span>
             <button class="add-file-button ms-auto" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button>
@@ -339,19 +359,21 @@
           <ul id="workspace-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
             <li>
               <a href="">
-                <i class="bi bi-circle"></i><span>파일</span>
+               <span>파일</span>
                 <div class="file-menu">
                   <button class="rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i></button>
                   <button class="delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i></button>
+                  <button class="duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i></button>
                 </div>
               </a>
             </li>
             <li>
               <a href="">
-                <i class="bi bi-circle"></i><span>할일 목록</span>
+                <span>할일 목록</span>
                 <div class="file-menu">
                   <button class="rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i></button>
                   <button class="delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i></button>
+                  <button class="duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i></button>
                 </div>
               </a>
             </li>
@@ -362,7 +384,7 @@
 
         <li class="nav-item">
           <a class="nav-link collapsed" href="">
-            <i class="bi bi-envelope"></i>
+            <i class="ri-message-3-line"></i>
             <span>Chating</span>
           </a>
           <div id="line"></div>
@@ -373,17 +395,20 @@
 
         <li class="nav-item">
           <a class="nav-link collapsed" href="">
-            <i class="bi bi-dash-circle"></i>
+            <i class="ri-settings-5-line"></i>
             <span>Settings</span>
           </a>
-        </li><!-- End Error 404 Page Nav -->	
+        </li><!-- End Error 404 Page Nav -->
   
         <li class="nav-item">
-          <a class="nav-link collapsed" href= "${contextPath}/payment/pay/1">
-            <i class="bi bi-file-earmark"></i>
+          <a class="nav-link collapsed" href="">
+            <i class="bx bxs-receipt"></i>
             <span>Payment Detailss</span>
           </a>
         </li><!-- End Blank Page Nav -->
+
+      </ul>
+  </aside><!-- End Sidebar-->
 
       </ul>
   </aside><!-- End Sidebar-->

@@ -333,6 +333,7 @@ if (select('.toggle-sidebar2-btn')) {
   }
 
 })();
+//프로젝트 내용 추가
 function addFile(menuId, event) {
   if (event) {
     event.stopPropagation();
@@ -343,7 +344,7 @@ function addFile(menuId, event) {
     var fileLink = menuId.split('-')[0] + "-projects/" + projectName.toLowerCase() + ".html";
 
     var newFile = document.createElement("li");
-    newFile.innerHTML = '<a><i class="bi bi-circle"></i><span>' + projectName + '</span></a>';
+    newFile.innerHTML = '<a class="nav-link"><span>' + projectName + '</span></a>';
 
     var renameButton = document.createElement("button");
     renameButton.className = "rename-button";
@@ -361,8 +362,17 @@ function addFile(menuId, event) {
       deleteFile(this);
     };
 
+    var duplicateButton = document.createElement("button");
+    duplicateButton.className = "duplicate-button";
+    duplicateButton.innerHTML = '<i class="bi bi-files"></i>';
+    duplicateButton.onclick = function(event) {
+      event.stopPropagation();
+      duplicateFile(this);
+    };
+
     newFile.firstChild.appendChild(renameButton);
     newFile.firstChild.appendChild(deleteButton);
+    newFile.firstChild.appendChild(duplicateButton);
 
     var menuNav = document.getElementById(menuId);
     menuNav.appendChild(newFile);
@@ -370,16 +380,65 @@ function addFile(menuId, event) {
 }
 
 function renameFile(button) {
-  var newName = prompt("새로운 이름을 입력하세요:");
-  if (newName) {
-    var span = button.parentNode.getElementsByTagName("span")[0];
-    span.innerText = newName;
+  var fileSpan = button.parentNode.getElementsByTagName("span")[0];
+  var newFileName = prompt("새로운 파일 이름을 입력하세요:", fileSpan.innerText);
+  if (newFileName) {
+    fileSpan.innerText = newFileName;
   }
 }
 
 function deleteFile(button) {
   var fileItem = button.parentNode.parentNode;
-  fileItem.parentNode.removeChild(fileItem);
+  var menuNav = fileItem.parentNode;
+  menuNav.removeChild(fileItem);
+}
+
+function duplicateFile(button) {
+  var fileItem = button.parentNode.parentNode;
+  var clone = fileItem.cloneNode(true);
+  var projectName = clone.getElementsByTagName("span")[0].innerText;
+
+  // 숫자 추출
+  var numberMatch = projectName.match(/\((\d+)\)$/);
+  var number = 1;
+
+  if (numberMatch) {
+    number = parseInt(numberMatch[1]) + 1;
+    projectName = projectName.replace(/\(\d+\)$/, "").trim();
+  }
+
+  // 복제된 파일 이름 설정
+  var duplicatedProjectName = projectName + " (" + number + ")";
+
+  clone.getElementsByTagName("span")[0].innerText = duplicatedProjectName;
+
+  clone.getElementsByClassName("rename-button")[0].onclick = function(event) {
+    event.stopPropagation();
+    renameFile(this);
+  };
+
+  clone.getElementsByClassName("delete-button")[0].onclick = function(event) {
+    event.stopPropagation();
+    deleteFile(this);
+  };
+
+  clone.getElementsByClassName("duplicate-button")[0].onclick = function(event) {
+    event.stopPropagation();
+    duplicateFile(this);
+  };
+
+  var menuNav = fileItem.parentNode;
+  menuNav.appendChild(clone);
 }
 
 
+const navLink = document.querySelector('.nav-link');
+
+if (navLink) {
+  navLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    return false;
+  });
+
+  navLink.classList.remove('collapsed');
+}
