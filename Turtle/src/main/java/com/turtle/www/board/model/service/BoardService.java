@@ -19,6 +19,18 @@ public interface BoardService {
 	 */
 	int updateBoardTitle(Board board);
 
+	/** 게시글 추가 서비스
+	 * @param board
+	 * @return result
+	 */
+	int insertBoard(Board board);
+
+	/** 게시글 삭제 서비스
+	 * @param board
+	 * @return result
+	 */
+	int deleteBoard(Board board);
+
 	
 
 }

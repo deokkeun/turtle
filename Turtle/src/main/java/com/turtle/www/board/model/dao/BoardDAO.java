@@ -33,4 +33,35 @@ public class BoardDAO {
 		return sqlSession.update("boardMapper.updateBoardTitle", board);
 	}
 
+	/** 게시글 추가 DAO
+	 * @param board
+	 * @return result
+	 */
+	public int insertBoard(Board board) {
+		
+		int result = 0;
+		
+		// boardSort로 기존 boardSort들 하나씩 밀어주기
+		result = sqlSession.update("boardMapper.addBoardSort", board);
+		
+		if(result > 0) {
+			// 밀어준 후 게시글 추가
+			result = sqlSession.insert("boardMapper.insertBoard", board);
+			
+			if (result > 0) result = board.getBoardNo();
+			
+		}
+
+		return result;
+	}
+
+	/** 게시글 삭제 DAO
+	 * @param board
+	 * @return result
+	 */
+	public int deleteBoard(Board board) {
+		
+		return sqlSession.update("boardMapper.deleteBoard", board);
+	}
+
 }

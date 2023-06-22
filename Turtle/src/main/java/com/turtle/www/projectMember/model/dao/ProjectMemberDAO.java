@@ -31,13 +31,4 @@ public class ProjectMemberDAO {
 		return sqlSession.selectList("memberMapper.searchmember", input);
 	}
 
-
-	/** 메모 업데이트 멤버 정보 조회 dao
-	 * @param memoNo
-	 * @return projectMember
-	 */
-	public ProjectMember selectMemoProjectMember(int memoNo) {
-		return sqlSession.selectOne("projectMemberMapper.selectProjectMember", memoNo);
-	}
-
 }

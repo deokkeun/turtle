@@ -4,6 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <c:set var="memberName" value="${loginMember.memberName}" />
+<c:set var="profileImage" value="${loginMember.profileImage}"/>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,23 +24,23 @@
 	    	<c:choose>
 	    		
 	    		<c:when test="${memo.memoType eq 'workspace'}">
-	    			<div class="memoDetail workspace" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
-			    		<div class="memoInfo">
+	    			<div class="memoDetail workspace" data-memoBgColor="${memo.memoBgColor}">
+			    		<div class="memoInfo"  style="background-color: ${memo.memoBgColor}">
 							<span class="profile-image"><img src="${contextPath}${memo.profileImg}"></span>
-			    			${memo.memberName} 
+			    			<span class="memberName">${memo.memberName}</span> 
 			    			<c:choose>
 				    			<c:when test="${empty memoUpdateDate}">
-				    				${memoRegDate} <br>
+				    				<span class="memoUpdateDate">${memoRegDate}</span>
 				    			</c:when>
 				    			<c:otherwise>
-				    				${memoUpdateDate}
+				    				<span class="memoUpdateDate">${memoUpdateDate}</span>
 				    			</c:otherwise>
 				    		</c:choose>	    			
 			    			<button>x</button>
 			    		</div>	    		
 		  				<div class="memoContent" contenteditable="true"
-		  					data-pmNo="${pmNo}" data-memoNo="${memo.memoNo}" data-memoType="${memo.memoType}">					
-		  					${memo.memoContent}
+		  					data-pmNo="${pmNo}" data-memoNo="${memo.memoNo}" data-memoType="${memo.memoType}"  style="background-color: ${memo.memoBgColor}">					
+		  					${memo.memoContent} 
 		  				</div>
 			  		</div>
 	    		</c:when>
@@ -48,13 +49,13 @@
 	    			<div class="memoDetail" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
 			    		<div class="memoInfo">
 							<span class="profile-image"><img src="${contextPath}${memo.profileImg}"></span>
-			    			${memo.memberName} 
+			    			<span>${memo.memberName}</span> 
 			    			<c:choose>
 				    			<c:when test="${empty memoUpdateDate}">
-				    				${memoRegDate} <br>
+				    				<span class="memoUpdateDate">${memoRegDate}</span>
 				    			</c:when>
 				    			<c:otherwise>
-				    				${memoUpdateDate}
+				    				<span class="memoUpdateDate">${memoUpdateDate}</span>
 				    			</c:otherwise>
 				    		</c:choose>	    			
 			    			<button>x</button>
@@ -82,6 +83,9 @@
     	const pmNo = "${pmNo}";
     	const workspaceNo = "${workspaceNo}";
     	const contextPath = "${contextPath}";
+    	
+    	let memberName = "${memberName}";
+    	let profileImage = "${profileImage}";
 		
     	// 로그인이 되어 있을 경우에만
 		// /memo 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성

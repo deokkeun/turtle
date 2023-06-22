@@ -1,10 +1,8 @@
 //메모 메세지 업데이트
-
 const memoDetails = document.querySelectorAll(".memoDetail");
 const memoContents = document.querySelectorAll(".memoContent");
 const memoDivs = document.querySelectorAll('.memoContent');
 const memoInfos = document.querySelectorAll('.memoInfo');
-
 
 for (let i = 0; i < memoDivs.length; i++) {
   const div = memoDivs[i];
@@ -39,8 +37,6 @@ memoDetails.forEach((memoDetail) => {
 	const memoNo = memoContent.dataset.memono;
 	let memoBgColor = memoDetail.dataset.memobgcolor;
 	const memoType = memoContent.dataset.memotype;
-
-	console.log(memoNo);
 
 
 	// 딜레이 1초 설정
@@ -83,10 +79,6 @@ memoDetails.forEach((memoDetail) => {
 				
 		        
 		        clearTimeout(typingTimer);
-  		
-				const div = this;
-      			const text = div.textContent.trim(); // 공백 문자 제거
-      			memoContent.innerHTML = text; // 수정된 텍스트로 업데이트
 
 		  		typingTimer = setTimeout(function() {
 
@@ -121,13 +113,19 @@ memoDetails.forEach((memoDetail) => {
 
 	//메모 보내기 함수
 	function updateMemo() {
+
+		// 개행 제거
+		const cleanedmemoContent = memoContent.innerHTML.replace(/\n|\t/g, "");
+
 		if(memoType == "workspace") {
 			let memo = {
 				"workspaceNo" : workspaceNo,
 				"pmNo" : pmNo,
-				"memoContent" : memoContent.innerHTML,
+				"memoContent" : cleanedmemoContent,
 				"memoBgColor" : memoBgColor,
-				"memoNo" : memoNo
+				"memoNo" : memoNo,
+				"profileImg" : profileImage,
+				"memberName" : memberName
 			};
 
 			// JSON.parse(문자열) : JSON -> JS Object
@@ -137,7 +135,6 @@ memoDetails.forEach((memoDetail) => {
 		
 			// memoSock(웹소켓 객체)을 이용하여 메세지 보내기
 			// memoSock.send(값) : 웹소켓 핸들러로 값을 보냄
-			console.log(memoDetail);
 			memoSock.send( JSON.stringify(memo) );
 		} else if(memoType == "personal") {
 			// ajax 코드 작성
@@ -145,7 +142,7 @@ memoDetails.forEach((memoDetail) => {
 				url : contextPath +"/workspace/memo/updateMemo",
 				data : {"workspaceNo" : workspaceNo,
 						"pmNo" : pmNo,
-						"memoContent" : memoContent.innerHTML,
+						"memoContent" : cleanedmemoContent,
 						"memoBgColor" : memoBgColor,
 						"memoNo" : memoNo
 				},
@@ -179,42 +176,31 @@ memoSock.onmessage = function(e){
 	// 전달 받은 메세지를 JS 객체로 변환
 	const memo = JSON.parse(e.data);  // JSON -> JS Object
 
-	// 받은 memo 정보로 멤버정보 받아오기
-	$.ajax({
-		url : contextPath + "/project/selectProjectMember",
-		data : {"memoNo" : memo.memoNo},
-		type : "get",
-		dataType : "JSON",
-		success : function(projectMember) {
-			if(projectMember != null) {
-				changedMemberName = projectMember.memberName;
-				changedProfileImg = projectMember.profileImg;
-				changedPmNo = projectMember.pmNo;
-			}
-		},
-		error : function(request, status, error){
-			console.log("AJAX 에러 발생");
-			console.log("상태코드 : " + request.status); // 404, 500
-		}
-	});
 
 	memoDetails.forEach((memoDetail) => {
 		const changedMemoContent = memoDetail.querySelector(".memoContent");
-		const changedProfileImage = board.querySelector(".profile-image > img");
 
 		if(memo.memoNo == changedMemoContent.dataset.memono) {
 		
-			
-			memoDetail.style.backgroundColor = memo.memoBgColor;
-			memoDetail.dataset.memobgcolor = memo.memoBgColor;
 			const changedMemoInfo = memoDetail.querySelector(".memoInfo");
+			
+			const changedMemberName = changedMemoInfo.querySelector(".memberName");
+			const changedProfileImage = changedMemoInfo.querySelector(".profile-image > img");
+			const changedMemoUpdateDate = changedMemoInfo.querySelector(".memoUpdateDate");
 
-			changedProfileImage.src = contextPath + changedProfileImg;
-			changedMemoInfo.innerHTML = changedMemberName + " " + currentTime() + "<button>x</button>";
-			changedMemoContent.dataset.pmno = changedPmNo;
 
+			// 수정 멤버 정보 변경
+			changedProfileImage.src = contextPath + memo.profileImg;
+			changedMemberName.innerHTML = memo.memberName;
+			changedMemoUpdateDate.innerHTML =  currentTime();
+			changedMemoContent.dataset.pmno = memo.pmNo;
+
+			// 수정 메모 내용 변경
 			changedMemoContent.innerHTML = memo.memoContent;
-			console.log(memoDetail);
+
+			// 수정 메모 색상 변경
+			changedMemoInfo.style.backgroundColor = memo.memoBgColor;
+			changedMemoContent.style.backgroundColor = memo.memoBgColor;
 		}
 
 	})
