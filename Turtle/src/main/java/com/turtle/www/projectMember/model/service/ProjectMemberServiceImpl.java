@@ -29,12 +29,4 @@ public class ProjectMemberServiceImpl implements ProjectMemberService {
 		return dao.searchmember(input);
 	}
 
-	// 메모 업데이트 멤버 정보 조회 서비스 구현
-	@Override
-	public ProjectMember selectMemoProjectMember(int memoNo) {
-		return dao.selectMemoProjectMember(memoNo);
-	}
-
-
-	
 }

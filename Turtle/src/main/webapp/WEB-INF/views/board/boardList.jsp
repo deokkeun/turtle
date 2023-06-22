@@ -21,41 +21,43 @@
     
     <div class="board-area">
     	<ul class="display-board">
-    		<c:forEach var="board" items="${boardList}">
+    		<c:forEach var="board" items="${boardList}" varStatus="status">
 				<fmt:formatDate var="boardRegDate" value="${board.boardRegDate}" pattern="MM-dd HH:mm"/>
-	    		<fmt:formatDate var="boardUpdateDate" value="${board.boardUpdateDate}" pattern="MM-dd HH:mm"/>
-    			<li>
-    				<div class="board">
-    					<div class="edit-board-area">
+	    		<fmt:formatDate var="boardUpdateDate" value="${board.boardUpdateDate}" pattern="MM-dd HH:mm"/>			
+				<li>
+	   				<div class="board" data-boardNo="${board.boardNo}" data-pmNo="${pmNo}" data-boardSort="${board.boardSort}">
+	   					<div class="edit-board-area">
 	    					<div class="add-board" style="visibility:hidden;">
 	    						<button class="add-board-btn">+</button>
 	    					</div>
 	    					<a href="#" class="select-board-detail">
-								<div class="boardTitle" contenteditable="false"
-									data-pmNo="${pmNo}" data-boardNo="${board.boardNo}">
+								<div class="boardTitle" contenteditable="false">
 									${board.boardTitle}
 								</div>
 							</a>
 	    					<div class="edit-boardTitle" style="visibility:hidden;">
 	    						<button class="edit-boardTitle-btn">edit</button>
-	    						<button class="close-edit-boardTitle-btn" style="display:none;">완료</button>
+	    						<button class="close-edit-boardTitle-btn" style="display:none;">done</button>
 	    					</div>
-    					</div>
-  						<div class="board-info">
-   							<c:choose>
-   								<c:when test="${empty board.boardUpdateDate}">
-    								<span class="profile-image"><img src="${contextPath}${board.regProfileImg}"></span>
-    								<span class="updateDate">${boardRegDate}</span>
-   								</c:when>
-   								<c:otherwise>
-    								<span class="profile-image"><img src="${contextPath}${board.updateProfileImg}"></span>
-    								<span class="updateDate">${boardUpdateDate}</span>
-   								</c:otherwise>
-   							</c:choose>    							
-  						</div>    						
-    				</div>
-    			</li>
-    		</c:forEach>
+	   					</div>
+	 						<div class="board-info">
+	  							<c:choose>
+	  								<c:when test="${empty board.boardUpdateDate}">
+	   								<span class="profile-image"><img src="${contextPath}${board.regProfileImg}"></span>
+	   								<span class="updateDate">${boardRegDate}</span>
+	  								</c:when>
+	  								<c:otherwise>
+	   								<span class="profile-image"><img src="${contextPath}${board.updateProfileImg}"></span>
+	   								<span class="updateDate">${boardUpdateDate}</span>
+	  								</c:otherwise>
+	  							</c:choose>    							
+	 						</div>
+						<div class="delete-board" style="visibility:hidden;">
+							<button class="delete-board-btn">-</button>
+						</div>    						
+	   				</div>
+	   			</li>    			
+    		</c:forEach>		    		
     	</ul>
     </div>
      
@@ -76,8 +78,14 @@
     	
     	// 로그인이 되어 있을 경우에만
 		// /boardList 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
+		// 게시글 수정용 sock
 		let boardListSock = new SockJS(contextPath+"/boardList");
-			// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
+		// 게시글 추가용 sock
+		let insertBoardSock = new SockJS(contextPath+"/insertBoard");
+		// 게시글 삭제용 sock
+		let deleteBoardSock = new SockJS(contextPath+"/deleteBoard");
+		// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
+		
     </script>
 
     <!-- memo.js 연결 -->
