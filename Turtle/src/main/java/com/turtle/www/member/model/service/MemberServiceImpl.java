@@ -227,10 +227,22 @@ public class MemberServiceImpl implements MemberService {
 		return dao.certificationNumber(certificationNumber);
 	}
 
+	
+	
+	/** 결제 기간(한달) 초과 시 Basic(기본제공)으로 변경
+	 *
+	 */
+	@Override
+	public int paymentDateCheck(int memberNo) {
+		return dao.paymentDateCheck(memberNo);
+	}
+	
   
   //  -------------------------------------------------------------------------------------
 
-  
+
+
+
 	/** 이메일 중복 검사 서비스 구현
 	 *
 	 */

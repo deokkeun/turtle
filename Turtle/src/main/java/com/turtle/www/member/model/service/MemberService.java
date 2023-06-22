@@ -77,4 +77,13 @@ public interface MemberService {
 
 
 
+
+	/** 결제 기간(한달) 초과 시 Basic(기본제공)으로 변경
+	 * @param memberNo
+	 * @return
+	 */
+	int paymentDateCheck(int memberNo);
+
+
+
 }

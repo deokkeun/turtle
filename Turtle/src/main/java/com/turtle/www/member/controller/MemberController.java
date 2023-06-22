@@ -69,6 +69,11 @@ public class MemberController {
 		Member loginMember = service.login(inputMember);
 		
 		if(loginMember != null) { // 로그인 성공 시
+			
+			// 결제 기간(한달) 초과 시 Basic(기본제공)으로 변경
+			int paymentDateCheck = service.paymentDateCheck(loginMember.getMemberNo());
+			logger.debug("paymentDateCheck = " + paymentDateCheck);
+			
 			logger.debug(loginMember + "로그인 성공시 로그인 멤버 정보");
 			model.addAttribute("loginMember", loginMember); // == req.setAttribute("loginMember", loginMember);
 		

@@ -16,9 +16,10 @@
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <main>
- 		<!-- header include -->
-       	<jsp:include page="/WEB-INF/views/common/header.jsp" />
+	<!-- header include -->
+	<jsp:include page="/WEB-INF/views/common/header.jsp" />
+
+    <main id="main" class="main">
 
         <!-- 비로그인의 경우 이메일 인증 후 비밀번호 변경 -->
         <form action="myPage/newChangePw" method="POST" onsubmit="return newChangePwValidate()">

@@ -745,12 +745,12 @@ h6 {
   transition: 0.3s;
 }
 
-.sidebar-nav .nav-content a i {
+/* .sidebar-nav .nav-content a i {
   font-size: 6px;
   margin-right: 8px;
   line-height: 0;
   border-radius: 50%;
-}
+} */
 
 .sidebar-nav .nav-content a:hover,
 .sidebar-nav .nav-content a.active {

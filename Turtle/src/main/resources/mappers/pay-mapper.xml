@@ -12,6 +12,8 @@
 		<result property="memberNo" column="MEMBER_NO"/>
 		<result property="price" column="PRICE"/>
 		<result property="impUid" column="IMP_UID"/>
+		<result property="expireDate" column="EXPIRE_DATE"/>
+		<result property="expireType" column="EXPIRE_TYPE"/>
 	</resultMap>
 	
 	<!-- 결제 정보(전체) 불러오기(결제 타입) -->
@@ -43,13 +45,13 @@
 	
 	<!-- 결제 정보 저장 -->
 	<insert id="insertPay">
-		INSERT INTO PAYMENT (PAY_NO, PROJECT_NO, PAY_TYPE, PAY_REG_DATE, PAY_NAME, MEMBER_NO, PRICE, IMP_UID)
-					VALUES (#{payNo}, ${projectNo}, #{payType}, SYSDATE, #{payName}, ${memberNo}, ${price}, #{impUid})
+		INSERT INTO PAYMENT (PAY_NO, PROJECT_NO, PAY_TYPE, PAY_REG_DATE, PAY_NAME, MEMBER_NO, PRICE, IMP_UID, EXPIRE_DATE, EXPIRE_TYPE)
+					VALUES (#{payNo}, ${projectNo}, #{payType}, SYSDATE, #{payName}, ${memberNo}, ${price}, #{impUid}, DEFAULT, #{payType})
 	</insert>
 	
 	<!-- 결제 내역 -->
 	<select id="payList" resultMap="pay_rm">
-		SELECT PAY_NO, PAY_TYPE, PAY_REG_DATE, PAY_NAME, PRICE
+		SELECT PAY_NO, PAY_TYPE, PAY_REG_DATE, PAY_NAME, PRICE, EXPIRE_DATE, EXPIRE_TYPE
 		FROM PAYMENT p
 		WHERE PROJECT_NO = ${projectNo}
 		ORDER BY PAY_NO DESC

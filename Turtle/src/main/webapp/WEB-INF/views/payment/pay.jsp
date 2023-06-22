@@ -161,18 +161,18 @@
                         <ul class="form-list">
                             
                             <li class="form-list__row">
-                            <label id="emailMessage">이메일</label>
-                            <input id="memberEmail" type="email" autocomplete="false"/>
+                                <label id="emailMessage">이메일</label>
+                                <input id="memberEmail" type="email" autocomplete="false"/>
                             </li>
                             <li class="form-list__row">
-                            <label id="nameMessage">이름</label>
-                            <input id="memberName" type="text" autocomplete="false"/>
+                                <label id="nameMessage">이름</label>
+                                <input id="memberName" type="text" autocomplete="false"/>
                             </li>
                             <li class="form-list__row">
-                            <label id="telMessage">전화번호</label>
-                            <div>
-                                <input id="memberTel" type="tel" autocomplete="false"/>
-                            </div>
+                                <label id="telMessage">전화번호</label>
+                                <div>
+                                    <input id="memberTel" type="tel" autocomplete="false"/>
+                                </div>
                             </li>
                             <li class="pay-btn-box">
                                 <button class="pay-btn" onclick="pay()">결제</button>

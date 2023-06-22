@@ -37,20 +37,22 @@
                     <thead id="payList-table-head">
                         <tr>
                             <th>결제 번호</th>
-                            <th>거래일시</th>
-                            <th>구매자</th>
                             <th>상품명</th>
-                            <th>금액</th>
+                            <th>구매자</th>
+                            <th>결제 금액</th>
+                            <th>결제일</th>
+                            <th>만료일</th>
                         </tr>
                     </thead>
                     <tbody id="payList-table-body">
                         <c:forEach var="pay" items="${payList}">
                             <tr>
                                 <td>${pay.payNo}</td>
-                                <td>${pay.payRegDate}</td>
+                                <td>${pay.expireType}</td>
                                 <td>${pay.payName}</td>
-                                <td>${pay.payType}</td>
                                 <td>${pay.price}</td>
+                                <td>${pay.payRegDate}</td>
+                                <td>${pay.expireDate}</td>
                             </tr>
                         </c:forEach>
                     </tbody>
