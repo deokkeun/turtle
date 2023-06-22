@@ -25,35 +25,44 @@ boards.forEach((board) => {
 
     // 마우스가 올려진 게시글에 수정, 추가버튼 활성화
     board.addEventListener("mouseover", function() {
-
-        addBoard.style.visibility = "visible";
+        if(addBoard != null) {
+            addBoard.style.visibility = "visible";
+        }       
         editBoardTitle.style.visibility = "visible";
         dropBoard.style.visibility = "visible";
     });
 
     // 마우스가 벗어나면 수정, 추가버튼 비활성화
     board.addEventListener("mouseout", function() {
-        addBoard.style.visibility = "hidden";
+        if(addBoard != null) {
+            addBoard.style.visibility = "hidden";
+        }        
         editBoardTitle.style.visibility = "hidden";
         dropBoard.style.visibility = "hidden";
     });
 
     
     // 제목 수정 기능 활성화
-    editBoardTitleBtn.addEventListener("click", function() {
-        selectBoardDetail.removeAttribute("href");
-        boardTitle.contentEditable = true;
-        closeEditBoardTitleBtn.style.display = "block";
-        editBoardTitleBtn.style.display = "none";
-    });
+    if(editBoardTitleBtn != null) {
+        editBoardTitleBtn.addEventListener("click", function() {
+            selectBoardDetail.removeAttribute("href");
+            boardTitle.contentEditable = true;
+            closeEditBoardTitleBtn.style.display = "block";
+            editBoardTitleBtn.style.display = "none";
+        });
+    }
+    
 
     // 제목 수정 기능 비활성화
-    closeEditBoardTitleBtn.addEventListener("click", function() {
-        selectBoardDetail.setAttribute("href", "#");
-        boardTitle.contentEditable = false;
-        closeEditBoardTitleBtn.style.display = "none";
-        editBoardTitleBtn.style.display = "block";
-    });
+    if(closeEditBoardTitleBtn != null) {
+        closeEditBoardTitleBtn.addEventListener("click", function() {
+            selectBoardDetail.setAttribute("href", "#");
+            boardTitle.contentEditable = false;
+            closeEditBoardTitleBtn.style.display = "none";
+            editBoardTitleBtn.style.display = "block";
+        });
+    }
+    
 
     // 제목 수정 기능
 
@@ -125,9 +134,12 @@ boards.forEach((board) => {
     
 
     // 게시글 삭제 기능
-    deleteBoardBtn.addEventListener("click", function() {
-        deleteBoard();
-    });
+    if(deleteBoardBtn != null) {
+        deleteBoardBtn.addEventListener("click", function() {
+            deleteBoard();
+        });
+    }
+    
 
     // 게시글 삭제 함수
     function deleteBoard() {
@@ -219,7 +231,13 @@ deleteBoardSock.onmessage = function(e) {
     boards.forEach((board) => {
         if(deletedBoard.boardNo == board.dataset.boardno) {
             const boardLi = board.parentNode; // 부모 요소인 li 선택
-            boardLi.remove();
+            console.log(boardLi.previousSibling)
+            if (boardLi.previousSibling.tagName != "li") {
+                location.reload();
+            } else {
+                boardLi.remove();
+            }
+            
         }
     });
     
