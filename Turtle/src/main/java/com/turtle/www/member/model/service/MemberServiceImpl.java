@@ -20,10 +20,7 @@ import com.turtle.www.member.model.dao.MemberDAO;
 import com.turtle.www.member.model.vo.Certification;
 import com.turtle.www.member.model.vo.Member;
 
-/**
- * @author sujinchoi
- *
- */
+
 @Service
 public class MemberServiceImpl implements MemberService {
 	

@@ -1,5 +1,19 @@
 package com.turtle.www.project.model.dao;
 
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.turtle.www.project.model.vo.Project;
+
 public class ProjectDAO {
+//	
+//	@Autowired
+//	private SqlSessionTemplate sqlSession;
+	
+
+//	public int createProject(Project project) {
+//		
+//		return sqlSession.insert("projectMapper.createProject", project);
+//	}
 
 }
