@@ -1,15 +1,15 @@
-const boards = document.querySelectorAll(".board");
-
+let boards = document.querySelectorAll(".board");
+let lastBoard = document.querySelector(".lastBoard");
 boards.forEach((board) => {
-    const selectBoardDetail = board.querySelector('.select-board-detail');
-    const addBoard = board.querySelector(".add-board");
-    const editBoardTitle = board.querySelector(".edit-boardTitle");
-    const editBoardTitleBtn = board.querySelector(".edit-boardTitle-btn");
-    const boardTitle = board.querySelector(".boardTitle");
-    const closeEditBoardTitleBtn = board.querySelector(".close-edit-boardTitle-btn");
-    const dropBoard = board.querySelector(".delete-board");
-    const addBoardBtn = board.querySelector(".add-board-btn");
-    const deleteBoardBtn = board.querySelector(".delete-board-btn");
+    let selectBoardDetail = board.querySelector('.select-board-detail');
+    let addBoard = board.querySelector(".add-board");
+    let editBoardTitle = board.querySelector(".edit-boardTitle");
+    let editBoardTitleBtn = board.querySelector(".edit-boardTitle-btn");
+    let boardTitle = board.querySelector(".boardTitle");
+    let closeEditBoardTitleBtn = board.querySelector(".close-edit-boardTitle-btn");
+    let dropBoard = board.querySelector(".delete-board");
+    let addBoardBtn = board.querySelector(".add-board-btn");
+    let deleteBoardBtn = board.querySelector(".delete-board-btn");
 
 
     // 제목 수정에 필요한 pmNo, boardNo 변수에 담기
@@ -31,6 +31,7 @@ boards.forEach((board) => {
         editBoardTitle.style.visibility = "visible";
         dropBoard.style.visibility = "visible";
     });
+
 
     // 마우스가 벗어나면 수정, 추가버튼 비활성화
     board.addEventListener("mouseout", function() {
@@ -119,7 +120,8 @@ boards.forEach((board) => {
         let board = {
             "boardSort" : boardSort,
             "workspaceNo" : workspaceNo,
-            "pmNo" : pmNo
+            "pmNo" : pmNo,
+            "regProfileImg" : profileImage
         };
 
         // JSON.parse(문자열) : JSON -> JS Object
@@ -130,6 +132,7 @@ boards.forEach((board) => {
         // insertBoardSock(웹소켓 객체)을 이용하여 메세지 보내기
 		// insertBoardSock.send(값) : 웹소켓 핸들러로 값을 보냄
 		insertBoardSock.send( JSON.stringify(board));
+
     };
     
 
@@ -161,6 +164,7 @@ boards.forEach((board) => {
 
     };
 });
+
 
 // 게시글 제목 수정용 웹소켓 작업
 // 웹소켓 핸들러에서
@@ -209,11 +213,61 @@ insertBoardSock.onmessage = function(e) {
 
 	// 전달 받은 메세지를 JS 객체로 변환
 	const newBoard = JSON.parse(e.data);  // JSON -> JS Object
-    console.log(newBoard);
-    location.reload();
+    // newBoard의 데이터를 div내에 담기
+    addedBoard = '<div class="board" data-boardNo="' + newBoard.boardNo +'" data-pmNo="' + newBoard.pmNo + '" data-boardSort="' + newBoard.boardSort + '">' +
+                    '<div class="edit-board-area">' +
+                        '<div class="add-board" style="visibility:hidden;">' +
+                            '<button class="add-board-btn">+</button>' +
+                        '</div>' +
+                        '<a href="#" class="select-board-detail">' +
+                            '<div class="boardTitle" contenteditable="false">' +
+                            '</div>' +
+                        '</a>' +
+                        '<div class="edit-boardTitle" style="visibility:hidden;">' +
+                            '<button class="edit-boardTitle-btn">edit</button>' +
+                            '<button class="close-edit-boardTitle-btn" style="display:none;">done</button>' +
+                        '</div>' +
+                    '</div>' +
+                        '<div class="board-info">' +                        
+                            '<span class="profile-image"><img src="' + contextPath + newBoard.regProfileImg + '"></span>' +
+                            '<span class="updateDate"> ' + currentTime() + '</span>' +
+                        '</div>' +
+                    '<div class="delete-board" style="visibility:hidden;">' +
+                        '<button class="delete-board-btn">-</button>' +
+                    '</div>' +
+                '</div>';
+
+    boards = document.querySelectorAll(".board");   
+
+    currentlastBoardsort = lastBoard.dataset.boardsort;
+    currentlastBoardsort = parseInt(currentlastBoardsort, 10);
+    lastBoard.dataset.boardSort = currentlastBoardsort + 1;
+    
+
+    boards.forEach((board) => {                
+
+        // 브라우저 내 게시글들의 sort 재정렬
+        currentBoardsort = board.dataset.boardsort;
+        currentBoardsort = parseInt(currentBoardsort, 10); // 정수로 변환
+        
+
+        if(currentBoardsort >= newBoard.boardSort) {                        
+            board.dataset.boardsort = currentBoardsort + 1;
+            
+        }
+
+        
+
+        // 사이위치한 글일때 글 사이에 게시글 삽입
+        if(board.dataset.boardsort == newBoard.boardSort - 1 && board.nextElementSibling != null) {
+            $(board).after(addedBoard);            
+        }
+        if(board.dataset.boardsort == 0) {
+            location.reload();
+        }
+    })
 
 };
-
 
 // 게시글 삭제용 웹소켓 작업
 
@@ -229,22 +283,20 @@ deleteBoardSock.onmessage = function(e) {
 	const deletedBoard = JSON.parse(e.data);  // JSON -> JS Object
     
     boards.forEach((board) => {
+
+        if(!board.nextElementSibling.nextElementSibling) {
+            location.reload();
+        }
+
         if(deletedBoard.boardNo == board.dataset.boardno) {
-            const boardLi = board.parentNode; // 부모 요소인 li 선택
-            console.log(boardLi.previousSibling)
-            if (boardLi.previousSibling.tagName != "li") {
-                location.reload();
-            } else {
-                boardLi.remove();
-            }
+            board.remove();
             
         }
+        
     });
     
 
 };
-
-
 
 function currentTime() {
 	const now = new Date();

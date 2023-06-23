@@ -19,82 +19,81 @@
 <body>
     게시판 리스트 확인
     
-    <div class="board-area">
-    	<ul class="display-board">
-			<fmt:formatDate var="boardRegDate" value="${board.boardRegDate}" pattern="MM-dd HH:mm"/>
-			<fmt:formatDate var="boardUpdateDate" value="${board.boardUpdateDate}" pattern="MM-dd HH:mm"/>	
-			<c:choose>
+    <div class="board-area">   	
+		<fmt:formatDate var="boardRegDate" value="${board.boardRegDate}" pattern="MM-dd HH:mm"/>
+		<fmt:formatDate var="boardUpdateDate" value="${board.boardUpdateDate}" pattern="MM-dd HH:mm"/>	
+		<c:choose>
 			<c:when test="${empty boardList}">
-				<li>
-					<div class="board" data-boardSort="0" data-pmNo="${pmNo}">
-						<div class="edit-board-area">
-							<div class="first-add-board" style="visibility:visible;">
-								<button class="add-board-btn">+</button>
-							</div>
-							<div class="select-board-detail">
-								<div class="boardTitle">
-								</div>
-							</div>
-							<div class="edit-boardTitle" style="visibility:hidden;">
+				
+				<div class="board firstBoard" data-boardSort="0" data-pmNo="${pmNo}">
+					<div class="edit-board-area">
+						<div class="first-add-board" style="visibility:visible;">
+							<button class="add-board-btn">+</button>
+						</div>
+						<div class="select-board-detail">
+							<div class="boardTitle">
 							</div>
 						</div>
-							<div class="board-info">
-								<c:choose>
-									<c:when test="${empty board.boardUpdateDate}">
-									<span class="profile-image"></span>
-									<span class="updateDate"></span>
-									</c:when>
-									<c:otherwise>
-									<span class="profile-image"></span>
-									<span class="updateDate"></span>
-									</c:otherwise>
-								</c:choose>    							
-							</div>
-						<div class="delete-board" style="visibility:hidden;">
+						<div class="edit-boardTitle" style="visibility:hidden;">
 						</div>
 					</div>
-				</li>
+						<div class="board-info">
+							<c:choose>
+								<c:when test="${empty board.boardUpdateDate}">
+								<span class="profile-image"></span>
+								<span class="updateDate"></span>
+								</c:when>
+								<c:otherwise>
+								<span class="profile-image"></span>
+								<span class="updateDate"></span>
+								</c:otherwise>
+							</c:choose>    							
+						</div>
+					<div class="delete-board" style="visibility:hidden;">
+					</div>
+				</div>
+				
 			</c:when>
 			<c:otherwise>
 				<c:forEach var="board" items="${boardList}" varStatus="status">									
-					<li>
-						<div class="board" data-boardNo="${board.boardNo}" data-pmNo="${pmNo}" data-boardSort="${board.boardSort}">
-							<div class="edit-board-area">
-								<div class="add-board" style="visibility:hidden;">
-									<button class="add-board-btn">+</button>
-								</div>
-								<a href="#" class="select-board-detail">
-									<div class="boardTitle" contenteditable="false">
-										${board.boardTitle}
-									</div>
-								</a>
-								<div class="edit-boardTitle" style="visibility:hidden;">
-									<button class="edit-boardTitle-btn">edit</button>
-									<button class="close-edit-boardTitle-btn" style="display:none;">done</button>
-								</div>
-							</div>
-								<div class="board-info">
-									<c:choose>
-										<c:when test="${empty board.boardUpdateDate}">
-										<span class="profile-image"><img src="${contextPath}${board.regProfileImg}"></span>
-										<span class="updateDate">${board.boardRegDate}</span>
-										</c:when>
-										<c:otherwise>
-										<span class="profile-image"><img src="${contextPath}${board.updateProfileImg}"></span>
-										<span class="updateDate">${board.boardUpdateDate}</span>
-										</c:otherwise>
-									</c:choose>    							
-								</div>
-							<div class="delete-board" style="visibility:hidden;">
-								<button class="delete-board-btn">-</button>
-							</div>    						
-						</div>
-					</li>    			
-				</c:forEach>
-				<li>
-					<div class="board" data-boardSort="${boardList[boardList.size() - 1].boardSort}" data-pmNo="${pmNo}">
+					
+					<div class="board" data-boardNo="${board.boardNo}" data-pmNo="${pmNo}" data-boardSort="${board.boardSort}">
 						<div class="edit-board-area">
-							<div class="last-add-board" style="visibility:visible;">
+							<div class="add-board" style="visibility:hidden;">
+								<button class="add-board-btn">+</button>
+							</div>
+							<a href="#" class="select-board-detail">
+								<div class="boardTitle" contenteditable="false">
+									${board.boardTitle}
+								</div>
+							</a>
+							<div class="edit-boardTitle" style="visibility:hidden;">
+								<button class="edit-boardTitle-btn">edit</button>
+								<button class="close-edit-boardTitle-btn" style="display:none;">done</button>
+							</div>
+						</div>
+							<div class="board-info">
+								<c:choose>
+									<c:when test="${empty board.boardUpdateDate}">
+									<span class="profile-image"><img src="${contextPath}${board.regProfileImg}"></span>
+									<span class="updateDate">${board.boardRegDate}</span>
+									</c:when>
+									<c:otherwise>
+									<span class="profile-image"><img src="${contextPath}${board.updateProfileImg}"></span>
+									<span class="updateDate">${board.boardUpdateDate}</span>
+									</c:otherwise>
+								</c:choose>    							
+							</div>
+						<div class="delete-board" style="visibility:hidden;">
+							<button class="delete-board-btn">-</button>
+						</div>    						
+					</div>
+					    			
+				</c:forEach>
+				<c:if test="${!empty boardList}">
+					<div class="board lastBoard" data-boardSort="${boardList[boardList.size() - 1].boardSort}" data-pmNo="${pmNo}">
+						<div class="edit-board-area">
+							<div class="add-board" style="visibility:hidden;">
 								<button class="add-board-btn">+</button>
 							</div>
 							<div class="select-board-detail">
@@ -119,10 +118,12 @@
 						<div class="delete-board" style="visibility:hidden;">
 						</div>
 					</div>
-				</li>
+				</c:if>
+				
+				
 			</c:otherwise>
 		</c:choose>		    		
-    	</ul>
+	
     </div>
      
  	<!--------------------------------------- sockjs를 이용한 WebSocket 구현을 위해 라이브러리 추가 ---------------------------------------------->
