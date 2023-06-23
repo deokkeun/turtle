@@ -11,7 +11,7 @@ bar.addEventListener('click', ()=> {
 
 
 /*초대버튼 클릭시 팝업창 띄우기 */
-$('.btn').click(function() {
+$('.btnt').click(function() {
     $('.pop').fadeIn();
     $('.pop').addClass('black');
     
@@ -159,7 +159,7 @@ $(document).ready(function() {
         for(let i=0; i<invitedUser.length; i++) {
             console.log(invitedUser[i].getAttribute('id'));
             console.log(invitedUser[i].getAttribute('name'));
-            res3 = "<div class='user2'><a class='invited-user'><i class='fa-solid fa-circle-user'></i></a><span class='user-name2'>"+invitedUser[i].getAttribute('name')+"</span><span class='user-email2' id="+invitedUser[i].getAttribute('id')+">"+invitedUser[i].getAttribute('id')+"</span></div>";
+            res3 = "<div class='user2'><a class='invited-user'><i class='fa-solid fa-circle-user'></i></a><span class='user-name2' id='"+invitedUser[i].getAttribute('name')+"'>"+invitedUser[i].getAttribute('name')+"</span><span class='user-email2' id="+invitedUser[i].getAttribute('id')+">"+invitedUser[i].getAttribute('id')+"</span></div>";
   
             $('.invited-member').append(res3);
             
@@ -241,3 +241,33 @@ $('#search-txt').keyup(function() {
     })
 });
 
+//이모티콘
+let button3 = document.querySelector("#emoji_btn2");
+const picker2 = new EmojiButton({
+  position: 'bottom-start'
+});
+
+button3.addEventListener('click', () => {
+  picker2.togglePicker(button3);
+});
+
+picker2.on('emoji', emoji => {
+  const text_box2 = document.querySelector('#emoji_btn2');
+  text_box2.innerHTML = emoji;
+});
+
+//섬머노트
+$(document).ready(function() {
+	//여기 아래 부분
+	$('#summernote').summernote({
+		  height: 200,                 // 에디터 높이
+		  minHeight: null,             // 최소 높이
+		  maxHeight: null,             // 최대 높이
+		  focus: true,                  // 에디터 로딩후 포커스를 맞출지 여부
+		  lang: "ko-KR",					// 한글 설정
+		  placeholder: '프로젝트를 소개해주세요.'	//placeholder 설정
+         
+        
+    
+	});
+});

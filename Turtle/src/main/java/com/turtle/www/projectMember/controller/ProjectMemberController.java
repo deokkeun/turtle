@@ -27,7 +27,7 @@ public class ProjectMemberController {
 	
 	
 	@GetMapping("/createProject")
-	public String createFroject() {return "project/createFroject";}
+	public String createProject() {return "project/createProject";}
 	
 	@GetMapping("/createWorkspace")
 	public String createWorkspace() {return "project/createWorkspace";}

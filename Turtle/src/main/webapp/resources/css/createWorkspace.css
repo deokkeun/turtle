@@ -108,6 +108,18 @@ section {
     background-color: #F8F8F8;
     border-radius: 10px;
 }
+
+.projectEmoji {
+   
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 20px;
+}
+.projectEmoji:hover  > i{
+    cursor: pointer;
+  
+    border-radius: 20px;
+}
 .workspace-plus {
     margin-top: 6vh;
 }
@@ -249,6 +261,7 @@ section {
     align-items: center;
     margin-top: 5vh;
     width: 100%;
+    margin-bottom: 5%;
 }
 .next-btn > a {
     margin: 0 auto;
@@ -327,7 +340,7 @@ section {
 
 .language > div a {
     position: absolute;
-    z-index: 1;
+ 
     top: 70%;
     left: 60%;
 }

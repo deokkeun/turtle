@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/0041fb1dcb.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="${contextPath}/resources/css/createWorkspace.css">
-
+    
     <title>Document</title>
 </head>
 <body>
@@ -50,11 +50,16 @@
             <i class="fa-solid fa-layer-group">워크스페이스 관리</i>
         </div>
         <!-- 워크스페이스 이름 입력 section -->
-        <div class="section2">
-            <p>워크스페이스명 입력</p>
-            <input type="text" placeholder="워크스페이스명을 입력해주세요.">
-
-        </div>
+        <form action="workspace" method="post">
+            <div class="section2">
+                <p>워크스페이스명 입력</p>
+                <div>
+                    <span id="emoji_btn2" class="projectEmoji"><i class="fa-regular fa-face-smile"></i></span>
+                    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
+                    <input type="text" placeholder="워크스페이스명을 입력해주세요.">
+                </div>
+            </div>
+        </form>
 
         <!-- 워크스페이스 언어 설정 section -->
         <div class="language-section">
@@ -207,11 +212,11 @@
 
 
             </div>
-
-            <div class="language" id="SELECTED">
-           
-            </div>
-
+            <form action="selected" method="post">
+                <div class="language" id="SELECTED">
+            
+                </div>
+            </form>
         </div>
 
 
@@ -225,13 +230,14 @@
 
 
         <!-- 워크스페이스 추가 section -->
-     
-        <div class="workspace">
+        <form action="selectedWorkspace" method="post">
+            <div class="workspace">
             
          
 
             
-        </div>
+            </div>
+        </form>
         <a class="plus-btn"><i class="fa-solid fa-circle-plus"></i></a>
         <div class="pop">
             <div class="pop-content">

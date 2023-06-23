@@ -5,75 +5,9 @@
 }
 
 
-/*nav*/
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    padding: 8px 12px;
-    width: 100%;
-    box-shadow: 0 3px 3px -3px #a1b8be;;
-    
+body {
+    z-index: 992;
 }
-a {
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-}
-
-.logo img {
-    max-width: 100px;
-}
-.nav-links {
-    display: flex;
-    list-style: none;
-    padding-left: 0;
-    flex-basis: 70%;
-    
-}
-.nav-links li {
-    padding: 8px 12px;
-    border-radius: 10px;
-    font-weight: bold;
-    margin: 0px 20px;
-
-
-}
-.nav-links li:hover {
-    background-color: #a1b8be;
-    transition: 500ms;
-
-}
-
-.nav-links2 {
-    padding-left: 0px;
-    display: flex;
-    list-style: none;
-
-   
-}
-.nav-links2 li {
-    padding: 8px 7px;
-    font-size: 20px;
-    
-}
-.nav-links2 a:hover {
-    
-    color: #a1b8be;
-    transition: 50ms;
-}
-.bar {
-    display: none;
-    position: absolute;
-    right: 15px;
-    font-size: 24px;
-    color: black;
-    
-}
-
-
 /*section 구성*/
 section {
     text-align: center;
@@ -93,9 +27,10 @@ section {
     font-size: 18px;
     font-weight: bold;
     margin-top: 6vh;
+    position: relative;
     
 }
-.section2 p {
+.section2 > p {
     margin-right: 160px;
     margin-bottom: 5px;
 }
@@ -106,8 +41,28 @@ section {
     border: none;
     background-color: #F8F8F8;
     border-radius: 10px;
+    margin-left: 5px;
+   
+}
+.section2 > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
 }
 
+.projectEmoji {
+   
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 20px;
+}
+.projectEmoji:hover  > i{
+    cursor: pointer;
+  
+    border-radius: 20px;
+}
 .section3 {
     display: flex;
     justify-content: center;
@@ -116,7 +71,7 @@ section {
     margin-top: 30px;
     margin-right: 60px;
 }
-.section3 button {
+.btnt {
     margin-left: 10px;
     padding: 5px;
     border-radius: 5px;
@@ -317,6 +272,7 @@ section {
     font-weight: bold;
     border-radius: 8px;
     padding: 5px;
+    margin-bottom: 55%;
 }
 
 .next-btn > a:hover {
@@ -356,66 +312,29 @@ section {
     margin-left: 15px;
 }
 
+.note-frame {
+   
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#projectDescription {
+    margin-top: 20px;
+}
 @media screen and (max-width:768px) {
  
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 8px 12px;
-        position: absolute;
-        top: 0;
-       height: auto;
-    }
-   
+
     .logo img {
         width: 60px;
     }
-    .nav-links {
-       visibility: hidden;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        height: 0vh;
-        margin: 0;
-        flex-basis: auto;
-     
-    }
-    .nav-links li {
-      
-        text-align: center;
-        margin: 0;
-       
-        
-    }
-    .nav-links2 {
-       visibility: hidden;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        width: 100%;
-        height: 0vh;
-     
-    }
+   
+ 
     .bar {
         display: block;
         
     }
  
-    .nav-links.active {
-        overflow: hidden;
-        height: 20vh;
-        display: block;
-        visibility: visible;
-        transition: all 1s;
-        
-    }
-    .nav-links2.active {
-        margin-top: 2vh;
-        height: 4vh;
-        display: flex;
-       visibility: visible;
-       transition: all 1s;
-    }
+   
     .section1 i{
         font-size: 36px;
     }
