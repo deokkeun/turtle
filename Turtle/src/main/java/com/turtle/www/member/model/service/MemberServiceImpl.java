@@ -70,30 +70,23 @@ public class MemberServiceImpl implements MemberService {
   
   //   -------------------------------------------------------------------------------------
   
-	/** [비밀번호]이메일 인증(회원인지 확인)
-	 * @author deokkeun
-	 */
+	// [비밀번호]이메일 인증(회원인지 확인)
 	@Override
 	public String memberConfirmation(String inputEmail) {
 		return dao.memberConfirmation(inputEmail);
 	}
 
-	/** [비밀번호]인증 이메일 조회
-	 * @author deokkeun
-	 */
+	// [비밀번호]인증 이메일 조회
 	@Override
 	public int passwordSelectCertification(String sendEmail) {
 		return dao.passwordSelectCertification(sendEmail);
 	}
 
-	/** [비밀번호]인증번호 추가(인증 없는경우)
-	 * @author deokkeun
-	 */
+	// [비밀번호]인증번호 추가(인증 없는경우)
 	@Override
 	public int passwordInsertCertification(String sendEmail) throws Exception{
 		
 		Certification certification = new Certification();
-		
 		int result = 0;
 
 			// 메일 송/수신 옵션 설정(1명 보내기)
@@ -140,9 +133,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 
-	/** [비밀번호]인증번호 수정(인증 받은적 있는경우)
-	 * @author deokkeun
-	 */
+	// [비밀번호]인증번호 수정(인증 받은적 있는경우)
 	@Override
 	public int passwordUpdateCertification(String sendEmail) throws Exception {
 
@@ -193,10 +184,7 @@ public class MemberServiceImpl implements MemberService {
 		return result;
 	}
 
-	/** [비밀번호]인증번호 생성
-	 * @author deokkeun
-	 * @return
-	 */
+	// [비밀번호]인증번호 생성
 	public String authenticationNumber() {
 		// 인증번호 6자리 생성코드(영어 대/소문 + 숫자)
 		String cNumber = "";

@@ -6,20 +6,17 @@ import com.turtle.www.member.model.vo.Member;
 
 public interface MemberService {
 
+	
 	/** 로그인(회원정보 가져오기) 서비스
 	 * @param inputMember
 	 * @return
 	 */
 	Member login(Member inputMember);
 
-  
-  
-  
 	/** [비밀번호]이메일 인증(회원인지 확인)
 	 * @return
 	 */
 	String memberConfirmation(String inputEmail);
-
 	
 	/** [비밀번호]인증 이메일 조회
 	 * @param sendEmail
@@ -47,9 +44,6 @@ public interface MemberService {
 	 */
 	int certificationNumber(String certificationNumber);
 
-  
-  
-  
 	/** 이메일 중복 검사 서비스
 	 * @param memberEmail
 	 * @return
@@ -62,7 +56,6 @@ public interface MemberService {
 	 */
 	int signUp(Member inputMember);
 
-	
 	/** 이메일 인증 번호 전송 서비스
 	 * @param map
 	 * @return
@@ -74,9 +67,6 @@ public interface MemberService {
 	 * @return
 	 */
 	int checkNumber(Map<String, Object> map);
-
-
-
 
 	/** 결제 기간(한달) 초과 시 Basic(기본제공)으로 변경
 	 * @param memberNo

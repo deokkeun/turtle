@@ -405,7 +405,7 @@
         <li class="nav-item">
           <a class="nav-link collapsed" href="${contextPath}/payment/pay/1">
             <i class="bx bxs-receipt"></i>
-            <span>Payment Detailss</span>
+            <span>Payment Details</span>
           </a>
         </li><!-- End Blank Page Nav -->
 

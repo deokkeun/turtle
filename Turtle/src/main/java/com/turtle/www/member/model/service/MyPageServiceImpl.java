@@ -111,7 +111,7 @@ public class MyPageServiceImpl implements MyPageService {
 	@Override
 	public int newChangePw(Map<String, Object> paramMap) {
 		paramMap.put("memberPw", bcrypt.encode((String)paramMap.get("newPw")));
-		
+		// 로그인 경우, 비 로그인 경우
 		return dao.newChangePw(paramMap);
 	}
 	

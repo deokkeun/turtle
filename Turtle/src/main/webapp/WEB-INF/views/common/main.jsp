@@ -58,7 +58,7 @@
         </form>
         
 
-        <form action="../workspace/loadmap" method="GET">
+        <form action="../workspace/loadmap/1" method="GET">
             <button>git loadMap test(GET)</button>
         </form>
       

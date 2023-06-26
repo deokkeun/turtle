@@ -51,18 +51,19 @@
             </section>
         </form>
 
-          <!-- 모달창 -->
-          <div id="modal" class="modal">
-            <div class="modal-contentAccount">
-                <h2>정말 탈퇴하시겠습니까?</h2>
-                <p>탈퇴할 경우, TURTLE의 모든 서비스를 이용할 수 없습니다.</p>
-                <div class="modal-buttons">
-                    <button onclick="closeModal()" id="closeModal">아니오</button>
-                    <button onclick="confirmDelete()" id="confirmDelete">예, 탈퇴하겠습니다.</button>    
-                </div>
-            </div>
-        </div>
 
+
+                <!-- 모달창 -->
+                <div id="modal" class="modal">
+                    <div class="modal-contentAccount">
+                        <h4>정말 탈퇴하시겠어요?</h4>
+                        <p>탈퇴 버튼 선택 시, 계정은<br> 삭제되며 복구되지 않습니다.</p>
+                        <div class="modal-buttons">
+                            <button onclick="confirmDelete()" id="confirmDelete">탈퇴</button>    
+                            <button onclick="closeModal()" id="closeModal">취소</button>
+                        </div>
+                    </div>
+                </div>
 
     </main>
 

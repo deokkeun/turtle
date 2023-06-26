@@ -16,7 +16,7 @@
 		<result property="expireType" column="EXPIRE_TYPE"/>
 	</resultMap>
 	
-	<!-- 결제 정보(전체) 불러오기(결제 타입) -->
+	<!-- 결제 정보(전체) 불러오기(결제 완료) -->
 	<select id="paymentType" resultMap="pay_rm">
 		SELECT *
 		FROM PAYMENT
@@ -53,7 +53,8 @@
 	<select id="payList" resultMap="pay_rm">
 		SELECT PAY_NO, PAY_TYPE, PAY_REG_DATE, PAY_NAME, PRICE, EXPIRE_DATE, EXPIRE_TYPE
 		FROM PAYMENT p
-		WHERE PROJECT_NO = ${projectNo}
+		WHERE MEMBER_NO = ${memberNo}
+		AND PROJECT_NO = ${projectNo}
 		ORDER BY PAY_NO DESC
 	</select>
 	
