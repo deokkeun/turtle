@@ -126,7 +126,7 @@ public class MyPageController {
 		
 	}
 	
-	/** 새로운 비밀번호로 변경
+	/** (로그인 상태)새로운 비밀번호로 변경
 	 * @return
 	 */
 	@PostMapping("/newChangePw")
@@ -137,6 +137,34 @@ public class MyPageController {
 								@ModelAttribute("loginMember") Member loginMember) {
 		
 		paramMap.put("memberNo", loginMember.getMemberNo());
+		
+		int result = service.newChangePw(paramMap);
+		
+		if(result > 0) {
+			// 세션 없애기
+			status.setComplete();
+			
+			// 비밀번호 변경 성공 시
+			ra.addFlashAttribute("message", "비밀번호가 변경되었습니다.");
+			return "redirect:/";
+		} else {
+			model.addAttribute("message", "비밀번호 변경 중 오류가 발생하였습니다. 고객센터에 문의해주세요.");
+			// 비밀번호 변경 실패 시
+			return "member/myPage-changePw";
+		}
+	}
+	
+
+	/** (비로그인 상태)새로운 비밀번호로 변경
+	 * @return
+	 */
+	@PostMapping("/newChangePassword")
+	public String newChangePw(@RequestParam Map<String, Object> paramMap,
+								Model model,
+								RedirectAttributes ra,
+								SessionStatus status) {
+		
+		paramMap.put("memberNo", paramMap.get("memNo"));
 		
 		int result = service.newChangePw(paramMap);
 		

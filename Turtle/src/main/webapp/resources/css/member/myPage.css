@@ -205,6 +205,7 @@
 .flex-left {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     margin: 10px 0;
 }
 .findPassword {
@@ -283,7 +284,7 @@
     position: absolute;
     transition-duration: 0.5s;
     transition-timing-function: ease;
-    top: 24px;
+    top: 22px;
     left: 15px;
     color: rgba(0, 0, 0, 0.5);
     pointer-events: none;

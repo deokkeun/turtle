@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 80px auto;
+    margin: 100px auto 200px auto;
 }
 /* 제목 */
 #myPageChangePw-box > section:nth-child(1){
@@ -16,7 +16,7 @@
 #myPageChangePw-box > section:nth-child(2){
     width: 100%;
     padding: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
 }
 /* 새 비밀번호 공간 */
@@ -63,19 +63,33 @@
 .myPageChangePw-input-box {
     position: relative;
     width: 100%;
-    border: 5px solid pink;
+    /* border: 5px solid pink; */
 }
-.myPageChangePw-input-box > div:nth-child(1) {
-    position: absolute;
-    top: 14px;
-    left: 20px;
+.input-message {
     pointer-events: none;
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.5);
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
 }
-.myPageChangePw-input-box > img:nth-child(3) {
+.input-message-move {
+    pointer-events: none;
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    font-size: 15px;
+    color: #1A73E8;
+}
+.myPageChangePw-input-box > button:nth-child(3) {
     position: absolute;
     top: 10px;
-    right: 20px;
+    right: 24px;
     width: 24px;
+    border: none;
+    background-color: transparent;
 }
 
 
@@ -98,4 +112,29 @@
     border: none;
     letter-spacing: 1px;
     cursor: pointer;
+}
+
+
+#input-message-red {
+    height: 20px;
+    padding-left: 10px;
+    font-size: 14px;
+    color: #d93025;
+}
+
+
+
+.confirm {
+    color: #1A73E8;
+}
+.error {
+    color: #d93025;
+}
+.confirm-border {
+    border-color: #1A73E8;
+    border: 2px solid #1A73E8;
+}
+.error-border {
+    border-color: #d93025;
+    border: 2px solid #d93025;
 }

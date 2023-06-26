@@ -28,9 +28,9 @@ public class PayServiceImpl implements PayService{
 	@Autowired
 	private PayDAO dao;
 	
-	private String impKey = "key";
+	private String impKey = "impKey";
 
-	private String impSecret = "secret";
+	private String impSecret = "impSecret";
 
 	
 	
@@ -185,8 +185,8 @@ public class PayServiceImpl implements PayService{
 	 *
 	 */
 	@Override
-	public List<Pay> payList(int projectNo) {	
-		return dao.payList(projectNo);
+	public List<Pay> payList(Map<String, Object> map) {	
+		return dao.payList(map);
 	}
 
 	
