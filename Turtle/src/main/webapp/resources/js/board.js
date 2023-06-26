@@ -234,7 +234,7 @@ insertBoardSock.onmessage = function(e) {
     addedEditBoardArea.appendChild(addedAddBoard);
 
     const addedSelectBoardDetail = document.createElement('a');
-    addedSelectBoardDetail.href = '#';
+    addedSelectBoardDetail.href = '../../boardDetail/' + projectNo + '/' + workspaceNo + '/' + newBoard.boardNo;
     addedSelectBoardDetail.classList.add('select-board-detail');
 
     const addedBoardTitle = document.createElement('div');

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.turtle.www.board.model.dao.BoardDAO;
 import com.turtle.www.board.model.vo.Board;
+import com.turtle.www.board.model.vo.BoardDetail;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -41,6 +42,20 @@ public class BoardServiceImpl implements BoardService {
 	public int deleteBoard(Board board) {
 
 		return dao.deleteBoard(board);
+	}
+
+	// 게시글 조회 서비스 구현
+	@Override
+	public Board selectBoard(int boardNo) {
+
+		return dao.selectBoard(boardNo);
+	}
+
+	// 게시글 상세조회 서비스 구현
+	@Override
+	public List<BoardDetail> selectBoardDetail(int boardNo) {
+
+		return dao.selectBoardDetail(boardNo);
 	}
 	
 	

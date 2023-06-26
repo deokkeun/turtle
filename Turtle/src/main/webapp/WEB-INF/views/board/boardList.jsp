@@ -62,7 +62,7 @@
 							<div class="add-board" style="visibility:hidden;">
 								<button class="add-board-btn">+</button>
 							</div>
-							<a href="#" class="select-board-detail">
+							<a href="../../boardDetail/${projectNo}/${workspaceNo}/${board.boardNo}" class="select-board-detail">
 								<div class="boardTitle" contenteditable="false">
 									${board.boardTitle}
 								</div>
@@ -135,6 +135,7 @@
     <script>    
    
     	const pmNo = "${pmNo}";
+    	const projectNo = "${projectNo}";
     	const workspaceNo = "${workspaceNo}";
     	const contextPath = "${contextPath}";
     	

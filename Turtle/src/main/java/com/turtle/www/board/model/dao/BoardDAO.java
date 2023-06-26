@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.turtle.www.board.model.vo.Board;
+import com.turtle.www.board.model.vo.BoardDetail;
 
 @Repository
 public class BoardDAO {
@@ -62,6 +63,24 @@ public class BoardDAO {
 	public int deleteBoard(Board board) {
 		
 		return sqlSession.update("boardMapper.deleteBoard", board);
+	}
+
+	/** 게시글 조회 DAO
+	 * @param boardNo
+	 * @return board
+	 */
+	public Board selectBoard(int boardNo) {
+
+		return sqlSession.selectOne("boardMapper.selectBoard", boardNo);
+	}
+
+	/** 게시글 상세조회 DAO
+	 * @param boardNo
+	 * @return boardDetailList
+	 */
+	public List<BoardDetail> selectBoardDetail(int boardNo) {
+
+		return sqlSession.selectList("boardMapper.selectBoardDetail", boardNo);
 	}
 
 }
