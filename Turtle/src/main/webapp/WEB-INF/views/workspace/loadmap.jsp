@@ -16,30 +16,20 @@
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <main id="main" class="main">
-        <!-- header include -->
-        <jsp:include page="/WEB-INF/views/common/header.jsp" />
+    <main>
+ 		<!-- header include -->
+       	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-        <section id="loadmap-container">
+        <div class="repos-container">
+            <div class="get-repos">
+                <input type="text" placeholder="Github Username">
+                <span class="get-button">Get Repos</span>
+            </div>
+            <div class="show-data">
+                <span>No Data To Show</span>
+            </div>
+        </div>
 
-            <section class="repos-container">
-                <div class="get-repos">
-                    <input type="text" placeholder="Github Username">
-                    <span class="get-button">Get Repos</span>
-                </div>
-                <div class="show-data">
-                    <span>No Data To Show</span>
-                </div>
-            </section>
-
-            <section>
-                // Define a tree element where dimensions are mandatory
-                <div id="tree" style="height:700px; width:900px">
-                    
-                </div>
-            </section>
-            
-        </section>
 
     </main>
 
@@ -51,7 +41,5 @@
     <script src="${contextPath}/resources/js/main.js"></script>
     <!-- loadmap.js 연결 -->
     <script src="${contextPath}/resources/js/workspace/loadmap.js"></script>
-    <!-- treeviz -->
-    <script src="https://rawgit.com/PierreCapo/treeviz/master/dist/index.js"></script>
 </body>
 </html>

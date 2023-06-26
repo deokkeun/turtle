@@ -1,14 +1,7 @@
-#loadmap-container {
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid black;
-}
-
-
 .repos-container {
-    min-width: 380px;
+    width: 800px;
     background-color: #F6F6F6;
-    /* margin: auto; */
+    margin: auto;
     overflow: scroll;
   }
   .repos-container .get-repos {
