@@ -69,6 +69,11 @@ public class MemberController {
 		Member loginMember = service.login(inputMember);
 		
 		if(loginMember != null) { // 로그인 성공 시
+			
+			// 결제 기간(한달) 초과 시 Basic(기본제공)으로 변경
+			int paymentDateCheck = service.paymentDateCheck(loginMember.getMemberNo());
+			logger.debug("paymentDateCheck = " + paymentDateCheck);
+			
 			logger.debug(loginMember + "로그인 성공시 로그인 멤버 정보");
 			model.addAttribute("loginMember", loginMember); // == req.setAttribute("loginMember", loginMember);
 		
@@ -277,7 +282,7 @@ public class MemberController {
 		return path;
 	}
 	
-  
+//  -------------------------------------------------------------------------------------
   
 	/** 아이디 찾기
 	 * @return
@@ -296,7 +301,7 @@ public class MemberController {
 	}
 
 	
-	/** 비밀번호 찾기 (랜딩페이지 비회원 경우)
+	/** 비밀번호 변경 (랜딩페이지 비회원 경우)
 	 * @return
 	 */
 	@GetMapping("/changePw")
@@ -362,7 +367,7 @@ public class MemberController {
 		return new Gson().toJson(result);
 	}
 
-	/** [비밀번호]인증번호 확인
+	/** [비밀번호]인증번호로 회원 번호 가져오기
 	 * @param certificationNumber
 	 * @param model
 	 * @return
@@ -401,11 +406,9 @@ public class MemberController {
 			model.addAttribute("loginMember", loginMember);
 			ra.addFlashAttribute("message", loginMember.getMemberName() + "테스트 로그인 성공");
 			logger.info(loginMember.getMemberName() +" 로그인 성공");
-			System.out.println(loginMember.getMemberName() +" 로그인 성공");
 		} else {
 			ra.addFlashAttribute("message", "테스트 로그인 실패");
 			logger.info("로그인 실패");
-			System.out.println("로그인 실패");
 		}
 		
 		return "redirect:/";

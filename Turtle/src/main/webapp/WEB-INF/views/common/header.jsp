@@ -299,7 +299,8 @@
   
             <li>
               <a href="my-projects/project1.html">
-                <i class="bi bi-circle"></i><span>project 1</span>
+                <!-- <i class="bi bi-circle"></i> -->
+                <span>project 1</span>
                 <div class="file-menu">
                   <button class="rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i></button>
                   <button class="delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i></button>
@@ -320,7 +321,8 @@
           <ul id="shared-project-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
               <a href="">
-                <i class="bi bi-circle"></i><span>project 1</span>
+                <!-- <i class="bi bi-circle"></i> -->
+                <span>project 1</span>
                 <div class="file-menu">
                   <button class="rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i></button>
                   <button class="delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i></button>
@@ -399,11 +401,11 @@
             <span>Settings</span>
           </a>
         </li><!-- End Error 404 Page Nav -->
-  
+        <!-- 결제 -->
         <li class="nav-item">
-          <a class="nav-link collapsed" href="">
+          <a class="nav-link collapsed" href="${contextPath}/payment/pay/1">
             <i class="bx bxs-receipt"></i>
-            <span>Payment Detailss</span>
+            <span>Payment Details</span>
           </a>
         </li><!-- End Blank Page Nav -->
 
