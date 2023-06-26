@@ -76,6 +76,9 @@ $(".BgColor").click(function() {
 });
 
 
+const calNo = document.getElementById("calNo");
+const projectNo = document.getElementById("projectNo");
+const workspaceNo = document.getElementById("workspaceNo");
 
 var calendar = null;
 
@@ -90,9 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // initialize the external events
     // -----------------------------------------------------------------
 
-    const calNo = document.getElementById("calNo");
-    const projectNo = document.getElementById("projectNo");
-    const workspaceNo = document.getElementById("workspaceNo");
    
    console.log(projectNo.value);
    console.log(workspaceNo.value);
@@ -358,31 +358,31 @@ function padZero(number) {
 
   
   // 모든 일정 데이터 가져오기
-  function loadingEvents() {
+function loadingEvents() {
 
-    $.ajax({
-      url: contextPath + '/calendar/calendar/' + projectNo.value + '/' + workspaceNo.value,
-      data: {},
-      type: 'POST',
-      dataType: 'JSON',
-      async: false,
-      success: function(result) {
-        console.log(result);
+  $.ajax({
+    url: contextPath + '/calendar/calendar/' + projectNo.value + '/' + workspaceNo.value,
+    data: {},
+    type: 'POST',
+    dataType: 'JSON',
+    async: false,
+    success: function(result) {
+      console.log(result);
 
-        // alert("loadingEvents 성공" + result);
+      // alert("loadingEvents 성공" + result);
 
-        all_events = result; // 결과를 변수에 할당
-      },
-      error: function(error) {
-        alert("loadingEvents 실패");
-      }
-    });
-    
-
-    return all_events;
-    
-  }
+      all_events = result; // 결과를 변수에 할당
+    },
+    error: function(error) {
+      alert("loadingEvents 실패");
+    }
+  });
   
+
+  return all_events;
+  
+}
+
 
 
 

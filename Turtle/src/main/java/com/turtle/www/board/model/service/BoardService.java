@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.turtle.www.board.model.vo.Board;
+import com.turtle.www.board.model.vo.BoardDetail;
 
 public interface BoardService {
 
@@ -30,6 +31,19 @@ public interface BoardService {
 	 * @return result
 	 */
 	int deleteBoard(Board board);
+
+	
+	/** 게시글 조회 서비스
+	 * @param boardNo
+	 * @return board
+	 */
+	Board selectBoard(int boardNo);
+
+	/** 게시글 상세조회 서비스
+	 * @param boardNo
+	 * @return boardDetailList
+	 */
+	List<BoardDetail> selectBoardDetail(int boardNo);
 
 	
 

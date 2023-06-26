@@ -314,6 +314,7 @@
 </li><!-- End My Project Nav -->
   
  <li class="nav-item" style="position: relative;">
+
           <a class="nav-link collapsed" data-bs-target="#shared-project-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-chevron-down" id="arrow"></i><i class="bi-share-fill"></i> <span>SHARED PROJECT</span>
           </a>
@@ -396,11 +397,11 @@
             <span>Settings</span>
           </a>
         </li><!-- End Error 404 Page Nav -->
-  
+        <!-- 결제 -->
         <li class="nav-item">
-          <a class="nav-link collapsed" href="">
+          <a class="nav-link collapsed" href="${contextPath}/payment/pay/1">
             <i class="bx bxs-receipt"></i>
-            <span>Payment Detailss</span>
+            <span>Payment Details</span>
           </a>
         </li><!-- End Blank Page Nav -->
 

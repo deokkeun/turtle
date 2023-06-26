@@ -29,10 +29,11 @@
             <div class="horizontal-line"></div>
             <div class="details">
               <p>결제번호: <span id="transaction-date">${payInfo.payNo}</span></p>
-              <p>거래일시: <span id="transaction-date">${payInfo.payRegDate}</span></p>
               <p>구매자: <span id="seller">${payInfo.payName}</span></p>
               <p>상품명: <span id="product">${payInfo.payType}</span></p>
               <p>금액: <span id="amount"><sup>￦</sup>${payInfo.price}</span></p>
+              <p>사용 시작일: <span id="transaction-date">${payInfo.payRegDate}</span></p>
+              <p>사용 종료일: <span id="transaction-date">${payInfo.expireDate}</span></p>
             </div>
             <p class="pay-result">결제가 성공적으로 완료되었습니다. 감사합니다.</p>
             <div class="back-button-container">

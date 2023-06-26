@@ -426,7 +426,7 @@ th {
   text-align: -webkit-match-parent;
 }
 
-thead,
+/* thead,
 tbody,
 tfoot,
 tr,
@@ -435,7 +435,7 @@ th {
   border-color: inherit;
   border-style: solid;
   border-width: 0;
-}
+} */
 
 label {
   display: inline-block;

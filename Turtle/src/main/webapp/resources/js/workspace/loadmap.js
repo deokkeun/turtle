@@ -56,16 +56,16 @@ function getRepos() {
         mainDiv.appendChild(theUrl);
 
         // Create Stars Count Span
-        let starsSpan = document.createElement("span");
+        // let starsSpan = document.createElement("span");
 
         // Create The Stars Count Text
-        let starsText = document.createTextNode(`Stars ${repo.stargazers_count}`);
+        // let starsText = document.createTextNode(`Stars ${repo.stargazers_count}`);
 
         // Add Stars Count Text To Stars Span
-        starsSpan.appendChild(starsText);
+        // starsSpan.appendChild(starsText);
 
         // Append Stars Count Span To Main Div
-        mainDiv.appendChild(starsSpan);
+        // mainDiv.appendChild(starsSpan);
 
         // Add Class On Main Div
         mainDiv.className = 'repo-box';
@@ -80,3 +80,49 @@ function getRepos() {
   }
 
 }
+
+
+// ---------------------------------------------------------------------
+const tree = document.getElementById("tree");
+
+
+// Define a dataset
+var data = [
+  { id: 1, text_1: "Father", father: '깃 저장소 이름' },
+  { id: 2, text_1: "Child A", father: 1 },
+  { id: 3, text_1: "Child B", father: 1 },
+  { id: 4, text_1: "Subchild C", father: 2 }
+];
+
+// Define and configure a tree object
+var myTree = Treeviz.create({
+  htmlId: "tree",
+  idKey: "id",
+  hasFlatData: true,
+  nodeColor: (nodeData) => "grey",
+  relationnalField: "father",
+});
+
+
+// Display the tree based on the data
+myTree.refresh(data);
+
+
+
+var hierarchical_data_example = {
+  name: "Mom",
+  qty: 10,
+  children: [
+    { name: "Son A", qty: 3 },
+    { name: "Son B", qty: 7 },
+  ],
+};
+
+var myTree = Treeviz.create({
+  htmlId: "tree",
+  idKey: "name",
+  hasFlatData: false,
+  relationnalField: "children",
+});
+
+myTree.refresh(hierarchical_data_example);

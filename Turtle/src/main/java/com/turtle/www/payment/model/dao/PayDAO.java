@@ -1,6 +1,7 @@
 package com.turtle.www.payment.model.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,8 +51,8 @@ public class PayDAO {
 	 * @param projectNo
 	 * @return
 	 */
-	public List<Pay> payList(int projectNo) {
-		return sqlSession.selectList("payMapper.payList", projectNo);
+	public List<Pay> payList(Map<String, Object> map) {
+		return sqlSession.selectList("payMapper.payList", map);
 	}
 	
 	
