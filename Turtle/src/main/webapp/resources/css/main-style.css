@@ -741,16 +741,16 @@ h6 {
   font-weight: 600;
   color: #012970;
   transition: 0.3;
-  padding: 10px 0 10px 40px;
+  padding: 10px 18px 10px 40px;
   transition: 0.3s;
 }
 
-.sidebar-nav .nav-content a i {
+/* .sidebar-nav .nav-content a i {
   font-size: 6px;
-  margin-right: 8px;
+  margin-right: 10px;
   line-height: 0;
   border-radius: 50%;
-}
+} */
 
 .sidebar-nav .nav-content a:hover,
 .sidebar-nav .nav-content a.active {
@@ -792,7 +792,8 @@ h6 {
   border: none; /* 테두리를 없애거나 원하는 테두리 스타일을 설정*/
   box-shadow: none; /* 그림자 효과를 없애거나 원하는 그림자 스타일을 설정 */
   padding: 0; /* 내부 여백을 없애거나 원하는 크기로 설정 */
-  
+   margin-left: 10px; /* 원하는 간격으로 조정 */
+  margin-top: -5px; /* 원하는 위치로 조정 */
 }
 
 .right-sidebar {
@@ -867,8 +868,10 @@ h6 {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-/*--------------------------------------------------------------
+.nav-link {
+  display: flex;
+  align-items: center;
+}
 
 .rename-button{
     /* 버튼의 기본 디자인을 제거하거나 수정하는 스타일을 적용 */
@@ -880,21 +883,35 @@ h6 {
 
 }
 
-.delete-button{
-  /* 버튼의 기본 디자인을 제거하거나 수정하는 스타일을 적용 */
-  background: none; /* 배경을 없애거나 원하는 배경을 설정 */
-  border: none; /* 테두리를 없애거나 원하는 테두리 스타일을 설정*/
-  box-shadow: none; /* 그림자 효과를 없애거나 원하는 그림자 스타일을 설정 */
-  padding: 0; /* 내부 여백을 없애거나 원하는 크기로 설정 */
+ .delete-button{
+
+  background: none; 
+  border: none; 
+  box-shadow: none; 
+  padding: 0;
   
 }
 .duplicate-button{
-  /* 버튼의 기본 디자인을 제거하거나 수정하는 스타일을 적용 */
+ 
+  background: none; 
+  border: none; 
+  box-shadow: none; 
+  padding: 0;
+  
+}
+
+
+
+.dropdown-nev {
   background: none; /* 배경을 없애거나 원하는 배경을 설정 */
   border: none; /* 테두리를 없애거나 원하는 테두리 스타일을 설정*/
   box-shadow: none; /* 그림자 효과를 없애거나 원하는 그림자 스타일을 설정 */
   padding: 0; /* 내부 여백을 없애거나 원하는 크기로 설정 */
-  
 }
-
+.add-file-button {
+    position: absolute;
+    right: 10%;
+top:26px;
+    transform: translateY(-50%);
+}
 

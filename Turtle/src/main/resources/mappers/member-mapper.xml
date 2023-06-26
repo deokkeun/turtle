@@ -87,6 +87,14 @@
 		JOIN CERTIFICATION c  ON(m.MEMBER_EMAIL = c.EMAIL)
 		WHERE c.CODE_NUMBER = #{certificationNumber}
 	</select>
+	
+	<!-- 결제 기간(한달) 초과 시 Basic(기본제공)으로 변경 -->
+	<update id="paymentDateCheck">
+		UPDATE PAYMENT 
+		SET PAY_TYPE = 'Basic' 
+		WHERE MEMBER_NO = ${memberNo}
+		AND PAY_REG_DATE + 30 >= SYSDATE
+	</update>
 
   
   <!-- createProject페이지 회원찾기 -->

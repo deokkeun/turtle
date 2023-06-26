@@ -2,6 +2,7 @@ package com.turtle.www.payment.model.service;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 import org.json.simple.parser.ParseException;
 
@@ -56,10 +57,10 @@ public interface PayService {
 	void paymentCancle(String token, String impUid, String amount, String string) throws IOException, ParseException;
 
 	/** 결제 내역 (마이페이지)
-	 * @param projectNo
+	 * @param map
 	 * @return
 	 */
-	List<Pay> payList(int projectNo);
+	List<Pay> payList(Map<String, Object> map);
 
 	/** 결제타입 초기화(Basic)
 	 * 
