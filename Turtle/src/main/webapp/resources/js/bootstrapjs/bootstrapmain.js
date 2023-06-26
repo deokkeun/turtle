@@ -199,99 +199,7 @@ if (select('.toggle-sidebar2-btn')) {
   const useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const isSmallScreen = window.matchMedia('(max-width: 1023.5px)').matches;
 
-  tinymce.init({
-    selector: 'textarea.tinymce-editor',
-    plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons',
-    editimage_cors_hosts: ['picsum.photos'],
-    menubar: 'file edit view insert format tools table help',
-    toolbar: 'undo redo | bold italic underline strikethrough | fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
-    toolbar_sticky: true,
-    toolbar_sticky_offset: isSmallScreen ? 102 : 108,
-    autosave_ask_before_unload: true,
-    autosave_interval: '30s',
-    autosave_prefix: '{path}{query}-{id}-',
-    autosave_restore_when_empty: false,
-    autosave_retention: '2m',
-    image_advtab: true,
-    link_list: [{
-        title: 'My page 1',
-        value: 'https://www.tiny.cloud'
-      },
-      {
-        title: 'My page 2',
-        value: 'http://www.moxiecode.com'
-      }
-    ],
-    image_list: [{
-        title: 'My page 1',
-        value: 'https://www.tiny.cloud'
-      },
-      {
-        title: 'My page 2',
-        value: 'http://www.moxiecode.com'
-      }
-    ],
-    image_class_list: [{
-        title: 'None',
-        value: ''
-      },
-      {
-        title: 'Some class',
-        value: 'class-name'
-      }
-    ],
-    importcss_append: true,
-    file_picker_callback: (callback, value, meta) => {
-      /* Provide file and text for the link dialog */
-      if (meta.filetype === 'file') {
-        callback('https://www.google.com/logos/google.jpg', {
-          text: 'My text'
-        });
-      }
 
-      /* Provide image and alt text for the image dialog */
-      if (meta.filetype === 'image') {
-        callback('https://www.google.com/logos/google.jpg', {
-          alt: 'My alt text'
-        });
-      }
-
-      /* Provide alternative source and posted for the media dialog */
-      if (meta.filetype === 'media') {
-        callback('movie.mp4', {
-          source2: 'alt.ogg',
-          poster: 'https://www.google.com/logos/google.jpg'
-        });
-      }
-    },
-    templates: [{
-        title: 'New Table',
-        description: 'creates a new table',
-        content: '<div class="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>'
-      },
-      {
-        title: 'Starting my story',
-        description: 'A cure for writers block',
-        content: 'Once upon a time...'
-      },
-      {
-        title: 'New list with dates',
-        description: 'New List with dates',
-        content: '<div class="mceTmpl"><span class="cdate">cdate</span><br><span class="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>'
-      }
-    ],
-    template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
-    template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
-    height: 600,
-    image_caption: true,
-    quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
-    noneditable_class: 'mceNonEditable',
-    toolbar_mode: 'sliding',
-    contextmenu: 'link image table',
-    skin: useDarkMode ? 'oxide-dark' : 'oxide',
-    content_css: useDarkMode ? 'dark' : 'default',
-    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
-  });
 
   /**
    * Initiate Bootstrap validation check
@@ -333,7 +241,7 @@ if (select('.toggle-sidebar2-btn')) {
   }
 
 })();
-//프로젝트 내용 추가
+
 function addFile(menuId, event) {
   if (event) {
     event.stopPropagation();
@@ -344,35 +252,62 @@ function addFile(menuId, event) {
     var fileLink = menuId.split('-')[0] + "-projects/" + projectName.toLowerCase() + ".html";
 
     var newFile = document.createElement("li");
-    newFile.innerHTML = '<a class="nav-link"><span>' + projectName + '</span></a>';
+
+    var fileLinkElement = document.createElement("a");
+    fileLinkElement.className = "nav-link";
+    fileLinkElement.innerHTML = '<span>' + projectName + '</span>';
+
+    var fileMenu = document.createElement("div");
+    fileMenu.className = "file-menu dropdown ms-auto";
+    fileMenu.oncontextmenu = function () {
+      return false;
+    };
+
+    var dropdownToggle = document.createElement("button");
+    dropdownToggle.className = "dropdown-nev";
+    dropdownToggle.type = "button";
+    dropdownToggle.dataset.bsToggle = "dropdown";
+    dropdownToggle.setAttribute("aria-haspopup", "true");
+    dropdownToggle.setAttribute("aria-expanded", "false");
+    dropdownToggle.innerHTML = '<i class="bi bi-three-dots-vertical"></i>';
+
+    var dropdownMenu = document.createElement("div");
+    dropdownMenu.className = "dropdown-menu";
 
     var renameButton = document.createElement("button");
-    renameButton.className = "rename-button";
-    renameButton.innerHTML = '<i class="bi bi-pencil"></i>';
-    renameButton.onclick = function(event) {
+    renameButton.className = "dropdown-item rename-button";
+    renameButton.innerHTML = '<i class="bi bi-pencil"></i> 이름 바꾸기';
+    renameButton.onclick = function (event) {
       event.stopPropagation();
       renameFile(this);
     };
 
     var deleteButton = document.createElement("button");
-    deleteButton.className = "delete-button";
-    deleteButton.innerHTML = '<i class="bi bi-trash"></i>';
-    deleteButton.onclick = function(event) {
+    deleteButton.className = "dropdown-item delete-button";
+    deleteButton.innerHTML = '<i class="bi bi-trash"></i> 삭제하기';
+    deleteButton.onclick = function (event) {
       event.stopPropagation();
       deleteFile(this);
     };
 
     var duplicateButton = document.createElement("button");
-    duplicateButton.className = "duplicate-button";
-    duplicateButton.innerHTML = '<i class="bi bi-files"></i>';
-    duplicateButton.onclick = function(event) {
+    duplicateButton.className = "dropdown-item duplicate-button";
+    duplicateButton.innerHTML = '<i class="bi bi-files"></i> 복제하기';
+    duplicateButton.onclick = function (event) {
       event.stopPropagation();
       duplicateFile(this);
     };
 
-    newFile.firstChild.appendChild(renameButton);
-    newFile.firstChild.appendChild(deleteButton);
-    newFile.firstChild.appendChild(duplicateButton);
+    dropdownMenu.appendChild(renameButton);
+    dropdownMenu.appendChild(deleteButton);
+    dropdownMenu.appendChild(duplicateButton);
+
+    fileMenu.appendChild(dropdownToggle);
+    fileMenu.appendChild(dropdownMenu);
+
+    fileLinkElement.appendChild(fileMenu);
+
+    newFile.appendChild(fileLinkElement);
 
     var menuNav = document.getElementById(menuId);
     menuNav.appendChild(newFile);
@@ -380,7 +315,8 @@ function addFile(menuId, event) {
 }
 
 function renameFile(button) {
-  var fileSpan = button.parentNode.getElementsByTagName("span")[0];
+  var fileItem = button.closest(".file-menu");
+  var fileSpan = fileItem.previousElementSibling;
   var newFileName = prompt("새로운 파일 이름을 입력하세요:", fileSpan.innerText);
   if (newFileName) {
     fileSpan.innerText = newFileName;
@@ -388,13 +324,13 @@ function renameFile(button) {
 }
 
 function deleteFile(button) {
-  var fileItem = button.parentNode.parentNode;
+  var fileItem = button.parentNode.parentNode.parentNode;
   var menuNav = fileItem.parentNode;
   menuNav.removeChild(fileItem);
 }
 
 function duplicateFile(button) {
-  var fileItem = button.parentNode.parentNode;
+  var fileItem = button.parentNode.parentNode.parentNode;
   var clone = fileItem.cloneNode(true);
   var projectName = clone.getElementsByTagName("span")[0].innerText;
 
@@ -412,17 +348,17 @@ function duplicateFile(button) {
 
   clone.getElementsByTagName("span")[0].innerText = duplicatedProjectName;
 
-  clone.getElementsByClassName("rename-button")[0].onclick = function(event) {
+  clone.getElementsByClassName("rename-button")[0].onclick = function (event) {
     event.stopPropagation();
     renameFile(this);
   };
 
-  clone.getElementsByClassName("delete-button")[0].onclick = function(event) {
+  clone.getElementsByClassName("delete-button")[0].onclick = function (event) {
     event.stopPropagation();
     deleteFile(this);
   };
 
-  clone.getElementsByClassName("duplicate-button")[0].onclick = function(event) {
+  clone.getElementsByClassName("duplicate-button")[0].onclick = function (event) {
     event.stopPropagation();
     duplicateFile(this);
   };
@@ -430,7 +366,6 @@ function duplicateFile(button) {
   var menuNav = fileItem.parentNode;
   menuNav.appendChild(clone);
 }
-
 
 const navLink = document.querySelector('.nav-link');
 

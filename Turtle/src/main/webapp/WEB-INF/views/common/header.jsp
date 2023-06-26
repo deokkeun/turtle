@@ -14,13 +14,11 @@
   <!-- bootstrap.css -->
   <link href="${contextPath}/resources/css/booystrapcss/bootstrap.css" rel="stylesheet">
   <link href="${contextPath}/resources/images/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="${contextPath}/resources/images/remixicon/remixicon.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <link href="${contextPath}/resources/css/boxicons/css/boxicons.min.css" rel="stylesheet">
 	<!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
-  <!-- Favicons -->
-  <link href="${contextPath}/resources/favicon/favicon-16x16.png" rel="icon">
-  <link href="${contextPath}/resources/favicon/apple-icon-60x60.png" rel="apple-touch-icon">
 </head>
 <body>
 
@@ -282,68 +280,57 @@
         </ul><!-- End Profile Dropdown Items -->
       </li><!-- End Profile Nav -->
       <li class="nav-item">
-        <a class="nav-link " href="${contextPath}/member/login">
+        <a class="nav-link " href="">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
   
-        <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#project-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-chevron-down" id="arrow"></i><i class="bi bi-menu-button-wide"></i><span>PROJECT</span>
-            <button class="add-file-button ms-auto" onclick="addFile('project-nav', event)"><i class="bi bi-plus"></i></button>
-          </a>
-      
-          <ul id="project-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+  <li class="nav-item" style="position: relative;">
+        <a class="nav-link collapsed" data-bs-target="#project-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-chevron-down" id="arrow"></i><i class="bi bi-menu-button-wide"></i><span>PROJECT</span>
+        </a>
+        <button class="add-file-button" onclick="addFile('project-nav', event)"><i class="bi bi-plus"></i></button>
+
+  <ul id="project-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+    <li>
+      <a href="my-projects/project1.html">
+        <span>project 1</span>
+        <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
+          <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="bi bi-three-dots-vertical"></i>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="project1Dropdown">
+            <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
+            <button class="dropdown-item delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i> 삭제하기</button>
+            <button class="dropdown-item duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i> 복제하기</button>
+          </div>
+        </div>
+      </a>
+    </li>
+    <!-- 추가적인 프로젝트 항목들 -->
+  </ul>
+</li><!-- End My Project Nav -->
   
-            <li>
-              <a href="my-projects/project1.html">
-                <i class="bi bi-circle"></i><span>project 1</span>
-                <div class="file-menu">
-                  <button class="rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i></button>
-                  <button class="delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i></button>
-                </div>
-              </a>
-            </li>
-        
-            <!-- 추가적인 프로젝트 항목들 -->
-  
-          </ul>
-        </li><!-- End My Project Nav -->
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#shared-project-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-chevron-down" id="arrow"></i> <i class="bi-share-fill"></i><span>SHARED PROJECT</span>
-          <button class="add-file-button ms-auto" onclick="addFile('shared-project-nav')"><i class="bi bi-plus"></i></button>
-          </a>
-          <ul id="shared-project-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="">
-                <i class="bi bi-circle"></i><span>project 1</span>
-                <div class="file-menu">
-                  <button class="rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i></button>
-                  <button class="delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i></button>
-                </div>
-              </a>
-            </li>
-       
-            <!-- 추가적인 프로젝트 항목들 -->
-          </ul>
-        </li><!-- End Shared Project Nav -->
-        <li class="nav-item">
+ <li class="nav-item" style="position: relative;">
           <a class="nav-link collapsed" data-bs-target="#shared-project-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-chevron-down" id="arrow"></i><i class="bi-share-fill"></i> <span>SHARED PROJECT</span>
-            <button class="add-file-button ms-auto" onclick="addFile('shared-project-nav')"><i class="bi bi-plus"></i></button>
           </a>
+          <button class="add-file-button" onclick="addFile('shared-project-nav', event)"><i class="bi bi-plus"></i></button>
           <ul id="shared-project-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
               <a href="">
-                </i><span>project 1</span>
-                <div class="file-menu">
-                  <button class="rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i></button>
-                  <button class="delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i></button>
-                  <button class="duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i></button>
+                <span>project 1</span>
+                <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
+                  <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="bi bi-three-dots-vertical"></i>
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="project1Dropdown">
+                    <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i>이름 바꾸기</button>
+                    <button class="dropdown-item delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i>삭제하기</button>
+                    <button class="dropdown-item duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i>복제하기</button>
+                  </div>
                 </div>
               </a>
             </li>
@@ -351,29 +338,39 @@
             <!-- 추가적인 프로젝트 항목들 -->
           </ul>
         </li><!-- End Shared Project Nav -->
-        <li class="nav-item">
+  <li class="nav-item" style="position: relative;">
           <a class="nav-link collapsed" data-bs-target="#workspace-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-chevron-down" id="arrow"></i><i class="bx bx-desktop"></i><span>WORKSPACE</span>
-            <button class="add-file-button ms-auto" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button>
           </a>
+          <button class="add-file-button" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button>
           <ul id="workspace-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
             <li>
               <a href="">
                <span>파일</span>
-                <div class="file-menu">
-                  <button class="rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i></button>
-                  <button class="delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i></button>
-                  <button class="duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i></button>
+               <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
+                <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="bi bi-three-dots-vertical"></i>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="project1Dropdown">
+                  <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
+                  <button class="dropdown-item delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i> 삭제하기</button>
+                  <button class="dropdown-item duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i> 복제하기</button>
                 </div>
+              </div>
               </a>
             </li>
             <li>
               <a href="">
                 <span>할일 목록</span>
-                <div class="file-menu">
-                  <button class="rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i></button>
-                  <button class="delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i></button>
-                  <button class="duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i></button>
+                <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
+                  <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="bi bi-three-dots-vertical"></i>
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="project1Dropdown">
+                    <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
+                    <button class="dropdown-item delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i> 삭제하기</button>
+                    <button class="dropdown-item duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i> 복제하기</button>
+                  </div>
                 </div>
               </a>
             </li>
@@ -416,20 +413,7 @@
   
   <aside class="right-sidebar" id="rightSidebar" >
 
-        <!-- <jsp:include page='/WEB-INF/views/chat/chatRoomList.jsp'/> -->
-    <div>${projectNo}</div>
-    <ul>
-        <input type="hidden" id="projectNo" value="${projectNo}">
-    <c:forEach var="chatRoom" items="${chatRoomList}">
-    	<li>
-            <form action="../chatRoom/${projectNo}/${chatRoom.chatRoomNo}">
-    			<button class="chatBtn" value="${chatRoom.chatRoomNo}">${chatRoom.chatRoomTitle}</button>
-            </form>
-         
-    	</li>  	    	   	
-    </c:forEach>
-    </ul>
-  
+    <!-- <jsp:include page='/WEB-INF/views/chat/chatRoomList.jsp'/> -->
     
   <button class="sidebar-close-btn" onclick="toggleSidebar()"><i class="bi bi-chevron-double-right"></i></button>
   <ul class="right-sidebar-nav" id="right-sidebar-nav">
@@ -471,7 +455,7 @@
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js?ver=1"></script>
+  <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js?ver=2"></script>
  
   
   <script>
