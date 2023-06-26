@@ -14,13 +14,7 @@ public class WorkspaceController {
 	@Autowired
 	private WorkspaceService service;
 
-	/** 깃 로드맵 페이지 이동
-	 * @return
-	 */
-	@GetMapping("/loadmap")
-	public String loadmap() {
-		return "workspace/loadmap";
-	}
+
 	
 	
 	

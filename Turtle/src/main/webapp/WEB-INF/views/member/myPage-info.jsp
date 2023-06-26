@@ -16,14 +16,12 @@
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-
-	<input type="hidden" id="memberNo" value="${loginMember.memberNo}">
-
-    <main id="main" class="main">
- 		<!-- header include -->
-       	<jsp:include page="/WEB-INF/views/common/header.jsp" />
-
+	
+	<main id="main" class="main">
+		<!-- header include -->
+		<jsp:include page="/WEB-INF/views/common/header.jsp" />
+		
+		<input type="hidden" id="memberNo" value="${loginMember.memberNo}">
 
 		<section id="myPage-box">
 			<section id="profile-box">
@@ -128,8 +126,6 @@
 			</section>
 
 
-
-
 			<!-- 비밀번호 변경 모달창 -->
 			<section id="changePw-modal">
 				<section id="changePw-modal-box">
@@ -161,7 +157,6 @@
 			
 		
 		</section>
-
 
     </main>
     

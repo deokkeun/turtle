@@ -16,46 +16,50 @@
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <main>
+    <main id="main" class="main">
  		<!-- header include -->
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
   		<!-- 로그인한 경우 비밀번호 확인 후 비밀번호 변경 -->
         <form action="../myPage/newChangePw" method="POST" onsubmit="return newChangePwValidate()">
 
-            <section id="myPageChangePw-box">
-                
-                <section>
-                    <div class="changePw-title">비밀번호</div>
-                    <div class="changePw-subTitle">안전한 비밀번호를 만들고 같은 비밀번호를 다른 계정에 사용하지 마세요.</div>
-                </section>
-
-                <section id="myPageChangePw-inner-box">
-                    <section class="myPageChangePw-input-box">
-                        <div>새 비밀번호</div>
-                        <input type="password" class="newPw input" name="newPw" autocomplete="false">
-                        <img src="${contextPath}/resources/images/memberProfile/member.png" alt="비밀번호 보기">
-                    </section>
+                <section id="myPageChangePw-box">
+    
                     <section>
-                        <div>
-                            비밀번호 안전성:
-                        </div>
-                        <div id="password-safety">
-                            8자 이상 입력하세요. 다른 사이트에서 쓰는 비밀번호나 애완동물의 이름처럼<br>
-                            추측하기 쉬운 이름은 사용하지 마세요.
-                        </div>
+                        <div class="changePw-title">비밀번호</div>
+                        <div class="changePw-subTitle">안전한 비밀번호를 만들고 같은 비밀번호를 다른 계정에 사용하지 마세요.</div>
                     </section>
-                    <section class="myPageChangePw-input-box">
-                        <div>새 비밀번호 확인</div>
-                        <input type="password" class="newPwConfirm input" name="newPwConfirm" autocomplete="false">
-                        <img src="${contextPath}/resources/images/memberProfile/member.png" alt="비밀번호 보기">
+    
+                    <section id="myPageChangePw-inner-box">
+                        <section class="myPageChangePw-input-box">
+                            <div class="input-message">새 비밀번호</div>
+                            <input type="password" class="newPw input" name="newPw" autocomplete="false">
+                            <button type="button" class="showPw"><img src="${contextPath}/resources/images/member/eye-off.svg" alt="비밀번호 보기"></button>
+                            <input type="hidden" class="showPw-value" value="0">
+                            <div id="input-message-red"></div>
+                        </section>
+                        <section>
+                            <div>
+                                비밀번호 안전성: <span id="confirm-message"></span>
+                            </div>
+                            <div id="password-safety">
+                                8자 이상 입력하세요. 다른 사이트에서 쓰는 비밀번호나 애완동물의 이름처럼<br>
+                                추측하기 쉬운 이름은 사용하지 마세요.
+                            </div>
+                        </section>
+                        <section class="myPageChangePw-input-box">
+                            <div class="input-message">새 비밀번호 확인</div>
+                            <input type="password" class="newPwConfirm input" name="newPwConfirm" autocomplete="false">
+                            <button type="button" class="showPw"><img src="${contextPath}/resources/images/member/eye-off.svg" alt="비밀번호 보기"></button>
+                            <input type="hidden" class="showPw-value" value="0">
+                        </section>
+                        <section>
+                            <button type="submit" class="changePw-btn">비밀번호 변경</button>
+                        </section>
                     </section>
-                    <section>
-                        <button type="submit" class="changePw-btn">비밀번호 변경</button>
-                    </section>
+                    
                 </section>
-                
-            </section>
+    
 
         </form>
                 

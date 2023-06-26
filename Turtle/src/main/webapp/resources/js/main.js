@@ -96,7 +96,6 @@ function closeModal() {
 
 function confirmDelete() {
    
-
     // 모달창 닫기
     closeModal();
 }

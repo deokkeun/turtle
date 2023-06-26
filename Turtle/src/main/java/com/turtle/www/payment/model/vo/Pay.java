@@ -20,4 +20,6 @@ public class Pay {
 	private int memberNo; // 회원번호
 	private int price; // 가격
 	private String impUid; // 거래 고유번호(취소, 환불)
+	private Date expireDate; // 결제만료일
+	private String expireType; // 결제만료 타입
 }

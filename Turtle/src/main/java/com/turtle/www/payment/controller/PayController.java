@@ -1,6 +1,8 @@
 package com.turtle.www.payment.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -31,18 +33,19 @@ import com.turtle.www.payment.model.vo.Pay;
 @SessionAttributes({"loginMember", "workspaceCount", "projectMemberCount", "paymentType", "projectNo", "payInfo", "payList"})
 public class PayController {
 	
+	@Autowired
+	private PayService service;
+	
+	// Iamport
+	private IamportClient client = new IamportClient("impKey", "impSecret");
+	
+	Logger logger = LoggerFactory.getLogger(CalendarController.class);
+	
+	
 	  @GetMapping("/payment")
 	  public String showPaymentPage() {
 		  return "payment/payment";
 	  }
-	
-	@Autowired
-	private PayService service;
-	
-	Logger logger = LoggerFactory.getLogger(CalendarController.class);
-	
-	// Iamport
-	private IamportClient client = new IamportClient("impKey", "impSecret");
 	
 	/** 결제 페이지로 이동
 	 * @return
@@ -53,18 +56,22 @@ public class PayController {
 						HttpServletResponse resp,
 						@PathVariable("projectNo") int projectNo) {
 		
+		System.out.println("결제 페이지 이동");
+//		-------------------------- 테스트 필요 없으면 삭제 예정 ------------------------------------
 		// 프로젝트 번호로 
 		// 워크스페이스 개수, 프로젝트 참여자 수 조회 
 		int workspaceCount = service.workspaceCount(projectNo);
-		
 		int projectMemberCount = service.projectMemberCount(projectNo);
 		// 워크스페이스 개수
 		logger.debug("workspaceCount" + workspaceCount);
 		// 프로젝트 참여자 수 조회 
 		logger.debug("projectMemberCount" + projectMemberCount);
-		
 		model.addAttribute("workspaceCount", workspaceCount);
 		model.addAttribute("projectMemberCount", projectMemberCount);
+//		-------------------------- 테스트 필요 없으면 삭제 예정 ------------------------------------
+		
+		
+		
 		model.addAttribute("projectNo", projectNo);
 		
 		// 결제 정보(전체) 불러오기(결제 타입)
@@ -100,6 +107,8 @@ public class PayController {
 		
 		logger.debug(token);
 		
+
+//		-------------------------- 정보 확인용 삭제 예정 ------------------------------------
 		logger.debug("결제 정보" + pay);
 		logger.debug("주문번호" + pay.getPayNo());
 		logger.debug("프로젝트번호" + pay.getProjectNo());		
@@ -108,6 +117,7 @@ public class PayController {
 		logger.debug("회원번호" + pay.getMemberNo());
 		logger.debug("가격" + pay.getPrice());
 		logger.debug("거래 고유번호" + pay.getImpUid());
+//		-------------------------- 정보 확인용 삭제 예정 ------------------------------------
 
 		// 가져온 토큰값으로 결제된 정보 조회
 		String amount = service.paymentInfo(pay.getImpUid(), token);
@@ -148,9 +158,16 @@ public class PayController {
 	 */
 	@GetMapping("/payList/{projectNo}")
 	public String payList(@PathVariable("projectNo") int projectNo, 
-			Model model) {
+							@ModelAttribute("loginMember") Member loginMember,
+							Model model) {
 		
-		List<Pay> payList = service.payList(projectNo);
+		Map<String, Object> map = new HashMap<>();
+		int memberNo = loginMember.getMemberNo();
+		map.put("memberNo", memberNo);
+		map.put("projectNo", projectNo);
+		
+		
+		List<Pay> payList = service.payList(map);
 		model.addAttribute("payList", payList);
 		
 		return "payment/payList";

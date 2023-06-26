@@ -111,6 +111,15 @@ public class MemberDAO {
 		
 		return sqlSession.selectOne("memberMapper.checkNumber", map);
 	}
+
+
+	/** 결제 기간(한달) 초과 시 Basic(기본제공)으로 변경
+	 * @param memberNo
+	 * @return
+	 */
+	public int paymentDateCheck(int memberNo) {
+		return sqlSession.update("memberMapper.paymentDateCheck", memberNo);
+	}
 	
 
 
