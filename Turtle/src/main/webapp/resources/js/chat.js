@@ -120,6 +120,7 @@ chattingSock.onmessage = function(e){
 			location.reload();
 	
 		}else{
+			console.log(cDate);
 			li.setAttribute('id','myChat');
 			li.append(span,p);
 		}
