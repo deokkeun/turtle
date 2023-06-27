@@ -1,0 +1,514 @@
+2023-06-26 09:32:29 [INFO] 초기화 필터 생성
+2023-06-26 09:32:46 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 0:0:0:0:0:0:0:1
+2023-06-26 09:32:50 [DEBUG] password999! / $2a$10$EGG9DjnwckfX03G9iPu5feDxLzyKDqV2YBaFprSeuMSlB5VjQLivW
+2023-06-26 09:32:50 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-26 09:32:50 [INFO] Running Time : 4015ms
+2023-06-26 09:32:50 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-26 09:32:50 [INFO] 일일맨 로그인 성공
+2023-06-26 09:32:55 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 09:32:55 [INFO] Return Value : 4
+2023-06-26 09:32:55 [INFO] Running Time : 146ms
+2023-06-26 09:32:55 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-26 09:32:55 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 09:32:55 [INFO] Return Value : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt;, memoRegDate=2023-06-09, memoUpdateDate=2023-06-25, memoBgColor=#FEE182, memoSt=N, memoType=workspace, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=  여기가 원래 개인메모장 입니다  , memoRegDate=2023-06-09, memoUpdateDate=2023-06-25, memoBgColor=#FEE182, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-06-26 09:32:55 [INFO] Running Time : 76ms
+2023-06-26 09:32:55 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-06-26 09:33:11 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 09:33:11 [INFO] Return Value : 4
+2023-06-26 09:33:11 [INFO] Running Time : 22ms
+2023-06-26 09:33:11 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-26 09:33:11 [INFO] ---------------------------------------
+Start : BoardServiceImpl - selectBoardList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 09:33:11 [INFO] Return Value : [Board(boardNo=1135, workspaceNo=0, boardTitle=dd, pmNo=0, updatePmNo=0, boardRegDate=2023-06-25, boardUpdateDate=2023-06-25, eventStartDate=null, eventEndDate=null, boardSort=1, boardSt=null, regMemberName=일일맨, regProfileImg=/resources/images/memberProfile/20230607144506_10190.gif, updateMemberName=일일맨, updateProfileImg=/resources/images/memberProfile/20230607144506_10190.gif), Board(boardNo=1142, workspaceNo=0, boardTitle=null, pmNo=0, updatePmNo=0, boardRegDate=2023-06-26, boardUpdateDate=null, eventStartDate=null, eventEndDate=null, boardSort=2, boardSt=null, regMemberName=구구맨, regProfileImg=/resources/images/memberProfile/20230623204046_81311.jpeg, updateMemberName=null, updateProfileImg=null), Board(boardNo=1141, workspaceNo=0, boardTitle=null, pmNo=0, updatePmNo=0, boardRegDate=2023-06-26, boardUpdateDate=null, eventStartDate=null, eventEndDate=null, boardSort=3, boardSt=null, regMemberName=일일맨, regProfileImg=/resources/images/memberProfile/20230607144506_10190.gif, updateMemberName=null, updateProfileImg=null), Board(boardNo=1138, workspaceNo=0, boardTitle=된다ㅋㅋ, pmNo=0, updatePmNo=0, boardRegDate=2023-06-25, boardUpdateDate=2023-06-25, eventStartDate=null, eventEndDate=null, boardSort=7, boardSt=null, regMemberName=일일맨, regProfileImg=/resources/images/memberProfile/20230607144506_10190.gif, updateMemberName=일일맨, updateProfileImg=/resources/images/memberProfile/20230607144506_10190.gif), Board(boardNo=1137, workspaceNo=0, boardTitle=null, pmNo=0, updatePmNo=0, boardRegDate=2023-06-25, boardUpdateDate=null, eventStartDate=null, eventEndDate=null, boardSort=8, boardSt=null, regMemberName=일일맨, regProfileImg=/resources/images/memberProfile/20230607144506_10190.gif, updateMemberName=null, updateProfileImg=null)]
+2023-06-26 09:33:11 [INFO] Running Time : 32ms
+2023-06-26 09:33:11 [INFO] End : BoardServiceImpl - selectBoardList
+---------------------------------------------
+
+2023-06-26 09:33:16 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 09:33:16 [INFO] Return Value : 4
+2023-06-26 09:33:16 [INFO] Running Time : 19ms
+2023-06-26 09:33:16 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-26 09:33:16 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 09:33:16 [INFO] Return Value : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt;, memoRegDate=2023-06-09, memoUpdateDate=2023-06-25, memoBgColor=#FEE182, memoSt=N, memoType=workspace, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=  여기가 원래 개인메모장 입니다  , memoRegDate=2023-06-09, memoUpdateDate=2023-06-25, memoBgColor=#FEE182, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-06-26 09:33:16 [INFO] Running Time : 53ms
+2023-06-26 09:33:16 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-06-26 09:33:30 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#FEE182, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 09:33:30 [INFO] Return Value : 1
+2023-06-26 09:33:30 [INFO] Running Time : 30ms
+2023-06-26 09:33:30 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 09:33:33 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#A1D5AE, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 09:33:33 [INFO] Return Value : 1
+2023-06-26 09:33:33 [INFO] Running Time : 27ms
+2023-06-26 09:33:33 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 09:33:37 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 09:33:37 [INFO] Return Value : 4
+2023-06-26 09:33:37 [INFO] Running Time : 26ms
+2023-06-26 09:33:37 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-26 09:33:37 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 09:33:37 [INFO] Return Value : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt;, memoRegDate=2023-06-09, memoUpdateDate=2023-06-26, memoBgColor=#A1D5AE, memoSt=N, memoType=workspace, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=  여기가 원래 개인메모장 입니다  , memoRegDate=2023-06-09, memoUpdateDate=2023-06-25, memoBgColor=#FEE182, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-06-26 09:33:37 [INFO] Running Time : 21ms
+2023-06-26 09:33:37 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-06-26 09:33:41 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#F6A9B0, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 09:33:41 [INFO] Return Value : 1
+2023-06-26 09:33:41 [INFO] Running Time : 22ms
+2023-06-26 09:33:41 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 09:33:43 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#9FDFEB, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 09:33:43 [INFO] Return Value : 1
+2023-06-26 09:33:43 [INFO] Running Time : 19ms
+2023-06-26 09:33:43 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 09:33:52 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#FEE182, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 09:33:52 [INFO] Return Value : 1
+2023-06-26 09:33:52 [INFO] Running Time : 16ms
+2023-06-26 09:33:52 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 09:34:41 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 09:34:41 [INFO] Return Value : 4
+2023-06-26 09:34:41 [INFO] Running Time : 23ms
+2023-06-26 09:34:41 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-26 09:34:41 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 09:34:41 [INFO] Return Value : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=2023-06-09, memoUpdateDate=2023-06-26, memoBgColor=#FEE182, memoSt=N, memoType=workspace, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=  여기가 원래 개인메모장 입니다  , memoRegDate=2023-06-09, memoUpdateDate=2023-06-25, memoBgColor=#FEE182, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-06-26 09:34:41 [INFO] Running Time : 27ms
+2023-06-26 09:34:41 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-06-26 09:35:16 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 09:35:16 [INFO] Return Value : 4
+2023-06-26 09:35:16 [INFO] Running Time : 19ms
+2023-06-26 09:35:16 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-26 09:35:16 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 09:35:16 [INFO] Return Value : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=2023-06-09, memoUpdateDate=2023-06-26, memoBgColor=#FEE182, memoSt=N, memoType=workspace, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=  여기가 원래 개인메모장 입니다  , memoRegDate=2023-06-09, memoUpdateDate=2023-06-25, memoBgColor=#FEE182, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-06-26 09:35:16 [INFO] Running Time : 35ms
+2023-06-26 09:35:16 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-06-26 09:47:17 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#9FDFEB, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 09:47:17 [INFO] Return Value : 1
+2023-06-26 09:47:17 [INFO] Running Time : 20ms
+2023-06-26 09:47:17 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 09:47:22 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 09:47:22 [INFO] Return Value : 4
+2023-06-26 09:47:22 [INFO] Running Time : 27ms
+2023-06-26 09:47:22 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-26 09:47:22 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 09:47:22 [INFO] Return Value : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=2023-06-09, memoUpdateDate=2023-06-26, memoBgColor=#9FDFEB, memoSt=N, memoType=workspace, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=  여기가 원래 개인메모장 입니다  , memoRegDate=2023-06-09, memoUpdateDate=2023-06-25, memoBgColor=#FEE182, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-06-26 09:47:22 [INFO] Running Time : 21ms
+2023-06-26 09:47:22 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-06-26 09:47:25 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#FEE182, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 09:47:25 [INFO] Return Value : 1
+2023-06-26 09:47:25 [INFO] Running Time : 27ms
+2023-06-26 09:47:25 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 09:48:53 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#F6A9B0, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 09:48:53 [INFO] Return Value : 1
+2023-06-26 09:48:53 [INFO] Running Time : 22ms
+2023-06-26 09:48:53 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 10:03:26 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 10:03:26 [INFO] Return Value : 4
+2023-06-26 10:03:26 [INFO] Running Time : 21ms
+2023-06-26 10:03:26 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-26 10:03:26 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 10:03:26 [INFO] Return Value : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=2023-06-09, memoUpdateDate=2023-06-26, memoBgColor=#F6A9B0, memoSt=N, memoType=workspace, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=  여기가 원래 개인메모장 입니다  , memoRegDate=2023-06-09, memoUpdateDate=2023-06-25, memoBgColor=#FEE182, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-06-26 10:03:26 [INFO] Running Time : 23ms
+2023-06-26 10:03:26 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-06-26 10:03:30 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#FEE182, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 10:03:30 [INFO] Return Value : 1
+2023-06-26 10:03:30 [INFO] Running Time : 16ms
+2023-06-26 10:03:30 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 10:05:12 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 10:05:12 [INFO] Return Value : 4
+2023-06-26 10:05:12 [INFO] Running Time : 16ms
+2023-06-26 10:05:12 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-26 10:05:12 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 10:05:12 [INFO] Return Value : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=2023-06-09, memoUpdateDate=2023-06-26, memoBgColor=#FEE182, memoSt=N, memoType=workspace, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=  여기가 원래 개인메모장 입니다  , memoRegDate=2023-06-09, memoUpdateDate=2023-06-25, memoBgColor=#FEE182, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-06-26 10:05:12 [INFO] Running Time : 16ms
+2023-06-26 10:05:12 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-06-26 10:05:16 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#9FDFEB, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 10:05:16 [INFO] Return Value : 1
+2023-06-26 10:05:16 [INFO] Running Time : 49ms
+2023-06-26 10:05:16 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 10:05:23 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#9FDFEB, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 10:05:23 [INFO] Return Value : 1
+2023-06-26 10:05:23 [INFO] Running Time : 25ms
+2023-06-26 10:05:23 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 10:05:58 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 0:0:0:0:0:0:0:1
+2023-06-26 10:05:58 [DEBUG] password999! / $2a$10$71CimPuXknNaPAyN8x44XuovkudgpsAnaI06cLJwdmS.Frz4zznHS
+2023-06-26 10:05:58 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-26 10:05:58 [INFO] Running Time : 144ms
+2023-06-26 10:05:58 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-26 10:05:58 [INFO] 일일맨 로그인 성공
+2023-06-26 10:06:02 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 10:06:02 [INFO] Return Value : 4
+2023-06-26 10:06:02 [INFO] Running Time : 16ms
+2023-06-26 10:06:02 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-26 10:06:02 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 10:06:02 [INFO] Return Value : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=2023-06-09, memoUpdateDate=2023-06-26, memoBgColor=#9FDFEB, memoSt=N, memoType=workspace, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=  여기가 원래 개인메모장 입니다  , memoRegDate=2023-06-09, memoUpdateDate=2023-06-25, memoBgColor=#FEE182, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-06-26 10:06:02 [INFO] Running Time : 24ms
+2023-06-26 10:06:02 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-06-26 10:06:04 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#FEE182, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 10:06:04 [INFO] Return Value : 1
+2023-06-26 10:06:04 [INFO] Running Time : 26ms
+2023-06-26 10:06:04 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 10:06:06 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 10:06:06 [INFO] Return Value : 4
+2023-06-26 10:06:06 [INFO] Running Time : 25ms
+2023-06-26 10:06:06 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-26 10:06:06 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 10:06:06 [INFO] Return Value : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=2023-06-09, memoUpdateDate=2023-06-26, memoBgColor=#FEE182, memoSt=N, memoType=workspace, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=  여기가 원래 개인메모장 입니다  , memoRegDate=2023-06-09, memoUpdateDate=2023-06-25, memoBgColor=#FEE182, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-06-26 10:06:06 [INFO] Running Time : 16ms
+2023-06-26 10:06:06 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-06-26 10:06:09 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#A1D5AE, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 10:06:09 [INFO] Return Value : 1
+2023-06-26 10:06:09 [INFO] Running Time : 27ms
+2023-06-26 10:06:09 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 10:06:12 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#FEE182, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 10:06:12 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 10:06:12 [INFO] Return Value : 1
+2023-06-26 10:06:12 [INFO] Running Time : 17ms
+2023-06-26 10:06:12 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 10:06:12 [INFO] Return Value : 4
+2023-06-26 10:06:12 [INFO] Running Time : 17ms
+2023-06-26 10:06:12 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-26 10:06:12 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 10:06:12 [INFO] Return Value : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=2023-06-09, memoUpdateDate=2023-06-26, memoBgColor=#FEE182, memoSt=N, memoType=workspace, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=  여기가 원래 개인메모장 입니다  , memoRegDate=2023-06-09, memoUpdateDate=2023-06-25, memoBgColor=#FEE182, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-06-26 10:06:12 [INFO] Running Time : 18ms
+2023-06-26 10:06:12 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-06-26 10:06:17 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#9FDFEB, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 10:06:17 [INFO] Return Value : 1
+2023-06-26 10:06:17 [INFO] Running Time : 24ms
+2023-06-26 10:06:17 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 10:06:19 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#D8BBDC, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 10:06:19 [INFO] Return Value : 1
+2023-06-26 10:06:19 [INFO] Running Time : 50ms
+2023-06-26 10:06:19 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 10:07:37 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 10:07:37 [INFO] Return Value : 4
+2023-06-26 10:07:37 [INFO] Running Time : 15ms
+2023-06-26 10:07:37 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-26 10:07:37 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 10:07:37 [INFO] Return Value : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=2023-06-09, memoUpdateDate=2023-06-26, memoBgColor=#D8BBDC, memoSt=N, memoType=workspace, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=  여기가 원래 개인메모장 입니다  , memoRegDate=2023-06-09, memoUpdateDate=2023-06-25, memoBgColor=#FEE182, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-06-26 10:07:37 [INFO] Running Time : 32ms
+2023-06-26 10:07:37 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-06-26 10:07:39 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#FEE182, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 10:07:39 [INFO] Return Value : 1
+2023-06-26 10:07:39 [INFO] Running Time : 27ms
+2023-06-26 10:07:39 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 10:07:41 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 10:07:41 [INFO] Return Value : 4
+2023-06-26 10:07:41 [INFO] Running Time : 56ms
+2023-06-26 10:07:41 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-26 10:07:41 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-26 10:07:41 [INFO] Return Value : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=2023-06-09, memoUpdateDate=2023-06-26, memoBgColor=#FEE182, memoSt=N, memoType=workspace, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=  여기가 원래 개인메모장 입니다  , memoRegDate=2023-06-09, memoUpdateDate=2023-06-25, memoBgColor=#FEE182, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-06-26 10:07:41 [INFO] Running Time : 44ms
+2023-06-26 10:07:41 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-06-26 10:07:44 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#F6A9B0, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 10:07:44 [INFO] Return Value : 1
+2023-06-26 10:07:44 [INFO] Running Time : 48ms
+2023-06-26 10:07:44 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 10:07:45 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#A1D5AE, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 10:07:45 [INFO] Return Value : 1
+2023-06-26 10:07:45 [INFO] Running Time : 25ms
+2023-06-26 10:07:45 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 10:07:47 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#9FDFEB, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 10:07:47 [INFO] Return Value : 1
+2023-06-26 10:07:47 [INFO] Running Time : 19ms
+2023-06-26 10:07:47 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 10:07:49 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#D8BBDC, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 10:07:49 [INFO] Return Value : 1
+2023-06-26 10:07:49 [INFO] Running Time : 68ms
+2023-06-26 10:07:49 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 10:08:36 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#FEE182, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 10:08:36 [INFO] Return Value : 1
+2023-06-26 10:08:36 [INFO] Running Time : 24ms
+2023-06-26 10:08:36 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 10:08:42 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=rgb(254, 225, 130), memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 10:08:42 [INFO] Return Value : 1
+2023-06-26 10:08:42 [INFO] Running Time : 29ms
+2023-06-26 10:08:42 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 10:08:49 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=ㅅ구구맨 6/25 테 &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;, memoRegDate=null, memoUpdateDate=2023-06-26, memoBgColor=#FEE182, memoSt=null, memoType=null, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+[스케줄러 동작]
+2023-06-26 10:08:49 [INFO] Return Value : 1
+2023-06-26 10:08:49 [INFO] Running Time : 28ms
+2023-06-26 10:08:49 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-06-26 15:29:28 [INFO] 초기화 필터 생성
+2023-06-26 15:29:43 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 0:0:0:0:0:0:0:1
+2023-06-26 15:29:48 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 0:0:0:0:0:0:0:1
+2023-06-26 15:29:49 [DEBUG] password999! / $2a$10$zY0565b6rhjjfp0irLAUHOSasvyTokiH/7zFxt/XU7jE61sCMRUC2
+2023-06-26 15:29:49 [DEBUG] password999! / $2a$10$U0V/6F/CHR3vWczDkTbJw.6XZnmjRQ024J6E8Sr/ao2ngQCl1AICm
+2023-06-26 15:29:49 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-26 15:29:49 [INFO] Running Time : 940ms
+2023-06-26 15:29:49 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-26 15:29:49 [INFO] 일일맨 로그인 성공
+2023-06-26 15:29:49 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-26 15:29:49 [INFO] Running Time : 5999ms
+2023-06-26 15:29:49 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-26 15:29:49 [INFO] 일일맨 로그인 성공
