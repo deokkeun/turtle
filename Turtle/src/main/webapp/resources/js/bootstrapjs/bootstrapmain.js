@@ -288,6 +288,7 @@ function addFile(menuId, event) {
     deleteButton.onclick = function (event) {
       event.stopPropagation();
       deleteFile(this);
+      showAddButton(menuId); // 삭제 후 추가 버튼 보이기
     };
 
     var duplicateButton = document.createElement("button");
@@ -311,6 +312,22 @@ function addFile(menuId, event) {
 
     var menuNav = document.getElementById(menuId);
     menuNav.appendChild(newFile);
+
+    hideAddButton(menuId); // 추가 버튼 숨기기
+  }
+}
+
+function hideAddButton(menuId) {
+  var addButton = document.querySelector('button.add-file-button[onclick="addFile(\'' + menuId + '\', event)"]');
+  if (addButton) {
+    addButton.style.display = 'none';
+  }
+}
+
+function showAddButton(menuId) {
+  var addButton = document.querySelector('button.add-file-button[onclick="addFile(\'' + menuId + '\', event)"]');
+  if (addButton) {
+    addButton.style.display = 'inline-block';
   }
 }
 

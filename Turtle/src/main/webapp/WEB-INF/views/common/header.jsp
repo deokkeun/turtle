@@ -294,12 +294,12 @@
         <button class="add-file-button" onclick="addFile('project-nav', event)"><i class="bi bi-plus"></i></button>
 
   <ul id="project-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-    <li>
+ <!--    <li>
       <a href="my-projects/project1.html">
         <span>project 1</span>
         <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
           <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="bi bi-three-dots-vertical"></i>
+            <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
           </button>
           <div class="dropdown-menu" aria-labelledby="project1Dropdown">
             <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
@@ -308,7 +308,7 @@
           </div>
         </div>
       </a>
-    </li>
+    </li> -->
     <!-- 추가적인 프로젝트 항목들 -->
   </ul>
 </li><!-- End My Project Nav -->
@@ -320,12 +320,13 @@
           </a>
           <button class="add-file-button" onclick="addFile('shared-project-nav', event)"><i class="bi bi-plus"></i></button>
           <ul id="shared-project-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
+  <!--           <li>
               <a href="">
                 <span>project 1</span>
                 <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
                   <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="bi bi-three-dots-vertical"></i>
+                    <i class="bi bi-three-dots-vertical" style="padding-right: 11px;
+                    "></i>
                   </button>
                   <div class="dropdown-menu" aria-labelledby="project1Dropdown">
                     <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i>이름 바꾸기</button>
@@ -334,7 +335,7 @@
                   </div>
                 </div>
               </a>
-            </li>
+            </li> -->
        
             <!-- 추가적인 프로젝트 항목들 -->
           </ul>
@@ -345,12 +346,12 @@
           </a>
           <button class="add-file-button" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button>
           <ul id="workspace-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-            <li>
+          <!--   <li>
               <a href="">
                <span>파일</span>
                <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
                 <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="bi bi-three-dots-vertical"></i>
+                  <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="project1Dropdown">
                   <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
@@ -365,7 +366,7 @@
                 <span>할일 목록</span>
                 <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
                   <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="bi bi-three-dots-vertical"></i>
+                    <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
                   </button>
                   <div class="dropdown-menu" aria-labelledby="project1Dropdown">
                     <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
@@ -374,7 +375,7 @@
                   </div>
                 </div>
               </a>
-            </li>
+            </li> -->
             <!-- 추가적인 작업 공간 항목들 -->
           </ul>
         </li><!-- End Workspace Nav -->
@@ -456,7 +457,7 @@
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js?ver=2"></script>
+  <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js?ver=3"></script>
  
   
   <script>
