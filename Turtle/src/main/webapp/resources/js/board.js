@@ -1,6 +1,5 @@
 let boards = document.querySelectorAll(".board");
 let boardSort;
-let clickedBoard;
 
 // 딜레이 1초 설정
 let typingTimer;
@@ -111,7 +110,7 @@ boards.forEach((board) => {
     
     // 게시글 추가 기능
     addBoardBtn.addEventListener("click", function() {
-        boardSort = board.dataset.boardsort;
+        clickedBoard = board.dataset.boardsort;
         insertBoard();
     });
     
@@ -299,20 +298,32 @@ insertBoardSock.onmessage = function(e) {
 
     // 기존에 있던 요소들의 정렬 및 boardSort 변경   
     boards.forEach((board) => {                
-
+        boardSort = board.dataset.boardsort;
         // 사이위치한 글일때 글 사이에 게시글 삽입
-        if(board.dataset.boardsort == newBoard.boardSort - 1) {
-            console.log("test");
+        //if(board.dataset.boardsort == newBoard.boardSort - 1) {
+            //console.log("test");
+            //$(board).after(addedBoard);
+        //}
+        if(boardSort == newBoard.boardSort - 1) {
+            
             $(board).after(addedBoard);
+            console.log(board.dataset.boardsort);
+            console.log(addedBoard.dataset.boardsort);
+
+            
         }
+
         // 브라우저 내 게시글들의 sort 재정렬
         currentBoardSort = parseInt(board.dataset.boardsort, 10); // 정수로 변환
 
-        if(currentBoardSort >= newBoard.boardSort && currentBoardSort != 0) {    
-              
-            board.dataset.boardsort = currentBoardSort + 1;
-            
-        }
+            if(currentBoardSort >= newBoard.boardSort){
+                board.dataset.boardsort = currentBoardSort + 1;
+            }
+
+        
+        
+
+        
 
     });
 
