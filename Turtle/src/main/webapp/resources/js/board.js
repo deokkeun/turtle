@@ -1,5 +1,6 @@
 let boards = document.querySelectorAll(".board");
-let lastBoard = document.querySelector(".lastBoard");
+let boardSort;
+let clickedBoard;
 
 // 딜레이 1초 설정
 let typingTimer;
@@ -18,11 +19,11 @@ boards.forEach((board) => {
 
 
     // 제목 수정에 필요한 pmNo, boardNo 변수에 담기
-    const pmNo = board.dataset.pmno;
+    let pmNo = board.dataset.pmno;
     const boardNo = board.dataset.boardno;
     
     // 게시글 추가, 삭제에 필요한 boardSort 변수에 담기
-    const boardSort = board.dataset.boardsort;
+    boardSort = board.dataset.boardsort;
 
     // 마우스가 올려진 게시글에 수정, 추가버튼 활성화
     board.addEventListener("mouseover", function() {
@@ -58,7 +59,7 @@ boards.forEach((board) => {
     // 제목 수정 기능 비활성화
     if(closeEditBoardTitleBtn != null) {
         closeEditBoardTitleBtn.addEventListener("click", function() {
-            selectBoardDetail.setAttribute("href", "#");
+            selectBoardDetail.setAttribute("href", "../../boardDetail/" + projectNo + '/' + workspaceNo + '/' + boardNo);
             boardTitle.contentEditable = false;
             closeEditBoardTitleBtn.style.display = "none";
             editBoardTitleBtn.style.display = "block";
@@ -110,6 +111,7 @@ boards.forEach((board) => {
     
     // 게시글 추가 기능
     addBoardBtn.addEventListener("click", function() {
+        boardSort = board.dataset.boardsort;
         insertBoard();
     });
     
@@ -215,7 +217,6 @@ insertBoardSock.onmessage = function(e) {
     const addedBoard = document.createElement('div');
     addedBoard.classList.add('board');
     addedBoard.dataset.boardno = newBoard.boardNo;
-    console.log(newBoard.boardNo);
     addedBoard.dataset.pmno = newBoard.pmNo;
     addedBoard.dataset.boardsort = newBoard.boardSort;
 
@@ -290,35 +291,28 @@ insertBoardSock.onmessage = function(e) {
     addedBoard.appendChild(addedEditBoardArea);
     addedBoard.appendChild(addedBoardInfo);
     addedBoard.appendChild(addedDropBoard);
-
-    boards = document.querySelectorAll(".board");   
-
-    // 기존에 있던 요소들의 정렬 및 boardSort 변경
-    // 마지막에 있던 boardSort 변경
-
-    if(lastBoard) {
-        currentlastBoardsort = parseInt(lastBoard.dataset.boardsort, 10);
-        lastBoard.dataset.boardsort = currentlastBoardsort + 1;
-    }
     
+    console.log(addedBoard);
+
+    boards = document.querySelectorAll(".board");
+
+
+    // 기존에 있던 요소들의 정렬 및 boardSort 변경   
     boards.forEach((board) => {                
 
+        // 사이위치한 글일때 글 사이에 게시글 삽입
+        if(board.dataset.boardsort == newBoard.boardSort - 1) {
+            console.log("test");
+            $(board).after(addedBoard);
+        }
         // 브라우저 내 게시글들의 sort 재정렬
-        currentBoardsort = parseInt(board.dataset.boardsort, 10); // 정수로 변환
-        
-        if(currentBoardsort >= newBoard.boardSort && board.dataset.boardsort != lastBoard.dataset.boardsort) {    
+        currentBoardSort = parseInt(board.dataset.boardsort, 10); // 정수로 변환
+
+        if(currentBoardSort >= newBoard.boardSort && currentBoardSort != 0) {    
               
-            board.dataset.boardsort = currentBoardsort + 1;
+            board.dataset.boardsort = currentBoardSort + 1;
             
         }
-
-        // 사이위치한 글일때 글 사이에 게시글 삽입
-        if(board.dataset.boardsort == newBoard.boardSort - 1 && board.nextElementSibling != null) {
-            $(board).after(addedBoard);            
-        }
-        if(board.dataset.boardsort == 0) {
-            location.reload();
-        }       
 
     });
 
@@ -467,7 +461,7 @@ deleteBoardSock.onmessage = function(e) {
     boards = document.querySelectorAll(".board");
     boards.forEach((board) => {
         if(deletedBoard.boardNo == board.dataset.boardno) {
-            if(!board.nextElementSibling.nextElementSibling) {
+            if(!board.previousSibling && !board.nextElementSibling) {
                 location.reload();
             } else {
                 board.remove();
