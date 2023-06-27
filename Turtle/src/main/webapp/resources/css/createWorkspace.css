@@ -3,77 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
-/*nav*/
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    padding: 8px 12px;
-    width: 100%;
-    box-shadow: 0 3px 3px -3px #a1b8be;;
-    
-}
 a {
-    text-decoration: none;
-    color: black;
     cursor: pointer;
 }
-
-/*nav*/
-.logo img {
-    max-width: 100px;
-}
-.nav-links {
-    display: flex;
-    list-style: none;
-    padding-left: 0;
-    flex-basis: 70%;
-    
-}
-.nav-links li {
-    padding: 8px 12px;
-    border-radius: 10px;
-    font-weight: bold;
-    margin: 0px 20px;
-
-
-}
-.nav-links li:hover {
-    background-color: #a1b8be;
-    transition: 500ms;
-
-}
-
-.nav-links2 {
-    padding-left: 0px;
-    display: flex;
-    list-style: none;
-
-   
-}
-.nav-links2 li {
-    padding: 8px 7px;
-    font-size: 20px;
-    
-}
-.nav-links2 a:hover {
-    
-    color: #a1b8be;
-    transition: 50ms;
-}
-.bar {
-    display: none;
-    position: absolute;
-    right: 15px;
-    font-size: 24px;
-    color: black;
-    
-}
-
 /*section 구성*/
 section {
     text-align: center;
@@ -153,7 +85,7 @@ section {
     padding-bottom: 5px;
 }
 
-.remove-btn > a {
+.remove-btn > span {
     justify-content: center;
     text-align: center;
     font-size: 15px;
@@ -163,7 +95,11 @@ section {
     width: 100%;
     color: white;
     padding: 5px 10px;
+   
     
+}
+.remove-btn > span:hover {
+    cursor: pointer;
 }
 
 .workspace-input {
@@ -182,7 +118,7 @@ section {
 }
 .pop {
     position: absolute;
-    z-index: 1;
+    z-index: 998;
     top: 0;
     width: 100%;
     height: 100%;
@@ -263,7 +199,7 @@ section {
     width: 100%;
     margin-bottom: 5%;
 }
-.next-btn > a {
+.next-btn > span {
     margin: 0 auto;
     display: block;
     width: 300px;
@@ -273,8 +209,9 @@ section {
     border-radius: 8px;
     padding: 5px;
 }
-.next-btn > a:hover {
+.next-btn > span:hover {
     background-color: black;
+    cursor: pointer;
 }
 /* 워크스페이스 언어 설정 section */
 
@@ -438,9 +375,12 @@ section {
         width:500px;
         height: 420px;
     }
+    .select {
+        z-index: 999;
+    }
     .select i {
     position: absolute;
     top: 40%;
-    left: 22%;
+    left: 15%;
 }
 }

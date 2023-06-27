@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -60,7 +60,7 @@
         </form>
         <div class="section3">
             <p>프로젝트멤버 관리</p>
-            <button class="btnt">초대하기<i class="fa-solid fa-user-plus"></i></button>
+            <buttaon class="btnt"><span>초대하기</span><i class="fa-solid fa-user-plus"></i></button>
           
         </div>
         
@@ -103,6 +103,9 @@
 
     </section>
 </main>
+    <script>
+            const contextPath = "${contextPath}";
+    </script>
     <script src="${contextPath}/resources/js/createProject.js"></script>
     <!-- 섬머노트 -->
     <script src="${contextPath}/resources/js/summernote/summernote-lite.js"></script>
@@ -119,7 +122,6 @@
     <!-- landing2.js (프론트 최종작업용) 연결 -->
     <script src="${contextPath}/resources/js/landing2.js"></script>
     
-
-
+ 
 </body>
 </html>

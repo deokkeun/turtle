@@ -1,13 +1,4 @@
-const bar = document.querySelector('.bar');
-const menu = document.querySelector('.nav-links');
-const icons = document.querySelector('.nav-links2');
 
-/*반응형 햄버거 클릭시 nav바 내려오기*/
-bar.addEventListener('click', ()=> {
-    menu.classList.toggle('active');
-    icons.classList.toggle('active');
-    
-});
 
 const plus = document.querySelector('.plus-btn');
 const pop = document.querySelector('.pop');
@@ -17,6 +8,7 @@ const pop = document.querySelector('.pop');
 $('.plus-btn').click(function() {
     $('.pop').fadeIn();
     $('.pop').addClass('black');
+    
     
 
 });
@@ -91,7 +83,7 @@ $(document).ready(function() {
 
         let res = "";
 
-        res = " <div class='wor'><div><a><i class='fa-solid fa-bars'></i></a></div><div class='workspace-name'><span>" + name +"</span><a class='change-text'><i class='fa-regular fa-pen-to-square'></i></a></div><div class='remove-btn'><a>삭제</a></div></div>"
+        res = " <div class='wor'><div><a><i class='fa-solid fa-bars'></i></a></div><div class='workspace-name'><span>" + name +"</span><a class='change-text'><i class='fa-regular fa-pen-to-square' style='color : black;'></i></a></div><div class='remove-btn'><span>삭제</span></div></div>"
 
         $('.workspace').append(res);
 
@@ -115,7 +107,7 @@ $(document).ready(function() {
     $(document).on('keydown','.workspace-input', function(key) {
          if(key.keyCode == 13) {
                 console.log($(this).val());
-                $(this).parents('.workspace-name').html("<span>" + $(this).val() + "</span><a class='change-text'><i class='fa-regular fa-pen-to-square'></i></a></div>");
+                $(this).parents('.workspace-name').html("<span>" + $(this).val() + "</span><a class='change-text'><i class='fa-regular fa-pen-to-square' style='color : black;'></i></a></div>");
             }
     })
 

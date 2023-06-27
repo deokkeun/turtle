@@ -145,7 +145,7 @@
 
 	</script>
 	<script src='${contextPath}/resources/js/chat.js'></script>
-	<!-- <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script> -->
+	<script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script>
 	<script>
 		// 페이지 로딩 완료 시 채팅창을 제일 밑으로 내리기
 

@@ -1,19 +1,22 @@
-const bar = document.querySelector('.bar');
-const menu = document.querySelector('.nav-links');
-const icons = document.querySelector('.nav-links2');
 
-/*반응형 햄버거 클릭시 nav바 내려오기*/
-bar.addEventListener('click', ()=> {
-    menu.classList.toggle('active');
-    icons.classList.toggle('active');
+// const bar = document.querySelector('.bar');
+// const menu = document.querySelector('.nav-links');
+// const icons = document.querySelector('.nav-links2');
+
+// /*반응형 햄버거 클릭시 nav바 내려오기*/
+// bar.addEventListener('click', ()=> {
+//     menu.classList.toggle('active');
+//     icons.classList.toggle('active');
     
-});
+// });
+
 
 
 /*초대버튼 클릭시 팝업창 띄우기 */
 $('.btnt').click(function() {
     $('.pop').fadeIn();
     $('.pop').addClass('black');
+   
     
 
 });
@@ -68,7 +71,7 @@ $(document).ready(function() {
 
         let res = "";
 
-        res = "<div class='checkeduser active' id="+$(this).siblings('.user-email').text()+"><i class='fa-solid fa-circle-user'></i><span class='user-checked-name' name="+$(this).siblings('.user-name').text()+" id="+$(this).siblings('.user-email').text()+ " data-email="+$(this).siblings('.user-email').text()+">"+$(this).siblings('.user-name').text()+"</span><a class='checked-btn'><i class='fa-solid fa-xmark'></i></a></div>";
+        res = "<div class='checkeduser active' id="+$(this).siblings('.user-email').text()+"><i class='fa-solid fa-circle-user'></i><span class='user-checked-name' name="+$(this).siblings('.user-name').text()+" id="+$(this).siblings('.user-email').text()+ " data-email="+$(this).siblings('.user-email').text()+">"+$(this).siblings('.user-name').text()+"</span><a class='checked-btn'><i class='fa-solid fa-xmark'></i></a><input class='userimg' id='"+$(this).siblings('.user-img').attr('id')+"' type='hidden'></div>";
 
         
         const t = document.querySelectorAll('.user');
@@ -152,14 +155,15 @@ $(document).ready(function() {
 
         const invitedUser = document.querySelectorAll('.user-checked-name');
         const invitedmem = document.querySelector('.invited-member');
-
+        const img = document.querySelectorAll('.userimg');
+    
         invitedmem.innerHTML = "";
      
 
         for(let i=0; i<invitedUser.length; i++) {
             console.log(invitedUser[i].getAttribute('id'));
             console.log(invitedUser[i].getAttribute('name'));
-            res3 = "<div class='user2'><a class='invited-user'><i class='fa-solid fa-circle-user'></i></a><span class='user-name2' id='"+invitedUser[i].getAttribute('name')+"'>"+invitedUser[i].getAttribute('name')+"</span><span class='user-email2' id="+invitedUser[i].getAttribute('id')+">"+invitedUser[i].getAttribute('id')+"</span></div>";
+            res3 = "<div class='user2'><img class='user-img2' src= "+contextPath+img[i].getAttribute('id')+" width='30px'><span class='user-name2' id='"+invitedUser[i].getAttribute('name')+"'>"+invitedUser[i].getAttribute('name')+"</span><span class='user-email2' id="+invitedUser[i].getAttribute('id')+">"+invitedUser[i].getAttribute('id')+"</span></div>";
   
             $('.invited-member').append(res3);
             
@@ -197,8 +201,9 @@ $('#search-txt').keyup(function() {
 
                 for(let i=0; i<str.length; i++) {
                     
-                    
-                    rex +="<div class='user' id="+str[i].memberEmail+"><div type='button' class='btn'> <a class='user-plus'><i class='fa-solid fa-circle-plus'></i></a><span class='user-name'>"+str[i].memberName+"</span><span class='user-email' data-email='"+str[i].memberEmail+"'>"+str[i].memberEmail+"</span></div></div>";
+                    let contextPath = "${contextPath}";
+
+                    rex +="<div class='user' id="+str[i].memberEmail+"><div type='button' class='btn'> <a class='user-plus'><i class='fa-solid fa-circle-plus'></i></a><span class='user-name'>"+str[i].memberName+"</span><span class='user-email' data-email='"+str[i].memberEmail+"'>"+str[i].memberEmail+"</span><input class='user-img' id="+str[i].profileImage+" type='hidden'></div></div>";
                     $('.search-mem').html(rex);
             
 
