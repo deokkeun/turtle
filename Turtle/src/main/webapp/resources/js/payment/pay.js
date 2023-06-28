@@ -467,10 +467,6 @@ function pay() {
 
 
 
-
-
-
-
                                     } else {
                                         alert("주문정보 저장 실패");
                                     }

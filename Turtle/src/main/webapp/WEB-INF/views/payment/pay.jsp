@@ -132,9 +132,10 @@
                                 </div>
 
                                 <div id="fromTo">
-                                    <c:if test="${paymentType.payType == 'Standard' || paymentType.payType == 'Pro'}">
-                                        <span id="from-date"></span><span id="to-date"></span>
-                                    </c:if>
+                                    <!-- 조건은 테스트 확인 후 이상 없으면 삭제 예정 -->
+                                    <!-- <c:if test="${paymentType.payType == 'Standard' || paymentType.payType == 'Pro'}">
+                                    </c:if> -->
+                                    <span id="from-date"></span><span id="to-date"></span>
                                 </div>
     
                                 <div id="pay-modal-intro" class="intro">
@@ -186,7 +187,7 @@
         </article> 
 
 
-
+        <!-- 테스트 확인 후 히든처리 예정 -->
         <input type="text" id="memberNo" value="${loginMember.memberNo}">
         <input type="text" id="projectNo" value="${projectNo}">
         <div>workspaceCount = ${workspaceCount}</div>
