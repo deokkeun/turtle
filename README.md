@@ -116,9 +116,8 @@
 
 💡 기능 설명 :
     사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
-  <a href="" Style="text-decoration: none; color: #1A73E8;">main 클래스 구현 바로가기</a>
 ```
-
+<a href="" Style="text-decoration: none; color: #1A73E8;">main 클래스 구현 바로가기</a>
 
 
 <br><br>
@@ -138,8 +137,8 @@
 
 💡 기능 설명 :
  사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
-  <a href="" Style="text-decoration: none; color: #1A73E8;">ㅁㅁㅁ 클래스 구현 바로가기</a>
 ```
+<a href="" Style="text-decoration: none; color: #1A73E8;">ㅁㅁㅁ 클래스 구현 바로가기</a>
 
 
 
@@ -160,8 +159,8 @@
 
 💡 기능 설명 :
  사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
-  <a href="" Style="text-decoration: none; color: #1A73E8;">ㅁㅁㅁ 클래스 구현 바로가기</a>
 ```
+<a href="" Style="text-decoration: none; color: #1A73E8;">ㅁㅁㅁ 클래스 구현 바로가기</a>
 
 
 
