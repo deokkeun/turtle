@@ -1,23 +1,26 @@
 let boards;
 selectBoard();
-let board;
 let clickedBoard;
 
 // 딜레이 1초 설정
 let typingTimer;
 const delay = 1000; // 1초
 
+
+
 function selectBoard(){
+    console.log("tq");
     boards = document.querySelectorAll(".board");
 
     boards.forEach((board) => {
+        $(board).hover( mouseover(), mouseout());
         let selectBoardDetail = board.querySelector('.select-board-detail');
-        let addBoard = board.querySelector(".add-board");
-        let editBoardTitle = board.querySelector(".edit-boardTitle");
+        //let addBoard = board.querySelector(".add-board");
+        //let editBoardTitle = board.querySelector(".edit-boardTitle");
         let editBoardTitleBtn = board.querySelector(".edit-boardTitle-btn");
         let boardTitle = board.querySelector(".boardTitle");
         let closeEditBoardTitleBtn = board.querySelector(".close-edit-boardTitle-btn");
-        let dropBoard = board.querySelector(".delete-board");
+        //let dropBoard = board.querySelector(".delete-board");
         let addBoardBtn = board.querySelector(".add-board-btn");
         let deleteBoardBtn = board.querySelector(".delete-board-btn");
     
@@ -27,7 +30,7 @@ function selectBoard(){
         
         // 게시글 추가, 삭제에 필요한 boardSort 변수에 담기
         let boardSort = board.dataset.boardsort;
-    
+        /*
         // 마우스가 올려진 게시글에 수정, 추가버튼 활성화
         board.addEventListener("mouseover", function() {
             if(addBoard != null) {
@@ -46,6 +49,8 @@ function selectBoard(){
             editBoardTitle.style.visibility = "hidden";
             dropBoard.style.visibility = "hidden";
         });
+        */
+        
     
         
         // 제목 수정 기능 활성화
@@ -244,7 +249,7 @@ insertBoardSock.onmessage = function(e) {
             board.dataset.boardsort = currentBoardSort + 1;
         }
 
-        if(boardSort == addedBoard.dataset.boardsort) {
+        if(boardSort == addedBoard.dataset.boardsort - 1) {
             $(board).after(addedBoard);
         }
         console.log("뭐야");
@@ -278,6 +283,45 @@ deleteBoardSock.onmessage = function(e) {
         }        
     });
 };
+
+function mouseover() {
+
+    let board = document.querySelector(".board");
+    
+    console.log("마우스오버");
+    let addBoard = board.querySelector(".add-board");
+    let editBoardTitle = board.querySelector(".edit-boardTitle");
+    
+    let dropBoard = board.querySelector(".delete-board");
+        
+
+    if(addBoard != null) {
+        $(addBoard).css("visibility", "visible");
+    }       
+    $(editBoardTitle).css("visibility", "visible");
+    $(dropBoard).css("visibility", "visible");
+};
+
+function mouseout() {
+
+    let board = document.querySelector(".board");
+    console.log("마우스아웃");
+    let addBoard = board.querySelector(".add-board");
+    let editBoardTitle = board.querySelector(".edit-boardTitle");
+    
+    
+    let dropBoard = board.querySelector(".delete-board");
+        
+    if(addBoard != null) {
+        $(addBoard).css("visibility", "hidden");
+    }        
+    $(editBoardTitle).css("visibility", "hidden");
+    $(dropBoard).css("visibility", "hidden");
+};
+
+
+
+
 
 
 // 제목 변경 함수
