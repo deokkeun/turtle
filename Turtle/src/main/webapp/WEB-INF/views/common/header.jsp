@@ -17,8 +17,6 @@
   <link href="${contextPath}/resources/images/remixicon/remixicon.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <link href="${contextPath}/resources/css/boxicons/css/boxicons.min.css" rel="stylesheet">
-	<!-- fontawesome -->
-	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -41,9 +39,9 @@
       </form>
     </div><!-- End Search Bar -->
     <section>
-		<form action="${contextPath}/member/logout" method="GET">
+		<!-- <form action="${contextPath}/member/logout" method="GET">
 			<button>로그아웃 테스트(header.jsp)</button>
-		</form>
+		</form> -->
 	</section>
 
      <nav class="header-nav ms-auto">
@@ -261,7 +259,7 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="">
+            <a class="dropdown-item d-flex align-items-center" href="${contextPath}/etc/main-faq">
               <i class="bi bi-question-circle"></i>
               <span>Need Help?</span>
             </a>
@@ -279,12 +277,12 @@
 
         </ul><!-- End Profile Dropdown Items -->
       </li><!-- End Profile Nav -->
-      <li class="nav-item">
-        <a class="nav-link " href="">
+      <!-- <li class="nav-item">
+        <a class="nav-link " href="${contextPath}/member/login">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li>End Dashboard Nav -->
 
   
   <li class="nav-item" style="position: relative;">
@@ -340,6 +338,9 @@
             <!-- 추가적인 프로젝트 항목들 -->
           </ul>
         </li><!-- End Shared Project Nav -->
+
+        <br>
+
   <li class="nav-item" style="position: relative;">
           <a class="nav-link collapsed" data-bs-target="#workspace-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-chevron-down" id="arrow"></i><i class="bx bx-desktop"></i><span>WORKSPACE</span>
@@ -379,32 +380,46 @@
             <!-- 추가적인 작업 공간 항목들 -->
           </ul>
         </li><!-- End Workspace Nav -->
-<br>
+
+
+
+        <br><br><br><br><br><br><br><br>
+
+
+
 
         <li class="nav-item">
-          <a class="nav-link collapsed" href="">
+          <a class="nav-link collapsed" href="${contextPath}/workspace/loadmap/1">
             <i class="ri-message-3-line"></i>
-            <span>Chating</span>
+            <span>GitHub</span>
           </a>
           <div id="line"></div>
         </li> 
-   
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="${contextPath}/calendar/calendar/1/9">
+            <i class="ri-message-3-line"></i>
+            <span>Calendar</span>
+          </a>
+          <div id="line"></div>
+        </li> 
+
+
         <li class="nav-heading">Report</li>
 
-
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="">
-            <i class="ri-settings-5-line"></i>
-            <span>Settings</span>
-          </a>
-        </li><!-- End Error 404 Page Nav -->
         <!-- 결제 -->
         <li class="nav-item">
           <a class="nav-link collapsed" href="${contextPath}/payment/pay/1">
             <i class="bx bxs-receipt"></i>
             <span>Payment Details</span>
           </a>
-        </li><!-- End Blank Page Nav -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="">
+            <i class="ri-settings-5-line"></i>
+            <span>Settings</span>
+          </a>
+        </li><!-- End Error 404 Page Nav --><!-- End Blank Page Nav -->
+
 
       </ul>
   </aside><!-- End Sidebar-->
@@ -414,8 +429,9 @@
 <!-- right sidebar(오른쪽 사이드바) --> 
   
   <aside class="right-sidebar" id="rightSidebar" >
-
+	
      <jsp:include page='/WEB-INF/views/chat/chatRoomList.jsp'/>
+     <input type="hidden" id="projectNo" value="${projectNo}">
     
   <button class="sidebar-close-btn" onclick="toggleSidebar()"><i class="bi bi-chevron-double-right"></i></button>
   <ul class="right-sidebar-nav" id="right-sidebar-nav">
@@ -453,7 +469,8 @@
   
  
 </aside>
-   <script src='${contextPath}/resources/js/chat.js'></script> 
+  
+  <script src='${contextPath}/resources/js/chat.js'></script> 
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.js"></script>
 
   <!-- Template Main JS File -->

@@ -34,7 +34,7 @@
 =======
             <section class="repos-container">
                 <div class="get-repos">
-                    <input type="text" placeholder="Github Username">
+                    <input type="text" placeholder="Github Username" style="font-size: 14px;">
                     <span class="get-button">Get Repos</span>
                 </div>
                 <div class="show-data">
@@ -42,10 +42,16 @@
                 </div>
             </section>
 
-            <section>
-                // Define a tree element where dimensions are mandatory
-                <div id="tree" style="height:700px; width:900px">
-                    ㅇㅇㅇ
+            <section id="tree-box">
+
+                <div>
+                    <div>
+                        <input type="button" id="add" value="Add data"></input>
+                        <input type="button" id="remove" value="Remove data"></input>
+                    </div>
+                    
+                    
+                    <div id="tree"></div>
                 </div>
             </section>
             
@@ -53,6 +59,8 @@
 >>>>>>> 46c70aecf3ea260bd64fdd80355b2f7356df68cc
 
     </main>
+    <!-- treeviz -->
+    <script src="https://cdn.jsdelivr.net/npm/treeviz@2.3.0/dist/index.min.js"></script>
 
     <!-- footer include -->
    	<jsp:include page="/WEB-INF/views/common/footer.jsp" />

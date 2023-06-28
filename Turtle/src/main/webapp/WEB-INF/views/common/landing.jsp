@@ -532,8 +532,7 @@
 
     </main>
     <!-- [0] ~ [6] End main -->
-    
-    
+     
     <!-- top버튼 -->
 	<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
 		<img src="${contextPath}/resources/images/top버튼거북이.png" alt="거북이" width="50px" >
@@ -543,7 +542,7 @@
     <!-- 랜딩 푸터.jsp -->
    	<jsp:include page="/WEB-INF/views/common/landing-footer.jsp" />
    
-   
+
     <!-- jQuery 라이브러리 추가 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
     			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

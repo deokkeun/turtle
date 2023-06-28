@@ -30,9 +30,11 @@
      <!--섬머노트 전용 css-->
      <link rel="stylesheet" href="${contextPath}/resources/css/summernote/summernote-lite.css">
     
+     
     <title>프로젝트 생성</title>
 </head>
 <body>
+   
    <main>
     <jsp:include page="/WEB-INF/views/common/landing-header.jsp" />     
    
@@ -62,6 +64,7 @@
         
         <div class="section3">
             <p>프로젝트멤버 관리</p>
+<<<<<<< HEAD
             <button class="btnt"><span>초대하기</span><i class="fa-solid fa-user-plus"></i></button>
           
         </div>
@@ -94,10 +97,54 @@
        
 
 
+=======
+            <buttaon class="btnt"><span>초대하기</span><i class="fa-solid fa-user-plus"></i></button>
+                
+        </div>
+        
+        <div class="pop">
+            <div class="pop-content">
+                <div><i class="fa-solid fa-users">프로젝트멤버 초대하기</i></div>
+                <div>
+                    <div class="user-content">
+                        <div class="select">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="이름/이메일을 입력해주세요."id="search-txt" class="searchmember">
+                        </div>
+                        <div class="search-mem">
+                           
+                        </div>
+                    </div>
+
+                    <div class="user-checked">
+                       
+                       
+                    </div>
+                    <a class="uc-btn">완료</a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <form action="invitedMember" method="post">
+            <div class="invited-member">
+                
+            </div>
+        </form>
+
+       
+        <form action="projectDescription">
+            <textarea id="summernote"></textarea>
+        </form>
+        <div class="next-btn">
+            <a class="next-btn" href="inviteMember">다음</a>
+        </div>
+>>>>>>> dev
 
     </section>
     <script src="${contextPath}/resources/js/createProject.js"></script>
 </main>
+   
     <script>
             const contextPath = "${contextPath}";
     </script>

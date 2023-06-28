@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 
 <!DOCTYPE html>
@@ -10,36 +10,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<!-- main-style.css -->
+    <link href="${contextPath}/resources/css/main-style.css" rel="stylesheet">
+    <!-- bootstrap.css -->
+    <link href="${contextPath}/resources/css/booystrapcss/bootstrap.css" rel="stylesheet">
+    <link href="${contextPath}/resources/images/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="${contextPath}/resources/images/remixicon/remixicon.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link href="${contextPath}/resources/css/boxicons/css/boxicons.min.css" rel="stylesheet">
     <!--섬머노트 전용 css-->
     <link rel="stylesheet" href="${contextPath}/resources/css/summernote/summernote-lite.css">
     
-    <title>Turtle</title>
-        
+    
     <!-- Favicons -->
     <link href="${contextPath}/resources/favicon/favicon-16x16.png" rel="icon">
     <link href="${contextPath}/resources/favicon/apple-icon-60x60.png" rel="apple-touch-icon">
     
+    <style>
+                /* 로딩페이지 */
+        #load {
+            width: 100%;
+            height: 100%;
+            top: 45%;
+            left: 0;
+            position: fixed;
+            display: block;
+            opacity: 0.8;
+            background: white;
+            z-index: 99;
+            text-align: center;       
+        }
+    </style>
 
 	<!-- fontawesome -->
+    <title>Turtle</title>
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    	<!-- header include -->
-        <jsp:include page="/WEB-INF/views/common/header.jsp" />
-
-
-        
  
     <main id="main" class="main">
- 	
+      
+      
+    <div id="load">
+        <div><img id="loading-image" src="${contextPath}/resources/images/top버튼거북이2.png" width="150px"></div>
+        <div><img src="${contextPath}/resources/images/load.gif" width="100px"></div>
+    </div>   
+    
+    <!-- header include -->
+    <jsp:include page="/WEB-INF/views/common/header.jsp" />
+    
+    <!-- (index.jsp)/member/login -> (main.jsp)common/main.jsp -->
+    <main id="main" class="main">    
+        <div id="clock" value="0">00 : 00 : 00</div>
 
-		<!-- (index.jsp)/member/login -> (main.jsp)common/main.jsp -->
-        <H1>로그인 성공!!</H1>
-        <H1>민수 커밋 확인용</H1>
-        <H1>덕근 커밋 확인용</H1>
-        <H1>수진 커밋 확인용 '_'</H1>
+
+
 
         <div>로그인시(멤버정보)</div>
         <div>회원번호 : ${loginMember.memberNo}</div>
@@ -52,17 +78,23 @@
             <input type="text" name="access_token" value="" style="width: 600px;">
         </div>
         
+
+        <!-- calendar -->
+        <div>임시 캘린더</div>
+        <div id='calendar-main'></div>
+
+        
         
         <form action="${contextPath}/member/myPage/info" method="GET">
                 <button>마이페이지 이동</button>
         </form>
         
 
-        <form action="../workspace/loadmap/1" method="GET">
+        <form action="${contextPath}/workspace/loadmap/1" method="GET">
             <button>git loadMap test(GET)</button>
         </form>
       
-        <form action="../calendar/calendar/1/9" method="GET">
+        <form action="${contextPath}/calendar/calendar/1/9" method="GET">
            <button>calendar</button>
         </form>
               
@@ -85,9 +117,16 @@
      
 
     </main>
+     <!--loading 페이지-->
+     <script type="text/javascript">
+        $(window).on('load', function() {
+            setTimeout(function(){
+                $("#load").fadeOut();
+            }, 500);
+        });
+    </script>
     <script>
       const contextPath = "${contextPath}";
-
     </script>
     <!-- footer include -->
    	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
@@ -97,14 +136,14 @@
     <script src="${contextPath}/resources/js/main.js"></script>
      <!-- Vendor JS Files -->
 
-    <!-- chat js -->
-    <!-- <script src="${contextPath}/resources/js/chat.js"></script> -->
-<script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js?ver=1"></script>
+    <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js?ver=1"></script>
 
     <!-- chat js -->
     <script src="${contextPath}/resources/js/chat.js"></script>
     <!--섬머노트 전용 js (css태그는 head에 있음)-->
     <script src="${contextPath}/resources/js/summernote/summernote-lite.js"></script>
     <script src="${contextPath}/resources/js/summernote/lang/summernote-ko-KR.js"></script>
+    <!-- fullcalendar -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
 </body>
 </html>

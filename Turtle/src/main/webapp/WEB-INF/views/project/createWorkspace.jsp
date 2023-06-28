@@ -272,7 +272,7 @@
         </div>
 
         <div class="next-btn">
-            <span>생성하기</span>
+            <button>생성하기</button>
         </div>
 
     </section>

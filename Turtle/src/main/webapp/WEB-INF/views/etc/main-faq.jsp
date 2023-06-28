@@ -10,7 +10,7 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
   	
-    <title>고객센터</title>
+    <title>Turtle</title>
     
     <!-- Favicons -->
   	<link href="${contextPath}/resources/favicon/favicon-16x16.png" rel="icon">
@@ -28,7 +28,8 @@
 	<link href="${contextPath}/resources/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     
     <!-- 헤더, 고객센터 css  -->
-    <link rel="stylesheet" href="${contextPath}/resources/css/common/landing-header.css" />
+    <!-- main-style.css -->
+    <link href="${contextPath}/resources/css/main-style.css" rel="stylesheet">
     <link rel="stylesheet" href="${contextPath}/resources/css/etc/faq.css" />
 </head>
 
@@ -163,21 +164,19 @@
         <section id="contact" class="contact">
             <div class="container">
                 <div class="row" data-aos="fade-down">
-
                     <div class="col-lg-6 textfaq" data-aos="fade-down">
                         <h3>원하는 답변을 찾지 못했나요?</h3>
                         <h5>TeamTurtle분들이 신속한 답변으로</h5>
                         <h5>도와드리겠습니다.</h5>
                     </div>
 
-                    <div class="textfaq2 col-lg-4">
-                        <div class="email">
-                            <h4><i class="fa-regular fa-comment-dots"></i> Turtle 채팅 문의</h4>
-                            <span>turtle.ad@turtle.com</span>
-                        </div>
+                    <div class="col-lg-4 textfaq2">
+                        <h4><i class="fa-regular fa-comment-dots"></i> Turtle 채팅 문의</h4>
+                            <p>TeamTurtle과 채팅하기</p>
+                    
+                        <h4><i class="fa-regular fa-envelope"></i> Turtle 이메일 문의</h4>
+                            <p>turtle.ad@turtle.com</p>  
                     </div>
-                        <!-- <h4><i class="fa-regular fa-envelope"></i> Turtle 이메일 문의</h4>
-                            <p>turtle.ad@turtle.com</p>   -->
                 </div>
             </div>
         </section>
@@ -186,6 +185,8 @@
     </main>
     <!-- End #main -->
     
+     <!-- main.js 연결 -->
+     <script src="${contextPath}/resources/js/main.js"></script>
     
     <!-- jQuery 라이브러리 추가 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
@@ -200,7 +201,5 @@
 	<script src="${contextPath}/resources/vendor/swiper/swiper-bundle.min.js"></script>
 	<script src="${contextPath}/resources/vendor/php-email-form/validate.js"></script>
     
-    <!-- landing2.js 연결 -->
-    <script src="${contextPath}/resources/js/landing2.js"></script>
 </body>
 </html>

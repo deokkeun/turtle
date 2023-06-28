@@ -1,3 +1,4 @@
+
 var code = "";
 const accessToken = document.getElementsByName("access_token");
 
@@ -50,55 +51,7 @@ window.onload = function() {
 }
 
 
-// 회원 탈퇴
-function deleteAccountValidate() {
-    const memberPw = document.getElementById("memberPw");
-    const agree = document.getElementById("agree");
 
-    // 비밀번호 미작성
-    if (memberPw.value.trim().length == 0) {
-        alert("비밀번호를 입력해주세요.");
-        memberPw.focus();
-        return false;
-    }
-
-    // 약관 동의 체크 여부
-    // - 체크박스요소.checked  : 체크 시 true, 해제 시 false 반환
-    if (!agree.checked) { // 체크를 안했을 때
-        alert("약관 동의 후 탈퇴 버튼을 클릭해주세요.");
-        agree.focus();
-        return false;
-    }
-
-    // 모달창 열기
-    openModal();
-
-    return false; 
-}
-
-function openModal() {
-    const memberPw = document.getElementById("memberPw");
-    const agree = document.getElementById("agree");
-
-    // 비밀번호 미작성 또는 동의 체크를 하지 않은 경우 모달 창 열기를 막음
-    if (memberPw.value.trim().length == 0 || !agree.checked) {
-        return;
-    }
-
-    var modal = document.getElementById("modal");
-    modal.style.display = "block";
-}
-
-function closeModal() {
-    var modal = document.getElementById("modal");
-    modal.style.display = "none";
-}
-
-function confirmDelete() {
-   
-    // 모달창 닫기
-    closeModal();
-}
 
 //섬머노트
 $(document).ready(function() {
@@ -112,4 +65,47 @@ $(document).ready(function() {
 		  placeholder: '최대 2048자까지 쓸 수 있습니다'	//placeholder 설정
           
 	});
+});
+
+
+
+
+
+function currentTime() {
+    const now = new Date(); // 현재 시간 정보를 저장하고 있는 객체 생성
+
+    let hour = now.getHours();
+    let min = now.getMinutes();
+    let sec = now.getSeconds();
+
+    // 얻어온 시간값이 10미만일 경우 앞에 0추가
+    if(hour < 10) hour = "0" + hour;
+    if(min < 10) min = "0" + min;
+    if(sec < 10) sec = "0" + sec;
+
+    return hour + " : " + min + " : " + sec;
+}
+
+// 페이지가 로딩되자마자 #clock에 현재 시간 출력
+const clock = document.getElementById("clock");
+clock.innerText = currentTime();
+
+// #clock에 1초마다 현재 시간을 출력하도록 하는 코드를 작성
+const interbal = window.setInterval(function() {
+    clock.innerText = currentTime();
+}, 1000);
+
+
+// fullcalendar
+document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar-main');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+    });
+    calendar.render();
+
+
+    calendarEl.addEventListener("click", function() {
+        location.href = contextPath + "/calendar/calendar/1/9";
+    })
 });

@@ -66,10 +66,10 @@
         <input type="hidden" id="projectNo" value="${projectNo}">
         <input type="hidden" id="workspaceNo" value="${workspaceNo}">
           
-          <!-- calendar -->
-          <section id="calendar-box">
-            <div id='calendar'></div>
-          </section>
+        <!-- calendar -->
+        <section id="calendar-box">
+          <div id='calendar'></div>
+        </section>
           
         <!-- 일정 추가 모달창 -->
         <section id="calendar-modal">

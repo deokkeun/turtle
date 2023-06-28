@@ -25,4 +25,9 @@ public class EtcController {
 		
 		return "etc/faq";
 	}
+	@GetMapping("/main-faq")
+	public String mainfaqPage() {
+		
+		return "etc/main-faq";
+	}
 }
