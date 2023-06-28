@@ -104,15 +104,16 @@
 
 <h3>구현기능</h3>
 
-<code>
-<h4>✅ 메인 화면</h4>
+```
+✅ 메인 화면
 
 💡 화면 설명 :
 화면 돌아가는 방식 설명
+
 💡 기능 설명 :
     사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
   <a href="" Style="text-decoration: none; color: #1A73E8;">main 클래스 구현 바로가기</a>
-</code>
+```
 
 
 
@@ -120,20 +121,21 @@
 
 
 
-<h2>2. (기능명)</h2>
+<h2>2. 게시판</h2>
 (화면 이미지)
 
 <h3>구현기능</h3>
 
-<code>
-<h4>✅ 메인 화면</h4>
+```
+✅ 게시판
 
 💡 화면 설명 :
 화면 돌아가는 방식 설명
+
 💡 기능 설명 :
  사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
   <a href="" Style="text-decoration: none; color: #1A73E8;">ㅁㅁㅁ 클래스 구현 바로가기</a>
-</code>
+```
 
 
 
@@ -141,19 +143,21 @@
 
 
 
-<h2>3. (기능명)</h2>
+<h2>3. 메모장</h2>
 (화면 이미지)
 
 <h3>구현기능</h3>
-<code>
-<h4>✅ 메인 화면</h4>
+
+```
+✅ 메모장
 
 💡 화면 설명 :
 화면 돌아가는 방식 설명
+
 💡 기능 설명 :
  사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
   <a href="" Style="text-decoration: none; color: #1A73E8;">ㅁㅁㅁ 클래스 구현 바로가기</a>
-</code>
+```
 
 
 
