@@ -38,6 +38,14 @@
 		    <version>${org.springframework-version}</version>
 		</dependency> 
 		
+		<!-- 알림 메시지큐 RabbitMQ -->
+		<dependency>
+		    <groupId>org.springframework.amqp</groupId>
+		    <artifactId>spring-rabbit</artifactId>
+		    <version>1.7.5.RELEASE</version>
+		</dependency>
+
+		
 		
 		
 		<!-- JDBC, Mybatis, DBCP 관련 라이브러리 -->
