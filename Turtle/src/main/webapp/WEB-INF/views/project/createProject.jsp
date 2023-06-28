@@ -9,8 +9,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-=======
     
     <meta content="" name="description">
     <meta content="" name="keywords">
@@ -26,7 +24,6 @@
 	<link href="${contextPath}/resources/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link rel="stylesheet" href="${contextPath}/resources/css/common/landing-header.css" />
     
->>>>>>> 46c70aecf3ea260bd64fdd80355b2f7356df68cc
     <link rel="stylesheet" href="${contextPath}/resources/css/createProject.css">
     <script src="https://kit.fontawesome.com/0041fb1dcb.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -42,72 +39,64 @@
     
 
     <section>
-        
         <div class="section1">
             <i class="fa-solid fa-users-between-lines">프로젝트 관리</i>
         </div>
-        <form action="project" method="post">
+        <form action="createProject" method="post">
             <div class="section2">
-                
                 <p>프로젝트명 입력</p>
-        
                 <div>
                     <span id="emoji_btn2" class="projectEmoji"><i class="fa-regular fa-face-smile"></i></span>
                     <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
-                    <input type="text" id="projectName" placeholder="프로젝트명을 입력해주세요.">
+                    <input type="text" id="projectName" name="projectName" placeholder="프로젝트명을 입력해주세요.">
                 </div>
             </div>
-            
-
-
+            <div class="section2">
+            	<p>프로젝트 설명</p>
+            </div>
+            <textarea id="summernote" name="projectDescription"></textarea>
+             <div class="next-btn">
+            <button type="submit">다음</button>
+       		 </div>     
         </form>
+        
         <div class="section3">
             <p>프로젝트멤버 관리</p>
-            <buttaon class="btnt"><span>초대하기</span><i class="fa-solid fa-user-plus"></i></button>
+            <button class="btnt"><span>초대하기</span><i class="fa-solid fa-user-plus"></i></button>
           
         </div>
         
-        <div class="pop">
-            <div class="pop-content">
-                <div><i class="fa-solid fa-users">프로젝트멤버 초대하기</i></div>
-                <div>
-                    <div class="user-content">
-                        <div class="select">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" placeholder="이름/이메일을 입력해주세요."id="search-txt" class="searchmember">
-                        </div>
-                        <div class="search-mem">
-                           
-                        </div>
-                    </div>
-
-                    <div class="user-checked">
-                       
-                       
-                    </div>
-                    <a class="uc-btn">완료</a>
-                </div>
-            </div>
-            
-        </div>
-        <form action="invitedMember" method="post">
-            <div class="invited-member">
-                
-            </div>
+        <form action="inviteMember" method="post">
+	        <div class="pop">
+	            <div class="pop-content">
+	                <div><i class="fa-solid fa-users">프로젝트멤버 초대하기</i></div>
+	                <div>
+	                    <div class="user-content">
+	                        <div class="select">
+	                            <i class="fa-solid fa-magnifying-glass"></i>
+	                            <input type="text" placeholder="이름/이메일을 입력해주세요."id="search-txt" class="searchmember" name="pmList">
+	                        </div>
+	                        <div class="search-mem">
+	                           
+	                        </div>
+	                    </div>
+	
+	                    <div class="user-checked">
+	                       
+	                       
+	                    </div>
+	                    <button type="submit" class="uc-btn">완료</button>
+	                </div>
+	            </div>
+	        </div>
         </form>
 
        
-        <form action="projectDescription">
-            <textarea id="summernote"></textarea>
-        </form>
-        <div class="next-btn">
-            <a class="next-btn" href="createWorkspace">다음</a>
-        </div>
+
+
 
     </section>
-<<<<<<< HEAD
     <script src="${contextPath}/resources/js/createProject.js"></script>
-=======
 </main>
     <script>
             const contextPath = "${contextPath}";
@@ -129,6 +118,5 @@
     <script src="${contextPath}/resources/js/landing2.js"></script>
     
  
->>>>>>> 46c70aecf3ea260bd64fdd80355b2f7356df68cc
 </body>
 </html>

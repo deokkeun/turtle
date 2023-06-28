@@ -6,22 +6,26 @@
 		<id property="projectNo" column="PROJECT_NO"/>
 		
 		<result property="projectName"  column="PROJECT_NAME"/>
-		<result property="projectEmoji"  column="PROJECT_EMOJI"/>
 		<result property="projectDescription"  column="PROJECT_DESCRIPTION"/>
 		<result property="inviteCode"  column="INVITE_CODE"/>
 		<result property="projectDeleteFG"  column="PROJECT_DELETE_FG"/>
 		<result property="regDate"  column="REG_DATE"/>
+		<result property="createMemberNo"  column="CREATE_MEMBER_NO"/>
 	</resultMap>
 	
-<!-- 	<insert id="createProject" parameterType="project">
-		INSERT INTO PROJECT VALUES(
-			SEQ_PROJECT_NO.NEXTVAL,
-			#{project_name},
-			#{projectEmoji},
-			#{projectDescription},
-			#{inviteCode},
-			DEFAULT, DEFAULT
-		)
+ 	<insert id="createProject" parameterType="project" useGeneratedKeys="true">
+ 	
+ 		<selectKey keyProperty="projectNo" resultType="_int" order="BEFORE">
+ 			SELECT SEQ_PROJECT_NO.NEXTVAL FROM DUAL
+ 		</selectKey>
+			INSERT INTO PROJECT VALUES(
+				#{projectNo},
+				#{projectName},
+				#{projectDescription},
+				#{inviteCode},
+				DEFAULT, DEFAULT,
+				#{createMemberNo}
+			)
 	
-	</insert> -->
+	</insert> 
 </mapper>

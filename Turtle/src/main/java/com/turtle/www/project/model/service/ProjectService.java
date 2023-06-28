@@ -1,6 +1,9 @@
 package com.turtle.www.project.model.service;
 
+import java.util.Map;
+
 import com.turtle.www.project.model.vo.Project;
+
 
 public interface ProjectService {
 
@@ -8,6 +11,6 @@ public interface ProjectService {
 	 * @param project
 	 * @return
 	 */
-//	int createProject(Project project);
+	int createProject(Project project);
 
 }
