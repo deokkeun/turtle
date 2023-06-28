@@ -64,10 +64,12 @@
         
         <div class="section3">
             <p>프로젝트멤버 관리</p>
-<<<<<<< HEAD
+
             <button class="btnt"><span>초대하기</span><i class="fa-solid fa-user-plus"></i></button>
           
         </div>
+        
+  
         
         <form action="inviteMember" method="post" id="inviteForm">
 	        <div class="pop">
@@ -96,11 +98,9 @@
 
        
 
-
-=======
-            <buttaon class="btnt"><span>초대하기</span><i class="fa-solid fa-user-plus"></i></button>
+       <buttaon class="btnt"><span>초대하기</span><i class="fa-solid fa-user-plus"></i></button>
                 
-        </div>
+  
         
         <div class="pop">
             <div class="pop-content">
@@ -126,11 +126,11 @@
             
         </div>
         
-        <form action="invitedMember" method="post">
+ <!--        <form action="invitedMember" method="post">
             <div class="invited-member">
                 
             </div>
-        </form>
+        </form> -->
 
        
         <form action="projectDescription">
@@ -139,7 +139,6 @@
         <div class="next-btn">
             <a class="next-btn" href="inviteMember">다음</a>
         </div>
->>>>>>> dev
 
     </section>
     <script src="${contextPath}/resources/js/createProject.js"></script>

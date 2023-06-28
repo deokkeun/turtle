@@ -44,21 +44,24 @@ public class ProjectMemberController {
 	@Autowired
 	private ProjectMemberService service;
 	
+	private List<Member> mlist; // mList를 멤버 변수로 선언
+	
 	private Logger logger = LoggerFactory.getLogger(ProjectMemberController.class);
+	
+	
 	
 	
 	@GetMapping("/createProject")
 	public String createProject() {return "project/createProject";}
 	
+	
 	@GetMapping("/createWorkspace")
 	public String createWorkspace() {return "project/createWorkspace";}
 	
-<<<<<<< HEAD
-	private List<Member> mlist; // mList를 멤버 변수로 선언
-=======
+
 	@GetMapping("/inviteMember")
 	public String inviteMember() {return "project/inviteMember";}
->>>>>>> dev
+
 	
 	@ResponseBody
 	@GetMapping(value="/searchmember", produces="text/plain;charset=UTF-8")
