@@ -242,6 +242,7 @@ if (select('.toggle-sidebar2-btn')) {
 
 })();
 
+//프로젝트 내용 추가
 function addFile(menuId, event) {
   if (event) {
     event.stopPropagation();
@@ -291,17 +292,11 @@ function addFile(menuId, event) {
       showAddButton(menuId); // 삭제 후 추가 버튼 보이기
     };
 
-    var duplicateButton = document.createElement("button");
-    duplicateButton.className = "dropdown-item duplicate-button";
-    duplicateButton.innerHTML = '<i class="bi bi-files"></i> 복제하기';
-    duplicateButton.onclick = function (event) {
-      event.stopPropagation();
-      duplicateFile(this);
-    };
+  
 
     dropdownMenu.appendChild(renameButton);
     dropdownMenu.appendChild(deleteButton);
-    dropdownMenu.appendChild(duplicateButton);
+  
 
     fileMenu.appendChild(dropdownToggle);
     fileMenu.appendChild(dropdownMenu);
@@ -313,7 +308,9 @@ function addFile(menuId, event) {
     var menuNav = document.getElementById(menuId);
     menuNav.appendChild(newFile);
 
-    hideAddButton(menuId); // 추가 버튼 숨기기
+    if (menuId !== "workspace-nav") {
+      hideAddButton(menuId); // 추가 버튼 숨기기
+    }
   }
 }
 
@@ -331,6 +328,7 @@ function showAddButton(menuId) {
   }
 }
 
+
 function renameFile(button) {
   var fileItem = button.closest(".file-menu");
   var fileSpan = fileItem.previousElementSibling;
@@ -344,44 +342,6 @@ function deleteFile(button) {
   var fileItem = button.parentNode.parentNode.parentNode;
   var menuNav = fileItem.parentNode;
   menuNav.removeChild(fileItem);
-}
-
-function duplicateFile(button) {
-  var fileItem = button.parentNode.parentNode.parentNode;
-  var clone = fileItem.cloneNode(true);
-  var projectName = clone.getElementsByTagName("span")[0].innerText;
-
-  // 숫자 추출
-  var numberMatch = projectName.match(/\((\d+)\)$/);
-  var number = 1;
-
-  if (numberMatch) {
-    number = parseInt(numberMatch[1]) + 1;
-    projectName = projectName.replace(/\(\d+\)$/, "").trim();
-  }
-
-  // 복제된 파일 이름 설정
-  var duplicatedProjectName = projectName + " (" + number + ")";
-
-  clone.getElementsByTagName("span")[0].innerText = duplicatedProjectName;
-
-  clone.getElementsByClassName("rename-button")[0].onclick = function (event) {
-    event.stopPropagation();
-    renameFile(this);
-  };
-
-  clone.getElementsByClassName("delete-button")[0].onclick = function (event) {
-    event.stopPropagation();
-    deleteFile(this);
-  };
-
-  clone.getElementsByClassName("duplicate-button")[0].onclick = function (event) {
-    event.stopPropagation();
-    duplicateFile(this);
-  };
-
-  var menuNav = fileItem.parentNode;
-  menuNav.appendChild(clone);
 }
 
 const navLink = document.querySelector('.nav-link');
