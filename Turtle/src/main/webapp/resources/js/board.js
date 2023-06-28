@@ -1,168 +1,110 @@
-let boards = document.querySelectorAll(".board");
-let boardSort;
+let boards;
+selectBoard();
+let board;
 let clickedBoard;
 
 // 딜레이 1초 설정
 let typingTimer;
 const delay = 1000; // 1초
 
-boards.forEach((board) => {
-    let selectBoardDetail = board.querySelector('.select-board-detail');
-    let addBoard = board.querySelector(".add-board");
-    let editBoardTitle = board.querySelector(".edit-boardTitle");
-    let editBoardTitleBtn = board.querySelector(".edit-boardTitle-btn");
-    let boardTitle = board.querySelector(".boardTitle");
-    let closeEditBoardTitleBtn = board.querySelector(".close-edit-boardTitle-btn");
-    let dropBoard = board.querySelector(".delete-board");
-    let addBoardBtn = board.querySelector(".add-board-btn");
-    let deleteBoardBtn = board.querySelector(".delete-board-btn");
+function selectBoard(){
+    boards = document.querySelectorAll(".board");
 
-
-    // 제목 수정에 필요한 pmNo, boardNo 변수에 담기
-    let pmNo = board.dataset.pmno;
-    const boardNo = board.dataset.boardno;
+    boards.forEach((board) => {
+        let selectBoardDetail = board.querySelector('.select-board-detail');
+        let addBoard = board.querySelector(".add-board");
+        let editBoardTitle = board.querySelector(".edit-boardTitle");
+        let editBoardTitleBtn = board.querySelector(".edit-boardTitle-btn");
+        let boardTitle = board.querySelector(".boardTitle");
+        let closeEditBoardTitleBtn = board.querySelector(".close-edit-boardTitle-btn");
+        let dropBoard = board.querySelector(".delete-board");
+        let addBoardBtn = board.querySelector(".add-board-btn");
+        let deleteBoardBtn = board.querySelector(".delete-board-btn");
     
-    // 게시글 추가, 삭제에 필요한 boardSort 변수에 담기
-    boardSort = board.dataset.boardsort;
-
-    // 마우스가 올려진 게시글에 수정, 추가버튼 활성화
-    board.addEventListener("mouseover", function() {
-        if(addBoard != null) {
-            addBoard.style.visibility = "visible";
-        }       
-        editBoardTitle.style.visibility = "visible";
-        dropBoard.style.visibility = "visible";
-    });
-
-
-    // 마우스가 벗어나면 수정, 추가버튼 비활성화
-    board.addEventListener("mouseout", function() {
-        if(addBoard != null) {
-            addBoard.style.visibility = "hidden";
-        }        
-        editBoardTitle.style.visibility = "hidden";
-        dropBoard.style.visibility = "hidden";
-    });
-
+        // 제목 수정에 필요한 pmNo, boardNo 변수에 담기
+        let pmNo = board.dataset.pmno;
+        const boardNo = board.dataset.boardno;
+        
+        // 게시글 추가, 삭제에 필요한 boardSort 변수에 담기
+        let boardSort = board.dataset.boardsort;
     
-    // 제목 수정 기능 활성화
-    if(editBoardTitleBtn != null) {
-        editBoardTitleBtn.addEventListener("click", function() {
-            selectBoardDetail.removeAttribute("href");
-            boardTitle.contentEditable = true;
-            closeEditBoardTitleBtn.style.display = "block";
-            editBoardTitleBtn.style.display = "none";
+        // 마우스가 올려진 게시글에 수정, 추가버튼 활성화
+        board.addEventListener("mouseover", function() {
+            if(addBoard != null) {
+                addBoard.style.visibility = "visible";
+            }       
+            editBoardTitle.style.visibility = "visible";
+            dropBoard.style.visibility = "visible";
         });
-    }
     
-
-    // 제목 수정 기능 비활성화
-    if(closeEditBoardTitleBtn != null) {
-        closeEditBoardTitleBtn.addEventListener("click", function() {
-            selectBoardDetail.setAttribute("href", "../../boardDetail/" + projectNo + '/' + workspaceNo + '/' + boardNo);
-            boardTitle.contentEditable = false;
-            closeEditBoardTitleBtn.style.display = "none";
-            editBoardTitleBtn.style.display = "block";
+    
+        // 마우스가 벗어나면 수정, 추가버튼 비활성화
+        board.addEventListener("mouseout", function() {
+            if(addBoard != null) {
+                addBoard.style.visibility = "hidden";
+            }        
+            editBoardTitle.style.visibility = "hidden";
+            dropBoard.style.visibility = "hidden";
         });
-    }
     
-    // 제목 수정 기능
-    // 작성중일땐 시간 초기화
-    board.addEventListener('input', function() {
-
-        clearTimeout(typingTimer);	
-    });
-
-    board.addEventListener('keyup', function() {
-
-        clearTimeout(typingTimer);
-
-        typingTimer = setTimeout(function() {
-            // 1초동안 아무런 동작이 없으면 로직 실행			
-                updateBoardTitle();			
-            }, delay);	
-    });
-
-    // 제목 변경 함수
-    function updateBoardTitle() {
-
-        // 개행 제거
-        const cleanedBoardTitle = boardTitle.innerHTML.replace(/\n|\t/g, "");
-
-        let board = {
-            "workspaceNo" : workspaceNo,
-            "boardNo" : boardNo,
-            "pmNo" : pmNo,
-            "boardTitle" : cleanedBoardTitle,
-            "updateMemberName" : memberName,
-            "updateProfileImg" : profileImage
-        };
-
-        // JSON.parse(문자열) : JSON -> JS Object
-        // JSON.stringify(객체) :  JS Object -> JSON
-        console.log(board);
-        console.log(JSON.stringify(board));
-
-        // boardSock(웹소켓 객체)을 이용하여 메세지 보내기
-		// boardSock.send(값) : 웹소켓 핸들러로 값을 보냄
-		boardListSock.send( JSON.stringify(board) );
-    }
-
+        
+        // 제목 수정 기능 활성화
+        if(editBoardTitleBtn != null) {
+            editBoardTitleBtn.addEventListener("click", function() {
+                console.log("수정버튼 클릭");
+                selectBoardDetail.removeAttribute("href");
+                boardTitle.contentEditable = true;
+                closeEditBoardTitleBtn.style.display = "block";
+                editBoardTitleBtn.style.display = "none";
+            });
+        }
+        
     
-    // 게시글 추가 기능
-    addBoardBtn.addEventListener("click", function() {
-        boardSort = board.dataset.boardsort;
-        insertBoard();
-    });
+        // 제목 수정 기능 비활성화
+        if(closeEditBoardTitleBtn != null) {
+            closeEditBoardTitleBtn.addEventListener("click", function() {
+                selectBoardDetail.setAttribute("href", "../../boardDetail/" + projectNo + '/' + workspaceNo + '/' + boardNo);
+                boardTitle.contentEditable = false;
+                closeEditBoardTitleBtn.style.display = "none";
+                editBoardTitleBtn.style.display = "block";
+            });
+        }
+        
+        // 제목 수정 기능
+        // 작성중일땐 시간 초기화
+        board.addEventListener('input', function() {
     
-    // 게시글 추가 함수
-    function insertBoard() {
-
-        let board = {
-            "boardSort" : boardSort,
-            "workspaceNo" : workspaceNo,
-            "pmNo" : pmNo,
-            "regProfileImg" : profileImage
-        };
-
-        // JSON.parse(문자열) : JSON -> JS Object
-        // JSON.stringify(객체) :  JS Object -> JSON
-        console.log(board);
-        console.log(JSON.stringify(board));
-
-        // insertBoardSock(웹소켓 객체)을 이용하여 메세지 보내기
-		// insertBoardSock.send(값) : 웹소켓 핸들러로 값을 보냄
-		insertBoardSock.send( JSON.stringify(board));
-
-    };
-    
-    // 게시글 삭제 기능
-    if(deleteBoardBtn != null) {
-        deleteBoardBtn.addEventListener("click", function() {
-            deleteBoard();
+            clearTimeout(typingTimer);	
         });
-    }
     
-    // 게시글 삭제 함수
-    function deleteBoard() {
-
-        let board = {
-            "boardSort" : boardSort,
-            "workspaceNo" : workspaceNo,
-            "boardNo" : boardNo
-        };
-
-        // JSON.parse(문자열) : JSON -> JS Object
-        // JSON.stringify(객체) :  JS Object -> JSON
-        console.log(board);
-        console.log(JSON.stringify(board));
-
-        // deleteBoardSock(웹소켓 객체)을 이용하여 메세지 보내기
-		// deleteBoardSock.send(값) : 웹소켓 핸들러로 값을 보냄
-		deleteBoardSock.send( JSON.stringify(board));
-
-    };
-});
+        board.addEventListener('keyup', function() {
+    
+            clearTimeout(typingTimer);
+    
+            typingTimer = setTimeout(function() {
+                // 1초동안 아무런 동작이 없으면 로직 실행			
+                    updateBoardTitle(board);			
+                }, delay);	
+        });
+        
+        // 게시글 추가 기능
+        addBoardBtn.addEventListener("click", function() {
+            clickedBoard = board.dataset.boardsort;
+            console.log("추가버튼 클릭");
+            insertBoard(board);
+        });
+                
+        // 게시글 삭제 기능
+        if(deleteBoardBtn != null) {
+            deleteBoardBtn.addEventListener("click", function() {
+                console.log("삭제버튼 클릭");
+                deleteBoard(board);
+            });
+        }
+        
+        
+    });
+}
 
 
 // 게시글 제목 수정용 웹소켓 작업
@@ -192,10 +134,7 @@ boardListSock.onmessage = function(e) {
             changedBoardUpdateDate.innerHTML = currentTime();
 
             // 수정된 제목 변경
-            changedBoardTitle.innerHTML = changedBoard.boardTitle;
-
-            
-            
+            changedBoardTitle.innerHTML = changedBoard.boardTitle;            
         }
     });
 }
@@ -291,159 +230,29 @@ insertBoardSock.onmessage = function(e) {
     addedBoard.appendChild(addedEditBoardArea);
     addedBoard.appendChild(addedBoardInfo);
     addedBoard.appendChild(addedDropBoard);
-    
-    console.log(addedBoard);
 
     boards = document.querySelectorAll(".board");
+    console.log(addedBoard);
 
-
+    
     // 기존에 있던 요소들의 정렬 및 boardSort 변경   
     boards.forEach((board) => {                
+        let boardSort = board.dataset.boardsort;
+        currentBoardSort = parseInt(boardSort, 10); // 정수로 변환
 
-        // 사이위치한 글일때 글 사이에 게시글 삽입
-        if(board.dataset.boardsort == newBoard.boardSort - 1) {
-            console.log("test");
+        if(currentBoardSort >= newBoard.boardSort){
+            board.dataset.boardsort = currentBoardSort + 1;
+        }
+
+        if(boardSort == addedBoard.dataset.boardsort) {
             $(board).after(addedBoard);
         }
-        // 브라우저 내 게시글들의 sort 재정렬
-        currentBoardSort = parseInt(board.dataset.boardsort, 10); // 정수로 변환
-
-        if(currentBoardSort >= newBoard.boardSort && currentBoardSort != 0) {    
-              
-            board.dataset.boardsort = currentBoardSort + 1;
-            
-        }
-
-    });
-
-    // 마우스가 올려진 게시글에 수정, 추가버튼 활성화
-    addedBoard.addEventListener("mouseover", function() {
-        if(addedAddBoard != null) {
-            addedAddBoard.style.visibility = "visible";
-        }       
-        addedEditBoardTitle.style.visibility = "visible";
-        addedDropBoard.style.visibility = "visible";
-    });
-
-    // 마우스가 벗어나면 수정, 추가버튼 비활성화
-    addedBoard.addEventListener("mouseout", function() {
-        if(addedAddBoard != null) {
-            addedAddBoard.style.visibility = "hidden";
-        }        
-        addedEditBoardTitle.style.visibility = "hidden";
-        addedDropBoard.style.visibility = "hidden";
+        console.log("뭐야");
     });
     
-    // 제목 수정 기능 활성화
-    if(addedEditBoardTitleBtn != null) {
-        addedEditBoardTitleBtn.addEventListener("click", function() {
-            addedSelectBoardDetail.removeAttribute("href");
-            addedBoardTitle.contentEditable = true;
-            addedCloseEditBoardTitleBtn.style.display = "block";
-            addedEditBoardTitleBtn.style.display = "none";
-        });
-    }
-    
-    // 제목 수정 기능 비활성화
-    if(addedCloseEditBoardTitleBtn != null) {
-        addedCloseEditBoardTitleBtn.addEventListener("click", function() {
-            addedSelectBoardDetail.setAttribute("href", "#");
-            addedBoardTitle.contentEditable = false;
-            addedCloseEditBoardTitleBtn.style.display = "none";
-            addedEditBoardTitleBtn.style.display = "block";
-        });
-    }
 
-    // 제목 수정 기능
-    // 작성중일땐 시간 초기화
-    addedBoard.addEventListener('input', function() {
-        clearTimeout(typingTimer);	
-    });
+    //selectBoard();
 
-    addedBoard.addEventListener('keyup', function() {
-        clearTimeout(typingTimer);
-
-        typingTimer = setTimeout(function() {
-            // 1초동안 아무런 동작이 없으면 로직 실행			
-                updateBoardTitle();			
-            }, delay);	
-    });
-
-    // 제목 변경 함수
-    function updateBoardTitle() {
-        // 개행 제거
-        const cleanedBoardTitle = addedBoardTitle.innerHTML.replace(/\n|\t/g, "");
-
-        let board = {
-            "workspaceNo" : workspaceNo,
-            "boardNo" : newBoard.boardNo,
-            "pmNo" : pmNo,
-            "boardTitle" : cleanedBoardTitle,
-            "updateMemberName" : memberName,
-            "updateProfileImg" : profileImage
-        };
-
-        // JSON.parse(문자열) : JSON -> JS Object
-        // JSON.stringify(객체) :  JS Object -> JSON
-        console.log(board);
-        console.log(JSON.stringify(board));
-
-        // boardSock(웹소켓 객체)을 이용하여 메세지 보내기
-		// boardSock.send(값) : 웹소켓 핸들러로 값을 보냄
-		boardListSock.send( JSON.stringify(board) );
-    }
-
-    // 게시글 추가 기능
-    addedAddBoardBtn.addEventListener("click", function() {
-        insertBoard();
-    });
-    
-    // 게시글 추가 함수
-    function insertBoard() {
-
-        let board = {
-            "boardSort" : newBoard.boardSort,
-            "workspaceNo" : workspaceNo,
-            "pmNo" : pmNo,
-            "regProfileImg" : profileImage
-        };
-
-        // JSON.parse(문자열) : JSON -> JS Object
-        // JSON.stringify(객체) :  JS Object -> JSON
-        console.log(board);
-        console.log(JSON.stringify(board));
-
-        // insertBoardSock(웹소켓 객체)을 이용하여 메세지 보내기
-		// insertBoardSock.send(값) : 웹소켓 핸들러로 값을 보냄
-		insertBoardSock.send( JSON.stringify(board));
-    };
-
-    // 게시글 삭제 기능
-    if(addedDeleteBoardBtn != null) {
-        addedDeleteBoardBtn.addEventListener("click", function() {
-            deleteBoard();
-        });
-    }
-    
-    // 게시글 삭제 함수
-    function deleteBoard() {
-
-        let board = {
-            "boardSort" : newBoard.boardSort,
-            "workspaceNo" : workspaceNo,
-            "boardNo" : newBoard.boardNo
-        };
-
-        // JSON.parse(문자열) : JSON -> JS Object
-        // JSON.stringify(객체) :  JS Object -> JSON
-        console.log(board);
-        console.log(JSON.stringify(board));
-
-        // deleteBoardSock(웹소켓 객체)을 이용하여 메세지 보내기
-		// deleteBoardSock.send(값) : 웹소켓 핸들러로 값을 보냄
-		deleteBoardSock.send( JSON.stringify(board));
-
-    };
 };
 
 // 게시글 삭제용 웹소켓 작업
@@ -458,7 +267,7 @@ deleteBoardSock.onmessage = function(e) {
 
 	// 전달 받은 메세지를 JS 객체로 변환
 	const deletedBoard = JSON.parse(e.data);  // JSON -> JS Object
-    boards = document.querySelectorAll(".board");
+    let boards = document.querySelectorAll(".board");
     boards.forEach((board) => {
         if(deletedBoard.boardNo == board.dataset.boardno) {
             if(!board.previousSibling && !board.nextElementSibling) {
@@ -469,6 +278,97 @@ deleteBoardSock.onmessage = function(e) {
         }        
     });
 };
+
+
+// 제목 변경 함수
+function updateBoardTitle(board) {
+
+    let boardTitle = board.querySelector(".boardTitle");
+    // 개행 제거
+    const cleanedBoardTitle = boardTitle.innerHTML.replace(/\n|\t/g, "");
+
+    board = {
+        "workspaceNo" : workspaceNo,
+        "boardNo" : board.dataset.boardno,
+        "pmNo" : board.dataset.pmno,
+        "boardTitle" : cleanedBoardTitle,
+        "updateMemberName" : memberName,
+        "updateProfileImg" : profileImage
+    };
+
+    // JSON.parse(문자열) : JSON -> JS Object
+    // JSON.stringify(객체) :  JS Object -> JSON
+    console.log(board);
+    console.log(JSON.stringify(board));
+
+    // boardSock(웹소켓 객체)을 이용하여 메세지 보내기
+    // boardSock.send(값) : 웹소켓 핸들러로 값을 보냄
+    boardListSock.send( JSON.stringify(board) );
+}
+
+// 게시글 추가 함수
+function insertBoard(board) {
+
+    board = {
+        "boardSort" : board.dataset.boardsort,
+        "workspaceNo" : workspaceNo,
+        "pmNo" : board.dataset.pmno,
+        "regProfileImg" : profileImage
+    };
+
+    // JSON.parse(문자열) : JSON -> JS Object
+    // JSON.stringify(객체) :  JS Object -> JSON
+    console.log(board);
+    console.log(JSON.stringify(board));
+
+    // insertBoardSock(웹소켓 객체)을 이용하여 메세지 보내기
+    // insertBoardSock.send(값) : 웹소켓 핸들러로 값을 보냄
+    insertBoardSock.send( JSON.stringify(board));
+
+};
+
+// 게시글 삭제 함수
+function deleteBoard(board) {
+
+    board = {
+        "boardSort" : board.dataset.boardsort,
+        "workspaceNo" : workspaceNo,
+        "boardNo" : board.dataset.boardno
+    };
+
+    // JSON.parse(문자열) : JSON -> JS Object
+    // JSON.stringify(객체) :  JS Object -> JSON
+    console.log(board);
+    console.log(JSON.stringify(board));
+
+    // deleteBoardSock(웹소켓 객체)을 이용하여 메세지 보내기
+    // deleteBoardSock.send(값) : 웹소켓 핸들러로 값을 보냄
+    deleteBoardSock.send( JSON.stringify(board));
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function currentTime() {
 	const now = new Date();

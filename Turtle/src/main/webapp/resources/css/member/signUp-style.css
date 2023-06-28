@@ -12,7 +12,7 @@
 
 /* 회원가입 폼 */
 form[name="signUp-form"]{
-    margin-top: 140px;
+    margin: 140px 0 150px 0;
 }
 
 /* 회원가입 폼 내부 input 제목(label) */
