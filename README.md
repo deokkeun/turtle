@@ -44,7 +44,7 @@
   <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white">
   <br>
   <img src="https://img.shields.io/badge/apache tomcat-F8DC75?style=for-the-badge&logo=apachetomcat&logoColor=white">
-  <img src="https://img.shields.io/badge/ApacheMaven-c71a36?style=for-the-badge&logo=ApacheMaven&logoColor=white"> 
+  <img src="https://img.shields.io/badge/Apache Maven-c71a36?style=for-the-badge&logo=Apache Maven&logoColor=white">
   <img src="https://img.shields.io/badge/oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white"> 
   <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
   <br>
@@ -70,13 +70,14 @@
 
 <h1>⭐️ 주요기능</h1>
 <div>1. 유저 기능</div>
-<code>
+
+```
 * 이메일 인증, 비밀번호 변경, 회원 가입,회원 탈퇴
 * 
 * 게시판 ⭐️
 * 메모장
-작성중입니다
-</code>
+작성중...
+```
 
 
 
