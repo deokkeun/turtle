@@ -46,8 +46,8 @@
   <br>
   <img src="https://img.shields.io/badge/apache tomcat-F8DC75?style=for-the-badge&logo=apachetomcat&logoColor=white">
   <img src="https://img.shields.io/badge/Apache Maven-c71a36?style=for-the-badge&logo=Apache Maven&logoColor=white">
-  <img src="https://img.shields.io/badge/oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white"> 
   <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+  <img src="https://img.shields.io/badge/oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white"> 
   <br>
   <img src="https://img.shields.io/badge/fontawesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white">
   <img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white">
@@ -59,9 +59,12 @@
   <img src="https://img.shields.io/badge/Slack-4a154b?style=for-the-badge&logo=Slack&logoColor=white">
   <br><br>
   
-   <h3>💎 API</h3>
-  <img src="">
-  <img src="">
+  <h3>💎 API</h3>
+  <img src="https://img.shields.io/badge/Portone-F15B2A?style=for-the-badge&logo=plausibleanalytics&logoColor=white">
+  <img src="https://img.shields.io/badge/Fullcalendar-4285F4?style=for-the-badge&logo=googlecalendar&logoColor=white">
+  <img src="https://img.shields.io/badge/summernote-40AEF0?style=for-the-badge&logo=&logoColor=white">
+  <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+  <img src="https://img.shields.io/badge/.....-9013FE?style=for-the-badge&logo=nodered&logoColor=white">
   <br><br>
 </div>
 
