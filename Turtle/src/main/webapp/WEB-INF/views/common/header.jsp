@@ -429,8 +429,9 @@
 <!-- right sidebar(오른쪽 사이드바) --> 
   
   <aside class="right-sidebar" id="rightSidebar" >
-
+	
      <jsp:include page='/WEB-INF/views/chat/chatRoomList.jsp'/>
+     <input type="hidden" id="projectNo" value="${projectNo}">
     
   <button class="sidebar-close-btn" onclick="toggleSidebar()"><i class="bi bi-chevron-double-right"></i></button>
   <ul class="right-sidebar-nav" id="right-sidebar-nav">
@@ -468,7 +469,8 @@
   
  
 </aside>
-   <script src='${contextPath}/resources/js/chat.js'></script> 
+  
+  <script src='${contextPath}/resources/js/chat.js'></script> 
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.js"></script>
 
   <!-- Template Main JS File -->

@@ -23,9 +23,9 @@
     	</li>  	    	   	
     </c:forEach>
     </ul>
-     <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script>
+    <!--  <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script> -->
     <script>
-        
+      
           
     </script>
 </body>

@@ -12,6 +12,24 @@
 
 const send = document.getElementById("send");
 
+
+
+//
+$("#inputChatting").keyup(function(keyNum) {
+	const inputChatting = document.getElementById("inputChatting"); 
+	if(keyNum.keyCode == 13) {
+		
+		sendMessage();
+		
+	
+		
+	}
+	
+
+
+})
+
+
 // 채팅 메세지 보내기
 if(send != null) {
 send.addEventListener("click", sendMessage);

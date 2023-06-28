@@ -199,7 +199,7 @@ section {
     width: 100%;
     margin-bottom: 5%;
 }
-.next-btn > span {
+.next-btn > button {
     margin: 0 auto;
     display: block;
     width: 300px;
@@ -209,7 +209,7 @@ section {
     border-radius: 8px;
     padding: 5px;
 }
-.next-btn > span:hover {
+.next-btn > button:hover {
     background-color: black;
     cursor: pointer;
 }
