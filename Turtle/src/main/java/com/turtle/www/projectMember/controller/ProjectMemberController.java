@@ -32,7 +32,8 @@ public class ProjectMemberController {
 	@GetMapping("/createWorkspace")
 	public String createWorkspace() {return "project/createWorkspace";}
 	
-	
+	@GetMapping("/inviteMember")
+	public String inviteMember() {return "project/inviteMember";}
 	
 	@ResponseBody
 	@GetMapping(value="/searchmember", produces="text/plain;charset=UTF-8")

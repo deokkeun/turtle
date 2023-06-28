@@ -30,9 +30,11 @@
      <!--섬머노트 전용 css-->
      <link rel="stylesheet" href="${contextPath}/resources/css/summernote/summernote-lite.css">
     
+     
     <title>프로젝트 생성</title>
 </head>
 <body>
+   
    <main>
     <jsp:include page="/WEB-INF/views/common/landing-header.jsp" />     
    
@@ -61,7 +63,7 @@
         <div class="section3">
             <p>프로젝트멤버 관리</p>
             <buttaon class="btnt"><span>초대하기</span><i class="fa-solid fa-user-plus"></i></button>
-          
+                
         </div>
         
         <div class="pop">
@@ -87,6 +89,7 @@
             </div>
             
         </div>
+        
         <form action="invitedMember" method="post">
             <div class="invited-member">
                 
@@ -98,11 +101,12 @@
             <textarea id="summernote"></textarea>
         </form>
         <div class="next-btn">
-            <a class="next-btn" href="createWorkspace">다음</a>
+            <a class="next-btn" href="inviteMember">다음</a>
         </div>
 
     </section>
 </main>
+   
     <script>
             const contextPath = "${contextPath}";
     </script>

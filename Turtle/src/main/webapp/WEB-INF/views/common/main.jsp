@@ -20,12 +20,29 @@
     <link href="${contextPath}/resources/favicon/favicon-16x16.png" rel="icon">
     <link href="${contextPath}/resources/favicon/apple-icon-60x60.png" rel="apple-touch-icon">
     
-
+    <style>
+                /* 로딩페이지 */
+        #load {
+            width: 100%;
+            height: 100%;
+            top: 45%;
+            left: 0;
+            position: fixed;
+            display: block;
+            opacity: 0.8;
+            background: white;
+            z-index: 99;
+            text-align: center;       
+        }
+    </style>
 	<!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
+    <div id="load">
+        <div><img id="loading-image" src="${contextPath}/resources/images/top버튼거북이2.png" width="150px"></div>
+        <div><img src="${contextPath}/resources/images/load.gif" width="100px"></div>
+    </div>
     	<!-- header include -->
         <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
@@ -85,6 +102,14 @@
      
 
     </main>
+     <!--loading 페이지-->
+     <script type="text/javascript">
+        $(window).on('load', function() {
+            setTimeout(function(){
+                $("#load").fadeOut();
+            }, 500);
+        });
+    </script>
     <script>
       const contextPath = "${contextPath}";
 

@@ -34,8 +34,8 @@ function toggleSubMenu(id) {
   var subMenu = document.getElementById(id);
   subMenu.classList.toggle("active");
 }
+// createElement로 li생성후 ajax로 chatRoomList를 불러와서 append해주기
 
-/*
 
 $('.sidebar-toggle').on('click', function() {
 
@@ -47,8 +47,8 @@ $('.sidebar-toggle').on('click', function() {
 
       success : function(data) {
 
-       
-          $('.right-sidebar').html(data);
+        
+        $('.right-sidebar').html(data);
           
          
       }
@@ -67,7 +67,7 @@ const roomNo = $(this).val();
 
 $.ajax({
 
-  url : contextPath + '/chat/chatRoom/'+projectNo.value+'/'+roomNo +'?',
+  url : contextPath + '/chat/chatRoom/1?',
   type : 'get',
   datatype : 'html',
 
@@ -82,4 +82,3 @@ $.ajax({
 
 });
 
-*/
