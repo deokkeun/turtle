@@ -16,9 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,36 +26,38 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.google.gson.Gson;
 import com.turtle.www.member.model.vo.Member;
-import com.turtle.www.project.controller.ProjectController;
 import com.turtle.www.project.model.vo.Project;
 import com.turtle.www.projectMember.model.service.ProjectMemberService;
-import com.turtle.www.projectMember.model.vo.ProjectMember;
 
 @Controller
 @RequestMapping("/project")
 @SessionAttributes({"loginMember"})
 public class ProjectMemberController {
 	
-	// 초대코드 이메일 전송
-	@Autowired
-    private JavaMailSender mailSender;
+	private Logger logger = LoggerFactory.getLogger(ProjectMemberController.class);
 	
 	@Autowired
 	private ProjectMemberService service;
 	
-	private Logger logger = LoggerFactory.getLogger(ProjectMemberController.class);
+	private List<Member> mlist; // mList를 멤버 변수로 선언
+	
+	// 초대코드 이메일 전송
+	@Autowired
+    private JavaMailSender mailSender;
+	
 	
 	
 	@GetMapping("/createProject")
 	public String createProject() {return "project/createProject";}
 	
+	
 	@GetMapping("/createWorkspace")
 	public String createWorkspace() {return "project/createWorkspace";}
 	
-	private List<Member> mlist; // mList를 멤버 변수로 선언
 	
 	@GetMapping("/inviteMember")
 	public String inviteMember() {return "project/inviteMember";}
+
 	
 	@ResponseBody
 	@GetMapping(value="/searchmember", produces="text/plain;charset=UTF-8")
@@ -96,6 +97,14 @@ public class ProjectMemberController {
 		}
 		
 		for(String toMail : emailList) {
+			
+			String acceptLink = "/inviteMember/{inviteCode}/accept";
+			String rejectLink = "/inviteMember/{inviteCode}/reject";
+
+			String acceptButton = "<a href=\"" + acceptLink + "\">수락</a>";
+			String rejectButton = "<a href=\"" + rejectLink + "\">거절</a>";
+
+			
 			/* 이메일 보내기 */
 	        String setFrom = "admin@gmail.com"; //보내는 이메일
 	        String title = project.getProjectName() + "에 함께하실 멤버로 초대합니다!";
@@ -111,9 +120,8 @@ public class ProjectMemberController {
 	        		"</ul>" +
 	        		"<p>아래 초대 코드를 사용하여 프로젝트에 가입해주세요:</p>" +
 	        		"<h3>초대 코드: <span style='color:red'>" + inviteCode + "</span></h3>" +
-	        		"<p>프로젝트에 가입하려면 아래 링크를 클릭해주세요:</p>" +
-	        		"<button>수락</button>" + "<button>거절</button>" +
-	        		"<p><a href='[가입 링크]'>프로젝트 가입하기</a></p>" +
+	        	    "<p>" + acceptButton + "</p>" +
+	        	    "<p>" + rejectButton + "</p>" +
 	        		"<p>프로젝트에 가입하시면 위의 혜택을 누리며, 우리 팀의 성공을 함께 이룰 수 있습니다.</p>" + 
 	        		"<p>감사합니다!</p>";
 	        		
@@ -148,4 +156,26 @@ public class ProjectMemberController {
 		
 		
 	}
+	
+	@PostMapping("/inviteMember/{inviteCode}/accept")
+	public String acceptInvitation(@PathVariable("inviteCode") String inviteCode) {
+	    // 초대 수락 동작 처리
+	    // invitationId를 사용하여 해당 초대를 수락 처리합니다.
+	    
+	    // 수락 처리 후 필요한 동작 수행
+	    
+	    return "redirect:/invitation/accepted";
+	}
+
+	@PostMapping("/inviteMember/{inviteCode}/reject")
+	public String rejectInvitation(@PathVariable("inviteCode") String inviteCode) {
+	    // 초대 거절 동작 처리
+	    // invitationId를 사용하여 해당 초대를 거절 처리합니다.
+	    
+	    // 거절 처리 후 필요한 동작 수행
+	    
+	    return "redirect:/invitation/rejected";
+	}
+
+	
 }

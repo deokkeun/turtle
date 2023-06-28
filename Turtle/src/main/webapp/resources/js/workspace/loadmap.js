@@ -80,9 +80,7 @@ function getRepos() {
 
   }
 
-<<<<<<< HEAD
-}
-=======
+
 }
 
 
@@ -166,11 +164,8 @@ var myTree = Treeviz.create({
 
 myTree.refresh(hierarchical_data_example);
 
-
->>>>>>> 46c70aecf3ea260bd64fdd80355b2f7356df68cc
-=======
 myTree.refresh(data_1);
 var toggle=true;
 document.querySelector("#add").addEventListener("click", () => {toggle ? myTree.refresh(data_2) : myTree.refresh(data_3); toggle = false});
 document.querySelector("#remove").addEventListener("click", () => myTree.refresh(data_1));
->>>>>>> dev
+
