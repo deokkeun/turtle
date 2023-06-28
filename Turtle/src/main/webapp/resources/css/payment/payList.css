@@ -18,7 +18,11 @@
 }
 /* 테이블 제목 */
 #payList-table-head {
-    border: 2px solid black;
+    background-color: #4154f1;
+    color: white;
+}
+#payList-table-head > tr {
+    height: 40px;
 }
 /* 테이블 내용 */
 #payList-table-body tr {

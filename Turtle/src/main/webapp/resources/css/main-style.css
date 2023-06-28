@@ -6,6 +6,8 @@
 * License: https://bootstrapmade.com/license/
 */
 
+
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -922,4 +924,49 @@ h6 {
   box-shadow: none; /* 그림자 효과를 없애거나 원하는 그림자 스타일을 설정 */
   padding: 0; /* 내부 여백을 없애거나 원하는 크기로 설정 */
   
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+# clock
+--------------------------------------------------------------*/
+#clock {
+  width: 150px;
+  height: 50px;
+  padding: 5px 10px;
+  /* background-color: rgb(255, 192, 203); */
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 14px;
+  /* position: fixed;
+  top: 15px;
+  right: 150px;
+  z-index: 9999; */
+}
+
+
+
+/*--------------------------------------------------------------
+# calendar
+--------------------------------------------------------------*/
+#calendar-main {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  width: 350px;
+  height: 430px;
+  font-size: 12px;
+  cursor: pointer;
 }

@@ -29,7 +29,7 @@
            </section>
            
            <!-- 회원탈퇴 -->
-           <form action="../myPage/deleteAccount" method="POST" onsubmit="return deleteAccountValidate()">
+           <form action="../myPage/deleteAccount" method="POST">
             <section id="deleteAccount-box">
                 <section>
                     <div>1. 계정 탈퇴 시, Tutle 서비스에서 모두 탈퇴됩니다.</div>
@@ -43,28 +43,32 @@
                 </section>
                 <section>
                     <div class="inputPw-message">현재 비밀번호</div>
-                    <input type="password" name="memberPw"  class="inputPw" id="memberPw">
+                    <input type="password" name="memberPw"  class="inputPw" id="memberPw" autocomplete="false">
                 </section>
                 <section>
-                    <button id="deleteAccount-btn" onclick="openModal()">회원 탈퇴</button>
+                    <button type="button" id="deleteAccount-btn">회원 탈퇴</button>
                 </section>
                 </section>
             </section>
+
+
+            <!-- 모달창 -->
+            <div id="modal" class="modal">
+                <div class="modal-contentAccount">
+                    <h4>정말 탈퇴하시겠어요?</h4>
+                    <p>탈퇴 버튼 선택 시, 계정은<br> 삭제되며 복구되지 않습니다.</p>
+                    <div class="modal-buttons">
+                        <button id="confirmDelete">탈퇴</button>    
+                        <button type="button" id="closeModal">취소</button>
+                    </div>
+                </div>
+            </div>
+
+
         </form>
 
 
 
-                <!-- 모달창 -->
-                <div id="modal" class="modal">
-                    <div class="modal-contentAccount">
-                        <h4>정말 탈퇴하시겠어요?</h4>
-                        <p>탈퇴 버튼 선택 시, 계정은<br> 삭제되며 복구되지 않습니다.</p>
-                        <div class="modal-buttons">
-                            <button onclick="confirmDelete()" id="confirmDelete">탈퇴</button>    
-                            <button onclick="closeModal()" id="closeModal">취소</button>
-                        </div>
-                    </div>
-                </div>
 
     </main>
 

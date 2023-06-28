@@ -1,6 +1,11 @@
 package com.turtle.www.member.controller;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
 import java.util.Map;
 
 import javax.servlet.http.Cookie;
@@ -27,7 +32,7 @@ import com.turtle.www.member.model.vo.Member;
 
 @Controller
 @RequestMapping("/member/myPage")
-@SessionAttributes({"loginMember"})
+@SessionAttributes({"loginMember", "daysBetween"})
 public class MyPageController {
 
 	private Logger logger = LoggerFactory.getLogger(MyPageController.class);
@@ -39,7 +44,26 @@ public class MyPageController {
 	 * @return
 	 */
 	@GetMapping("/info")
-	public String info() {
+	public String info(@ModelAttribute("loginMember") Member loginMember, 
+						Model model) {
+		
+		
+		System.out.println("마이페이지 : " + loginMember);
+		System.out.println("마이페이지 : " + loginMember.getEnrollDate());
+
+	    LocalDate currentDate = LocalDate.now();
+
+	    try {
+	        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	        Date enrollDate = dateFormat.parse(loginMember.getEnrollDate());
+
+	        long daysBetween = ChronoUnit.DAYS.between(enrollDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(), currentDate);
+	        System.out.println("두 날짜 사이의 일수: " + daysBetween);
+	        model.addAttribute("daysBetween", daysBetween);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+		
 		return "member/myPage-info";
 	}
 	
@@ -220,8 +244,6 @@ public class MyPageController {
 		
 		
 		if(result == 1) {
-			// 탈퇴 성공 -> 메인 페이지
-			ra.addFlashAttribute("message", "회원탈퇴 성공!");
 			// 세션 없애기
 			status.setComplete();
 
@@ -231,12 +253,16 @@ public class MyPageController {
 			cookie.setPath(req.getContextPath());
 			resp.addCookie(cookie);
 			
-			return "redirect:/";
+			// 탈퇴 성공 -> 메인 페이지
+			ra.addFlashAttribute("message", "회원탈퇴 성공!");
+			
 		} else {
 			// 탈퇴 실패 -> main
 			model.addAttribute("message", "현재 비밀번호가 일치하지 않습니다.");
 			return "member/myPage-deleteAccount";
 		}
+		
+		return "redirect:/";
 	}
 	
 	

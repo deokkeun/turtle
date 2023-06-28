@@ -16,112 +16,36 @@ inputPw.addEventListener("focusout", function() {
 });
 
 
-// -----------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 
+const memberPw = document.getElementById("memberPw");
+const agree = document.getElementById("agree");
+const modal = document.getElementById("modal");
+const closeModal = document.getElementById("closeModal");
 
-// // 비밀번호 보이게 / 안보이게
-// $(".showPw").click(function() {
-//     console.log($(this).siblings());
-//     var newPw = $(this).siblings()[1];
-//     var showPwValue = $(this).siblings()[2];
-//     var imgTag = $(this).find("img")[0];
+// 회원 탈퇴
+const deleteAccount = document.getElementById("deleteAccount-btn");
+deleteAccount.addEventListener("click", function() {
 
-//     if(showPwValue.getAttribute("value") == 0) {
-//         newPw.setAttribute("type", "text");
-//         showPwValue.setAttribute("value", "1");
-//         imgTag.setAttribute("src", contextPath + "/resources/images/member/eye.svg");
-//     } else {
-//         newPw.setAttribute("type", "password");
-//         showPwValue.setAttribute("value", "0");
-//         imgTag.setAttribute("src", contextPath + "/resources/images/member/eye-off.svg");
-//     }
-// });
+    // 비밀번호 미작성
+    if (memberPw.value.trim().length == 0) {
+        alert("비밀번호를 입력해주세요.");
+        memberPw.focus();
+        return false;
+    }
 
+    // 약관 동의 체크 여부
+    // - 체크박스요소.checked  : 체크 시 true, 해제 시 false 반환
+    if (!agree.checked) { // 체크를 안했을 때
+        alert("약관 동의 후 탈퇴 버튼을 클릭해주세요.");
+        agree.focus();
+        return false;
+    }
 
-// -----------------------------------------------------------------------------------
+    modal.style.display = "block";
+});
 
-
-
-// $(".input").keyup(function() {
-//     const input = document.getElementsByClassName("input");
-//     const inputMessage = document.getElementsByClassName("input-message");
-//     const confirmMessage = document.getElementById("confirm-message");
-//     const inputMessgaeRed = document.getElementById("input-message-red");
-
-//     const regExp = /^(?=.*[a-zA-Z]).(?=.*[0-9\!\@\#\-\_]).{8,20}$/;
-//     if($(this).val().length < 8) {
-//         confirmMessage.innerText = "너무 짧음";
-//         inputMessgaeRed.innerText = "";
-//         input[0].classList.add("confirm-border");
-//         inputMessage[0].classList.add("confirm");
-//         input[0].classList.remove("error-border");
-//         inputMessage[0].classList.remove("error");
-//     } else if($(this).val().length >= 8 && !regExp.test($(this).val())) {
-//         confirmMessage.innerText = "안전하지 않음";
-//         inputMessgaeRed.innerText = "더 안전한 비밀번호를 선택하세요. 문자, 숫자, 기호를 조합해 보세요.";
-//         input[0].classList.add("error-border");
-//         inputMessage[0].classList.add("error");
-//         input[0].classList.remove("confirm-border");
-//         inputMessage[0].classList.remove("confirm");
-//     } else {
-//         confirmMessage.innerText = "적합함";
-//         inputMessgaeRed.innerText = "";
-//         input[0].classList.add("confirm-border");
-//         inputMessage[0].classList.add("confirm");
-//         input[0].classList.remove("error-border");
-//         inputMessage[0].classList.remove("error");
-//     }
-// });
-
-
-
-
-
-
-
-
-// -----------------------------------------------------------------------------------
-
-
-// // 경고 출력 + 포커스 + false반환 함수
-// function printAlert(el, message) {
-//     alert(message);
-//     el.focus();
-//     return false;
-// }
-
-// // 비밀번호 변경 제출 시 유효성 검사, 
-// function newChangePwValidate() {
-//     const newPw = document.getElementsByClassName("newPw")[0];
-//     const newPwConfirm = document.getElementsByClassName("newPwConfirm")[0];
-//     const regExp = /^(?=.*[a-zA-Z]).(?=.*[0-9\!\@\#\-\_]).{8,20}$/;
-
-//     // 새 비밀번호 미작성
-//     if(newPw.value.trim().length == 0) {
-//         return printAlert(newPw, "새 비밀번호를 입력해주세요.");
-//     }
-
-//     // 새 비밀번호 정규표현식이 맞지 않은 경우
-//     if(!regExp.test(newPw.value)) {
-//         return printAlert(newPw, "영어(필수), 숫자, 특수문자(!, @, #, -, _) 중 2개 이상을 조합하여 비밀번호를 작성해주세요. 8~20자");
-//     }
-
-//     // 새 비밀번호 확인 미작성
-//     if(newPwConfirm.value.trim().length == 0) {
-//         return printAlert(newPwConfirm, "새 비밀번호 확인을 입력해주세요.");
-//     }
-
-//     // 새 비밀번호 확인 정규표현식이 맞지 않은 경우
-//     if(!regExp.test(newPwConfirm.value)) {
-//         return printAlert(newPwConfirm, "영어(필수), 숫자, 특수문자(!, @, #, -, _) 중 2개 이상을 조합하여 비밀번호를 작성해주세요. 8~20자");
-//     }
-
-//     // 새 비밀번호 != 새 비밀번호 확인
-//     if(newPw.value != newPwConfirm.value) {
-//         return printAlert(newPwConfirm, "새 비밀번호가 일치하지 않습니다.");
-//     }
-//     return true;
-// }
-
-
+closeModal.addEventListener("click", function() {
+    modal.style.display = "none";
+});
