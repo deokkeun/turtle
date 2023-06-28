@@ -33,7 +33,7 @@
 <div align=left> 
   <h3>🌱 Environment</h3>
   <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> 
-  <img src="https://img.shields.io/badge/VisualStudioCode-007acc?style=for-the-badge&logo=VisualStudioCode&logoColor=white"> 
+  <img src="https://img.shields.io/badge/VisualStudioCode-007acc?style=for-the-badge&logo=VisualStudioCode&logoColor=white">  
   <br><br>
 
   <h3>🛠️ Development</h3>
@@ -44,6 +44,7 @@
   <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white">
   <br>
   <img src="https://img.shields.io/badge/apache tomcat-F8DC75?style=for-the-badge&logo=apachetomcat&logoColor=white">
+  <img src="https://img.shields.io/badge/ApacheMaven-c71a36?style=for-the-badge&logo=ApacheMaven&logoColor=white"> 
   <img src="https://img.shields.io/badge/oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white"> 
   <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
   <br>
