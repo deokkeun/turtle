@@ -14,7 +14,7 @@
 
 .modal-contentAccount {
     background-color: #fff;
-    margin: 10% auto;
+    margin: 15% auto;
     padding: 40px 30px;
     border: 1px solid #888;
     border-radius: 5%;
@@ -24,8 +24,8 @@
 }
 
 .modal-contentAccount p {
-    /* padding-top: 10px; */
-    /* text-align: left; */
+    /* padding-top: 10px;
+    text-align: left; */
   }
 
 .modal-close {
