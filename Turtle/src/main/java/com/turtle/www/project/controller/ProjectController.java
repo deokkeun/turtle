@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,10 +20,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.turtle.www.member.model.vo.Member;
 import com.turtle.www.project.model.service.ProjectService;
 import com.turtle.www.project.model.vo.Project;
+import com.turtle.www.projectMember.controller.ProjectMemberController;
 
 @Controller
 @RequestMapping("/project")
-@SessionAttributes({"loginMember", "project"})
+@SessionAttributes({"loginMember"})
 public class ProjectController {
 	
 	private Logger logger = LoggerFactory.getLogger(ProjectController.class);
@@ -31,6 +33,7 @@ public class ProjectController {
 	
 	@Autowired
 	private ProjectService service;
+	
 	
 		
 	/** 프로젝트 생성 기능
@@ -42,7 +45,7 @@ public class ProjectController {
 	@PostMapping("/createProject")
 	public String createProject(@ModelAttribute("loginMember") Member loginMember,
 								@ModelAttribute("project") Project project,
-								Model model,
+								HttpSession session,
 								HttpServletRequest req,
 								RedirectAttributes ra) {
 		
@@ -80,20 +83,21 @@ public class ProjectController {
         }
         project.setInviteCode(inviteCode);
 		
+        // 프로젝트 생성
 		int result = service.createProject(project);
 		
 		String message = null;
 		String path = null;
 		
 		if(result > 0) { // 프로젝트 생성 성공
-			path = "redirect:/project/createWorkspace";
+			path = "project/createProject";
+			session.setAttribute("project", project);
 			
 		}else {
 			message = "프로젝트 생성에 실패하였습니다.";
 			path = "redirect:/project/createProject";
 		}
 		
-		model.addAttribute("project", project);
 		ra.addFlashAttribute("message", message);
 		
 		

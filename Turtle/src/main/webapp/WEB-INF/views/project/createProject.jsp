@@ -66,7 +66,7 @@
           
         </div>
         
-        <form action="inviteMember" method="post">
+        <form action="inviteMember" method="post" id="inviteForm">
 	        <div class="pop">
 	            <div class="pop-content">
 	                <div><i class="fa-solid fa-users">프로젝트멤버 초대하기</i></div>
@@ -77,12 +77,12 @@
 	                            <input type="text" placeholder="이름/이메일을 입력해주세요."id="search-txt" class="searchmember" name="pmList">
 	                        </div>
 	                        <div class="search-mem">
-	                           
 	                        </div>
 	                    </div>
 	
 	                    <div class="user-checked">
-	                       
+	                    <!-- <input type="hidden" id="selectedMembers" name="selectedMembers" /> -->
+	                    
 	                       
 	                    </div>
 	                    <button type="submit" class="uc-btn">완료</button>

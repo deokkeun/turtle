@@ -34,7 +34,7 @@ import com.turtle.www.member.model.vo.Member;
 
 @Controller
 @RequestMapping("/member")
-@SessionAttributes({"loginMember"})
+@SessionAttributes({"loginMember", "project"})
 public class MemberController {
 	
 	private Logger logger = LoggerFactory.getLogger(MemberController.class);
