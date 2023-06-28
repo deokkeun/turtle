@@ -79,4 +79,56 @@ function getRepos() {
 
   }
 
+<<<<<<< HEAD
 }
+=======
+}
+
+
+// ---------------------------------------------------------------------
+const tree = document.getElementById("tree");
+
+
+// Define a dataset
+var data = [
+  { id: 1, text_1: "Father", father: '깃 저장소 이름' },
+  { id: 2, text_1: "Child A", father: 1 },
+  { id: 3, text_1: "Child B", father: 1 },
+  { id: 4, text_1: "Subchild C", father: 2 }
+];
+
+// Define and configure a tree object
+var myTree = Treeviz.create({
+  htmlId: "tree",
+  idKey: "id",
+  hasFlatData: true,
+  nodeColor: (nodeData) => "grey",
+  relationnalField: "father",
+});
+
+
+// Display the tree based on the data
+myTree.refresh(data);
+
+
+
+var hierarchical_data_example = {
+  name: "Mom",
+  qty: 10,
+  children: [
+    { name: "Son A", qty: 3 },
+    { name: "Son B", qty: 7 },
+  ],
+};
+
+var myTree = Treeviz.create({
+  htmlId: "tree",
+  idKey: "name",
+  hasFlatData: false,
+  relationnalField: "children",
+});
+
+myTree.refresh(hierarchical_data_example);
+
+
+>>>>>>> 46c70aecf3ea260bd64fdd80355b2f7356df68cc

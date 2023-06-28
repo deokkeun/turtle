@@ -30,6 +30,27 @@
             </div>
         </div>
 
+<<<<<<< HEAD
+=======
+            <section class="repos-container">
+                <div class="get-repos">
+                    <input type="text" placeholder="Github Username">
+                    <span class="get-button">Get Repos</span>
+                </div>
+                <div class="show-data">
+                    <span>No Data To Show</span>
+                </div>
+            </section>
+
+            <section>
+                // Define a tree element where dimensions are mandatory
+                <div id="tree" style="height:700px; width:900px">
+                    ㅇㅇㅇ
+                </div>
+            </section>
+            
+        </section>
+>>>>>>> 46c70aecf3ea260bd64fdd80355b2f7356df68cc
 
     </main>
 

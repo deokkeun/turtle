@@ -23,26 +23,27 @@
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
            <section id="deleteAccount-title">
-               <div>회원탈퇴</div>
+               <div>탈퇴 안내 사항</div>
+               <div>서비스에 만족하지 못하셨나요? 탈퇴하기 전에 먼저 개선 요청을 해보시는 건 어떨까요?<br>
+                그래도 탈퇴하시겠다면 탈퇴 전에 아래 유의사항을 꼭 읽어주세요!</div>
            </section>
            
            <!-- 회원탈퇴 -->
            <form action="../myPage/deleteAccount" method="POST" onsubmit="return deleteAccountValidate()">
             <section id="deleteAccount-box">
                 <section>
-                    <div>1. 회원 탈퇴 약관....</div>
-                    <div>2. 회원 탈퇴 약관....</div>
-                    <div>3. 회원 탈퇴 약관....</div>
-                    <div>4. 회원 탈퇴 약관....</div>
-                    <div>5. 회원 탈퇴 약관....</div>
+                    <div>1. 계정 탈퇴 시, Tutle 서비스에서 모두 탈퇴됩니다.</div>
+                    <div>2. 탈퇴 시 계정과 관련된 모든 권한이 사라지며 복구할 수 없습니다.</div>
+                    <div>3. 탈퇴 후 동일한 메일로 재가입이 가능하나, 탈퇴한 계정과 연동되지 않습니다.</div>
+                    <div>4. 탈퇴 후 연동된 소셜 계정 정보도 사라지며 소셜 로그인으로 기존 계정 이용이 불가능합니다.</div>
                 </section>
                 <section>
                     <input type="checkbox" name="agree" id="agree">
                     <label for="agree">위 약관에 동의합니다.</label>
                 </section>
                 <section>
-                    <div>현재 비밀번호</div>
-                    <input type="password" name="memberPw" id="memberPw">
+                    <div class="inputPw-message">현재 비밀번호</div>
+                    <input type="password" name="memberPw"  class="inputPw" id="memberPw">
                 </section>
                 <section>
                     <button id="deleteAccount-btn" onclick="openModal()">회원 탈퇴</button>
@@ -73,5 +74,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/main.js"></script>
+    <!-- deleteAccount.js 연결 -->
+    <script src="${contextPath}/resources/js/member/deleteAccount.js"></script>
 </body>
 </html>
