@@ -16,12 +16,22 @@
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <main id="main" class="main">
-        <!-- header include -->
-        <jsp:include page="/WEB-INF/views/common/header.jsp" />
+    <main>
+ 		<!-- header include -->
+       	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-        <section id="loadmap-container">
+        <div class="repos-container">
+            <div class="get-repos">
+                <input type="text" placeholder="Github Username">
+                <span class="get-button">Get Repos</span>
+            </div>
+            <div class="show-data">
+                <span>No Data To Show</span>
+            </div>
+        </div>
 
+<<<<<<< HEAD
+=======
             <section class="repos-container">
                 <div class="get-repos">
                     <input type="text" placeholder="Github Username" style="font-size: 14px;">
@@ -46,6 +56,7 @@
             </section>
             
         </section>
+>>>>>>> 46c70aecf3ea260bd64fdd80355b2f7356df68cc
 
     </main>
     <!-- treeviz -->

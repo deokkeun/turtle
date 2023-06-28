@@ -168,6 +168,19 @@ $(document).ready(function() {
             $('.invited-member').append(res3);
             
         }
+        // 
+        $.ajax({
+
+            url : "inviteMember",
+            data : {"selectEmail" : $('.user-checked-name').attr('id')},
+            type : "POST",
+            error : function(request, status, error) {
+            
+                console.log("ajax 에러발생");
+                console.log("상태코드 : " + request.status); // 404, 500
+            }
+        })
+
        
 
     })
@@ -184,10 +197,7 @@ $('#search-txt').keyup(function() {
         url : "searchmember",
         data : {"input" : $('.searchmember').val()},
         type : "GET",
-
-
         success : function(mlist) {
-
             let str = JSON.parse(mlist);
             console.log(str);
             let rex = "";
@@ -197,17 +207,12 @@ $('#search-txt').keyup(function() {
             const ee = document.querySelectorAll('.user');
             if($('.searchmember').val().length > 0 ) {
 
-              
-
                 for(let i=0; i<str.length; i++) {
-                    
                     let contextPath = "${contextPath}";
 
                     rex +="<div class='user' id="+str[i].memberEmail+"><div type='button' class='btn'> <a class='user-plus'><i class='fa-solid fa-circle-plus'></i></a><span class='user-name'>"+str[i].memberName+"</span><span class='user-email' data-email='"+str[i].memberEmail+"'>"+str[i].memberEmail+"</span><input class='user-img' id="+str[i].profileImage+" type='hidden'></div></div>";
                     $('.search-mem').html(rex);
             
-
-
                     for(let v=0; v<em.length; v++) {
                         console.log('1');
                         if(em[v].classList.contains('active')) {
@@ -220,29 +225,20 @@ $('#search-txt').keyup(function() {
                                     console.log(ee[x]);
                                     ee[x].classList.add('active');
                                 }
-
                             }
-
-
                         }
-
                     }
-                        
                 }
 
             }else {
                 $('.search-mem').html("");
             }
         },
-
         error : function(request, status, error) {
         
             console.log("ajax 에러발생");
-
             console.log("상태코드 : " + request.status); // 404, 500
-
         }
-
     })
 });
 

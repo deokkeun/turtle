@@ -20,4 +20,6 @@ public class Member {
 	private String memberDeleteFG; // 탈퇴여부
 	
 	private String socialId; // 소셜 아이디
+
+
 }

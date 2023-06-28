@@ -41,27 +41,63 @@
     
 
     <section>
-        
         <div class="section1">
             <i class="fa-solid fa-users-between-lines">프로젝트 관리</i>
         </div>
-        <form action="project" method="post">
+        <form action="createProject" method="post">
             <div class="section2">
-                
                 <p>프로젝트명 입력</p>
-        
                 <div>
                     <span id="emoji_btn2" class="projectEmoji"><i class="fa-regular fa-face-smile"></i></span>
                     <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
-                    <input type="text" id="projectName" placeholder="프로젝트명을 입력해주세요.">
+                    <input type="text" id="projectName" name="projectName" placeholder="프로젝트명을 입력해주세요.">
                 </div>
             </div>
-            
-
-
+            <div class="section2">
+            	<p>프로젝트 설명</p>
+            </div>
+            <textarea id="summernote" name="projectDescription"></textarea>
+             <div class="next-btn">
+            <button type="submit">다음</button>
+       		 </div>     
         </form>
+        
         <div class="section3">
             <p>프로젝트멤버 관리</p>
+<<<<<<< HEAD
+            <button class="btnt"><span>초대하기</span><i class="fa-solid fa-user-plus"></i></button>
+          
+        </div>
+        
+        <form action="inviteMember" method="post" id="inviteForm">
+	        <div class="pop">
+	            <div class="pop-content">
+	                <div><i class="fa-solid fa-users">프로젝트멤버 초대하기</i></div>
+	                <div>
+	                    <div class="user-content">
+	                        <div class="select">
+	                            <i class="fa-solid fa-magnifying-glass"></i>
+	                            <input type="text" placeholder="이름/이메일을 입력해주세요."id="search-txt" class="searchmember" name="pmList">
+	                        </div>
+	                        <div class="search-mem">
+	                        </div>
+	                    </div>
+	
+	                    <div class="user-checked">
+	                    <!-- <input type="hidden" id="selectedMembers" name="selectedMembers" /> -->
+	                    
+	                       
+	                    </div>
+	                    <button type="submit" class="uc-btn">완료</button>
+	                </div>
+	            </div>
+	        </div>
+        </form>
+
+       
+
+
+=======
             <buttaon class="btnt"><span>초대하기</span><i class="fa-solid fa-user-plus"></i></button>
                 
         </div>
@@ -103,8 +139,10 @@
         <div class="next-btn">
             <a class="next-btn" href="inviteMember">다음</a>
         </div>
+>>>>>>> dev
 
     </section>
+    <script src="${contextPath}/resources/js/createProject.js"></script>
 </main>
    
     <script>

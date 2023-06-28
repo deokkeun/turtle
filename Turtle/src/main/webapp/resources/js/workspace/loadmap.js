@@ -57,16 +57,16 @@ function getRepos() {
         mainDiv.appendChild(theUrl);
 
         // Create Stars Count Span
-        // let starsSpan = document.createElement("span");
+        let starsSpan = document.createElement("span");
 
         // Create The Stars Count Text
-        // let starsText = document.createTextNode(`Stars ${repo.stargazers_count}`);
+        let starsText = document.createTextNode(`Stars ${repo.stargazers_count}`);
 
         // Add Stars Count Text To Stars Span
-        // starsSpan.appendChild(starsText);
+        starsSpan.appendChild(starsText);
 
         // Append Stars Count Span To Main Div
-        // mainDiv.appendChild(starsSpan);
+        mainDiv.appendChild(starsSpan);
 
         // Add Class On Main Div
         mainDiv.className = 'repo-box';
@@ -80,6 +80,9 @@ function getRepos() {
 
   }
 
+<<<<<<< HEAD
+}
+=======
 }
 
 
@@ -137,7 +140,37 @@ var myTree = Treeviz.create({
   linkColor : (nodeData) => "#B0BEC5" ,
   onNodeClick : (nodeData) => console.log(nodeData)
 });
+<<<<<<< HEAD
+
+
+// Display the tree based on the data
+myTree.refresh(data);
+
+
+
+var hierarchical_data_example = {
+  name: "Mom",
+  qty: 10,
+  children: [
+    { name: "Son A", qty: 3 },
+    { name: "Son B", qty: 7 },
+  ],
+};
+
+var myTree = Treeviz.create({
+  htmlId: "tree",
+  idKey: "name",
+  hasFlatData: false,
+  relationnalField: "children",
+});
+
+myTree.refresh(hierarchical_data_example);
+
+
+>>>>>>> 46c70aecf3ea260bd64fdd80355b2f7356df68cc
+=======
 myTree.refresh(data_1);
 var toggle=true;
 document.querySelector("#add").addEventListener("click", () => {toggle ? myTree.refresh(data_2) : myTree.refresh(data_3); toggle = false});
 document.querySelector("#remove").addEventListener("click", () => myTree.refresh(data_1));
+>>>>>>> dev
