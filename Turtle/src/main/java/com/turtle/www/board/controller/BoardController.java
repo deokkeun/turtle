@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.turtle.www.board.model.service.BoardService;
@@ -90,6 +91,17 @@ public class BoardController {
 		model.addAttribute("pmNo", pmNo);
 		
 		return "board/boardDetail";
+	}
+	
+	// 게시글 정렬 조회
+	@ResponseBody
+	@GetMapping("/selectBoardSort")
+	public List<Board> selectBoardSort(int workspaceNo) {
+		
+		Map<String, Object> map = new HashMap<>();
+		map.put("workspaceNo", workspaceNo);
+		
+		return service.selectBoardList(map);
 	}
 	
 }
