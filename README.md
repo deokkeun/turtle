@@ -34,6 +34,7 @@
   <h3>🌱 Environment</h3>
   <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> 
   <img src="https://img.shields.io/badge/VisualStudioCode-007acc?style=for-the-badge&logo=VisualStudioCode&logoColor=white">  
+  <img src="https://img.shields.io/badge/DBeaver-FF3621?style=for-the-badge&logo=Databricks&logoColor=white"> 
   <br><br>
 
   <h3>🛠️ Development</h3>
@@ -56,7 +57,8 @@
     <img src="https://img.shields.io/badge/GoogleDrive-4285f4?style=for-the-badge&logo=GoogleDrive&logoColor=white">
   <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white">
   <img src="https://img.shields.io/badge/Slack-4a154b?style=for-the-badge&logo=Slack&logoColor=white">
-
+  <br><br>
+  
    <h3>💎 API</h3>
   <img src="">
   <img src="">
