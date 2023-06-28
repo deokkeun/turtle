@@ -14,3 +14,5 @@ function handlePayment(event) {
   console.log("결제 수단:", paymentMethod);
   console.log("결제 금액:", paymentAmount);
 }
+
+
