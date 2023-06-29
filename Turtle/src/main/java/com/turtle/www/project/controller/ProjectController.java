@@ -90,7 +90,7 @@ public class ProjectController {
 		String path = null;
 		
 		if(result > 0) { // 프로젝트 생성 성공
-			path = "project/createProject";
+			path = "project/inviteMember";
 			session.setAttribute("project", project);
 			
 		}else {

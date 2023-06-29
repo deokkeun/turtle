@@ -23,10 +23,11 @@ public class ProjectMemberServiceImpl implements ProjectMemberService {
 		return dao.selectPmNo(map);
 	}
 
+	// 멤버초대 검색
 	@Override
 	public List<Member> searchmember(String input) {
-		// TODO Auto-generated method stub
 		return dao.searchmember(input);
 	}
+
 
 }
