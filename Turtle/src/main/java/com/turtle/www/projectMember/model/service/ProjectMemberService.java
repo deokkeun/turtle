@@ -15,6 +15,11 @@ public interface ProjectMemberService {
 	 */
 	int selectPmNo(Map<String, Object> map);
 
+	/** 멤버초대 검색
+	 * @param input
+	 * @return
+	 */
 	List<Member> searchmember(String input);
+
 
 }

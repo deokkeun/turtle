@@ -62,83 +62,9 @@
        		 </div>     
         </form>
         
-        <div class="section3">
-            <p>프로젝트멤버 관리</p>
-
-            <button class="btnt"><span>초대하기</span><i class="fa-solid fa-user-plus"></i></button>
-          
-        </div>
-        
   
         
-        <form action="inviteMember" method="post" id="inviteForm">
-	        <div class="pop">
-	            <div class="pop-content">
-	                <div><i class="fa-solid fa-users">프로젝트멤버 초대하기</i></div>
-	                <div>
-	                    <div class="user-content">
-	                        <div class="select">
-	                            <i class="fa-solid fa-magnifying-glass"></i>
-	                            <input type="text" placeholder="이름/이메일을 입력해주세요."id="search-txt" class="searchmember" name="pmList">
-	                        </div>
-	                        <div class="search-mem">
-	                        </div>
-	                    </div>
-	
-	                    <div class="user-checked">
-	                    <!-- <input type="hidden" id="selectedMembers" name="selectedMembers" /> -->
-	                    
-	                       
-	                    </div>
-	                    <button type="submit" class="uc-btn">완료</button>
-	                </div>
-	            </div>
-	        </div>
-        </form>
 
-       
-
-       <buttaon class="btnt"><span>초대하기</span><i class="fa-solid fa-user-plus"></i></button>
-                
-  
-        
-        <div class="pop">
-            <div class="pop-content">
-                <div><i class="fa-solid fa-users">프로젝트멤버 초대하기</i></div>
-                <div>
-                    <div class="user-content">
-                        <div class="select">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" placeholder="이름/이메일을 입력해주세요."id="search-txt" class="searchmember">
-                        </div>
-                        <div class="search-mem">
-                           
-                        </div>
-                    </div>
-
-                    <div class="user-checked">
-                       
-                       
-                    </div>
-                    <a class="uc-btn">완료</a>
-                </div>
-            </div>
-            
-        </div>
-        
- <!--        <form action="invitedMember" method="post">
-            <div class="invited-member">
-                
-            </div>
-        </form> -->
-
-       
-        <form action="projectDescription">
-            <textarea id="summernote"></textarea>
-        </form>
-        <div class="next-btn">
-            <a class="next-btn" href="inviteMember">다음</a>
-        </div>
 
     </section>
     <script src="${contextPath}/resources/js/createProject.js"></script>
