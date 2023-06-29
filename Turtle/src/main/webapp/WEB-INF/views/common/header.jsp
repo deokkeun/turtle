@@ -374,13 +374,8 @@
 
 
         <li class="nav-item">
-<<<<<<< HEAD
           <a class="nav-link collapsed" href="${contextPath}/workspace/loadmap/1/10"><!-- projectNo, workspaceNo -->
             <i class="ri-message-3-line"></i>
-=======
-          <a class="nav-link collapsed" href="${contextPath}/workspace/loadmap/1">
-            <i class="ri-github-fill"></i>
->>>>>>> dev
             <span>GitHub</span>
           </a>
           <div id="line"></div>
@@ -392,7 +387,6 @@
           </a>
           <div id="line"></div>
         </li> 
-
 
         <li class="nav-heading">Report</li>
 
