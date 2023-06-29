@@ -2,11 +2,47 @@
 let theInput = document.querySelector(".get-repos input");
 let getButton = document.querySelector(".get-button");
 let reposData = document.querySelector(".show-data");
+var workspaceNo = document.getElementById("workspaceNo");
+var gitRepo = document.getElementById("gitRepo");
+var branch = document.getElementById("branch");
+var ignore = document.getElementById("ignore");
 
 
 getButton.onclick = function () {
   getRepos();
+
+
+  console.log(workspaceNo.value);
+  console.log(gitRepo.value);
+  console.log(branch.value);
+  console.log(ignore.value);
+
+
+  $.ajax({
+      url: contextPath + "/workspace/loadmap/upload",
+      data : {workspaceNo: workspaceNo.value,
+        gitRepo: gitRepo.value,
+        branch: branch.value,
+        ignore: ignore.value
+      },
+      type: "POST",
+      dataType: "JSON",
+       success: function(res) {
+        console.log(res);
+        if(res == "complete") {
+          console.log("upload 성공");
+
+        } else {
+          console.log("upload 실패");
+    
+        }
+        
+      }
+  });
+
 };
+
+
 
 // Get Repos Function
 function getRepos() {
@@ -84,7 +120,18 @@ function getRepos() {
 }
 
 
+
+
+
+
+
+
 // ---------------------------------------------------------------------
+
+
+
+
+
 var data_1 = [
   { id: 1, text_1: "Chaos", text_2: "Void", father: null, color:"#FF5722" },
   { id: 2, text_1: "Tartarus", text_2: "Abyss", father: 1, color:"#FFC107" },

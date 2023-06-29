@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.turtle.www.member.model.vo.Member;
-import com.turtle.www.projectMember.model.vo.ProjectMember;
 
 public interface ProjectMemberService {
 

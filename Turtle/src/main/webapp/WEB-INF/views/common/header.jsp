@@ -389,7 +389,7 @@
 
 
         <li class="nav-item">
-          <a class="nav-link collapsed" href="${contextPath}/workspace/loadmap/1">
+          <a class="nav-link collapsed" href="${contextPath}/workspace/loadmap/1/10"><!-- projectNo, workspaceNo -->
             <i class="ri-message-3-line"></i>
             <span>GitHub</span>
           </a>

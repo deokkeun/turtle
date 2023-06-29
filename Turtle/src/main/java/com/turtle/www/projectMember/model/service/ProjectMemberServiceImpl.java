@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.turtle.www.member.model.vo.Member;
 import com.turtle.www.projectMember.model.dao.ProjectMemberDAO;
-import com.turtle.www.projectMember.model.vo.ProjectMember;
 
 @Service
 public class ProjectMemberServiceImpl implements ProjectMemberService {

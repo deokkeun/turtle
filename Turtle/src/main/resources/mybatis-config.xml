@@ -26,6 +26,8 @@
 		<typeAlias type="com.turtle.www.calendar.model.vo.Calendar" alias="calendar"/>
 		<typeAlias type="com.turtle.www.payment.model.vo.Pay" alias="pay"/>
 		
+		<typeAlias type="com.turtle.www.loadmap.model.vo.Loadmap" alias="loadmap"/>
+		
 		<typeAlias type="com.turtle.www.memo.model.vo.Memo" alias="memo"/>
 		
 		<typeAlias type="com.turtle.www.board.model.vo.Board" alias="board"/>
@@ -46,6 +48,7 @@
 		<mapper resource="/mappers/pay-mapper.xml"/>
 		<mapper resource="/mappers/memo-mapper.xml"/>
 		<mapper resource="/mappers/board-mapper.xml"/>
+		<mapper resource="/mappers/loadmap-mapper.xml"/>
 	</mappers>
 
 </configuration>

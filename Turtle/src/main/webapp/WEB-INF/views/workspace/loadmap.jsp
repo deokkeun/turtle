@@ -20,11 +20,19 @@
  		<!-- header include -->
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
+        <input type="text" value="projectNo = ${projectNo}">
+        <input type="hidden" value="projectNo" name="${projectNo}">
+
+        <input type="text" value="workspaceNo = ${workspaceNo}">
+        <input type="hidden"  id="workspaceNo" value="${workspaceNo}">
+
 		<section id="loadmap-container">
             <section class="repos-container">
                 <div class="get-repos">
-                    <input type="text" placeholder="Github Username" style="font-size: 14px;">
-                    <span class="get-button">Get Repos</span>
+                    <input type="text" id="gitRepo" placeholder="Github Username">
+                    <input type="text" id="branch" placeholder="branch">
+                    <input type="text" id="ignore" placeholder="ignore">
+                    <span class="get-button">Get</span>
                 </div>
                 <div class="show-data">
                     <span>No Data To Show</span>
@@ -49,6 +57,10 @@
    
 
     </main>
+
+    <script>
+        const contextPath = "${contextPath}";
+    </script>
     <!-- treeviz -->
     <script src="https://cdn.jsdelivr.net/npm/treeviz@2.3.0/dist/index.min.js"></script>
 

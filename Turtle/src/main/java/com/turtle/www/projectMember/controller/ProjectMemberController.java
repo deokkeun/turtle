@@ -16,9 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,10 +25,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.google.gson.Gson;
 import com.turtle.www.member.model.vo.Member;
-import com.turtle.www.project.controller.ProjectController;
 import com.turtle.www.project.model.vo.Project;
 import com.turtle.www.projectMember.model.service.ProjectMemberService;
-import com.turtle.www.projectMember.model.vo.ProjectMember;
 
 @Controller
 @RequestMapping("/project")
