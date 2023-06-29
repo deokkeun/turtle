@@ -1,0 +1,62 @@
+.board-area {
+    width: 550px;
+    height: 700px;
+}
+
+.boardTitle {
+    font-size: large;
+}
+
+.regInfo {
+    display: flex;
+}
+
+.regMember {
+    flex-basis: 50%;
+    display: flex;
+}
+
+.regMemberImg > img {
+    width: 30px;
+    height: 30px;
+}
+
+.regDate {
+    flex-basis: 50%;
+    display: flex;
+}
+
+.updateInfo {
+    display: flex;
+}
+
+.updateMember {
+    flex-basis: 50%;
+    display: flex;
+}
+
+.updateMemberImg > img {
+    width: 30px;
+    height: 30px;
+}
+
+.updateDate {
+    flex-basis: 50%;
+    display: flex;
+}
+
+.eventDate {
+    display: flex;
+}
+
+.edit-boardDetail-area {
+    display: flex;
+}
+
+.add-boardDetail {
+    flex-basis: 5%;
+}
+
+.boardDetail {
+    flex-basis: 95%;
+}
