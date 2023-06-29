@@ -163,6 +163,7 @@ public class ProjectMemberController {
 	    // invitationId를 사용하여 해당 초대를 수락 처리합니다.
 	    
 	    // 수락 처리 후 필요한 동작 수행
+		//수락하면 shared project에 추가
 	    
 	    return "redirect:/invitation/accepted";
 	}
@@ -173,6 +174,7 @@ public class ProjectMemberController {
 	    // invitationId를 사용하여 해당 초대를 거절 처리합니다.
 	    
 	    // 거절 처리 후 필요한 동작 수행
+		// 거절하면 project 관리자한테 메일
 	    
 	    return "redirect:/invitation/rejected";
 	}
