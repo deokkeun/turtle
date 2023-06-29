@@ -28,7 +28,7 @@
     
     <style>
                 /* 로딩페이지 */
-        #load {
+        /* #load {
             width: 100%;
             height: 100%;
             top: 45%;
@@ -39,7 +39,7 @@
             background: white;
             z-index: 99;
             text-align: center;       
-        }
+        } */
     </style>
 
 	<!-- fontawesome -->
@@ -47,21 +47,22 @@
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
+   
  
-    <main id="main" class="main">
+  
       
-      
-    <div id="load">
-        <div><img id="loading-image" src="${contextPath}/resources/images/top버튼거북이2.png" width="150px"></div>
-        <div><img src="${contextPath}/resources/images/load.gif" width="100px"></div>
-    </div>   
-    
+ 
     <!-- header include -->
     <jsp:include page="/WEB-INF/views/common/header.jsp" />
     
     <!-- (index.jsp)/member/login -> (main.jsp)common/main.jsp -->
     <main id="main" class="main">    
+        <!-- 로딩 -->
+        <!-- <div id="load">
+            <div><img id="loading-image" src="${contextPath}/resources/images/top버튼거북이2.png" width="150px"></div>
+            <div><img src="${contextPath}/resources/images/load.gif" width="100px"></div>
+        </div>    -->
+        
         <div id="clock" value="0">00 : 00 : 00</div>
 
 
@@ -118,13 +119,13 @@
 
     </main>
      <!--loading 페이지-->
-     <script type="text/javascript">
+     <!-- <script type="text/javascript">
         $(window).on('load', function() {
             setTimeout(function(){
                 $("#load").fadeOut();
             }, 500);
         });
-    </script>
+    </script> -->
     <script>
       const contextPath = "${contextPath}";
     </script>
@@ -136,7 +137,7 @@
     <script src="${contextPath}/resources/js/main.js"></script>
      <!-- Vendor JS Files -->
 
-    <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js?ver=1"></script>
+    <!-- <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script> -->
 
     <!-- chat js -->
     <script src="${contextPath}/resources/js/chat.js"></script>

@@ -429,13 +429,12 @@
 <!-- right sidebar(오른쪽 사이드바) --> 
   
   <aside class="right-sidebar" id="rightSidebar" >
-	
-     <jsp:include page='/WEB-INF/views/chat/chatRoomList.jsp'/>
-     <input type="hidden" id="projectNo" value="${projectNo}">
+	  <div>${projectNo}</div>
+
     
   <button class="sidebar-close-btn" onclick="toggleSidebar()"><i class="bi bi-chevron-double-right"></i></button>
   <ul class="right-sidebar-nav" id="right-sidebar-nav">
-   
+ 
     <li class="nav-item">
       <span class="nav-link" onclick="toggleSubMenu('project-chatting-nav')">
         <i class="bi bi-chevron-right"></i><span>Project Chatting</span>
@@ -470,8 +469,9 @@
  
 </aside>
   
-  <script src='${contextPath}/resources/js/chat.js'></script> 
+  <!-- <script src='${contextPath}/resources/js/chat.js'></script>  -->
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.js"></script>
+  <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script> 
 
   <!-- Template Main JS File -->
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js?ver=3"></script>
