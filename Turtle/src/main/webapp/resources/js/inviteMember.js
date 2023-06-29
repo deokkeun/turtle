@@ -107,8 +107,9 @@ $(document).ready(function() {
 
     });
 
-    $('.user-checked').on('click','.checked-btn',function() {
 
+    $('.user-checked').on('click','.checked-btn',function() {
+        
         res2= "<div class='user'><div type='button' class='btn'><a class='user-plus'><i class='fa-solid fa-circle-plus'></i></a><span class='user-name'>"+$(this).siblings('.user-checked-name').text()+"</span><span class='user-email'>"+$(this).siblings('.user-checked-name').data('email')+"</span></div></div>";
 
         const y = document.querySelectorAll('.user');
@@ -133,8 +134,10 @@ $(document).ready(function() {
         console.log($(this).siblings(".user-checked-name").text());
         $(this).parents('.checkeduser').remove();
 
-        
 
 
     });
+    $('.user-checked').on('click','.checked-btn',function() {
+       
+    })
 });
