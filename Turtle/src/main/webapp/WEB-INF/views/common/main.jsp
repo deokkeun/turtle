@@ -91,7 +91,7 @@
         </form>
         
 
-        <form action="${contextPath}/workspace/loadmap/1" method="GET">
+        <form action="${contextPath}/workspace/loadmap/1/10" method="GET">
             <button>git loadMap test(GET)</button>
         </form>
       

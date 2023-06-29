@@ -1,48 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-  	
     <title>Turtle</title>
-    
-    <!-- Favicons -->
-  	<link href="${contextPath}/resources/favicon/favicon-16x16.png" rel="icon">
-  	<link href="${contextPath}/resources/favicon/apple-icon-60x60.png" rel="apple-touch-icon">
-    
-    <!-- Fontawesome -->
-	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
-    
-    <!-- Vendor CSS Files -->
-	<link href="${contextPath}/resources/vendor/aos/aos.css" rel="stylesheet">
-	<link href="${contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="${contextPath}/resources/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-	<link href="${contextPath}/resources/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-	<link href="${contextPath}/resources/vendor/remixicon/remixicon.css" rel="stylesheet">
-	<link href="${contextPath}/resources/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    
-    <!-- 헤더, 고객센터 css  -->
     <!-- main-style.css -->
-    <link href="${contextPath}/resources/css/main-style.css" rel="stylesheet">
+    <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
+    <!-- faq -->
     <link rel="stylesheet" href="${contextPath}/resources/css/etc/faq.css" />
+	<!-- fontawesome -->
+	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
-
-
 <body>
-	<main>
-		<!-- 랜딩 헤더.jsp -->
-		<jsp:include page="/WEB-INF/views/common/landing-header.jsp" /> 
+	
+	<main id="main" class="main">
+
+        
+		<!-- header include -->
+		<jsp:include page="/WEB-INF/views/common/header.jsp" />
+		
+
 
 		<!-- 첫번째 페이지 total 협업툴 -->
-		<i class="bi bi-list mobile-nav-toggle"></i>
+		<!-- <i class="bi bi-list mobile-nav-toggle"></i> -->
 		
-		<div class="blank1"></div>
+		<!-- <div class="blank1"></div> -->
     	
     	
          <!-- ======= F.A.Q Section ======= -->
@@ -51,7 +38,7 @@
             <div class="container" data-aos="fade-down">
   
                 <header class="section-header">
-                    <p>자주 묻는 질문</p>
+                    <p>무슨 도움이 필요하신가요?</p>
                 </header>
         
                 <div class="row">
@@ -62,7 +49,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
-                                        요금제 중에 연 단위 결제는 없나요? 연 단위로 결제시 할인혜택은 없나요?
+                                        요금제 중에 연 단위 결제는 없나요?
                                     </button>
                                 </h2>
                                 <!-- 왼쪽 첫번째 질문답 -->
@@ -164,19 +151,21 @@
         <section id="contact" class="contact">
             <div class="container">
                 <div class="row" data-aos="fade-down">
+
                     <div class="col-lg-6 textfaq" data-aos="fade-down">
                         <h3>원하는 답변을 찾지 못했나요?</h3>
                         <h5>TeamTurtle분들이 신속한 답변으로</h5>
                         <h5>도와드리겠습니다.</h5>
                     </div>
 
-                    <div class="col-lg-4 textfaq2">
-                        <h4><i class="fa-regular fa-comment-dots"></i> Turtle 채팅 문의</h4>
-                            <p>TeamTurtle과 채팅하기</p>
-                    
-                        <h4><i class="fa-regular fa-envelope"></i> Turtle 이메일 문의</h4>
-                            <p>turtle.ad@turtle.com</p>  
+                    <div class="textfaq2 col-lg-4">
+                        <div class="email">
+                            <h4><i class="fa-regular fa-comment-dots"></i> Turtle 채팅 문의</h4>
+                            <span>turtle.ad@turtle.com</span>
+                        </div>
                     </div>
+                        <!-- <h4><i class="fa-regular fa-envelope"></i> Turtle 이메일 문의</h4>
+                            <p>turtle.ad@turtle.com</p>   -->
                 </div>
             </div>
         </section>
@@ -185,21 +174,16 @@
     </main>
     <!-- End #main -->
     
-     <!-- main.js 연결 -->
-     <script src="${contextPath}/resources/js/main.js"></script>
+  
+    <script>
+        const contextPath = "${contextPath}";
+    </script>
     
+    <!-- footer include -->
+   	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
     <!-- jQuery 라이브러리 추가 -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
-    			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-   
-   	<!-- Vendor JS Files -->	  
-	<script src="${contextPath}/resources/vendor/purecounter/purecounter_vanilla.js"></script>
-	<script src="${contextPath}/resources/vendor/aos/aos.js"></script>
-	<script src="${contextPath}/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="${contextPath}/resources/vendor/glightbox/js/glightbox.min.js"></script>
-	<script src="${contextPath}/resources/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-	<script src="${contextPath}/resources/vendor/swiper/swiper-bundle.min.js"></script>
-	<script src="${contextPath}/resources/vendor/php-email-form/validate.js"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- main.js 연결 -->
+    <script src="${contextPath}/resources/js/main.js"></script>
 </body>
 </html>

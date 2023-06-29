@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper>
-  <cache-ref namespace=""/>
+<mapper namespace="loadmapMapper">
+
+
+	<resultMap type="loadmap" id="loadmap_rm">
+		<id property="loadmapNo" column="LOADMAP_NO"/>
+		
+		<result property="workspaceNo" column="WORKSPACE_NO"/>
+		<result property="gitRepo" column="GIT_REPO"/>
+		<result property="gitTree" column="GIT_TREE"/>
+		<result property="branch" column="BRANCH"/>
+		<result property="ignore" column="IGNORE"/>
+		<result property="loadmapRegDate" column="LOADMAP_REG_DATE"/>
+	</resultMap>
+
+
+	<select id="selectLoadmapByworkspaceNo" resultMap="loadmap_rm">
+		SELECT * FROM LOADMAP WHERE WORKSPACE_NO = #{workspaceNo}
+	</select>
+
 </mapper>

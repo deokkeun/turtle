@@ -21,11 +21,20 @@
     background-color: #EEE;
   }
   .repos-container .get-repos input {
-    width: 100%;
-    padding: 15px 20px;
+    width: 80%;
+    padding: 10px 10px;
     border: none;
     font-size: 20px;
-    height: 54px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .repos-container .get-repos input:nth-child(2) {
+    width: 40%;
+    margin: 0 5px;
+  }
+  .repos-container .get-repos input:nth-child(3) {
+    width: 35%;
+    margin: 0 5px;
   }
   .repos-container .get-repos input:focus {
     outline: 2px solid #F44336;
@@ -33,10 +42,10 @@
   .repos-container .get-repos .get-button {
     width: 140px;
     margin-left: 10px;
-    height: 54px;
+    height: 40px;
     background-color: #F44336;
     color: #FFF;
-    line-height: 54px;
+    line-height: 40px;
     text-align: center;
     font-weight: bold;
     cursor: pointer;
@@ -88,7 +97,7 @@
   font-size: 14px;
   border: 1px solid black;
   width: 1000px;
-  height: 650px;
+  height: 672px;
   margin: 10px 0 0 0;
 }
 

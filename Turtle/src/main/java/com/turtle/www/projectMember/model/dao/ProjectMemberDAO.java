@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.turtle.www.member.model.vo.Member;
-import com.turtle.www.projectMember.model.vo.ProjectMember;
 
 @Repository
 public class ProjectMemberDAO {

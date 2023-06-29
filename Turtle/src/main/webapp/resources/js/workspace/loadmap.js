@@ -2,11 +2,47 @@
 let theInput = document.querySelector(".get-repos input");
 let getButton = document.querySelector(".get-button");
 let reposData = document.querySelector(".show-data");
+var workspaceNo = document.getElementById("workspaceNo");
+var gitRepo = document.getElementById("gitRepo");
+var branch = document.getElementById("branch");
+var ignore = document.getElementById("ignore");
 
 
 getButton.onclick = function () {
   getRepos();
+
+
+  console.log(workspaceNo.value);
+  console.log(gitRepo.value);
+  console.log(branch.value);
+  console.log(ignore.value);
+
+
+  $.ajax({
+      url: contextPath + "/workspace/loadmap/upload",
+      data : {workspaceNo: workspaceNo.value,
+        gitRepo: gitRepo.value,
+        branch: branch.value,
+        ignore: ignore.value
+      },
+      type: "POST",
+      dataType: "JSON",
+       success: function(res) {
+        console.log(res);
+        if(res == "complete") {
+          console.log("upload 성공");
+
+        } else {
+          console.log("upload 실패");
+    
+        }
+        
+      }
+  });
+
 };
+
+
 
 // Get Repos Function
 function getRepos() {
@@ -57,16 +93,16 @@ function getRepos() {
         mainDiv.appendChild(theUrl);
 
         // Create Stars Count Span
-        let starsSpan = document.createElement("span");
+        // let starsSpan = document.createElement("span");
 
         // Create The Stars Count Text
-        let starsText = document.createTextNode(`Stars ${repo.stargazers_count}`);
+        // let starsText = document.createTextNode(`Stars ${repo.stargazers_count}`);
 
         // Add Stars Count Text To Stars Span
-        starsSpan.appendChild(starsText);
+        // starsSpan.appendChild(starsText);
 
         // Append Stars Count Span To Main Div
-        mainDiv.appendChild(starsSpan);
+        // mainDiv.appendChild(starsSpan);
 
         // Add Class On Main Div
         mainDiv.className = 'repo-box';
@@ -84,7 +120,16 @@ function getRepos() {
 }
 
 
+
+
+
+
+
+
 // ---------------------------------------------------------------------
+
+
+
 
 
 var data_1 = [
@@ -120,8 +165,8 @@ var myTree = Treeviz.create({
   hasFlatData: true,
   relationnalField: "father",
   hasPanAndZoom: true,
-  nodeWidth:150,
-  nodeHeight:70,
+  nodeWidth:120,
+  nodeHeight:80,
   mainAxisNodeSpacing:2,
   isHorizontal:true,
   renderNode: function(node) { 
@@ -138,34 +183,7 @@ var myTree = Treeviz.create({
   linkColor : (nodeData) => "#B0BEC5" ,
   onNodeClick : (nodeData) => console.log(nodeData)
 });
-<<<<<<< HEAD
-
-
-// Display the tree based on the data
-myTree.refresh(data);
-
-
-
-var hierarchical_data_example = {
-  name: "Mom",
-  qty: 10,
-  children: [
-    { name: "Son A", qty: 3 },
-    { name: "Son B", qty: 7 },
-  ],
-};
-
-var myTree = Treeviz.create({
-  htmlId: "tree",
-  idKey: "name",
-  hasFlatData: false,
-  relationnalField: "children",
-});
-
-myTree.refresh(hierarchical_data_example);
-
 myTree.refresh(data_1);
 var toggle=true;
 document.querySelector("#add").addEventListener("click", () => {toggle ? myTree.refresh(data_2) : myTree.refresh(data_3); toggle = false});
 document.querySelector("#remove").addEventListener("click", () => myTree.refresh(data_1));
-
