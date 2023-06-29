@@ -15,9 +15,17 @@
     <div class="boardDetail">
         <div contenteditable="true">${board.boardTitle}</div>
         <span> 최초 작성자 : <img src="${contextPath}${board.regProfileImg}"> ${board.regMemberName}</span>
-        <span> 최근 수정자 : <img src="${contextPath}${board.updateProfileImg}">${board.updateMemberName}</span>
-        <span>이벤트 시작 : </span><input type="date" value="${board.eventStartDate}">
-        <span>이벤트 종료 : </span><input type="date" value="${board.eventEndDate}">
+        <span> 최초 작성일 : ${board.boardRegDate}</span>
+        <span> 최근 수정자 : <c:if test="${!empty board.updateProfileImg}">
+                                <img src="${contextPath}${board.updateProfileImg}">${board.updateMemberName}
+                            </c:if>
+        </span>
+        <span> 최근 수정일 : <c:if test="${!empty board.boardUpdateDate}">
+                                ${board.boardUpdateDate}
+                            </c:if>
+        </span>
+        <span>이벤트 시작일 : </span><input type="date" value="${board.eventStartDate}">
+        <span>이벤트 종료일 : </span><input type="date" value="${board.eventEndDate}">
     </div>
 
     <div class="boardDetail-area">

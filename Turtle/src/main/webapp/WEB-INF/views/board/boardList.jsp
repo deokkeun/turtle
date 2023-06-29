@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turtle</title>
     
-    <link rel="stylesheet" href="${contextPath}/resources/css/board.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/board/boardList.css">
 </head>
 <body>
     게시판 리스트 확인
@@ -124,7 +124,7 @@
     </script>
 
     <!-- memo.js 연결 -->
-    <script src="${contextPath}/resources/js/board.js"></script>    
+    <script src="${contextPath}/resources/js/board/boardList.js"></script>    
     
 </body>
 </html>
