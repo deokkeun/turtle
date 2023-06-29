@@ -41,7 +41,7 @@ $('.sidebar-toggle').on('click', function() {
 
   $.ajax({
     
-      url : contextPath + '/chat/chatRoomList/1?',
+      url : contextPath + '/chat/chatRoom/1/3?',
       type : 'get',
       datatype : 'html',
 
@@ -59,26 +59,26 @@ $('.sidebar-toggle').on('click', function() {
 });
 
 
-$('.chatBtn').on('click', function() {
+// $('.chatBtn').on('click', function() {
 
-const projectNo = document.querySelector('#projectNo')
-const roomNo = $(this).val();
+// const projectNo = document.querySelector('#projectNo')
+// const roomNo = $(this).val();
 
 
-$.ajax({
+// $.ajax({
 
-  url : contextPath + '/chat/chatRoom/1?',
-  type : 'get',
-  datatype : 'html',
+//   url : contextPath + '/chat/chatRoom/1?',
+//   type : 'get',
+//   datatype : 'html',
 
-  success : function(e) {
+//   success : function(e) {
     
-    $('.right-sidebar').html(e);
+//     $('.right-sidebar').html(e);
 
-  }
+//   }
 
 
-})
+// })
 
-});
+// });
 

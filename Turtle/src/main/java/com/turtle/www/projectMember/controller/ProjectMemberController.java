@@ -145,6 +145,7 @@ public class ProjectMemberController {
 		
 		
 	}
+
 	
 	@PostMapping("/inviteMember/{memberEmail}/{inviteCode}/accept")
 	public String acceptInvitation(@PathVariable("inviteCode") String inviteCode,
@@ -179,5 +180,15 @@ public class ProjectMemberController {
 	    return "redirect:/";
 	}
 
-	
+
+//	@PostMapping("chatList")
+//	public String chatList() {
+//		
+//		
+//		
+//		
+//		return "/common/main";
+//		
+//	}
+
 }

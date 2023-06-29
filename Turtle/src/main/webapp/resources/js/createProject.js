@@ -156,8 +156,10 @@ $(document).ready(function() {
         const invitedUser = document.querySelectorAll('.user-checked-name');
         const invitedmem = document.querySelector('.invited-member');
         const img = document.querySelectorAll('.userimg');
+        
     
         invitedmem.innerHTML = "";
+        console.log($('.user-checked-name').attr('id'));
      
 
         for(let i=0; i<invitedUser.length; i++) {
@@ -168,11 +170,12 @@ $(document).ready(function() {
             $('.invited-member').append(res3);
             
         }
-        // 
+        //
+     
         $.ajax({
 
             url : "inviteMember",
-            data : {"selectEmail" : $('.user-checked-name').attr('id')},
+            data : {"selectEmail" : arr},
             type : "POST",
             error : function(request, status, error) {
             
