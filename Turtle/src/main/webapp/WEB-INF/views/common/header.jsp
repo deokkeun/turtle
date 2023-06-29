@@ -313,33 +313,17 @@
   
  <li class="nav-item" style="position: relative;">
 
-          <a class="nav-link collapsed" data-bs-target="#shared-project-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-chevron-down" id="arrow"></i><i class="bi-share-fill"></i> <span>SHARED PROJECT</span>
-          </a>
-          <button class="add-file-button" onclick="addFile('shared-project-nav', event)"><i class="bi bi-plus"></i></button>
-          <ul id="shared-project-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-  <!--           <li>
-              <a href="">
-                <span>project 1</span>
-                <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
-                  <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="bi bi-three-dots-vertical" style="padding-right: 11px;
-                    "></i>
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="project1Dropdown">
-                    <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i>이름 바꾸기</button>
-                    <button class="dropdown-item delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i>삭제하기</button>
-                    <button class="dropdown-item duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i>복제하기</button>
-                  </div>
-                </div>
-              </a>
-            </li> -->
-       
-            <!-- 추가적인 프로젝트 항목들 -->
-          </ul>
+  <li class="nav-item" style="position: relative;">
+    <a class="nav-link collapsed" data-bs-target="#shared-project-nav" data-bs-toggle="collapse" href="#">
+      <i class="bi bi-chevron-down" id="arrow"></i><i class="bi-share-fill"></i> <span>SHARED PROJECT</span>
+    </a>
+    <button class="add-file-button" onclick="addFileAndToggle(event)"><i class="bi bi-plus"></i></button>
+
+    <ul id="shared-project-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+      <!-- 추가적인 프로젝트 항목들 -->
+    </ul>
         </li><!-- End Shared Project Nav -->
 
-        <br>
 
   <li class="nav-item" style="position: relative;">
           <a class="nav-link collapsed" data-bs-target="#workspace-nav" data-bs-toggle="collapse" href="#">
@@ -390,14 +374,14 @@
 
         <li class="nav-item">
           <a class="nav-link collapsed" href="${contextPath}/workspace/loadmap/1">
-            <i class="ri-message-3-line"></i>
+            <i class="ri-github-fill"></i>
             <span>GitHub</span>
           </a>
           <div id="line"></div>
         </li> 
         <li class="nav-item">
           <a class="nav-link collapsed" href="${contextPath}/calendar/calendar/1/9">
-            <i class="ri-message-3-line"></i>
+            <i class="bi bi-calendar-check"></i>
             <span>Calendar</span>
           </a>
           <div id="line"></div>

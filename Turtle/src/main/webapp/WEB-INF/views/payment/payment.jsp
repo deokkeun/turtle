@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <title>결제 페이지</title>
-  <link href="${contextPath}/resources/css/payment/payment.css?ver=3" rel="stylesheet">
+  <link href="${contextPath}/resources/css/payment/payment.css" rel="stylesheet">
  <style>
 
  </style>
@@ -20,6 +20,7 @@
   <h1>결제하기</h1>
 
 <div class="container">
+<div class="container1">
   <form id="payment-form">
     <div class="form-group">
       <div class="split-form-group">
@@ -54,9 +55,9 @@
         </div>
       </div>
     </div>
-
     <button type="submit" class="submit-button">구매하기</button>
   </form>
+</div>
 </div>
 </div>
 </main>
