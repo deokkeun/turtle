@@ -1,7 +1,9 @@
 package com.turtle.www.member.model.service;
 
+import java.util.List;
 import java.util.Map;
 
+import com.turtle.www.chat.model.vo.ChatRoom;
 import com.turtle.www.member.model.vo.Member;
 
 public interface MemberService {
@@ -73,6 +75,8 @@ public interface MemberService {
 	 * @return
 	 */
 	int paymentDateCheck(int memberNo);
+
+	
 
 
 

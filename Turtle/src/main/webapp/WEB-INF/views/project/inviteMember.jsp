@@ -47,11 +47,8 @@
                             </div>
                         </div>
                         
-                        <form action="invitedMember" method="post">
-                            <div class="user-checked">
-                            
-                            
-                            </div>
+                        <form action="inviteMember" method="post">
+                            <div class="user-checked"> </div>
                             <button class="uc-btn">초대하기</button>
                         </form>
                         

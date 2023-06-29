@@ -107,8 +107,9 @@ $(document).ready(function() {
 
     });
 
-    $('.user-checked').on('click','.checked-btn',function() {
 
+    $('.user-checked').on('click','.checked-btn',function() {
+        
         res2= "<div class='user'><div type='button' class='btn'><a class='user-plus'><i class='fa-solid fa-circle-plus'></i></a><span class='user-name'>"+$(this).siblings('.user-checked-name').text()+"</span><span class='user-email'>"+$(this).siblings('.user-checked-name').data('email')+"</span></div></div>";
 
         const y = document.querySelectorAll('.user');
@@ -133,8 +134,42 @@ $(document).ready(function() {
         console.log($(this).siblings(".user-checked-name").text());
         $(this).parents('.checkeduser').remove();
 
-        
 
 
     });
+
 });
+
+
+$('.uc-btn').on('click', function() {
+
+
+    const e = document.querySelectorAll('.user-checked-name');
+        var arr = [];
+        for(let i =0; i<e.length; i++) {
+            arr[i] = e[i].getAttribute('id');
+        }
+
+    $.ajax({
+
+        url : "inviteMember",
+        data: JSON.stringify(arr),
+        type : "POST",
+        contentType: "application/json",
+        dataType: 'json',
+        success: function(){
+
+            console.log("초대 멤버 이메일 데이터 전송 성공")
+        },
+        error : function(request, status, error) {
+        
+            console.log("ajax 에러발생");
+            console.log("상태코드 : " + request.status); // 404, 500
+        }
+    })
+
+
+    
+
+})
+

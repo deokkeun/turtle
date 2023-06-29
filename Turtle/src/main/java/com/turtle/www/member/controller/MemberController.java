@@ -413,6 +413,7 @@ public class MemberController {
 		
 		return "redirect:/";
 	}
+//chat 테스트용
 	
 	
 	

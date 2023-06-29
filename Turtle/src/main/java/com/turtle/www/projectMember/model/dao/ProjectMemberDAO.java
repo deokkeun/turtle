@@ -26,8 +26,10 @@ public class ProjectMemberDAO {
 
 
 	public List<Member> searchmember(String input) {
-		// TODO Auto-generated method stub
 		return sqlSession.selectList("memberMapper.searchmember", input);
 	}
+
+
+	
 
 }
