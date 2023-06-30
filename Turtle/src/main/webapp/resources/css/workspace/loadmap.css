@@ -128,3 +128,19 @@
     top:1px;
   }
   
+
+
+
+
+
+
+  #loadmap-content {
+    display: block;
+    font-size: 21.33px;
+    z-index: 1;
+    width: 80%;
+    height: 100%;
+    /* border: 1px solid black; */
+    text-align: center;
+    padding: 100px;
+  }

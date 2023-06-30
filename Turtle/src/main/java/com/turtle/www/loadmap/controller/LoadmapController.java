@@ -1,23 +1,29 @@
 package com.turtle.www.loadmap.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.turtle.www.loadmap.model.service.LoadmapService;
+import com.turtle.www.loadmap.model.vo.GitCommit;
 import com.turtle.www.loadmap.model.vo.Loadmap;
 import com.turtle.www.memo.controller.MemoController;
 
 @Controller
 @RequestMapping("/workspace/loadmap")
-@SessionAttributes({"projectNo", "workspaceNo"})
+@SessionAttributes({"projectNo", "workspaceNo", "gitCommitList", "loadmap"})
 public class LoadmapController {
 	
 	@Autowired
@@ -32,12 +38,18 @@ public class LoadmapController {
 	 */
 	@GetMapping("/{projectNo}/{workspaceNo}")
 	public String loadmap(@PathVariable("projectNo") int projectNo,
-							@PathVariable("workspaceNo") int workspaceNo) {
+							@PathVariable("workspaceNo") int workspaceNo,
+							Model model) {
 		
+		Loadmap loadmap = service.selectLoadmap(workspaceNo);
+		if(loadmap!=null) {
+			List<GitCommit> gitCommitList = service.selectGitCommitListByLoadmapNo(loadmap.getLoadmapNo());
+			model.addAttribute("gitCommitList" , gitCommitList);
+			List<String> fileJson = new ArrayList<>();
+		}
 		
-		logger.debug("깃 로드맵" + projectNo);
-		logger.debug("깃 로드맵" + workspaceNo);
-		
+		model.addAttribute("loadmap",loadmap);
+		System.out.println(loadmap);
 		
 		return "workspace/loadmap";
 	}
@@ -47,14 +59,29 @@ public class LoadmapController {
 	@PostMapping("/upload")
 	public String upload(Loadmap loadmap) {
 		
-
-		System.out.println("upload Controller");
-		
 		String res = service.insertGit(loadmap);
 		
+		
+		System.out.println("upload");
 		System.out.println(res);
 		
 		return res;
+	}
+	
+
+	
+	@ResponseBody
+	@PostMapping("commitList")
+	public GitCommit commitList(@RequestBody Loadmap loadmap) {
+		
+		GitCommit newCommit = service.selectNewCommitList(loadmap);
+
+		
+		System.out.println("newCommit");
+		System.out.println(newCommit);
+		
+		
+		return newCommit;
 	}
 	
 	
