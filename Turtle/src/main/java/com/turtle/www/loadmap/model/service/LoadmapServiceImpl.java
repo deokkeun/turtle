@@ -29,11 +29,15 @@ import com.turtle.www.loadmap.model.vo.Loadmap;
 @Service
 public class LoadmapServiceImpl implements LoadmapService{
 
+	
 	@Autowired
 	private LoadmapDAO dao;
 	
 	private Logger logger = LoggerFactory.getLogger(LoadmapServiceImpl.class);
 
+	
+	
+	
 	
 	@Override
 	public String insertGit(Loadmap loadmap) {
@@ -100,7 +104,6 @@ public class LoadmapServiceImpl implements LoadmapService{
 		return "complete";
 	}
 
-	
 
 	/** 저장소 정보 불러오기
 	 * @param loadmap
@@ -113,7 +116,6 @@ public class LoadmapServiceImpl implements LoadmapService{
 		GHRepository repo = github.getRepository(loadmap.getGitRepo());
 		return repo;
 	}
-
 
 	
 	private GitCommit getCommitFileShaList(GHRepository repo) throws IOException {
