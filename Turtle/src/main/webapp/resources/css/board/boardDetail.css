@@ -1,3 +1,7 @@
+p {
+    margin: 0;
+}
+
 .board-area {
     width: 550px;
     height: 700px;
@@ -51,12 +55,16 @@
 
 .edit-boardDetail-area {
     display: flex;
+    width: 550px;
 }
 
 .add-boardDetail {
     flex-basis: 5%;
+    width: 30px;
 }
 
 .boardDetail {
     flex-basis: 95%;
+    width: 520px;
+    
 }
