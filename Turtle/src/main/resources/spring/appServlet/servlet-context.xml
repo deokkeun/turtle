@@ -57,11 +57,9 @@
 	<beans:bean id="boardListHandler" class="com.turtle.www.board.model.websocket.BoardListWebsocketHandler"/>
 	<beans:bean id="insertBoardHandler" class="com.turtle.www.board.model.websocket.InsertBoardWebsocketHandler"/>
 	<beans:bean id="deleteBoardHandler" class="com.turtle.www.board.model.websocket.DeleteBoardWebsocketHandler"/>
-	<!-- 
-	<beans:bean id="insertBoardDetailHandler" class="com.turtle.www.board.model.websocket.InsertBoardDetailWebsocketHandler"/>
 	<beans:bean id="updateBoardDetailHandler" class="com.turtle.www.board.model.websocket.UpdateBoardDetailWebsocketHandler"/>	
+	<beans:bean id="insertBoardDetailHandler" class="com.turtle.www.board.model.websocket.InsertBoardDetailWebsocketHandler"/>
 	<beans:bean id="deleteBoardDetailHandler" class="com.turtle.www.board.model.websocket.DeleteBoardDetailWebsocketHandler"/>
-	 -->
 	
 	 
 	
@@ -74,11 +72,9 @@
 		<websocket:mapping handler="boardListHandler" path="/boardList"/>
 		<websocket:mapping handler="insertBoardHandler" path="/insertBoard"/>
 		<websocket:mapping handler="deleteBoardHandler" path="/deleteBoard"/>
-		<!-- 
-		<websocket:mapping handler="insertBoardDetailHandler" path="/insertBoardDetail"/>
 		<websocket:mapping handler="updateBoardDetailHandler" path="/updateBoardDetail"/>
+		<websocket:mapping handler="insertBoardDetailHandler" path="/insertBoardDetail"/>
 		<websocket:mapping handler="deleteBoardDetailHandler" path="/deleteBoardDetail"/>
-		 -->
 		
 		<websocket:handshake-interceptors>
 			<!-- interceptor : http 통신 req, resp 가로채는 역할 

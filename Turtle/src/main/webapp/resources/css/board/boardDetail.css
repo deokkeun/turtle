@@ -20,12 +20,12 @@ p {
     display: flex;
 }
 
-.regMemberImg > img {
+.regMemberImage {
     width: 30px;
     height: 30px;
 }
 
-.regDate {
+.regDate-area {
     flex-basis: 50%;
     display: flex;
 }
@@ -39,12 +39,12 @@ p {
     display: flex;
 }
 
-.updateMemberImg > img {
+.updateMemberImage {
     width: 30px;
     height: 30px;
 }
 
-.updateDate {
+.updateDate-area {
     flex-basis: 50%;
     display: flex;
 }

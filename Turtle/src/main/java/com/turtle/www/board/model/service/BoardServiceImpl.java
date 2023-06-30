@@ -57,6 +57,27 @@ public class BoardServiceImpl implements BoardService {
 
 		return dao.selectBoardDetail(boardNo);
 	}
+
+	// 게시글 내용 수정 서비스 구현
+	@Override
+	public int updateBoardDetail(BoardDetail boardDetail) {
+
+		return dao.updateBoardDetail(boardDetail);
+	}
+
+	// 게시글 내용 추가 서비스 구현
+	@Override
+	public int insertBoardDetail(BoardDetail boardDetail) {
+
+		return dao.insertBoardDetail(boardDetail);
+	}
+
+	// 게시글 내용 삭제 서비스 구현
+	@Override
+	public int deleteBoardDetail(BoardDetail boardDetail) {
+
+		return dao.deleteBoardDetail(boardDetail);
+	}
 	
 	
 	

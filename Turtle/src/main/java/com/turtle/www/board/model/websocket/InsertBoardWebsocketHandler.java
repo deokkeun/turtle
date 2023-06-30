@@ -57,7 +57,7 @@ public class InsertBoardWebsocketHandler extends TextWebSocketHandler {
 				
 		System.out.println(board);
 		
-		// 수정된 메모 DB삽입
+		// 수정된 게시글 sort 변경후 DB삽입
 		
 		board.setBoardSort(board.getBoardSort() + 1);
 		

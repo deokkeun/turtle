@@ -46,5 +46,24 @@ public interface BoardService {
 	List<BoardDetail> selectBoardDetail(int boardNo);
 
 	
+	/** 게시글 내용 수정 서비스
+	 * @param boardDetail
+	 * @return result
+	 */
+	int updateBoardDetail(BoardDetail boardDetail);
+
+	/** 게시글 내용 추가 서비스
+	 * @param boardDetail
+	 * @return result
+	 */
+	int insertBoardDetail(BoardDetail boardDetail);
+
+	/** 게시글 내용 제거 서비스
+	 * @param boardDetail
+	 * @return result
+	 */
+	int deleteBoardDetail(BoardDetail boardDetail);
+
+	
 
 }

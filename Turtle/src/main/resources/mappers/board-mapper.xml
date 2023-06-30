@@ -27,6 +27,7 @@
 		<result property="boardNo" column="BOARD_NO"/>
 		<result property="boardContent" column="BOARD_CONTENT"/>
 		<result property="boardDetailSort" column="BOARD_DETAIL_SORT"/>
+		
 	</resultMap>
 	
 	<!-- 게시글 목록 조회 -->
@@ -80,6 +81,7 @@
 		FROM BOARD
 		WHERE BOARD_NO = ${boardNo} AND BOARD_ST = 'N'
 	</select>
+	
 	<!-- 게시글 상세조회 -->
 	<select id="selectBoardDetail" resultMap="boardDetail_rm">
 		SELECT BOARD_DETAIL_NO, BOARD_NO, BOARD_CONTENT, BOARD_DETAIL_SORT
@@ -87,5 +89,37 @@
 		WHERE BOARD_NO = ${boardNo}
 		ORDER BY BOARD_DETAIL_SORT
 	</select>
+	
+	<!-- 게시글 내용 수정 -->
+	<update id="updateBoardDetail">
+		UPDATE BOARD_DETAIL SET BOARD_CONTENT = #{boardContent} WHERE BOARD_DETAIL_NO = ${boardDetailNo}	
+	</update>
+	
+	<!-- 수정된 게시물 정보 수정 -->
+	<update id="updateBoardInfo">
+		UPDATE BOARD SET BOARD_UPDATE_DATE = SYSDATE, UPDATE_PM_NO = ${pmNo}
+		WHERE BOARD_NO = ${boardNo}
+	</update>
+	
+	<!-- 기존 게시글들 번호 수정(게시글추가) -->
+	<update id="addBoardDetailSort">
+		UPDATE BOARD_DETAIL SET BOARD_DETAIL_SORT = BOARD_DETAIL_SORT + 1
+		WHERE BOARD_DETAIL_SORT >= ${boardDetailSort}
+		AND BOARD_NO = ${boardNo}
+	</update>
+	
+	<!-- 게시글 내용 삽입 -->
+	<insert id="insertBoardDetail" useGeneratedKeys="true">
+		<selectKey keyProperty="boardDetailNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_BOARD_DETAIL_NO.NEXTVAL FROM DUAL
+		</selectKey>
+		
+		INSERT INTO BOARD_DETAIL VALUES(${boardDetailNo}, ${boardNo}, NULL, ${boardDetailSort})
+	</insert>
+	
+	<!-- 게시글 내용 삭제 -->
+	<delete id="deleteBoardDetail">
+		DELETE FROM BOARD_DETAIL WHERE BOARD_DETAIL_NO = ${boardDetailNo}
+	</delete>
 
 </mapper>

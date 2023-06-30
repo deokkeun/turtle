@@ -131,8 +131,12 @@
 		// /deleteBoard 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
 		// 게시글 삭제용 sock
 		let deleteBoardSock = new SockJS(contextPath+"/deleteBoard");
+		// /updateBoardDetail 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
+		// 게시글 내용 수정용 sock
+		let updateBoardDetailSock = new SockJS(contextPath+"/updateBoardDetail");
 		// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
-		
+		// 게시글 내용 추가용 sock
+		let insertBoardDetailSock = new SockJS(contextPath+"/insertBoardDetail");
     </script>
 
     <!-- memo.js 연결 -->

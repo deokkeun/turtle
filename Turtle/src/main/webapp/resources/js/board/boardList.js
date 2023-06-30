@@ -177,6 +177,68 @@ deleteBoardSock.onmessage = function(e) {
     });
 };
 
+// 게시글 내용 수정시 수정 멤버 정보 바꾸는 웹소켓 작업
+updateBoardDetailSock.onmessage = function(e) {
+    // 매개변수 e : 발생한 이벤트에 대한 정보를 담고있는 객체
+	// e.data : 전달된 메세지 (message.getPayload())   (JSON 형태)
+
+	// 전달 받은 메세지를 JS 객체로 변환
+	const changedBoardDetail = JSON.parse(e.data);  // JSON -> JS Object
+
+    // 수정된 게시글 정보 변경
+    boards = document.querySelectorAll(".board");
+
+    boards.forEach((board) => {
+        if(board.dataset.boardno == changedBoardDetail.boardNo) {
+            $(board).find(".profile-image").find("img").attr("src", contextPath + changedBoardDetail.profileImage);
+            $(board).find(".user-name").html(changedBoardDetail.memberName);
+            $(board).find(".updateDate").html(currentTime());
+        }
+    });
+
+    
+}
+
+// 게시글 내용 추가시 수정 멤버 정보 바꾸는 웹소켓 작업
+insertBoardDetailSock.onmessage = function(e) {
+    // 매개변수 e : 발생한 이벤트에 대한 정보를 담고있는 객체
+	// e.data : 전달된 메세지 (message.getPayload())   (JSON 형태)
+
+	// 전달 받은 메세지를 JS 객체로 변환
+	const changedBoardDetail = JSON.parse(e.data);  // JSON -> JS Object
+
+    // 수정된 게시글 정보 변경
+    boards = document.querySelectorAll(".board");
+
+    boards.forEach((board) => {
+        if(board.dataset.boardno == changedBoardDetail.boardNo) {
+            $(board).find(".profile-image").find("img").attr("src", contextPath + changedBoardDetail.profileImage);
+            $(board).find(".user-name").html(changedBoardDetail.memberName);
+            $(board).find(".updateDate").html(currentTime());
+        }
+    });    
+}
+
+// 게시글 내용 삭제시 수정 멤버 정보 바꾸는 웹소켓 작업
+deleteBoardDetailSock.onmessage = function(e) {
+    // 매개변수 e : 발생한 이벤트에 대한 정보를 담고있는 객체
+	// e.data : 전달된 메세지 (message.getPayload())   (JSON 형태)
+
+	// 전달 받은 메세지를 JS 객체로 변환
+	const changedBoardDetail = JSON.parse(e.data);  // JSON -> JS Object
+
+    // 수정된 게시글 정보 변경
+    boards = document.querySelectorAll(".board");
+
+    boards.forEach((board) => {
+        if(board.dataset.boardno == changedBoardDetail.boardNo) {
+            $(board).find(".profile-image").find("img").attr("src", contextPath + changedBoardDetail.profileImage);
+            $(board).find(".user-name").html(changedBoardDetail.memberName);
+            $(board).find(".updateDate").html(currentTime());
+        }
+    });    
+};
+
 // 마우스 오버 함수
 function mouseover(board) {
     $(board).find(".add-board").css("visibility", "visible");          
