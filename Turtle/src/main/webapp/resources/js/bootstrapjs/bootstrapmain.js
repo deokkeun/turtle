@@ -244,76 +244,105 @@ if (select('.toggle-sidebar2-btn')) {
 
 //프로젝트 내용 추가
 function addFile(menuId, event) {
-  if (event) {
-    event.stopPropagation();
-  }
-
-  var projectName = prompt("프로젝트 이름을 입력하세요:");
-  if (projectName) {
-    var fileLink = menuId.split('-')[0] + "-projects/" + projectName.toLowerCase() + ".html";
-
-    var newFile = document.createElement("li");
-
-    var fileLinkElement = document.createElement("a");
-    fileLinkElement.className = "nav-link";
-    fileLinkElement.innerHTML = '<span>' + projectName + '</span>';
-
-    var fileMenu = document.createElement("div");
-    fileMenu.className = "file-menu dropdown ms-auto";
-    fileMenu.oncontextmenu = function () {
-      return false;
-    };
-
-    var dropdownToggle = document.createElement("button");
-    dropdownToggle.className = "dropdown-nev";
-    dropdownToggle.type = "button";
-    dropdownToggle.dataset.bsToggle = "dropdown";
-    dropdownToggle.setAttribute("aria-haspopup", "true");
-    dropdownToggle.setAttribute("aria-expanded", "false");
-    dropdownToggle.innerHTML = '<i class="bi bi-three-dots-vertical"></i>';
-
-    var dropdownMenu = document.createElement("div");
-    dropdownMenu.className = "dropdown-menu";
-
-    var renameButton = document.createElement("button");
-    renameButton.className = "dropdown-item rename-button";
-    renameButton.innerHTML = '<i class="bi bi-pencil"></i> 이름 바꾸기';
-    renameButton.onclick = function (event) {
+    if (event) {
       event.stopPropagation();
-      renameFile(this);
-    };
-
-    var deleteButton = document.createElement("button");
-    deleteButton.className = "dropdown-item delete-button";
-    deleteButton.innerHTML = '<i class="bi bi-trash"></i> 삭제하기';
-    deleteButton.onclick = function (event) {
-      event.stopPropagation();
-      deleteFile(this);
-      showAddButton(menuId); // 삭제 후 추가 버튼 보이기
-    };
-
+    }
   
-
-    dropdownMenu.appendChild(renameButton);
-    dropdownMenu.appendChild(deleteButton);
+    var projectName = prompt("제목을 입력하세요:");
+    if (projectName) {
+      var fileLink = menuId.split('-')[0] + "-projects/" + projectName.toLowerCase() + ".html";
   
-
-    fileMenu.appendChild(dropdownToggle);
-    fileMenu.appendChild(dropdownMenu);
-
-    fileLinkElement.appendChild(fileMenu);
-
-    newFile.appendChild(fileLinkElement);
-
-    var menuNav = document.getElementById(menuId);
-    menuNav.appendChild(newFile);
-
-    if (menuId !== "workspace-nav") {
-      hideAddButton(menuId); // 추가 버튼 숨기기
+      var newFile = document.createElement("li");
+  
+      var fileLinkElement = document.createElement("a");
+      fileLinkElement.className = "nav-link";
+      fileLinkElement.innerHTML = '<span>' + projectName + '</span>';
+  
+      var fileMenu = document.createElement("div");
+      fileMenu.className = "file-menu dropdown ms-auto";
+      fileMenu.oncontextmenu = function () {
+        return false;
+      };
+  
+      var dropdownToggle = document.createElement("button");
+      dropdownToggle.className = "dropdown-nev";
+      dropdownToggle.type = "button";
+      dropdownToggle.dataset.bsToggle = "dropdown";
+      dropdownToggle.setAttribute("aria-haspopup", "true");
+      dropdownToggle.setAttribute("aria-expanded", "false");
+      dropdownToggle.innerHTML = '<i class="bi bi-three-dots-vertical"></i>';
+  
+      var dropdownMenu = document.createElement("div");
+      dropdownMenu.className = "dropdown-menu";
+  
+      var renameButton = document.createElement("button");
+      renameButton.className = "dropdown-item rename-button";
+      renameButton.innerHTML = '<i class="bi bi-pencil"></i> 이름 바꾸기';
+      renameButton.onclick = function (event) {
+        event.stopPropagation();
+        renameFile(this);
+      };
+  
+      var deleteButton = document.createElement("button");
+      deleteButton.className = "dropdown-item delete-button";
+      deleteButton.innerHTML = '<i class="bi bi-trash"></i> 삭제하기';
+      deleteButton.onclick = function (event) {
+        event.stopPropagation();
+        deleteFile(this);
+        showAddButton(menuId); // 삭제 후 추가 버튼 보이기
+      };
+  
+    
+  
+      dropdownMenu.appendChild(renameButton);
+      dropdownMenu.appendChild(deleteButton);
+    
+  
+      fileMenu.appendChild(dropdownToggle);
+      fileMenu.appendChild(dropdownMenu);
+  
+      fileLinkElement.appendChild(fileMenu);
+  
+      newFile.appendChild(fileLinkElement);
+  
+      var menuNav = document.getElementById(menuId);
+      menuNav.appendChild(newFile);
+  
+      if (menuId !== "workspace-nav") {
+        hideAddButton(menuId); // 추가 버튼 숨기기
+      }
     }
   }
-}
+  var projectNavLink = document.querySelector('[data-bs-target="#project-nav"]');
+projectNavLink.addEventListener('click', function (event) {
+  event.stopPropagation();
+});
 
+// SHARED PROJECT Nav
+var sharedProjectNavLink = document.querySelector('[data-bs-target="#shared-project-nav"]');
+sharedProjectNavLink.addEventListener('click', function (event) {
+  event.stopPropagation();
+});
+
+// WORKSPACE Nav
+var workspaceNavLink = document.querySelector('[data-bs-target="#workspace-nav"]');
+workspaceNavLink.addEventListener('click', function (event) {
+  event.stopPropagation();
+});
+  function addFileAndToggle(menuId, event) {
+    if (event) {
+      event.stopPropagation();
+    }
+  
+    // addFile 함수 호출
+    addFile(menuId, event);
+  
+    // 해당 메뉴의 a.nav-link.collapsed 요소를 찾아서 클릭 이벤트 수행
+    var linkElement = document.querySelector(`a.nav-link.collapsed[data-bs-target="#${menuId}"]`);
+    if (linkElement) {
+      linkElement.click();
+    }
+  }
 function hideAddButton(menuId) {
   var addButton = document.querySelector('button.add-file-button[onclick="addFile(\'' + menuId + '\', event)"]');
   if (addButton) {
@@ -354,3 +383,18 @@ if (navLink) {
 
   navLink.classList.remove('collapsed');
 }
+. var addButton = document.getElementById('add-file-button');
+  addButton.addEventListener('click', function(event) {
+    if (this.classList.contains('disabled')) {
+      event.preventDefault();
+      return false;
+    }
+    
+    this.classList.add('disabled');
+    addFile('shared-project-nav');
+    
+    setTimeout(function() {
+      addButton.classList.remove('disabled');
+    }, 1000);
+  });
+
