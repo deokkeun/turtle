@@ -1,5 +1,8 @@
 package com.turtle.www.member.controller;
 
+import java.io.IOException;
+import java.security.GeneralSecurityException;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,6 +28,12 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
+import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken.Payload;
+import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
+import com.google.api.client.googleapis.util.Utils;
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.json.JsonFactory;
 import com.google.gson.Gson;
 import com.turtle.www.member.model.service.MemberService;
 import com.turtle.www.member.model.vo.Member;
@@ -45,6 +54,8 @@ public class MemberController {
 	
 	@Autowired
 	private MemberService service;
+	
+	
 	
 	/** 로그인 세션이 있는 경우 바로 main페이지로 이동
 	 * @return
@@ -110,18 +121,41 @@ public class MemberController {
 		
 	}
 	
-	/** 구글 로그인
-	 * @return
-	 */
-	@PostMapping("/login/google")
-	public String loginGoogle() {
+	
+	@RequestMapping(value="/login/google")
+	public String googleLogin(String idtoken, Model model) throws GeneralSecurityException, IOException {
+		logger.info("구글 로그인");
 		
-		logger.info("구글 로그인 기능 수행됨");
+		HttpTransport transport = Utils.getDefaultTransport();
+		JsonFactory jsonFactory = Utils.getDefaultJsonFactory();
+		
+		GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(transport, jsonFactory)
+				.setAudience(Collections.singletonList("713601013116-33sqneo96i1er8o2e6bs5a8o5522k2rq.apps.googleusercontent.com")).build();
+		
+		
+		GoogleIdToken idToken = verifier.verify(idtoken);
+		if (idToken != null) {
+			Payload payload = idToken.getPayload();
+			
+			if (((String) payload.get("email")).contains("false")) { //회원가입이 안 되어 있는 경우
+				Member member = new Member();
+				member.setMemberEmail((String) payload.get("email"));
+				member.setSocialEmail((String) payload.get("email"));
+				member.setMemberName((String) payload.get("given_name"));
+				member.setProfileImage((String) payload.get("picture"));
+				member.setAccessToken(idtoken);
+				
+				int result = service.googleJoin(member);
+			}//end if
+				
+			model.addAttribute("id", (String) payload.get("email"));
+				
+		} else { //유효하지 않은 토큰
+		}//end else
+			
 		return "redirect:/";
-		
-	}
-	
-	
+	    
+	}//googleLogin
 	
 	
 	/** 로그아웃

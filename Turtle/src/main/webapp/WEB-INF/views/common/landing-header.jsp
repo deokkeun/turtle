@@ -89,7 +89,7 @@
 	     data-client_id="713601013116-33sqneo96i1er8o2e6bs5a8o5522k2rq.apps.googleusercontent.com"
 	     data-context="signin"
 	     data-ux_mode="popup"
-	     data-login_uri="http://localhost:8080/www/member/login"
+	     data-login_uri="http://localhost:8080/member/login/google"
 	     data-auto_prompt="false">
 	</div>
 	
@@ -136,4 +136,17 @@
 
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 
+<script>
+function onSignIn(googleUser) {
+	  var profile = googleUser.getBasicProfile();
+	  var id_token = googleUser.getAuthResponse().id_token;
+	  var xhr = new XMLHttpRequest();
+	  xhr.open('POST', 'http://localhost:8080/member/login/google');
+	  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	  xhr.onload = function() {
+	    console.log('Signed in as: ' + xhr.responseText);
+	  };
+	  xhr.send('idtoken=' + id_token);
+}//onSignIn
+</script>
 

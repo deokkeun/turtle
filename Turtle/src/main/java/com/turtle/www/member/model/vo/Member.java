@@ -19,7 +19,8 @@ public class Member {
 	private String enrollDate; // 가입일
 	private String memberDeleteFG; // 탈퇴여부
 	
-	private String socialId; // 소셜 아이디
+	private String socialEmail; // 소셜 아이디
+	private String accessToken;
 
 
 }
