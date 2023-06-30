@@ -58,7 +58,7 @@
                     <h4>정말 탈퇴하시겠어요?</h4>
                     <p>탈퇴 버튼 선택 시, 계정은<br> 삭제되며 복구되지 않습니다.</p>
                     <div class="modal-buttons">
-                        <button id="confirmDelete">탈퇴</button>    
+                        <button id="confirmDelete" onclick="window.location.href = '{contextPath}/resources/views/member/mypage-deletecomplete';">탈퇴</button>    
                         <button type="button" id="closeModal">취소</button>
                     </div>
                 </div>
