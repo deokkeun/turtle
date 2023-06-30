@@ -13,7 +13,9 @@
 		<result property="profileImage" column="PROFILE_IMG"/>
 		<result property="enrollDate" column="ENROLL_DATE"/>
 		<result property="memberDeleteFG" column="MEMBER_DELETE_FG"/>
-		<result property="socialId" column="SOCIAL_ID"/>
+		<result property="sociaEmail" column="SOCIAL_EMAIL"/>
+		<result property="accessToken" column="SOCIAL_TOKEN"/>
+		
 	</resultMap>
 	
  	<resultMap type="certification" id="certification_rm">
@@ -132,5 +134,19 @@
 	</select>
 
 
+	<!-- 구글 회원가입 -->
+	<insert id="googleJoin" parameterType="member">
+		INSERT INTO MEMBER VALUES(
+			SEQ_MEMBER_NO.NEXTVAL,
+			#{memberEmail},
+			'0',
+			#{memberName},
+			NULL,
+			#{profileImage},
+			DEFAULT, #{socialEmail}, #{accessToken}
+	)
+	</insert>
+
+	
 
 </mapper>

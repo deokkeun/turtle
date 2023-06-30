@@ -124,6 +124,11 @@ public class MemberDAO {
 	}
 
 
+	public int googleJoin(Member member) {
+		return sqlSession.insert("memberMapper.googleJoin", member);
+	}
+
+
 
 	
 
