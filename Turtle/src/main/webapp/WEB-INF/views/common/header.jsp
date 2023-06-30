@@ -378,7 +378,6 @@
             <i class="ri-message-3-line"></i>
             <span>GitHub</span>
           </a>
-          <div id="line"></div>
         </li> 
         <li class="nav-item">
           <a class="nav-link collapsed" href="${contextPath}/calendar/calendar/1/9">
