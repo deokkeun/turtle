@@ -58,7 +58,7 @@
             </div>
             <textarea id="summernote" name="projectDescription"></textarea>
              <div class="next-btn">
-            <button type="submit">다음</button>
+                <button type="submit">다음</button>
        		 </div>     
         </form>
         

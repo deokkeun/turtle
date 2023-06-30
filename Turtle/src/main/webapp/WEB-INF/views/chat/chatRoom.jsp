@@ -17,15 +17,17 @@
     
     <link rel="stylesheet" href="${contextPath}/resources/css/chat-style.css">
 </head>
-<body>
-	채팅방 테스트
+<body id="page2" class="slide-in">
+	
 		<!-- 채팅입력 날짜와 이전채팅의 날짜가 다른경우 날짜를 보여주는 div 추가 -->
 		<!-- 이전 채팅과 현재 입력채팅의 입력시간이 다를 경우 시간 출력((AM || PM)시,분) ,이미지,이름과 같이 출력-->
 		<!-- 채팅입력한 멤버와 로그인멤버가 다를 경우 프로필 이미지하고 같이 출력, 같을경우는 채팅내용과 시간만 출력 -->
+	<div id="back-area">
+		<button class="btn btn-outline-danger" id="back-btn"><i class="fa-solid fa-bars"></i></button>
+	</div>
+	
 	<div class="chatting-area">
-		<div id="back-area">
-			<button class="btn btn-outline-danger" id="back-btn">나가기</button>
-		</div>
+		
 		<input type="hidden" name="mName" value="${loginMember.memberName}">
 		
 		<ul class="display-chatting">
@@ -36,17 +38,13 @@
 				<fmt:formatDate var="chatDate2" value="${chatMessage.cmRegDate}" pattern="HH:mm"/>
 				<fmt:formatDate  var="chatDate3" value="${chatMessage.cmRegDate}" pattern="HH"/>
 				<c:choose>
-
-			
-				
 					<c:when test="${chatMessage.memberName ne memberName}">
 						<li class="yourChat">
 							<div class="chat-user">
 								<c:if test="${chatDate ne previousDate}"> 
 								
 									<div class="chatCalender"><i class="fa-regular fa-calendar-days">	<span>${chatDate}</span></i></div>
-							
-					
+	
 								</c:if>
 								<a class="user-img"><i class='fa-solid fa-circle-user'></i></a>
 								<b>${chatMessage.memberName}님</b>
@@ -73,7 +71,7 @@
 							
 					
 							</c:if>
-							<br>
+						
 
 							
 							
@@ -98,10 +96,10 @@
 		<div class="input-area">
 			<textarea id="inputChatting" rows="3"></textarea>
 			<script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
-			<button id="emoji_btn"><i class="fa-regular fa-face-smile"></i></button>
-		
-
-			<button id="send"><i class="fa-regular fa-paper-plane"></i></button>
+			<div class="send-area">
+				<button id="emoji_btn"><i class="fa-regular fa-face-smile"></i></button>
+				<button id="send"><i class="fa-regular fa-paper-plane"></i></button>
+			</div>
 		</div>
 		<input type="hidden" name="date" value="${chatDate}">
 	</div>
