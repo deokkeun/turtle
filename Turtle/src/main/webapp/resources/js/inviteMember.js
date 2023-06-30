@@ -156,7 +156,6 @@ $('.uc-btn').on('click', function() {
         data: JSON.stringify(arr),
         type : "POST",
         contentType: "application/json",
-        dataType: 'json',
         success: function(){
 
             console.log("초대 멤버 이메일 데이터 전송 성공")

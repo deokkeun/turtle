@@ -138,10 +138,11 @@
 
 <script>
 function onSignIn(googleUser) {
+	 console.log("구글 로그인");
 	  var profile = googleUser.getBasicProfile();
 	  var id_token = googleUser.getAuthResponse().id_token;
 	  var xhr = new XMLHttpRequest();
-	  xhr.open('POST', 'http://localhost:8080/member/login/google');
+	  xhr.open('POST', 'http://localhost/member/login/google');
 	  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 	  xhr.onload = function() {
 	    console.log('Signed in as: ' + xhr.responseText);
