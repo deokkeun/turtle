@@ -118,8 +118,6 @@ public class LoadmapServiceImpl implements LoadmapService{
 	}
 	
 	
-
-	
 	private GitCommit getCommitFileShaList(GHRepository repo) throws IOException {
 		
 		logger.debug("getCommitFileShaList" + repo);
