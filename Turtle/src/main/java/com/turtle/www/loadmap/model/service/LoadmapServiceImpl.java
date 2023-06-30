@@ -109,7 +109,7 @@ public class LoadmapServiceImpl implements LoadmapService{
 	 */
 	private GHRepository getGitRepo(Loadmap loadmap) throws IOException {
 		GitHub github = new GitHubBuilder()
-				.withOAuthToken("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".replace("=", "")).build();
+				.withOAuthToken("".replace("=", "")).build();
 		GHRepository repo = github.getRepository(loadmap.getGitRepo());
 		return repo;
 	}
