@@ -116,6 +116,8 @@ public class LoadmapServiceImpl implements LoadmapService{
 		GHRepository repo = github.getRepository(loadmap.getGitRepo());
 		return repo;
 	}
+	
+	
 
 	
 	private GitCommit getCommitFileShaList(GHRepository repo) throws IOException {
