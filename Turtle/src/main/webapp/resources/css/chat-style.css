@@ -1,16 +1,24 @@
-
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+#page2 {
+	position: relative;
+}
 /* 채팅창 관련 */
 .chatting-area{ 
-	margin:auto;
-	height: 100%;  
-	max-width : 300px;
-	margin-top: 50px;
-	margin-bottom: 50px;
+	margin: auto;
+	justify-content: center;
+	height: 100vh;  
+	max-width : 100%;
+	z-index: 1;
+	
 }
 .display-chatting{
 	max-width: 100%;
-	height: 450px;
-	border : 1px solid black;
+	height: 90vh;
+	border : 0px solid black;
 	overflow: auto;
 	list-style : none;
 	padding : 10px 10px;
@@ -28,25 +36,41 @@
 	
 }
 
-
+.yourChat {
+	margin-top: 15px;
+}
+.chat-user {
+	margin-bottom: 5px;
+}
 .input-area{
+	position: fixed;
+	height: 10vh;
 	width: 100%;
 	display: flex;
-	
+	bottom: 0;
 }
 
 #inputChatting{
 	width : 90%;
 	resize : none;
 }
+.send-area {
+	width: 10%;
+	display: flex;
 
-#send{
-	width : 10%;
-	font-size: 20px;
-	background-color: rgb(200, 255, 200);
-	
+}
+.send-area > button:nth-child(1) {
+	width: 100%;
+	flex-basis: 50%;
+	background-color: transparent;
 	
 }
+.send-area > button:nth-child(2) {
+	width: 100%;
+	flex-basis: 50%;
+	background-color: #f6f9ff;
+}
+
 
 .chatDate{
 	font-size: 9px;
@@ -55,32 +79,30 @@
 #back-area{
 	text-align: right;
 	margin-bottom : 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+
 }
-
-
-.exit{
-	text-align: center;
+#back-area > button {
+	background-color: transparent;
+	border: none;
+	opacity: 0.8;
+	font-size: 24px;
+	margin-left: 10px;
+	margin-top: 10px;
+	color: #d2e1ff;
+	z-index: 999;
 }
-
-.exit > p{
-	background-color: rgba(0,0,0, 0.3);
-}
-
-
-.chat-exit{
-width: 100%;
-text-align: center;
-background-color: black;
-color: white;
+#back-area > button:hover {
+	color: #4154f1;
+	cursor: pointer;
 }
 
 .user-img > i {
 	font-size: 30px;
 }
-.chat-user > b{
-	
 
-}
 .chatDate {
 	font-size: 12px;
 }
@@ -90,10 +112,11 @@ color: white;
 }
 /*채팅 위치로 구별하기*/
 #myChat{	
+	margin-top: 30px;
 	text-align: right;
 }
 #myChat > p {
-	background-color: rgb(200, 255, 200);
+	background-color: #f6f9ff;
 }
 
 /* 최대크기 설정하고 넘어갈시에는 아랫줄로 이동하는것 */
@@ -101,5 +124,39 @@ color: white;
 	max-width: 200px;
 	display: inline-block;
 	word-break: break-all;
+	
+}
+/* chatList.jsp css */
+.chatList  {
+    list-style: none;
+   
+   text-align: center;
+}
+.chatBtn {
+    width: 40%;
+    height: 40px;
+    margin-top: 10px;
+    font-weight: bold;
+    background-color: #f6f9ff;
+    border: 1px solid white;
+    border-radius: 8px;
+    color: #4154f1;
+}
+.chatBtn:hover {
+   
+    border: 1px solid #4154f1;
+}
+.slide-in {
+	animation: change 0.5s ease forwards;
+}
+@keyframes change {
+	from {
+		transform: translateX(100%);
+   		visibility: visible;
+  }
+
+  	to {
+    transform: translateX(0%);
+  }
 	
 }

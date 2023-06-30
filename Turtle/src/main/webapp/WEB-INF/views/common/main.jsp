@@ -115,17 +115,20 @@
         	<button>게시판 테스트</button>
         </form>
         <div id="summernote"></div>
-     
+        <a href="javascript:join()">채팅방</a>
+     	
+       
 
     </main>
+    
      <!--loading 페이지-->
      <!-- <script type="text/javascript">
-        $(window).on('load', function() {
+        $(window).one('load', function() {
             setTimeout(function(){
                 $("#load").fadeOut();
             }, 500);
-        });
-    </script> -->
+        }); -->
+    </script>
     <script>
       const contextPath = "${contextPath}";
     </script>

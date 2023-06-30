@@ -15,9 +15,10 @@
     <title>Turtle</title>
     
     <link rel="stylesheet" href="${contextPath}/resources/css/board/boardList.css">
+	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    게시판 리스트 확인
+
     
     <div class="board-area">   	
 		<fmt:formatDate var="boardRegDate" value="${board.boardRegDate}" pattern="MM-dd HH:mm"/>
@@ -60,6 +61,9 @@
 					<div class="add-board" style="visibility:hidden;">
 						<button class="add-board-btn">+</button>
 					</div>
+					<div class="emoji-btn">
+						<i class="fa-regular fa-file"></i>
+					</div>
 					<a href="../../boardDetail/${projectNo}/${workspaceNo}/${board.boardNo}" class="select-board-detail">
 						<div class="boardTitle" contenteditable="false">
 							${board.boardTitle}
@@ -70,18 +74,24 @@
 						<button class="close-edit-boardTitle-btn" style="display:none;">done</button>
 					</div>
 				</div>
-					<div class="board-info">
-						<c:choose>
-							<c:when test="${empty board.boardUpdateDate}">
+				<div class="board-info">
+					<c:choose>
+						<c:when test="${empty board.boardUpdateDate}">
+						<div>
 							<span class="profile-image"><img src="${contextPath}${board.regProfileImg}"></span>
-							<span class="updateDate">${board.boardRegDate}</span>
-							</c:when>
-							<c:otherwise>
+							<span class="user-name">${board.regMemberName}</span>
+						</div>
+						<span class="updateDate">${board.boardRegDate}</span>
+						</c:when>
+						<c:otherwise>
+						<div>
 							<span class="profile-image"><img src="${contextPath}${board.updateProfileImg}"></span>
-							<span class="updateDate">${board.boardUpdateDate}</span>
-							</c:otherwise>
-						</c:choose>    							
-					</div>
+							<span class="user-name">${board.updateMemberName}</span>
+						</div>
+						<span class="updateDate">${board.boardUpdateDate}</span>
+						</c:otherwise>
+					</c:choose>    							
+				</div>
 				<div class="delete-board" style="visibility:hidden;">
 					<button class="delete-board-btn">-</button>
 				</div>    						

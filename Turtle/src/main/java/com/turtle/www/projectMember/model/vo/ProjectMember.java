@@ -15,7 +15,6 @@ public class ProjectMember {
 	private int projectNo;
 	private int memberNo;
 	private String projectManager;
-	private String profileColor;
 	private String pmST;
 	private String regDate;
 	
