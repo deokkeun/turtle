@@ -223,7 +223,7 @@ document.querySelector('#back-btn').onclick = function() {
 //이모티콘
  let button2 = document.querySelector("#emoji_btn");
 const picker = new EmojiButton({
-  position: 'bottom-start'
+  position: 'top-start'
 });
 
 button2.addEventListener('click', () => {

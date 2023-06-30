@@ -1,15 +1,27 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	width: 100vw;
+	height: 100vh;
+}
 a {
 	text-decoration: none;
 	color: black;
 }
 
 .board-area {
-	width: 550px;
+	width: auto;
+	
 }
 
 .board {
 	display: flex;
-	height:30px;
+	height:25px;
+	
+	
 }
 
 .board:hover {
@@ -30,11 +42,19 @@ a {
 	flex-basis: 80%;
 	width: 308px;
 	height: 30px;
+	justify-content: center;
+	
 }
+.emoji-btn  {
 
+}
+.emoji-btn > i {
+	
+}
 .edit-boardTitle {
 	flex-basis: 15%;
 }
+
 
 
 .board-info {
@@ -50,3 +70,11 @@ a {
 	flex-basis: 5%;
 }
 
+/* hover 시에 이름 확인 */
+.user-name {
+	visibility: hidden;
+
+}
+.profile-image:hover  ~ .user-name{	
+	visibility: visible;
+}
