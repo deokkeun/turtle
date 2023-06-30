@@ -26,6 +26,33 @@
         <input type="text" value="workspaceNo = ${workspaceNo}">
         <input type="hidden"  id="workspaceNo" value="${workspaceNo}">
 
+        <input type="text" value="${gitCommitList}">
+        <input type="text" value="${loadmap}">
+
+
+        
+        <div>
+            -----------------------------------------------------
+            ${gitCommitList}
+            -----------------------------------------------------
+        </div>
+        <div>
+            -----------------------------------------------------
+            ${loadmap}
+            -----------------------------------------------------
+        </div>
+        <div>
+            <c:forEach var="gc" items="${gitCommitList}">
+                <div class="git-commit">
+                    <div class="git-user"><b>[${ gc.login }]</b> ${gc.message}</div>
+                    <div class="git-files">${gc.files}</div>
+                </div>
+
+            </c:forEach>
+        </div>
+        
+
+
 		<section id="loadmap-container">
             <section class="repos-container">
                 <div class="get-repos">
@@ -45,18 +72,33 @@
                     <div>
                         <input type="button" id="add" value="Add data"></input>
                         <input type="button" id="remove" value="Remove data"></input>
+                        <div id="onedeps" class="btn btn-primary">되돌리기</div>
+                        <div id="allview" class="btn btn-primary">전체 보기</div>
+                        <div id="modifybtn" class="btn btn-info">수정하기</div>
+                        <div id="gitbtn" class="btn btn-primary">연동하기</div>
                     </div>
+
                     
+
                     
-                    <div id="tree"></div>
+                    <div id="tree">
+
+                        <!-- <div id="loadmap-content">
+                            로드맵은 <br>
+                            GitHub Username/GitHub Repository <br>
+                            branch 를 모두 입력하시면 조회를 하실 수 있습니다.
+                        </div> -->
+                    </div>
                 </div>
             </section>
-            
+
+
             
 		</section>
    
 
     </main>
+
 
     <script>
         const contextPath = "${contextPath}";

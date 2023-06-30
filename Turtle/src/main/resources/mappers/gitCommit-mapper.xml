@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="gitCommitMapper">
+
+  	<resultMap type="gitCommit" id="gitCommit_rm">
+
+		<id property="commitNo" column="COMMIT_NO"/>
+		
+		<result property="loadmapNo" column="LOADMAP_NO"/>
+		<result property="login" column="LOGIN"/>
+		<result property="message" column="MESSAGE"/>
+		<result property="commitDate" column="COMMIT_DATE"/>
+		<result property="files" column="FILES"/>
+		<result property="regDate" column="REG_DATE"/>
+	</resultMap>
+  
+  
+  	<insert id="insertGitCommit">
+  		INSERT INTO GIT_COMMIT(COMMIT_NO, LOADMAP_NO, LOGIN, MESSAGE, COMMIT_DATE, FILES) 
+		VALUES(SEQ_COMMIT_NO.NEXTVAL, #{loadmapNo}, #{login}, #{message}, #{commitDate}, #{files})
+  	</insert>
+  
+<!-- 	<select id="selectGitCommitListByLoadmapNo" resultMap="gitCommit_rm">
+		SELECT * FROM (SELECT * FROM GIT_COMMIT WHERE LOADMAP_NO = #{loadmapNo} ORDER BY COMMIT_DATE DESC) WHERE ROWNUM <= 5
+  	</select> -->
+
+	<select id="selectGitCommitListByLoadmapNo" resultMap="gitCommit_rm">
+		SELECT *
+		FROM GIT_COMMIT gc 
+		WHERE LOADMAP_NO = #{loadmapNo}
+		ORDER BY COMMIT_DATE DESC
+		FETCH FIRST 5 ROW ONLY
+  	</select>
+  
+  
+</mapper>

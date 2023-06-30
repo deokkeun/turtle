@@ -2,14 +2,37 @@
 let theInput = document.querySelector(".get-repos input");
 let getButton = document.querySelector(".get-button");
 let reposData = document.querySelector(".show-data");
+
 var workspaceNo = document.getElementById("workspaceNo");
 var gitRepo = document.getElementById("gitRepo");
 var branch = document.getElementById("branch");
 var ignore = document.getElementById("ignore");
 
+var loadmapContent = document.getElementById("loadmap-content");
+
 
 getButton.onclick = function () {
+
+
+    // var gitRepo = $("#gitRepo").val();
+    // var branch = $('#branch').val();
+
+    // if(!gitRepo) {
+    //   alert("(Github Username) or (Username/GitRepository)");
+    // }
+    // if(!branch) {
+    //   alert("브랜치를 입력해주세요.");
+    // } else {
+    //   loadmapContent.style.display = "none";
+    // }
+
+    
+
+
   getRepos();
+
+
+  console.log($(".repo-box").val());
 
 
   console.log(workspaceNo.value);
@@ -19,11 +42,33 @@ getButton.onclick = function () {
 
 
   $.ajax({
+    url: contextPath + "/workspace/loadmap/commitList",
+    data : {workspaceNo: workspaceNo.value,
+            gitRepo: gitRepo.value,
+    },
+    type: "POST",
+    dataType: "JSON",
+     success: function(res) {
+      console.log(res);
+      if(res == null) {
+        console.log("commitList 비어있음");
+
+      } else {
+        console.log("commitList 있음");
+  
+      }
+      
+    }
+});
+
+
+  
+  $.ajax({
       url: contextPath + "/workspace/loadmap/upload",
       data : {workspaceNo: workspaceNo.value,
-        gitRepo: gitRepo.value,
-        branch: branch.value,
-        ignore: ignore.value
+              gitRepo: gitRepo.value,
+              branch: branch.value,
+              ignore: ignore.value
       },
       type: "POST",
       dataType: "JSON",
@@ -31,16 +76,117 @@ getButton.onclick = function () {
         console.log(res);
         if(res == "complete") {
           console.log("upload 성공");
-
+          alert("upload 성공");
+          
         } else {
           console.log("upload 실패");
+          alert("upload 실패");
     
         }
         
       }
   });
 
+  
 };
+
+
+
+
+
+
+
+
+// let dataJson = [];
+// let dataArr = [];
+// let data = [];
+// let root = "";
+
+// let rootObject = [];
+
+//   dataJson = JSON.parse('${loadmap.gitTree}');
+//   root = "${loadmap.gitRepo}"
+//   rootObject.push({id: root, text_1: root, father: null});
+//   dataArr = [rootObject[0]];
+//   data = [rootObject[0]];
+
+// console.dir(dataJson);
+
+
+
+    //첫 애 넣어주기
+    
+      
+    // $('.git-files').each(function() {
+      
+    //   let files = JSON.parse($(this).text());
+    //   console.dir(files);
+      
+    //   files.forEach(function(e) {
+        
+    //     dataArr.some(function(data) {
+    //       if( data.text_1 == e) {
+    //         console.dir("일치" + data.text_1)  
+    //         return true;
+    //       }
+    //       return false;
+          
+    //     })
+    //   })
+      
+    // })
+    
+
+
+    
+    // dataJson.forEach(function(e) {
+    //   let d;
+    //   if(!e.prev) {
+        
+    //   d =  { id: e.sha , text_1:e.path , father: root , color:"#2196F3" };
+    //   rootObject.push(d);
+    //     data.push(d);
+        
+    //   }else {
+    //     let color;
+    //     if(e.type=="tree") {
+    //       color = "#B076CF";
+          
+    //     }else if(e.type=="blob"){
+    //       color ="#E971AD";
+    //     }
+        
+
+    //       $('.git-files').each(function() {
+
+    //         let files = JSON.parse($(this).text());
+
+    //         files.forEach(function(f) {
+              
+    //         if(e.path == f) {
+    //           color="#FFCD42";	
+    //         }
+            
+    //         })
+            
+            
+    //       })
+          
+    //   d =  { id: e.sha , text_1:e.path , father: e.prev , color:color };
+    //   }
+    //   dataArr.push(d);
+    // })
+    
+    // console.dir(dataArr);
+    
+
+
+
+
+
+
+
+
 
 
 
@@ -64,6 +210,8 @@ function getRepos() {
 
       // Loop On Repositories
       repositories.forEach(repo => {
+
+        console.log(repo);
 
         // Create The Main Div Element
         let mainDiv = document.createElement("div");
@@ -126,7 +274,7 @@ function getRepos() {
 
 
 
-// ---------------------------------------------------------------------
+// // ---------------------------------------------------------------------
 
 
 
@@ -159,14 +307,52 @@ var data_2 = [
   { id: 4.1, text_1: "Hope", text_2: "Life", father: 8,color:"#2eecc7" }
   ];
 
+
+
+
+
+     //클릭했을 떄 id
+     function add(node) {
+    	 
+      console.dir(node.id);
+      let res = false;
+      
+      data.some(function(e) {
+        if(node.id==e.father) {
+          res = true;
+          return true;
+
+        }
+       return false;
+
+      })
+      
+      if(!res) {
+      dataArr.forEach(function(e) {
+     
+        if(node.id==e.father) {
+          data.push(e);
+        }
+        
+      })
+      }
+    }
+    
+    
+
+
+
+
+
+
 var myTree = Treeviz.create({
   htmlId: "tree",
   idKey: "id",
   hasFlatData: true,
   relationnalField: "father",
   hasPanAndZoom: true,
-  nodeWidth:120,
-  nodeHeight:80,
+  nodeWidth:150,
+  nodeHeight:50,
   mainAxisNodeSpacing:2,
   isHorizontal:true,
   renderNode: function(node) { 
@@ -181,9 +367,55 @@ var myTree = Treeviz.create({
   linkWidth : (nodeData)=> 5,
   linkShape:"curve",
   linkColor : (nodeData) => "#B0BEC5" ,
+  // onNodeClick : (nodeData, node) => {
+  //   console.dir(node)
+  //   console.dir("노드id: ");
+  //   console.dir(node.id);
+  //   add(node);
+  //   myTree.refresh(data);
+    
+  // } //노드 클릭시 발생하는 이벤트
   onNodeClick : (nodeData) => console.log(nodeData)
 });
+
+
 myTree.refresh(data_1);
+
+
+
 var toggle=true;
 document.querySelector("#add").addEventListener("click", () => {toggle ? myTree.refresh(data_2) : myTree.refresh(data_3); toggle = false});
 document.querySelector("#remove").addEventListener("click", () => myTree.refresh(data_1));
+
+
+
+
+
+
+
+
+
+
+$('#onedeps').on('click' , function() {
+    	
+  let newData =  []
+  rootObject.forEach(function(e) {
+    
+    newData.push(e);
+    
+    
+  })
+data = newData;    	
+
+    myTree.refresh(data);
+})
+
+
+//전체보기
+$('#allview').on('click' , function() {
+  data = dataArr.copyWithin();
+
+    myTree.refresh(data);
+  
+  
+})
