@@ -117,6 +117,16 @@
                 <p>4 hrs. ago</p>
               </div>
             </li>
+            
+            <li>
+	            <div style="overflow: scroll; height: 200px;">		
+					<div style="overflow: scroll;">chatRoomList : ${chatRoomList}</div>	
+					<div>projectNo : ${projectNo}</div>
+					<div>loginMember : ${loginMember}</div>
+					<div>chatRoomNo : ${chatRoomNo}</div>
+					<div>pmNo : ${pmNo}</div>
+				</div>
+            </li>
 
             <li>
               <hr class="dropdown-divider">
