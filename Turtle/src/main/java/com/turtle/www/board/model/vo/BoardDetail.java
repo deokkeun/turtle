@@ -20,6 +20,5 @@ public class BoardDetail {
 	private int pmNo; // 게시글 수정
 	private String memberName; // 수정 멤버 이름
 	private String profileImage; // 수정 멤버 프로필 이미지
-	private int workspaceNo; // 워크스페이스넘
-	
+	private int workspaceNo; // 워크스페이스넘버	
 }

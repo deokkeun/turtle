@@ -78,6 +78,13 @@ public class BoardServiceImpl implements BoardService {
 
 		return dao.deleteBoardDetail(boardDetail);
 	}
+
+	// 이벤트 시간 추가 서비스 구현
+	@Override
+	public int updateEventDate(Board board) {
+
+		return dao.updateEventDate(board);
+	}
 	
 	
 	

@@ -38,16 +38,15 @@
 				</div>
 			</div>
 				<div class="board-info">
-					<c:choose>
-						<c:when test="${empty board.boardUpdateDate}">
+					<div>
 						<span class="profile-image"></span>
-						<span class="updateDate"></span>
-						</c:when>
-						<c:otherwise>
-						<span class="profile-image"></span>
-						<span class="updateDate"></span>
-						</c:otherwise>
-					</c:choose>    							
+						<span class="user-name"></span>
+					</div>
+					<div class="eventDate">
+						<div class="eventStartDate"></div>
+						<div></div>
+						<div class="eventEndDate"></div>
+					</div>						
 				</div>
 			<div class="delete-board" style="visibility:hidden;">
 			</div>
@@ -76,19 +75,27 @@
 				</div>
 				<div class="board-info">
 					<c:choose>
-						<c:when test="${empty board.boardUpdateDate}">
-						<div>
+						<c:when test="${empty board.updateMemberName}">
+						<div class="user-profile">
 							<span class="profile-image"><img src="${contextPath}${board.regProfileImg}"></span>
 							<span class="user-name">${board.regMemberName}</span>
 						</div>
-						<span class="updateDate">${board.boardRegDate}</span>
+						<div class="eventDate">
+							<div class="eventStartDate">${board.eventStartDate}</div>
+							<div> - </div>
+							<div class="eventEndDate">${board.eventEndDate}</div>
+						</div>
 						</c:when>
 						<c:otherwise>
 						<div>
 							<span class="profile-image"><img src="${contextPath}${board.updateProfileImg}"></span>
 							<span class="user-name">${board.updateMemberName}</span>
 						</div>
-						<span class="updateDate">${board.boardUpdateDate}</span>
+						<div class="eventDate">
+							<div class="eventStartDate">${board.eventStartDate}</div>
+							<div> - </div>
+							<div class="eventEndDate">${board.eventEndDate}</div>
+						</div>
 						</c:otherwise>
 					</c:choose>    							
 				</div>
@@ -137,6 +144,10 @@
 		// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
 		// 게시글 내용 추가용 sock
 		let insertBoardDetailSock = new SockJS(contextPath+"/insertBoardDetail");
+		// 게시글 내용 삭제용 sock
+		let deleteBoardDetailSock = new SockJS(contextPath+"/deleteBoardDetail");
+		// 이벤트 시간 생성용 sock
+        let updateEventDateSock = new SockJS(contextPath+"/updateEventDate");
     </script>
 
     <!-- memo.js 연결 -->

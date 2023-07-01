@@ -4,17 +4,21 @@ const delay = 1000; // 1초
 
 $(document).on("mouseover", ".edit-boardDetail-area", function(){mouseover($(this))});
 $(document).on("mouseout", ".edit-boardDetail-area", function(){mouseout($(this))});
-$(document).on("keydown", ".edit-boardDetail-area", function(){inputTyping()});
+$(document).on("keydown", ".edit-boardDetail-area", function(){inputTyping($(this))});
 $(document).on("keyup", ".edit-boardDetail-area", function(){keyupTyping($(this))});
+//$(document).on("keyup", ".edit-boardDetail-area", function() {typing($(this))});
 $(document).on("click", ".add-boardDetail-btn", function(){addBoardDetailBtn($(this))});
 $(document).on("keydown", ".edit-boardDetail-area", function(e) {
     if (e.key === "Backspace" && $(this).find(".note-editable").html() === "") {
         deleteBoardDetail($(this));
     }
 });
+$(document).on("change", ".eventDate", function(){updateEventDate($(this))});
+$(document).on("keydown", ".boardTitle", function(){inputTitleTyping($(this))});
+$(document).on("keyup", ".boardTitle", function(){keyupTitleTyping($(this))});
 
 // 서머노트 활성화
-$(document).on("mouseover", ".summernote", function() {
+$(document).on("click", ".summernote", function() {
 	//여기 아래 부분
 	$('.summernote').summernote({
         airMode: true,
@@ -92,10 +96,12 @@ insertBoardDetailSock.onmessage = function(e) {
     addedSummernote.classList.add('summernote');
     addedSummernote.contentEditable = 'true';
 
-    addedBoardDetail.appendChild(addedSummernote);
+    addedBoardDetail.appendChild(addedSummernote);    
 
     addedEditBoardDetailArea.appendChild(addedAddBoardDetail);
     addedEditBoardDetailArea.appendChild(addedBoardDetail);
+
+    const addedHr = document.createElement('hr');
 
     let boardDetails = document.querySelectorAll(".edit-boardDetail-area");
 
@@ -109,6 +115,7 @@ insertBoardDetailSock.onmessage = function(e) {
 
         if(boardDetailSort == addedEditBoardDetailArea.dataset.boarddetailsort - 1) {
             $(boardDetail).after(addedEditBoardDetailArea);
+            $(boardDetail).after(addedHr);
         }
     });
 
@@ -125,14 +132,41 @@ deleteBoardDetailSock.onmessage = function(e) {
     let boardDetails = document.querySelectorAll(".edit-boardDetail-area");
     boardDetails.forEach((boardDetail) => {
         if(deletedBoardDetail.boardDetailNo == boardDetail.dataset.boarddetailno) {
+            boardDetail.nextElementSibling.remove();
             boardDetail.remove();
+            
         }
     });
     // 수정된 게시글 정보 변경
+
     $(".updateMemberImage").attr("src", contextPath + deletedBoardDetail.profileImage);
     $(".updateMemberName").html(deletedBoardDetail.memberName);
     $(".updateDate").html(currentTime());
 };
+
+// 이벤트 날짜 변경 웹소켓
+updateEventDateSock.onmessage = function(e) {
+    const changedBoardInfo = JSON.parse(e.data);
+
+    // 수정된 게시글 정보 변경
+    $(".updateMemberImage").attr("src", contextPath + changedBoardInfo.updateProfileImg);
+    $(".updateMemberName").html(changedBoardInfo.updateMemberName);
+    $(".updateDate").html(currentTime());
+    $(".eventStartDate").val(changedBoardInfo.eventStartDate);
+    $(".eventEndDate").val(changedBoardInfo.eventEndDate);
+
+};
+
+// 게시글 제목 수정 웹소켓
+boardListSock.onmessage = function(e) {
+    const changedBoardInfo = JSON.parse(e.data);
+
+    // 수정된 게시글 정보 변경
+    $(".boardTitle").html(changedBoardInfo.boardTitle);
+    $(".updateMemberImage").attr("src", contextPath + changedBoardInfo.updateProfileImg);
+    $(".updateMemberName").html(changedBoardInfo.updateMemberName);
+    $(".updateDate").html(currentTime());
+}
 
 // 마우스 오버 함수
 function mouseover(editBoardDetailArea) {
@@ -147,27 +181,61 @@ function mouseout(editBoardDetailArea) {
     //$(editBoardDetailArea).find(".boardDetail").summernote({airMode: false});
 };
 
+/*
+function typing(editBoardDetailArea) {
+
+    // 딜레이 1초 설정
+    let typingTimer;
+    const delay = 1000; // 1초
+
+    $(editBoardDetailArea).keydown(function() {
+        clearTimeout(typingTimer);
+    });
+
+    $(editBoardDetailArea).keyup(function() {
+        clearTimeout(typingTimer);
+
+    typingTimer = setTimeout(function() {
+        // 1초동안 아무런 동작이 없으면 로직 실행	
+            updateBoardContent(editBoardDetailArea);			
+        }, delay);    
+    });
+}
+*/
 // 타이핑중 딜레이 초기화 함수
-function inputTyping() {    
-    clearTimeout(typingTimer);
+function inputTyping() {   
+    clearTimeout(typingTimer);    
 }
 
 // 키업후 1초뒤 내용 수정 함수로 이동되는 함수
-function keyupTyping(editBoardDetailArea) {    
+function keyupTyping(editBoardDetailArea) {       
     clearTimeout(typingTimer);
 
     typingTimer = setTimeout(function() {
         // 1초동안 아무런 동작이 없으면 로직 실행	
             updateBoardContent(editBoardDetailArea);			
-        }, delay);	
+        }, delay);    
 }
 
+// 제목변경중 딜레이 초기화 함수
+function inputTitleTyping() {
+    clearTimeout(typingTimer);   
+}
+// 제목변경 키업 후 제목변경 함수로 이동
+function keyupTitleTyping(boardTitle) {
+    clearTimeout(typingTimer);
+
+    typingTimer = setTimeout(function() {
+        // 1초동안 아무런 동작이 없으면 로직 실행	
+            updateBoardTitle(boardTitle);			
+        }, delay);  
+}
 
 // 게시글 내용 변경 함수
 function updateBoardContent(editBoardDetailArea) {
 
     let boardDetailNo = $(editBoardDetailArea).data("boarddetailno");
-    let boardContent = $(editBoardDetailArea).find(".note-editable").html();
+    let boardContent = $(editBoardDetailArea).find(".note-editable").html().replace(/\n|\t/g, "");
 
     let boardDetail = {
 
@@ -187,8 +255,24 @@ function updateBoardContent(editBoardDetailArea) {
 
     // updateBoardDetailSock(웹소켓 객체)을 이용하여 메세지 보내기
     // updateBoardDetailSock.send(값) : 웹소켓 핸들러로 값을 보냄
-    updateBoardDetailSock.send( JSON.stringify(boardDetail) );
-    
+    updateBoardDetailSock.send( JSON.stringify(boardDetail) );    
+};
+
+// 게시글 제목 변경 함수
+function updateBoardTitle(boardTitle) {
+    let changedBoardTitle = $(boardTitle).html().replace(/\n|\t/g, "");
+    board = {
+        "boardNo" : boardNo,
+        "workspaceNo" : workspaceNo,
+        "boardTitle" : changedBoardTitle,
+        "pmNo" : pmNo,
+        "updateMemberName" : memberName,
+        "updateProfileImg" : profileImage
+    }
+    console.log(board);
+    console.log(JSON.stringify(board));
+
+    boardListSock.send( JSON.stringify(board) );
 }
 
 // 게시글 내용 추가버튼 함수
@@ -237,7 +321,25 @@ function deleteBoardDetail(editBoardDetailArea) {
 
 }
 
+// 이벤트 시간 설정 함수
+function updateEventDate(eventDate) {
+    let eventStartDate = $(eventDate).find(".eventStartDate").val();
+    let eventEndDate = $(eventDate).find(".eventEndDate").val();
 
+    let board = {
+        "boardNo" : boardNo,
+        "workspaceNo" : workspaceNo,
+        "pmNo" : pmNo,
+        "updateMemberName" : memberName,
+        "updateProfileImg" : profileImage,
+        "eventStartDate" : eventStartDate,
+        "eventEndDate" : eventEndDate
+    }
+    console.log(board);
+    console.log(JSON.stringify(board));
+
+    updateEventDateSock.send( JSON.stringify(board));
+}
 
 function currentTime() {
 	const now = new Date();

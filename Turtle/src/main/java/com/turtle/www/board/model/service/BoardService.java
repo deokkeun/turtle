@@ -64,6 +64,12 @@ public interface BoardService {
 	 */
 	int deleteBoardDetail(BoardDetail boardDetail);
 
+	/** 이벤트 시간 추가 서비스
+	 * @param board
+	 * @return result
+	 */
+	int updateEventDate(Board board);
+
 	
 
 }

@@ -43,9 +43,14 @@
                 <div class="updateMember">
                     <div>최근 수정자 : </div>                    
                     <div class="updateMemberImageAndName">
-                        <c:if test="${!empty board.updateProfileImg}">
-                            <img class="updateMemberImage" src="${contextPath}${board.updateProfileImg}">
-                        </c:if>
+                        <c:choose>
+                            <c:when test="${!empty board.updateProfileImg}">
+                                <img class="updateMemberImage" src="${contextPath}${board.updateProfileImg}">
+                            </c:when>
+                            <c:otherwise>
+                                <img class="updateMemberImage">
+                            </c:otherwise>
+                        </c:choose>
                     </div>
                     <div class="updateMemberName">${board.updateMemberName}</div>
                 </div>
@@ -60,19 +65,15 @@
             </div>
             <div class="eventDate">                
                 <div>이벤트 : </div>
-                <div><input type="date" value="${board.eventStartDate}"></div>
+                <div><input type="date" class="eventStartDate" value="${board.eventStartDate}"></div>
                 <div> - </div>
-                <div><input type="date" value="${board.eventEndDate}"></div>                
+                <div><input type="date" class="eventEndDate" value="${board.eventEndDate}"></div>                
             </div>
             
             
         </div>
+
         <hr>
-
-
-                         
-
-        
 
         <div class="boardDetail-area">
             <div class="edit-boardDetail-area" data-boardDetailNo="${boardDetail.boardDetailNo}" 
@@ -81,7 +82,7 @@
                     <button class="add-boardDetail-btn">+</button>
                 </div>
                 <div class="boardDetail">
-                    <div class="summernote">
+                    <div>
                     </div>
                 </div>                    
             </div>  
@@ -96,8 +97,10 @@
                         <div class="summernote" contenteditable="true">
                             ${boardDetail.boardContent}
                         </div>
-                    </div>                    
-                </div>            
+                    </div>
+                        
+                </div>
+                <hr>
             </c:forEach>
         </div>
     </div>
@@ -129,6 +132,10 @@
         // 게시글 내용 삭제용 sock
         let deleteBoardDetailSock = new SockJS(contextPath+"/deleteBoardDetail");
 		// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
+        // 이벤트 시간 생성용 sock
+        let updateEventDateSock = new SockJS(contextPath+"/updateEventDate");
+        // 게시글 제목 변경용 sock
+        let boardListSock = new SockJS(contextPath+"/boardList");
 		
     </script>
     

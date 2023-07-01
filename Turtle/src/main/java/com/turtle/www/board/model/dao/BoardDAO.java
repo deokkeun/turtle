@@ -138,4 +138,13 @@ public class BoardDAO {
 		return result;
 	}
 
+	/** 이벤트 시간 추가 DAO
+	 * @param board
+	 * @return result
+	 */
+	public int updateEventDate(Board board) {
+
+		return sqlSession.update("boardMapper.updateEventDate", board);
+	}
+
 }

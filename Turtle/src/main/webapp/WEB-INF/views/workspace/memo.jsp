@@ -46,7 +46,7 @@
 	    		</c:when>
 	    		
 	    		<c:otherwise>
-	    			<div class="memoDetail" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
+	    			<div class="memoDetail personal" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
 			    		<div class="memoInfo">
 							<span class="profile-image"><img src="${contextPath}${memo.profileImg}"></span>
 			    			<span>${memo.memberName}</span> 
@@ -91,6 +91,8 @@
 		// /memo 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
 		let memoSock = new SockJS(contextPath+"/memo");
 			// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
+
+		let alertSock = new SockJS(contextPath+"/alert");
     </script>
     
     <!-- memo.js 연결 -->
