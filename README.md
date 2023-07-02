@@ -64,7 +64,7 @@
   <img src="https://img.shields.io/badge/Fullcalendar-4285F4?style=for-the-badge&logo=googlecalendar&logoColor=white">
   <img src="https://img.shields.io/badge/summernote-40AEF0?style=for-the-badge&logo=&logoColor=white">
   <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-  <img src="https://img.shields.io/badge/.....-9013FE?style=for-the-badge&logo=nodered&logoColor=white">
+  <img src="https://img.shields.io/badge/treeviz-9013FE?style=for-the-badge&logo=nodered&logoColor=white">
   <br><br>
 </div>
 
