@@ -1,13 +1,10 @@
-// 딜레이 1초 설정
-let typingTimer;
-const delay = 1000; // 1초
-
+typing();
 $(document).on("mouseover", ".board", function(){mouseover($(this))});
 $(document).on("mouseout", ".board", function(){mouseout($(this))});
 $(document).on("click", ".edit-boardTitle-btn", function(){editBoardTitleBtn($(this))});
 $(document).on("click", ".close-edit-boardTitle-btn", function(){closeEditBoardTitleBtn($(this))});
-$(document).on("keydown", ".board", function(){inputTyping()});
-$(document).on("keyup", ".board", function(){keyupTyping($(this))});
+//$(document).on("keydown", ".board", function(){inputTyping()});
+//$(document).on("keyup", ".board", function(){keyupTyping($(this))});
 $(document).on("click", ".add-board-btn", function(){addBoardBtn($(this))});
 $(document).on("click", ".delete-board-btn", function(){deleteBoardBtn($(this))});
 
@@ -174,6 +171,7 @@ insertBoardSock.onmessage = function(e) {
             $(board).after(addedBoard);
         }
     });
+    typing();
 };
 
 // 게시글 삭제용 웹소켓 작업
@@ -305,19 +303,26 @@ function closeEditBoardTitleBtn(closeEditBoardTitleBtn) {
     $(closeEditBoardTitleBtn).siblings(".edit-boardTitle-btn").css("display", "block");
 };
 
-// 타이핑중 딜레이 초기화 함수
-function inputTyping() {    
-    clearTimeout(typingTimer);	
-}
+// 게시글 제목 수정 타이핑 함수
+function typing() {
+    let boards = document.querySelectorAll(".board");
+    boards.forEach((board) => {
+        // 딜레이 1초 설정
+        let typingTimer;
+        const delay = 1000; // 1초
 
-// 키업후 1초뒤 제목수정함수로 이동되는 함수
-function keyupTyping(board) {    
-    clearTimeout(typingTimer);
+        board.addEventListener('input', function() {
+            clearTimeout(typingTimer);
+        });
+        board.addEventListener('keyup', function() {
+            clearTimeout(typingTimer);
 
-    typingTimer = setTimeout(function() {
-        // 1초동안 아무런 동작이 없으면 로직 실행			
-            updateBoardTitle(board);			
-        }, delay);	
+            typingTimer = setTimeout(function() {
+                // 1초동안 아무런 동작이 없으면 로직 실행			
+                updateBoardTitle(board);			
+            }, delay);
+        });
+    });
 }
 
 // 게시글 추가버튼 함수

@@ -85,7 +85,8 @@
                     <div>
                     </div>
                 </div>                    
-            </div>  
+            </div>
+            <hr>  
             <c:forEach var="boardDetail" items="${boardDetailList}">
                 <div class="edit-boardDetail-area" data-boardDetailNo="${boardDetail.boardDetailNo}" 
                                                 data-boardDetailSort="${boardDetail.boardDetailSort}">
@@ -97,6 +98,9 @@
                         <div class="summernote" contenteditable="true">
                             ${boardDetail.boardContent}
                         </div>
+                    </div>
+                    <div class="updateDetailMember" style="visibility: hidden;">
+                        <img class="boardDetailProfileImage"src="${contextPath}${boardDetail.profileImage}">
                     </div>
                         
                 </div>
@@ -136,7 +140,8 @@
         let updateEventDateSock = new SockJS(contextPath+"/updateEventDate");
         // 게시글 제목 변경용 sock
         let boardListSock = new SockJS(contextPath+"/boardList");
-		
+		// 캘린더 연동용 sock
+        let calendarSock = new SockJS(contextPath+"/calendar");
     </script>
     
     <!-- boardDetail.js 연결 -->

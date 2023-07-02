@@ -27,6 +27,7 @@
 		<result property="boardNo" column="BOARD_NO"/>
 		<result property="boardContent" column="BOARD_CONTENT"/>
 		<result property="boardDetailSort" column="BOARD_DETAIL_SORT"/>
+		<result property="profileImage" column="PROFILE_IMAGE"/>
 		
 	</resultMap>
 	
@@ -88,15 +89,16 @@
 	
 	<!-- 게시글 상세조회 -->
 	<select id="selectBoardDetail" resultMap="boardDetail_rm">
-		SELECT BOARD_DETAIL_NO, BOARD_NO, BOARD_CONTENT, BOARD_DETAIL_SORT
-		FROM BOARD_DETAIL
+		SELECT BOARD_DETAIL_NO, BOARD_NO, BOARD_CONTENT, BOARD_DETAIL_SORT,
+		(SELECT PROFILE_IMG FROM BOARD_DETAIL JOIN PROJECT_MEMBER USING (PM_NO) JOIN "MEMBER" USING (MEMBER_NO) WHERE BOARD_DETAIL_NO = b.BOARD_DETAIL_NO) AS "PROFILE_IMAGE"
+		FROM BOARD_DETAIL b
 		WHERE BOARD_NO = ${boardNo}
 		ORDER BY BOARD_DETAIL_SORT
 	</select>
 	
 	<!-- 게시글 내용 수정 -->
 	<update id="updateBoardDetail">
-		UPDATE BOARD_DETAIL SET BOARD_CONTENT = #{boardContent} WHERE BOARD_DETAIL_NO = ${boardDetailNo}	
+		UPDATE BOARD_DETAIL SET BOARD_CONTENT = #{boardContent}, PM_NO = ${pmNo} WHERE BOARD_DETAIL_NO = ${boardDetailNo}	
 	</update>
 	
 	<!-- 수정된 게시물 정보 수정 -->
@@ -118,7 +120,7 @@
 			SELECT SEQ_BOARD_DETAIL_NO.NEXTVAL FROM DUAL
 		</selectKey>
 		
-		INSERT INTO BOARD_DETAIL VALUES(${boardDetailNo}, ${boardNo}, NULL, ${boardDetailSort})
+		INSERT INTO BOARD_DETAIL VALUES(${boardDetailNo}, ${boardNo}, NULL, ${boardDetailSort}, ${pmNo})
 	</insert>
 	
 	<!-- 게시글 내용 삭제 -->

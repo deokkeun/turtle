@@ -3,7 +3,7 @@ p {
 }
 
 .board-area {
-    width: 550px;
+    width: 560px;
     height: 700px;
 }
 
@@ -55,16 +55,26 @@ p {
 
 .edit-boardDetail-area {
     display: flex;
-    width: 550px;
+    width: 560px;
 }
 
 .add-boardDetail {
-    flex-basis: 5%;
+    flex-basis: 6%;
     width: 30px;
 }
 
 .boardDetail {
-    flex-basis: 95%;
-    width: 520px;
+    flex-basis: 88%;
+    width: 500px;
     
+}
+
+.updateDetailMember {
+    flex-basis: 6%;
+    width: 30px;
+}
+
+.boardDetailProfileImage {    
+    width: 30px;
+    height: 30px;
 }
