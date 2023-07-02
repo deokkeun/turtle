@@ -32,5 +32,11 @@ public interface CalendarService {
 	 */
 	int calendarUpdateEvent(Calendar calendar);
 
+	/** 게시판 일정 추가/수정 전 조회
+	 * @param calendar
+	 * @return
+	 */
+	int selectBoardCalendar(Calendar calendar);
+
 
 }

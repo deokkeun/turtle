@@ -50,6 +50,15 @@ public class CalendarDAO {
 	public int calendarUpdateEvent(Calendar calendar) {
 		return sqlSession.update("calendarMapper.calendarUpdateEvent", calendar);
 	}
+
+
+	/** 게시판 일정 추가/수정 전 조회
+	 * @param calendar
+	 * @return
+	 */
+	public int selectBoardCalendar(Calendar calendar) {
+		return sqlSession.selectOne("calendarMapper.selectBoardCalendar", calendar);
+	}
 	
 	
 	

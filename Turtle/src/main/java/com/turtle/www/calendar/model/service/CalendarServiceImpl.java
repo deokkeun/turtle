@@ -47,6 +47,14 @@ public class CalendarServiceImpl implements CalendarService{
 	public int calendarDeleteEvent(Calendar calendar) {
 		return dao.calendarDeleteEvent(calendar);
 	}
+
+	/** 게시판 일정 추가/수정 전 조회
+	 *
+	 */
+	@Override
+	public int selectBoardCalendar(Calendar calendar) {
+		return dao.selectBoardCalendar(calendar);
+	}
 	
 	
 	
