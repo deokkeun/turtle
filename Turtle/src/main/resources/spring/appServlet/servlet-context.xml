@@ -61,7 +61,7 @@
 	<beans:bean id="insertBoardDetailHandler" class="com.turtle.www.board.model.websocket.InsertBoardDetailWebsocketHandler"/>
 	<beans:bean id="deleteBoardDetailHandler" class="com.turtle.www.board.model.websocket.DeleteBoardDetailWebsocketHandler"/>
 	<beans:bean id="updateEventDateHandler" class="com.turtle.www.board.model.websocket.UpdateEventDateWebsocketHandler"/>
-	<!-- <beans:bean id="alertHandler" class="com.turtle.www.alert.model.websocket.AlertWebsocketHandler"/>  -->
+	<beans:bean id="alertHandler" class="com.turtle.www.alert.model.websocket.AlertWebsocketHandler"/>
 	
 	 
 	
@@ -78,8 +78,7 @@
 		<websocket:mapping handler="insertBoardDetailHandler" path="/insertBoardDetail"/>
 		<websocket:mapping handler="deleteBoardDetailHandler" path="/deleteBoardDetail"/>
 		<websocket:mapping handler="updateEventDateHandler" path="/updateEventDate"/>
-		
-		<!-- <websocket:mapping handler="alertHandler" path="/alert"/>  -->
+		<websocket:mapping handler="alertHandler" path="/alert"/>
 		
 		<websocket:handshake-interceptors>
 			<!-- interceptor : http 통신 req, resp 가로채는 역할 

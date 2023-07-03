@@ -60,7 +60,6 @@
 	
 	<!-- 캘린더 일정 수정 -->
 	<update id="calendarUpdateEvent">
-	
 		<!-- 게시판 일정 수정 -->
 			UPDATE CALENDAR
 			SET CAL_TITLE = #{calTitle},
@@ -74,10 +73,10 @@
 			AND CAL_ST = #{calSt}
 		<choose>
 			<when test="boardNo != 0">
-			AND BOARD_NO = #{boardNo}
+			  AND BOARD_NO = #{boardNo}
 			</when>
 			<otherwise>
-			AND CAL_NO = ${calNo}
+			  AND CAL_NO = ${calNo}
 			</otherwise>
 		</choose>
 	</update>
@@ -97,7 +96,7 @@
 			</otherwise> -->
 	
 	<select id="selectBoardCalendar" resultType="_int">
-		SELECT COUNT(*) FROM CALENDAR c WHERE BOARD_NO = ${boardNo}
+		SELECT COUNT(*) FROM CALENDAR c WHERE BOARD_NO = ${boardNo} AND CAL_ST = 'N'
 	</select>
 
 </mapper>

@@ -6,7 +6,7 @@ const memoInfos = document.querySelectorAll('.memoInfo');
 
 for (let i = 0; i < memoDivs.length; i++) {
   const div = memoDivs[i];
-  const maxContentHeight = 200; // 최대 높이 설정 (200px)
+  const maxContentHeight = 300; // 최대 높이 설정 (200px)
 
   div.addEventListener('input', function() {
     while (this.scrollHeight > maxContentHeight) {
@@ -72,7 +72,7 @@ memoDetails.forEach((memoDetail) => {
 		        const nextColor = colors[nextIndex];
 		        this.style.backgroundColor = nextColor;
 				memoInfo.style.backgroundColor = nextColor;
-				
+				memoDetail.style.backgroundColor =nextColor;
 
 		        currentColor = nextColor;
 		        memoBgColor = currentColor;
@@ -204,16 +204,16 @@ memoSock.onmessage = function(e){
 		}
 
 	});
-	alert = {
-		"workspaceNo" : workspaceNo,
-		"pmNo" : pmNo,
-		"notificationType" : 'update',
-		"workingArea" : 'memo',
-		"profileImg" : profileImage,
-		"memberName" : memberName
-	};
+	// alert = {
+	// 	"workspaceNo" : workspaceNo,
+	// 	"pmNo" : pmNo,
+	// 	"notificationType" : 'update',
+	// 	"workingArea" : 'memo',
+	// 	"profileImg" : profileImage,
+	// 	"memberName" : memberName
+	// };
 
-	alertSock.send( JSON.stringify(alert) );
+	// alertSock.send( JSON.stringify(alert) );
 
 };
 
@@ -235,20 +235,25 @@ function addZero(temp){
 }
 
 
-// 글자수 제한
-// const counters = document.querySelectorAll('.counter');
 
-// memoContents.forEach((memoContent, index) => {
-//   memoContent.addEventListener('input', function() {
-//     const text = memoContent.innerText;
-//     const remainingChars = 50 - text.length;
+// 메모지 안에 글자수 제한 카운트하기 
 
-//     counters[index].textContent = text.length;
+// memoContents는 제일 위에 이미 선언해줌.
+const counters = document.querySelectorAll('.counter');
 
-//     if (remainingChars <= 0) {
-//       memoContent.innerText = text.substr(0, 50);
-//       counters[index].textContent = 50;
-//       memoContent.blur(); // 입력 제한 후 포커스를 제거하여 키보드 입력 차단
-//     }
-//   });
-// });
+memoContents.forEach((memoContent, index) => {
+  	
+	memoContent.addEventListener('input', function() {
+		
+		const text = memoContent.innerText;
+		const remainingChars = 150 - text.length;
+
+		counters[index].textContent = text.length;
+
+		if (remainingChars <= 0) {
+			memoContent.innerText = text.substr(0, 150);
+			counters[index].textContent = 150;
+			memoContent.blur(); 
+		}
+    });
+});
