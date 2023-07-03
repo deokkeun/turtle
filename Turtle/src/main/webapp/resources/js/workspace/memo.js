@@ -224,4 +224,21 @@ function addZero(temp){
 	return temp < 10 ? "0" + temp : temp;;
 }
 
-	
+
+// 글자수 제한
+// const counters = document.querySelectorAll('.counter');
+
+// memoContents.forEach((memoContent, index) => {
+//   memoContent.addEventListener('input', function() {
+//     const text = memoContent.innerText;
+//     const remainingChars = 50 - text.length;
+
+//     counters[index].textContent = text.length;
+
+//     if (remainingChars <= 0) {
+//       memoContent.innerText = text.substr(0, 50);
+//       counters[index].textContent = 50;
+//       memoContent.blur(); // 입력 제한 후 포커스를 제거하여 키보드 입력 차단
+//     }
+//   });
+// });
