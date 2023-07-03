@@ -29,7 +29,7 @@ import com.turtle.www.projectMember.model.service.ProjectMemberService;
 
 @Controller
 @RequestMapping("/calendar")
-@SessionAttributes({"loginMember", "workspaceNo"})
+@SessionAttributes({"loginMember", "workspaceNo", "projectNo", "calendarList"})
 public class CalendarController {
 	
 	Logger logger = LoggerFactory.getLogger(CalendarController.class);
@@ -66,6 +66,7 @@ public class CalendarController {
 		// 캘린더 리스트 조회
 		List<Calendar> calendarList = service.selectCalendarList(map);
 
+		model.addAttribute("projectNo", projectNo); // session에 올림
 		model.addAttribute("workspaceNo", workspaceNo); // session에 올림
 		model.addAttribute("calendarList", calendarList);
 		model.addAttribute("pmNo", pmNo);
@@ -115,6 +116,7 @@ public class CalendarController {
 				hash.put("end", calendarList.get(i).getEndDate()); //종료일자
 				hash.put("content", calendarList.get(i).getCalContent()); //내용
 				hash.put("color", calendarList.get(i).getCalColor()); //색상
+				hash.put("boardNo", calendarList.get(i).getBoardNo()); //게시글 번호
 				
 				
 				jsonObj = new JSONObject(hash); //중괄호 {key:value , key:value, key:value}

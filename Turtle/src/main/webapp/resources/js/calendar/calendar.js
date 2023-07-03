@@ -62,6 +62,7 @@ Element.prototype.setStyle = function(styles) {
 // ------------------------------------------------------------------------------------------
 
 const memberNo = document.getElementById("memberNo");
+const memberName = document.getElementById("memberName");
 var inputValue = document.querySelector(".inputValue");
 var startDate = document.querySelector(".startDate");
 var endDate = document.querySelector(".endDate");
@@ -456,9 +457,26 @@ calendarSock.onmessage = function(e) {
   }
 
   if(calendar.calSt == 'N' && calendar.calNo == 0) {
+
+    // // 알람
+    let alert = {
+      "projectNo": projectNo.value,
+      "memberNo": memberNo.value,
+      "alertContent": '님이 일정을 추가하였습니다.',
+      "link": contextPath + "/calendar/calendar/" + projectNo.value + "/" + workspaceNo.value,
+      "memberName" : memberName.value
+    };
+
+    // // 알람
+    alertSock.send(JSON.stringify(alert));
+
     alert("'" + calendar.calTitle + "' 일정이 추가되었습니다!");
+
   } else if (calendar.calSt == 'N' && calendar.calNo != 0) {
+
+
     alert("'" + calendar.calTitle + "' 일정이 수정되었습니다!");
+
   }
 
   // 데이터 가져오기

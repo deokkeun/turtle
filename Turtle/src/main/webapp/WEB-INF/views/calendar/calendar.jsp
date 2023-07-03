@@ -58,13 +58,14 @@
         </section> -->
 
 
-
-
+        
         <!-- 캘린더 리스트 조회 -->
+        <input type="hidden" id="memberName" value="${loginMember.memberName}">
         <input type="hidden" id="calendarList" value="${calendarList}">
         <input type="hidden" id="calNo" value="${calNo}">
         <input type="hidden" id="projectNo" value="${projectNo}">
         <input type="hidden" id="workspaceNo" value="${workspaceNo}">
+        <input type="hidden" id="boardNo" value="${boardNo}">
           
         <!-- calendar -->
         <section id="calendar-box">
@@ -136,6 +137,7 @@
       // /calendar 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
       let calendarSock = new SockJS(contextPath+"/calendar");
       // -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
+      let alertSock = new SockJS(contextPath+"/alert");
     </script>
 
     <!-- jQuery 라이브러리 추가 -->
