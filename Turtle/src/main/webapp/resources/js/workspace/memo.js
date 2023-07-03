@@ -204,16 +204,19 @@ memoSock.onmessage = function(e){
 		}
 
 	});
-	// alert = {
-	// 	"workspaceNo" : workspaceNo,
-	// 	"pmNo" : pmNo,
-	// 	"notificationType" : 'update',
-	// 	"workingArea" : 'memo',
-	// 	"profileImg" : profileImage,
-	// 	"memberName" : memberName
-	// };
+	// 알림 웹소켓으로 보냄
+    let alert = {
+        "projectNo" : projectNo,
+        "memberNo" : memberNo,
+        "alertContent" : "님이 메모장을 수정하였습니다.",
+        "link" : contextPath + "/workspace/memo/" + projectNo + "/" + workspaceNo + "/",
+        "memberName" : memberName
+    }
 
-	// alertSock.send( JSON.stringify(alert) );
+    console.log(alert);
+    console.log(JSON.stringify(alert));
+
+    alertSock.send( JSON.stringify(alert) );
 
 };
 

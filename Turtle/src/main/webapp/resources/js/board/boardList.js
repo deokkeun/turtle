@@ -53,6 +53,20 @@ boardListSock.onmessage = function(e) {
             changedBoardTitle.innerHTML = changedBoard.boardTitle;            
         }
     });
+
+    // 알림 웹소켓으로 보냄
+    let alert = {
+        "projectNo" : projectNo,
+        "memberNo" : memberNo,
+        "alertContent" : "님이 게시글을 수정하였습니다.",
+        "link" : contextPath + "/board/boardDetail/" + projectNo + "/" + workspaceNo + "/" + changedBoard.boardNo,
+        "memberName" : memberName
+    }
+
+    console.log(alert);
+    console.log(JSON.stringify(alert));
+
+    alertSock.send( JSON.stringify(alert) );
 }
 
 // 게시글 추가용 웹소켓 작업
@@ -189,6 +203,20 @@ insertBoardSock.onmessage = function(e) {
         }
     });
     typing();
+
+    // 알림 웹소켓으로 보냄
+    let alert = {
+        "projectNo" : projectNo,
+        "memberNo" : memberNo,
+        "alertContent" : "님이 게시글을 추가하였습니다.",
+        "link" : contextPath + "/board/boardDetail/" + projectNo + "/" + workspaceNo + "/" + newBoard.boardNo,
+        "memberName" : memberName
+    }
+
+    console.log(alert);
+    console.log(JSON.stringify(alert));
+
+    alertSock.send( JSON.stringify(alert) );
 };
 
 // 게시글 삭제용 웹소켓 작업

@@ -22,7 +22,7 @@ import com.turtle.www.board.model.vo.BoardDetail;
 import com.turtle.www.member.model.vo.Member;
 import com.turtle.www.projectMember.model.service.ProjectMemberService;
 
-@SessionAttributes({"loginMember", "workspaceNo", "boardNo"})
+@SessionAttributes({"loginMember", "workspaceNo", "boardNo", "projectNo"})
 @RequestMapping("/board")
 @Controller
 public class BoardController {
