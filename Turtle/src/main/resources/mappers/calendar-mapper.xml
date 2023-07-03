@@ -18,12 +18,12 @@
 	</resultMap>
 
 
-	<!-- 캘린더 일정 조회 -->
+	<!-- 캘린더 일정 조회 BOARD_NO,-->
 	<select id="selectCalendarList" resultMap="calendar_rm">
 		SELECT CAL_NO, WORKSPACE_NO, PM_NO, CAL_TITLE, CAL_CONTENT, CAL_COLOR,
 		TO_CHAR(CAL_REG_DATE, 'YYYY-MM-DD') AS CAL_REG_DATE, 
 		TO_CHAR(START_DATE, 'YYYY-MM-DD') AS START_DATE, 
-		TO_CHAR(END_DATE, 'YYYY-MM-DD') AS END_DATE
+		TO_CHAR(END_DATE, 'YYYY-MM-DD') AS END_DATE, BOARD_NO
 		FROM CALENDAR c
 		WHERE WORKSPACE_NO = ${workspaceNo}
 		AND CAL_ST = 'N'
@@ -60,6 +60,28 @@
 	
 	<!-- 캘린더 일정 수정 -->
 	<update id="calendarUpdateEvent">
+		<!-- 게시판 일정 수정 -->
+			UPDATE CALENDAR
+			SET CAL_TITLE = #{calTitle},
+			CAL_CONTENT = #{calContent},
+			CAL_COLOR = #{calColor},
+			CAL_REG_DATE = SYSDATE,
+			START_DATE = #{startDate},
+			END_DATE = #{endDate}
+			WHERE PM_NO = ${pmNo}
+			AND WORKSPACE_NO = ${workspaceNo}
+			AND CAL_ST = #{calSt}
+		<choose>
+			<when test="boardNo != 0">
+			  AND BOARD_NO = #{boardNo}
+			</when>
+			<otherwise>
+			  AND CAL_NO = ${calNo}
+			</otherwise>
+		</choose>
+	</update>
+				<!-- 캘린더 일정 수정 -->
+<!-- 			<otherwise>
 				UPDATE CALENDAR
 				SET CAL_TITLE = #{calTitle},
 				CAL_CONTENT = #{calContent},
@@ -67,22 +89,11 @@
 				CAL_REG_DATE = SYSDATE,
 				START_DATE = #{startDate},
 				END_DATE = #{endDate}
-				WHERE PM_NO = ${pmNo}
+				WHERE CAL_NO = ${calNo}
+				AND PM_NO = ${pmNo}
 				AND WORKSPACE_NO = ${workspaceNo}
 				AND CAL_ST = #{calSt}
-		<!-- 게시판 일정 수정 -->
-		<choose>
-				<!-- 게시판 일정 수정 -->
-			<when test="boardNo != 0">
-				AND BOARD_NO = #{boardNo}
-			</when>
-			<!-- 캘린더 일정 수정 -->
-			<otherwise>
-				CAL_NO = ${calNo}
-			</otherwise>
-		</choose>
-	</update>
-	
+			</otherwise> -->
 	
 	<select id="selectBoardCalendar" resultType="_int">
 		SELECT COUNT(*) FROM CALENDAR c WHERE BOARD_NO = ${boardNo} AND CAL_ST = 'N'
