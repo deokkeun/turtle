@@ -33,6 +33,18 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
+	<filter>
+	    <filter-name>httpPutFormFilter</filter-name>
+	    <filter-class>org.springframework.web.filter.HttpPutFormContentFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+	    <filter-name>httpPutFormFilter</filter-name>
+	    <servlet-name>appServlet</servlet-name>
+	    <dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+	
+	
 	<!-- 한글 깨짐 방지를 위한 Filter 추가 -->
 	<!-- 별도의 filter 클래스를 만들지 않고 스프링에서 제공하는 filter를 사용 -->
 	<filter>
@@ -49,5 +61,10 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+
+
+	
+	
 	
 </web-app>
