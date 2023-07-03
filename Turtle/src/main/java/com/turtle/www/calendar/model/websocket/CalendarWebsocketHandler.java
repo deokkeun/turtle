@@ -79,65 +79,134 @@ public class CalendarWebsocketHandler extends TextWebSocketHandler{
 			}
 			
 			
-		} else { // 일정 추가, 수정
 			
-			System.out.println("0=추가 0!=수정 : " + (Integer)calendar.getCalNo());
-			if((Integer)calendar.getCalNo() == 0) { // 일정 추가
-				// 시간세팅
-				calendar.setCalRegDate(new Date(System.currentTimeMillis()));
-						
-				System.out.println("추가 null = " + (Integer)calendar.getCalNo());
+			
+			
+		} else { // 일정 추가, 수정(캘린더/게시판)
+			
+			// 게시판 일정 추가/수정
+			if((Integer)calendar.getBoardNo() != 0) { // 게시판일 경우
 				
-				// 추가 일정 DB삽입
-				int result = service.calendarAddEvent(calendar);
+				// 게시판 일정 추가/수정 전 조회
+				int result = service.selectBoardCalendar(calendar);
+				
+				if(result > 0) { // 수정
+					System.out.println("수정 null = " + (Integer)calendar.getBoardNo());
 					
-					if(result > 0) {		
-						// 같은 방에 접속 중인 클라이언트에게만 메세지 보내기
-						// -> Set<WebSocketSession>에서 같은방 클라이언트만 골라내기
-						for(WebSocketSession s : sessions) {
-							// WebSocketSession == HttpSession(로그인정보, 워크스페이스번호)을 가로챈 것
-							int workspaceNo = (Integer)s.getAttributes().get("workspaceNo");
-								
-							// WebSocketSession에 담겨있는 워크스페이스넘버와
-							// 메시지에 담겨있는 워크스페이스넘버가 같을경우
-							// 같은 워크스페이스넘버 클라이언트다.				
-							if(workspaceNo == calendar.getWorkspaceNo())  {
-								// 같은 워크스페이스넘버 클라이언트에게 JSON형식 메시지를 보냄
-								s.sendMessage(new TextMessage(new Gson().toJson(calendar)));	
+					// 시간세팅
+					calendar.setCalRegDate(new Date(System.currentTimeMillis()));
+							
+					// 수정 일정 DB삽입
+					result = service.calendarUpdateEvent(calendar);
+						
+						if(result > 0) {		
+							// 같은 방에 접속 중인 클라이언트에게만 메세지 보내기
+							// -> Set<WebSocketSession>에서 같은방 클라이언트만 골라내기
+							for(WebSocketSession s : sessions) {
+								// WebSocketSession == HttpSession(로그인정보, 워크스페이스번호)을 가로챈 것
+								int workspaceNo = (Integer)s.getAttributes().get("workspaceNo");
+									
+								// WebSocketSession에 담겨있는 워크스페이스넘버와
+								// 메시지에 담겨있는 워크스페이스넘버가 같을경우
+								// 같은 워크스페이스넘버 클라이언트다.				
+								if(workspaceNo == calendar.getWorkspaceNo())  {
+									// 같은 워크스페이스넘버 클라이언트에게 JSON형식 메시지를 보냄
+									s.sendMessage(new TextMessage(new Gson().toJson(calendar)));	
+								}
 							}
 						}
-					}
-				
-				
-			} else { // 일정 수정
-				System.out.println("수정 null = " + (Integer)calendar.getCalNo());
-				
-				// 시간세팅
-				calendar.setCalRegDate(new Date(System.currentTimeMillis()));
-						
-				// 수정 일정 DB삽입
-				int result = service.calendarUpdateEvent(calendar);
 					
-					if(result > 0) {		
-						// 같은 방에 접속 중인 클라이언트에게만 메세지 보내기
-						// -> Set<WebSocketSession>에서 같은방 클라이언트만 골라내기
-						for(WebSocketSession s : sessions) {
-							// WebSocketSession == HttpSession(로그인정보, 워크스페이스번호)을 가로챈 것
-							int workspaceNo = (Integer)s.getAttributes().get("workspaceNo");
-								
-							// WebSocketSession에 담겨있는 워크스페이스넘버와
-							// 메시지에 담겨있는 워크스페이스넘버가 같을경우
-							// 같은 워크스페이스넘버 클라이언트다.				
-							if(workspaceNo == calendar.getWorkspaceNo())  {
-								// 같은 워크스페이스넘버 클라이언트에게 JSON형식 메시지를 보냄
-								s.sendMessage(new TextMessage(new Gson().toJson(calendar)));	
+				} else { // 추가
+					
+					// 시간세팅
+					calendar.setCalRegDate(new Date(System.currentTimeMillis()));
+							
+					System.out.println("추가 null = " + (Integer)calendar.getBoardNo());
+					
+					// 추가 일정 DB삽입
+					result = service.calendarAddEvent(calendar);
+						
+						if(result > 0) {		
+							// 같은 방에 접속 중인 클라이언트에게만 메세지 보내기
+							// -> Set<WebSocketSession>에서 같은방 클라이언트만 골라내기
+							for(WebSocketSession s : sessions) {
+								// WebSocketSession == HttpSession(로그인정보, 워크스페이스번호)을 가로챈 것
+								int workspaceNo = (Integer)s.getAttributes().get("workspaceNo");
+									
+								// WebSocketSession에 담겨있는 워크스페이스넘버와
+								// 메시지에 담겨있는 워크스페이스넘버가 같을경우
+								// 같은 워크스페이스넘버 클라이언트다.				
+								if(workspaceNo == calendar.getWorkspaceNo())  {
+									// 같은 워크스페이스넘버 클라이언트에게 JSON형식 메시지를 보냄
+									s.sendMessage(new TextMessage(new Gson().toJson(calendar)));	
+								}
 							}
 						}
-					}
+					
+				}
 				
 				
 				
 				
+			} else { // 캘린더 일정 추가/수정
+				
+				System.out.println("0=추가 0!=수정 : " + (Integer)calendar.getCalNo());
+				if((Integer)calendar.getCalNo() == 0) { // 일정 추가
+					// 시간세팅
+					calendar.setCalRegDate(new Date(System.currentTimeMillis()));
+							
+					System.out.println("추가 null = " + (Integer)calendar.getCalNo());
+					
+					// 추가 일정 DB삽입
+					int result = service.calendarAddEvent(calendar);
+						
+						if(result > 0) {		
+							// 같은 방에 접속 중인 클라이언트에게만 메세지 보내기
+							// -> Set<WebSocketSession>에서 같은방 클라이언트만 골라내기
+							for(WebSocketSession s : sessions) {
+								// WebSocketSession == HttpSession(로그인정보, 워크스페이스번호)을 가로챈 것
+								int workspaceNo = (Integer)s.getAttributes().get("workspaceNo");
+									
+								// WebSocketSession에 담겨있는 워크스페이스넘버와
+								// 메시지에 담겨있는 워크스페이스넘버가 같을경우
+								// 같은 워크스페이스넘버 클라이언트다.				
+								if(workspaceNo == calendar.getWorkspaceNo())  {
+									// 같은 워크스페이스넘버 클라이언트에게 JSON형식 메시지를 보냄
+									s.sendMessage(new TextMessage(new Gson().toJson(calendar)));	
+								}
+							}
+						}
+					
+					
+				} else { // 일정 수정
+					System.out.println("수정 null = " + (Integer)calendar.getCalNo());
+					
+					// 시간세팅
+					calendar.setCalRegDate(new Date(System.currentTimeMillis()));
+							
+					// 수정 일정 DB삽입
+					int result = service.calendarUpdateEvent(calendar);
+						
+						if(result > 0) {		
+							// 같은 방에 접속 중인 클라이언트에게만 메세지 보내기
+							// -> Set<WebSocketSession>에서 같은방 클라이언트만 골라내기
+							for(WebSocketSession s : sessions) {
+								// WebSocketSession == HttpSession(로그인정보, 워크스페이스번호)을 가로챈 것
+								int workspaceNo = (Integer)s.getAttributes().get("workspaceNo");
+									
+								// WebSocketSession에 담겨있는 워크스페이스넘버와
+								// 메시지에 담겨있는 워크스페이스넘버가 같을경우
+								// 같은 워크스페이스넘버 클라이언트다.				
+								if(workspaceNo == calendar.getWorkspaceNo())  {
+									// 같은 워크스페이스넘버 클라이언트에게 JSON형식 메시지를 보냄
+									s.sendMessage(new TextMessage(new Gson().toJson(calendar)));	
+								}
+							}
+						}
+					
+					
+				
+				}
 				
 				
 			}

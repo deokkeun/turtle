@@ -16,8 +16,8 @@ import com.google.gson.Gson;
 import com.turtle.www.board.model.service.BoardService;
 import com.turtle.www.board.model.vo.Board;
 
-public class InsertBoardWebsocketHandler extends TextWebSocketHandler {
-
+public class UpdateEventDateWebsocketHandler extends TextWebSocketHandler {
+	
 	@Autowired
 	private BoardService service;
 	
@@ -57,11 +57,8 @@ public class InsertBoardWebsocketHandler extends TextWebSocketHandler {
 				
 		System.out.println(board);
 		
-		// 수정된 게시글 sort 변경후 DB삽입
-		
-		board.setBoardSort(board.getBoardSort() + 1);
-		
-		int result = service.insertBoard(board);
+		// 수정된 게시글 DB삽입		
+		int result = service.updateEventDate(board);
 			
 		if(result > 0) {
 					
@@ -72,11 +69,12 @@ public class InsertBoardWebsocketHandler extends TextWebSocketHandler {
 					
 				// WebSocketSession == HttpSession(로그인정보, 워크스페이스번호)을 가로챈 것
 				int workspaceNo = (Integer)s.getAttributes().get("workspaceNo");
-					
-				// WebSocketSession에 담겨있는 워크스페이스넘버와
-				// 메시지에 담겨있는 워크스페이스넘버가 같을경우
-				// 같은 워크스페이스넘버 클라이언트다.				
-				if(workspaceNo == board.getWorkspaceNo())  {
+				int boardNo = (Integer)s.getAttributes().get("boardNo");
+				
+				// WebSocketSession에 담겨있는 워크스페이스넘버 혹은 게시판번호가
+				// 메시지에 담겨있는 정보와 같을경우
+				// 같은 클라이언트다.				
+				if(boardNo == board.getBoardNo() || workspaceNo == board.getWorkspaceNo())  {
 					
 					// 같은 워크스페이스넘버 클라이언트에게 JSON형식 메시지를 보냄
 					s.sendMessage(new TextMessage(new Gson().toJson(board)));

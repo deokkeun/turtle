@@ -1,0 +1,721 @@
+<<<<<<< HEAD
+2023-07-01 22:18:55 [INFO] 초기화 필터 생성
+2023-07-01 22:19:31 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 0:0:0:0:0:0:0:1
+2023-07-01 22:19:35 [DEBUG] password999! / $2a$10$0rHvzP0B6uFkG9wgzVaOPubLUehPOSEaNg2odceYfNZUXbX57nv8q
+2023-07-01 22:19:35 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-07-01 22:19:35 [INFO] Running Time : 3772ms
+2023-07-01 22:19:35 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-07-01 22:19:35 [INFO] 일일맨 로그인 성공
+2023-07-01 22:19:40 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 22:19:41 [INFO] Return Value : 4
+2023-07-01 22:19:41 [INFO] Running Time : 97ms
+2023-07-01 22:19:41 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-07-01 22:19:41 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 22:19:41 [INFO] Return Value : [Memo(memoNo=21, workspaceNo=5, pmNo=4, memoContent=ㄹㅇㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㅇㄹㅇㄹㅇㄹㄴㄹㄴㅇㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㅇㄹㅇㄹㅇㄹㄴㄹㄴㅇㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㅇㄹㅇㄹㅇㄹㄴㄹㄴㅇㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㅇㄴㅇㅀㄹ, memoRegDate=2023-06-15, memoUpdateDate=2023-06-30, memoBgColor=#D8BBDC, memoSt=N, memoType=workspace, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=ㅇㄴㄹㄴㅇ러낭러니아런ㅇㄹㄴㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㅇㄹㅇㄹㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄴㅇㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄹ하이요제발되나요히히히jdjdjd, memoRegDate=2023-06-09, memoUpdateDate=2023-06-30, memoBgColor=#D8BBDC, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-07-01 22:19:41 [INFO] Running Time : 93ms
+2023-07-01 22:19:41 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-07-01 23:22:01 [INFO] 초기화 필터 생성
+2023-07-01 23:22:09 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 0:0:0:0:0:0:0:1
+2023-07-01 23:22:13 [DEBUG] password999! / $2a$10$MLMvILZIZa2wLEsmrGzPGuF.Ydom0SQ3Q8skNUaqdrwJqFBcH37Iu
+2023-07-01 23:22:13 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-07-01 23:22:13 [INFO] Running Time : 4217ms
+2023-07-01 23:22:13 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-07-01 23:22:13 [INFO] 일일맨 로그인 성공
+2023-07-01 23:22:19 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:19 [INFO] Return Value : 4
+2023-07-01 23:22:19 [INFO] Running Time : 147ms
+2023-07-01 23:22:19 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-07-01 23:22:19 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:19 [INFO] Return Value : [Memo(memoNo=21, workspaceNo=5, pmNo=1, memoContent=ㅇㅇ, memoRegDate=2023-06-15, memoUpdateDate=2023-07-01, memoBgColor=#9FDFEB, memoSt=N, memoType=workspace, memberName=구구맨, profileImg=/resources/images/memberProfile/20230628093750_07214.jpeg), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=ㅇㄴㄹㄴㅇ러낭러니아런ㅇㄹㄴㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㅇㄹㅇㄹㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄴㅇㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄹ하이요제발되나요히히히jdjdjd, memoRegDate=2023-06-09, memoUpdateDate=2023-06-30, memoBgColor=#D8BBDC, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-07-01 23:22:19 [INFO] Running Time : 49ms
+2023-07-01 23:22:19 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-07-01 23:22:21 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:21 [INFO] Return Value : 4
+2023-07-01 23:22:21 [INFO] Running Time : 38ms
+2023-07-01 23:22:21 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-07-01 23:22:21 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:21 [INFO] Return Value : [Memo(memoNo=21, workspaceNo=5, pmNo=1, memoContent=ㅇㅇ, memoRegDate=2023-06-15, memoUpdateDate=2023-07-01, memoBgColor=#9FDFEB, memoSt=N, memoType=workspace, memberName=구구맨, profileImg=/resources/images/memberProfile/20230628093750_07214.jpeg), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=ㅇㄴㄹㄴㅇ러낭러니아런ㅇㄹㄴㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㅇㄹㅇㄹㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄴㅇㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄹ하이요제발되나요히히히jdjdjd, memoRegDate=2023-06-09, memoUpdateDate=2023-06-30, memoBgColor=#D8BBDC, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-07-01 23:22:21 [INFO] Running Time : 42ms
+2023-07-01 23:22:21 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-07-01 23:22:41 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 0:0:0:0:0:0:0:1
+2023-07-01 23:22:41 [DEBUG] password999! / $2a$10$x54oGwEFyC30FxB7D.gDgOGdPeyLmuiVNz5f1e96dvHkE9R.bLfXu
+2023-07-01 23:22:41 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-07-01 23:22:41 [INFO] Running Time : 214ms
+2023-07-01 23:22:41 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-07-01 23:22:41 [INFO] 일일맨 로그인 성공
+2023-07-01 23:22:46 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:46 [INFO] Return Value : 4
+2023-07-01 23:22:46 [INFO] Running Time : 41ms
+2023-07-01 23:22:46 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-07-01 23:22:46 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:46 [INFO] Return Value : [Memo(memoNo=21, workspaceNo=5, pmNo=1, memoContent=ㅇㅇ, memoRegDate=2023-06-15, memoUpdateDate=2023-07-01, memoBgColor=#9FDFEB, memoSt=N, memoType=workspace, memberName=구구맨, profileImg=/resources/images/memberProfile/20230628093750_07214.jpeg), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=ㅇㄴㄹㄴㅇ러낭러니아런ㅇㄹㄴㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㅇㄹㅇㄹㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄴㅇㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄹ하이요제발되나요히히히jdjdjd, memoRegDate=2023-06-09, memoUpdateDate=2023-06-30, memoBgColor=#D8BBDC, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-07-01 23:22:46 [INFO] Running Time : 40ms
+2023-07-01 23:22:46 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-07-01 23:22:49 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=  ㅇㄴㄹㄴㅇ러낭러니아런ㅇㄹㄴㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㅇㄹㅇㄹㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄴㅇㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄹ하이요제발되나요히히히jdjdjd  , memoRegDate=null, memoUpdateDate=null, memoBgColor=#A1D5AE, memoSt=null, memoType=null, memberName=null, profileImg=null)]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:49 [INFO] Return Value : 1
+2023-07-01 23:22:49 [INFO] Running Time : 54ms
+2023-07-01 23:22:49 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-07-01 23:22:50 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:50 [INFO] Return Value : 4
+2023-07-01 23:22:50 [INFO] Running Time : 35ms
+2023-07-01 23:22:50 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-07-01 23:22:50 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:50 [INFO] Return Value : [Memo(memoNo=21, workspaceNo=5, pmNo=1, memoContent=ㅇㅇ, memoRegDate=2023-06-15, memoUpdateDate=2023-07-01, memoBgColor=#9FDFEB, memoSt=N, memoType=workspace, memberName=구구맨, profileImg=/resources/images/memberProfile/20230628093750_07214.jpeg), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=  ㅇㄴㄹㄴㅇ러낭러니아런ㅇㄹㄴㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㅇㄹㅇㄹㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄴㅇㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄹ하이요제발되나요히히히jdjdjd  , memoRegDate=2023-06-09, memoUpdateDate=2023-07-01, memoBgColor=#A1D5AE, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-07-01 23:22:50 [INFO] Running Time : 37ms
+2023-07-01 23:22:50 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-07-01 23:22:51 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=    ㅇㄴㄹㄴㅇ러낭러니아런ㅇㄹㄴㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㅇㄹㅇㄹㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄴㅇㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄹ하이요제발되나요히히히jdjdjd    , memoRegDate=null, memoUpdateDate=null, memoBgColor=#FEE182, memoSt=null, memoType=null, memberName=null, profileImg=null)]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:51 [INFO] Return Value : 1
+2023-07-01 23:22:51 [INFO] Running Time : 36ms
+2023-07-01 23:22:51 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-07-01 23:22:51 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:51 [INFO] Return Value : 4
+2023-07-01 23:22:51 [INFO] Running Time : 36ms
+2023-07-01 23:22:51 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-07-01 23:22:51 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:51 [INFO] Return Value : [Memo(memoNo=21, workspaceNo=5, pmNo=1, memoContent=ㅇㅇ, memoRegDate=2023-06-15, memoUpdateDate=2023-07-01, memoBgColor=#9FDFEB, memoSt=N, memoType=workspace, memberName=구구맨, profileImg=/resources/images/memberProfile/20230628093750_07214.jpeg), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=    ㅇㄴㄹㄴㅇ러낭러니아런ㅇㄹㄴㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㅇㄹㅇㄹㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄴㅇㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄹ하이요제발되나요히히히jdjdjd    , memoRegDate=2023-06-09, memoUpdateDate=2023-07-01, memoBgColor=#FEE182, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-07-01 23:22:51 [INFO] Running Time : 41ms
+2023-07-01 23:22:51 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-07-01 23:22:53 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=      ㅇㄴㄹㄴㅇ러낭러니아런ㅇㄹㄴㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㅇㄹㅇㄹㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄴㅇㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄹ하이요제발되나요히히히jdjdjd      , memoRegDate=null, memoUpdateDate=null, memoBgColor=#FEE182, memoSt=null, memoType=null, memberName=null, profileImg=null)]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:53 [INFO] Return Value : 1
+2023-07-01 23:22:53 [INFO] Running Time : 40ms
+2023-07-01 23:22:53 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-07-01 23:22:53 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:53 [INFO] Return Value : 4
+2023-07-01 23:22:53 [INFO] Running Time : 44ms
+2023-07-01 23:22:53 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-07-01 23:22:53 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:53 [INFO] Return Value : [Memo(memoNo=21, workspaceNo=5, pmNo=1, memoContent=ㅇㅇ, memoRegDate=2023-06-15, memoUpdateDate=2023-07-01, memoBgColor=#9FDFEB, memoSt=N, memoType=workspace, memberName=구구맨, profileImg=/resources/images/memberProfile/20230628093750_07214.jpeg), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=      ㅇㄴㄹㄴㅇ러낭러니아런ㅇㄹㄴㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㅇㄹㅇㄹㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄴㅇㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄹ하이요제발되나요히히히jdjdjd      , memoRegDate=2023-06-09, memoUpdateDate=2023-07-01, memoBgColor=#FEE182, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-07-01 23:22:53 [INFO] Running Time : 46ms
+2023-07-01 23:22:53 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-07-01 23:22:56 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=        ㅇㄴㄹㄴㅇ러낭러니아런ㅇㄹㄴㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㅇㄹㅇㄹㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄴㅇㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄹ하이요제발되나요히히히jdjdjd        , memoRegDate=null, memoUpdateDate=null, memoBgColor=#A1D5AE, memoSt=null, memoType=null, memberName=null, profileImg=null)]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:56 [INFO] Return Value : 1
+2023-07-01 23:22:56 [INFO] Running Time : 29ms
+2023-07-01 23:22:56 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-07-01 23:22:56 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:56 [INFO] Return Value : 4
+2023-07-01 23:22:56 [INFO] Running Time : 39ms
+2023-07-01 23:22:56 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-07-01 23:22:56 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:56 [INFO] Return Value : [Memo(memoNo=21, workspaceNo=5, pmNo=1, memoContent=ㅇㅇ, memoRegDate=2023-06-15, memoUpdateDate=2023-07-01, memoBgColor=#9FDFEB, memoSt=N, memoType=workspace, memberName=구구맨, profileImg=/resources/images/memberProfile/20230628093750_07214.jpeg), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=        ㅇㄴㄹㄴㅇ러낭러니아런ㅇㄹㄴㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㅇㄹㅇㄹㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄴㅇㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄹ하이요제발되나요히히히jdjdjd        , memoRegDate=2023-06-09, memoUpdateDate=2023-07-01, memoBgColor=#A1D5AE, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-07-01 23:22:56 [INFO] Running Time : 47ms
+2023-07-01 23:22:56 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-07-01 23:22:57 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=          ㅇㄴㄹㄴㅇ러낭러니아런ㅇㄹㄴㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㅇㄹㅇㄹㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄴㅇㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄹ하이요제발되나요히히히jdjdjd          , memoRegDate=null, memoUpdateDate=null, memoBgColor=#FEE182, memoSt=null, memoType=null, memberName=null, profileImg=null)]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:57 [INFO] Return Value : 1
+2023-07-01 23:22:57 [INFO] Running Time : 45ms
+2023-07-01 23:22:57 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-07-01 23:22:57 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:57 [INFO] Return Value : 4
+2023-07-01 23:22:57 [INFO] Running Time : 39ms
+2023-07-01 23:22:57 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-07-01 23:22:57 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:22:57 [INFO] Return Value : [Memo(memoNo=21, workspaceNo=5, pmNo=1, memoContent=ㅇㅇ, memoRegDate=2023-06-15, memoUpdateDate=2023-07-01, memoBgColor=#9FDFEB, memoSt=N, memoType=workspace, memberName=구구맨, profileImg=/resources/images/memberProfile/20230628093750_07214.jpeg), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=          ㅇㄴㄹㄴㅇ러낭러니아런ㅇㄹㄴㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㅇㄹㅇㄹㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄴㅇㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄹ하이요제발되나요히히히jdjdjd          , memoRegDate=2023-06-09, memoUpdateDate=2023-07-01, memoBgColor=#FEE182, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-07-01 23:22:57 [INFO] Running Time : 48ms
+2023-07-01 23:22:57 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-07-01 23:23:38 [INFO] ---------------------------------------
+Start : MemoServiceImpl - updateMemo
+Parameter : [Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=ㅇㄴㄹㄴㅇ러낭러니아런ㅇㄹㄴㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㅇㄹㅇㄹㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄴㅇㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄹ하이요제발되나요히히히jdjdjd, memoRegDate=null, memoUpdateDate=null, memoBgColor=#A1D5AE, memoSt=null, memoType=null, memberName=null, profileImg=null)]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:23:38 [INFO] Return Value : 1
+2023-07-01 23:23:38 [INFO] Running Time : 40ms
+2023-07-01 23:23:38 [INFO] End : MemoServiceImpl - updateMemo
+---------------------------------------------
+
+2023-07-01 23:23:38 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:23:38 [INFO] Return Value : 4
+2023-07-01 23:23:38 [INFO] Running Time : 35ms
+2023-07-01 23:23:38 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-07-01 23:23:38 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-07-01 23:23:38 [INFO] Return Value : [Memo(memoNo=21, workspaceNo=5, pmNo=1, memoContent=ㅇㅇ, memoRegDate=2023-06-15, memoUpdateDate=2023-07-01, memoBgColor=#9FDFEB, memoSt=N, memoType=workspace, memberName=구구맨, profileImg=/resources/images/memberProfile/20230628093750_07214.jpeg), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=ㅇㄴㄹㄴㅇ러낭러니아런ㅇㄹㄴㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇㅇㄹㅇㄹㅇㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄴㅇㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄹ하이요제발되나요히히히jdjdjd, memoRegDate=2023-06-09, memoUpdateDate=2023-07-01, memoBgColor=#A1D5AE, memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-07-01 23:23:38 [INFO] Running Time : 41ms
+2023-07-01 23:23:38 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+=======
+2023-07-01 00:01:21 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:01:21 [INFO] Return Value : Loadmap(loadmapNo=46, workspaceNo=10, gitRepo=deokkeun/02_operator, gitTree=[{"path":".settings","type":"tree","sha":"c5b2bf7a"},{"path":"org.eclipse.core.resources.prefs","prev":"c5b2bf7a","type":"blob","sha":"99f26c02"},{"path":"org.eclipse.jdt.core.prefs","prev":"c5b2bf7a","type":"blob","sha":"8c9943d5"},{"path":"src","type":"tree","sha":"5e154d9b"},{"path":"edu","prev":"5e154d9b","type":"tree","sha":"507e6e6c"},{"path":"kh","prev":"507e6e6c","type":"tree","sha":"bf6349c1"},{"path":"op","prev":"bf6349c1","type":"tree","sha":"515c337d"},{"path":"ex","prev":"515c337d","type":"tree","sha":"e6c560bc"},{"path":"practice","prev":"515c337d","type":"tree","sha":"f343e3a1"},{"path":"ExampleRun.java","prev":"e6c560bc","type":"blob","sha":"6c1f2adb"},{"path":"OpExample.java","prev":"e6c560bc","type":"blob","sha":"9ce4521c"},{"path":"OperatorPractice.java","prev":"f343e3a1","type":"blob","sha":"df6d6ec3"},{"path":"run","prev":"f343e3a1","type":"tree","sha":"c7f41175"},{"path":"PracticeRun.java","prev":"c7f41175","type":"blob","sha":"01a26d6a"}], branch=master, ignore=null, loadmapRegDate=Fri Jun 30 23:48:44 KST 2023)
+2023-07-01 00:01:21 [INFO] Running Time : 102ms
+2023-07-01 00:01:21 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:01:21 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+Parameter : [46]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:01:21 [INFO] Return Value : [GitCommit [commitNo=45, loadmapNo=46, login=deokkeun, message=Operator first project, commitDate=Thu Dec 08 11:26:00 KST 2022, files=[".classpath",".gitignore",".project","org.eclipse.core.resources.prefs","org.eclipse.jdt.core.prefs","ExampleRun.java","OpExample.java","OperatorPractice.java","PracticeRun.java"], regDate=Fri Jun 30 23:48:44 KST 2023]]
+2023-07-01 00:01:21 [INFO] Running Time : 55ms
+2023-07-01 00:01:21 [INFO] End : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+---------------------------------------------
+
+2023-07-01 00:01:35 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - insertGit
+Parameter : [Loadmap(loadmapNo=46, workspaceNo=10, gitRepo=deokkeun/02_operator, gitTree=[{"path":".settings","type":"tree","sha":"c5b2bf7a"},{"path":"org.eclipse.core.resources.prefs","prev":"c5b2bf7a","type":"blob","sha":"99f26c02"},{"path":"org.eclipse.jdt.core.prefs","prev":"c5b2bf7a","type":"blob","sha":"8c9943d5"},{"path":"src","type":"tree","sha":"5e154d9b"},{"path":"edu","prev":"5e154d9b","type":"tree","sha":"507e6e6c"},{"path":"kh","prev":"507e6e6c","type":"tree","sha":"bf6349c1"},{"path":"op","prev":"bf6349c1","type":"tree","sha":"515c337d"},{"path":"ex","prev":"515c337d","type":"tree","sha":"e6c560bc"},{"path":"practice","prev":"515c337d","type":"tree","sha":"f343e3a1"},{"path":"ExampleRun.java","prev":"e6c560bc","type":"blob","sha":"6c1f2adb"},{"path":"OpExample.java","prev":"e6c560bc","type":"blob","sha":"9ce4521c"},{"path":"OperatorPractice.java","prev":"f343e3a1","type":"blob","sha":"df6d6ec3"},{"path":"run","prev":"f343e3a1","type":"tree","sha":"c7f41175"},{"path":"PracticeRun.java","prev":"c7f41175","type":"blob","sha":"01a26d6a"}], branch=master, ignore=, loadmapRegDate=Fri Jun 30 23:48:44 KST 2023)]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:01:35 [DEBUG] repo 전
+2023-07-01 00:01:35 [DEBUG] repo = GHRepository@30cafb82[nodeId=R_kgDOIk-hBg,description=<null>,homepage=<null>,name=02_operator,license=<null>,fork=false,archived=false,disabled=false,visibility=public,size=3,milestones={},language=Java,commits={},source=<null>,parent=<null>,isTemplate=false,compareUsePaginatedCommits=false,url=https://api.github.com/repos/deokkeun/02_operator,id=575643910,nodeId=<null>,createdAt=2022-12-08T01:19:59Z,updatedAt=2022-12-08T02:26:10Z]
+2023-07-01 00:01:36 [DEBUG] treeList = [org.kohsuke.github.GHTreeEntry@188b5c1c, org.kohsuke.github.GHTreeEntry@2ff32c9c, org.kohsuke.github.GHTreeEntry@4cadfe3d, org.kohsuke.github.GHTreeEntry@2b5c1ac1, org.kohsuke.github.GHTreeEntry@6975c80a]
+2023-07-01 00:01:38 [DEBUG] makeGitTree 수행 후 = GHRepository@30cafb82[nodeId=R_kgDOIk-hBg,description=<null>,homepage=<null>,name=02_operator,license=<null>,fork=false,archived=false,disabled=false,visibility=public,size=3,milestones={},language=Java,commits={},source=<null>,parent=<null>,isTemplate=false,compareUsePaginatedCommits=false,url=https://api.github.com/repos/deokkeun/02_operator,id=575643910,nodeId=<null>,createdAt=2022-12-08T01:19:59Z,updatedAt=2022-12-08T02:26:10Z]
+2023-07-01 00:01:38 [DEBUG] getCommitFileShaListGHRepository@30cafb82[nodeId=R_kgDOIk-hBg,description=<null>,homepage=<null>,name=02_operator,license=<null>,fork=false,archived=false,disabled=false,visibility=public,size=3,milestones={},language=Java,commits={},source=<null>,parent=<null>,isTemplate=false,compareUsePaginatedCommits=false,url=https://api.github.com/repos/deokkeun/02_operator,id=575643910,nodeId=<null>,createdAt=2022-12-08T01:19:59Z,updatedAt=2022-12-08T02:26:10Z]
+2023-07-01 00:01:39 [DEBUG] gitCommit = GitCommit [commitNo=0, loadmapNo=0, login=deokkeun, message=Operator first project, commitDate=Thu Dec 08 11:26:00 KST 2022, files=[".classpath",".gitignore",".project","org.eclipse.core.resources.prefs","org.eclipse.jdt.core.prefs","ExampleRun.java","OpExample.java","OperatorPractice.java","PracticeRun.java"], regDate=null]
+2023-07-01 00:01:39 [DEBUG] LoadmapServiceImpl loadmap 추가 = Loadmap(loadmapNo=46, workspaceNo=10, gitRepo=deokkeun/02_operator, gitTree=[{"path":".settings","type":"tree","sha":"c5b2bf7a"},{"path":"org.eclipse.core.resources.prefs","prev":"c5b2bf7a","type":"blob","sha":"99f26c02"},{"path":"org.eclipse.jdt.core.prefs","prev":"c5b2bf7a","type":"blob","sha":"8c9943d5"},{"path":"src","type":"tree","sha":"5e154d9b"},{"path":"edu","prev":"5e154d9b","type":"tree","sha":"507e6e6c"},{"path":"kh","prev":"507e6e6c","type":"tree","sha":"bf6349c1"},{"path":"op","prev":"bf6349c1","type":"tree","sha":"515c337d"},{"path":"ex","prev":"515c337d","type":"tree","sha":"e6c560bc"},{"path":"practice","prev":"515c337d","type":"tree","sha":"f343e3a1"},{"path":"ExampleRun.java","prev":"e6c560bc","type":"blob","sha":"6c1f2adb"},{"path":"OpExample.java","prev":"e6c560bc","type":"blob","sha":"9ce4521c"},{"path":"OperatorPractice.java","prev":"f343e3a1","type":"blob","sha":"df6d6ec3"},{"path":"run","prev":"f343e3a1","type":"tree","sha":"c7f41175"},{"path":"PracticeRun.java","prev":"c7f41175","type":"blob","sha":"01a26d6a"}], branch=master, ignore=, loadmapRegDate=Fri Jun 30 23:48:44 KST 2023)
+2023-07-01 00:01:39 [INFO] Return Value : complete
+2023-07-01 00:01:39 [INFO] Running Time : 4856ms
+2023-07-01 00:01:39 [INFO] End : LoadmapServiceImpl - insertGit
+---------------------------------------------
+
+2023-07-01 00:01:42 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:01:42 [INFO] Return Value : Loadmap(loadmapNo=47, workspaceNo=10, gitRepo=deokkeun/02_operator, gitTree=[{"path":".settings","type":"tree","sha":"c5b2bf7a"},{"path":"org.eclipse.core.resources.prefs","prev":"c5b2bf7a","type":"blob","sha":"99f26c02"},{"path":"org.eclipse.jdt.core.prefs","prev":"c5b2bf7a","type":"blob","sha":"8c9943d5"},{"path":"src","type":"tree","sha":"5e154d9b"},{"path":"edu","prev":"5e154d9b","type":"tree","sha":"507e6e6c"},{"path":"kh","prev":"507e6e6c","type":"tree","sha":"bf6349c1"},{"path":"op","prev":"bf6349c1","type":"tree","sha":"515c337d"},{"path":"ex","prev":"515c337d","type":"tree","sha":"e6c560bc"},{"path":"practice","prev":"515c337d","type":"tree","sha":"f343e3a1"},{"path":"ExampleRun.java","prev":"e6c560bc","type":"blob","sha":"6c1f2adb"},{"path":"OpExample.java","prev":"e6c560bc","type":"blob","sha":"9ce4521c"},{"path":"OperatorPractice.java","prev":"f343e3a1","type":"blob","sha":"df6d6ec3"},{"path":"run","prev":"f343e3a1","type":"tree","sha":"c7f41175"},{"path":"PracticeRun.java","prev":"c7f41175","type":"blob","sha":"01a26d6a"}], branch=master, ignore=null, loadmapRegDate=Sat Jul 01 00:01:39 KST 2023)
+2023-07-01 00:01:42 [INFO] Running Time : 68ms
+2023-07-01 00:01:42 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:01:42 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+Parameter : [47]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:01:42 [INFO] Return Value : [GitCommit [commitNo=46, loadmapNo=47, login=deokkeun, message=Operator first project, commitDate=Thu Dec 08 11:26:00 KST 2022, files=[".classpath",".gitignore",".project","org.eclipse.core.resources.prefs","org.eclipse.jdt.core.prefs","ExampleRun.java","OpExample.java","OperatorPractice.java","PracticeRun.java"], regDate=Sat Jul 01 00:01:39 KST 2023]]
+2023-07-01 00:01:42 [INFO] Running Time : 53ms
+2023-07-01 00:01:42 [INFO] End : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+---------------------------------------------
+
+2023-07-01 00:03:28 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - insertGit
+Parameter : [Loadmap(loadmapNo=47, workspaceNo=10, gitRepo=deokkeun/02_operator, gitTree=[{"path":".settings","type":"tree","sha":"c5b2bf7a"},{"path":"org.eclipse.core.resources.prefs","prev":"c5b2bf7a","type":"blob","sha":"99f26c02"},{"path":"org.eclipse.jdt.core.prefs","prev":"c5b2bf7a","type":"blob","sha":"8c9943d5"},{"path":"src","type":"tree","sha":"5e154d9b"},{"path":"edu","prev":"5e154d9b","type":"tree","sha":"507e6e6c"},{"path":"kh","prev":"507e6e6c","type":"tree","sha":"bf6349c1"},{"path":"op","prev":"bf6349c1","type":"tree","sha":"515c337d"},{"path":"ex","prev":"515c337d","type":"tree","sha":"e6c560bc"},{"path":"practice","prev":"515c337d","type":"tree","sha":"f343e3a1"},{"path":"ExampleRun.java","prev":"e6c560bc","type":"blob","sha":"6c1f2adb"},{"path":"OpExample.java","prev":"e6c560bc","type":"blob","sha":"9ce4521c"},{"path":"OperatorPractice.java","prev":"f343e3a1","type":"blob","sha":"df6d6ec3"},{"path":"run","prev":"f343e3a1","type":"tree","sha":"c7f41175"},{"path":"PracticeRun.java","prev":"c7f41175","type":"blob","sha":"01a26d6a"}], branch=master, ignore=, loadmapRegDate=Sat Jul 01 00:01:39 KST 2023)]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:03:28 [DEBUG] repo 전
+2023-07-01 00:03:29 [DEBUG] repo = GHRepository@7f7bb16[nodeId=R_kgDOIk-hBg,description=<null>,homepage=<null>,name=02_operator,license=<null>,fork=false,archived=false,disabled=false,visibility=public,size=3,milestones={},language=Java,commits={},source=<null>,parent=<null>,isTemplate=false,compareUsePaginatedCommits=false,url=https://api.github.com/repos/deokkeun/02_operator,id=575643910,nodeId=<null>,createdAt=2022-12-08T01:19:59Z,updatedAt=2022-12-08T02:26:10Z]
+2023-07-01 00:03:29 [DEBUG] treeList = [org.kohsuke.github.GHTreeEntry@4db78831, org.kohsuke.github.GHTreeEntry@1d22defb, org.kohsuke.github.GHTreeEntry@495aa616, org.kohsuke.github.GHTreeEntry@734f8b20, org.kohsuke.github.GHTreeEntry@2c87378]
+2023-07-01 00:03:31 [DEBUG] makeGitTree 수행 후 = GHRepository@7f7bb16[nodeId=R_kgDOIk-hBg,description=<null>,homepage=<null>,name=02_operator,license=<null>,fork=false,archived=false,disabled=false,visibility=public,size=3,milestones={},language=Java,commits={},source=<null>,parent=<null>,isTemplate=false,compareUsePaginatedCommits=false,url=https://api.github.com/repos/deokkeun/02_operator,id=575643910,nodeId=<null>,createdAt=2022-12-08T01:19:59Z,updatedAt=2022-12-08T02:26:10Z]
+2023-07-01 00:03:31 [DEBUG] getCommitFileShaListGHRepository@7f7bb16[nodeId=R_kgDOIk-hBg,description=<null>,homepage=<null>,name=02_operator,license=<null>,fork=false,archived=false,disabled=false,visibility=public,size=3,milestones={},language=Java,commits={},source=<null>,parent=<null>,isTemplate=false,compareUsePaginatedCommits=false,url=https://api.github.com/repos/deokkeun/02_operator,id=575643910,nodeId=<null>,createdAt=2022-12-08T01:19:59Z,updatedAt=2022-12-08T02:26:10Z]
+2023-07-01 00:03:33 [DEBUG] gitCommit = GitCommit [commitNo=0, loadmapNo=0, login=deokkeun, message=Operator first project, commitDate=Thu Dec 08 11:26:00 KST 2022, files=[".classpath",".gitignore",".project","org.eclipse.core.resources.prefs","org.eclipse.jdt.core.prefs","ExampleRun.java","OpExample.java","OperatorPractice.java","PracticeRun.java"], regDate=null]
+2023-07-01 00:03:33 [DEBUG] LoadmapServiceImpl loadmap 추가 = Loadmap(loadmapNo=47, workspaceNo=10, gitRepo=deokkeun/02_operator, gitTree=[{"path":".settings","type":"tree","sha":"c5b2bf7a"},{"path":"org.eclipse.core.resources.prefs","prev":"c5b2bf7a","type":"blob","sha":"99f26c02"},{"path":"org.eclipse.jdt.core.prefs","prev":"c5b2bf7a","type":"blob","sha":"8c9943d5"},{"path":"src","type":"tree","sha":"5e154d9b"},{"path":"edu","prev":"5e154d9b","type":"tree","sha":"507e6e6c"},{"path":"kh","prev":"507e6e6c","type":"tree","sha":"bf6349c1"},{"path":"op","prev":"bf6349c1","type":"tree","sha":"515c337d"},{"path":"ex","prev":"515c337d","type":"tree","sha":"e6c560bc"},{"path":"practice","prev":"515c337d","type":"tree","sha":"f343e3a1"},{"path":"ExampleRun.java","prev":"e6c560bc","type":"blob","sha":"6c1f2adb"},{"path":"OpExample.java","prev":"e6c560bc","type":"blob","sha":"9ce4521c"},{"path":"OperatorPractice.java","prev":"f343e3a1","type":"blob","sha":"df6d6ec3"},{"path":"run","prev":"f343e3a1","type":"tree","sha":"c7f41175"},{"path":"PracticeRun.java","prev":"c7f41175","type":"blob","sha":"01a26d6a"}], branch=master, ignore=, loadmapRegDate=Sat Jul 01 00:01:39 KST 2023)
+2023-07-01 00:03:33 [INFO] Return Value : complete
+2023-07-01 00:03:33 [INFO] Running Time : 5115ms
+2023-07-01 00:03:33 [INFO] End : LoadmapServiceImpl - insertGit
+---------------------------------------------
+
+2023-07-01 00:03:35 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:03:35 [INFO] Return Value : Loadmap(loadmapNo=48, workspaceNo=10, gitRepo=deokkeun/02_operator, gitTree=[{"path":".settings","type":"tree","sha":"c5b2bf7a"},{"path":"org.eclipse.core.resources.prefs","prev":"c5b2bf7a","type":"blob","sha":"99f26c02"},{"path":"org.eclipse.jdt.core.prefs","prev":"c5b2bf7a","type":"blob","sha":"8c9943d5"},{"path":"src","type":"tree","sha":"5e154d9b"},{"path":"edu","prev":"5e154d9b","type":"tree","sha":"507e6e6c"},{"path":"kh","prev":"507e6e6c","type":"tree","sha":"bf6349c1"},{"path":"op","prev":"bf6349c1","type":"tree","sha":"515c337d"},{"path":"ex","prev":"515c337d","type":"tree","sha":"e6c560bc"},{"path":"practice","prev":"515c337d","type":"tree","sha":"f343e3a1"},{"path":"ExampleRun.java","prev":"e6c560bc","type":"blob","sha":"6c1f2adb"},{"path":"OpExample.java","prev":"e6c560bc","type":"blob","sha":"9ce4521c"},{"path":"OperatorPractice.java","prev":"f343e3a1","type":"blob","sha":"df6d6ec3"},{"path":"run","prev":"f343e3a1","type":"tree","sha":"c7f41175"},{"path":"PracticeRun.java","prev":"c7f41175","type":"blob","sha":"01a26d6a"}], branch=master, ignore=null, loadmapRegDate=Sat Jul 01 00:03:33 KST 2023)
+2023-07-01 00:03:35 [INFO] Running Time : 71ms
+2023-07-01 00:03:35 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:03:35 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+Parameter : [48]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:03:35 [INFO] Return Value : [GitCommit [commitNo=47, loadmapNo=48, login=deokkeun, message=Operator first project, commitDate=Thu Dec 08 11:26:00 KST 2022, files=[".classpath",".gitignore",".project","org.eclipse.core.resources.prefs","org.eclipse.jdt.core.prefs","ExampleRun.java","OpExample.java","OperatorPractice.java","PracticeRun.java"], regDate=Sat Jul 01 00:03:33 KST 2023]]
+2023-07-01 00:03:35 [INFO] Running Time : 53ms
+2023-07-01 00:03:35 [INFO] End : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+---------------------------------------------
+
+2023-07-01 00:05:13 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:05:13 [INFO] Return Value : Loadmap(loadmapNo=48, workspaceNo=10, gitRepo=deokkeun/02_operator, gitTree=[{"path":".settings","type":"tree","sha":"c5b2bf7a"},{"path":"org.eclipse.core.resources.prefs","prev":"c5b2bf7a","type":"blob","sha":"99f26c02"},{"path":"org.eclipse.jdt.core.prefs","prev":"c5b2bf7a","type":"blob","sha":"8c9943d5"},{"path":"src","type":"tree","sha":"5e154d9b"},{"path":"edu","prev":"5e154d9b","type":"tree","sha":"507e6e6c"},{"path":"kh","prev":"507e6e6c","type":"tree","sha":"bf6349c1"},{"path":"op","prev":"bf6349c1","type":"tree","sha":"515c337d"},{"path":"ex","prev":"515c337d","type":"tree","sha":"e6c560bc"},{"path":"practice","prev":"515c337d","type":"tree","sha":"f343e3a1"},{"path":"ExampleRun.java","prev":"e6c560bc","type":"blob","sha":"6c1f2adb"},{"path":"OpExample.java","prev":"e6c560bc","type":"blob","sha":"9ce4521c"},{"path":"OperatorPractice.java","prev":"f343e3a1","type":"blob","sha":"df6d6ec3"},{"path":"run","prev":"f343e3a1","type":"tree","sha":"c7f41175"},{"path":"PracticeRun.java","prev":"c7f41175","type":"blob","sha":"01a26d6a"}], branch=master, ignore=null, loadmapRegDate=Sat Jul 01 00:03:33 KST 2023)
+2023-07-01 00:05:13 [INFO] Running Time : 118ms
+2023-07-01 00:05:13 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:05:13 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+Parameter : [48]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:05:13 [INFO] Return Value : [GitCommit [commitNo=47, loadmapNo=48, login=deokkeun, message=Operator first project, commitDate=Thu Dec 08 11:26:00 KST 2022, files=[".classpath",".gitignore",".project","org.eclipse.core.resources.prefs","org.eclipse.jdt.core.prefs","ExampleRun.java","OpExample.java","OperatorPractice.java","PracticeRun.java"], regDate=Sat Jul 01 00:03:33 KST 2023]]
+2023-07-01 00:05:13 [INFO] Running Time : 81ms
+2023-07-01 00:05:13 [INFO] End : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+---------------------------------------------
+
+2023-07-01 00:05:23 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:05:23 [INFO] Return Value : Loadmap(loadmapNo=48, workspaceNo=10, gitRepo=deokkeun/02_operator, gitTree=[{"path":".settings","type":"tree","sha":"c5b2bf7a"},{"path":"org.eclipse.core.resources.prefs","prev":"c5b2bf7a","type":"blob","sha":"99f26c02"},{"path":"org.eclipse.jdt.core.prefs","prev":"c5b2bf7a","type":"blob","sha":"8c9943d5"},{"path":"src","type":"tree","sha":"5e154d9b"},{"path":"edu","prev":"5e154d9b","type":"tree","sha":"507e6e6c"},{"path":"kh","prev":"507e6e6c","type":"tree","sha":"bf6349c1"},{"path":"op","prev":"bf6349c1","type":"tree","sha":"515c337d"},{"path":"ex","prev":"515c337d","type":"tree","sha":"e6c560bc"},{"path":"practice","prev":"515c337d","type":"tree","sha":"f343e3a1"},{"path":"ExampleRun.java","prev":"e6c560bc","type":"blob","sha":"6c1f2adb"},{"path":"OpExample.java","prev":"e6c560bc","type":"blob","sha":"9ce4521c"},{"path":"OperatorPractice.java","prev":"f343e3a1","type":"blob","sha":"df6d6ec3"},{"path":"run","prev":"f343e3a1","type":"tree","sha":"c7f41175"},{"path":"PracticeRun.java","prev":"c7f41175","type":"blob","sha":"01a26d6a"}], branch=master, ignore=null, loadmapRegDate=Sat Jul 01 00:03:33 KST 2023)
+2023-07-01 00:05:23 [INFO] Running Time : 76ms
+2023-07-01 00:05:23 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:05:23 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+Parameter : [48]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:05:23 [INFO] Return Value : [GitCommit [commitNo=47, loadmapNo=48, login=deokkeun, message=Operator first project, commitDate=Thu Dec 08 11:26:00 KST 2022, files=[".classpath",".gitignore",".project","org.eclipse.core.resources.prefs","org.eclipse.jdt.core.prefs","ExampleRun.java","OpExample.java","OperatorPractice.java","PracticeRun.java"], regDate=Sat Jul 01 00:03:33 KST 2023]]
+2023-07-01 00:05:23 [INFO] Running Time : 60ms
+2023-07-01 00:05:23 [INFO] End : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+---------------------------------------------
+
+2023-07-01 00:05:38 [INFO] ---------------------------------------
+Start : ChatServiceImpl - selectChatMessageList
+Parameter : [3]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:05:39 [INFO] Return Value : [ChatMessage(cmNo=0, chatMessage=하이 구구맨입니다<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=짱신기하네여<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋㅋㅋㅋㅋㅋ<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅁㅁㅁ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=asdfasdf, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=gdgd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=kfgkf, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=gdgd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㄴㅁㅎㅁㄴㅇㅎ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=gdgd<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅇㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅇㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=테스트, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅋㅇㅋ, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅋㅇㅋ, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ddd, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=dd, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅋㅇㅋ, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅋㅇㅋ, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=de, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=dd, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=1, cmRegDate=2023-06-22, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=1, cmRegDate=2023-06-22, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=1, cmRegDate=2023-06-22, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-30, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=덕근씌<br>, cmRegDate=2023-06-30, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=덕근찌<br>, cmRegDate=2023-06-30, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨)]
+2023-07-01 00:05:39 [INFO] Running Time : 399ms
+2023-07-01 00:05:39 [INFO] End : ChatServiceImpl - selectChatMessageList
+---------------------------------------------
+
+2023-07-01 00:05:39 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:05:39 [INFO] Return Value : 1
+2023-07-01 00:05:39 [INFO] Running Time : 56ms
+2023-07-01 00:05:39 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-07-01 00:05:39 [INFO] ---------------------------------------
+Start : ChatServiceImpl - selectChatMessageList
+Parameter : [3]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:05:40 [INFO] Return Value : [ChatMessage(cmNo=0, chatMessage=하이 구구맨입니다<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=짱신기하네여<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋㅋㅋㅋㅋㅋ<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅁㅁㅁ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=asdfasdf, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=gdgd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=kfgkf, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=gdgd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㄴㅁㅎㅁㄴㅇㅎ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=gdgd<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅇㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅇㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=테스트, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅋㅇㅋ, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅋㅇㅋ, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ddd, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=dd, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅋㅇㅋ, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅋㅇㅋ, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=de, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=dd, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=1, cmRegDate=2023-06-22, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=1, cmRegDate=2023-06-22, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=1, cmRegDate=2023-06-22, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-30, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=덕근씌<br>, cmRegDate=2023-06-30, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=덕근찌<br>, cmRegDate=2023-06-30, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨)]
+2023-07-01 00:05:40 [INFO] Running Time : 188ms
+2023-07-01 00:05:40 [INFO] End : ChatServiceImpl - selectChatMessageList
+---------------------------------------------
+
+2023-07-01 00:05:40 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:05:40 [INFO] Return Value : 1
+2023-07-01 00:05:40 [INFO] Running Time : 49ms
+2023-07-01 00:05:40 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-07-01 00:05:40 [INFO] ---------------------------------------
+Start : ChatServiceImpl - selectChatMessageList
+Parameter : [3]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:05:40 [INFO] Return Value : [ChatMessage(cmNo=0, chatMessage=하이 구구맨입니다<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=짱신기하네여<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋㅋㅋㅋㅋㅋ<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅁㅁㅁ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=asdfasdf, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=gdgd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=kfgkf, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=gdgd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㄴㅁㅎㅁㄴㅇㅎ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=gdgd<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅇㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅇㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=테스트, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅋㅇㅋ, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅋㅇㅋ, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ddd, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=dd, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅋㅇㅋ, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅋㅇㅋ, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=de, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=dd, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=1, cmRegDate=2023-06-22, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=1, cmRegDate=2023-06-22, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=1, cmRegDate=2023-06-22, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=123, cmRegDate=2023-06-30, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=덕근씌<br>, cmRegDate=2023-06-30, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=덕근찌<br>, cmRegDate=2023-06-30, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨)]
+2023-07-01 00:05:40 [INFO] Running Time : 208ms
+2023-07-01 00:05:40 [INFO] End : ChatServiceImpl - selectChatMessageList
+---------------------------------------------
+
+2023-07-01 00:05:40 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:05:40 [INFO] Return Value : 1
+2023-07-01 00:05:40 [INFO] Running Time : 41ms
+2023-07-01 00:05:40 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-07-01 00:07:08 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:07:08 [INFO] Return Value : Loadmap(loadmapNo=48, workspaceNo=10, gitRepo=deokkeun/02_operator, gitTree=[{"path":".settings","type":"tree","sha":"c5b2bf7a"},{"path":"org.eclipse.core.resources.prefs","prev":"c5b2bf7a","type":"blob","sha":"99f26c02"},{"path":"org.eclipse.jdt.core.prefs","prev":"c5b2bf7a","type":"blob","sha":"8c9943d5"},{"path":"src","type":"tree","sha":"5e154d9b"},{"path":"edu","prev":"5e154d9b","type":"tree","sha":"507e6e6c"},{"path":"kh","prev":"507e6e6c","type":"tree","sha":"bf6349c1"},{"path":"op","prev":"bf6349c1","type":"tree","sha":"515c337d"},{"path":"ex","prev":"515c337d","type":"tree","sha":"e6c560bc"},{"path":"practice","prev":"515c337d","type":"tree","sha":"f343e3a1"},{"path":"ExampleRun.java","prev":"e6c560bc","type":"blob","sha":"6c1f2adb"},{"path":"OpExample.java","prev":"e6c560bc","type":"blob","sha":"9ce4521c"},{"path":"OperatorPractice.java","prev":"f343e3a1","type":"blob","sha":"df6d6ec3"},{"path":"run","prev":"f343e3a1","type":"tree","sha":"c7f41175"},{"path":"PracticeRun.java","prev":"c7f41175","type":"blob","sha":"01a26d6a"}], branch=master, ignore=null, loadmapRegDate=Sat Jul 01 00:03:33 KST 2023)
+2023-07-01 00:07:08 [INFO] Running Time : 119ms
+2023-07-01 00:07:08 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:07:08 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+Parameter : [48]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:07:08 [INFO] Return Value : [GitCommit [commitNo=47, loadmapNo=48, login=deokkeun, message=Operator first project, commitDate=Thu Dec 08 11:26:00 KST 2022, files=[".classpath",".gitignore",".project","org.eclipse.core.resources.prefs","org.eclipse.jdt.core.prefs","ExampleRun.java","OpExample.java","OperatorPractice.java","PracticeRun.java"], regDate=Sat Jul 01 00:03:33 KST 2023]]
+2023-07-01 00:07:08 [INFO] Running Time : 64ms
+2023-07-01 00:07:08 [INFO] End : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+---------------------------------------------
+
+2023-07-01 00:09:17 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:09:17 [INFO] Return Value : Loadmap(loadmapNo=48, workspaceNo=10, gitRepo=deokkeun/02_operator, gitTree=[{"path":".settings","type":"tree","sha":"c5b2bf7a"},{"path":"org.eclipse.core.resources.prefs","prev":"c5b2bf7a","type":"blob","sha":"99f26c02"},{"path":"org.eclipse.jdt.core.prefs","prev":"c5b2bf7a","type":"blob","sha":"8c9943d5"},{"path":"src","type":"tree","sha":"5e154d9b"},{"path":"edu","prev":"5e154d9b","type":"tree","sha":"507e6e6c"},{"path":"kh","prev":"507e6e6c","type":"tree","sha":"bf6349c1"},{"path":"op","prev":"bf6349c1","type":"tree","sha":"515c337d"},{"path":"ex","prev":"515c337d","type":"tree","sha":"e6c560bc"},{"path":"practice","prev":"515c337d","type":"tree","sha":"f343e3a1"},{"path":"ExampleRun.java","prev":"e6c560bc","type":"blob","sha":"6c1f2adb"},{"path":"OpExample.java","prev":"e6c560bc","type":"blob","sha":"9ce4521c"},{"path":"OperatorPractice.java","prev":"f343e3a1","type":"blob","sha":"df6d6ec3"},{"path":"run","prev":"f343e3a1","type":"tree","sha":"c7f41175"},{"path":"PracticeRun.java","prev":"c7f41175","type":"blob","sha":"01a26d6a"}], branch=master, ignore=null, loadmapRegDate=Sat Jul 01 00:03:33 KST 2023)
+2023-07-01 00:09:17 [INFO] Running Time : 120ms
+2023-07-01 00:09:17 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:09:17 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+Parameter : [48]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:09:17 [INFO] Return Value : [GitCommit [commitNo=47, loadmapNo=48, login=deokkeun, message=Operator first project, commitDate=Thu Dec 08 11:26:00 KST 2022, files=[".classpath",".gitignore",".project","org.eclipse.core.resources.prefs","org.eclipse.jdt.core.prefs","ExampleRun.java","OpExample.java","OperatorPractice.java","PracticeRun.java"], regDate=Sat Jul 01 00:03:33 KST 2023]]
+2023-07-01 00:09:17 [INFO] Running Time : 87ms
+2023-07-01 00:09:17 [INFO] End : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+---------------------------------------------
+
+2023-07-01 00:11:27 [INFO] ---------------------------------------
+Start : PayServiceImpl - payList
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:11:27 [INFO] Return Value : [Pay(payNo=230627143834137, projectNo=0, payType=Basic, payRegDate=2023-06-27, payName=구구맨, memberNo=0, price=1290, impUid=null, expireDate=2023-07-27, expireType=Pro), Pay(payNo=230626114814495, projectNo=0, payType=Basic, payRegDate=2023-06-26, payName=구구맨, memberNo=0, price=890, impUid=null, expireDate=2023-07-26, expireType=Standard), Pay(payNo=230623203921910, projectNo=0, payType=Basic, payRegDate=2023-06-23, payName=김자바, memberNo=0, price=890, impUid=null, expireDate=2023-07-23, expireType=Standard), Pay(payNo=230623074031256, projectNo=0, payType=Basic, payRegDate=2023-06-23, payName=구구맨, memberNo=0, price=1290, impUid=null, expireDate=2023-07-23, expireType=Pro), Pay(payNo=230420141942470, projectNo=0, payType=Basic, payRegDate=2023-06-22, payName=김자바, memberNo=0, price=890, impUid=null, expireDate=2023-07-22, expireType=Standard)]
+2023-07-01 00:11:27 [INFO] Running Time : 169ms
+2023-07-01 00:11:27 [INFO] End : PayServiceImpl - payList
+---------------------------------------------
+
+2023-07-01 00:14:09 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:14:09 [INFO] Return Value : Loadmap(loadmapNo=48, workspaceNo=10, gitRepo=deokkeun/02_operator, gitTree=[{"path":".settings","type":"tree","sha":"c5b2bf7a"},{"path":"org.eclipse.core.resources.prefs","prev":"c5b2bf7a","type":"blob","sha":"99f26c02"},{"path":"org.eclipse.jdt.core.prefs","prev":"c5b2bf7a","type":"blob","sha":"8c9943d5"},{"path":"src","type":"tree","sha":"5e154d9b"},{"path":"edu","prev":"5e154d9b","type":"tree","sha":"507e6e6c"},{"path":"kh","prev":"507e6e6c","type":"tree","sha":"bf6349c1"},{"path":"op","prev":"bf6349c1","type":"tree","sha":"515c337d"},{"path":"ex","prev":"515c337d","type":"tree","sha":"e6c560bc"},{"path":"practice","prev":"515c337d","type":"tree","sha":"f343e3a1"},{"path":"ExampleRun.java","prev":"e6c560bc","type":"blob","sha":"6c1f2adb"},{"path":"OpExample.java","prev":"e6c560bc","type":"blob","sha":"9ce4521c"},{"path":"OperatorPractice.java","prev":"f343e3a1","type":"blob","sha":"df6d6ec3"},{"path":"run","prev":"f343e3a1","type":"tree","sha":"c7f41175"},{"path":"PracticeRun.java","prev":"c7f41175","type":"blob","sha":"01a26d6a"}], branch=master, ignore=null, loadmapRegDate=Sat Jul 01 00:03:33 KST 2023)
+2023-07-01 00:14:09 [INFO] Running Time : 126ms
+2023-07-01 00:14:09 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:14:09 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+Parameter : [48]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:14:09 [INFO] Return Value : [GitCommit [commitNo=47, loadmapNo=48, login=deokkeun, message=Operator first project, commitDate=Thu Dec 08 11:26:00 KST 2022, files=[".classpath",".gitignore",".project","org.eclipse.core.resources.prefs","org.eclipse.jdt.core.prefs","ExampleRun.java","OpExample.java","OperatorPractice.java","PracticeRun.java"], regDate=Sat Jul 01 00:03:33 KST 2023]]
+2023-07-01 00:14:09 [INFO] Running Time : 62ms
+2023-07-01 00:14:09 [INFO] End : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+---------------------------------------------
+
+2023-07-01 00:15:55 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:15:55 [INFO] Return Value : Loadmap(loadmapNo=48, workspaceNo=10, gitRepo=deokkeun/02_operator, gitTree=[{"path":".settings","type":"tree","sha":"c5b2bf7a"},{"path":"org.eclipse.core.resources.prefs","prev":"c5b2bf7a","type":"blob","sha":"99f26c02"},{"path":"org.eclipse.jdt.core.prefs","prev":"c5b2bf7a","type":"blob","sha":"8c9943d5"},{"path":"src","type":"tree","sha":"5e154d9b"},{"path":"edu","prev":"5e154d9b","type":"tree","sha":"507e6e6c"},{"path":"kh","prev":"507e6e6c","type":"tree","sha":"bf6349c1"},{"path":"op","prev":"bf6349c1","type":"tree","sha":"515c337d"},{"path":"ex","prev":"515c337d","type":"tree","sha":"e6c560bc"},{"path":"practice","prev":"515c337d","type":"tree","sha":"f343e3a1"},{"path":"ExampleRun.java","prev":"e6c560bc","type":"blob","sha":"6c1f2adb"},{"path":"OpExample.java","prev":"e6c560bc","type":"blob","sha":"9ce4521c"},{"path":"OperatorPractice.java","prev":"f343e3a1","type":"blob","sha":"df6d6ec3"},{"path":"run","prev":"f343e3a1","type":"tree","sha":"c7f41175"},{"path":"PracticeRun.java","prev":"c7f41175","type":"blob","sha":"01a26d6a"}], branch=master, ignore=null, loadmapRegDate=Sat Jul 01 00:03:33 KST 2023)
+2023-07-01 00:15:55 [INFO] Running Time : 141ms
+2023-07-01 00:15:55 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:15:55 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+Parameter : [48]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:15:55 [INFO] Return Value : [GitCommit [commitNo=47, loadmapNo=48, login=deokkeun, message=Operator first project, commitDate=Thu Dec 08 11:26:00 KST 2022, files=[".classpath",".gitignore",".project","org.eclipse.core.resources.prefs","org.eclipse.jdt.core.prefs","ExampleRun.java","OpExample.java","OperatorPractice.java","PracticeRun.java"], regDate=Sat Jul 01 00:03:33 KST 2023]]
+2023-07-01 00:15:55 [INFO] Running Time : 79ms
+2023-07-01 00:15:55 [INFO] End : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+---------------------------------------------
+
+2023-07-01 00:16:00 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - insertGit
+Parameter : [Loadmap(loadmapNo=48, workspaceNo=10, gitRepo=deokkeun, gitTree=[{"path":".settings","type":"tree","sha":"c5b2bf7a"},{"path":"org.eclipse.core.resources.prefs","prev":"c5b2bf7a","type":"blob","sha":"99f26c02"},{"path":"org.eclipse.jdt.core.prefs","prev":"c5b2bf7a","type":"blob","sha":"8c9943d5"},{"path":"src","type":"tree","sha":"5e154d9b"},{"path":"edu","prev":"5e154d9b","type":"tree","sha":"507e6e6c"},{"path":"kh","prev":"507e6e6c","type":"tree","sha":"bf6349c1"},{"path":"op","prev":"bf6349c1","type":"tree","sha":"515c337d"},{"path":"ex","prev":"515c337d","type":"tree","sha":"e6c560bc"},{"path":"practice","prev":"515c337d","type":"tree","sha":"f343e3a1"},{"path":"ExampleRun.java","prev":"e6c560bc","type":"blob","sha":"6c1f2adb"},{"path":"OpExample.java","prev":"e6c560bc","type":"blob","sha":"9ce4521c"},{"path":"OperatorPractice.java","prev":"f343e3a1","type":"blob","sha":"df6d6ec3"},{"path":"run","prev":"f343e3a1","type":"tree","sha":"c7f41175"},{"path":"PracticeRun.java","prev":"c7f41175","type":"blob","sha":"01a26d6a"}], branch=, ignore=, loadmapRegDate=Sat Jul 01 00:03:33 KST 2023)]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:16:01 [DEBUG] repo 전
+2023-07-01 00:16:01 [INFO] Return Value : fail
+2023-07-01 00:16:01 [INFO] Running Time : 522ms
+2023-07-01 00:16:01 [INFO] End : LoadmapServiceImpl - insertGit
+---------------------------------------------
+
+2023-07-01 00:16:59 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:16:59 [INFO] Return Value : null
+2023-07-01 00:16:59 [INFO] Running Time : 190ms
+2023-07-01 00:16:59 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:17:11 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:17:12 [INFO] Return Value : null
+2023-07-01 00:17:12 [INFO] Running Time : 126ms
+2023-07-01 00:17:12 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:17:13 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:17:13 [INFO] Return Value : null
+2023-07-01 00:17:13 [INFO] Running Time : 109ms
+2023-07-01 00:17:13 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:18:52 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:18:52 [INFO] Return Value : null
+2023-07-01 00:18:52 [INFO] Running Time : 137ms
+2023-07-01 00:18:52 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:19:12 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:19:12 [INFO] Return Value : null
+2023-07-01 00:19:12 [INFO] Running Time : 148ms
+2023-07-01 00:19:12 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:19:13 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:19:13 [INFO] Return Value : null
+2023-07-01 00:19:13 [INFO] Running Time : 102ms
+2023-07-01 00:19:13 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:19:28 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:19:28 [INFO] Return Value : null
+2023-07-01 00:19:28 [INFO] Running Time : 80ms
+2023-07-01 00:19:28 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:19:31 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:19:32 [INFO] Return Value : null
+2023-07-01 00:19:32 [INFO] Running Time : 117ms
+2023-07-01 00:19:32 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:19:40 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:19:40 [INFO] Return Value : null
+2023-07-01 00:19:40 [INFO] Running Time : 85ms
+2023-07-01 00:19:40 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:21:52 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:21:52 [INFO] Return Value : null
+2023-07-01 00:21:52 [INFO] Running Time : 95ms
+2023-07-01 00:21:52 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:21:58 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:21:58 [INFO] Return Value : null
+2023-07-01 00:21:58 [INFO] Running Time : 86ms
+2023-07-01 00:21:58 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:22:07 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - insertGit
+Parameter : [Loadmap(loadmapNo=48, workspaceNo=10, gitRepo=deokkeun, gitTree=[{"path":".settings","type":"tree","sha":"c5b2bf7a"},{"path":"org.eclipse.core.resources.prefs","prev":"c5b2bf7a","type":"blob","sha":"99f26c02"},{"path":"org.eclipse.jdt.core.prefs","prev":"c5b2bf7a","type":"blob","sha":"8c9943d5"},{"path":"src","type":"tree","sha":"5e154d9b"},{"path":"edu","prev":"5e154d9b","type":"tree","sha":"507e6e6c"},{"path":"kh","prev":"507e6e6c","type":"tree","sha":"bf6349c1"},{"path":"op","prev":"bf6349c1","type":"tree","sha":"515c337d"},{"path":"ex","prev":"515c337d","type":"tree","sha":"e6c560bc"},{"path":"practice","prev":"515c337d","type":"tree","sha":"f343e3a1"},{"path":"ExampleRun.java","prev":"e6c560bc","type":"blob","sha":"6c1f2adb"},{"path":"OpExample.java","prev":"e6c560bc","type":"blob","sha":"9ce4521c"},{"path":"OperatorPractice.java","prev":"f343e3a1","type":"blob","sha":"df6d6ec3"},{"path":"run","prev":"f343e3a1","type":"tree","sha":"c7f41175"},{"path":"PracticeRun.java","prev":"c7f41175","type":"blob","sha":"01a26d6a"}], branch=, ignore=, loadmapRegDate=Sat Jul 01 00:03:33 KST 2023)]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:22:07 [DEBUG] repo 전
+2023-07-01 00:22:08 [INFO] Return Value : fail
+2023-07-01 00:22:08 [INFO] Running Time : 677ms
+2023-07-01 00:22:08 [INFO] End : LoadmapServiceImpl - insertGit
+---------------------------------------------
+
+2023-07-01 00:22:41 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:22:41 [INFO] Return Value : null
+2023-07-01 00:22:41 [INFO] Running Time : 158ms
+2023-07-01 00:22:41 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:22:48 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - insertGit
+Parameter : [Loadmap(loadmapNo=48, workspaceNo=10, gitRepo=deokkeun, gitTree=[{"path":".settings","type":"tree","sha":"c5b2bf7a"},{"path":"org.eclipse.core.resources.prefs","prev":"c5b2bf7a","type":"blob","sha":"99f26c02"},{"path":"org.eclipse.jdt.core.prefs","prev":"c5b2bf7a","type":"blob","sha":"8c9943d5"},{"path":"src","type":"tree","sha":"5e154d9b"},{"path":"edu","prev":"5e154d9b","type":"tree","sha":"507e6e6c"},{"path":"kh","prev":"507e6e6c","type":"tree","sha":"bf6349c1"},{"path":"op","prev":"bf6349c1","type":"tree","sha":"515c337d"},{"path":"ex","prev":"515c337d","type":"tree","sha":"e6c560bc"},{"path":"practice","prev":"515c337d","type":"tree","sha":"f343e3a1"},{"path":"ExampleRun.java","prev":"e6c560bc","type":"blob","sha":"6c1f2adb"},{"path":"OpExample.java","prev":"e6c560bc","type":"blob","sha":"9ce4521c"},{"path":"OperatorPractice.java","prev":"f343e3a1","type":"blob","sha":"df6d6ec3"},{"path":"run","prev":"f343e3a1","type":"tree","sha":"c7f41175"},{"path":"PracticeRun.java","prev":"c7f41175","type":"blob","sha":"01a26d6a"}], branch=, ignore=, loadmapRegDate=Sat Jul 01 00:03:33 KST 2023)]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:22:48 [DEBUG] repo 전
+2023-07-01 00:22:48 [INFO] Return Value : fail
+2023-07-01 00:22:48 [INFO] Running Time : 485ms
+2023-07-01 00:22:48 [INFO] End : LoadmapServiceImpl - insertGit
+---------------------------------------------
+
+2023-07-01 00:26:14 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:26:14 [INFO] Return Value : null
+2023-07-01 00:26:14 [INFO] Running Time : 148ms
+2023-07-01 00:26:14 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:26:21 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - insertGit
+Parameter : [Loadmap(loadmapNo=48, workspaceNo=10, gitRepo=deokkeun, gitTree=[{"path":".settings","type":"tree","sha":"c5b2bf7a"},{"path":"org.eclipse.core.resources.prefs","prev":"c5b2bf7a","type":"blob","sha":"99f26c02"},{"path":"org.eclipse.jdt.core.prefs","prev":"c5b2bf7a","type":"blob","sha":"8c9943d5"},{"path":"src","type":"tree","sha":"5e154d9b"},{"path":"edu","prev":"5e154d9b","type":"tree","sha":"507e6e6c"},{"path":"kh","prev":"507e6e6c","type":"tree","sha":"bf6349c1"},{"path":"op","prev":"bf6349c1","type":"tree","sha":"515c337d"},{"path":"ex","prev":"515c337d","type":"tree","sha":"e6c560bc"},{"path":"practice","prev":"515c337d","type":"tree","sha":"f343e3a1"},{"path":"ExampleRun.java","prev":"e6c560bc","type":"blob","sha":"6c1f2adb"},{"path":"OpExample.java","prev":"e6c560bc","type":"blob","sha":"9ce4521c"},{"path":"OperatorPractice.java","prev":"f343e3a1","type":"blob","sha":"df6d6ec3"},{"path":"run","prev":"f343e3a1","type":"tree","sha":"c7f41175"},{"path":"PracticeRun.java","prev":"c7f41175","type":"blob","sha":"01a26d6a"}], branch=, ignore=, loadmapRegDate=Sat Jul 01 00:03:33 KST 2023)]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:26:22 [DEBUG] repo 전
+2023-07-01 00:26:22 [INFO] Return Value : fail
+2023-07-01 00:26:22 [INFO] Running Time : 605ms
+2023-07-01 00:26:22 [INFO] End : LoadmapServiceImpl - insertGit
+---------------------------------------------
+
+2023-07-01 00:26:46 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - insertGit
+Parameter : [Loadmap(loadmapNo=48, workspaceNo=10, gitRepo=deokkeun/01_WebFront, gitTree=[{"path":".settings","type":"tree","sha":"c5b2bf7a"},{"path":"org.eclipse.core.resources.prefs","prev":"c5b2bf7a","type":"blob","sha":"99f26c02"},{"path":"org.eclipse.jdt.core.prefs","prev":"c5b2bf7a","type":"blob","sha":"8c9943d5"},{"path":"src","type":"tree","sha":"5e154d9b"},{"path":"edu","prev":"5e154d9b","type":"tree","sha":"507e6e6c"},{"path":"kh","prev":"507e6e6c","type":"tree","sha":"bf6349c1"},{"path":"op","prev":"bf6349c1","type":"tree","sha":"515c337d"},{"path":"ex","prev":"515c337d","type":"tree","sha":"e6c560bc"},{"path":"practice","prev":"515c337d","type":"tree","sha":"f343e3a1"},{"path":"ExampleRun.java","prev":"e6c560bc","type":"blob","sha":"6c1f2adb"},{"path":"OpExample.java","prev":"e6c560bc","type":"blob","sha":"9ce4521c"},{"path":"OperatorPractice.java","prev":"f343e3a1","type":"blob","sha":"df6d6ec3"},{"path":"run","prev":"f343e3a1","type":"tree","sha":"c7f41175"},{"path":"PracticeRun.java","prev":"c7f41175","type":"blob","sha":"01a26d6a"}], branch=master, ignore=, loadmapRegDate=Sat Jul 01 00:03:33 KST 2023)]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:26:46 [DEBUG] repo 전
+2023-07-01 00:26:47 [DEBUG] repo = GHRepository@4eba5719[nodeId=R_kgDOI7KQ4g,description=<null>,homepage=<null>,name=01_WebFront,license=<null>,fork=false,archived=false,disabled=false,visibility=public,size=252,milestones={},language=HTML,commits={},source=<null>,parent=<null>,isTemplate=false,compareUsePaginatedCommits=false,url=https://api.github.com/repos/deokkeun/01_WebFront,id=598905058,nodeId=<null>,createdAt=2023-02-08T03:14:27Z,updatedAt=2023-02-08T03:15:01Z]
+2023-07-01 00:26:47 [DEBUG] treeList = [org.kohsuke.github.GHTreeEntry@72cbcf06, org.kohsuke.github.GHTreeEntry@c82b9e3, org.kohsuke.github.GHTreeEntry@52512c14, org.kohsuke.github.GHTreeEntry@4e4fabd8, org.kohsuke.github.GHTreeEntry@6250fee8]
+2023-07-01 00:26:48 [DEBUG] makeGitTree 수행 후 = GHRepository@4eba5719[nodeId=R_kgDOI7KQ4g,description=<null>,homepage=<null>,name=01_WebFront,license=<null>,fork=false,archived=false,disabled=false,visibility=public,size=252,milestones={},language=HTML,commits={},source=<null>,parent=<null>,isTemplate=false,compareUsePaginatedCommits=false,url=https://api.github.com/repos/deokkeun/01_WebFront,id=598905058,nodeId=<null>,createdAt=2023-02-08T03:14:27Z,updatedAt=2023-02-08T03:15:01Z]
+2023-07-01 00:26:48 [DEBUG] getCommitFileShaListGHRepository@4eba5719[nodeId=R_kgDOI7KQ4g,description=<null>,homepage=<null>,name=01_WebFront,license=<null>,fork=false,archived=false,disabled=false,visibility=public,size=252,milestones={},language=HTML,commits={},source=<null>,parent=<null>,isTemplate=false,compareUsePaginatedCommits=false,url=https://api.github.com/repos/deokkeun/01_WebFront,id=598905058,nodeId=<null>,createdAt=2023-02-08T03:14:27Z,updatedAt=2023-02-08T03:15:01Z]
+2023-07-01 00:26:49 [DEBUG] gitCommit = GitCommit [commitNo=0, loadmapNo=0, login=deokkeun, message=javascript update, commitDate=Mon Feb 27 14:07:35 KST 2023, files=["03_JAVASCRIPT"], regDate=null]
+2023-07-01 00:26:49 [DEBUG] LoadmapServiceImpl loadmap 추가 = Loadmap(loadmapNo=48, workspaceNo=10, gitRepo=deokkeun/01_WebFront, gitTree=[{"path":"01_HTML","type":"tree","sha":"7d42d614"},{"path":"01_글자관련태그.html","prev":"7d42d614","type":"blob","sha":"e1e0f022"},{"path":"02_목록관련태그.html","prev":"7d42d614","type":"blob","sha":"22d0907d"},{"path":"03_글자,목록태그 연습문제.html","prev":"7d42d614","type":"blob","sha":"b2639f4f"},{"path":"04_표관련태그.html","prev":"7d42d614","type":"blob","sha":"99e40d76"},{"path":"05_표연습문제.html","prev":"7d42d614","type":"blob","sha":"e0a887d3"},{"path":"06_영역관련태그.html","prev":"7d42d614","type":"blob","sha":"098c3200"},{"path":"07_이미지관련태그.html","prev":"7d42d614","type":"blob","sha":"211f3fe4"},{"path":"08_하이퍼링크관련태그.html","prev":"7d42d614","type":"blob","sha":"6f93bff7"},{"path":"09_입력관련태그.html","prev":"7d42d614","type":"blob","sha":"53ce3743"},{"path":"1.html","prev":"7d42d614","type":"blob","sha":"56efbdba"},{"path":"2.html","prev":"7d42d614","type":"blob","sha":"56efbdba"},{"path":"3.html","prev":"7d42d614","type":"blob","sha":"87c8c08e"},{"path":"text.css","prev":"7d42d614","type":"blob","sha":"e69de29b"},{"path":"수정이.html","prev":"7d42d614","type":"blob","sha":"ccf2d2bc"},{"path":"image","type":"tree","sha":"7827e46c"},{"path":"1.avif","prev":"7827e46c","type":"blob","sha":"66068b23"},{"path":"10.png","prev":"7827e46c","type":"blob","sha":"a7481f87"},{"path":"2.jpg","prev":"7827e46c","type":"blob","sha":"5407f61c"},{"path":"3.jpg","prev":"7827e46c","type":"blob","sha":"6b74a7a1"},{"path":"4.jpg","prev":"7827e46c","type":"blob","sha":"fb516848"},{"path":"5.jpg","prev":"7827e46c","type":"blob","sha":"de440902"},{"path":"6.jpg","prev":"7827e46c","type":"blob","sha":"49dfa195"},{"path":"7.jpg","prev":"7827e46c","type":"blob","sha":"a40c40b5"},{"path":"8.jpg","prev":"7827e46c","type":"blob","sha":"ebf74fea"},{"path":"9.png","prev":"7827e46c","type":"blob","sha":"7b8da650"},{"path":"git.png","prev":"7827e46c","type":"blob","sha":"7eb3ac77"},{"path":"단비.jpg","prev":"7827e46c","type":"blob","sha":"24c9b9c4"},{"path":"이현경 로고 디자인 최종.png","prev":"7827e46c","type":"blob","sha":"53aa9cee"},{"path":"images","type":"tree","sha":"21857ae9"},{"path":"check.png","prev":"21857ae9","type":"blob","sha":"70f95f4d"}], branch=master, ignore=, loadmapRegDate=Sat Jul 01 00:03:33 KST 2023)
+2023-07-01 00:26:49 [INFO] Return Value : complete
+2023-07-01 00:26:49 [INFO] Running Time : 3727ms
+2023-07-01 00:26:49 [INFO] End : LoadmapServiceImpl - insertGit
+---------------------------------------------
+
+2023-07-01 00:26:51 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectLoadmap
+Parameter : [10]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:26:51 [INFO] Return Value : Loadmap(loadmapNo=49, workspaceNo=10, gitRepo=deokkeun/01_WebFront, gitTree=[{"path":"01_HTML","type":"tree","sha":"7d42d614"},{"path":"01_글자관련태그.html","prev":"7d42d614","type":"blob","sha":"e1e0f022"},{"path":"02_목록관련태그.html","prev":"7d42d614","type":"blob","sha":"22d0907d"},{"path":"03_글자,목록태그 연습문제.html","prev":"7d42d614","type":"blob","sha":"b2639f4f"},{"path":"04_표관련태그.html","prev":"7d42d614","type":"blob","sha":"99e40d76"},{"path":"05_표연습문제.html","prev":"7d42d614","type":"blob","sha":"e0a887d3"},{"path":"06_영역관련태그.html","prev":"7d42d614","type":"blob","sha":"098c3200"},{"path":"07_이미지관련태그.html","prev":"7d42d614","type":"blob","sha":"211f3fe4"},{"path":"08_하이퍼링크관련태그.html","prev":"7d42d614","type":"blob","sha":"6f93bff7"},{"path":"09_입력관련태그.html","prev":"7d42d614","type":"blob","sha":"53ce3743"},{"path":"1.html","prev":"7d42d614","type":"blob","sha":"56efbdba"},{"path":"2.html","prev":"7d42d614","type":"blob","sha":"56efbdba"},{"path":"3.html","prev":"7d42d614","type":"blob","sha":"87c8c08e"},{"path":"text.css","prev":"7d42d614","type":"blob","sha":"e69de29b"},{"path":"수정이.html","prev":"7d42d614","type":"blob","sha":"ccf2d2bc"},{"path":"image","type":"tree","sha":"7827e46c"},{"path":"1.avif","prev":"7827e46c","type":"blob","sha":"66068b23"},{"path":"10.png","prev":"7827e46c","type":"blob","sha":"a7481f87"},{"path":"2.jpg","prev":"7827e46c","type":"blob","sha":"5407f61c"},{"path":"3.jpg","prev":"7827e46c","type":"blob","sha":"6b74a7a1"},{"path":"4.jpg","prev":"7827e46c","type":"blob","sha":"fb516848"},{"path":"5.jpg","prev":"7827e46c","type":"blob","sha":"de440902"},{"path":"6.jpg","prev":"7827e46c","type":"blob","sha":"49dfa195"},{"path":"7.jpg","prev":"7827e46c","type":"blob","sha":"a40c40b5"},{"path":"8.jpg","prev":"7827e46c","type":"blob","sha":"ebf74fea"},{"path":"9.png","prev":"7827e46c","type":"blob","sha":"7b8da650"},{"path":"git.png","prev":"7827e46c","type":"blob","sha":"7eb3ac77"},{"path":"단비.jpg","prev":"7827e46c","type":"blob","sha":"24c9b9c4"},{"path":"이현경 로고 디자인 최종.png","prev":"7827e46c","type":"blob","sha":"53aa9cee"},{"path":"images","type":"tree","sha":"21857ae9"},{"path":"check.png","prev":"21857ae9","type":"blob","sha":"70f95f4d"}], branch=master, ignore=null, loadmapRegDate=Sat Jul 01 00:26:49 KST 2023)
+2023-07-01 00:26:51 [INFO] Running Time : 117ms
+2023-07-01 00:26:51 [INFO] End : LoadmapServiceImpl - selectLoadmap
+---------------------------------------------
+
+2023-07-01 00:26:51 [INFO] ---------------------------------------
+Start : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+Parameter : [49]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-07-01 00:26:52 [INFO] Return Value : [GitCommit [commitNo=48, loadmapNo=49, login=deokkeun, message=javascript update, commitDate=Mon Feb 27 14:07:35 KST 2023, files=["03_JAVASCRIPT"], regDate=Sat Jul 01 00:26:50 KST 2023]]
+2023-07-01 00:26:52 [INFO] Running Time : 93ms
+2023-07-01 00:26:52 [INFO] End : LoadmapServiceImpl - selectGitCommitListByLoadmapNo
+---------------------------------------------
+
+2023-07-01 00:33:52 [INFO] 초기화 필터 파괴
+>>>>>>> dev

@@ -105,7 +105,7 @@ public class LoadmapServiceImpl implements LoadmapService{
 	}
 
 
-	/** 저장소 정보 불러오기
+	/** 저장소 정보 불러오기(************** 토큰값 **************)
 	 * @param loadmap
 	 * @return
 	 * @throws IOException
@@ -262,6 +262,9 @@ public class LoadmapServiceImpl implements LoadmapService{
 	@Override
 	public GitCommit selectNewCommitList(Loadmap loadmap) {
 
+		logger.debug("selectNewCommitList 1번 ajax= " + loadmap);
+		
+		
 		GitCommit gitCommit = null;
 
 		try {

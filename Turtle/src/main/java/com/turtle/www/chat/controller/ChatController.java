@@ -21,7 +21,7 @@ import com.turtle.www.chat.model.vo.ChatRoom;
 import com.turtle.www.member.model.vo.Member;
 import com.turtle.www.projectMember.model.service.ProjectMemberService;
 
-@SessionAttributes({"loginMember", "chatRoomNo"})
+@SessionAttributes({"loginMember", "chatRoomNo", "chatRoomList", "pmNo", "projectNo"})
 @RequestMapping("/chat")
 @Controller
 public class ChatController {
@@ -55,6 +55,7 @@ public class ChatController {
 		List<ChatRoom> chatRoomList = cService.selectChatRoomList(map);
 		
 		model.addAttribute("chatRoomList", chatRoomList);
+		model.addAttribute("projectNo", projectNo);
 		
 		//워크스페이스 채팅방 리스트 조회		
 		//개인 채팅방용 프로젝트 멤버 조회
