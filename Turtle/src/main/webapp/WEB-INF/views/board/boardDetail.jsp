@@ -5,6 +5,7 @@
 
 <c:set var="memberName" value="${loginMember.memberName}" />
 <c:set var="profileImage" value="${loginMember.profileImage}"/>
+<c:set var="memberNo" value="${loginMember.memberNo}"/>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -116,6 +117,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
     <script>    
 
+        const memberNo = "${memberNo}";
         const boardNo = "${board.boardNo}";
     	const pmNo = "${pmNo}";
     	const projectNo = "${projectNo}";
@@ -142,6 +144,8 @@
         let boardListSock = new SockJS(contextPath+"/boardList");
 		// 캘린더 연동용 sock
         let calendarSock = new SockJS(contextPath+"/calendar");
+        // 알람용 sock
+        let alertSock = new SockJS(contextPath+"/alert");
     </script>
     
     <!-- boardDetail.js 연결 -->

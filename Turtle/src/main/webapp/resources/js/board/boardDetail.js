@@ -150,6 +150,7 @@ deleteBoardDetailSock.onmessage = function(e) {
     $(".updateDate").html(currentTime());
 };
 
+
 // 이벤트 날짜 변경 웹소켓
 updateEventDateSock.onmessage = function(e) {
     const changedBoardInfo = JSON.parse(e.data);
@@ -160,17 +161,18 @@ updateEventDateSock.onmessage = function(e) {
     $(".eventStartDate").val(changedBoardInfo.eventStartDate);
     $(".eventEndDate").val(changedBoardInfo.eventEndDate);
 
-    let addEvent = {
-        "pmNo" : pmNo,// 프로젝트 멤버 번호
-        "workspaceNo" : workspaceNo,// 워크스페이스 번호
-        "calTitle" : $(".boardTitle").html(),// 캘린더 제목
-        "calContent" : "", // 캘린더 내용
-        "calColor" : '#1A73E8',// 배경 색상
-        "startDate" : changedBoardInfo.eventStartDate, // 일정 시작일
-        "endDate" : changedBoardInfo.eventStartDate,// 일정 종료일
-        "calSt" : "N" // 일정 삭제 여부
-      }
-
+        let addEvent = {
+            "pmNo" : pmNo,// 프로젝트 멤버 번호
+            "workspaceNo" : workspaceNo,// 워크스페이스 번호
+            "calTitle" : $(".boardTitle").html(),// 캘린더 제목
+            "calContent" : "", // 캘린더 내용
+            "calColor" : '#1A73E8',// 배경 색상
+            "startDate" : changedBoardInfo.eventStartDate, // 일정 시작일
+            "endDate" : changedBoardInfo.eventEndDate,// 일정 종료일
+            "calSt" : "N", // 일정 삭제 여부
+            "boardNo" : boardNo
+        }
+      
       console.log(addEvent);
       console.log(JSON.stringify(addEvent));
     calendarSock.send( JSON.stringify(addEvent));
@@ -184,6 +186,19 @@ boardListSock.onmessage = function(e) {
     $(".updateMemberImage").attr("src", contextPath + changedBoardInfo.updateProfileImg);
     $(".updateMemberName").html(changedBoardInfo.updateMemberName);
     $(".updateDate").html(currentTime());
+
+    let alert = {
+        "projectNo" : projectNo,
+        "memberNo" : memberNo,
+        "alertContent" : "님이 게시글을 수정하였습니다.",
+        "link" : contextPath + "/board/boardDetail/" + projectNo + "/" + workspaceNo + "/" + boardNo,
+        "memberName" : memberName
+    }
+
+    console.log(alert);
+    console.log(JSON.stringify(alert));
+
+    alertSock.send( JSON.stringify(alert) );
 }
 
 // 마우스 오버 함수

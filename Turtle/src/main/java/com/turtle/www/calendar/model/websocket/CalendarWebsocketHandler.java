@@ -52,6 +52,7 @@ public class CalendarWebsocketHandler extends TextWebSocketHandler{
 		ObjectMapper objectMapper = new ObjectMapper();
 				
 		Calendar calendar = objectMapper.readValue(message.getPayload(), Calendar.class);
+		System.out.println(calendar);
 				
 		// 일정 삭제 요청 시
 		if(calendar.getCalSt().equals("Y")) {
@@ -159,7 +160,7 @@ public class CalendarWebsocketHandler extends TextWebSocketHandler{
 					
 					// 추가 일정 DB삽입
 					int result = service.calendarAddEvent(calendar);
-						
+					System.out.println("뿅" + result);	
 						if(result > 0) {		
 							// 같은 방에 접속 중인 클라이언트에게만 메세지 보내기
 							// -> Set<WebSocketSession>에서 같은방 클라이언트만 골라내기
