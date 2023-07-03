@@ -60,9 +60,6 @@
 	
 	<!-- 캘린더 일정 수정 -->
 	<update id="calendarUpdateEvent">
-		<choose>
-			<!-- 게시판 일정 수정 -->
-			<when test="boardNo != 0">
 				UPDATE CALENDAR
 				SET CAL_TITLE = #{calTitle},
 				CAL_CONTENT = #{calContent},
@@ -70,32 +67,25 @@
 				CAL_REG_DATE = SYSDATE,
 				START_DATE = #{startDate},
 				END_DATE = #{endDate}
-				WHERE CAL_NO = ${calNo}
-				AND PM_NO = ${pmNo}
+				WHERE PM_NO = ${pmNo}
 				AND WORKSPACE_NO = ${workspaceNo}
 				AND CAL_ST = #{calSt}
+		<!-- 게시판 일정 수정 -->
+		<choose>
+				<!-- 게시판 일정 수정 -->
+			<when test="boardNo != 0">
 				AND BOARD_NO = #{boardNo}
 			</when>
 			<!-- 캘린더 일정 수정 -->
 			<otherwise>
-				UPDATE CALENDAR
-				SET CAL_TITLE = #{calTitle},
-				CAL_CONTENT = #{calContent},
-				CAL_COLOR = #{calColor},
-				CAL_REG_DATE = SYSDATE,
-				START_DATE = #{startDate},
-				END_DATE = #{endDate}
-				WHERE CAL_NO = ${calNo}
-				AND PM_NO = ${pmNo}
-				AND WORKSPACE_NO = ${workspaceNo}
-				AND CAL_ST = #{calSt}
+				CAL_NO = ${calNo}
 			</otherwise>
 		</choose>
 	</update>
 	
 	
-	<select id="selectBoardCalendar">
-		SELECT * FROM CALENDAR c WHERE BOARD_NO = ${boardNo}
+	<select id="selectBoardCalendar" resultType="_int">
+		SELECT COUNT(*) FROM CALENDAR c WHERE BOARD_NO = ${boardNo} AND CAL_ST = 'N'
 	</select>
 
 </mapper>
