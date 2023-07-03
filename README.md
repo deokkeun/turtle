@@ -120,10 +120,10 @@
 ✅ 메인 화면
 
 💡 화면 설명 :
-화면 돌아가는 방식 설명
+      화면 돌아가는 방식 설명
 
-💡 기능 설명 :
-    사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
+💡 기능 설명 :  
+      사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
 ```
 <a href="" Style="text-decoration: none; color: #1A73E8;">main 클래스 구현 바로가기</a>
 
@@ -141,10 +141,10 @@
 ✅ 프로젝트 생성(팀원 초대)
 
 💡 화면 설명 :
-화면 돌아가는 방식 설명
+      화면 돌아가는 방식 설명
 
 💡 기능 설명 :
- 사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
+      사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
 ```
 <a href="" Style="text-decoration: none; color: #1A73E8;">ㅁㅁㅁ 클래스 구현 바로가기</a>
 
@@ -163,10 +163,10 @@
 ✅ 워크스페이스 생성
 
 💡 화면 설명 :
-화면 돌아가는 방식 설명
+      화면 돌아가는 방식 설명
 
 💡 기능 설명 :
- 사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
+      사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
 ```
 <a href="" Style="text-decoration: none; color: #1A73E8;">ㅁㅁㅁ 클래스 구현 바로가기</a>
 
@@ -184,10 +184,10 @@
 ✅ 실시간 채팅
 
 💡 화면 설명 :
-화면 돌아가는 방식 설명
+      화면 돌아가는 방식 설명
 
 💡 기능 설명 :
- 사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
+      사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
 ```
 <a href="" Style="text-decoration: none; color: #1A73E8;">ㅁㅁㅁ 클래스 구현 바로가기</a>
 
@@ -205,10 +205,10 @@
 ✅ 공유 게시판
 
 💡 화면 설명 :
-화면 돌아가는 방식 설명
+      화면 돌아가는 방식 설명
 
 💡 기능 설명 :
- 사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
+      사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
 ```
 <a href="" Style="text-decoration: none; color: #1A73E8;">ㅁㅁㅁ 클래스 구현 바로가기</a>
 
@@ -226,10 +226,10 @@
 ✅ (공유/개인) 메모장
 
 💡 화면 설명 :
-화면 돌아가는 방식 설명
+      화면 돌아가는 방식 설명
 
 💡 기능 설명 :
- 사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
+      사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
 ```
 <a href="" Style="text-decoration: none; color: #1A73E8;">ㅁㅁㅁ 클래스 구현 바로가기</a>
 
@@ -247,10 +247,10 @@
 ✅ (공유일정/게시판연동) 캘린더
 
 💡 화면 설명 :
-화면 돌아가는 방식 설명
+      화면 돌아가는 방식 설명
 
 💡 기능 설명 :
- 사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
+      사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
 ```
 <a href="" Style="text-decoration: none; color: #1A73E8;">ㅁㅁㅁ 클래스 구현 바로가기</a>
 
@@ -268,10 +268,10 @@
 ✅ (공유일정/게시판연동) 캘린더
 
 💡 화면 설명 :
-화면 돌아가는 방식 설명
+      화면 돌아가는 방식 설명
 
 💡 기능 설명 :
- 사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
+      사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
 ```
 <a href="" Style="text-decoration: none; color: #1A73E8;">ㅁㅁㅁ 클래스 구현 바로가기</a>
 
@@ -291,10 +291,10 @@
 ✅ 깃 로드맵
 
 💡 화면 설명 :
-화면 돌아가는 방식 설명
+      화면 돌아가는 방식 설명
 
 💡 기능 설명 :
- 사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
+      사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
 ```
 <a href="" Style="text-decoration: none; color: #1A73E8;">ㅁㅁㅁ 클래스 구현 바로가기</a>
 
@@ -312,10 +312,10 @@
 ✅ 결제(PortOne - KG inicis)
 
 💡 화면 설명 :
-화면 돌아가는 방식 설명
+      화면 돌아가는 방식 설명
 
 💡 기능 설명 :
- 사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
+      사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
 ```
 <a href="" Style="text-decoration: none; color: #1A73E8;">ㅁㅁㅁ 클래스 구현 바로가기</a>
 
