@@ -9,13 +9,11 @@
     box-shadow: 3px 4px 5px 3px #d9d9d9;
     border-radius: 10px;
     /* background-color: grey; */
- }
+}
 
 
 
-/*-----------------------팀 -----------------------*/
 
- 
 /* 팀 메모 영역 */
 .team {
     display: grid;
@@ -23,6 +21,16 @@
     width: 50%;
     gap: 5px;
    /*  background-color: green; */
+}
+
+
+/* 개인 메모 영역 */
+.solo {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, 48.5%); */
+    width: 50%;
+    gap: 5px;
+   /*  background-color:thistle; */
 }
 
 
@@ -45,32 +53,8 @@
     /* background-color: greenyellow; */
 }
 
-
-/* 팀 메모지 전체 */
-.workspace {
-    display:grid;
-    height: 280px;
-    width:100%;
-    box-shadow : rgba(0,0,0,0.26);
-    /* background-color : rgb(254, 225, 130); */
-} 
-
-/*----------------------- 개인 -----------------------*/
-
-
-/* 개인 메모지 전체 */
-.solo {
-    display: grid;
-    /* grid-template-columns: repeat(auto-fill, 48.5%); */
-    width: 50%;
-    gap: 5px;
-   /*  background-color:thistle; */
-}
-
-
-/* 개인 메모지 전체 */
-.personal {
-    display:grid;
+.memoDetail {
+	display:grid;
     /* width: 300px; */
     height: 280px;
     width: 100%;
@@ -78,13 +62,18 @@
    /* background-color : #9FDFEB; */
 }
 
+.memoInfo {
+	height: 30px;
+	
+}
 
-/******************** 메모지 속성 부분 ******************/
+.profile-image > img {
+	width: 20px;
+	height: 20px;
+}
 
-
-/* 메모 입력칸 */
 .memoContent {
-    /* display: flex; */
+	 /* display: flex; */
     /* flex-basis: 78%; */
     height:205px;
     padding: 8px;
@@ -99,14 +88,14 @@
 /* 
 .memoContent:focus {
 	outline: none;
-}
+} */
 
-.memoContent.ellipsis {
+
+/* .memoContent.ellipsis {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: normal;
 } */
-
 
 /* 메모 글자수 카운트 */
 .memoDetail > p {
@@ -122,13 +111,14 @@ p > #counter {
     color: grey;
     font-size: 12px;
     text-align: end;
-    /* padding-right: 8px; */
+    /* padding-right: 8px; */	
 }
 
 /* 부트스트랩 p설정 해제 */
 p { 
     margin-bottom : 0rem;
 }
+
 
 
 /* 사용자 정보 */
@@ -184,27 +174,3 @@ p {
     position: absolute;
 }
 
-
-/* 
-.memoDetail {
-	width: 200px;
-	height: 230px;
-	margin-right: 5px;
-} */
-
-/* .memoInfo {
-	height: 30px;
-	
-} */
-
-/* .profile-image > img {
-	width: 20px;
-	height: 20px;
-} */
-
-/* .memoContent {
-  
-  height: 200px;
-  
-  overflow: hidden;
-} */

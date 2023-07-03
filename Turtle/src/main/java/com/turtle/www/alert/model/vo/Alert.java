@@ -14,17 +14,14 @@ import lombok.ToString;
 public class Alert {
 
 	private int alertNo;
-	private int workspaceNo;
-	private int pmNo;
-	private String alertSection;
-	private String alertType;
+	private String alertContent;
+	private int projectNo;
+	private int memberNo;
 	private Date alertRegDate;
 	private String alertCheckFg;
 	private String link;
 	
-	private String projectName;
-	private int projectNo;
-	private String workspaceName;
+	private String projectName;	
 	private String memberName;
 	
 }

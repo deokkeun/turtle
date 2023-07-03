@@ -149,15 +149,17 @@ $('.uc-btn').on('click', function() {
         for(let i =0; i<e.length; i++) {
             arr[i] = e[i].getAttribute('id');
         }
+        console.log(arr);
+        console.log("데이터 전송??");
 
     $.ajax({
 
         url : "inviteMember",
-        data: JSON.stringify(arr),
+        // data: { arr: arr.join(",") },
+        data: { selectEmail: arr },
+        traditional: true, // 배열 파라미터를 전송할 때 필요한 옵션
         type : "POST",
-        contentType: "application/json",
         success: function(){
-
             console.log("초대 멤버 이메일 데이터 전송 성공")
         },
         error : function(request, status, error) {

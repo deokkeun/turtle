@@ -214,22 +214,12 @@
 
 
 
-
-
-
-
-
-
         <!-- 워크스페이스 추가 section -->
         <form action="selectedWorkspace" method="post">
-            <div class="workspace">
-            
-         
-
-            
-            </div>
+            <div class="workspace"></div>
         </form>
-        <a class="plus-btn"><i class="fa-solid fa-circle-plus"></i></a>
+        
+        <a class="plus-btn"><i class="fa-solid fa-circle-plus"> 템플릿 추가</i></a>
         <div class="pop">
             <div class="pop-content">
                 <div class="pop-content2">
@@ -259,7 +249,6 @@
                     
                 </div>
 
-            
                 <div class="pop-content2">
                     <div><img src="${contextPath}/resources/images/createWorkspace/깃 로드맵.png" width="130px"></div>
                     <div class="content-name">
