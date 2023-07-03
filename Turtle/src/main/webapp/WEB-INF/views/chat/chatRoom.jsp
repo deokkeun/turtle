@@ -24,6 +24,8 @@
 		<!-- 채팅입력한 멤버와 로그인멤버가 다를 경우 프로필 이미지하고 같이 출력, 같을경우는 채팅내용과 시간만 출력 -->
 	<div id="back-area">
 		<button class="btn btn-outline-danger" id="back-btn"><i class="fa-solid fa-bars"></i></button>
+		<div><span>${chatRoomTitle}</span></div>
+		<div></div>
 	</div>
 	
 	<div class="chatting-area">
