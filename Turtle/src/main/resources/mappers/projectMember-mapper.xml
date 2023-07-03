@@ -24,21 +24,26 @@
 	</select>
 	
 	
-	<select id="selectMemberNo" resultType="string">
+	<select id="selectMemberNo" resultType="_int">
 		SELECT MEMBER_NO
 		FROM MEMBER
 		WHERE MEMBER_EMAIL = #{memberEmail}
 		AND MEMBER_DELETE_FG = 'N'
 	</select>
 	
-	<insert id="insertProjectMember" >
-		INSERT INTO PROJECT_MEMBER VALUES(
-			SEQ_PROJECT_MEMBER_NO_S.NEXTVAL,
-			#{projectNo},
-			#{memberNo},
-			DEFAULT,
-			DEFAULT,
-			DEFAULT
-		)
+	<insert id="insertProjectMember" parameterType="projectMember" useGeneratedKeys="true">
+	
+		<selectKey keyProperty="pmNo" resultType="_int" order="BEFORE">
+ 			SELECT SEQ_PM_NO.NEXTVAL FROM DUAL
+ 		</selectKey>
+ 		
+			INSERT INTO PROJECT_MEMBER VALUES(
+				#{pmNo},
+				#{projectNo},
+				#{memberNo},
+				DEFAULT,
+				DEFAULT,
+				DEFAULT
+			)
 	</insert>
 </mapper>

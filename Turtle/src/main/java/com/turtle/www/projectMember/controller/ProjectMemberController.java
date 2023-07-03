@@ -17,6 +17,7 @@ import org.springframework.http.MediaType;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,7 +35,7 @@ import com.turtle.www.projectMember.model.vo.ProjectMember;
 
 @Controller
 @RequestMapping("/project")
-@SessionAttributes({"loginMember"})
+@SessionAttributes({"loginMember", "project", "pmEmail"})
 public class ProjectMemberController {
 	
 	private Logger logger = LoggerFactory.getLogger(ProjectMemberController.class);
@@ -78,21 +79,16 @@ public class ProjectMemberController {
 	// , consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE}
 	@PostMapping(value = "/inviteMember", produces="text/plain;charset=UTF-8" )
 	public String inviteMember(HttpSession session,
-//						@RequestParam(value="selectEmail") String[] selectEmail
 						@RequestParam(value="selectEmail", required=false) List<String> selectEmail
 								) {
 		
 		logger.info("프로젝트멤버 초대");
 		
-//		logger.info("두번쨰 메일:" + selectEmail[1].toString());
 		
 		Project project = (Project)session.getAttribute("project");
 		
 		String inviteCode = project.getInviteCode();
 		
-//		String[] selectEmail = request.getParameterValues("selectEmail");
-		
-//		List<String> emailList = Arrays.asList(selectEmail);
 		
 		if(selectEmail != null) {
 			
@@ -100,7 +96,7 @@ public class ProjectMemberController {
 				
 				logger.info(toMail);
 				
-			    String acceptLink = "http://localhost:8080/project/inviteMember/" + toMail + "/" + inviteCode + "/accept";
+			    String acceptLink = "http://localhost:8080/www/project/inviteMember/" + toMail + "/" + inviteCode + "/accept";
 			    String rejectLink = "http://localhost:8080/project/inviteMember/" + toMail + "/" + inviteCode + "/reject";
 			    String acceptButton = "<a href=\"" + acceptLink + "\">수락</a>";
 			    String rejectButton = "<a href=\"" + rejectLink + "\">거절</a>";
@@ -136,13 +132,6 @@ public class ProjectMemberController {
 		            helper.setText(content,true);
 		            mailSender.send(message);
 		            
-	//	            Map<String, Object> map = new HashMap<>();
-	//	            map.put("memberEmail", memberEmail);
-	//	            map.put("inviteCode", inviteCode);
-		            
-		            // 인증번호를 받은 이메일, 인증번호, 인증번호 발급 시간  -> DB 삽입
-	//	            result = service.insertCertification(map);
-	
 		         
 		        }catch(Exception e) {
 		            e.printStackTrace();
@@ -156,9 +145,18 @@ public class ProjectMemberController {
 
 	
 	@GetMapping("/inviteMember/{memberEmail}/{inviteCode}/accept")
-	public String acceptInvitation(@PathVariable("inviteCode") String inviteCode,
+	public void acceptInvitation(HttpSession session,  @PathVariable("memberEmail") String memberEmail,
+            Model model) { 
+		
+	    Project project = (Project) session.getAttribute("project");
+		acceptPostInvitation(project.getInviteCode(), memberEmail, session, model);
+		
+	}
+	
+	@PostMapping("/inviteMember/{memberEmail}/{inviteCode}/accept")
+	public String acceptPostInvitation(@PathVariable("inviteCode") String inviteCode,
 	                               @PathVariable("memberEmail") String memberEmail,
-	                               HttpSession session) {
+	                               HttpSession session, Model model) {
 	    logger.info("초대메일 수락");
 	    
 	    // 초대 수락 동작 처리
@@ -169,20 +167,27 @@ public class ProjectMemberController {
 	    // shared project에 추가
 	    
 	    Project project = (Project) session.getAttribute("project");
+	    model.addAttribute("project", project);
+	    model.addAttribute("pmEmail", memberEmail);
 	    
 	    int memberNo = service.selectMemberNo(memberEmail);
 	    
-	    ProjectMember pm = new ProjectMember();
-	    pm.setProjectNo(project.getProjectNo());
-	    pm.setMemberNo(memberNo);
+	    String path = "redirect:/project/inviteForm";
 	    
-	    int result = service.insertProjectMember(pm);
+	    	ProjectMember pm = new ProjectMember();
+	    	pm.setProjectNo(project.getProjectNo());
+	    	pm.setMemberNo(memberNo);
+	    	
+	    	int result = service.insertProjectMember(pm);
+	    	
+	    	if (result > 0) {
+	    		logger.info("pm 삽입 성공");
+	    	}
+	    	
+	    	// 경로 + 이미 있으면 삽입 x
+	    	
+	    return path; 
 	    
-	    if (result > 0) {
-	        logger.info("pm 삽입 성공");
-	    }
-	    
-	    return "redirect:/"; 
 	}
 
 

@@ -1,6 +1,7 @@
 package com.turtle.www.project.model.service;
 
 import com.turtle.www.project.model.vo.Project;
+import com.turtle.www.projectMember.model.vo.ProjectMember;
 
 
 public interface ProjectService {
@@ -10,5 +11,7 @@ public interface ProjectService {
 	 * @return
 	 */
 	int createProject(Project project);
+
+	void insertPmManager(ProjectMember pm);
 
 }

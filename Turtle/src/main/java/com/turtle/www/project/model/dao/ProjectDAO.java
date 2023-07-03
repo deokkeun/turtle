@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.turtle.www.project.model.vo.Project;
+import com.turtle.www.projectMember.model.vo.ProjectMember;
 
 @Repository
 public class ProjectDAO {
@@ -16,6 +17,12 @@ public class ProjectDAO {
 	public int createProject(Project project) {
 		
 		return sqlSession.insert("projectMapper.createProject", project);
+	}
+
+
+	public void insertPmManager(ProjectMember pm) {
+		sqlSession.insert("projectMapper.insertPmManager", pm);
+		
 	}
 
 }

@@ -28,4 +28,21 @@
 			)
 	
 	</insert> 
+	
+	<insert id="insertPmManager" parameterType="projectMember" useGeneratedKeys="true">
+
+	<selectKey keyProperty="pmNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_PM_NO.NEXTVAL FROM DUAL
+		</selectKey>
+		
+		INSERT INTO PROJECT_MEMBER VALUES(
+			#{pmNo},
+			#{projectNo},
+			#{memberNo},
+			DEFAULT,
+			'Y',
+			DEFAULT
+		)
+	</insert>
+	
 </mapper>
