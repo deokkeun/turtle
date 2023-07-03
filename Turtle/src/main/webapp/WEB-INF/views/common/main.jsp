@@ -80,8 +80,6 @@
         <!-- calendar -->
         <div id='calendar-main'></div>
         
-        
-        
         <!--  메모장 -->
         <jsp:include page="/WEB-INF/views/workspace/memo.jsp" />
         

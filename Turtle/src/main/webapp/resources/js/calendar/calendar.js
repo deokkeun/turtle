@@ -457,25 +457,35 @@ calendarSock.onmessage = function(e) {
   }
 
   if(calendar.calSt == 'N' && calendar.calNo == 0) {
+    
+    alert("'" + calendar.calTitle + "' 일정이 추가되었습니다!");
 
-    // // 알람
-    let alert = {
+    // 알람
+    let calendarAlert = {
       "projectNo": projectNo.value,
       "memberNo": memberNo.value,
       "alertContent": '님이 일정을 추가하였습니다.',
       "link": contextPath + "/calendar/calendar/" + projectNo.value + "/" + workspaceNo.value,
       "memberName" : memberName.value
     };
-
-    // // 알람
-    alertSock.send(JSON.stringify(alert));
-
-    alert("'" + calendar.calTitle + "' 일정이 추가되었습니다!");
+    // 알람
+    alertSock.send(JSON.stringify(calendarAlert));
+    
 
   } else if (calendar.calSt == 'N' && calendar.calNo != 0) {
 
-
     alert("'" + calendar.calTitle + "' 일정이 수정되었습니다!");
+
+    // 알람
+    let calendarAlert = {
+      "projectNo": projectNo.value,
+      "memberNo": memberNo.value,
+      "alertContent": '님이 일정을 수정하였습니다.',
+      "link": contextPath + "/calendar/calendar/" + projectNo.value + "/" + workspaceNo.value,
+      "memberName" : memberName.value
+    };
+    // 알람
+    alertSock.send(JSON.stringify(calendarAlert));
 
   }
 
