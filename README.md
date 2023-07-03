@@ -304,11 +304,9 @@
 
 
 
-
 <h2>10. 결제(PortOne - KG inicis)</h2>
 (화면 이미지)
 
-<h4>구현기능</h4>
 
 ```
 ✅ 결제(PortOne - KG inicis)
