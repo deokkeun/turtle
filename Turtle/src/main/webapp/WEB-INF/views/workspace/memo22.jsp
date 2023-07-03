@@ -18,12 +18,7 @@
 </head>
 <body> 
     <div id="memo-area">
-	    <c:forEach var="memo" items="${memoList}"> 
-	    	<fmt:formatDate var="memoRegDate" value="${memo.memoRegDate}" pattern="MM-dd HH:mm"/>
-	    	<fmt:formatDate var="memoUpdateDate" value="${memo.memoUpdateDate}" pattern="MM-dd HH:mm"/>
-	    	<c:choose>
-	    		<c:when test="${memo.memoType eq 'workspace'}">
-
+   		
 					<!-- 팀 메모 영역-->
 					<div class="team">
 					
@@ -42,13 +37,13 @@
 								<!-- 메모 수정자 정보 -->
 								<div class="memoInfo"  style="background-color: ${memo.memoBgColor}">
 									<div class="modifyInfo">
-										<div class="memberName">수정자 : ${memo.memberName}</div>
+										<div class="memberName">${memo.memberName}</div>
 										<c:choose>
 											<c:when test="${empty memoUpdateDate}">
-												<div class="memoUpdateDate">수정일 : ${memoRegDate}</div>
+												<div class="memoUpdateDate">${memoRegDate}</div>
 											</c:when>
 											<c:otherwise>
-												<div class="memoUpdateDate">수정일 : ${memoUpdateDate}</div>
+												<div class="memoUpdateDate">${memoUpdateDate}</div>
 											</c:otherwise>
 										</c:choose>
 									</div>
@@ -60,9 +55,44 @@
 							</div><!-- memodetail 끝-->
 						</div><!-- division2 끝-->
 					</div><!-- 팀 메모끝-->
-	    		</c:when>
+					
+					<!-- 팀 메모 영역-->
+					<div class="team">
+					
+						<div class="division1">Team Memo</div>
+
+						<div class="division2">
+							<!-- 팀 메모지 -->
+							<div class="memoDetail workspace" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
+								<!-- 팀메모 작성 부분 -->
+								<div class="memoContent" contenteditable="true"
+									data-pmNo="${pmNo}" data-memoNo="${memo.memoNo}" data-memoType="${memo.memoType}"  style="background-color: ${memo.memoBgColor}">					
+									${memo.memoContent} 
+								</div>
+								<!-- 메모 글자수 카운트 -->
+								<p><span class="counter"> 0 </span> / 150</p>
+								<!-- 메모 수정자 정보 -->
+								<div class="memoInfo"  style="background-color: ${memo.memoBgColor}">
+									<div class="modifyInfo">
+										<div class="memberName">${memo.memberName}</div>
+										<c:choose>
+											<c:when test="${empty memoUpdateDate}">
+												<div class="memoUpdateDate">${memoRegDate}</div>
+											</c:when>
+											<c:otherwise>
+												<div class="memoUpdateDate">${memoUpdateDate}</div>
+											</c:otherwise>
+										</c:choose>
+									</div>
+									<!-- 수정자 프로필사진 -->
+									<div class="profile-image">
+										<img src="${contextPath}${memo.profileImg}">
+									</div>	
+								</div>	    			
+							</div><!-- memodetail 끝-->
+						</div><!-- division2 끝-->
+					</div><!-- 팀 메모끝-->
 	    		
-	    		<c:otherwise>
 					<!-- 개인 메모 영역-->
 					<div class="solo">
 						<div class="division1">Personal Memo</div>
@@ -98,10 +128,43 @@
 							</div><!-- memodetail 끝-->
 						</div><!-- division2 끝-->
 					</div><!--개인메모 끝-->
-	    		</c:otherwise>
-	    	</c:choose>
-	    	    	
-	   </c:forEach>
+					
+					<!-- 개인 메모 영역-->
+					<div class="solo">
+						<div class="division1">Personal Memo</div>
+
+						<div class="division2">
+							<!-- 개인 메모지-->
+							<div class="memoDetail personal" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
+								<!-- 개인메모 작성 부분 -->	
+								<div class="memoContent" contenteditable="true"
+									data-pmNo="${pmNo}" data-memoNo="${memo.memoNo}" data-memoType="${memo.memoType}" style="background-color: ${memo.memoBgColor}">					
+									${memo.memoContent}
+								</div>
+								<!-- 메모 글자수 카운트 -->
+								<p><span class="counter"> 0 </span> / 150</p>
+								<!-- 메모 수정자 정보-->
+								<div class="memoInfo" style="background-color: ${memo.memoBgColor}">
+									<div class="modifyInfo">
+										<div class="memberName">수정자 : ${memo.memberName}</div> 
+										<c:choose>
+											<c:when test="${empty memoUpdateDate}">
+												<div class="memoUpdateDate">수정일 : ${memoRegDate}</div>
+											</c:when>
+											<c:otherwise>
+												<div class="memoUpdateDate">수정일 : ${memoUpdateDate}</div>
+											</c:otherwise>
+										</c:choose>
+									</div>
+									<!-- 수정자 프로필사진 -->
+									<div class="profile-image">
+										<img src="${contextPath}${memo.profileImg}">
+									</div>
+								</div>	  
+							</div><!-- memodetail 끝-->
+						</div><!-- division2 끝-->
+					</div><!--개인메모 끝-->
+	    		
     </div>
     
     
