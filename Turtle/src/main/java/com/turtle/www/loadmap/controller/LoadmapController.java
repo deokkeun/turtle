@@ -6,6 +6,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.google.gson.Gson;
 import com.turtle.www.loadmap.model.service.LoadmapService;
 import com.turtle.www.loadmap.model.vo.GitCommit;
 import com.turtle.www.loadmap.model.vo.Loadmap;
@@ -41,6 +43,8 @@ public class LoadmapController {
 							@PathVariable("workspaceNo") int workspaceNo,
 							Model model) {
 		
+		System.out.println("projectNo" + projectNo);
+		
 		Loadmap loadmap = service.selectLoadmap(workspaceNo);
 		if(loadmap!=null) {
 			List<GitCommit> gitCommitList = service.selectGitCommitListByLoadmapNo(loadmap.getLoadmapNo());
@@ -49,7 +53,7 @@ public class LoadmapController {
 		}
 		
 		model.addAttribute("loadmap",loadmap);
-		System.out.println(loadmap);
+		System.out.println("---------------- loadmap ------------------" + loadmap);
 		
 		return "workspace/loadmap";
 	}
@@ -62,22 +66,22 @@ public class LoadmapController {
 		String res = service.insertGit(loadmap);
 		
 		
-		System.out.println("upload");
+		System.out.println("----------------------------------upload----------------------------------");
 		System.out.println(res);
 		
-		return res;
+		return new Gson().toJson(res);
 	}
 	
 
 	
 	@ResponseBody
-	@PostMapping("commitList")
+	@PostMapping(value = "/workspace/loadmap/commitList", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 	public GitCommit commitList(@RequestBody Loadmap loadmap) {
 		
 		GitCommit newCommit = service.selectNewCommitList(loadmap);
 
 		
-		System.out.println("newCommit");
+		System.out.println("----------------------------------newCommit----------------------------------");
 		System.out.println(newCommit);
 		
 		

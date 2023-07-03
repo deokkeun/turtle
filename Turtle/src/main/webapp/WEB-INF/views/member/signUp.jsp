@@ -93,6 +93,7 @@
                   name="memberPw"
                   placeholder="비밀번호"
                   maxlength="30"
+                  autocomplete="false"
                 />
               </div>
     
@@ -102,6 +103,7 @@
                   id="memberPwConfirm"
                   placeholder="비밀번호 확인"
                   maxlength="30"
+                  autocomplete="false"
                 />
               </div>
     

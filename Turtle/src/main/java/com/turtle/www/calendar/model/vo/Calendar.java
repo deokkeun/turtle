@@ -23,4 +23,5 @@ public class Calendar {
 	private Date startDate;  // 캘린더 일정 시작일
 	private Date endDate;  // 캘린더 일정 종료일
 	private String calSt; // 삭제 상태
+	private int boardNo; // 게시판에서 캘린더 등록/수정
 }
