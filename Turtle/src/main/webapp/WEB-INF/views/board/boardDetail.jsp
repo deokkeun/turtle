@@ -3,6 +3,9 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<c:set var="memberName" value="${loginMember.memberName}" />
+<c:set var="profileImage" value="${loginMember.profileImage}"/>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,54 +29,82 @@
             <div class="regInfo">
                 <div class="regMember"> 
                     <div>최초 작성자 : </div>
-                    <div class="regMemberImg"><img src="${contextPath}${board.regProfileImg}"> ${board.regMemberName}</div>
+                    <div class="regMemberImageAndName">
+                        <img class="regMemberImage" src="${contextPath}${board.regProfileImg}">
+                    </div>
+                    <div class="regMemberName">${board.regMemberName}</div>
                 </div>
-                <div class="regDate">
+                <div class="regDate-area">
                     <div>최초 작성일 : </div>
-                    <div>${board.boardRegDate}</div>
+                    <div class="regDate">${board.boardRegDate}</div>
                 </div>
             </div>
             <div class="updateInfo">
                 <div class="updateMember">
-                    <div>최근 수정자 : </div>
-                    <c:if test="${!empty board.updateProfileImg}">
-                        <div class="updateMemberImg"><img src="${contextPath}${board.updateProfileImg}">${board.updateMemberName}</div>
-                    </c:if>
+                    <div>최근 수정자 : </div>                    
+                    <div class="updateMemberImageAndName">
+                        <c:choose>
+                            <c:when test="${!empty board.updateProfileImg}">
+                                <img class="updateMemberImage" src="${contextPath}${board.updateProfileImg}">
+                            </c:when>
+                            <c:otherwise>
+                                <img class="updateMemberImage">
+                            </c:otherwise>
+                        </c:choose>
+                    </div>
+                    <div class="updateMemberName">${board.updateMemberName}</div>
                 </div>
-                <div class="updateDate">
-                    <div>최근 수정일 : </div>
-                    <c:if test="${!empty board.boardUpdateDate}">
-                        <div>${board.boardUpdateDate}</div>
-                    </c:if>
+                <div class="updateDate-area">
+                    <div>최근 수정일 : </div>                    
+                        <div class="updateDate">
+                            <c:if test="${!empty board.boardUpdateDate}">
+                                ${board.boardUpdateDate}
+                            </c:if>
+                        </div>
                 </div>
             </div>
             <div class="eventDate">                
                 <div>이벤트 : </div>
-                <div><input type="date" value="${board.eventStartDate}"></div>
+                <div><input type="date" class="eventStartDate" value="${board.eventStartDate}"></div>
                 <div> - </div>
-                <div><input type="date" value="${board.eventEndDate}"></div>                
+                <div><input type="date" class="eventEndDate" value="${board.eventEndDate}"></div>                
             </div>
             
             
         </div>
+
         <hr>
+
         <div class="boardDetail-area">
+            <div class="edit-boardDetail-area" data-boardDetailNo="${boardDetail.boardDetailNo}" 
+                                            data-boardDetailSort="0">
+                <div class="add-boardDetail" style="visibility:hidden;">
+                    <button class="add-boardDetail-btn">+</button>
+                </div>
+                <div class="boardDetail">
+                    <div>
+                    </div>
+                </div>                    
+            </div>
+            <hr>  
             <c:forEach var="boardDetail" items="${boardDetailList}">
-                <div class="edit-boardDetail-area">
+                <div class="edit-boardDetail-area" data-boardDetailNo="${boardDetail.boardDetailNo}" 
+                                                data-boardDetailSort="${boardDetail.boardDetailSort}">
                     <div class="add-boardDetail" style="visibility:hidden;">
                         <button class="add-boardDetail-btn">+</button>
                     </div>
-                    <div class="boardDetail" data-boardDetailNo="${boardDetail.boardDetailNo}" 
-                                            data-boardDetailSort="${boardDetail.boardDetailSort}" >
+                    <div class="boardDetail">
                         <!-- 서머노트 적용될 영역 -->
                         <div class="summernote" contenteditable="true">
                             ${boardDetail.boardContent}
                         </div>
                     </div>
-                    
+                    <div class="updateDetailMember" style="visibility: hidden;">
+                        <img class="boardDetailProfileImage"src="${contextPath}${boardDetail.profileImage}">
+                    </div>
+                        
                 </div>
-                
-            
+                <hr>
             </c:forEach>
         </div>
     </div>
@@ -97,15 +128,20 @@
     	// 로그인이 되어 있을 경우에만
 		// /insertBoardDetail 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
 		// 게시글 내용 추가용 sock
-		//let insertBoardDetailSock = new SockJS(contextPath+"/insertBoardDetail");
+		let insertBoardDetailSock = new SockJS(contextPath+"/insertBoardDetail");
         // /updateBoardDetail 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
 		// 게시글 내용 수정용 sock
 		let updateBoardDetailSock = new SockJS(contextPath+"/updateBoardDetail");
         // /deleteBoardDetail 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
         // 게시글 내용 삭제용 sock
-        //let deleteBoardDetailSock = new SockJS(contextPath+"/deleteBoardDetail");
+        let deleteBoardDetailSock = new SockJS(contextPath+"/deleteBoardDetail");
 		// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
-		
+        // 이벤트 시간 생성용 sock
+        let updateEventDateSock = new SockJS(contextPath+"/updateEventDate");
+        // 게시글 제목 변경용 sock
+        let boardListSock = new SockJS(contextPath+"/boardList");
+		// 캘린더 연동용 sock
+        let calendarSock = new SockJS(contextPath+"/calendar");
     </script>
     
     <!-- boardDetail.js 연결 -->

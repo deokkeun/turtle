@@ -20,8 +20,8 @@ public class Board {
 	private int updatePmNo; // 수정 프로젝트멤버 번호
 	private Date boardRegDate; // 게시글 작성일
 	private Date boardUpdateDate; // 게시글 수정일
-	private Date eventStartDate; // 이벤트 시작일
-	private Date eventEndDate; // 이벤트 종료일
+	private String eventStartDate; // 이벤트 시작일
+	private String eventEndDate; // 이벤트 종료일
 	private int boardSort; // 게시글 정렬
 	private String boardSt; // 게시글 삭제여부
 	

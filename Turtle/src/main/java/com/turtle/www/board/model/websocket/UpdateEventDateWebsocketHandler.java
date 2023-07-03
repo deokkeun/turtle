@@ -1,5 +1,6 @@
 package com.turtle.www.board.model.websocket;
 
+import java.sql.Date;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -13,9 +14,9 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.turtle.www.board.model.service.BoardService;
-import com.turtle.www.board.model.vo.BoardDetail;
+import com.turtle.www.board.model.vo.Board;
 
-public class DeleteBoardDetailWebsocketHandler extends TextWebSocketHandler {
+public class UpdateEventDateWebsocketHandler extends TextWebSocketHandler {
 	
 	@Autowired
 	private BoardService service;
@@ -49,12 +50,15 @@ public class DeleteBoardDetailWebsocketHandler extends TextWebSocketHandler {
 				
 		ObjectMapper objectMapper = new ObjectMapper();
 				
-		BoardDetail boardDetail = objectMapper.readValue(message.getPayload(), BoardDetail.class);
+		Board board = objectMapper.readValue(message.getPayload(), Board.class);
+				
+		// 시간세팅
+		board.setBoardUpdateDate(new Date(System.currentTimeMillis()));
+				
+		System.out.println(board);
 		
-		System.out.println(boardDetail);
-		
-		// 삭제된 게시글내용 DB제거
-		int result = service.deleteBoardDetail(boardDetail);
+		// 수정된 게시글 DB삽입		
+		int result = service.updateEventDate(board);
 			
 		if(result > 0) {
 					
@@ -63,16 +67,18 @@ public class DeleteBoardDetailWebsocketHandler extends TextWebSocketHandler {
 					
 			for(WebSocketSession s : sessions) {
 					
-				// WebSocketSession == HttpSession(로그인정보, 게시글번호)을 가로챈 것
-				int boardNo = (Integer)s.getAttributes().get("boardNo");
+				// WebSocketSession == HttpSession(로그인정보, 워크스페이스번호)을 가로챈 것
 				int workspaceNo = (Integer)s.getAttributes().get("workspaceNo");
+				int boardNo = (Integer)s.getAttributes().get("boardNo");
+				
+				// WebSocketSession에 담겨있는 워크스페이스넘버 혹은 게시판번호가
+				// 메시지에 담겨있는 정보와 같을경우
+				// 같은 클라이언트다.				
+				if(boardNo == board.getBoardNo() || workspaceNo == board.getWorkspaceNo())  {
 					
-				// WebSocketSession에 담겨있는 워크스페이스넘버와
-				// 메시지에 담겨있는 워크스페이스넘버가 같을경우
-				// 같은 게시글넘버 클라이언트다.				
-				if(boardNo == boardDetail.getBoardNo() || workspaceNo == boardDetail.getWorkspaceNo())  {					
-					// 같은 게시글넘버 게시글에게 JSON형식 메시지를 보냄
-					s.sendMessage(new TextMessage(new Gson().toJson(boardDetail)));						
+					// 같은 워크스페이스넘버 클라이언트에게 JSON형식 메시지를 보냄
+					s.sendMessage(new TextMessage(new Gson().toJson(board)));
+						
 				}
 					
 			}
@@ -88,5 +94,4 @@ public class DeleteBoardDetailWebsocketHandler extends TextWebSocketHandler {
 		// 종료된 WebSocketSession을 Set에서 제거
 		
 	}
-
 }
