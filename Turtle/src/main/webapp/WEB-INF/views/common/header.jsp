@@ -42,7 +42,7 @@
 		<!-- <form action="${contextPath}/member/logout" method="GET">
 			<button>로그아웃 테스트(header.jsp)</button>
 		</form> -->
-	</section>
+	  </section>
 
      <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
