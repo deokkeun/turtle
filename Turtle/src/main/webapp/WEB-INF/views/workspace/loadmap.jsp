@@ -20,11 +20,10 @@
  		<!-- header include -->
        	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-        <input type="text" value="projectNo = ${projectNo}">
         <input type="hidden" value="projectNo" name="${projectNo}">
-
-        <input type="text" value="workspaceNo = ${workspaceNo}">
         <input type="hidden"  id="workspaceNo" value="${workspaceNo}">
+        <input type="hidden" value="${gitCommitList}">
+        <input type="hidden" id="loadmap" value="${loadmap}">
 
 		<section id="loadmap-container">
             <section class="repos-container">
@@ -42,21 +41,117 @@
             <section id="tree-box">
 
                 <div>
-                    <div>
-                        <input type="button" id="add" value="Add data"></input>
-                        <input type="button" id="remove" value="Remove data"></input>
+                    <div id="btn-box">
+                        <!-- <input type="button" id="add" value="Add data"></input>
+                        <input type="button" id="remove" value="Remove data"></input> -->
+                        <div id="allview" class="btn btn-primary">전체 보기</div>
+                        <div id="onedeps" class="btn btn-primary">되돌리기</div>
+                        <!-- <div id="modifybtn" class="btn btn-info">수정하기</div> -->
+
+                        <div> 
+                            로드맵 조회 필수 입력(사용자이름/저장소이름, 브랜치명)
+                        </div>
                     </div>
-                    
-                    
+
                     <div id="tree"></div>
                 </div>
+
+                <!-- commitList 내역 -->
+                <div id="commitList-box">
+                    <c:forEach var="gc" items="${gitCommitList}">
+                        <div class="git-commit">
+                            <div class="git-user"><b>[${ gc.login }]</b> ${gc.message}</div>
+                            <div class="git-files">${gc.files}</div>
+                        </div>
+                    </c:forEach>
+                </div>
             </section>
-            
+
+
             
 		</section>
    
 
     </main>
+
+
+    <script>
+        let dataJson = [];
+        let dataArr = [];
+        let data = [];
+        let root = "";
+        let rootObject = [];
+
+        if(loadmap != null) {
+        dataJson = JSON.parse('${loadmap.gitTree}');
+        root = "${loadmap.gitRepo}"
+        rootObject.push({id: root, text_1: root, father: null});
+        dataArr = [rootObject[0]];
+        data = [rootObject[0]];
+        }
+
+        console.log("data Json 실행 후");
+        console.dir(dataJson);
+
+
+
+
+        // 첫 애 넣어주기
+        $('.git-files').each(function() {
+        
+        let files = JSON.parse($(this).text());
+        console.dir(files);
+        
+        files.forEach(function(e) {
+            
+            dataArr.some(function(data) {
+            if( data.text_1 == e) {
+                console.dir("일치" + data.text_1)  
+                return true;
+            }
+            return false;
+            
+            })
+        })
+        
+        })
+    
+
+
+
+
+        dataJson.forEach(function(e) {
+
+            let d;
+            if(!e.prev) {
+            d =  { id: e.sha , text_1:e.path , father: root , color:"#2196F3" };
+            rootObject.push(d);
+                data.push(d);
+            }else {
+                let color;
+                if(e.type=="tree") {
+                color = "#B076CF";
+                }else if(e.type=="blob"){
+                color ="#E971AD";
+                }
+                $('.git-files').each(function() {
+                    let files = JSON.parse($(this).text());
+                    files.forEach(function(f) {
+                    if(e.path == f) {
+                    color="#FFCD42";	
+                    }
+                    })
+                })
+            d =  { id: e.sha , text_1:e.path , father: e.prev , color:color };
+            }
+            dataArr.push(d);
+        })
+
+            console.dir(dataArr);
+
+
+
+    </script>
 
     <script>
         const contextPath = "${contextPath}";

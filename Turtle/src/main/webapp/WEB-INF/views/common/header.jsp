@@ -42,7 +42,7 @@
 		<!-- <form action="${contextPath}/member/logout" method="GET">
 			<button>로그아웃 테스트(header.jsp)</button>
 		</form> -->
-	</section>
+	  </section>
 
      <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
@@ -116,6 +116,16 @@
                 <p>Quae dolorem earum veritatis oditseno</p>
                 <p>4 hrs. ago</p>
               </div>
+            </li>
+            
+            <li>
+	            <div style="overflow: scroll; height: 200px;">		
+					<div style="overflow: scroll;">chatRoomList : ${chatRoomList}</div>	
+					<div>projectNo : ${projectNo}</div>
+					<div>loginMember : ${loginMember}</div>
+					<div>chatRoomNo : ${chatRoomNo}</div>
+					<div>pmNo : ${pmNo}</div>
+				</div>
             </li>
 
             <li>
@@ -286,13 +296,13 @@
       </li>End Dashboard Nav -->
 
   
-  <li class="nav-item" style="position: relative;">
+   <li class="nav-item" style="position: relative;">
         <a class="nav-link collapsed" data-bs-target="#project-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-chevron-down" id="arrow"></i><i class="bi bi-menu-button-wide"></i><span>PROJECT</span>
         </a>
-        <button class="add-file-button" onclick="addFile('project-nav', event)"><i class="bi bi-plus"></i></button>
-
-  <ul id="project-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+ <button class="add-file-button" onclick="addFileAndToggle('project-nav', event)"><i class="bi bi-plus"></i></button>
+    
+  <ul id="project-nav" class="nav-content collapse " data-bs-parent="">
  <!--    <li>
       <a href="my-projects/project1.html">
         <span>project 1</span>
@@ -311,16 +321,15 @@
     <!-- 추가적인 프로젝트 항목들 -->
   </ul>
 </li><!-- End My Project Nav -->
-  
- <li class="nav-item" style="position: relative;">
 
-  <li class="nav-item" style="position: relative;">
-    <a class="nav-link collapsed" data-bs-target="#shared-project-nav" data-bs-toggle="collapse" href="#">
-      <i class="bi bi-chevron-down" id="arrow"></i><i class="bi-share-fill"></i> <span>SHARED PROJECT</span>
-    </a>
-    <button class="add-file-button" onclick="addFileAndToggle(event)"><i class="bi bi-plus"></i></button>
 
-    <ul id="shared-project-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+        <li class="nav-item" style="position: relative;">
+          <a class="nav-link collapsed" data-bs-target="#shared-project-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-chevron-down" id="arrow"></i><i class="bi-share-fill"></i> <span>SHARED PROJECT</span>
+          </a>
+          <button class="add-file-button" onclick="addFileAndToggle('shared-project-nav', event)"><i class="bi bi-plus"></i></button>
+          
+          <ul id="shared-project-nav" class="nav-content collapse " data-bs-parent="">
       <!-- 추가적인 프로젝트 항목들 -->
     </ul>
         </li><!-- End Shared Project Nav -->
@@ -331,7 +340,7 @@
             <i class="bi bi-chevron-down" id="arrow"></i><i class="bx bx-desktop"></i><span>WORKSPACE</span>
           </a>
           <button class="add-file-button" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button>
-          <ul id="workspace-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <ul id="workspace-nav" class="nav-content collapse" data-bs-parent="">
           <!--   <li>
               <a href="">
                <span>파일</span>
@@ -378,7 +387,6 @@
             <i class="ri-message-3-line"></i>
             <span>GitHub</span>
           </a>
-          <div id="line"></div>
         </li> 
         <li class="nav-item">
           <a class="nav-link collapsed" href="${contextPath}/calendar/calendar/1/9">
@@ -458,7 +466,7 @@
   <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script> 
 
   <!-- Template Main JS File -->
-  <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js?ver=3"></script>
+  <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js?ver=4"></script>
  
   
   <script>

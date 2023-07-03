@@ -203,7 +203,17 @@ memoSock.onmessage = function(e){
 			changedMemoContent.style.backgroundColor = memo.memoBgColor;
 		}
 
-	})
+	});
+	alert = {
+		"workspaceNo" : workspaceNo,
+		"pmNo" : pmNo,
+		"notificationType" : 'update',
+		"workingArea" : 'memo',
+		"profileImg" : profileImage,
+		"memberName" : memberName
+	};
+
+	alertSock.send( JSON.stringify(alert) );
 
 };
 

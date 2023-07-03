@@ -1,13 +1,10 @@
-// 딜레이 1초 설정
-let typingTimer;
-const delay = 1000; // 1초
-
+typing();
 $(document).on("mouseover", ".board", function(){mouseover($(this))});
 $(document).on("mouseout", ".board", function(){mouseout($(this))});
 $(document).on("click", ".edit-boardTitle-btn", function(){editBoardTitleBtn($(this))});
 $(document).on("click", ".close-edit-boardTitle-btn", function(){closeEditBoardTitleBtn($(this))});
-$(document).on("keydown", ".board", function(){inputTyping()});
-$(document).on("keyup", ".board", function(){keyupTyping($(this))});
+//$(document).on("keydown", ".board", function(){inputTyping()});
+//$(document).on("keyup", ".board", function(){keyupTyping($(this))});
 $(document).on("click", ".add-board-btn", function(){addBoardBtn($(this))});
 $(document).on("click", ".delete-board-btn", function(){deleteBoardBtn($(this))});
 
@@ -28,14 +25,12 @@ boardListSock.onmessage = function(e) {
 
         const changedBoardTitle = board.querySelector(".boardTitle");
         const changedProfileImage = board.querySelector(".profile-image > img");
-        const changedBoardUpdateDate = board.querySelector(".updateDate")
 
         if(changedBoard.boardNo == board.dataset.boardno) {
 
             // 수정한 멤버 정보 반영
             board.dataset.pmno = changedBoard.pmNo;
             changedProfileImage.src = contextPath + changedBoard.updateProfileImg;
-            changedBoardUpdateDate.innerHTML = currentTime();
 
             // 수정된 제목 변경
             changedBoardTitle.innerHTML = changedBoard.boardTitle;            
@@ -107,6 +102,9 @@ insertBoardSock.onmessage = function(e) {
     const addedBoardInfo = document.createElement('div');
     addedBoardInfo.classList.add('board-info');
 
+    const addedUserProfile = document.createElement('div');
+    addedUserProfile.classList.add('user-profile');
+
     const addedProfileImage = document.createElement('span');
     addedProfileImage.classList.add('profile-image');
 
@@ -114,12 +112,34 @@ insertBoardSock.onmessage = function(e) {
     addedProfileImg.src = contextPath + newBoard.regProfileImg;
     addedProfileImage.appendChild(addedProfileImg);
 
-    const addedUpdateDate = document.createElement('span');
-    addedUpdateDate.classList.add('updateDate');
-    addedUpdateDate.textContent = currentTime();
+    const addedUserName = document.createElement('span');
+    addedUserName.classList.add('user-name');
+    addedUserName.textContent = newBoard.regMemberName;
+    addedUserName.visibility = "hidden";
 
-    addedBoardInfo.appendChild(addedProfileImage);
-    addedBoardInfo.appendChild(addedUpdateDate);
+    addedUserProfile.appendChild(addedProfileImage);
+    addedUserProfile.appendChild(addedUserName);
+
+    const addedEventDate = document.createElement('div');
+    addedEventDate.classList.add('eventDate');
+
+    const addedEventStartDate = document.createElement('div');
+    addedEventStartDate.classList.add('eventStartDate');
+    addedEventStartDate.textContent = newBoard.eventStartDate;
+
+    const addedBetweenEventDate = document.createElement('div');
+    addedBetweenEventDate.textContent = ' - ';
+
+    const addedEventEndDate = document.createElement('div');
+    addedEventEndDate.classList.add('eventEndDate');
+    addedEventEndDate.textContent = newBoard.eventEndDate;
+
+    addedEventDate.appendChild(addedEventStartDate);
+    addedEventDate.appendChild(addedBetweenEventDate);
+    addedEventDate.appendChild(addedEventEndDate);
+
+    addedBoardInfo.appendChild(addedUserProfile);
+    addedBoardInfo.appendChild(addedEventDate);
 
     const addedDropBoard = document.createElement('div');
     addedDropBoard.classList.add('delete-board');
@@ -151,6 +171,7 @@ insertBoardSock.onmessage = function(e) {
             $(board).after(addedBoard);
         }
     });
+    typing();
 };
 
 // 게시글 삭제용 웹소켓 작업
@@ -175,6 +196,79 @@ deleteBoardSock.onmessage = function(e) {
             }            
         }        
     });
+};
+
+// 게시글 내용 수정시 수정 멤버 정보 바꾸는 웹소켓 작업
+updateBoardDetailSock.onmessage = function(e) {
+    // 매개변수 e : 발생한 이벤트에 대한 정보를 담고있는 객체
+	// e.data : 전달된 메세지 (message.getPayload())   (JSON 형태)
+
+	// 전달 받은 메세지를 JS 객체로 변환
+	const changedBoardDetail = JSON.parse(e.data);  // JSON -> JS Object
+
+    // 수정된 게시글 정보 변경
+    boards = document.querySelectorAll(".board");
+
+    boards.forEach((board) => {
+        if(board.dataset.boardno == changedBoardDetail.boardNo) {
+            $(board).find(".profile-image").find("img").attr("src", contextPath + changedBoardDetail.profileImage);
+            $(board).find(".user-name").html(changedBoardDetail.memberName);
+        }
+    });
+
+    
+}
+
+// 게시글 내용 추가시 수정 멤버 정보 바꾸는 웹소켓 작업
+insertBoardDetailSock.onmessage = function(e) {
+    // 매개변수 e : 발생한 이벤트에 대한 정보를 담고있는 객체
+	// e.data : 전달된 메세지 (message.getPayload())   (JSON 형태)
+
+	// 전달 받은 메세지를 JS 객체로 변환
+	const changedBoardDetail = JSON.parse(e.data);  // JSON -> JS Object
+
+    // 수정된 게시글 정보 변경
+    boards = document.querySelectorAll(".board");
+
+    boards.forEach((board) => {
+        if(board.dataset.boardno == changedBoardDetail.boardNo) {
+            $(board).find(".profile-image").find("img").attr("src", contextPath + changedBoardDetail.profileImage);
+            $(board).find(".user-name").html(changedBoardDetail.memberName);
+        }
+    });    
+}
+
+
+// 게시글 내용 삭제시 수정 멤버 정보 바꾸는 웹소켓 작업
+deleteBoardDetailSock.onmessage = function(e) {
+	const changedBoardDetail = JSON.parse(e.data);  // JSON -> JS Object
+
+    // 수정된 게시글 정보 변경
+    boards = document.querySelectorAll(".board");
+
+    boards.forEach((board) => {
+        if(board.dataset.boardno == changedBoardDetail.boardNo) {
+            $(board).find(".profile-image").find("img").attr("src", contextPath + changedBoardDetail.profileImage);
+            $(board).find(".user-name").html(changedBoardDetail.memberName);
+        }
+    });    
+};
+
+// 이벤트 날짜 변경 웹소켓
+updateEventDateSock.onmessage = function(e) {
+    const changedBoardInfo = JSON.parse(e.data);
+
+    boards = document.querySelectorAll(".board");
+
+    boards.forEach((board) => {
+        if(board.dataset.boardno == changedBoardInfo.boardNo) {
+            console.log("같음");
+            $(board).find(".profile-image").find("img").attr("src", contextPath + changedBoardInfo.updateProfileImg);
+            $(board).find(".user-name").html(changedBoardInfo.updateMemberName);
+            $(board).find(".eventStartDate").html(changedBoardInfo.eventStartDate);
+            $(board).find(".eventEndDate").html(changedBoardInfo.eventEndDate);
+        }
+    })
 };
 
 // 마우스 오버 함수
@@ -209,19 +303,26 @@ function closeEditBoardTitleBtn(closeEditBoardTitleBtn) {
     $(closeEditBoardTitleBtn).siblings(".edit-boardTitle-btn").css("display", "block");
 };
 
-// 타이핑중 딜레이 초기화 함수
-function inputTyping() {    
-    clearTimeout(typingTimer);	
-}
+// 게시글 제목 수정 타이핑 함수
+function typing() {
+    let boards = document.querySelectorAll(".board");
+    boards.forEach((board) => {
+        // 딜레이 1초 설정
+        let typingTimer;
+        const delay = 1000; // 1초
 
-// 키업후 1초뒤 제목수정함수로 이동되는 함수
-function keyupTyping(board) {    
-    clearTimeout(typingTimer);
+        board.addEventListener('input', function() {
+            clearTimeout(typingTimer);
+        });
+        board.addEventListener('keyup', function() {
+            clearTimeout(typingTimer);
 
-    typingTimer = setTimeout(function() {
-        // 1초동안 아무런 동작이 없으면 로직 실행			
-            updateBoardTitle(board);			
-        }, delay);	
+            typingTimer = setTimeout(function() {
+                // 1초동안 아무런 동작이 없으면 로직 실행			
+                updateBoardTitle(board);			
+            }, delay);
+        });
+    });
 }
 
 // 게시글 추가버튼 함수
@@ -272,7 +373,8 @@ function insertBoard(board) {
         "boardSort" : boardSort,
         "workspaceNo" : workspaceNo,
         "pmNo" : pmNo,
-        "regProfileImg" : profileImage
+        "regProfileImg" : profileImage,
+        "regMemberName" : memberName
     };
 
     // JSON.parse(문자열) : JSON -> JS Object

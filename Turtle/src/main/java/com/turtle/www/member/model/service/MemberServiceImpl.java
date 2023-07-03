@@ -1,6 +1,5 @@
 package com.turtle.www.member.model.service;
 
-import java.util.List;
 import java.util.Map;
 
 import javax.mail.Multipart;
@@ -16,8 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import com.turtle.www.chat.model.vo.ChatRoom;
 import com.turtle.www.member.model.dao.MemberDAO;
 import com.turtle.www.member.model.vo.Certification;
 import com.turtle.www.member.model.vo.Member;
@@ -38,6 +35,7 @@ public class MemberServiceImpl implements MemberService {
 	private Logger logger = LoggerFactory.getLogger(MemberServiceImpl.class);
 
 	private Object session;
+	
 	
 	
 	
@@ -185,6 +183,8 @@ public class MemberServiceImpl implements MemberService {
 				
 		return result;
 	}
+	
+	
 
 	// [비밀번호]인증번호 생성
 	public String authenticationNumber() {
@@ -286,6 +286,15 @@ public class MemberServiceImpl implements MemberService {
 
 
 
+	@Override
+	public int googleJoin(Member member) {
+		return dao.googleJoin(member);
+		
+	}
+
+
+
+	
 
 
 }

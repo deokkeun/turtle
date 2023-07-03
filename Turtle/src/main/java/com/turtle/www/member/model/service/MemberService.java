@@ -1,5 +1,6 @@
 package com.turtle.www.member.model.service;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -75,6 +76,9 @@ public interface MemberService {
 	 * @return
 	 */
 	int paymentDateCheck(int memberNo);
+
+	int googleJoin(Member member);
+
 
 	
 

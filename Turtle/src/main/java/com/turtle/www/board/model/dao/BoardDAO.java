@@ -83,4 +83,68 @@ public class BoardDAO {
 		return sqlSession.selectList("boardMapper.selectBoardDetail", boardNo);
 	}
 
+	/** 게시글 내용 수정 DAO
+	 * @param boardDetail
+	 * @return result
+	 */
+	public int updateBoardDetail(BoardDetail boardDetail) {
+		
+		int result = 0;
+		
+		result = sqlSession.update("boardMapper.updateBoardDetail", boardDetail);
+		
+		if(result > 0) {
+			result = sqlSession.update("boardMapper.updateBoardInfo", boardDetail);
+		}
+		
+		return result;
+	}
+
+	/** 게시글 내용 추가 DAO
+	 * @param boardDetail
+	 * @return
+	 */
+	public int insertBoardDetail(BoardDetail boardDetail) {
+
+		int result = 0;		
+		// boardDetailSort로 기존 boardDetailSort들 하나씩 밀어주기
+		result = sqlSession.update("boardMapper.addBoardDetailSort", boardDetail);
+		
+		if(result >= 0) {
+			result = sqlSession.insert("boardMapper.insertBoardDetail", boardDetail);
+			
+			if(result > 0) {
+				result = sqlSession.update("boardMapper.updateBoardInfo", boardDetail);
+			}
+		}
+						
+		return result;
+	}
+
+	/** 게시글 내용 삭제 DAO
+	 * @param boardDetail
+	 * @return result
+	 */
+	public int deleteBoardDetail(BoardDetail boardDetail) {
+
+		int result = 0;
+		
+		result = sqlSession.delete("boardMapper.deleteBoardDetail", boardDetail);
+		
+		if(result > 0) {
+			result = sqlSession.update("boardMapper.updateBoardInfo", boardDetail);
+		}
+		
+		return result;
+	}
+
+	/** 이벤트 시간 추가 DAO
+	 * @param board
+	 * @return result
+	 */
+	public int updateEventDate(Board board) {
+
+		return sqlSession.update("boardMapper.updateEventDate", board);
+	}
+
 }

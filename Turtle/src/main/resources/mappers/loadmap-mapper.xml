@@ -15,8 +15,17 @@
 	</resultMap>
 
 
-	<select id="selectLoadmapByworkspaceNo" resultMap="loadmap_rm">
+	<select id="selectLoadmapByWorkspaceNo" resultMap="loadmap_rm">
 		SELECT * FROM LOADMAP WHERE WORKSPACE_NO = #{workspaceNo}
 	</select>
+	
+	<insert id="insertGit">
+		INSERT INTO LOADMAP(LOADMAP_NO, WORKSPACE_NO, GIT_REPO, GIT_TREE, BRANCH, IGNORE, LOADMAP_REG_DATE) 
+		VALUES(SEQ_LOADMAP_NO.NEXTVAL, #{workspaceNo}, #{gitRepo}, #{gitTree}, #{branch}, #{ignore}, CURRENT_DATE)
+	</insert>
+
+	<delete id="deleteLoadmapByworkspaceNo">
+		DELETE FROM LOADMAP WHERE WORKSPACE_NO = #{workspaceNo}
+	</delete>
 
 </mapper>

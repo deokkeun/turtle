@@ -130,6 +130,22 @@
 		    <version>1.16.0</version>
 		</dependency>
 	      
+	      
+		<!-- Spring Web MVC -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-webmvc</artifactId>
+		    <version>5.3.10</version>
+		</dependency>
+		
+		<!-- Google API Client -->
+		<dependency>
+		    <groupId>com.google.api-client</groupId>
+		    <artifactId>google-api-client</artifactId>
+		    <version>1.31.1</version>
+		</dependency>
+
+		
     
 		<!-- email -->
 		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
@@ -137,6 +153,14 @@
 		    <groupId>javax.mail</groupId>
 		    <artifactId>mail</artifactId>
 		    <version>1.4.7</version>
+		</dependency>
+		
+		<!-- GitHub -->
+		<!-- https://mvnrepository.com/artifact/org.kohsuke/github-api -->
+		<dependency>
+		    <groupId>org.kohsuke</groupId>
+		    <artifactId>github-api</artifactId>
+		    <version>1.315</version>
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->

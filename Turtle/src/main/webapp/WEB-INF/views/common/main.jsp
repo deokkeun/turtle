@@ -67,7 +67,6 @@
 
 
 
-
         <div>로그인시(멤버정보)</div>
         <div>회원번호 : ${loginMember.memberNo}</div>
         <div>회원명 : ${loginMember.memberName}</div>
@@ -78,7 +77,7 @@
             access_token
             <input type="text" name="access_token" value="" style="width: 600px;">
         </div>
-        
+            
 
         <!-- calendar -->
         <div>임시 캘린더</div>
@@ -115,17 +114,20 @@
         	<button>게시판 테스트</button>
         </form>
         <div id="summernote"></div>
-     
+        <a href="javascript:join()">채팅방</a>
+     	
+       
 
     </main>
+    
      <!--loading 페이지-->
      <!-- <script type="text/javascript">
-        $(window).on('load', function() {
+        $(window).one('load', function() {
             setTimeout(function(){
                 $("#load").fadeOut();
             }, 500);
-        });
-    </script> -->
+        }); -->
+    </script>
     <script>
       const contextPath = "${contextPath}";
     </script>

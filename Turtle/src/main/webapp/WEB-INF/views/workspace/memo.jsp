@@ -67,6 +67,7 @@
 	    		</c:when>
 	    		
 	    		<c:otherwise>
+<<<<<<< HEAD
 					<!-- 개인 메모 영역-->
 					<div class="solo">
 						<div class="division1">Personal Memo</div>
@@ -103,6 +104,28 @@
 						</div><!-- division2 끝-->
 					</div><!-- solo 개인메모 끝-->
 				</c:otherwise>
+=======
+	    			<div class="memoDetail personal" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
+			    		<div class="memoInfo">
+							<span class="profile-image"><img src="${contextPath}${memo.profileImg}"></span>
+			    			<span>${memo.memberName}</span> 
+			    			<c:choose>
+				    			<c:when test="${empty memoUpdateDate}">
+				    				<span class="memoUpdateDate">${memoRegDate}</span>
+				    			</c:when>
+				    			<c:otherwise>
+				    				<span class="memoUpdateDate">${memoUpdateDate}</span>
+				    			</c:otherwise>
+				    		</c:choose>	    			
+			    			<button>x</button>
+			    		</div>	    		
+		  				<div class="memoContent" contenteditable="true"
+		  					data-pmNo="${pmNo}" data-memoNo="${memo.memoNo}" data-memoType="${memo.memoType}">					
+		  					${memo.memoContent}
+		  				</div>
+			  		</div>
+	    		</c:otherwise>
+>>>>>>> dev
 	    	</c:choose>
 	    	    	
 	    </c:forEach>
@@ -128,6 +151,8 @@
 		// /memo 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
 		let memoSock = new SockJS(contextPath+"/memo");
 			// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
+
+		let alertSock = new SockJS(contextPath+"/alert");
     </script>
     
     <!-- memo.js 연결 -->

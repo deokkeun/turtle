@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/member/signUp-style.css" />
 
      <!-- 구글로그인 -->
-     <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!--  <script src="https://accounts.google.com/gsi/client" async defer></script> -->
 </head>
 
 <body>
@@ -93,6 +93,7 @@
                   name="memberPw"
                   placeholder="비밀번호"
                   maxlength="30"
+                  autocomplete="false"
                 />
               </div>
     
@@ -102,6 +103,7 @@
                   id="memberPwConfirm"
                   placeholder="비밀번호 확인"
                   maxlength="30"
+                  autocomplete="false"
                 />
               </div>
     
@@ -126,7 +128,7 @@
 
     
               <button type="submit" id="signUp-btn">가입하기</button>
-              <div class="hr-sect">or</div>
+<!--               <div class="hr-sect">or</div>
 
 				<div id="g_id_onload"
 				     data-client_id="713601013116-33sqneo96i1er8o2e6bs5a8o5522k2rq.apps.googleusercontent.com"
@@ -145,7 +147,7 @@
 				     data-locale="en-US"
 				     data-logo_alignment="center"
 				     data-width="700">
-				</div>	
+				</div>	 -->
               <!-- <button type="button" id="googlesignup" class="googlesignup_btn"><img src="${contextPath}/resources/images/auth/free-icon-google-300221.png" width="15" height="15">Google계정으로 가입</button> -->
             </form>
           </section>

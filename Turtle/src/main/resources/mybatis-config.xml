@@ -27,6 +27,7 @@
 		<typeAlias type="com.turtle.www.payment.model.vo.Pay" alias="pay"/>
 		
 		<typeAlias type="com.turtle.www.loadmap.model.vo.Loadmap" alias="loadmap"/>
+		<typeAlias type="com.turtle.www.loadmap.model.vo.GitCommit" alias="gitCommit"/>
 		
 		<typeAlias type="com.turtle.www.memo.model.vo.Memo" alias="memo"/>
 		
@@ -49,6 +50,7 @@
 		<mapper resource="/mappers/memo-mapper.xml"/>
 		<mapper resource="/mappers/board-mapper.xml"/>
 		<mapper resource="/mappers/loadmap-mapper.xml"/>
+		<mapper resource="/mappers/gitCommit-mapper.xml"/>
 	</mappers>
 
 </configuration>

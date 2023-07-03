@@ -30,8 +30,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.turtle.www" />
-	
-	
+
 	
 	<!-- 트랜잭션 처리 시 @Transactional 어노테이션 사용할 예정 
 	@Transactional : 클래스 또는 메서드 수행 후 트랜잭션 처리를 하라고 알려주는 어노테이션
@@ -58,10 +57,13 @@
 	<beans:bean id="boardListHandler" class="com.turtle.www.board.model.websocket.BoardListWebsocketHandler"/>
 	<beans:bean id="insertBoardHandler" class="com.turtle.www.board.model.websocket.InsertBoardWebsocketHandler"/>
 	<beans:bean id="deleteBoardHandler" class="com.turtle.www.board.model.websocket.DeleteBoardWebsocketHandler"/>
+	<beans:bean id="updateBoardDetailHandler" class="com.turtle.www.board.model.websocket.UpdateBoardDetailWebsocketHandler"/>	
+	<beans:bean id="insertBoardDetailHandler" class="com.turtle.www.board.model.websocket.InsertBoardDetailWebsocketHandler"/>
+	<beans:bean id="deleteBoardDetailHandler" class="com.turtle.www.board.model.websocket.DeleteBoardDetailWebsocketHandler"/>
+	<beans:bean id="updateEventDateHandler" class="com.turtle.www.board.model.websocket.UpdateEventDateWebsocketHandler"/>
+	<!-- <beans:bean id="alertHandler" class="com.turtle.www.alert.model.websocket.AlertWebsocketHandler"/>  -->
 	
-	<!--
-	<beans:bean id="boardDetailHandler" class="com.turtle.www.board.model.websocket.BoardDetailWebsocketHandler"/>
-	 -->
+	 
 	
 	<websocket:handlers>
 		
@@ -72,10 +74,12 @@
 		<websocket:mapping handler="boardListHandler" path="/boardList"/>
 		<websocket:mapping handler="insertBoardHandler" path="/insertBoard"/>
 		<websocket:mapping handler="deleteBoardHandler" path="/deleteBoard"/>
+		<websocket:mapping handler="updateBoardDetailHandler" path="/updateBoardDetail"/>
+		<websocket:mapping handler="insertBoardDetailHandler" path="/insertBoardDetail"/>
+		<websocket:mapping handler="deleteBoardDetailHandler" path="/deleteBoardDetail"/>
+		<websocket:mapping handler="updateEventDateHandler" path="/updateEventDate"/>
 		
-		<!-- 
-		<websocket:mapping handler="boardDetailHandler" path="/boardDetail"/>
-		 -->
+		<!-- <websocket:mapping handler="alertHandler" path="/alert"/>  -->
 		
 		<websocket:handshake-interceptors>
 			<!-- interceptor : http 통신 req, resp 가로채는 역할 
@@ -92,6 +96,9 @@
 		<websocket:sockjs></websocket:sockjs>
 		
 	</websocket:handlers>
+	
+	
+
 
 
 </beans:beans>

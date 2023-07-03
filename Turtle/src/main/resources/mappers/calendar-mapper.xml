@@ -14,8 +14,11 @@
 		<result property="startDate" column="START_DATE"/>
 		<result property="endDate" column="END_DATE"/>
 		<result property="calSt" column="CAL_ST"/>
+		<result property="boardNo" column="BOARD_NO"/>
 	</resultMap>
 
+
+	<!-- 캘린더 일정 조회 -->
 	<select id="selectCalendarList" resultMap="calendar_rm">
 		SELECT CAL_NO, WORKSPACE_NO, PM_NO, CAL_TITLE, CAL_CONTENT, CAL_COLOR,
 		TO_CHAR(CAL_REG_DATE, 'YYYY-MM-DD') AS CAL_REG_DATE, 
@@ -26,11 +29,25 @@
 		AND CAL_ST = 'N'
 	</select>
 
+
+
+	<!-- 캘린더 일정 추가 -->
 	<insert id="calendarAddEvent">
-	INSERT INTO CALENDAR VALUES(SEQ_CALENDAR_NO.NEXTVAL, ${workspaceNo},
-		${pmNo}, #{calTitle}, #{calContent}, #{calColor}, SYSDATE, #{startDate}, #{endDate}, DEFAULT)
+		<choose>
+			<!-- 게시판 일정 추가 -->
+			<when test="boardNo != 0">
+				INSERT INTO CALENDAR(CAL_NO, WORKSPACE_NO, PM_NO, CAL_TITLE, CAL_CONTENT, CAL_COLOR, CAL_REG_DATE, START_DATE, END_DATE, CAL_ST, BOARD_NO) 
+				VALUES(SEQ_CALENDAR_NO.NEXTVAL, ${workspaceNo}, ${pmNo}, #{calTitle}, #{calContent}, #{calColor}, SYSDATE, #{startDate}, #{endDate}, DEFAULT, #{boardNo})
+			</when>
+			<!-- 캘린더 일정 추가 -->
+			<otherwise>
+				INSERT INTO CALENDAR(CAL_NO, WORKSPACE_NO, PM_NO, CAL_TITLE, CAL_CONTENT, CAL_COLOR, CAL_REG_DATE, START_DATE, END_DATE, CAL_ST) 
+				VALUES(SEQ_CALENDAR_NO.NEXTVAL, ${workspaceNo}, ${pmNo}, #{calTitle}, #{calContent}, #{calColor}, SYSDATE, #{startDate}, #{endDate}, DEFAULT)
+			</otherwise>
+		</choose>
 	</insert>
 	
+	<!-- 캘린더 일정 삭제 -->
 	<update id="calendarDeleteEvent">
 		UPDATE CALENDAR
 		SET CAL_ST = #{calSt}
@@ -40,18 +57,45 @@
 		AND CAL_TITLE = #{calTitle}
 	</update>
 	
+	
+	<!-- 캘린더 일정 수정 -->
 	<update id="calendarUpdateEvent">
-		UPDATE CALENDAR
-		SET CAL_TITLE = #{calTitle},
-		CAL_CONTENT = #{calContent},
-		CAL_COLOR = #{calColor},
-		CAL_REG_DATE = SYSDATE,
-		START_DATE = #{startDate},
-		END_DATE = #{endDate}
-		WHERE CAL_NO = ${calNo}
-		AND PM_NO = ${pmNo}
-		AND WORKSPACE_NO = ${workspaceNo}
-		AND CAL_ST = #{calSt}
+		<choose>
+			<!-- 게시판 일정 수정 -->
+			<when test="boardNo != 0">
+				UPDATE CALENDAR
+				SET CAL_TITLE = #{calTitle},
+				CAL_CONTENT = #{calContent},
+				CAL_COLOR = #{calColor},
+				CAL_REG_DATE = SYSDATE,
+				START_DATE = #{startDate},
+				END_DATE = #{endDate}
+				WHERE CAL_NO = ${calNo}
+				AND PM_NO = ${pmNo}
+				AND WORKSPACE_NO = ${workspaceNo}
+				AND CAL_ST = #{calSt}
+				AND BOARD_NO = #{boardNo}
+			</when>
+			<!-- 캘린더 일정 수정 -->
+			<otherwise>
+				UPDATE CALENDAR
+				SET CAL_TITLE = #{calTitle},
+				CAL_CONTENT = #{calContent},
+				CAL_COLOR = #{calColor},
+				CAL_REG_DATE = SYSDATE,
+				START_DATE = #{startDate},
+				END_DATE = #{endDate}
+				WHERE CAL_NO = ${calNo}
+				AND PM_NO = ${pmNo}
+				AND WORKSPACE_NO = ${workspaceNo}
+				AND CAL_ST = #{calSt}
+			</otherwise>
+		</choose>
 	</update>
+	
+	
+	<select id="selectBoardCalendar">
+		SELECT * FROM CALENDAR c WHERE BOARD_NO = ${boardNo}
+	</select>
 
 </mapper>

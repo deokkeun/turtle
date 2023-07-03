@@ -290,8 +290,9 @@ section {
 .uc-btn:hover {
     background-color: black;
 }
-.next-btn > a {
+.next-btn > button {
     margin: 0 auto;
+    border: transparent;
     display: block;
     width: 300px;
     background-color: rgb(77, 77, 77);
@@ -302,7 +303,7 @@ section {
     
 }
 
-.next-btn > a:hover {
+.next-btn > button:hover {
     background-color: black;
 }
 

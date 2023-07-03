@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
@@ -28,6 +29,7 @@ import com.google.gson.Gson;
 import com.turtle.www.member.model.vo.Member;
 import com.turtle.www.project.model.vo.Project;
 import com.turtle.www.projectMember.model.service.ProjectMemberService;
+import com.turtle.www.projectMember.model.vo.ProjectMember;
 
 @Controller
 @RequestMapping("/project")
@@ -73,7 +75,7 @@ public class ProjectMemberController {
 	}
 	
 	
-	@PostMapping("/inviteMember")
+	@PostMapping(value = "/inviteMember", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
 	public String inviteMember(HttpSession session,
 								@RequestBody List<String> selectEmail
 								) {
@@ -89,8 +91,8 @@ public class ProjectMemberController {
 			
 			logger.info(toMail);
 			
-		    String acceptLink = "/project/inviteMember/" + toMail + "/" + inviteCode + "/accept";
-		    String rejectLink = "/project/inviteMember/" + toMail + "/" + inviteCode + "/reject";
+		    String acceptLink = "http://localhost:8080/project/inviteMember/" + toMail + "/" + inviteCode + "/accept";
+		    String rejectLink = "http://localhost:8080/project/inviteMember/" + toMail + "/" + inviteCode + "/reject";
 		    String acceptButton = "<a href=\"" + acceptLink + "\">수락</a>";
 		    String rejectButton = "<a href=\"" + rejectLink + "\">거절</a>";
 			
@@ -138,36 +140,47 @@ public class ProjectMemberController {
 	        }
 			
 		}
-
 		
 		return "redirect:/project/createWorkspace";
-		
 		
 	}
 
 	
-	@PostMapping("/inviteMember/{memberEmail}/{inviteCode}/accept")
+	@RequestMapping(value="/inviteMember/{memberEmail}/{inviteCode}/accept")
 	public String acceptInvitation(@PathVariable("inviteCode") String inviteCode,
-									@PathVariable("memberEmail") String memberEmail) {
-		
-		logger.info("초대메일 수락");
+	                               @PathVariable("memberEmail") String memberEmail,
+	                               HttpSession session) {
+	    logger.info("초대메일 수락");
+	    
 	    // 초대 수락 동작 처리
 	    // invitationId를 사용하여 해당 초대를 수락 처리합니다.
 	    
 	    // 수락 처리 후 필요한 동작 수행
-		//수락하면 projectmember에 추가
-		// shared project에 추가
-		
-		
-	
-		
+	    // 수락하면 projectmember에 추가
+	    // shared project에 추가
 	    
-	    return "redirect:/";
+	    Project project = (Project) session.getAttribute("project");
+	    
+	    int memberNo = service.selectMemberNo(memberEmail);
+	    
+	    ProjectMember pm = new ProjectMember();
+	    pm.setProjectNo(project.getProjectNo());
+	    pm.setMemberNo(memberNo);
+	    
+	    int result = service.insertProjectMember(pm);
+	    
+	    if (result > 0) {
+	        logger.info("pm 삽입 성공");
+	    }
+	    
+	    return "redirect:/"; // 적절한 리다이렉션 경로로 수정해주세요.
 	}
 
-	@PostMapping("/inviteMember/{memberEmail}/{inviteCode}/reject")
+
+	@RequestMapping(value="/inviteMember/{memberEmail}/{inviteCode}/reject")
 	public String rejectInvitation(@PathVariable("inviteCode") String inviteCode,
-								@PathVariable("memberEmail") String memberEmail) {
+								@PathVariable("memberEmail") String memberEmail,
+								HttpSession session) {
 		
 		logger.info("초대메일 거절");
 	    // 초대 거절 동작 처리
@@ -175,6 +188,7 @@ public class ProjectMemberController {
 	    
 	    // 거절 처리 후 필요한 동작 수행
 		// 거절하면 project 관리자한테 메일
+		
 	    
 	    return "redirect:/";
 	}

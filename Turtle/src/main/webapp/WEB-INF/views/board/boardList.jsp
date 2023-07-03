@@ -15,9 +15,10 @@
     <title>Turtle</title>
     
     <link rel="stylesheet" href="${contextPath}/resources/css/board/boardList.css">
+	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    게시판 리스트 확인
+
     
     <div class="board-area">   	
 		<fmt:formatDate var="boardRegDate" value="${board.boardRegDate}" pattern="MM-dd HH:mm"/>
@@ -37,16 +38,15 @@
 				</div>
 			</div>
 				<div class="board-info">
-					<c:choose>
-						<c:when test="${empty board.boardUpdateDate}">
+					<div>
 						<span class="profile-image"></span>
-						<span class="updateDate"></span>
-						</c:when>
-						<c:otherwise>
-						<span class="profile-image"></span>
-						<span class="updateDate"></span>
-						</c:otherwise>
-					</c:choose>    							
+						<span class="user-name"></span>
+					</div>
+					<div class="eventDate">
+						<div class="eventStartDate"></div>
+						<div></div>
+						<div class="eventEndDate"></div>
+					</div>						
 				</div>
 			<div class="delete-board" style="visibility:hidden;">
 			</div>
@@ -60,6 +60,9 @@
 					<div class="add-board" style="visibility:hidden;">
 						<button class="add-board-btn">+</button>
 					</div>
+					<div class="emoji-btn">
+						<i class="fa-regular fa-file"></i>
+					</div>
 					<a href="../../boardDetail/${projectNo}/${workspaceNo}/${board.boardNo}" class="select-board-detail">
 						<div class="boardTitle" contenteditable="false">
 							${board.boardTitle}
@@ -70,18 +73,32 @@
 						<button class="close-edit-boardTitle-btn" style="display:none;">done</button>
 					</div>
 				</div>
-					<div class="board-info">
-						<c:choose>
-							<c:when test="${empty board.boardUpdateDate}">
+				<div class="board-info">
+					<c:choose>
+						<c:when test="${empty board.updateMemberName}">
+						<div class="user-profile">
 							<span class="profile-image"><img src="${contextPath}${board.regProfileImg}"></span>
-							<span class="updateDate">${board.boardRegDate}</span>
-							</c:when>
-							<c:otherwise>
+							<span class="user-name">${board.regMemberName}</span>
+						</div>
+						<div class="eventDate">
+							<div class="eventStartDate">${board.eventStartDate}</div>
+							<div> - </div>
+							<div class="eventEndDate">${board.eventEndDate}</div>
+						</div>
+						</c:when>
+						<c:otherwise>
+						<div>
 							<span class="profile-image"><img src="${contextPath}${board.updateProfileImg}"></span>
-							<span class="updateDate">${board.boardUpdateDate}</span>
-							</c:otherwise>
-						</c:choose>    							
-					</div>
+							<span class="user-name">${board.updateMemberName}</span>
+						</div>
+						<div class="eventDate">
+							<div class="eventStartDate">${board.eventStartDate}</div>
+							<div> - </div>
+							<div class="eventEndDate">${board.eventEndDate}</div>
+						</div>
+						</c:otherwise>
+					</c:choose>    							
+				</div>
 				<div class="delete-board" style="visibility:hidden;">
 					<button class="delete-board-btn">-</button>
 				</div>    						
@@ -112,15 +129,25 @@
     	let profileImage = "${profileImage}";
     	
     	// 로그인이 되어 있을 경우에만
-		// /boardList 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
+		// /boardList 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성		
 		// 게시글 수정용 sock
 		let boardListSock = new SockJS(contextPath+"/boardList");
+		// /insertBoard 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
 		// 게시글 추가용 sock
 		let insertBoardSock = new SockJS(contextPath+"/insertBoard");
+		// /deleteBoard 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
 		// 게시글 삭제용 sock
 		let deleteBoardSock = new SockJS(contextPath+"/deleteBoard");
+		// /updateBoardDetail 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
+		// 게시글 내용 수정용 sock
+		let updateBoardDetailSock = new SockJS(contextPath+"/updateBoardDetail");
 		// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
-		
+		// 게시글 내용 추가용 sock
+		let insertBoardDetailSock = new SockJS(contextPath+"/insertBoardDetail");
+		// 게시글 내용 삭제용 sock
+		let deleteBoardDetailSock = new SockJS(contextPath+"/deleteBoardDetail");
+		// 이벤트 시간 생성용 sock
+        let updateEventDateSock = new SockJS(contextPath+"/updateEventDate");
     </script>
 
     <!-- memo.js 연결 -->
