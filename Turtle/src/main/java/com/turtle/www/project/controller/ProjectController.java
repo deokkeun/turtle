@@ -16,6 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.turtle.www.member.model.vo.Member;
 import com.turtle.www.project.model.service.ProjectService;
 import com.turtle.www.project.model.vo.Project;
+import com.turtle.www.projectMember.model.vo.ProjectMember;
 
 @Controller
 @RequestMapping("/project")
@@ -48,6 +49,8 @@ public class ProjectController {
 		
 		// 생성자 멤버 번호 추가
 		project.setCreateMemberNo(loginMember.getMemberNo());
+		ProjectMember pm = new ProjectMember();
+		pm.setMemberNo(loginMember.getMemberNo());
 		
 		// 초대코드 생성
         // 인증번호 6자리 생성코드(영어 대/소문 + 숫자)
@@ -81,12 +84,16 @@ public class ProjectController {
         // 프로젝트 생성
 		int result = service.createProject(project);
 		
+		pm.setProjectNo(project.getProjectNo());
+
 		String message = null;
 		String path = null;
 		
 		if(result > 0) { // 프로젝트 생성 성공
 			path = "project/inviteMember";
 			session.setAttribute("project", project);
+			logger.info("pm manager 삽입 성공");
+			service.insertPmManager(pm);
 			
 		}else {
 			message = "프로젝트 생성에 실패하였습니다.";

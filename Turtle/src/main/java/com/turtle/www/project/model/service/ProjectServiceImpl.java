@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.turtle.www.project.model.dao.ProjectDAO;
 import com.turtle.www.project.model.vo.Project;
+import com.turtle.www.projectMember.model.vo.ProjectMember;
 
 @Service
 public class ProjectServiceImpl implements ProjectService{
@@ -25,6 +26,11 @@ public class ProjectServiceImpl implements ProjectService{
 		int result = dao.createProject(project);
 		
 		return result;
+	}
+
+	@Override
+	public void insertPmManager(ProjectMember pm) {
+		 dao.insertPmManager(pm);
 	}
 	
 	
