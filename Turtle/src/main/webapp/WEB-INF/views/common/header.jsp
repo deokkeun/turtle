@@ -116,8 +116,6 @@
                 <p>4 hrs. ago</p>
               </div>
             </li>
-            
-
             <li>
               <hr class="dropdown-divider">
             </li>
@@ -408,6 +406,29 @@
   
   <aside class="right-sidebar" id="rightSidebar" >
 	  <div>${projectNo}</div>
+    <div>3</div>
+    <div style="overflow: scroll; height: 200px;">		
+					<div style="overflow: scroll;">chatRoomList : ${chatRoomList}</div>	
+					<div>projectNo : ${projectNo}</div>
+					<div>loginMember : ${loginMember}</div>
+					<div>chatRoomNo : ${chatRoomNo}</div>
+					<div>pmNo : ${pmNo}</div>
+				</div>
+        
+    <form id="list">
+      <ul>
+         
+      <c:forEach var="chatRoom" items="${chatRoomList}">
+          <li class="chatList">
+              <form action="../chatRoom/${projectNo}/${chatRoom.chatRoomNo}" id="room" value="${chatRoom.chatRoomNo}">
+                  <button class="chatBtn" value="${chatRoom.chatRoomNo}">${chatRoom.chatRoomTitle}</button>
+              </form>
+          
+          </li>  	    	   	
+      </c:forEach>
+      </ul>
+      <div class="r"></div>
+  </form>
 
     
   <button class="sidebar-close-btn" onclick="toggleSidebar()"><i class="bi bi-chevron-double-right"></i></button>
@@ -447,7 +468,7 @@
  
 </aside>
   
-  <!-- <script src='${contextPath}/resources/js/chat.js'></script>  -->
+  <script src='${contextPath}/resources/js/chat.js'></script> 
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.js"></script>
   <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script> 
 

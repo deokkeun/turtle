@@ -37,26 +37,26 @@ function toggleSubMenu(id) {
 // createElement로 li생성후 ajax로 chatRoomList를 불러와서 append해주기
 
 
-$('.sidebar-toggle').on('click', function() {
+// $('.sidebar-toggle').on('click', function() {
 
-  $.ajax({
+//   $.ajax({
     
-      url : contextPath + '/chat/chatRoom/1/3?',
-      type : 'get',
-      datatype : 'html',
+//       url : contextPath + '/chat/chatRoom/1/3?',
+//       type : 'get',
+//       datatype : 'html',
 
-      success : function(data) {
+//       success : function(data) {
 
         
-        $('.right-sidebar').html(data);
+//         $('.right-sidebar').html(data);
           
          
-      }
+//       }
 
-  })
+//   })
 
  
-});
+// });
 
 
 // $('.chatBtn').on('click', function() {

@@ -69,8 +69,8 @@
 						</div>
 					</a>
 					<div class="edit-boardTitle" style="visibility:hidden;">
-						<button class="edit-boardTitle-btn">edit</button>
-						<button class="close-edit-boardTitle-btn" style="display:none;">done</button>
+						<button class="edit-boardTitle-btn"><i class="fa-regular fa-pen-to-square"></i></i></button>
+						<button class="close-edit-boardTitle-btn" style="display:none;"><i class="fa-regular fa-pen-to-square"></i></button>
 					</div>
 				</div>
 				<div class="board-info">
@@ -87,7 +87,7 @@
 						</div>
 						</c:when>
 						<c:otherwise>
-						<div>
+						<div class="user-profile">
 							<span class="profile-image"><img src="${contextPath}${board.updateProfileImg}"></span>
 							<span class="user-name">${board.updateMemberName}</span>
 						</div>

@@ -20,6 +20,7 @@ a {
 .board {
 	display: flex;
 	height:25px;
+	overflow: hidden;
 	
 	
 }
@@ -37,10 +38,33 @@ a {
 .add-board {
 	flex-basis: 5%;
 }
+.add-board-btn {
+	background-color: transparent;
+	font-size: 24px;
+	color: rgba(55, 53, 47, 0.35);
+	border: none;
+	
+}
+.add-board-btn:hover {
+	cursor: pointer;
+	color: black;
+}
+.edit-boardTitle-btn, .close-edit-boardTitle-btn{
+	border: none;
+	background-color: transparent;
+	color: rgba(55, 53, 47, 0.35);
+	font-size: 18px;
+	margin-left: 5px;
+	
+}
+.edit-boardTitle-btn:hover, .close-edit-boardTitle-btn:hover {
+	cursor: pointer;
+	color: black;
 
+}
 .boardTitle {
 	flex-basis: 80%;
-	width: 308px;
+	display: inline-block;
 	height: 30px;
 	justify-content: center;
 	
@@ -79,21 +103,16 @@ a {
 	display: flex;
 }
 
-.eventDate div:nth-of-type(1) {
-	width: 85px;
-}
 
-.eventDate div:nth-of-type(2) {
-	width: 10px;
-}
-
-.eventDate div:nth-of-type(3) {
-	width: 85px;
-}
 
 /* hover 시에 이름 확인 */
+.user-profile {
+	display: block;
+}
 .user-name {
 	visibility: hidden;
+	background: black;
+	color: white;
 
 }
 .profile-image:hover  ~ .user-name{	

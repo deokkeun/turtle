@@ -1,13 +1,30 @@
 typing();
 $(document).on("mouseover", ".board", function(){mouseover($(this))});
 $(document).on("mouseout", ".board", function(){mouseout($(this))});
-$(document).on("click", ".edit-boardTitle-btn", function(){editBoardTitleBtn($(this))});
-$(document).on("click", ".close-edit-boardTitle-btn", function(){closeEditBoardTitleBtn($(this))});
+$(document).on("click", ".edit-boardTitle-btn", function(){
+    const value = $('.boardTitle').val();
+    editBoardTitleBtn($(this));
+    
+ 
+});
+
+$(document).on('keydown', '.boardTitle', function(key) {
+    if(key.keyCode == 13) {
+        console.log('2');
+        closeEditBoardTitleBtn($(this).parents('.select-board-detail').siblings('.edit-boardTitle').children('.close-edit-boardTitle-btn'));
+    }
+})
+// $(document).on("click", ".close-edit-boardTitle-btn", function(){closeEditBoardTitleBtn($(this))});
 //$(document).on("keydown", ".board", function(){inputTyping()});
 //$(document).on("keyup", ".board", function(){keyupTyping($(this))});
 $(document).on("click", ".add-board-btn", function(){addBoardBtn($(this))});
 $(document).on("click", ".delete-board-btn", function(){deleteBoardBtn($(this))});
-
+$(document).on("click", ".edit-boardTitle-btn", function() {
+    var value = $('.boardTitle').text();
+    $(this).parents('.edit-boardTitle').siblings('.select-board-detail').children('.boardTitle').focus().val('').val(value);
+    
+    
+}) 
 // 게시글 제목 수정용 웹소켓 작업
 // 웹소켓 핸들러에서
 // s.sendMessage( new TextMessage(message.getPayload()) );
@@ -301,6 +318,7 @@ function closeEditBoardTitleBtn(closeEditBoardTitleBtn) {
     $(closeEditBoardTitleBtn).parent().siblings().find(".boardTitle").attr('contenteditable', 'false');
     $(closeEditBoardTitleBtn).css("display", "none");
     $(closeEditBoardTitleBtn).siblings(".edit-boardTitle-btn").css("display", "block");
+   
 };
 
 // 게시글 제목 수정 타이핑 함수
@@ -425,3 +443,15 @@ function currentTime() {
 function addZero(temp){
 	return temp < 10 ? "0" + temp : temp;;
 }
+//엔터키 입력시 바로 수정
+// $(document).on('keydown', '.boardTitle', function(key) {
+//     if(key.keyCode == 13) {
+//         console.log('2');
+//         closeEditBoardTitleBtn($('.close-edit-boardTitle-btn'));
+
+//     }
+// })
+
+//수정버튼 클릭시 focus 맨뒤에 하는거
+
+
