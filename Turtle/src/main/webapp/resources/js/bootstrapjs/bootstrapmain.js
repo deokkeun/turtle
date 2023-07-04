@@ -492,8 +492,9 @@ workspaceNavLink.addEventListener('click', function (event) {
       addButton.classList.remove('disabled');
     }, 1000);
   });
-
-
+  
+  
+  
 
   const projectNav = document.querySelector('#project-nav');
   const menuBoard = document.querySelector('#menu-board');
