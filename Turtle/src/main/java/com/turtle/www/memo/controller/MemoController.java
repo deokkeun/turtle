@@ -21,7 +21,7 @@ import com.turtle.www.memo.model.service.MemoService;
 import com.turtle.www.memo.model.vo.Memo;
 import com.turtle.www.projectMember.model.service.ProjectMemberService;
 
-@SessionAttributes({"loginMember", "workspaceNo", "projectNo"})
+@SessionAttributes({"loginMember", "workspaceNo", "projectNo", "pmNo"})
 @RequestMapping("/workspace/memo")
 @Controller
 public class MemoController {

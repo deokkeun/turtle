@@ -14,4 +14,11 @@ public interface ProjectService {
 
 	void insertPmManager(ProjectMember pm);
 
+	
+	/** 본인 생성 프로젝트넘버 조회 서비스
+	 * @param memberNo
+	 * @return projectNo
+	 */
+	int selectMyProjectNo(int memberNo);
+
 }
