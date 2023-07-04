@@ -80,8 +80,6 @@
         <!-- calendar -->
         <div id='calendar-main'></div>
         
-        
-        
         <!--  메모장 -->
         <jsp:include page="/WEB-INF/views/workspace/memo.jsp" />
         
@@ -100,7 +98,7 @@
             <button>git loadMap test(GET)</button>
         </form>
       
-        <form action="${contextPath}/calendar/calendar/1/9" method="GET">
+        <form action="${contextPath}/calendar/calendar/1/5" method="GET">
            <button>calendar</button>
         </form>
               
