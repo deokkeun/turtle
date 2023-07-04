@@ -40,12 +40,6 @@
 
      <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
-
-        <li class="nav-item d-block d-lg-none">
-          <a class="nav-link nav-icon search-bar-toggle " href="#">
-            <i class="bi bi-search"></i>
-          </a>
-        </li><!-- End Search Icon-->
        
         <!-- 알림 -->
         <!-- 알림 -->
@@ -56,7 +50,7 @@
                 <span class="badge bg-primary badge-number"></span>
             </a><!-- End Notification Icon -->
 
-            <ul id="alert-area" class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <ul id="alert-area" class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications" style="width: 320px;">
                 
                
             
@@ -159,7 +153,7 @@
         <a class="nav-link collapsed" data-bs-target="#project-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-chevron-down" id="arrow"></i><i class="bi bi-menu-button-wide"></i><span>PROJECT</span>
         </a>
- <button class="add-file-button" onclick="addFileAndToggle('project-nav', event)"><i class="bi bi-plus"></i></button>
+<!-- <button class="add-file-button" onclick="addFileAndToggle('project-nav', event)"><i class="bi bi-plus"></i></button> -->
     
   <ul id="project-nav" class="nav-content collapse " data-bs-parent="">
  <!--    <li>
@@ -186,7 +180,7 @@
           <a class="nav-link collapsed" data-bs-target="#shared-project-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-chevron-down" id="arrow"></i><i class="bi-share-fill"></i> <span>SHARED PROJECT</span>
           </a>
-          <button class="add-file-button" onclick="addFileAndToggle('shared-project-nav', event)"><i class="bi bi-plus"></i></button>
+         <!--   <button class="add-file-button" onclick="addFileAndToggle('shared-project-nav', event)"><i class="bi bi-plus"></i></button> -->
           
           <ul id="shared-project-nav" class="nav-content collapse " data-bs-parent="">
       <!-- 추가적인 프로젝트 항목들 -->
@@ -198,7 +192,7 @@
           <a class="nav-link collapsed" data-bs-target="#workspace-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-chevron-down" id="arrow"></i><i class="bx bx-desktop"></i><span>WORKSPACE</span>
           </a>
-          <button class="add-file-button" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button>
+         <!--   <button class="add-file-button" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button> -->
           <ul id="workspace-nav" class="nav-content collapse" data-bs-parent="">
           <!--   <li>
               <a href="">
@@ -264,19 +258,10 @@
             <span>Payment Details</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="">
-            <i class="ri-settings-5-line"></i>
-            <span>Settings</span>
-          </a>
-        </li><!-- End Error 404 Page Nav --><!-- End Blank Page Nav -->
-
-
       </ul>
   </aside><!-- End Sidebar-->
 
-      </ul>
-  </aside><!-- End Sidebar-->
+
 <!-- right sidebar(오른쪽 사이드바) --> 
   
   <aside class="right-sidebar" id="rightSidebar" >

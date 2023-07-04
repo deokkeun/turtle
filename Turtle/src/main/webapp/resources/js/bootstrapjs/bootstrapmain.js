@@ -520,3 +520,58 @@ workspaceNavLink.addEventListener('click', function (event) {
       showMenuBoard();
     }
   });
+  
+  
+  
+  function toggleCustomSidebar() {
+  var sidebar = document.querySelector('.sidebar');
+  var arrow = document.getElementById('custom-arrow');
+
+  sidebar.classList.toggle('collapsed');
+
+  if (sidebar.classList.contains('collapsed')) {
+    arrow.innerHTML = '▶'; // 축소된 상태에서 보여질 아이콘 설정
+  } else {
+    arrow.innerHTML = '◀'; // 확장된 상태에서 보여질 아이콘 설정
+  }
+}
+
+function toggleSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  const arrow = document.querySelector('#arrow');
+  const sidebarNav = document.querySelector('.sidebar-nav');
+
+  sidebar.classList.toggle('collapsed');
+  arrow.classList.toggle('collapsed');
+  sidebarNav.classList.toggle('collapsed');
+}
+
+function toggleSidebar() {
+  var sidebar = document.getElementsByClassName('sidebar')[0];
+  var arrow = document.getElementById('arrow');
+  var addButton = document.getElementsByClassName('add-file-button');
+
+  sidebar.classList.toggle('collapsed');
+
+  if (sidebar.classList.contains('collapsed')) {
+    arrow.style.display = 'none';
+    for (var i = 0; i < addButton.length; i++) {
+      addButton[i].style.display = 'none';
+    }
+  } else {
+    arrow.style.display = 'inline-block';
+    for (var i = 0; i < addButton.length; i++) {
+      addButton[i].style.display = 'inline-block';
+    }
+  }
+}
+
+function toggleProjectMenu() {
+  var projectNav = document.getElementById("project-nav");
+  if (projectNav.classList.contains("show")) {
+    projectNav.classList.remove("show");
+  } else {
+    projectNav.classList.add("show");
+  }
+}
+  

@@ -38,7 +38,7 @@ body {
 .header.header-scrolled {
   background: #fff;
   padding: 15px 10px;
-  box-shadow: 0px 2px 20px rgba(4, 101, 91, 0.289);
+  box-shadow: 0px 2px 20px rgba(113, 156, 212, 0.645);
 }
 
 
@@ -70,13 +70,13 @@ nav > ul {
 /* 네비바 안에 a태그 */
 nav > ul > li > a {
   text-decoration: none;
-  color: black;
+  color: #012970;
   cursor: pointer;
 }
 
 /* 네비바 안에 a태그 호버시 */
 ul a:hover {
-  color:#317563;
+  color:#4154f1; 
 }
 
 
@@ -118,14 +118,14 @@ ul a:hover {
 
 /* 로그인, 로그아웃 버튼 */
 #login-modal-btn {
-	color: black;
+	color: #012970;
 	text-decoration: none;
 }
 
 
 /* 로그인, 로그아웃 버튼 */
 #login-modal-btn:hover{
-	color: #317563; 
+	color: #4154f1; 
  transition: 50ms;
 }
 
@@ -135,8 +135,8 @@ ul a:hover {
   line-height: 3;
   padding: 10px 15px;
   border-radius: 4px;
-  color: #fff;
-  background: #a1b8be;
+  color: #012970;
+  background: #f6f9ff;
 }
 
 /* 반응형시 보이는 햄버거버튼 */
@@ -236,12 +236,12 @@ ul a:hover {
   }
 
   .nav-links li:hover {
-    background-color: #a1b8be;
+    background-color: #f6f9ff;
    
   } 
   
   .nav-links li:hover a {
-    color:#fff;
+    color: #4154f1;
   }
 
   .nav-links2 {

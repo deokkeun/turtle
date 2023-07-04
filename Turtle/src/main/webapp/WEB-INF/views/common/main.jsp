@@ -22,24 +22,7 @@
     <link href="${contextPath}/resources/favicon/apple-icon-60x60.png" rel="apple-touch-icon">
      <!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
-    
-    <style>
-                /* 로딩페이지 */
-        /* #load {
-            width: 100%;
-            height: 100%;
-            top: 45%;
-            left: 0;
-            position: fixed;
-            display: block;
-            opacity: 0.8;
-            background: white;
-            z-index: 99;
-            text-align: center;       
-        } */
-    </style>
 
-	
     <title>Turtle</title>
    
 </head>
@@ -51,11 +34,7 @@
     <jsp:include page="/WEB-INF/views/common/header.jsp" />
     
     <main id="main" class="main">    
-        <!-- 로딩 -->
-        <!-- <div id="load">
-            <div><img id="loading-image" src="${contextPath}/resources/images/top버튼거북이2.png" width="150px"></div>
-            <div><img src="${contextPath}/resources/images/load.gif" width="100px"></div>
-        </div>    -->
+      
         
         <div id="clock" value="0">00 : 00 : 00</div>
 
@@ -65,7 +44,11 @@
         <jsp:include page="/WEB-INF/views/workspace/memo.jsp" />
         
         
-      
+        <form action="${contextPath}/member/myPage/info" method="GET">
+                <button>마이페이지 이동</button>
+        </form>
+        
+
         <form action="${contextPath}/workspace/loadmap/${projectNo}/10" method="GET">
             <button>git loadMap test(GET)</button>
         </form>
@@ -74,11 +57,11 @@
            <button>calendar</button>
         </form>
               
-        <form action="../chat/chatRoomList/1" method="get">
+        <form action="../chat/chatRoomList/${projectNo}" method="get">
         	<button>채팅 테스트</button>
         </form>
         
-        <form action="../workspace/memo/1/5" method="get">
+        <form action="../workspace/memo/${projectNo}/5" method="get">
         	<button>메모장 테스트</button>
         </form>
 
@@ -86,7 +69,7 @@
         	<button>성훈 테스트</button>
         </form>
         
-        <form action="../board/boardList/1/5" method="get">
+        <form action="../board/boardList/${projectNo}/5" method="get">
         	<button>게시판 테스트</button>
         </form>
         <a href="javascript:join()">채팅방</a>
@@ -95,14 +78,7 @@
 
     </main>
     
-     <!--loading 페이지-->
-     <!-- <script type="text/javascript">
-        $(window).one('load', function() {
-            setTimeout(function(){
-                $("#load").fadeOut();
-            }, 500);
-        }); -->
- 
+   
     <script>
     //   const contextPath = "${contextPath}";
     </script>

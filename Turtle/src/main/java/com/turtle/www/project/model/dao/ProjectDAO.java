@@ -25,4 +25,25 @@ public class ProjectDAO {
 		
 	}
 
+
+	/** 본인 생성 프로젝트넘버 조회 dao
+	 * @param memberNo
+	 * @return projectNo
+	 */
+	public int selectMyProjectNo(int memberNo) {
+		
+		// 내프로젝트 존재여부확인
+		int count = sqlSession.selectOne("projectMapper.selectMyProject", memberNo);
+		int projectNo = 0;
+		
+		if(count > 0) {
+			projectNo = sqlSession.selectOne("projectMapper.selectMyProjectNo", memberNo);
+		} else { 
+			projectNo = 0;
+		}
+		
+		
+		return projectNo;
+	}
+
 }
