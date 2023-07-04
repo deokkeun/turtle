@@ -18,6 +18,7 @@
 		
 		<typeAlias type="com.turtle.www.projectMember.model.vo.ProjectMember" alias="projectMember"/>
 		<typeAlias type="com.turtle.www.project.model.vo.Project" alias="project"/>
+		<typeAlias type="com.turtle.www.workspace.model.vo.Workspace" alias="workspace"/>
 		
 		<typeAlias type="com.turtle.www.chat.model.vo.ChatRoom" alias="chatRoom"/>
 		<typeAlias type="com.turtle.www.chat.model.vo.ChatRoomJoin" alias="chatRoomJoin"/>
@@ -54,6 +55,7 @@
 		<mapper resource="/mappers/loadmap-mapper.xml"/>
 		<mapper resource="/mappers/gitCommit-mapper.xml"/>
 		<mapper resource="/mappers/alert-mapper.xml"/>
+		<mapper resource="/mappers/workspace-mapper.xml"/>
 	</mappers>
 
 </configuration>

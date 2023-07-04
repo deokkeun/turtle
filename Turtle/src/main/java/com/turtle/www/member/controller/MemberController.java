@@ -39,6 +39,7 @@ import com.turtle.www.member.model.service.MemberService;
 import com.turtle.www.member.model.vo.Member;
 import com.turtle.www.project.model.service.ProjectService;
 import com.turtle.www.projectMember.model.service.ProjectMemberService;
+import com.turtle.www.workspace.model.service.WorkspaceService;
 
 
 // @RestController // @Controller + @ResponseBody
@@ -58,6 +59,8 @@ public class MemberController {
 	private MemberService service;
 	@Autowired
 	private ProjectService pService;
+	@Autowired
+	private WorkspaceService wService;
 	
 	
 	
@@ -433,7 +436,7 @@ public class MemberController {
 	
 	
 	
-	
+	// projectNo 받아오는거여서 나중에 참고해야함
 	// 테스트용 로그인(나중에 반드시 삭제!!!!!!)
 	@PostMapping("/testLogin")
 	public String testLogin(Member inputMember,

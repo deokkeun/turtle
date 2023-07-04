@@ -29,5 +29,14 @@ public interface ProjectMemberService {
 
 	int insertProjectMember(ProjectMember pm);
 
+	
+	/** 프로젝트 내 로그인 회원의 프로젝트 멤버정보 조회 서비스
+	 * @param map
+	 * @return projectMember
+	 */
+	ProjectMember selectProjectMember(Map<String, Object> map);
+
+	
+
 
 }

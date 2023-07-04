@@ -41,6 +41,14 @@ public class ProjectMemberDAO {
 	}
 
 
+	/** 프로젝트 내 로그인 회원의 프로젝트 멤버정보 조회 dao
+	 * @param map
+	 * @return projectMember
+	 */
+	public ProjectMember selectProjectMember(Map<String, Object> map) {
+		return sqlSession.selectOne("projectMemberMapper.selectProjectMember", map);
+	}
+
 	
 
 }

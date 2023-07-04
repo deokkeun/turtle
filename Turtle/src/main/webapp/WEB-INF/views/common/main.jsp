@@ -38,7 +38,19 @@
         
         <div id="clock" value="0">00 : 00 : 00</div>
 
-
+        <!-- 세션 잘담기는지 테스트 -->
+        <span>loginMember : ${loginMember}</span><br>
+        <span>projectNo : ${projectNo}</span><br>
+        <span>projectMember : ${projectMember}</span><br>
+        <span>workspaceNo : ${workspaceNo}</span>
+        <span>workspace : </span>
+        <c:forEach var="workspace" items="${workspaceList}">
+            <span>${workspace}</span><br>
+        </c:forEach>
+        <span>project : </span>
+        <c:forEach var="project" items="${projectList}">
+            <span>${project}</span><br>
+        </c:forEach>
 
         <!--  메모장 -->
         <jsp:include page="/WEB-INF/views/workspace/memo.jsp" />

@@ -1,5 +1,8 @@
 package com.turtle.www.project.model.service;
 
+import java.util.List;
+
+import com.turtle.www.member.model.vo.Member;
 import com.turtle.www.project.model.vo.Project;
 import com.turtle.www.projectMember.model.vo.ProjectMember;
 
@@ -20,5 +23,11 @@ public interface ProjectService {
 	 * @return projectNo
 	 */
 	int selectMyProjectNo(int memberNo);
+
+	/** 프로젝트 리스트 조회 서비스
+	 * @param loginMember
+	 * @return projectList
+	 */
+	List<Project> selectProjectList(Member loginMember);
 
 }
