@@ -31,30 +31,18 @@ body {
 }
 
 
-
-/*--------------------------------------------------------------
-# Sections
---------------------------------------------------------------*/
 section {
     padding: 25px 0;
     overflow: hidden;
 }
 
-/* 자주묻는질문/ Contact Us 큰제목 */
+/* 자주묻는질문 영역 */
 .container > .section-header {
     text-align: center;
     padding: 50px 0px 60px 0px;
 }
 
-.section-header h2 {
-    font-size: 13px;
-    letter-spacing: 1px;
-    font-weight: 700;
-    margin: 0;
-    color: #4154f1;
-    text-transform: uppercase;
-}
-
+/* 자주묻는질문 글씨 */
 .section-header p {
     margin: 100px 0 0 0;
     padding: 0;
@@ -64,17 +52,10 @@ section {
     color:   #012970;
 }
 
-.section-header p span {
-    color:#a1b8be;
-}
-
-
-
-
-
 /*--------------------------------------------------------------
 # F.A.Q section
 --------------------------------------------------------------*/
+
 .faq .accordion-collapse {
     border: 0;
 }
@@ -91,7 +72,7 @@ section {
 
 
 .faq .accordion-button:hover {
-    color: #317563;
+    color: #4154f1;
 }
 
 .faq .accordion-button:focus {
@@ -101,7 +82,7 @@ section {
 /* 클릭하여 내려갈 때 색깔변함 */
 .faq .accordion-button:not(.collapsed) {
     background: none;
-    color: #317563;
+    color: #4154f1;
     border-bottom: 0;
 }
 
@@ -125,6 +106,7 @@ section {
 /* 원하는 답변을 찾지 못했나요? 부분 */
 .textfaq {
     text-align: left;
+    color: #707070;
     /* margin-left : 50px; */
 }
 
@@ -134,14 +116,13 @@ section {
     margin-top: 38px;
     margin-bottom: 34px;
     text-align: left;
+    color: #012970;
 }
 
 
 .textfaq h5 {
     margin-bottom: 0rem;
-    font-weight: 530;
-    color: #707070;
-  
+    font-weight: 550;  
 }
 
 
@@ -153,6 +134,7 @@ section {
     border-bottom : 2px solid #dee2e6; 
     margin-left : 50px;
     padding-bottom: 5px;
+    color :#012970;
 }
 
 .email h4 {

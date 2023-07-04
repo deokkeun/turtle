@@ -67,7 +67,7 @@
                                 <!-- 왼쪽 첫번째 질문답 -->
                                 <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
                                     <div class="accordion-body">
-                                        죄송합니다. 현재는 월 단위로 결제만 가능하며, 현재 진행중인 할인 프로모션은 없습니다.
+                                        죄송합니다😭😭 현재는 월 단위로 결제만 가능하며, 현재 진행중인 할인 프로모션은 없습니다.
                                         추 후에 진행될 경우 홈페이지를 통해 공지하도록 하겠습니다.
                                     </div>
                                 </div>
@@ -76,13 +76,14 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
-                                        질문2
+                                       무료로 사용하다가 도중에 유료로 가입하게 되면 결제는 어떻게 되는건가요?
                                     </button>
                                 </h2>
                                 <!-- 왼쪽 두번째 질문답 -->    
                                 <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
                                     <div class="accordion-body">
-                                        답변2
+                                        <b>유료결제</b>는 <b><u>결제한 시점부터 30일 기준으로 일할 계산</u></b>됩니다.
+                                        결제내역 및 기간은 <b>[My Profile]</b> - <b>[결제내역]</b> 클릭하면 자세하게 확인할 수 있습니다.
                                     </div>
                                 </div>
                             </div> 
@@ -90,13 +91,13 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
-                                        질문3
+                                        회원탈퇴는 어디로 들어가면 되나요?
                                     </button>
                                 </h2>
                                 <!-- 왼쪽 세번째 질문답  -->
                                 <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
                                     <div class="accordion-body">
-                                        답변3
+                                        <b>프로젝트 내 사용자계정 [이름]</b>클릭 - <b>[My Profile]</b> - <b>[기본정보]</b> 하단 내 <b>[계정삭제]</b> 클릭하여 회원탈퇴 진행하면 됩니다.
                                     </div>
                                 </div>
                             </div>
@@ -110,13 +111,14 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1">
-                                        질문4
+                                        프로젝트와 워크스페이스의 차이가 뭔가요?
                                     </button>
                                 </h2>
                                 <!-- 오른쪽 첫번째 질문답 -->
                                 <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
                                     <div class="accordion-body">
-                                        답변4
+                                        프로젝트는 말그대로 하나의 큰 틀의 업무를 말합니다.
+                                        해당 업무중 하나하나의 기능을 엮어 설정한게 워크스페이스며, 업무 특성에 맞는 템플릿을 추가하여 사용할 수 있습니다.
                                     </div>
                                 </div>
                             </div>
@@ -125,13 +127,13 @@
                             <div class="accordion-item">
                             	<h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2">
-                                        질문5
+                                        채팅은 팀별, 개인별 모두 가능한가요?
                                     </button>
                                 </h2>
                                 <!-- 오른쪽 두번째 질문답 -->
                                 <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
                                     <div class="accordion-body">
-                                        답변5
+                                        네 생성된 프로젝트 내에 초대된 팀원을 기준으로 1:1 채팅 프로젝트별 채팅 모두 가능합니다. 
                                     </div>
                                 </div>
                             </div>
@@ -139,13 +141,14 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-3">
-                                        질문6
+                                        무료이용시 기간제한이 있나요?
                                     </button>
                                 </h2>
                                 <!-- 오른쪽 세번째 질문답 -->
                                 <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
                                     <div class="accordion-body">
-                                        답변6
+                                        아니요. 많은 분들이 사용 할 수 있게 기간제한은 따로 없습니다. 워크스페이스 생성 및 인원 수 제한을 
+                                        제외한 모든 기능은 유료서비스와 동일하게 사용 가능합니다.🤗🤗 
                                     </div>
                                 </div>
                             </div>
