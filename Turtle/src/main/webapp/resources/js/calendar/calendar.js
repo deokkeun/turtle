@@ -457,8 +457,6 @@ calendarSock.onmessage = function(e) {
   }
 
   if(calendar.calSt == 'N' && calendar.calNo == 0) {
-    
-    alert("'" + calendar.calTitle + "' 일정이 추가되었습니다!");
 
     // 알람
     let calendarAlert = {
@@ -470,11 +468,10 @@ calendarSock.onmessage = function(e) {
     };
     // 알람
     alertSock.send(JSON.stringify(calendarAlert));
-    
+
+    alert("'" + calendar.calTitle + "' 일정이 추가되었습니다!");
 
   } else if (calendar.calSt == 'N' && calendar.calNo != 0) {
-
-    alert("'" + calendar.calTitle + "' 일정이 수정되었습니다!");
 
     // 알람
     let calendarAlert = {
@@ -486,6 +483,8 @@ calendarSock.onmessage = function(e) {
     };
     // 알람
     alertSock.send(JSON.stringify(calendarAlert));
+
+    alert("'" + calendar.calTitle + "' 일정이 수정되었습니다!");
 
   }
 
