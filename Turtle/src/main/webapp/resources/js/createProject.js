@@ -244,6 +244,19 @@ $('#search-txt').keyup(function() {
         }
     })
 });
+$('.next-btn').click(function() {
+    if($("#projectName").val().length == 0) {
+    alert('프로젝트명을 입력해주세요.');
+    $('#projectName').focus();
+    return false;
+   }
+
+   if($('.note-editable').children('p:eq(0)').text().length == 0) {
+    alert('프로젝트를 소개해주세요.')
+    $('.note-editable').focus();
+    return false;
+   }
+   })
 
 //이모티콘
 let button3 = document.querySelector("#emoji_btn2");

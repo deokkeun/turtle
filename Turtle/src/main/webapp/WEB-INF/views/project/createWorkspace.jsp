@@ -41,7 +41,7 @@
             <i class="fa-solid fa-layer-group">워크스페이스 관리</i>
         </div>
         <!-- 워크스페이스 이름 입력 section -->
-        <form action="workspace" method="post">
+        <form action="createWorkspace" method="post">
             <div class="section2">
                 <p>워크스페이스명 입력</p>
                 <div>
@@ -50,220 +50,217 @@
                     <input type="text" placeholder="워크스페이스명을 입력해주세요.">
                 </div>
             </div>
-        </form>
+     
 
-        <!-- 워크스페이스 언어 설정 section -->
-        <div class="language-section">
+            <!-- 워크스페이스 언어 설정 section -->
+            <div class="language-section">
 
-            <div class="workspace-language">
-                <div><a><span>OS</span></a></div>
-                <div><a><span>LANGUAGE</span></a></div>
-                <div><a><span>TOOL</span></a></div>
-                <div><a><span style="color: red;">SELECTED</span></a></div>
-            </div>
-
-            <div class="language" id="OS">
-                <div class="img" name="OS">
-                    <img src="${contextPath}/resources/images/createWorkspace/android-original.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
-                <div class="img" name="OS">
-                    <img src="${contextPath}/resources/images/createWorkspace/windows8-original.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
-                <div class="img" name="OS">
-                    <img src="${contextPath}/resources/images/createWorkspace/apple-original.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
-                <div class="img" name="OS">
-                    <img src="${contextPath}/resources/images/createWorkspace/linux-original.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                <div class="workspace-language">
+                    <div><a><span>OS</span></a></div>
+                    <div><a><span>LANGUAGE</span></a></div>
+                    <div><a><span>TOOL</span></a></div>
+                    <div><a><span style="color: red;">SELECTED</span></a></div>
                 </div>
 
-            </div>
+                <div class="language" id="OS">
+                    <div class="img" name="OS">
+                        <img src="${contextPath}/resources/images/createWorkspace/android-original.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
+                    <div class="img" name="OS">
+                        <img src="${contextPath}/resources/images/createWorkspace/windows8-original.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
+                    <div class="img" name="OS">
+                        <img src="${contextPath}/resources/images/createWorkspace/apple-original.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
+                    <div class="img" name="OS">
+                        <img src="${contextPath}/resources/images/createWorkspace/linux-original.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
 
-            <div class="language active" id="LANGUAGE">
-
-                <div class="img" name="LANGUAGE">
-                    <img src="${contextPath}/resources/images/createWorkspace/csharp-original.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
-
-                <div class="img" name="LANGUAGE">
-                    <img src="${contextPath}/resources/images/createWorkspace/C++.svg" >
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
-
-                <div class="img" name="LANGUAGE">
-                    <img src="${contextPath}/resources/images/createWorkspace/css.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
-
-                <div class="img" name="LANGUAGE">
-                    <img src="${contextPath}/resources/images/createWorkspace/Git.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
                 </div>
 
-                <div class="img" name="LANGUAGE">
-                    <img src="${contextPath}/resources/images/createWorkspace/Go.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
-                    
-                <div class="img" name="LANGUAGE"> 
-                    <img src="${contextPath}/resources/images/createWorkspace/html.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
+                <div class="language active" id="LANGUAGE">
 
-                <div class="img" name="LANGUAGE">
-                    <img src="${contextPath}/resources/images/createWorkspace/Java.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
+                    <div class="img" name="LANGUAGE">
+                        <img src="${contextPath}/resources/images/createWorkspace/csharp-original.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
 
-                <div class="img" name="LANGUAGE">
-                    <img src="${contextPath}/resources/images/createWorkspace/JavaScript.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
+                    <div class="img" name="LANGUAGE">
+                        <img src="${contextPath}/resources/images/createWorkspace/C++.svg" >
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
 
-                <div class="img" name="LANGUAGE">
-                    <img src="${contextPath}/resources/images/createWorkspace/NodeJs.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
+                    <div class="img" name="LANGUAGE">
+                        <img src="${contextPath}/resources/images/createWorkspace/css.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
 
-                <div class="img" name="LANGUAGE">
-                    <img src="${contextPath}/resources/images/createWorkspace/Php.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
+                    <div class="img" name="LANGUAGE">
+                        <img src="${contextPath}/resources/images/createWorkspace/Git.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
 
-                <div class="img" name="LANGUAGE">
-                    <img src="${contextPath}/resources/images/createWorkspace/Python.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
+                    <div class="img" name="LANGUAGE">
+                        <img src="${contextPath}/resources/images/createWorkspace/Go.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
+                        
+                    <div class="img" name="LANGUAGE"> 
+                        <img src="${contextPath}/resources/images/createWorkspace/html.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
 
-                <div class="img" name="LANGUAGE">
-                    <img src="${contextPath}/resources/images/createWorkspace/React.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
+                    <div class="img" name="LANGUAGE">
+                        <img src="${contextPath}/resources/images/createWorkspace/Java.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
 
-                <div class="img" name="LANGUAGE">
-                    <img src="${contextPath}/resources/images/createWorkspace/Ruby.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
+                    <div class="img" name="LANGUAGE">
+                        <img src="${contextPath}/resources/images/createWorkspace/JavaScript.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
 
-                <div class="img" name="LANGUAGE">
-                    <img src="${contextPath}/resources/images/createWorkspace/Sass.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
+                    <div class="img" name="LANGUAGE">
+                        <img src="${contextPath}/resources/images/createWorkspace/NodeJs.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
 
+                    <div class="img" name="LANGUAGE">
+                        <img src="${contextPath}/resources/images/createWorkspace/Php.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
 
-            </div>
+                    <div class="img" name="LANGUAGE">
+                        <img src="${contextPath}/resources/images/createWorkspace/Python.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
 
-            <div class="language" id="TOOL">
-                <div class="img" name="TOOL">
-                    <img src="${contextPath}/resources/images/createWorkspace/bootstrap-original.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
-                <div class="img" name="TOOL">
-                    <img src="${contextPath}/resources/images/createWorkspace/docker-plain.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
-                <div class="img" name="TOOL">
-                    <img src="${contextPath}/resources/images/createWorkspace/dot-net-plain.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
-                <div class="img" name="TOOL">
-                    <img src="${contextPath}/resources/images/createWorkspace/github-original.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
-                <div class="img" name="TOOL">
-                    <img src="${contextPath}/resources/images/createWorkspace/mysql-plain.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
-                <div class="img" name="TOOL">
-                    <img src="${contextPath}/resources/images/createWorkspace/phoenix-original.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
-                <div class="img" name="TOOL">
-                    <img src="${contextPath}/resources/images/createWorkspace/slack-original.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
-                <div class="img" name="TOOL">
-                    <img src="${contextPath}/resources/images/createWorkspace/tomcat-original.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
-                <div class="img" name="TOOL">
-                    <img src="${contextPath}/resources/images/createWorkspace/vscode-original.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
-                <div class="img" name="TOOL">
-                    <img src="${contextPath}/resources/images/createWorkspace/vuejs-original.svg">
-                    <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
-                </div>
-                
+                    <div class="img" name="LANGUAGE">
+                        <img src="${contextPath}/resources/images/createWorkspace/React.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
+
+                    <div class="img" name="LANGUAGE">
+                        <img src="${contextPath}/resources/images/createWorkspace/Ruby.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
+
+                    <div class="img" name="LANGUAGE">
+                        <img src="${contextPath}/resources/images/createWorkspace/Sass.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
 
 
+                </div>
 
-            </div>
-            <form action="selected" method="post">
+                <div class="language" id="TOOL">
+                    <div class="img" name="TOOL">
+                        <img src="${contextPath}/resources/images/createWorkspace/bootstrap-original.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
+                    <div class="img" name="TOOL">
+                        <img src="${contextPath}/resources/images/createWorkspace/docker-plain.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
+                    <div class="img" name="TOOL">
+                        <img src="${contextPath}/resources/images/createWorkspace/dot-net-plain.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
+                    <div class="img" name="TOOL">
+                        <img src="${contextPath}/resources/images/createWorkspace/github-original.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
+                    <div class="img" name="TOOL">
+                        <img src="${contextPath}/resources/images/createWorkspace/mysql-plain.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
+                    <div class="img" name="TOOL">
+                        <img src="${contextPath}/resources/images/createWorkspace/phoenix-original.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
+                    <div class="img" name="TOOL">
+                        <img src="${contextPath}/resources/images/createWorkspace/slack-original.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
+                    <div class="img" name="TOOL">
+                        <img src="${contextPath}/resources/images/createWorkspace/tomcat-original.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
+                    <div class="img" name="TOOL">
+                        <img src="${contextPath}/resources/images/createWorkspace/vscode-original.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
+                    <div class="img" name="TOOL">
+                        <img src="${contextPath}/resources/images/createWorkspace/vuejs-original.svg">
+                        <a><i class="fa-solid fa-circle-plus" style="color: #1f6df4;"></i></a>
+                    </div>
+
+                </div>
+            
                 <div class="language" id="SELECTED">
             
                 </div>
-            </form>
-        </div>
-
-
-
-
-
-        <!-- 워크스페이스 추가 section -->
-        <form action="selectedWorkspace" method="post">
-            <div class="workspace"></div>
-        </form>
         
-        <a class="plus-btn"><i class="fa-solid fa-circle-plus"> 템플릿 추가</i></a>
-        <div class="pop">
-            <div class="pop-content">
-                <div class="pop-content2">
-                    <div><img src="${contextPath}/resources/images/createWorkspace/게시판.png" width="130px"></div>
-                    <div class="content-name">
-                        <div>게시판</div>
-                        <div>게시글을 작성할 수 있습니다.</div>
-                    </div>
-                    
-                </div>
+            </div>
 
-                <div class="pop-content2">
-                    <div><img src="${contextPath}/resources/images/createWorkspace/캘린더.png" width="130px"></div>
-                    <div class="content-name">
-                        <div>캘린더</div>
-                        <div>일정을 입력할 수 있습니다.</div>
-                    </div>
-                    
-                </div>
 
-                <div class="pop-content2">
-                    <div><img src="${contextPath}/resources/images/createWorkspace/스티커메모.png" width="130px"></div>
-                    <div class="content-name">
-                        <div>스티커 메모</div>
-                        <div>메모를 작성할 수 있습니다.</div>
-                    </div>
-                    
-                </div>
 
-                <div class="pop-content2">
-                    <div><img src="${contextPath}/resources/images/createWorkspace/깃 로드맵.png" width="130px"></div>
-                    <div class="content-name">
-                        <div>깃 로드맵</div>
-                        <div>로드맵을 설정할 수 있습니다.</div>
+
+
+            <!-- 워크스페이스 추가 section -->
+        
+                <div class="workspace"></div>
+        
+            
+            <a class="plus-btn"><i class="fa-solid fa-circle-plus"> 템플릿 추가</i></a>
+            <div class="pop">
+                <div class="pop-content">
+                    <div class="pop-content2">
+                        <div><img src="${contextPath}/resources/images/createWorkspace/게시판.png" width="130px"></div>
+                        <div class="content-name">
+                            <div>게시판</div>
+                            <div>게시글을 작성할 수 있습니다.</div>
+                        </div>
+                        
                     </div>
-                    
+
+                    <div class="pop-content2">
+                        <div><img src="${contextPath}/resources/images/createWorkspace/캘린더.png" width="130px"></div>
+                        <div class="content-name">
+                            <div>캘린더</div>
+                            <div>일정을 입력할 수 있습니다.</div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="pop-content2">
+                        <div><img src="${contextPath}/resources/images/createWorkspace/스티커메모.png" width="130px"></div>
+                        <div class="content-name">
+                            <div>스티커 메모</div>
+                            <div>메모를 작성할 수 있습니다.</div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="pop-content2">
+                        <div><img src="${contextPath}/resources/images/createWorkspace/깃 로드맵.png" width="130px"></div>
+                        <div class="content-name">
+                            <div>깃 로드맵</div>
+                            <div>로드맵을 설정할 수 있습니다.</div>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="next-btn">
-            <button>생성하기</button>
-        </div>
-
+            <div class="next-btn">
+                <button type="button">생성하기</button>
+            </div>
+        </form>
     </section>
     </main>
     <script src="${contextPath}/resources/js/createWorkspace.js"></script>
