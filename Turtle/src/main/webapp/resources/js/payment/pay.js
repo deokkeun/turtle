@@ -1,8 +1,8 @@
 const memberNo = document.getElementById("memberNo");
-const projectNo = document.getElementById("projectNo");
+// const projectNo = document.getElementById("projectNo");
 
 console.log(memberNo.value);
-console.log(projectNo.value);
+// console.log(projectNo.value);
 
 //-----------------------------------------------------------
 
@@ -423,7 +423,7 @@ function pay() {
 
                             data = JSON.stringify({
                                 "payNo" : rsp.merchant_uid, //주문번호
-                                "projectNo" : projectNo.value, //프로젝트 번호(상품 번호)
+                                "projectNo" : projectNo, //프로젝트 번호(상품 번호)
                                 "payType" : rsp.name, // 결제 타입
                                 "payName" : rsp.buyer_name, //결제자
                                 "memberNo" : memberNo.value, //회원번호
@@ -461,7 +461,7 @@ function pay() {
                                         // 로딩 구현
 
 
-                                        location.href = contextPath + '/payment/payConfirm/' + projectNo.value;// 결제 완료 페이지로 이동
+                                        location.href = contextPath + '/payment/payConfirm/' + projectNo;// 결제 완료 페이지로 이동
                                         
 
 

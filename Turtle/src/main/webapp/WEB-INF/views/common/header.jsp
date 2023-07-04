@@ -329,7 +329,7 @@
 </aside>
   
   
-  <script src='${contextPath}/resources/js/chat.js'></script> 
+  <!-- <script src='${contextPath}/resources/js/chat.js'></script>  -->
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.js"></script>
   <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script> 
 
