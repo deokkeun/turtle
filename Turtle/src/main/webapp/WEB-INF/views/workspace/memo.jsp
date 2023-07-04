@@ -5,6 +5,7 @@
 
 <c:set var="memberName" value="${loginMember.memberName}" />
 <c:set var="profileImage" value="${loginMember.profileImage}"/>
+<c:set var="memberNo" value="${loginMember.memberNo}"/>
 
  <!DOCTYPE html>
 <html lang="en">
@@ -115,8 +116,9 @@
    
     	const pmNo = "${pmNo}";
     	const workspaceNo = "${workspaceNo}";
+		const memberNo = "${memberNo}";
     	const contextPath = "${contextPath}";
-    	
+    	const projectNo = "${projectNo}";
     	let memberName = "${memberName}";
     	let profileImage = "${profileImage}";
 		
@@ -125,7 +127,7 @@
 		let memoSock = new SockJS(contextPath+"/memo");
 			// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
 
-		//let alertSock = new SockJS(contextPath+"/alert");
+		let alertSock = new SockJS(contextPath+"/alert");
     </script>
     
     <!-- memo.js 연결 -->
