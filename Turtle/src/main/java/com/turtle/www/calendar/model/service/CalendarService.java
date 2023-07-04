@@ -8,6 +8,15 @@ import com.turtle.www.calendar.model.vo.Calendar;
 public interface CalendarService {
 
 	
+
+	
+	/** 메인 페이지 캘린더 남은 일정
+	 * @param projectNo
+	 * @return
+	 */
+	List<Calendar> schedule(int projectNo);
+
+	
 	/** 캘린더 리스트 불러오기
 	 * @param map
 	 * @return
@@ -38,5 +47,6 @@ public interface CalendarService {
 	 */
 	int selectBoardCalendar(Calendar calendar);
 
+	
 
 }

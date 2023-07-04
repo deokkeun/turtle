@@ -17,6 +17,19 @@
 		<result property="boardNo" column="BOARD_NO"/>
 	</resultMap>
 
+	<!-- 메인 페이지 캘린더 남은 일정 -->
+	<select id="schedule" parameterType="_int" resultMap="calendar_rm">
+		SELECT PM_NO, CAL_TITLE, CAL_CONTENT, CAL_COLOR,
+		TO_CHAR(CAL_REG_DATE, 'YYYY-MM-DD') AS CAL_REG_DATE, 
+		TO_CHAR(START_DATE, 'YYYY-MM-DD') AS START_DATE, 
+		TO_CHAR(END_DATE, 'YYYY-MM-DD') AS END_DATE, BOARD_NO
+		FROM CALENDAR c
+		JOIN WORKSPACE w ON(c.WORKSPACE_NO = w.WORKSPACE_NO)
+		WHERE w.PROJECT_NO = ${projectNo}
+		AND CAL_ST = 'N'
+		AND END_DATE > SYSDATE
+		ORDER BY START_DATE 
+	</select>
 
 	<!-- 캘린더 일정 조회 BOARD_NO,-->
 	<select id="selectCalendarList" resultMap="calendar_rm">
@@ -28,7 +41,6 @@
 		WHERE WORKSPACE_NO = ${workspaceNo}
 		AND CAL_ST = 'N'
 	</select>
-
 
 
 	<!-- 캘린더 일정 추가 -->

@@ -1,9 +1,47 @@
 
-var code = "";
-const accessToken = document.getElementsByName("access_token");
+// var code = "";
+// const accessToken = document.getElementsByName("access_token");
 
+console.log("header.jsp에 정의된 projectNo를 현재 위치(main.js)에서 이용 ProjectNo = " + projectNo);
+
+
+// 캘린더 메인페이지 내용 불러오기
 window.onload = function() {
 
+    // 메인페이지 들어오면 캘린더 남은 일정 불러오기
+    $.ajax({
+        url: contextPath + "/calendar/schedule",
+        data: {
+            "projectNo" : projectNo
+        },
+        type: "POST",
+        dataType: "JSON",
+        success: function(schedule) {   
+            console.log(schedule);
+
+            schedule.forEach(element => {
+
+                const schedule = document.getElementById("schedule");
+
+                const div = document.createElement('div');
+                div.style.padding = "10px";
+                div.style.margin = "5px";
+                div.style.backgroundColor = element.calColor;
+                
+                div.innerHTML = "<div class='jb-title'><div class='calTitle'>" + element.calTitle + "</div><div class='calDate'>" + element.startDate + "</div><div class='calDate'>" + element.endDate + "</div></div>"
+                + "<div class='jb-text'>" + element.calContent + "</div>";
+                schedule.append(div);
+                
+            });
+        },
+        error: function() {
+
+        }
+    })
+
+
+
+    // google로그인 임시
     // http://localhost:8080/www/member/login?
     // state=security_token%3D138r5719ru3e1%26url%3Dhttps%3A%2F%2Foauth2-login-demo.example.com%2FmyHome&
     // code=4%2F0AbUR2VMYbQJYD9U0zHWzuWs_W-4bOr927Bu-VvOsuBafqW6l7WZ6viWurRlDlMiGPZ1fvA&
@@ -11,50 +49,50 @@ window.onload = function() {
     // authuser=0&
     // prompt=consent
 
-    console.log(window.location.search);
+    // console.log(window.location.search);
 
-    const searchParams = new URLSearchParams(window.location.search);
+    // const searchParams = new URLSearchParams(window.location.search);
 
-    for(const param of searchParams) {
-        if(param[0] == 'code') {
-            console.log(param[0]);
-            console.log(param[1]);
-            code = param[1];
-            console.log("정상 코드 : " + code);
-        }
-    }
+    // for(const param of searchParams) {
+    //     if(param[0] == 'code') {
+    //         console.log(param[0]);
+    //         console.log(param[1]);
+    //         code = param[1];
+    //         console.log("정상 코드 : " + code);
+    //     }
+    // }
 
-    $.ajax({
-        url: 'https://oauth2.googleapis.com/token',
-        type: 'POST',
-        contentType: 'application/x-www-form-urlencoded',
-        data: {
-            code: code,
-            client_id: '713601013116-33sqneo96i1er8o2e6bs5a8o5522k2rq.apps.googleusercontent.com',
-            client_secret: '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',
-            redirect_uri: 'http://localhost:8080/www/member/login',
-            grant_type: 'authorization_code'
-        },
-        success: function(response) {
-            // 성공한 경우의 처리 로직
-            console.log("로그인 성공");
-            console.log(response);
-            console.log(response.access_token);
-            accessToken[0].value = response.access_token;
+    // $.ajax({
+    //     url: 'https://oauth2.googleapis.com/token',
+    //     type: 'POST',
+    //     contentType: 'application/x-www-form-urlencoded',
+    //     data: {
+    //         code: code,
+    //         client_id: '713601013116-33sqneo96i1er8o2e6bs5a8o5522k2rq.apps.googleusercontent.com',
+    //         client_secret: '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',
+    //         redirect_uri: 'http://localhost:8080/www/member/login',
+    //         grant_type: 'authorization_code'
+    //     },
+    //     success: function(response) {
+    //         // 성공한 경우의 처리 로직
+    //         console.log("로그인 성공");
+    //         console.log(response);
+    //         console.log(response.access_token);
+    //         accessToken[0].value = response.access_token;
             
-        },
-        error: function(error) {
-            // 에러 발생 시의 처리 로직
-            console.error(error);
-        }
-      });
+    //     },
+    //     error: function(error) {
+    //         // 에러 발생 시의 처리 로직
+    //         console.error(error);
+    //     }
+    //   });
 }
 
 
 
 
 
-
+// 메인페이지 시간
 function currentTime() {
     const now = new Date(); // 현재 시간 정보를 저장하고 있는 객체 생성
 

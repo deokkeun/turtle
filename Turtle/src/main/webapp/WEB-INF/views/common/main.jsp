@@ -28,8 +28,6 @@
 </head>
 <body>
    
- 
-
     <!-- header include -->
     <jsp:include page="/WEB-INF/views/common/header.jsp" />
     
@@ -38,6 +36,11 @@
         
         <div id="clock" value="0">00 : 00 : 00</div>
 
+        <!-- 캘린더 남은 일정 -->
+        <section id="schedule-box">
+            <div id="schedule-title">남은 일정</div>
+            <div id="schedule"></div>
+        </section>
 
 
         <!--  메모장 -->
@@ -88,9 +91,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/main.js"></script>
-     <!-- Vendor JS Files -->
-
-    <!-- <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script> -->
     <!-- chat js -->
     <script src="${contextPath}/resources/js/chat.js"></script>
     <!-- fullcalendar -->

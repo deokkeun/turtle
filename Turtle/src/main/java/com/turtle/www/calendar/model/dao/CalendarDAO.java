@@ -16,6 +16,14 @@ public class CalendarDAO {
 	private SqlSessionTemplate sqlSession;
 	
 
+	/** 메인 페이지 캘린더 남은 일정
+	 * @param projectNo
+	 * @return
+	 */
+	public List<Calendar> schedule(int projectNo) {
+		return sqlSession.selectList("calendarMapper.schedule", projectNo);
+	}
+	
 	/** 캘린더 조회 리스트 dao
 	 * @param map
 	 * @return
@@ -59,10 +67,8 @@ public class CalendarDAO {
 	public int selectBoardCalendar(Calendar calendar) {
 		return sqlSession.selectOne("calendarMapper.selectBoardCalendar", calendar);
 	}
-	
-	
-	
-	
+
+
 	
 	
 	
