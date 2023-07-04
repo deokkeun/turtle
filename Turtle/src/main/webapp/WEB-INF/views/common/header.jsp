@@ -40,12 +40,6 @@
 
      <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
-
-        <li class="nav-item d-block d-lg-none">
-          <a class="nav-link nav-icon search-bar-toggle " href="#">
-            <i class="bi bi-search"></i>
-          </a>
-        </li><!-- End Search Icon-->
        
         <!-- 알림 -->
         <!-- 알림 -->
@@ -56,7 +50,7 @@
                 <span class="badge bg-primary badge-number"></span>
             </a><!-- End Notification Icon -->
 
-            <ul id="alert-area" class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <ul id="alert-area" class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications" style="width: 320px;">
                 
                
             
@@ -264,14 +258,6 @@
             <span>Payment Details</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="">
-            <i class="ri-settings-5-line"></i>
-            <span>Settings</span>
-          </a>
-        </li><!-- End Error 404 Page Nav --><!-- End Blank Page Nav -->
-
-
       </ul>
   </aside><!-- End Sidebar-->
 

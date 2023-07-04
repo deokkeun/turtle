@@ -45,4 +45,13 @@
 		)
 	</insert>
 	
+	<!-- 내프로젝트 존재여부 확인 -->
+	<select id="selectMyProject" resultType="_int">
+		SELECT COUNT(*) FROM PROJECT_MEMBER WHERE MEMBER_NO = ${memberNo} AND PROJECT_MANAGER = 'Y'
+	</select>
+	
+	<select id="selectMyProjectNo" resultType="_int">
+		SELECT PROJECT_NO FROM PROJECT_MEMBER WHERE MEMBER_NO = ${memberNo} AND PROJECT_MANAGER = 'Y'
+	</select>
+	
 </mapper>

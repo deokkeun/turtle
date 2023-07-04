@@ -112,8 +112,21 @@
 							<!-- 현재는 로그인되었을 경우 메인페이지 이동으로함. -->
 							<c:if test="${!empty loginMember}">
 								<div class="text-center text-lg-start">
+									<c:choose>
+										<c:when test="${projectNo != 0}">
+											<a href="${contextPath}/project/${projectNo}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+												<span>내 프로젝트로 이동</span> <i class="bi bi-arrow-right"></i>
+											</a>
+										</c:when>
+										<c:otherwise>
+											<a href="${contextPath}/project/createProject" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+												<span>내 프로젝트 생성</span> <i class="bi bi-arrow-right"></i>
+											</a>
+										</c:otherwise>
+									</c:choose>
+									
 									<a href="${contextPath}/member/login" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-										<span>프로젝트로 이동</span> <i class="bi bi-arrow-right"></i>
+										<span>테스트용</span> <i class="bi bi-arrow-right"></i>
 									</a>
 								</div>
 							</c:if>	

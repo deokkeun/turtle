@@ -94,19 +94,19 @@
         </form>
         
 
-        <form action="${contextPath}/workspace/loadmap/1/10" method="GET">
+        <form action="${contextPath}/workspace/loadmap/${projectNo}/10" method="GET">
             <button>git loadMap test(GET)</button>
         </form>
       
-        <form action="${contextPath}/calendar/calendar/1/5" method="GET">
+        <form action="${contextPath}/calendar/calendar/${projectNo}/5" method="GET">
            <button>calendar</button>
         </form>
               
-        <form action="../chat/chatRoomList/1" method="get">
+        <form action="../chat/chatRoomList/${projectNo}" method="get">
         	<button>채팅 테스트</button>
         </form>
         
-        <form action="../workspace/memo/1/5" method="get">
+        <form action="../workspace/memo/${projectNo}/5" method="get">
         	<button>메모장 테스트</button>
         </form>
 
@@ -114,10 +114,9 @@
         	<button>성훈 테스트</button>
         </form>
         
-        <form action="../board/boardList/1/5" method="get">
+        <form action="../board/boardList/${projectNo}/5" method="get">
         	<button>게시판 테스트</button>
         </form>
-        <div id="summernote"></div>
         <a href="javascript:join()">채팅방</a>
      	
        
