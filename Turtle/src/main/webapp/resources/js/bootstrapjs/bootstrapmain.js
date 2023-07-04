@@ -492,6 +492,31 @@ workspaceNavLink.addEventListener('click', function (event) {
       addButton.classList.remove('disabled');
     }, 1000);
   });
+  
+  
+  
 
-
-
+  const projectNav = document.querySelector('#project-nav');
+  const menuBoard = document.querySelector('#menu-board');
+  
+  function showMenuBoard() {
+    const content = projectNav.innerHTML;
+    menuBoard.innerHTML = content;
+    menuBoard.style.display = 'block';
+  }
+  
+  function hideMenuBoard() {
+    menuBoard.innerHTML = '';
+    menuBoard.style.display = 'none';
+  }
+  
+  // 사이드바 토글 버튼 클릭 시 메뉴판 보이기/감추기
+  const toggleSidebarBtn = document.querySelector('.toggle-sidebar-btn');
+  toggleSidebarBtn.addEventListener('click', function() {
+    const isSidebarVisible = document.body.classList.contains('toggle-sidebar');
+    if (isSidebarVisible) {
+      hideMenuBoard();
+    } else {
+      showMenuBoard();
+    }
+  });

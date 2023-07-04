@@ -5,6 +5,7 @@
 
 <c:set var="memberName" value="${loginMember.memberName}" />
 <c:set var="profileImage" value="${loginMember.profileImage}"/>
+<c:set var="memberNo" value="${loginMember.memberNo}"/>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -124,7 +125,7 @@
     	const projectNo = "${projectNo}";
     	const workspaceNo = "${workspaceNo}";
     	const contextPath = "${contextPath}";
-    	
+    	const memberNo = "${memberNo}";
     	let memberName = "${memberName}";
     	let profileImage = "${profileImage}";
     	
@@ -148,6 +149,8 @@
 		let deleteBoardDetailSock = new SockJS(contextPath+"/deleteBoardDetail");
 		// 이벤트 시간 생성용 sock
         let updateEventDateSock = new SockJS(contextPath+"/updateEventDate");
+		// 알람용 sock
+        let alertSock = new SockJS(contextPath+"/alert");
     </script>
 
     <!-- memo.js 연결 -->

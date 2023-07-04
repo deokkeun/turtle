@@ -20,6 +20,7 @@ public class Alert {
 	private Date alertRegDate;
 	private String alertCheckFg;
 	private String link;
+	private int pmNo;
 	
 	private String projectName;	
 	private String memberName;
