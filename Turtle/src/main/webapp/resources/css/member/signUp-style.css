@@ -29,39 +29,71 @@ form[name="signUp-form"] > label{
     margin-bottom: 30px;
 }
 
-/* input을 감싸고있는 div */
-.signUp-input-area{
-    width: 500px;
-    height: 50px;
-
-    margin-bottom : 10px;
-
-    border-bottom : 2px solid #ddd;
-
-    display: flex;
-    align-items: center; /* 세로 중앙 */
+.signUp-input-area {
+  margin-top: 10px;
+  margin-bottom: 10px;
+   display: flex;
+  justify-content: flex-end;
 }
+
+/* input을 감싸고있는 div */
+.signUp-input-area > input {
+    border-radius: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+  }
 
 /* input에 포커스가 맞춰졌을 때 밑줄 색 변화 */
 /* :focus-within  : 내부 input에 포커스가 맞춰졌을 때  */
-.signUp-input-area:focus-within  {
+/*.signUp-input-area:focus-within  {
     border-bottom: 2px solid #455ba8;
-}
+}*/
 
 /* input태그 */
-.signUp-input-area > input{
-    width: 70%;
-    height: 100%;
-    padding : 15px 10px 5px; /* 상, 좌우, 하 */
-
+.signUp-input-area > input {
+    border-radius: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    padding: 10px 0;
     font-size: 16px;
     font-weight: bold;
+    border: 1px solid #ddd;
+  }
+signUp-input-area > input,
+#sendBtn,
+#cBtn {
+  height: 40px;
+   text-align: center;
+}
 
-    border : 0;
-    outline: 0; /* input 선택 시 테두리 */
+#sendBtn {
+ background-color: #4154f1;
+  color: white;
+  padding: 0px 0px;
+  border: 2px solid #4154f1;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  margin-right: 10px;
 }
 
 
+#cBtn {
+  background-color: #4154f1;
+  color: white;
+  padding: 0px 20px;
+  border: 2px solid #4154f1;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  margin-right: 10px;
+}
 /* button 태그 */
 .signUp-input-area > button{
     width: 30%;
@@ -91,9 +123,9 @@ form[name="signUp-form"] > label{
 
     font-size: 20px;
     font-weight: bold;
-
+ border-radius: 10px;
     color : white;
-    background-color: #455ba8;
+    background-color:#4154f1;
 
     cursor: pointer;
 }
