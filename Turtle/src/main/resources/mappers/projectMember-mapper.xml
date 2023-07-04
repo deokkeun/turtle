@@ -42,7 +42,7 @@
 				#{projectNo},
 				#{memberNo},
 				DEFAULT,
-				DEFAULT,
+				'Y',
 				DEFAULT
 			)
 	</insert>

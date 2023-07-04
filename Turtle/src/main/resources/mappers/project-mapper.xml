@@ -42,7 +42,7 @@
 			#{pmNo},
 			#{projectNo},
 			#{memberNo},
-			DEFAULT,
+			'Y',
 			'Y',
 			DEFAULT
 		)

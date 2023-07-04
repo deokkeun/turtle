@@ -1,11 +1,13 @@
 package com.turtle.www.workspace.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +26,7 @@ import com.turtle.www.workspace.model.vo.Workspace;
 
 @Controller
 @RequestMapping("/project")
-@SessionAttributes({"loginMember", "project"})
+@SessionAttributes({"loginMember", "project", "workspaceNo"})
 public class WorkspaceController {
 	
 	private Logger logger = LoggerFactory.getLogger(WorkspaceController.class);
@@ -48,13 +50,14 @@ public class WorkspaceController {
 //	private Calendar calendar;
 	
 	
+	// 워크스페이스 생성
 	@PostMapping("/createWorkspace")
 	public String createWorkspace(@ModelAttribute("project") Project project,
 							@ModelAttribute("loginMember") Member loginMember,
 							@ModelAttribute("workspace") Workspace workspace,
-//							@RequestParam("emoji_value") String emojiValue,
-                            @RequestParam("workspaceName") String workspaceName
-//                            @RequestParam(value="selected", required=false) List<String> selectEmail
+                            @RequestParam("workspaceName") String workspaceName,
+//                            @RequestParam(value="selected", required=false) List<String> selected,
+                            Model model
 					) {
 		
 		logger.info("워크스페이스 생성");
@@ -65,52 +68,102 @@ public class WorkspaceController {
 		// 워크스페이스 이모지, 워크스페이스 이름
 		int workspaceNo = service.createWorkspace(workspace);
 		
-
+		model.addAttribute(workspaceNo);
 		
 		
-		return "redirect:/project/createWorkspace";
+		
+		return "redirect:/common/main";
 		
 	}
 	
-	
+	// 선택한 템플릿 내용 받아오기
 	@PostMapping("/createTemplate")
-	public String createTemplate(@ModelAttribute("project") Project project,
+	public void createTemplate(@ModelAttribute("project") Project project,
 						@ModelAttribute("loginMember") Member loginMember,
-						@RequestParam(value="workspace", required=false) List<String> template,
-			            @RequestParam(value="wokrspaceName", required=false) List<String> templateName) {
+//						@RequestParam(value="selected", required=false) List<String> selectEmail
+						@RequestParam(value="workspace", required=false) String[] template,
+			            @RequestParam(value="wokrspaceName", required=false) String[] templateName) {
 		
 		logger.info("템플릿 생성");
 		
 		// 선택한 템플릿
-		System.out.print(template);
-		System.out.print(templateName);
+		System.out.print("template" + Arrays.asList(template)); // ex) [게시판, 캘린더, 스티커, 깃]
+		System.out.print("templateName" + Arrays.asList(templateName)); // 설정한 이름 ex) [공지사항, 일정표, 스티커 메모장, 깃 로드맵]
 		
-		for(int i = 0; i <= template.size(); i++) {
+		// 선택한 템플릿 생성 구문
+		for(int i = 0; i < template.length; i++) {
+			
+			logger.info("template : " + template[i]);
+			logger.info("templateName : " + templateName[i]);
+			
+			if(template[i].equals("게시판")) {
+				
+				// 게시판 이름
+				String boardName = templateName[i];
+				
+				// 게시판 생성
+				
+			}
+			
+			if(template[i].equals("스티커")) {
+				
+				// 메모 이름
+				String memoName = templateName[i];
+				
+				// 메모 생성
+				
+			}
+			
+			if(template[i].equals("캘린더")) {
+				
+				// 캘린더 이름
+				String calendarName = templateName[i];
+				
+				// 캘린더 생성
+				
+			}
+			
+			if(template[i].equals("깃")) {
+				
+				// 깃 이름
+				String loadmapName = templateName[i];
+				
+				// 깃 생성
+				
+			}
+			
+			
+			
+			
+			
+			
 			
 		}
 		
-		if(template.contains("게시판")) {
-			
-			
-		}
 		
-		if(template.contains("캘린더")) {
-			
-		}
-		
-		if(template.contains("스티커")) {
-			
-		}
-		
-		if(template.contains("깃")) {
-			
-		}
-		
-		
-		return "redirect:/project/createWorkspace";
 		
 	}
 	
+	public void createBoard(@RequestParam(value="wokrspaceName", required=false) String[] templateName,
+							int workspaceNo
+			) {
+		
+		
+	}
 	
+	public void createCalendar(@RequestParam(value="wokrspaceName", required=false) String[] templateName,
+							int workspaceNo
+						) {
+		
+	}
+	
+	public void createMemo(@RequestParam(value="wokrspaceName", required=false) String[] templateName,
+							int workspaceNo) {
+		
+	}
+	public void createLoadmap(@RequestParam(value="wokrspaceName", required=false) String[] templateName,
+							int workspaceNo) {
+		
+	}
 	
 }
