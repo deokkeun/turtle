@@ -19,14 +19,18 @@ function selectAlertList() {
             let dropDownHeader = document.createElement("li");
             dropDownHeader.classList.add("dropdown-header")
             notifications.append(dropDownHeader);
-            
+            let alertListArea = document.createElement("div");
+            alertListArea.classList.add("alertListArea");
+            alertListArea.style.overflow ="auto";
+            alertListArea.style.maxHeight ="450px";
+
             for(let item of alertList) {
 
                 let dropDownDividerLi = document.createElement("li");
                 let dropDownDividerHr = document.createElement("hr");
                 dropDownDividerHr.classList.add("dropdown-divider");
                 dropDownDividerLi.append(dropDownDividerHr);                
-                notifications.append(dropDownDividerLi);
+                alertListArea.append(dropDownDividerLi);
 
                 let notificationItem = document.createElement("li");
                 notificationItem.classList.add("notification-item");
@@ -50,11 +54,13 @@ function selectAlertList() {
                 a.append(h4, p1, p2);
                 div.append(a);
                 notificationItem.append(i, div);
-                notifications.append(notificationItem);
+                alertListArea.append(notificationItem);
 
                 count ++;
                 
             }
+
+            notifications.append(alertListArea);
 
             if(count == 0) {
                 dropDownHeader.innerText = "새로운 알림이 없습니다.";
@@ -74,42 +80,33 @@ function selectAlertList() {
     });
 }
 
-let alerts = document.querySelectorAll(".alert");
-alerts.forEach((alert) => {
-    alert.querySelector('a').addEventListener("click", function() {        
-        $.ajax({
-            url : contextPath +"/alert/updateAlertCheckFg",
-            data : {"alertNo" : alert.dataset.alertno},
-            type : "get",
-    
-            dataType : "JSON",
-    
-            success : function(result) {
-            if(result > 0) {
-                alert.parentElement.previousSibling.remove();    
-                alert.parentElement.remove();
+let alerts = document.querySelector("#alert-area");
+    alerts.addEventListener("click", function() {      
+    $.ajax({
+        url : contextPath +"/alert/updateAlertCheckFg",
+        data : {"pmNo" : pmNo},
+        type : "get",
 
-                let badgeNumber = document.querySelector(".badge-number");
-                let dropDownHeader = notifications.querySelector(".dropdown-header");
+        dataType : "JSON",
 
-                badgeNumber.innerText = ((Number)(badgeNumber.innerText) - 1);
-                dropDownHeader.innerText = badgeNumber.innerText + "개의 새로운 알림이 있습니다";
-                if((Number)(badgeNumber.innerText) == 0) {
-                    badgeNumber.innerText = '';
-                    dropDownHeader.innerText = '새로운 알림이 없습니다.';
-                }
-            }
+        success : function(result) {
+        if(result > 0) {
             
-                
-                
-    
-            },
-            error : function(request, status, error){
-                console.log("AJAX 에러 발생");
-                console.log("상태코드 : " + request.status); // 404, 500
-            }
-        });
-    })
+
+            selectAlertList();
+            let badgeNumber = document.querySelector(".badge-number");
+            badgeNumber.innerHTML = "";
+        }
+        
+            
+            
+
+        },
+        error : function(request, status, error){
+            console.log("AJAX 에러 발생");
+            console.log("상태코드 : " + request.status); // 404, 500
+        }
+    });
 })
 
 alertSock.onmessage = function(e) {
@@ -117,6 +114,7 @@ alertSock.onmessage = function(e) {
     
     let notifications = document.getElementById("alert-area");
     let dropDownHeader = notifications.querySelector(".dropdown-header");
+    let alertListArea = document.querySelector(".alertListArea");
 
     let dropDownDividerLi = document.createElement("li");
     let dropDownDividerHr = document.createElement("hr");
@@ -146,7 +144,9 @@ alertSock.onmessage = function(e) {
     div.append(a);
     notificationItem.append(i, div);
 
-    dropDownHeader.after(dropDownDividerLi, notificationItem);
+    alertListArea.prepend(dropDownDividerLi, notificationItem);
+
+//    dropDownHeader.after(dropDownDividerLi, notificationItem);
 
     let badgeNumber = document.querySelector(".badge-number");
 

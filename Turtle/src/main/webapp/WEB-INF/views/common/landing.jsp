@@ -112,8 +112,21 @@
 							<!-- 현재는 로그인되었을 경우 메인페이지 이동으로함. -->
 							<c:if test="${!empty loginMember}">
 								<div class="text-center text-lg-start">
+									<c:choose>
+										<c:when test="${projectNo != 0}">
+											<a href="${contextPath}/project/${projectNo}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+												<span>내 프로젝트로 이동</span> <i class="bi bi-arrow-right"></i>
+											</a>
+										</c:when>
+										<c:otherwise>
+											<a href="${contextPath}/project/createProject" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+												<span>내 프로젝트 생성</span> <i class="bi bi-arrow-right"></i>
+											</a>
+										</c:otherwise>
+									</c:choose>
+									
 									<a href="${contextPath}/member/login" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-										<span>프로젝트로 이동</span> <i class="bi bi-arrow-right"></i>
+										<span>테스트용</span> <i class="bi bi-arrow-right"></i>
 									</a>
 								</div>
 							</c:if>	
@@ -198,56 +211,7 @@
 	    </section>
 	    <!-- ======= [2] End AutoSwiper-1 ======= -->
 	
-	    
-	    <!-- ======= [3] AutoSwiper-2 Section (원래 Clients Section) ======= -->
-	    <section id="clients" class="clients">
-	    	<div class="container" data-aos="fade-up">
-
-				<!-- 글씨부분 -->
-				<header class="section-header">
-					<!-- 큰제목 -->
-					<p>슬라이드기능2</p>
-					<!-- 큰제목 설명칸 -->
-					<h2>뭐가더좋을까요</h2>
-				</header>
-				
-				<!-- 슬라이더 (사진+ 동그라미버튼) 전체 -->
-				<div class="clients-slider swiper">
-					<!-- 슬라이더 사진부분 -->
-					<div class="swiper-wrapper align-items-center">
-						<div class="swiper-slide">
-							<img src="${contextPath}/resources/images/landing/오둥1.jpeg" class="img-fluid" alt="안보여요">
-						</div>
-						<div class="swiper-slide">
-							<img src="${contextPath}/resources/images/landing/오둥2.jpg" class="img-fluid" alt="안보여요">
-						</div>
-						<div class="swiper-slide">
-							<img src="${contextPath}/resources/images/landing/오둥3.jpg" class="img-fluid" alt="안보여요">
-						</div>
-						<div class="swiper-slide">
-							<img src="${contextPath}/resources/images/landing/오둥4.jpg" class="img-fluid" alt="안보여요">
-						</div>
-						<div class="swiper-slide">
-							<img src="${contextPath}/resources/images/landing/오둥5.jpg" class="img-fluid" alt="안보여요">
-						</div>
-						<div class="swiper-slide">
-							<img src="${contextPath}/resources/images/landing/client-6.png" class="img-fluid" alt="안보여요">
-						</div>
-						<div class="swiper-slide">
-							<img src="${contextPath}/resources/images/landing/client-7.png" class="img-fluid" alt="안보여요">
-						</div>
-						<div class="swiper-slide">
-							<img src="${contextPath}/resources/images/landing/client-8.png" class="img-fluid" alt="안보여요">
-						</div>
-					</div>
 	
-	           		<!-- swiper 동그라미 버튼 (현재 페이지위치 보여주는거) -->
-	          		<div class="swiper-pagination"></div>
-	        	</div>
-
-	      	</div>
-	    </section>
-	    <!-- ======= [3] End AutoSwiper-2 ======= -->
 	
 	    
 	    <!-- ======= [4] Features Section ======= -->

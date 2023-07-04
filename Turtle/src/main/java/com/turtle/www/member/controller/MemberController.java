@@ -37,13 +37,15 @@ import com.google.api.client.json.JsonFactory;
 import com.google.gson.Gson;
 import com.turtle.www.member.model.service.MemberService;
 import com.turtle.www.member.model.vo.Member;
+import com.turtle.www.project.model.service.ProjectService;
+import com.turtle.www.projectMember.model.service.ProjectMemberService;
 
 
 // @RestController // @Controller + @ResponseBody
 
 @Controller
 @RequestMapping("/member")
-@SessionAttributes({"loginMember", "project"})
+@SessionAttributes({"loginMember", "project", "projectNo"})
 public class MemberController {
 	
 	private Logger logger = LoggerFactory.getLogger(MemberController.class);
@@ -54,6 +56,8 @@ public class MemberController {
 	
 	@Autowired
 	private MemberService service;
+	@Autowired
+	private ProjectService pService;
 	
 	
 	
@@ -440,6 +444,13 @@ public class MemberController {
 			model.addAttribute("loginMember", loginMember);
 			ra.addFlashAttribute("message", loginMember.getMemberName() + "테스트 로그인 성공");
 			logger.info(loginMember.getMemberName() +" 로그인 성공");
+			
+			// 로그인 멤버의 본인이 생성한 프로젝트넘버 얻어오기
+			int projectNo = pService.selectMyProjectNo(loginMember.getMemberNo());
+			
+			model.addAttribute("projectNo", projectNo);
+			
+			
 		} else {
 			ra.addFlashAttribute("message", "테스트 로그인 실패");
 			logger.info("로그인 실패");

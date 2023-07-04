@@ -39,6 +39,6 @@
 	<!-- 알림 확인 업데이트 -->
 	<update id="updateAlertCheckFg">
 		UPDATE ALERT SET ALERT_CHECK_FG = 'Y'
-		WHERE ALERT_NO = ${alertNo}
+		WHERE PM_NO = ${pmNo}
 	</update>
 </mapper>
