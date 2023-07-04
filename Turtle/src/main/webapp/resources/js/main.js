@@ -53,22 +53,6 @@ window.onload = function() {
 
 
 
-//섬머노트
-$(document).ready(function() {
-	//여기 아래 부분
-	$('#summernote').summernote({
-		  height: 300,                 // 에디터 높이
-		  minHeight: null,             // 최소 높이
-		  maxHeight: null,             // 최대 높이
-		  focus: true,                  // 에디터 로딩후 포커스를 맞출지 여부
-		  lang: "ko-KR",					// 한글 설정
-		  placeholder: '최대 2048자까지 쓸 수 있습니다'	//placeholder 설정
-          
-	});
-});
-
-
-
 
 
 function currentTime() {
@@ -96,19 +80,8 @@ const interbal = window.setInterval(function() {
 }, 1000);
 
 
-// fullcalendar
-document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar-main');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-    });
-    calendar.render();
 
 
-    calendarEl.addEventListener("click", function() {
-        location.href = contextPath + "/calendar/calendar/1/9";
-    })
-});
 // 채팅창 팝업 (프로젝트 넘버는 나중에 변수 넣어서 바꿔주기)
 function join() {
     var url = "../chat/chatRoomList/1";		

@@ -71,6 +71,11 @@ public class CalendarController {
 		model.addAttribute("calendarList", calendarList);
 		model.addAttribute("pmNo", pmNo);
 		
+		logger.debug("projectNo" + projectNo);
+		logger.debug("workspaceNo" + workspaceNo);
+		logger.debug("calendarList" + calendarList);
+		logger.debug("pmNo" + pmNo);
+		
 		
 		logger.debug(loginMember.getMemberNo() + "페이지 이동");
 		

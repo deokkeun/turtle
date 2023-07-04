@@ -22,7 +22,7 @@
     <main id="main" class="main">
 
 
-        <input type="hidden" id="projectNo" value="1">
+        <!-- <input type="hidden" id="projectNo" value="1"> -->
 
         <!-- ======= pricing Section ======= -->
         <section id="pricing" class="pricing">
@@ -203,7 +203,7 @@
 
     </main>
     <script>
-      const contextPath = "${contextPath}";
+    //   const contextPath = "${contextPath}";
     </script>
     <!-- footer include -->
    	<jsp:include page="/WEB-INF/views/common/footer.jsp" />

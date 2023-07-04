@@ -78,7 +78,7 @@ $(".BgColor").click(function() {
 
 
 const calNo = document.getElementById("calNo");
-const projectNo = document.getElementById("projectNo");
+// const projectNo = document.getElementById("projectNo");
 const workspaceNo = document.getElementById("workspaceNo");
 
 var calendar = null;
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // -----------------------------------------------------------------
 
    
-   console.log(projectNo.value);
+   console.log(projectNo);
    console.log(workspaceNo.value);
    
 
@@ -246,7 +246,7 @@ function padZero(number) {
               
               const updateEvent = {
                 "calNo" : info.event.id, // 일정 ID 번호
-                "pmNo" : projectNo.value,// 프로젝트 멤버 번호
+                "pmNo" : projectNo,// 프로젝트 멤버 번호
                 "workspaceNo" : workspaceNo.value,// 워크스페이스 번호
                 "calTitle" : inputValue.value,// 캘린더 제목
                 "calContent" : textarea.value, // 캘린더 내용
@@ -286,7 +286,7 @@ function padZero(number) {
 
               const deleteEvent = {
                 "calNo" : info.event.id, // 일정 ID 번호
-                "pmNo" : projectNo.value,// 프로젝트 멤버 번호
+                "pmNo" : projectNo,// 프로젝트 멤버 번호
                 "workspaceNo" : workspaceNo.value,// 워크스페이스 번호
                 "calTitle" : info.event.title, // 일정 제목
                 "calSt" : "Y" // 일정 삭제 여부
@@ -362,7 +362,7 @@ function padZero(number) {
 function loadingEvents() {
 
   $.ajax({
-    url: contextPath + '/calendar/calendar/' + projectNo.value + '/' + workspaceNo.value,
+    url: contextPath + '/calendar/calendar/' + projectNo + '/' + workspaceNo.value,
     data: {},
     type: 'POST',
     dataType: 'JSON',
@@ -394,7 +394,7 @@ function loadingEvents() {
 function addEvent() {
  
     const addEvent = {
-      "pmNo" : projectNo.value,// 프로젝트 멤버 번호
+      "pmNo" : projectNo,// 프로젝트 멤버 번호
       "workspaceNo" : workspaceNo.value,// 워크스페이스 번호
       "calTitle" : inputValue.value,// 캘린더 제목
       "calContent" : textarea.value, // 캘린더 내용
@@ -458,33 +458,36 @@ calendarSock.onmessage = function(e) {
 
   if(calendar.calSt == 'N' && calendar.calNo == 0) {
 
+    alert("'" + calendar.calTitle + "' 일정이 추가되었습니다!");
+
     // 알람
     let calendarAlert = {
-      "projectNo": projectNo.value,
+      "projectNo": projectNo,
       "memberNo": memberNo.value,
       "alertContent": '님이 일정을 추가하였습니다.',
-      "link": contextPath + "/calendar/calendar/" + projectNo.value + "/" + workspaceNo.value,
+      "link": contextPath + "/calendar/calendar/" + projectNo + "/" + workspaceNo.value,
       "memberName" : memberName.value
     };
+
     // 알람
     alertSock.send(JSON.stringify(calendarAlert));
 
-    alert("'" + calendar.calTitle + "' 일정이 추가되었습니다!");
 
   } else if (calendar.calSt == 'N' && calendar.calNo != 0) {
 
+    alert("'" + calendar.calTitle + "' 일정이 수정되었습니다!");
+
     // 알람
     let calendarAlert = {
-      "projectNo": projectNo.value,
+      "projectNo": projectNo,
       "memberNo": memberNo.value,
       "alertContent": '님이 일정을 수정하였습니다.',
-      "link": contextPath + "/calendar/calendar/" + projectNo.value + "/" + workspaceNo.value,
+      "link": contextPath + "/calendar/calendar/" + projectNo + "/" + workspaceNo.value,
       "memberName" : memberName.value
     };
+
     // 알람
     alertSock.send(JSON.stringify(calendarAlert));
-
-    alert("'" + calendar.calTitle + "' 일정이 수정되었습니다!");
 
   }
 
@@ -511,8 +514,5 @@ function reset() {
 
 
 // ------------------------------------------------------------------------------------------
-
-
-
 
 
