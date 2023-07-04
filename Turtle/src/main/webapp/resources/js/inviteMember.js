@@ -161,6 +161,7 @@ $('.uc-btn').on('click', function() {
         type : "POST",
         success: function(){
             console.log("초대 멤버 이메일 데이터 전송 성공")
+            alert("초대가 완료되었습니다.")
         },
         error : function(request, status, error) {
         

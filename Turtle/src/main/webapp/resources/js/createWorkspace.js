@@ -83,7 +83,7 @@ $(document).ready(function() {
 
         let res = "";
 
-        res = " <div class='wor'><div><a><i class='fa-solid fa-bars'></i></a></div><div class='workspace-name'><span>" + name +"</span><a class='change-text'><i class='fa-regular fa-pen-to-square' style='color : black;'></i></a></div><div class='remove-btn'><span>삭제</span></div></div>"
+        res = " <div class='wor'><div><a><i class='fa-solid fa-bars'></i></a></div><div class='workspace-name'><span id="+name+">" + name +"</span><a class='change-text'><i class='fa-regular fa-pen-to-square' style='color : black;'></i></a></div><div class='remove-btn'><span>삭제</span></div></div>"
 
         $('.workspace').append(res);
 
@@ -100,18 +100,18 @@ $(document).ready(function() {
     /*워크스페이스 이름 변경*/
     $(document).on('click','.change-text', function() {
           console.log($(this).parents('.workspace-name').text());
-        $(this).parents('.workspace-name').html("<input type='text' class='workspace-input'>");
+        $(this).parents('.workspace-name').html("<input id = "+$(this).siblings('span').attr('id') +" type='text' class='workspace-input'>");
         
     })
 
     $(document).on('keydown','.workspace-input', function(key) {
          if(key.keyCode == 13) {
                 console.log($(this).val());
-                $(this).parents('.workspace-name').html("<span>" + $(this).val() + "</span><a class='change-text'><i class='fa-regular fa-pen-to-square' style='color : black;'></i></a></div>");
+                $(this).parents('.workspace-name').html("<span id="+$(this).attr('id')+">" + $(this).val() + "</span><a class='change-text'><i class='fa-regular fa-pen-to-square' style='color : black;'></i></a></div>");
             }
     })
 
-});
+
 
 /*언어설정 section 버튼 클릭 */
 
@@ -120,30 +120,30 @@ $(document).ready(function() {
 
 /*tab 클릭시 이미지 분류 */
 
-$('.workspace-language a').click(function() {
-    console.log($(this).text());
-   
-    var name = $(this).text();
-    var cls = document.querySelectorAll('.language');
+    $('.workspace-language a').click(function() {
+        console.log($(this).text());
+    
+        var name = $(this).text();
+        var cls = document.querySelectorAll('.language');
 
-    for(var i =0; i < cls.length; i++) {
-        if(cls[i].getAttribute('id') == name) {
-            cls[i].classList.add('active');
+        for(var i =0; i < cls.length; i++) {
+            if(cls[i].getAttribute('id') == name) {
+                cls[i].classList.add('active');
+                
+                
+            }else {
+                cls[i].classList.remove('active');
             
             
-        }else {
-            cls[i].classList.remove('active');
-           
-           
+            }
         }
-    }
 
-})
+    })
 
 
 
 /*이미지 클릭 시 SELECTED로 이동 */
-$(document).ready(function() {
+
 
     $('.img > a').on('click', function() {
         
@@ -165,6 +165,51 @@ $(document).ready(function() {
         $('#'+id1 +' > div a i ').attr('class','fa-solid fa-circle-plus');
         $('#'+id1 + ' > div a i').attr('style','color: #1f6df4');
         $('#'+id1 + '>div').attr('class','img');
+    });
+    $('.next-btn').on('click', function() {
+        console.log('버튼클릭');
+        const e = document.querySelectorAll('.selected > img');
+        const w = document.querySelectorAll('.workspace-name > span');
+      
+
+        var arr1 = [];
+        var arr2 = [];
+        var arr3 = [];
+        for(let i=0; i<e.length; i++) {
+            arr1[i] = e[i].src;
+
+        }
+        for(let x=0; x<w.length; x++) {
+            arr2[x] = w[x].getAttribute('id');
+            arr3[x] = w[x].innerHTML;
+        }
+        console.log(arr1);
+        console.log(arr2);
+        console.log(arr3);
+
+        $.ajax({
+
+            url : "createWorkspace",
+            date : {selected : arr1,
+                    workspace : arr2,
+                    wokrspaceName : arr3
+            },
+            traditional : true,
+            type : "POST",
+            success: function() {
+                console.log('전송성공');
+
+            },
+            error : function(request, status, error) {
+        
+                console.log("ajax 에러발생");
+                console.log("상태코드 : " + request.status); // 404, 500
+            }
+        })
+
+
+
+
     });
     
 
