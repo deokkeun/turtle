@@ -17,6 +17,7 @@
     
     <link rel="stylesheet" href="${contextPath}/resources/css/board/boardList.css">
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
@@ -29,7 +30,7 @@
 		<div class="board firstBoard" data-boardSort="0" data-pmNo="${pmNo}">
 			<div class="edit-board-area">
 				<div class="first-add-board" style="visibility:visible;">
-					<button class="add-board-btn">+</button>
+					<button class="add-board-btn"><i class="fa-solid fa-plus"></i></button>
 				</div>
 				<div class="select-board-detail">
 					<div class="boardTitle">
@@ -59,11 +60,12 @@
 			<div class="board" data-boardNo="${board.boardNo}" data-pmNo="${pmNo}" data-boardSort="${board.boardSort}">
 				<div class="edit-board-area">
 					<div class="add-board" style="visibility:hidden;">
-						<button class="add-board-btn">+</button>
+						<button class="add-board-btn"><i class="fa-solid fa-plus"></i></button>
 					</div>
 					<div class="emoji-btn">
-						<i class="fa-regular fa-file"></i>
+						<i class="fa-regular fa-file"></i>	
 					</div>
+					<script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
 					<a href="../../boardDetail/${projectNo}/${workspaceNo}/${board.boardNo}" class="select-board-detail">
 						<div class="boardTitle" contenteditable="false">
 							${board.boardTitle}
@@ -81,6 +83,9 @@
 							<span class="profile-image"><img src="${contextPath}${board.regProfileImg}"></span>
 							<span class="user-name">${board.regMemberName}</span>
 						</div>
+						<div class="delete-board" style="visibility:hidden;">
+							<button class="delete-board-btn"><i class="fa-solid fa-xmark"></i></button>
+						</div>    	
 						<div class="eventDate">
 							<div class="eventStartDate">${board.eventStartDate}</div>
 							<div> - </div>
@@ -92,6 +97,9 @@
 							<span class="profile-image"><img src="${contextPath}${board.updateProfileImg}"></span>
 							<span class="user-name">${board.updateMemberName}</span>
 						</div>
+						<div class="delete-board" style="visibility:hidden;">
+							<button class="delete-board-btn"><i class="fa-solid fa-xmark"></i></button>
+						</div>    	
 						<div class="eventDate">
 							<div class="eventStartDate">${board.eventStartDate}</div>
 							<div> - </div>
@@ -100,9 +108,7 @@
 						</c:otherwise>
 					</c:choose>    							
 				</div>
-				<div class="delete-board" style="visibility:hidden;">
-					<button class="delete-board-btn">-</button>
-				</div>    						
+									
 			</div>
 							
 		</c:forEach>
@@ -152,7 +158,7 @@
 		// 알람용 sock
         let alertSock = new SockJS(contextPath+"/alert");
     </script>
-
+	
     <!-- memo.js 연결 -->
     <script src="${contextPath}/resources/js/board/boardList.js"></script>    
     

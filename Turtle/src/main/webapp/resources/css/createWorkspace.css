@@ -10,8 +10,12 @@ a {
 section {
     text-align: center;
 
+    
 }
-
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
 .section1 {
     
     margin-top: 12vh;

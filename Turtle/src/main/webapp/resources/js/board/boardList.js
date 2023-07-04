@@ -4,8 +4,7 @@ $(document).on("mouseout", ".board", function(){mouseout($(this))});
 $(document).on("click", ".edit-boardTitle-btn", function(){
     const value = $('.boardTitle').val();
     editBoardTitleBtn($(this));
-    
- 
+
 });
 
 $(document).on('keydown', '.boardTitle', function(key) {
@@ -14,7 +13,7 @@ $(document).on('keydown', '.boardTitle', function(key) {
         closeEditBoardTitleBtn($(this).parents('.select-board-detail').siblings('.edit-boardTitle').children('.close-edit-boardTitle-btn'));
     }
 })
-// $(document).on("click", ".close-edit-boardTitle-btn", function(){closeEditBoardTitleBtn($(this))});
+//$(document).on("click", ".close-edit-boardTitle-btn", function(){closeEditBoardTitleBtn($(this))});
 //$(document).on("keydown", ".board", function(){inputTyping()});
 //$(document).on("keyup", ".board", function(){keyupTyping($(this))});
 $(document).on("click", ".add-board-btn", function(){addBoardBtn($(this))});
@@ -96,12 +95,21 @@ insertBoardSock.onmessage = function(e) {
     addedAddBoard.classList.add('add-board');
     addedAddBoard.style.visibility = 'hidden';
 
+    // emoji div 추가 (수정중)
+    const addedEmoji = document.createElement('div');
+    addedEmoji.classList.add('emoji-btn');
+    addedEmoji.innerHTML =  "<i class='fa-regular fa-file'></i>";
+
+
     const addedAddBoardBtn = document.createElement('button');
     addedAddBoardBtn.classList.add('add-board-btn');
-    addedAddBoardBtn.textContent = '+';
+    addedAddBoardBtn.innerHTML = '<i class="fa-solid fa-plus"></i>';
+
+   
 
     addedAddBoard.appendChild(addedAddBoardBtn);
     addedEditBoardArea.appendChild(addedAddBoard);
+    addedEditBoardArea.appendChild(addedEmoji);
 
     const addedSelectBoardDetail = document.createElement('a');
     addedSelectBoardDetail.href = '../../boardDetail/' + projectNo + '/' + workspaceNo + '/' + newBoard.boardNo;
@@ -118,12 +126,12 @@ insertBoardSock.onmessage = function(e) {
 
     const addedEditBoardTitleBtn = document.createElement('button');
     addedEditBoardTitleBtn.classList.add('edit-boardTitle-btn');
-    addedEditBoardTitleBtn.textContent = 'edit';
+    addedEditBoardTitleBtn.innerHTML = '<i class="fa-regular fa-pen-to-square">';
 
     const addedCloseEditBoardTitleBtn = document.createElement('button');
     addedCloseEditBoardTitleBtn.classList.add('close-edit-boardTitle-btn');
     addedCloseEditBoardTitleBtn.style.display = 'none';
-    addedCloseEditBoardTitleBtn.textContent = 'done';
+    addedCloseEditBoardTitleBtn.innerHTML = '<i class="fa-regular fa-pen-to-square">';
 
     addedEditBoardTitle.appendChild(addedEditBoardTitleBtn);
     addedEditBoardTitle.appendChild(addedCloseEditBoardTitleBtn);
@@ -165,26 +173,29 @@ insertBoardSock.onmessage = function(e) {
     addedEventEndDate.classList.add('eventEndDate');
     addedEventEndDate.textContent = newBoard.eventEndDate;
 
-    addedEventDate.appendChild(addedEventStartDate);
-    addedEventDate.appendChild(addedBetweenEventDate);
-    addedEventDate.appendChild(addedEventEndDate);
-
-    addedBoardInfo.appendChild(addedUserProfile);
-    addedBoardInfo.appendChild(addedEventDate);
-
     const addedDropBoard = document.createElement('div');
     addedDropBoard.classList.add('delete-board');
     addedDropBoard.style.visibility = 'hidden';
 
     const addedDeleteBoardBtn = document.createElement('button');
     addedDeleteBoardBtn.classList.add('delete-board-btn');
-    addedDeleteBoardBtn.textContent = '-';
+    addedDeleteBoardBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
 
+
+    addedEventDate.appendChild(addedEventStartDate);
+    addedEventDate.appendChild(addedBetweenEventDate);
+    addedEventDate.appendChild(addedEventEndDate);
+
+    addedBoardInfo.appendChild(addedUserProfile);
+    addedBoardInfo.appendChild(addedDropBoard);
+    addedBoardInfo.appendChild(addedEventDate);
+
+   
     addedDropBoard.appendChild(addedDeleteBoardBtn);
 
     addedBoard.appendChild(addedEditBoardArea);
     addedBoard.appendChild(addedBoardInfo);
-    addedBoard.appendChild(addedDropBoard);
+   
 
     boards = document.querySelectorAll(".board");
     console.log(addedBoard);
@@ -381,7 +392,7 @@ function addBoardBtn(addBoardBtn) {
 
 // 게시글 삭제버튼 함수
 function deleteBoardBtn(deleteBoardBtn) {
-    let board = $(deleteBoardBtn).parent().parent(".board");
+    let board = $(deleteBoardBtn).parent().parent().parent(".board");
     deleteBoard(board);
 }
 
@@ -481,5 +492,29 @@ function addZero(temp){
 // })
 
 //수정버튼 클릭시 focus 맨뒤에 하는거
+// var len = $('.boardTitle').val().length;
+// $('.boardTitle').focus();
+// $('.boardTitle')[0].setSelectionRange(len, len);
+
+//이모티콘
+let button4 = document.querySelector(".emoji_btn > i");
+const picker3 = new EmojiButton({
+position: 'bottom-start'
+});
+if(button4) 
+button4.addEventListener('click', () => {
+picker3.togglePicker(button4);
+});
+
+picker3.on('emoji', emoji => {
+const text_box3 = document.querySelector('.emoji_btn');
+text_box3.innerHTML = emoji;
+});
+//     var len = $('.boardTitle').val().length;
+// $('.boardTitle').focus();
+// $('.boardTitle')[0].setSelectionRange(len, len);
+var input = document.querySelector(".boardTitle"); 
+
+// input[name='txt'] 요소에 focus 이벤트 리스너를 지정합니다.
 
 

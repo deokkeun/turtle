@@ -32,23 +32,7 @@
     
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     
-    <style>
-                /* 로딩페이지 */
-        /* #load {
-            width: 100%;
-            height: 100%;
-            top: 45%;
-            left: 0;
-            position: fixed;
-            display: block;
-            opacity: 0.8;
-            background: white;
-            z-index: 99;
-            text-align: center;       
-        } */
-    </style>
 
-	
     <title>Turtle</title>
    
 </head>
@@ -61,11 +45,7 @@
     
     <!-- (index.jsp)/member/login -> (main.jsp)common/main.jsp -->
     <main id="main" class="main">    
-        <!-- 로딩 -->
-        <!-- <div id="load">
-            <div><img id="loading-image" src="${contextPath}/resources/images/top버튼거북이2.png" width="150px"></div>
-            <div><img src="${contextPath}/resources/images/load.gif" width="100px"></div>
-        </div>    -->
+      
         
         <div id="clock" value="0">00 : 00 : 00</div>
 
@@ -124,14 +104,7 @@
 
     </main>
     
-     <!--loading 페이지-->
-     <!-- <script type="text/javascript">
-        $(window).one('load', function() {
-            setTimeout(function(){
-                $("#load").fadeOut();
-            }, 500);
-        }); -->
- 
+   
     <script>
       const contextPath = "${contextPath}";
     </script>

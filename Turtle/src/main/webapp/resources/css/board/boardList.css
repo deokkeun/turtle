@@ -12,37 +12,41 @@ a {
 	color: black;
 }
 
-.board-area {
-	width: auto;
-	
-}
 
+.board-area {
+	margin: 0 auto;
+	width: 80%;
+}
 .board {
 	display: flex;
 	height:25px;
-	overflow: hidden;
-	
-	
+
+}
+.board > div:nth-child(1) {
+	flex-basis: 60%;
+}
+.board > div:nth-child(2) {
+	flex-basis: 40%;
 }
 
 .board:hover {
 	font-weight: bolder;
+	background-color: #f6f9ff;
 }
 
 .edit-board-area {
-	flex-basis: 55%;
+	
 	height: 100%;
 	display: flex;
 }
 
-.add-board {
-	flex-basis: 5%;
-}
 .add-board-btn {
 	background-color: transparent;
-	font-size: 24px;
+	font-size: 16px;
 	color: rgba(55, 53, 47, 0.35);
 	border: none;
+	padding: 2px;
+	margin: 2px;
 	
 }
 .add-board-btn:hover {
@@ -63,58 +67,74 @@ a {
 
 }
 .boardTitle {
-	flex-basis: 80%;
+	max-width: 50vw;
 	display: inline-block;
-	height: 30px;
-	justify-content: center;
+	height: 25px;
+	overflow: hidden;
+	word-break: break-all;
 	
 }
-.emoji-btn  {
-
+.delete-board-btn {
+	background-color: transparent;
+	border: none;
+	font-size: 16px;
+	color: rgba(55, 53, 47, 0.35);
+	margin-left: 5px;
 }
-.emoji-btn > i {
-	
+.delete-board-btn:hover {
+	color: black;
+	cursor: pointer;
 }
-.edit-boardTitle {
-	flex-basis: 15%;
-}
-
-
-
 .board-info {
 	display: flex;
-	flex-basis: 40%;
-	height: 100%;
+	justify-content: space-between;
 }
-
-.board-info > div:nth-of-type(1) {
-	width: 100px;
-}
-
 .profile-image > img {
 	width: 20px;
 	height: 20px;
+	border-radius: 8px;
 }
 
-.delete-board {
-	flex-basis: 5%;
-}
 .eventDate {
+	width: 200px;
 	display: flex;
+	height: 25px;
+	justify-content: center;
+	color: rgba(55, 53, 47, 0.35);
+	visibility: hidden;
+	margin-left: auto;
+	
 }
-
-
+.emoji-btn {
+	margin-right: 5px;
+}
+.emoji-btn:hover {
+	cursor: pointer;
+}
 
 /* hover 시에 이름 확인 */
 .user-profile {
 	display: block;
+	position: relative;
 }
 .user-name {
 	visibility: hidden;
 	background: black;
 	color: white;
+	position: absolute;
+	display: grid;
+	top: 100%;
+	left: -80%;
+	grid-template-columns: minmax(50px, max-content) 1fr;
+	z-index: 998;
+	border-radius: 3px;
+	padding: 3px;
+	
 
 }
 .profile-image:hover  ~ .user-name{	
+	visibility: visible;
+}
+.board:hover .eventDate {
 	visibility: visible;
 }
