@@ -13,7 +13,12 @@ public class WorkspaceDAO {
 	private SqlSessionTemplate sqlSession;
 
 	public int createWorkspace(Workspace workspace) {
-		return sqlSession.insert("workspace-mapper.createWorkspace", workspace);
+		
+		int result = sqlSession.insert("workspaceMapper.createWorkspace", workspace);
+		
+		if(result > 0) result = workspace.getWorkspaceNo();
+		
+		return result;
 	}
 	
 	

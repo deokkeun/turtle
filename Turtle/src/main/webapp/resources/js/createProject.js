@@ -271,6 +271,10 @@ button3.addEventListener('click', () => {
 picker2.on('emoji', emoji => {
   const text_box2 = document.querySelector('#emoji_btn2');
   text_box2.innerHTML = emoji;
+  console.log(emoji);
+  
+  const emojiValueInput = document.querySelector('#emoji_value');
+  emojiValueInput.value = emoji;
 });
 
 //섬머노트

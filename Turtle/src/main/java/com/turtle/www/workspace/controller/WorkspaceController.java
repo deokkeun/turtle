@@ -1,5 +1,9 @@
 package com.turtle.www.workspace.controller;
 
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,13 +18,16 @@ import com.turtle.www.loadmap.model.vo.Loadmap;
 import com.turtle.www.member.model.vo.Member;
 import com.turtle.www.memo.model.vo.Memo;
 import com.turtle.www.project.model.vo.Project;
+import com.turtle.www.projectMember.controller.ProjectMemberController;
 import com.turtle.www.workspace.model.service.WorkspaceService;
 import com.turtle.www.workspace.model.vo.Workspace;
 
 @Controller
-@RequestMapping("/workspace")
+@RequestMapping("/project")
 @SessionAttributes({"loginMember", "project"})
 public class WorkspaceController {
+	
+	private Logger logger = LoggerFactory.getLogger(WorkspaceController.class);
 	
 	@Autowired
 	private WorkspaceService service;
@@ -44,25 +51,66 @@ public class WorkspaceController {
 	@PostMapping("/createWorkspace")
 	public String createWorkspace(@ModelAttribute("project") Project project,
 							@ModelAttribute("loginMember") Member loginMember,
-							@RequestParam("emoji_value") String emojiValue,
-                            @RequestParam("workspace_name") String workspaceName,
-                            Workspace workspace) {
+							@ModelAttribute("workspace") Workspace workspace,
+//							@RequestParam("emoji_value") String emojiValue,
+                            @RequestParam("workspaceName") String workspaceName
+//                            @RequestParam(value="selected", required=false) List<String> selectEmail
+					) {
 		
+		logger.info("워크스페이스 생성");
+		logger.info(workspaceName);
 		
 		workspace.setProjectNo(project.getProjectNo());
-		workspace.setWorkspaceName(workspaceName);
-		workspace.setWorkspaceEmoji(emojiValue);
 		
 		// 워크스페이스 이모지, 워크스페이스 이름
 		int workspaceNo = service.createWorkspace(workspace);
 		
+
 		
-		// 선택한 템플릿
 		
-		
-		return null;
+		return "redirect:/project/createWorkspace";
 		
 	}
+	
+	
+	@PostMapping("/createTemplate")
+	public String createTemplate(@ModelAttribute("project") Project project,
+						@ModelAttribute("loginMember") Member loginMember,
+						@RequestParam(value="workspace", required=false) List<String> template,
+			            @RequestParam(value="wokrspaceName", required=false) List<String> templateName) {
+		
+		logger.info("템플릿 생성");
+		
+		// 선택한 템플릿
+		System.out.print(template);
+		System.out.print(templateName);
+		
+		for(int i = 0; i <= template.size(); i++) {
+			
+		}
+		
+		if(template.contains("게시판")) {
+			
+			
+		}
+		
+		if(template.contains("캘린더")) {
+			
+		}
+		
+		if(template.contains("스티커")) {
+			
+		}
+		
+		if(template.contains("깃")) {
+			
+		}
+		
+		
+		return "redirect:/project/createWorkspace";
+		
+	}
+	
 	
 	
 }

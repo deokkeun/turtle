@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -41,6 +42,7 @@ public class ProjectController {
 	@PostMapping("/createProject")
 	public String createProject(@ModelAttribute("loginMember") Member loginMember,
 								@ModelAttribute("project") Project project,
+//								@RequestParam("emoji_value") String emojiValue,
 								HttpSession session,
 								HttpServletRequest req,
 								RedirectAttributes ra) {
@@ -49,6 +51,8 @@ public class ProjectController {
 		
 		// 생성자 멤버 번호 추가
 		project.setCreateMemberNo(loginMember.getMemberNo());
+//		project.setProjectEmoji(emojiValue);
+//		logger.info(emojiValue);
 		ProjectMember pm = new ProjectMember();
 		pm.setMemberNo(loginMember.getMemberNo());
 		

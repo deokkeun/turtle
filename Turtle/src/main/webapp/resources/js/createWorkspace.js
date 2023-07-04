@@ -166,6 +166,8 @@ $(document).ready(function() {
         $('#'+id1 + ' > div a i').attr('style','color: #1f6df4');
         $('#'+id1 + '>div').attr('class','img');
     });
+
+
     $('.next-btn').on('click', function() {
         console.log('버튼클릭');
         const e = document.querySelectorAll('.selected > img');
@@ -189,8 +191,8 @@ $(document).ready(function() {
 
         $.ajax({
 
-            url : "createWorkspace",
-            date : {selected : arr1,
+            url : "createTemplate",
+            data : {selected : arr1,
                     workspace : arr2,
                     wokrspaceName : arr3
             },
@@ -254,4 +256,8 @@ button3.addEventListener('click', () => {
 picker2.on('emoji', emoji => {
   const text_box2 = document.querySelector('#emoji_btn2');
   text_box2.innerHTML = emoji;
+  console.log(emoji);
+  
+  const emojiValueInput = document.querySelector('#emoji_value');
+  emojiValueInput.value = emoji;
 });

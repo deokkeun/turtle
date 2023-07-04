@@ -81,6 +81,7 @@ public class CalendarController {
 	 * @param loginMember
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	@ResponseBody
 	@PostMapping("/calendar/{projectNo}/{workspaceNo}")
 	public String calendar(@ModelAttribute("loginMember") Member loginMember,
