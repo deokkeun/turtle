@@ -21,7 +21,7 @@ import com.turtle.www.memo.model.service.MemoService;
 import com.turtle.www.memo.model.vo.Memo;
 import com.turtle.www.projectMember.model.service.ProjectMemberService;
 
-@SessionAttributes({"loginMember", "workspaceNo"})
+@SessionAttributes({"loginMember", "workspaceNo", "projectNo"})
 @RequestMapping("/workspace/memo")
 @Controller
 public class MemoController {
@@ -52,7 +52,7 @@ public class MemoController {
 		
 		List<Memo> memoList = service.selectMemoList(map);
 
-		
+		model.addAttribute("projectNo", projectNo);		
 		model.addAttribute("workspaceNo", workspaceNo); // session에 올림
 		model.addAttribute("memoList", memoList);
 		model.addAttribute("pmNo", pmNo);

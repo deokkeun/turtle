@@ -67,7 +67,7 @@
 
 
     </section>
-    <script src="${contextPath}/resources/js/createProject.js"></script>
+    
 </main>
    
     <script>
