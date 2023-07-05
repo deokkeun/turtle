@@ -224,7 +224,7 @@
             <c:forEach var="workspace" items="${workspaceList}">
               <c:if test="${workspace.workspaceName != 'calendar' && workspace.workspaceName != 'loadmap'}">
                 <li>
-                  <a href="${contextPath}/workspace/${projectNo}/${workspace.workspaceNo}">
+                  <a href="${contextPath}/project/${projectNo}/${workspace.workspaceNo}">
                     <span>${workspace.workspaceName}</span>
                     <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
                       <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

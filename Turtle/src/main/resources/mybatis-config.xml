@@ -56,7 +56,6 @@
 		<mapper resource="/mappers/loadmap-mapper.xml"/>
 		<mapper resource="/mappers/gitCommit-mapper.xml"/>
 		<mapper resource="/mappers/alert-mapper.xml"/>
-		<mapper resource="/mappers/workspace-mapper.xml"/>
 	</mappers>
 
 </configuration>
