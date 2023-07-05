@@ -19,6 +19,12 @@ public interface MemoService {
 	 * @return result
 	 */
 	int updateMemo(Memo memo);
+
+	/** 워크스페이스 생성시 메모장 생성 서비스
+	 * @param memo
+	 * @return result
+	 */
+	int insertMemo(Memo memo);
 	
 
 }

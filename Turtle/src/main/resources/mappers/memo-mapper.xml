@@ -41,4 +41,10 @@
 		WHERE MEMO_NO = ${memoNo}
 	</update>
 	
+	<!-- 워크스페이스 생성시 메모장 생성 -->
+	<insert id="insertMemo">
+		INSERT INTO MEMO VALUES (
+		SEQ_MEMO_NO.NEXTVAL, ${workspaceNo}, ${pmNo}, NULL, DEFAULT, NULL, DEFAULT, DEFAULT, #{memoType})
+	</insert>
+	
 </mapper>

@@ -29,7 +29,7 @@
     <link href="${contextPath}/resources/favicon/apple-icon-60x60.png" rel="apple-touch-icon">
      <!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
-    
+    <!--
     <script>
         const pmNo = "${pmNo}";
     	const projectNo = "${projectNo}";
@@ -37,8 +37,8 @@
     	const contextPath = "${contextPath}";
     	const memberNo = "${memberNo}";
     	let memberName = "${memberName}";
-    	let profileImage = "${profileImage}";
-    </script>
+    	let profileImage = "${profileImage}"; 
+    </script> -->
     <title>워크스페이스창</title>
 </head>
 <body>
@@ -285,7 +285,7 @@
 		// 이벤트 시간 생성용 sock
         let updateEventDateSock = new SockJS(contextPath+"/updateEventDate");
 		// 알람용 sock
-        let alertSock = new SockJS(contextPath+"/alert");
+        //let alertSock = new SockJS(contextPath+"/alert");
     </script>
 
     <!-- memo.js 연결 -->

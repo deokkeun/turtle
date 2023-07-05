@@ -2,6 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+<c:set var="memberName" value="${loginMember.memberName}" />
+<c:set var="profileImage" value="${loginMember.profileImage}"/>
+<c:set var="memberNo" value="${loginMember.memberNo}"/>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +22,16 @@
   <link href="${contextPath}/resources/images/remixicon/remixicon.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <link href="${contextPath}/resources/css/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <script>
+    const pmNo = "${pmNo}";
+    const projectNo = "${projectNo}";
+    const workspaceNo = "${workspaceNo}";
+    const contextPath = "${contextPath}";
+    const memberNo = "${memberNo}";
+    let memberName = "${memberName}";
+    let profileImage = "${profileImage}";
+</script>
 </head>
 <body>
 
@@ -157,8 +172,7 @@
     
   <ul id="project-nav" class="nav-content collapse " data-bs-parent="">
     <c:forEach var="project" items="${projectList}">
-      <c:if test="${project.projectNo == projectMember.projectNo}">
-        <c:if test="${projectMember.projectManager == 'Y'}">
+      <c:if test="${project.createMemberNo == loginMember.memberNo}">        
           <li>
             <a href="${contextPath}/project/${project.projectNo}">
               <span>${project.projectName}</span>
@@ -175,7 +189,7 @@
             </a>
           </li>
         </c:if>
-      </c:if>    
+         
   </c:forEach>
     <!-- 추가적인 프로젝트 항목들 -->
   </ul>
@@ -191,7 +205,7 @@
         <ul id="shared-project-nav" class="nav-content collapse " data-bs-parent="">
                 <c:forEach var="project" items="${projectList}">
                   
-                    <c:if test="${project.projectNo != projectMember.projectNo}">
+                    <c:if test="${project.createMemberNo != loginMember.memberNo}">
                       <li>
                         <a href="${contextPath}/project/${project.projectNo}">
                           <span>${project.projectName}</span>
@@ -285,6 +299,7 @@
     <div style="overflow: scroll; height: 200px;">		
 					<div style="overflow: scroll;">chatRoomList : ${chatRoomList}</div>	
 					<div>projectNo : ${projectNo}</div>
+          <div>workspaceNo : ${workspaceNo}</div>
 					<div>loginMember : ${loginMember}</div>
 					<div>chatRoomNo : ${chatRoomNo}</div>
 					<div>pmNo : ${pmNo}</div>
@@ -356,9 +371,6 @@
 <script>  
     // 로그인이 되어 있을 경우에만
     // 알람용 sock
-    const projectNo = "${projectNo}";
-    const pmNo = "${pmNo}";
-    const contextPath = "${contextPath}";
-    let alertSock = new SockJS(contextPath+"/alert");
+    let alertSock = new SockJS(contextPath+"/alert");    
 </script>
 <script src="${contextPath}/resources/js/header.js"></script>

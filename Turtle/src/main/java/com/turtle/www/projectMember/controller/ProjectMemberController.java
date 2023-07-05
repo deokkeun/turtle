@@ -32,9 +32,13 @@ import com.turtle.www.chat.model.service.ChatService;
 import com.turtle.www.chat.model.vo.ChatRoom;
 import com.turtle.www.chat.model.vo.ChatRoomJoin;
 import com.turtle.www.member.model.vo.Member;
+import com.turtle.www.memo.model.service.MemoService;
+import com.turtle.www.memo.model.vo.Memo;
 import com.turtle.www.project.model.vo.Project;
 import com.turtle.www.projectMember.model.service.ProjectMemberService;
 import com.turtle.www.projectMember.model.vo.ProjectMember;
+import com.turtle.www.workspace.model.service.WorkspaceService;
+import com.turtle.www.workspace.model.vo.Workspace;
 
 @Controller
 @RequestMapping("/project")
@@ -48,6 +52,12 @@ public class ProjectMemberController {
 	
 	@Autowired
 	private ChatService cService;
+	
+	@Autowired
+	private WorkspaceService wService;
+	
+	@Autowired
+	private MemoService mService;
 	
 	
 	// 초대코드 이메일 전송
@@ -239,10 +249,28 @@ public class ProjectMemberController {
 	    			}
 	    		}
 	    		
+	    		// 초대수락한 회원의 개인 메모장 생성
+	    		Memo memo = new Memo();
 	    		
-	    		
-	    		// 기존 멤버들과 함께 조인
-	    	}
+	    		// 워크스페이스 조회
+	    		List<Workspace> workspaceList = wService.selectWorkspaceList(project.getProjectNo());
+	    			
+    			for(Workspace workspace : workspaceList) {
+    				
+	    			memo.setWorkspaceNo(workspace.getWorkspaceNo());
+	    			memo.setPmNo(pm.getPmNo());
+	    			memo.setMemoType("personal");
+    			
+	    			int result1 = mService.insertMemo(memo);
+	    			if(result1 > 0) {
+	    				logger.info(workspace.getWorkspaceNo() + "번워크스페이스 : " + pm.getPmNo() +"회원의 첫번째 개인 메모장 생성");
+	    			}
+	    			int result2 = mService.insertMemo(memo);
+	    			if(result2 > 0) {
+	    				logger.info(workspace.getWorkspaceNo() + "번워크스페이스 : " + pm.getPmNo() +"회원의 두번째 개인 메모장 생성");
+	    			}
+    			}
+    		}
 	    	
 	    	// 경로 + 이미 있으면 삽입 x
 	    	

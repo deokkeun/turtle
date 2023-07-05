@@ -111,7 +111,47 @@ public class WorkspaceController {
 			
 		}
 		
+		//워크스페이스 생성시 메모장 생성
+		//memytype pmNo workspaceNo
+		Memo memo = new Memo();
+		memo.setWorkspaceNo(workspaceNo);
+		// 생성자 pmNo 받아오기
+		Map<String, Object> map = new HashMap<>();
+		map.put("memberNo", project.getCreateMemberNo());
+		map.put("projectNo", project.getProjectNo());
+		int projectManagerNo = pmService.selectPmNo(map);
+		memo.setPmNo(projectManagerNo);
+		memo.setMemoType("workspace");
+
+		// 1. 공용 메모장 생성
+		int result = mService.insertMemo(memo);
+		if(result > 0) {
+			logger.info(workspaceNo + "첫번째 공용 메모장 생성");
+		}
+		int result2 = mService.insertMemo(memo);
+		if(result2 > 0) {
+			logger.info(workspaceNo + "두번째 공용 메모장 생성");
+		}
+		// 2. 개인 메모장 생성
+		List<Integer> pmNoList = pmService.selectPmNoList(project.getProjectNo());
+		for(int pmNo : pmNoList) {
+			memo.setWorkspaceNo(workspaceNo);
+			memo.setPmNo(pmNo);
+			memo.setMemoType("personal");
+			
+			int result3 = mService.insertMemo(memo);
+			if(result3 > 0) {
+				logger.info(workspaceNo + "번워크스페이스 : " + pmNo +"회원의 첫번째 개인 메모장 생성");
+			}
+			int result4 = mService.insertMemo(memo);
+			if(result4 > 0) {
+				logger.info(workspaceNo + "번워크스페이스 : " + pmNo +"회원의 번째 개인 메모장 생성");
+			}
+		}
+		
+		
 		return "redirect:/project/" + project.getProjectNo();
+		
 		
 	}
 	

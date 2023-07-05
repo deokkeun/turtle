@@ -33,4 +33,13 @@ public class MemoDAO {
 		return sqlSession.update("memoMapper.updateMemo", memo);
 	}
 
+	/** 워크스페이스 생성시 메모장 생성 dao
+	 * @param memo
+	 * @return result
+	 */
+	public int insertMemo(Memo memo) {
+
+		return sqlSession.insert("memoMapper.insertMemo", memo);
+	}
+
 }
