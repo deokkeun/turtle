@@ -1,8 +1,15 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 p {
     margin: 0;
 }
 
 .board-area {
+    
     width: 560px;
     height: 700px;
 }
@@ -28,8 +35,11 @@ p {
 .regDate-area {
     flex-basis: 50%;
     display: flex;
+    
 }
-
+.regDate-area > div {
+    color: rgba(55, 53, 47, 0.35);
+}
 .updateInfo {
     display: flex;
 }
@@ -42,17 +52,26 @@ p {
 .updateMemberImage {
     width: 30px;
     height: 30px;
+    border-radius: 8px;
 }
 
 .updateDate-area {
     flex-basis: 50%;
     display: flex;
 }
-
+.updateDate-area > div {
+    color: rgba(55, 53, 47, 0.35);
+}
 .eventDate {
     display: flex;
+    
 }
-
+.eventStartDate {
+    border: none;
+}
+.eventEndDate {
+    border: none;
+}
 .edit-boardDetail-area {
     display: flex;
     width: 560px;
