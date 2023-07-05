@@ -11,12 +11,7 @@
 		<result property="projectDeleteFG"  column="PROJECT_DELETE_FG"/>
 		<result property="regDate"  column="REG_DATE"/>
 		<result property="createMemberNo"  column="CREATE_MEMBER_NO"/>
-<<<<<<< HEAD
 		<result property="projectEmoji"  column="PROJECT_EMOJI"/>
-		
-=======
-		<result property="projectEmoji" column="PROJECT_EMOJI"/>
->>>>>>> ebb89181eb7cf53a81c83fd62aa81fb2b1364a26
 	</resultMap>
 	
  	<insert id="createProject" parameterType="project" useGeneratedKeys="true">

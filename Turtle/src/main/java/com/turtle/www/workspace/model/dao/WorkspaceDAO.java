@@ -14,7 +14,6 @@ public class WorkspaceDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
-<<<<<<< HEAD
 	public int createWorkspace(Workspace workspace) {
 		
 		int result = sqlSession.insert("workspaceMapper.createWorkspace", workspace);
@@ -22,7 +21,8 @@ public class WorkspaceDAO {
 		if(result > 0) result = workspace.getWorkspaceNo();
 		
 		return result;
-=======
+	}
+	
 	/** 프로젝트 내 워크스페이스 조회 dao
 	 * @param projectNo
 	 * @return workspaceList
@@ -37,7 +37,7 @@ public class WorkspaceDAO {
 	 */
 	public int selectWorkspaceNo(int projectNo) {
 		return sqlSession.selectOne("workspaceMapper.selectWorkspaceNo", projectNo);
->>>>>>> ebb89181eb7cf53a81c83fd62aa81fb2b1364a26
+
 	}
 	
 	

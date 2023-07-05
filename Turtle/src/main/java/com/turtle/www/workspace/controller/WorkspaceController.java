@@ -1,64 +1,43 @@
 package com.turtle.www.workspace.controller;
 
-<<<<<<< HEAD
+
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-=======
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
->>>>>>> ebb89181eb7cf53a81c83fd62aa81fb2b1364a26
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-<<<<<<< HEAD
+import com.turtle.www.board.model.service.BoardService;
 import com.turtle.www.board.model.vo.Board;
-import com.turtle.www.calendar.model.vo.Calendar;
-import com.turtle.www.loadmap.model.vo.Loadmap;
 import com.turtle.www.member.model.vo.Member;
+import com.turtle.www.memo.model.service.MemoService;
 import com.turtle.www.memo.model.vo.Memo;
 import com.turtle.www.project.model.vo.Project;
-import com.turtle.www.projectMember.controller.ProjectMemberController;
 import com.turtle.www.workspace.model.service.WorkspaceService;
 import com.turtle.www.workspace.model.vo.Workspace;
 
 @Controller
 @RequestMapping("/project")
-@SessionAttributes({"loginMember", "project", "workspaceNo"})
-=======
-import com.turtle.www.board.model.service.BoardService;
-import com.turtle.www.board.model.vo.Board;
-import com.turtle.www.memo.model.service.MemoService;
-import com.turtle.www.memo.model.vo.Memo;
-import com.turtle.www.projectMember.model.service.ProjectMemberService;
-
-@Controller
-@RequestMapping("/workspace")
-@SessionAttributes({"loginMember", "workspaceNo", "boardNo", "projectNo", "pmNo"})
->>>>>>> ebb89181eb7cf53a81c83fd62aa81fb2b1364a26
+@SessionAttributes({"loginMember", "project", "workspaceNo", "boardNo", "projectNo", "pmNo"})
 public class WorkspaceController {
 	
 	private Logger logger = LoggerFactory.getLogger(WorkspaceController.class);
 	
 	@Autowired
 	private WorkspaceService service;
-//	
+
 //	@Autowired
 //	private Project project;
 //
@@ -101,7 +80,6 @@ public class WorkspaceController {
 		
 	}
 	
-<<<<<<< HEAD
 	// 선택한 템플릿 내용 받아오기
 	@PostMapping("/createTemplate")
 	public void createTemplate(@ModelAttribute("project") Project project,
@@ -156,18 +134,8 @@ public class WorkspaceController {
 				
 				// 깃 생성
 				
-			}
-			
-			
-			
-			
-			
-			
-			
-		}
-		
-		
-		
+			}	
+		}	
 	}
 	
 	public void createBoard(@RequestParam(value="wokrspaceName", required=false) String[] templateName,
@@ -190,7 +158,7 @@ public class WorkspaceController {
 	public void createLoadmap(@RequestParam(value="wokrspaceName", required=false) String[] templateName,
 							int workspaceNo) {
 		
-=======
+	}
 	@GetMapping("/{projectNo}/{workspaceNo}")
 	public String enterWorkspace(@PathVariable("projectNo") int projectNo,
 									@PathVariable("workspaceNo") int workspaceNo,
@@ -212,7 +180,7 @@ public class WorkspaceController {
 			model.addAttribute("boardList", boardList);
 			
 		return "workspace/workspace";
->>>>>>> ebb89181eb7cf53a81c83fd62aa81fb2b1364a26
+
 	}
 	
 }

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="workspaceMapper">
-<<<<<<< HEAD
 
 	<resultMap type="workspace" id="workspace_rm">
-		<id property="workspaceNo" column="WORKSAPCE_NO"/>
+		<id property="workspaceNo" column="WORKSPACE_NO"/>
 		
 		<result property="projectNo"  column="PROJECT_NO"/>
 		<result property="workspaceName"  column="WORKSPACE_NAME"/>
@@ -14,8 +13,7 @@
 	</resultMap>
 	
 	
- 	<insert id="createWorkspace" parameterType="workspace" useGeneratedKeys="true">
-	
+ 	<insert id="createWorkspace" parameterType="workspace" useGeneratedKeys="true">	
 		<selectKey keyProperty="workspaceNo" resultType="_int" order="BEFORE">
 			SELECT SEQ_WORKSPACE_NO.NEXTVAL FROM DUAL
 		</selectKey>
@@ -25,20 +23,8 @@
 				#{workspaceName},
 				#{workspaceEmoji},
 				DEFAULT, DEFAULT
-			)
-	
+			)	
 	</insert> 
-</mapper>
-=======
-	<resultMap type="workspace" id="workspace_rm">
-		<id property="workspaceNo" column="WORKSPACE_NO"/>
-		
-		<result property="projectNo" column="PROJECT_NO"/>
-		<result property="workspaceName" column="WORKSPACE_NAME"/>
-		<result property="workspaceEmoji" column="WORKSPACE_EMOJI"/>
-		<result property="workspaceRegDate" column="WORKSPACE_REG_DATE"/>
-		<result property="workspaceDeleteSt" column="WORKSPACE_DELETE_ST"/>
-	</resultMap>
 	
 	<!-- 프로젝트 내 워크스페이스 조회 -->
 	<select id="selectWorkspaceList" resultMap="workspace_rm">
@@ -57,8 +43,5 @@
 			) 
 		WHERE ROWNUM = 1
 	</select>
-	
-	
-	
+		
 </mapper>
->>>>>>> ebb89181eb7cf53a81c83fd62aa81fb2b1364a26

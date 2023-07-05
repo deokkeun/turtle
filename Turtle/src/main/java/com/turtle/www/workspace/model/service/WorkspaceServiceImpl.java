@@ -14,11 +14,11 @@ public class WorkspaceServiceImpl implements WorkspaceService{
 	@Autowired
 	private WorkspaceDAO dao;
 
-<<<<<<< HEAD
+
 	@Override
 	public int createWorkspace(Workspace workspace) {
 		return dao.createWorkspace(workspace);
-=======
+	}
 	// 프로젝트 내 워크스페이스 조회 서비스 구현
 	@Override
 	public List<Workspace> selectWorkspaceList(int projectNo) {
@@ -29,7 +29,6 @@ public class WorkspaceServiceImpl implements WorkspaceService{
 	@Override
 	public int selectWorkspaceNo(int projectNo) {
 		return dao.selectWorkspaceNo(projectNo);
->>>>>>> ebb89181eb7cf53a81c83fd62aa81fb2b1364a26
 	}
 	
 	
