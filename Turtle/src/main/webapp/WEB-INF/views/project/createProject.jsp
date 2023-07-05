@@ -44,7 +44,7 @@
         <div class="section1">
             <i class="fa-solid fa-users-between-lines">프로젝트 관리</i>
         </div>
-        <form action="createProject" method="post">
+        <form action="createProject" method="post" enctype="multipart/form-data">
             <div class="section2">
                 <p>프로젝트명 입력</p>
                 <div>
@@ -60,6 +60,8 @@
              <div class="next-btn">
                 <button type="submit">다음</button>
        		 </div>     
+
+            <input type="hidden" id="emoji_value" name="projectEmoji" value="">
         </form>
         
   

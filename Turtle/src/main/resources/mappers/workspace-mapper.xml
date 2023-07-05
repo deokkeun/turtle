@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper>
-  <cache-ref namespace=""/>
+<mapper namespace="workspaceMapper">
+
+	<resultMap type="workspace" id="workspace_rm">
+		<id property="workspaceNo" column="WORKSAPCE_NO"/>
+		
+		<result property="projectNo"  column="PROJECT_NO"/>
+		<result property="workspaceName"  column="WORKSPACE_NAME"/>
+		<result property="workspaceEmoji"  column="WORKSPACE_EMOJI"/>
+		<result property="workspaceRegDate"  column="WORKSPACE_REG_DATE"/>
+		<result property="workspaceDeleteST"  column="WORKSPACE_DELETE_ST"/>
+	</resultMap>
+	
+	
+ 	<insert id="createWorkspace" parameterType="workspace" useGeneratedKeys="true">
+	
+		<selectKey keyProperty="workspaceNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_WORKSPACE_NO.NEXTVAL FROM DUAL
+		</selectKey>
+			INSERT INTO WORKSPACE VALUES(
+				#{workspaceNo},
+				#{projectNo},
+				#{workspaceName},
+				#{workspaceEmoji},
+				DEFAULT, DEFAULT
+			)
+	
+	</insert> 
 </mapper>
