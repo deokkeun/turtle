@@ -88,7 +88,7 @@
 							</c:if>
 							<!-- 로그인이 되었을 경우 (로그인 상태) : 결제페이지 이동  -->
 							<c:if test="${!empty loginMember}">
-                            	<a href="${contextPath}/payment/payment" class="btn-buy">가입하기</a>
+                            	<a href="${contextPath}/payment/pay/1" class="btn-buy">가입하기</a>
                             </c:if>
                             <div class="intro">
                                 <p>프로젝트를 여러팀과 진행하는</p>

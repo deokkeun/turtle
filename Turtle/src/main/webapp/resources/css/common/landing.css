@@ -219,6 +219,13 @@ section {
 /*--------------------------------------------------------------
 #AutoSwiper-1 Section 슬라이드기능1
 --------------------------------------------------------------*/
+
+.AutoSwiper-1 {
+  background-color: #f6f9ff;
+}
+
+
+
 .AutoSwiper-1 .testimonial-item {
   box-sizing: content-box;
   padding: 30px;
@@ -328,15 +335,33 @@ section {
 }
 
 .gy-4 {
-  /* margin-top: 30px; */
+  margin-top: 30px;
   margin-bottom: 30px;
+  /* border: 1px solid black; */
 }
+
+
+.col-lg-3, .col-md-4 {
+  margin-top: 0px;
+}
+
+/* .features > ul > li .col-lg-3 {
+  margin-top : 0px;
+} */
 
 .features .feature-box h3 {
   font-size: 18px;
   color: #012970;
   font-weight: 700;
   margin: 0;
+}
+
+
+/* 프로젝트관리 버튼 4개 설정 */
+.features ul > li > a > h4 {
+  margin-bottom : 0rem;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .features .feature-box i {
@@ -395,17 +420,27 @@ section {
 .features .nav-link{
   font-size: 20px;
   font-weight: 600;
-  margin: 10px 0 0 0;
-  color: var(--color-secondary);
+  margin: 0px 55px;
+  /* color: var(--color-secondary); */
+  
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+  border-radius: 70px;
+  border: 1px solid #4154f1;
+  background-color: #4154f1;
+  color: white;
 }
 
 .features .nav-link:hover {
-  color: var(--color-primary);
+  /* color: var(--color-primary); */
+  background-color :  #f6f9ff;
+  color: #4154f1;
+  border: 1px solid #4154f1;
+
 }
 
 .features .nav-link.active {
   transition: 0.3s;
-  background: var(--color-secondary) linear-gradient(rgba(var(--color-primary-rgb), 0.95), rgba(var(--color-primary-rgb), 0.6));
+  /* background: var(--color-secondary) linear-gradient(rgba(var(--color-primary-rgb), 0.95), rgba(var(--color-primary-rgb), 0.6)); */
   border-color: var(--color-primary);
 }
 
