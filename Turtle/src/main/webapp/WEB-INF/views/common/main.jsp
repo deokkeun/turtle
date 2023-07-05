@@ -33,15 +33,44 @@
     <!-- header include -->
     <jsp:include page="/WEB-INF/views/common/header.jsp" />
     
-    <main id="main" class="main">    
-      
+    <main id="main" class="main">
+
         
+        <div class="main-layout">
+            <!-- 위 -->
+            <div class="projectTitle">
+                <textarea placeholder=" 어렵지 않으면 왼쪽에 이모지 가져오고, 여기에 프로젝트 제목 불러오기"></textarea>
+            </div>
+            <!-- 중간 -->
+            <div class="middle-layout">
+                <div class="watch-N-dDay">
+                    <div class="watch">
+                        <div id="clock" value="0">00 : 00 : 00</div>
+                    </div>
+                    <div class="d-day">
+                        <h3>여기는디데이를넣는게어때여</h3>
+                    </div>
+                </div>
+                <div class="boardLi">
+                    <jsp:include page="/WEB-INF/views/board/boardList.jsp" />
+                </div>
+            </div>
+            <!-- 아래-->
+            <div class="memoLi">
+                <!--  메모장 -->
+                <jsp:include page="/WEB-INF/views/workspace/memo.jsp" />
+            </div>
+        </div>
+        
+
+
+
+
         <div id="clock" value="0">00 : 00 : 00</div>
 
 
 
-        <!--  메모장 -->
-        <jsp:include page="/WEB-INF/views/workspace/memo.jsp" />
+       
         
         
         <form action="${contextPath}/member/myPage/info" method="GET">

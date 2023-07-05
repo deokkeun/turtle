@@ -3,10 +3,11 @@
 	display: flex;
     border: 1px solid #eee;
     height: 320px;
-    width:  60%; 
+    width:  100%; 
     padding: 10px;
     gap: 10px;
-    box-shadow: 3px 4px 5px 3px #d9d9d9;
+    /* box-shadow: 3px 4px 5px 3px #d9d9d9; */
+    box-shadow: 1px 1px 22px 10px #d9d9d9;
     border-radius: 10px;
     /* background-color: grey; */
 }
@@ -56,7 +57,7 @@
 .memoDetail {
 	display:grid;
     /* width: 300px; */
-    height: 280px;
+    height: 260px;
     width: 100%;
     box-shadow : rgba(0,0,0,0.26);
    /* background-color : #9FDFEB; */
@@ -75,7 +76,7 @@
 .memoContent {
 	 /* display: flex; */
     /* flex-basis: 78%; */
-    height:205px;
+    height:180px;
     padding: 8px;
     outline:none;
     resize:none;
