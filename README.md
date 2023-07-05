@@ -1,4 +1,5 @@
-<p align="center"><img width="200px" src="">로고</img></p>
+<br><p align="center"><img width="200px" src="https://github.com/deokkeun/turtle/assets/84825191/d9cf8876-fbcb-46e1-ae82-b50ca9308123"></img></p><br>
+
 <h1>TURTLE (프로젝트 소개)</h1>
 <h3>
 거북이처럼 천천히, 꾸준히, 목표를 향해 조금씩 앞으로 나아가고 안전하게 목적지에 도달하는 것과 같이,<br>
