@@ -70,6 +70,12 @@ public interface BoardService {
 	 */
 	int updateEventDate(Board board);
 
+	/** 이모지 업데이트 서비
+	 * @param board
+	 * @return
+	 */
+	int updateEmoji(Board board);
+
 	
 
 }

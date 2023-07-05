@@ -1,13 +1,12 @@
-
 typing();
 $(document).on("mouseover", ".board", function(){mouseover($(this))});
 $(document).on("mouseout", ".board", function(){mouseout($(this))});
 $(document).on("click", ".edit-boardTitle-btn", function(){
     const value = $('.boardTitle').val();
     editBoardTitleBtn($(this));
- 
-
 });
+
+$(document).on("click", ".emoji-area", function(){updateEmoji($(this))});
 
 $(document).on('keydown', '.boardTitle', function(key) {
     if(key.keyCode == 13) {
@@ -100,8 +99,10 @@ insertBoardSock.onmessage = function(e) {
     // emoji div 추가 (수정중)
     const addedEmoji = document.createElement('div');
     addedEmoji.classList.add('emoji-btn');
-    addedEmoji.innerHTML =  "<i class='fa-regular fa-file'></i>";
+    addedEmoji.innerHTML =  "<i class='emoji-area fa-regular fa-file'></i>";
 
+    const addedScriptTag = document.createElement('script');
+    addedScriptTag.src = 'https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js';
 
     const addedAddBoardBtn = document.createElement('button');
     addedAddBoardBtn.classList.add('add-board-btn');
@@ -112,6 +113,7 @@ insertBoardSock.onmessage = function(e) {
     addedAddBoard.appendChild(addedAddBoardBtn);
     addedEditBoardArea.appendChild(addedAddBoard);
     addedEditBoardArea.appendChild(addedEmoji);
+    addedEditBoardArea.appendChild(addedScriptTag);
 
     const addedSelectBoardDetail = document.createElement('a');
     addedSelectBoardDetail.href = '../../boardDetail/' + projectNo + '/' + workspaceNo + '/' + newBoard.boardNo;
@@ -329,6 +331,34 @@ updateEventDateSock.onmessage = function(e) {
     })
 };
 
+// 이모지 변경 웹소켓
+updateEmojiSock.onmessage = function(e) {
+
+    const changedBoardInfo = JSON.parse(e.data);
+
+    boards = document.querySelectorAll(".board");
+
+    boards.forEach((board) => {
+        if(board.dataset.boardno == changedBoardInfo.boardNo) {
+            let button4 = board.querySelector(".emoji-btn > i");
+
+            if(button4.classList.contains('fa-regular')) {
+                button4.classList.remove('fa-regular');
+                button4.classList.remove('fa-file');
+                button4.classList.add('emo');
+               
+                button4.innerHTML = changedBoardInfo.boardEmoji;
+            } else if(button4.classList.contains('emo')) {
+                button4.innerHTML = changedBoardInfo.boardEmoji;
+            }
+
+        }
+    })
+    /*
+           
+*/    
+}
+
 // 마우스 오버 함수
 function mouseover(board) {
     $(board).find(".add-board").css("visibility", "visible");          
@@ -498,13 +528,13 @@ function addZero(temp){
 // $('.boardTitle').focus();
 // $('.boardTitle')[0].setSelectionRange(len, len);
 
-
+/*
 //이모티콘
 let button4 = document.querySelectorAll(".emoji-btn > i");
 const picker3 = new EmojiButton({
 position: 'bottom-start'
 });
-
+*/
 // $('.emoji-btn').click(function() {
 //     picker3.togglePicker($(this));
 //     picker3.on('emoji', emoji => {
@@ -512,28 +542,59 @@ position: 'bottom-start'
 //     })
 
 // })
-
+/*
 for(let i=0; i<button4.length; i++) {
     button4[i].addEventListener('click', (e)=> {
         picker3.togglePicker(button4[i]);
+        let boardNo = $(button4[i]).parent().parent().parent(".board").data("boardno");
+        console.log(boardNo);
+        console.log($(this).parent().parent().parent(".board"));
         picker3.on('emoji', emoji => {
-            
-            if(button4[i].classList.contains('fa-regular')) {
-                button4[i].classList.remove('fa-regular');
-                button4[i].classList.remove('fa-file');
-                button4[i].classList.add('emo');
-               
-                button4[i].innerHTML = emoji;
-            }
 
-         
-            
+            let board = {
+                "boardNo" : boardNo,
+                "workspaceNo" : workspaceNo,
+                "pmNo" : pmNo,
+                "updateMemberName" : memberName,
+                "updateProfileImg" : profileImage,
+                "boardEmoji" : emoji
+            };
+
+            console.log(board);
+            console.log(JSON.stringify(board));
+
+            updateEmojiSock.send( JSON.stringify(board));        
         })
-
     })
-
-
 }
+*/
+
+function updateEmoji(emojiBtn) {
+
+    const picker3 = new EmojiButton({
+        position: 'bottom-start'
+        });
+    picker3.togglePicker(emojiBtn);
+        let boardNo = $(emojiBtn).parent().parent().parent(".board").data("boardno");
+        console.log(boardNo);
+        console.log($(emojiBtn).parent().parent().parent(".board"));
+        picker3.on('emoji', emoji => {
+
+            let board = {
+                "boardNo" : boardNo,
+                "workspaceNo" : workspaceNo,
+                "pmNo" : pmNo,
+                "updateMemberName" : memberName,
+                "updateProfileImg" : profileImage,
+                "boardEmoji" : emoji
+            };
+
+            console.log(board);
+            console.log(JSON.stringify(board));
+
+            updateEmojiSock.send( JSON.stringify(board));        
+        })
+};
 
 // button4.forEach((button4)=> {
 //     button4.addEventListener('click', (e) => {

@@ -49,6 +49,15 @@ public class ProjectMemberDAO {
 		return sqlSession.selectOne("projectMemberMapper.selectProjectMember", map);
 	}
 
+
+	/** 프로젝트 내 pmNo 리스트 조회 dao
+	 * @param projectNo
+	 * @return pmNoList
+	 */
+	public List<Integer> selectPmNoList(int projectNo) {
+		return sqlSession.selectList("projectMemberMapper.selectPmNoList", projectNo);
+	}
+
 	
 
 }

@@ -89,7 +89,14 @@
                                 <button class="add-board-btn"><i class="fa-solid fa-plus"></i></button>
                             </div>
                             <div class="emoji-btn">
-                                <i class="fa-regular fa-file"></i>	
+                                <c:choose>
+                                    <c:when test="${!empty board.boardEmoji}">
+                                        <i class="emo emoji-area">${board.boardEmoji}</i>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <i class="emoji-area fa-regular fa-file"></i>
+                                    </c:otherwise>
+                                </c:choose>	
                             </div>
                             <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
                             <a href="../../boardDetail/${projectNo}/${workspaceNo}/${board.boardNo}" class="select-board-detail">
@@ -265,6 +272,8 @@
 		// /deleteBoard 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
 		// 게시글 삭제용 sock
 		let deleteBoardSock = new SockJS(contextPath+"/deleteBoard");
+        // 이모지 수정용 sock
+        let updateEmojiSock = new SockJS(contextPath+"/updateEmoji");
 		// /updateBoardDetail 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
 		// 게시글 내용 수정용 sock
 		let updateBoardDetailSock = new SockJS(contextPath+"/updateBoardDetail");

@@ -45,6 +45,12 @@ public class ProjectMemberServiceImpl implements ProjectMemberService {
 		return dao.selectProjectMember(map);
 	}
 
+	// 프로젝트 내 pmNo 리스트 조회 서비스 구현
+	@Override
+	public List<Integer> selectPmNoList(int projectNo) {
+		return dao.selectPmNoList(projectNo);
+	}
+
 	
 
 	

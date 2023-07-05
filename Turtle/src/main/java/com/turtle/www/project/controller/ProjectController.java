@@ -121,7 +121,6 @@ public class ProjectController {
 			// 프로젝트 생성 성공시 채팅방 생성
 			
 			if(pmResult > 0) {
-				Map<String, Object> map = new HashMap<>();
 				ChatRoom chatRoom = new ChatRoom();
 				chatRoom.setChatRoomTitle(project.getProjectName());
 				chatRoom.setProjectNo(project.getProjectNo());
@@ -137,7 +136,10 @@ public class ProjectController {
 					chatRoomJoin.setPmNo(pmResult);
 					
 					int joinResult = cService.insertChatRoomJoin(chatRoomJoin);
-					logger.info(joinResult + "채팅방 초대 성공");
+					if(joinResult > 0) {
+						logger.info(pmResult+ "번 pm넘버 : " + chatResult + "번 프로젝트 채팅방 초대 성공");
+					}
+					
 				}
 			
 			

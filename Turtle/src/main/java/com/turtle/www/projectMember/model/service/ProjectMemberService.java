@@ -36,6 +36,12 @@ public interface ProjectMemberService {
 	 */
 	ProjectMember selectProjectMember(Map<String, Object> map);
 
+	/** 프로젝트내 pmNo리스트 조회 서비
+	 * @param projectNo
+	 * @return pmNoList
+	 */
+	List<Integer> selectPmNoList(int projectNo);
+
 	
 
 

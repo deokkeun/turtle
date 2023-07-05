@@ -28,6 +28,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.google.gson.Gson;
+import com.turtle.www.chat.model.service.ChatService;
+import com.turtle.www.chat.model.vo.ChatRoom;
+import com.turtle.www.chat.model.vo.ChatRoomJoin;
 import com.turtle.www.member.model.vo.Member;
 import com.turtle.www.project.model.vo.Project;
 import com.turtle.www.projectMember.model.service.ProjectMemberService;
@@ -42,6 +45,9 @@ public class ProjectMemberController {
 	
 	@Autowired
 	private ProjectMemberService service;
+	
+	@Autowired
+	private ChatService cService;
 	
 	
 	// 초대코드 이메일 전송
@@ -182,6 +188,60 @@ public class ProjectMemberController {
 	    	
 	    	if (result > 0) {
 	    		logger.info("pm 삽입 성공");
+	    		// 민수
+	    		// 멤버 추가시 기존 공용 채팅방에 조인
+	    		// 1. 공용 채팅방 번호 확인
+	    		List<Integer> publicChatRoomNoList = cService.selectPublicChatRoomNoList(project.getProjectNo());
+	    		// 2. 각각의 공용 채팅방 번호 안에 pmNo 조인
+	    		for(int publicChatRoomNo : publicChatRoomNoList) {
+	    			ChatRoomJoin chatRoomJoin = new ChatRoomJoin();
+	    			chatRoomJoin.setChatRoomNo(publicChatRoomNo);
+	    			chatRoomJoin.setPmNo(pm.getPmNo());
+	    			
+	    			int joinResult = cService.insertChatRoomJoin(chatRoomJoin);
+	    			if(joinResult > 0) {
+						logger.info(pm.getPmNo() + "번 pm넘버 : " + publicChatRoomNo + "번 채팅방 초대 성공");
+					}
+	    		}	    			    		
+	    		// 개인 채팅방 생성
+	    		// 1. 프로젝트 내 pmNo 리스트 조회(수락멤버 제외)
+	    		List<Integer> pmNoList = service.selectPmNoList(project.getProjectNo());
+	    		for(int pmNo : pmNoList) {
+	    			if(pmNo != pm.getPmNo()) {
+	    				// 수락멤버가 아니면 개인 채팅방 생성
+	    				ChatRoom chatRoom = new ChatRoom();
+	    	    		chatRoom.setProjectNo(project.getProjectNo());
+	    	    		chatRoom.setChatRoomType(3);
+	    	    		
+	    	    		int chatResult = cService.insertChatRoom(chatRoom);
+	    	    		// 채팅방 생성 성공시 나와 프로젝트 멤버 채팅방 조인
+	    	    		if(chatResult > 0) {
+	    	    			// 수락한 사람 조인
+	    	    			ChatRoomJoin chatRoomJoin = new ChatRoomJoin();
+	    					chatRoomJoin.setChatRoomNo(chatResult);
+	    					chatRoomJoin.setPmNo(pm.getPmNo());
+	    					
+	    					int joinResult = cService.insertChatRoomJoin(chatRoomJoin);
+	    					if(joinResult > 0) {
+	    						logger.info( pm.getPmNo() + "번 pm넘버 : " + chatResult + "번 개인 채팅방 초대 성공");
+	    					}
+	    					
+	    					// 기존에 있던 사람 조인
+	    					ChatRoomJoin chatRoomJoin2 = new ChatRoomJoin();
+	    					chatRoomJoin2.setChatRoomNo(chatResult);
+	    					chatRoomJoin2.setPmNo(pmNo);
+	    					
+	    					int joinResult2 = cService.insertChatRoomJoin(chatRoomJoin2);
+	    					if(joinResult2 > 0) {
+	    						logger.info( pmNo + "번 pm넘버 : " + chatResult + "번 개인 채팅방 초대 성공");
+	    					}
+	    	    		}
+	    			}
+	    		}
+	    		
+	    		
+	    		
+	    		// 기존 멤버들과 함께 조인
 	    	}
 	    	
 	    	// 경로 + 이미 있으면 삽입 x

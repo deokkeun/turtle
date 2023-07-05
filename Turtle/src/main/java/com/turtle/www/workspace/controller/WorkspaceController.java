@@ -21,10 +21,15 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.turtle.www.board.model.service.BoardService;
 import com.turtle.www.board.model.vo.Board;
+import com.turtle.www.chat.model.service.ChatService;
+import com.turtle.www.chat.model.vo.ChatRoom;
+import com.turtle.www.chat.model.vo.ChatRoomJoin;
 import com.turtle.www.member.model.vo.Member;
 import com.turtle.www.memo.model.service.MemoService;
 import com.turtle.www.memo.model.vo.Memo;
 import com.turtle.www.project.model.vo.Project;
+import com.turtle.www.projectMember.model.service.ProjectMemberService;
+import com.turtle.www.projectMember.model.vo.ProjectMember;
 import com.turtle.www.workspace.model.service.WorkspaceService;
 import com.turtle.www.workspace.model.vo.Workspace;
 
@@ -46,6 +51,12 @@ public class WorkspaceController {
 //
 	@Autowired
 	private MemoService mService;
+	
+	@Autowired
+	private ChatService cService;
+	
+	@Autowired
+	private ProjectMemberService pmService;
 //	
 //	@Autowired
 //	private Loadmap loadmap;
@@ -73,6 +84,32 @@ public class WorkspaceController {
 		int workspaceNo = service.createWorkspace(workspace);
 		
 		model.addAttribute(workspaceNo);
+		
+		// 민수
+		// 생성된 워크스페이스 채팅방 생성
+		ChatRoom chatRoom = new ChatRoom();
+		chatRoom.setChatRoomTitle(workspaceName);
+		chatRoom.setProjectNo(project.getProjectNo());
+		chatRoom.setChatRoomType(2);
+		
+		int chatResult = cService.insertChatRoom(chatRoom);
+		// 채팅방 생성 성공시 프로젝트멤버 확인 후 채팅방 조인
+		if(chatResult > 0) {
+			// 프로젝트 멤버내 pmNo 리스트 조회
+			List<Integer> pmNoList = pmService.selectPmNoList(project.getProjectNo());
+			for(int pmNo : pmNoList) {
+				ChatRoomJoin chatRoomJoin = new ChatRoomJoin();
+				chatRoomJoin.setChatRoomNo(chatResult);
+				chatRoomJoin.setPmNo(pmNo);
+				
+				int joinResult = cService.insertChatRoomJoin(chatRoomJoin);
+				if(joinResult > 0) {
+					logger.info(pmNo + "번 pm넘버 : " + chatResult + "번 워크스페이스 채팅방 초대 성공");
+				}
+				
+			}			
+			
+		}
 		
 		return "redirect:/project/" + project.getProjectNo();
 		

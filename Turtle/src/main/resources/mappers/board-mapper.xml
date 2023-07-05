@@ -19,6 +19,7 @@
 		<result property="updateMemberName" column="UPDATE_MEMBER_NAME"/>
 		<result property="regProfileImg" column="REG_PROFILE_IMG"/>
 		<result property="updateProfileImg" column="UPDATE_PROFILE_IMG"/>
+		<result property="boardEmoji" column="BOARD_EMOJI"/>
 	</resultMap>
 	
 	<resultMap type="boardDetail" id="boardDetail_rm">
@@ -39,7 +40,8 @@
 		    (SELECT MEMBER_NAME FROM "BOARD" b JOIN PROJECT_MEMBER USING (PM_NO) JOIN "MEMBER" m USING (MEMBER_NO) WHERE b.BOARD_NO = BOARD.BOARD_NO) AS "REG_MEMBER_NAME",
 		    (SELECT PROFILE_IMG FROM "BOARD" b JOIN PROJECT_MEMBER USING (PM_NO) JOIN "MEMBER" m USING (MEMBER_NO) WHERE b.BOARD_NO = BOARD.BOARD_NO) AS "REG_PROFILE_IMG",
 		    (SELECT MEMBER_NAME FROM "BOARD" b JOIN PROJECT_MEMBER pm ON (pm.PM_NO = b.UPDATE_PM_NO) JOIN "MEMBER" m USING (MEMBER_NO) WHERE b.BOARD_NO = BOARD.BOARD_NO) AS "UPDATE_MEMBER_NAME",
-		    (SELECT PROFILE_IMG FROM "BOARD" b JOIN PROJECT_MEMBER pm ON (pm.PM_NO = b.UPDATE_PM_NO) JOIN "MEMBER" m USING (MEMBER_NO) WHERE b.BOARD_NO = BOARD.BOARD_NO) AS "UPDATE_PROFILE_IMG", BOARD_SORT
+		    (SELECT PROFILE_IMG FROM "BOARD" b JOIN PROJECT_MEMBER pm ON (pm.PM_NO = b.UPDATE_PM_NO) JOIN "MEMBER" m USING (MEMBER_NO) WHERE b.BOARD_NO = BOARD.BOARD_NO) AS "UPDATE_PROFILE_IMG", 
+		    BOARD_SORT, BOARD_EMOJI
 		FROM BOARD
 		WHERE WORKSPACE_NO = ${workspaceNo} AND BOARD_ST = 'N'
 		ORDER BY BOARD_SORT
@@ -65,7 +67,7 @@
 			SELECT SEQ_BOARD_NO.NEXTVAL FROM DUAL
 		</selectKey>
 		
-		INSERT INTO BOARD VALUES(${boardNo}, ${workspaceNo}, NULL, ${pmNo}, NULL, DEFAULT, NULL, NULL, NULL, ${boardSort}, DEFAULT)
+		INSERT INTO BOARD VALUES(${boardNo}, ${workspaceNo}, NULL, ${pmNo}, NULL, DEFAULT, NULL, NULL, NULL, ${boardSort}, DEFAULT, NULL)
 	</insert>
 	
 	<!-- 게시글 삭제 -->
@@ -132,6 +134,13 @@
 	<update id="updateEventDate">
 		UPDATE BOARD SET BOARD_UPDATE_DATE = SYSDATE, UPDATE_PM_NO = ${pmNo},
     		EVENT_START_DATE = #{eventStartDate}, EVENT_END_DATE = #{eventEndDate}
+		WHERE BOARD_NO = ${boardNo}
+	</update>
+	
+	<!-- 이모지 업데이트 -->
+	<update id="updateEmoji">
+		UPDATE BOARD SET BOARD_UPDATE_DATE = SYSDATE, UPDATE_PM_NO = ${pmNo},
+			BOARD_EMOJI = #{boardEmoji}
 		WHERE BOARD_NO = ${boardNo}
 	</update>
 

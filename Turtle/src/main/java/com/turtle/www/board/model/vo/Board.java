@@ -24,6 +24,7 @@ public class Board {
 	private String eventEndDate; // 이벤트 종료일
 	private int boardSort; // 게시글 정렬
 	private String boardSt; // 게시글 삭제여부
+	private String boardEmoji; // 이모지
 	
 	private String regMemberName; // 생성 멤버 이름
 	private String regProfileImg; // 생성 멤버 프로필 이미지

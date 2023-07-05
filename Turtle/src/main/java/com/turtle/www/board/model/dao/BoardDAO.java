@@ -147,4 +147,13 @@ public class BoardDAO {
 		return sqlSession.update("boardMapper.updateEventDate", board);
 	}
 
+	/** 이모지 업데이트 dao
+	 * @param board
+	 * @return result
+	 */
+	public int updateEmoji(Board board) {
+
+		return sqlSession.update("boardMapper.updateEmoji", board);
+	}
+
 }
