@@ -46,7 +46,11 @@
                         <div id="clock" value="0">00 : 00 : 00</div>
                     </div>
                     <div class="d-day">
-                        <h3>여기는디데이를넣는게어때여</h3>
+                        <!-- 캘린더 남은 일정 -->
+                        <section id="schedule-box">
+                            <div id="schedule-title">남은 일정</div>
+                            <div id="schedule"></div>
+                        </section>
                     </div>
                 </div>
                 <div class="boardLi">
@@ -60,19 +64,6 @@
             </div>
         </div>
         
-
-
-
-
-        <div id="clock" value="0">00 : 00 : 00</div>
-
-
-        <!-- 캘린더 남은 일정 -->
-        <section id="schedule-box">
-            <div id="schedule-title">남은 일정</div>
-            <div id="schedule"></div>
-        </section>
-
 
         <!-- 세션 잘담기는지 테스트 -->
         <span>loginMember : ${loginMember}</span><br>

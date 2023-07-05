@@ -1136,11 +1136,10 @@ h6 {
 }
 
 
-<<<<<<< HEAD
 /* ********************************** 캘린더 남은 일정 **************************** */
 #schedule-box {
   width: 420px;
-  max-height: 500px;
+  max-height: 235px;
   overflow-y: scroll;
   border: 1px solid #eee;
   box-shadow: 3px 4px 5px 3px #d9d9d9;
@@ -1188,7 +1187,6 @@ h6 {
   display: block;
   margin: 5px;
 }
-=======
 
 
 /*--------------------------------------------------------------
@@ -1281,4 +1279,3 @@ h6 {
   width: 100%;
   /* background-color: yellow; */
 }
->>>>>>> dev
