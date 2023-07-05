@@ -83,7 +83,7 @@
                             <div class="price"><sup>￦</sup>8,900<span> / 월</span></div>
                             <!-- 로그인이 안되었을 경우 (비로그인 상태) : 로그인모달창 띄우기  -->
 							<c:if test="${empty loginMember}">
-								<!-- <a id="login-modal-btn">가입하기</a> -->
+								<!-- <a id="login-modal-btn">가입하기</a>  -->
 								<button id="login-modal-btn1" class="btn-buy">가입하기</button>
 							</c:if>
 							<!-- 로그인이 되었을 경우 (로그인 상태) : 결제페이지 이동  -->
@@ -114,7 +114,7 @@
 							</c:if>
                             <!-- 로그인이 되었을 경우 (로그인 상태) : 결제페이지 이동  -->
 							<c:if test="${!empty loginMember}">
-                            	<a href="${contextPath}/payment/payment" class="btn-buy">가입하기</a>
+                            	<a href="${contextPath}/payment/pay/1"" class="btn-buy">가입하기</a>
                             </c:if>
                             
                       
@@ -135,6 +135,10 @@
             </div>
         </section>
         <!-- End Pricing Section -->
+        
+        
+       
+     
        
         
 

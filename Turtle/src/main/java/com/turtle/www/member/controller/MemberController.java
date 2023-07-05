@@ -449,9 +449,9 @@ public class MemberController {
 			logger.info(loginMember.getMemberName() +" 로그인 성공");
 			
 			// 로그인 멤버의 본인이 생성한 프로젝트넘버 얻어오기
-//			int projectNo = pService.selectMyProjectNo(loginMember.getMemberNo());
+			//int projectNo = pService.selectMyProjectNo(loginMember.getMemberNo());
 			
-//			model.addAttribute("projectNo", projectNo);
+			//model.addAttribute("projectNo", projectNo);
 			
 			
 		} else {

@@ -7,7 +7,6 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
   color: #444444;
 }
 
@@ -114,7 +113,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# TopBanner Section
+# TopBanner Section  첫페이지
 --------------------------------------------------------------*/
 .topbanner {
   width: 100%;
@@ -213,6 +212,22 @@ section {
   .topbanner .hero-img img {
     width: 100%;
   }
+}
+
+
+@media (min-width: 320px) {
+    h6 {
+        font-size: 0.6rem;
+    }
+
+    #example1 {
+        font-size: 35px;
+        line-height: 1.4;
+    }
+
+    .features > .nav-link > a {
+        margin: 0px 0px;
+    }
 }
 
 
@@ -645,27 +660,27 @@ section {
 --------------------------------------------------------------*/
 
 .newsletter {
-  padding: 50px 0;
-  background: #f6f9ff;
-  border-top: 1px solid #e1ecff;
+    padding: 50px 0;
+    background: #f6f9ff;
+    border-top: 1px solid #e1ecff;
 }
 
 .newsletter h4 {
-  font-size: 24px;
-  margin: 0 0 10px 0;
-  padding: 0;
-  line-height: 1;
-  font-weight: 700;
-  color: #012970;
+    font-size: 24px;
+    margin: 0 0 10px 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 700;
+    color: #012970;
 }
 
 .newsletter form {
-  margin-top: 20px;
-  background: #fff;
-  padding: 6px 10px;
-  position: relative;
-  border-radius: 4px;
-  border: 1px solid #e1ecff;
+    margin-top: 20px;
+    background: #fff;
+    padding: 6px 10px;
+    position: relative;
+    border-radius: 4px;
+    border: 1px solid #e1ecff;
 }
 
 

@@ -1,0 +1,13 @@
+
+/* 워크스페이스 안 */
+.workspace-layout{
+    /* width: 1240px; */
+    max-width: 100%;
+    height:880px;
+    /* background-color: skyblue; */
+    border: 10px solid hotpink;
+    padding-left : 
+        calc(96px + env(safe-area-inset-left));
+    padding-right:
+        calc(96px + env(safe-area-inset-right));
+}
