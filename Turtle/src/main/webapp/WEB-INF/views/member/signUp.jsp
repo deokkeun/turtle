@@ -29,7 +29,7 @@
     
 	<!-- 헤더, 회원가입 css  -->
     <link rel="stylesheet" href="${contextPath}/resources/css/common/landing-header.css" />
-    <link rel="stylesheet" href="${contextPath}/resources/css/member/signUp-style.css?ver=1" />
+    <link rel="stylesheet" href="${contextPath}/resources/css/member/signUp-style.css?ver=4" />
 
      <!-- 구글로그인 -->
     <!--  <script src="https://accounts.google.com/gsi/client" async defer></script> -->
