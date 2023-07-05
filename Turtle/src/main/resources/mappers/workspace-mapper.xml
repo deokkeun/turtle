@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="workspaceMapper">
+<<<<<<< HEAD
 
 	<resultMap type="workspace" id="workspace_rm">
 		<id property="workspaceNo" column="WORKSAPCE_NO"/>
@@ -28,3 +29,36 @@
 	
 	</insert> 
 </mapper>
+=======
+	<resultMap type="workspace" id="workspace_rm">
+		<id property="workspaceNo" column="WORKSPACE_NO"/>
+		
+		<result property="projectNo" column="PROJECT_NO"/>
+		<result property="workspaceName" column="WORKSPACE_NAME"/>
+		<result property="workspaceEmoji" column="WORKSPACE_EMOJI"/>
+		<result property="workspaceRegDate" column="WORKSPACE_REG_DATE"/>
+		<result property="workspaceDeleteSt" column="WORKSPACE_DELETE_ST"/>
+	</resultMap>
+	
+	<!-- 프로젝트 내 워크스페이스 조회 -->
+	<select id="selectWorkspaceList" resultMap="workspace_rm">
+		SELECT *
+		FROM WORKSPACE
+		WHERE PROJECT_NO = ${projectNo} AND WORKSPACE_DELETE_ST = 'N'
+	</select>
+	
+	<!-- 프로젝트 내의 세션에 담을 워크스페이스넘버 하나 얻어오기 -->
+	<select id="selectWorkspaceNo" resultType="_int">
+		SELECT WORKSPACE_NO
+		FROM (
+  			SELECT WORKSPACE_NO
+  			FROM WORKSPACE
+  			WHERE PROJECT_NO = ${projectNo} AND WORKSPACE_NAME NOT IN ('calendar', 'loadmap')
+			) 
+		WHERE ROWNUM = 1
+	</select>
+	
+	
+	
+</mapper>
+>>>>>>> ebb89181eb7cf53a81c83fd62aa81fb2b1364a26

@@ -46,4 +46,11 @@
 				DEFAULT
 			)
 	</insert>
+	
+	<!-- 프로젝트 내 로그인 회원의 프로젝트 멤버정보 조회 -->
+	<select id="selectProjectMember" resultMap="projectMember_rm">
+		SELECT *
+		FROM PROJECT_MEMBER
+		WHERE MEMBER_NO = ${memberNo} AND PROJECT_NO = ${projectNo} AND PM_ST = 'Y'
+	</select>
 </mapper>

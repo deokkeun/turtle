@@ -19,5 +19,6 @@ public class Project {
 	private String projectDeleteFG; // 프로젝트 삭제여부
 	private String regDate; // 프로젝트 생성일
 	private int createMemberNo; // 프로젝트 생성자
+	private String projectEmoji; // 프로젝트 이모티
 	
 }

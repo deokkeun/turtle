@@ -66,12 +66,28 @@
 
         <div id="clock" value="0">00 : 00 : 00</div>
 
+<<<<<<< HEAD
         <!-- 캘린더 남은 일정 -->
         <section id="schedule-box">
             <div id="schedule-title">남은 일정</div>
             <div id="schedule"></div>
         </section>
 
+=======
+        <!-- 세션 잘담기는지 테스트 -->
+        <span>loginMember : ${loginMember}</span><br>
+        <span>projectNo : ${projectNo}</span><br>
+        <span>projectMember : ${projectMember}</span><br>
+        <span>workspaceNo : ${workspaceNo}</span>
+        <span>workspace : </span>
+        <c:forEach var="workspace" items="${workspaceList}">
+            <span>${workspace}</span><br>
+        </c:forEach>
+        <span>project : </span>
+        <c:forEach var="project" items="${projectList}">
+            <span>${project}</span><br>
+        </c:forEach>
+>>>>>>> ebb89181eb7cf53a81c83fd62aa81fb2b1364a26
 
        
         

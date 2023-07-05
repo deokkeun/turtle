@@ -111,12 +111,7 @@
 									
 			</div>
 							
-		</c:forEach>
-				
-				
-				
-	    		
-	
+		</c:forEach>	
     </div>
      
  	<!--------------------------------------- sockjs를 이용한 WebSocket 구현을 위해 라이브러리 추가 ---------------------------------------------->
@@ -159,7 +154,7 @@
         let alertSock = new SockJS(contextPath+"/alert");
     </script>
 	
-    <!-- memo.js 연결 -->
+    <!-- boardList.js 연결 -->
     <script src="${contextPath}/resources/js/board/boardList.js"></script>    
     
 </body>
