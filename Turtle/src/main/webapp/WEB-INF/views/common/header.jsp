@@ -153,7 +153,7 @@
         <a class="nav-link collapsed" data-bs-target="#project-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-chevron-down" id="arrow"></i><i class="bi bi-menu-button-wide"></i><span>PROJECT</span>
         </a>
-<!-- <button class="add-file-button" onclick="addFileAndToggle('project-nav', event)"><i class="bi bi-plus"></i></button> -->
+
     
   <ul id="project-nav" class="nav-content collapse " data-bs-parent="">
  <!--    <li>

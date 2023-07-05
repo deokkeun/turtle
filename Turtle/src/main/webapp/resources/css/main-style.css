@@ -1036,6 +1036,8 @@ h6 {
 
 
 
+
+
 .dropdown-nev {
   background: none; /* 배경을 없애거나 원하는 배경을 설정 */
   border: none; /* 테두리를 없애거나 원하는 테두리 스타일을 설정*/
@@ -1071,9 +1073,33 @@ h6 {
 /*--------------------------------------------------------------
 # clock
 --------------------------------------------------------------*/
+
+/* #clock {
+  width: 150px;
+  height: 50px;
+  padding: 5px 10px; */
+  /* background-color: rgb(255, 192, 203); */
+  /* background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 14px; */
+  /* position: fixed;
+  top: 15px;
+  right: 150px;
+  z-index: 9999; 
+}*/
+
+
 #clock {
   width: 150px;
   height: 50px;
+  margin: auto;
   padding: 5px 10px;
   /* background-color: rgb(255, 192, 203); */
   background-color: white;
@@ -1084,8 +1110,8 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  font-size: 14px;
+  font-weight: bold;
+  font-size: 20px;
   /* position: fixed;
   top: 15px;
   right: 150px;
@@ -1110,6 +1136,7 @@ h6 {
 }
 
 
+<<<<<<< HEAD
 /* ********************************** 캘린더 남은 일정 **************************** */
 #schedule-box {
   width: 420px;
@@ -1161,3 +1188,97 @@ h6 {
   display: block;
   margin: 5px;
 }
+=======
+
+
+/*--------------------------------------------------------------
+# main-layout (지은)
+--------------------------------------------------------------*/
+
+/* 메인레이아웃 */
+.main-layout {
+  /* width: 1240px; */
+  max-width: 100%;
+  height:880px;
+  /* background-color: skyblue; */
+  border: 10px solid hotpink;
+  padding-left : 
+    calc(96px + env(safe-area-inset-left));
+  padding-right:
+    calc(96px + env(safe-area-inset-right));
+}
+
+/* 위 (프로젝트 제목) */
+.projectTitle {
+  height: 100px;
+  /* background-color: rgb(203, 165, 95); */
+  border: 10px solid rgb(203, 165, 95);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.projectTitle > textarea {
+  width: 100%;
+  outline:none;
+  resize:none;
+  border: none;
+  font-weight: bold;
+  font-size: 40px;
+  overflow:hidden;
+  background-color: transparent;
+  text-align: middle;
+  padding-top: 5px;
+}
+
+/* 중간(시계,d-day,게시판리스트) */
+.middle-layout {
+  display: flex;
+  border: 5px solid blue;
+}
+
+  .watch-N-dDay{
+    display: flex;
+    flex-direction: column;
+  }
+
+    /* 시계 */
+    .watch {
+      display: flex;
+      flex-basis: 40%;
+      /* background-color:darkgreen; */
+      width: 410px;
+      border: 10px solid lightcoral;
+    }
+
+    /* 디데이 */
+    .d-day{
+      display:flex;
+      /* height: 270px;  */
+      flex-basis: 70%;
+      /* background-color:yellowgreen; */
+      border : 10px solid yellowgreen;
+    }
+
+  /* 게시판리스트 */
+  .boardLi {
+    height: 340px;
+    width:100%;
+    /* background-color: grey; */
+    border: 10px solid grey;
+    padding: 30px;
+    margin-left: 20px;
+    
+  }
+
+/* 아래 (메모장) */
+.memoLi {
+  /* padding-top: 10px; */
+  margin-top: 20px;
+  margin-bottom: 20px; 
+  display: flex;
+  flex-basis: 30%;
+  height: 320px;
+  width: 100%;
+  /* background-color: yellow; */
+}
+>>>>>>> dev

@@ -11,6 +11,8 @@
 		<result property="projectDeleteFG"  column="PROJECT_DELETE_FG"/>
 		<result property="regDate"  column="REG_DATE"/>
 		<result property="createMemberNo"  column="CREATE_MEMBER_NO"/>
+		<result property="projectEmoji"  column="PROJECT_EMOJI"/>
+		
 	</resultMap>
 	
  	<insert id="createProject" parameterType="project" useGeneratedKeys="true">
@@ -24,7 +26,8 @@
 				#{projectDescription},
 				#{inviteCode},
 				DEFAULT, DEFAULT,
-				#{createMemberNo}
+				#{createMemberNo},
+				#{projectEmoji}
 			)
 	
 	</insert> 
@@ -39,7 +42,7 @@
 			#{pmNo},
 			#{projectNo},
 			#{memberNo},
-			DEFAULT,
+			'Y',
 			'Y',
 			DEFAULT
 		)

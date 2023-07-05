@@ -41,13 +41,13 @@
             <i class="fa-solid fa-layer-group">워크스페이스 관리</i>
         </div>
         <!-- 워크스페이스 이름 입력 section -->
-        <form action="createWorkspace" method="post">
+        <form action="createWorkspace" method="post" enctype="multipart/form-data">
             <div class="section2">
                 <p>워크스페이스명 입력</p>
                 <div>
                     <span id="emoji_btn2" class="projectEmoji"><i class="fa-regular fa-face-smile"></i></span>
                     <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
-                    <input type="text" placeholder="워크스페이스명을 입력해주세요.">
+                    <input type="text" name="workspaceName" placeholder="워크스페이스명을 입력해주세요.">
                 </div>
             </div>
      
@@ -258,8 +258,11 @@
             </div>
 
             <div class="next-btn">
-                <button type="button">생성하기</button>
+                <button type="submit">생성하기</button>
             </div>
+            
+            <input type="hidden" id="emoji_value" name="workspaceEmoji" value="">
+            
         </form>
     </section>
     </main>
