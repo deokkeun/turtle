@@ -15,7 +15,7 @@ public interface ProjectService {
 	 */
 	int createProject(Project project);
 
-	void insertPmManager(ProjectMember pm);
+	int insertPmManager(ProjectMember pm);
 
 	
 	/** 본인 생성 프로젝트넘버 조회 서비스

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.turtle.www.chat.model.vo.ChatMessage;
 import com.turtle.www.chat.model.vo.ChatRoom;
+import com.turtle.www.chat.model.vo.ChatRoomJoin;
 
 @Repository
 public class ChatDAO {
@@ -60,6 +61,32 @@ public class ChatDAO {
 		// 3. pmNo받아오기
 		
 		return sqlSession.insert("chatMapper.insertMessage", chatMessage);
+	}
+
+
+	/** 채팅방 생성 dao
+	 * @param chatRoom
+	 * @return result
+	 */
+	public int insertChatRoom(ChatRoom chatRoom) {
+		
+		int result = sqlSession.insert("chatMapper.insertChatRoom", chatRoom);
+		
+		if(result > 0) {
+			result = chatRoom.getChatRoomNo();
+		}
+		
+		return result;
+	}
+
+
+	/** 채팅방 조인 dao
+	 * @param chatRoomJoin
+	 * @return result
+	 */
+	public int insertChatRoomJoin(ChatRoomJoin chatRoomJoin) {
+
+		return sqlSession.insert("chatMapper.insertChatRoomJoin", chatRoomJoin);
 	}
 
 	

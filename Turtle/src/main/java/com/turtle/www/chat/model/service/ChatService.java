@@ -5,6 +5,8 @@ import java.util.Map;
 
 import com.turtle.www.chat.model.vo.ChatMessage;
 import com.turtle.www.chat.model.vo.ChatRoom;
+import com.turtle.www.chat.model.vo.ChatRoomJoin;
+import com.turtle.www.project.model.vo.Project;
 
 public interface ChatService {
 
@@ -26,6 +28,19 @@ public interface ChatService {
 	 * @return result
 	 */
 	int insertMessage(ChatMessage chatMessage);
+
+	
+	/** 채팅방 생성
+	 * @param chatRoom
+	 * @return result
+	 */
+	int insertChatRoom(ChatRoom chatRoom);
+
+	/** 채팅방 조인
+	 * @param chatRoomJoin
+	 * @return result
+	 */
+	int insertChatRoomJoin(ChatRoomJoin chatRoomJoin);
 
 	
 
