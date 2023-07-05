@@ -9,12 +9,13 @@ a {
 /*section 구성*/
 section {
     text-align: center;
-
+    height: 100%;
     
 }
 html, body {
     height: 100%;
-    overflow: hidden;
+    /* overflow: hidden; 
+    overflow: auto;  */
 }
 .section1 {
     
@@ -127,8 +128,7 @@ html, body {
     width: 100%;
     height: 100%;
     display: none;
-    
-    
+  
 }
 .pop > div{
     

@@ -1,9 +1,11 @@
+
 typing();
 $(document).on("mouseover", ".board", function(){mouseover($(this))});
 $(document).on("mouseout", ".board", function(){mouseout($(this))});
 $(document).on("click", ".edit-boardTitle-btn", function(){
     const value = $('.boardTitle').val();
     editBoardTitleBtn($(this));
+ 
 
 });
 
@@ -496,25 +498,63 @@ function addZero(temp){
 // $('.boardTitle').focus();
 // $('.boardTitle')[0].setSelectionRange(len, len);
 
+
 //이모티콘
-let button4 = document.querySelector(".emoji_btn > i");
+let button4 = document.querySelectorAll(".emoji-btn > i");
 const picker3 = new EmojiButton({
 position: 'bottom-start'
 });
-if(button4) 
-button4.addEventListener('click', () => {
-picker3.togglePicker(button4);
-});
 
-picker3.on('emoji', emoji => {
-const text_box3 = document.querySelector('.emoji_btn');
-text_box3.innerHTML = emoji;
-});
+// $('.emoji-btn').click(function() {
+//     picker3.togglePicker($(this));
+//     picker3.on('emoji', emoji => {
+//         $(this).html(emoji);
+//     })
+
+// })
+
+for(let i=0; i<button4.length; i++) {
+    button4[i].addEventListener('click', (e)=> {
+        picker3.togglePicker(button4[i]);
+        picker3.on('emoji', emoji => {
+            
+            if(button4[i].classList.contains('fa-regular')) {
+                button4[i].classList.remove('fa-regular');
+                button4[i].classList.remove('fa-file');
+                button4[i].classList.add('emo');
+               
+                button4[i].innerHTML = emoji;
+            }
+
+         
+            
+        })
+
+    })
+
+
+}
+
+// button4.forEach((button4)=> {
+//     button4.addEventListener('click', (e) => {
+//     picker3.togglePicker(button4);
+//         picker3.on('emoji', emoji => {
+      
+//            e.target.innerHTML = emoji;
+//         })
+//     });
+   
+    
+// });
+
+// picker3.on('emoji', emoji => {
+// const text_box3 = document.querySelectorAll('.emoji-btn');
+// text_box3.innerHTML = emoji;
+// });
 //     var len = $('.boardTitle').val().length;
 // $('.boardTitle').focus();
 // $('.boardTitle')[0].setSelectionRange(len, len);
 var input = document.querySelector(".boardTitle"); 
 
 // input[name='txt'] 요소에 focus 이벤트 리스너를 지정합니다.
-
 

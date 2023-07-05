@@ -14,8 +14,12 @@ a {
 
 
 .board-area {
-	margin: 0 auto;
-	width: 80%;
+
+	width: 100%;
+	box-shadow: 1px 1px 22px 10px #d9d9d9;
+	border-radius: 10px;
+	padding: 15px;
+	margin-bottom: 20px;
 }
 .board {
 	display: flex;
@@ -89,7 +93,7 @@ a {
 	display: flex;
 	justify-content: space-between;
 }
-.profile-image > img {
+.profile-image {
 	width: 20px;
 	height: 20px;
 	border-radius: 8px;
@@ -106,10 +110,19 @@ a {
 	
 }
 .emoji-btn {
+	width: 30px;
 	margin-right: 5px;
+	
+	justify-content: center;
+	text-align: center;
 }
 .emoji-btn:hover {
 	cursor: pointer;
+}
+.emo {
+	width: 100%;
+	font-style: normal;
+	font-size: 16px;
 }
 
 /* hover 시에 이름 확인 */
@@ -124,7 +137,7 @@ a {
 	position: absolute;
 	display: grid;
 	top: 100%;
-	left: -80%;
+	left: -0%;
 	grid-template-columns: minmax(50px, max-content) 1fr;
 	z-index: 998;
 	border-radius: 3px;
