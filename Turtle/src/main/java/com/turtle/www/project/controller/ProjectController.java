@@ -1,5 +1,9 @@
 package com.turtle.www.project.controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -7,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,11 +24,14 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.turtle.www.member.model.vo.Member;
 import com.turtle.www.project.model.service.ProjectService;
 import com.turtle.www.project.model.vo.Project;
+import com.turtle.www.projectMember.model.service.ProjectMemberService;
 import com.turtle.www.projectMember.model.vo.ProjectMember;
+import com.turtle.www.workspace.model.service.WorkspaceService;
+import com.turtle.www.workspace.model.vo.Workspace;
 
 @Controller
 @RequestMapping("/project")
-@SessionAttributes({"loginMember"})
+@SessionAttributes({"loginMember", "projectNo", "projectMember", "pmNo", "workspaceList", "projectList"})
 public class ProjectController {
 	
 	private Logger logger = LoggerFactory.getLogger(ProjectController.class);
@@ -32,6 +40,10 @@ public class ProjectController {
 	
 	@Autowired
 	private ProjectService service;
+	@Autowired
+	private ProjectMemberService pmService;
+	@Autowired
+	private WorkspaceService wService;
 	
 	
 		
@@ -116,9 +128,27 @@ public class ProjectController {
 	
 	// 프로젝트 이동
 	@GetMapping("/{projectNo}")
-	public String enterProject(@PathVariable("projectNo") int projectNo) {
+	public String enterProject(@ModelAttribute("loginMember") Member loginMember,
+							@PathVariable("projectNo") int projectNo,
+								Model model) {
 		
-				
+		Map<String, Object> map = new HashMap<>();
+		map.put("memberNo", loginMember.getMemberNo());
+		map.put("projectNo", projectNo);
+		
+		// 프로젝트 리스트 조회
+		List<Project> projectList = service.selectProjectList(loginMember);
+		// 프로젝트 내 로그인 회원의 프로젝트 멤버정보 조회
+		ProjectMember projectMember = pmService.selectProjectMember(map);
+		// 프로젝트 내 워크스페이스 조회
+		List<Workspace> workspaceList = wService.selectWorkspaceList(projectNo);
+		
+		model.addAttribute("projectNo", projectNo);
+		model.addAttribute("projectList", projectList);
+		model.addAttribute("pmNo", projectMember.getPmNo());
+		model.addAttribute("projectMember", projectMember);
+		model.addAttribute("workspaceList", workspaceList);
+		
 		return "common/main";
 	}
 	

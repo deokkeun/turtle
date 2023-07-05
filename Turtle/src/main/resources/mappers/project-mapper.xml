@@ -11,8 +11,12 @@
 		<result property="projectDeleteFG"  column="PROJECT_DELETE_FG"/>
 		<result property="regDate"  column="REG_DATE"/>
 		<result property="createMemberNo"  column="CREATE_MEMBER_NO"/>
+<<<<<<< HEAD
 		<result property="projectEmoji"  column="PROJECT_EMOJI"/>
 		
+=======
+		<result property="projectEmoji" column="PROJECT_EMOJI"/>
+>>>>>>> ebb89181eb7cf53a81c83fd62aa81fb2b1364a26
 	</resultMap>
 	
  	<insert id="createProject" parameterType="project" useGeneratedKeys="true">
@@ -57,4 +61,11 @@
 		SELECT PROJECT_NO FROM PROJECT_MEMBER WHERE MEMBER_NO = ${memberNo} AND PROJECT_MANAGER = 'Y'
 	</select>
 	
+	<!-- 프로젝트 리스트 조회 -->
+	<select id="selectProjectList" resultMap="project_rm">
+		SELECT PROJECT_NO, PROJECT_NAME
+		FROM PROJECT 
+		JOIN PROJECT_MEMBER USING (PROJECT_NO)
+		WHERE MEMBER_NO = 1 AND PROJECT_DELETE_FG = 'N' AND PM_ST = 'Y'
+	</select>
 </mapper>

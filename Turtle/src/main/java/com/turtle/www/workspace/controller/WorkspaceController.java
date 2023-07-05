@@ -1,5 +1,6 @@
 package com.turtle.www.workspace.controller;
 
+<<<<<<< HEAD
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,10 +11,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+=======
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+>>>>>>> ebb89181eb7cf53a81c83fd62aa81fb2b1364a26
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+<<<<<<< HEAD
 import com.turtle.www.board.model.vo.Board;
 import com.turtle.www.calendar.model.vo.Calendar;
 import com.turtle.www.loadmap.model.vo.Loadmap;
@@ -27,6 +41,17 @@ import com.turtle.www.workspace.model.vo.Workspace;
 @Controller
 @RequestMapping("/project")
 @SessionAttributes({"loginMember", "project", "workspaceNo"})
+=======
+import com.turtle.www.board.model.service.BoardService;
+import com.turtle.www.board.model.vo.Board;
+import com.turtle.www.memo.model.service.MemoService;
+import com.turtle.www.memo.model.vo.Memo;
+import com.turtle.www.projectMember.model.service.ProjectMemberService;
+
+@Controller
+@RequestMapping("/workspace")
+@SessionAttributes({"loginMember", "workspaceNo", "boardNo", "projectNo", "pmNo"})
+>>>>>>> ebb89181eb7cf53a81c83fd62aa81fb2b1364a26
 public class WorkspaceController {
 	
 	private Logger logger = LoggerFactory.getLogger(WorkspaceController.class);
@@ -37,11 +62,11 @@ public class WorkspaceController {
 //	@Autowired
 //	private Project project;
 //
-//	@Autowired
-//	private Board board;
+	@Autowired
+	private BoardService bService;
 //
-//	@Autowired
-//	private Memo memo;
+	@Autowired
+	private MemoService mService;
 //	
 //	@Autowired
 //	private Loadmap loadmap;
@@ -76,6 +101,7 @@ public class WorkspaceController {
 		
 	}
 	
+<<<<<<< HEAD
 	// 선택한 템플릿 내용 받아오기
 	@PostMapping("/createTemplate")
 	public void createTemplate(@ModelAttribute("project") Project project,
@@ -164,6 +190,29 @@ public class WorkspaceController {
 	public void createLoadmap(@RequestParam(value="wokrspaceName", required=false) String[] templateName,
 							int workspaceNo) {
 		
+=======
+	@GetMapping("/{projectNo}/{workspaceNo}")
+	public String enterWorkspace(@PathVariable("projectNo") int projectNo,
+									@PathVariable("workspaceNo") int workspaceNo,
+									@ModelAttribute("pmNo") int pmNo,
+									Model model) {
+			model.addAttribute("workspaceNo", workspaceNo);
+			
+			// 메모장 담기
+			Map<String, Object> map = new HashMap<>();
+			map.put("pmNo", pmNo);
+			map.put("workspaceNo", workspaceNo);
+			
+			List<Memo> memoList = mService.selectMemoList(map);
+			
+			model.addAttribute("memoList", memoList);
+			
+			// 게시글 리스트 담기
+			List<Board> boardList = bService.selectBoardList(map);
+			model.addAttribute("boardList", boardList);
+			
+		return "workspace/workspace";
+>>>>>>> ebb89181eb7cf53a81c83fd62aa81fb2b1364a26
 	}
 	
 }

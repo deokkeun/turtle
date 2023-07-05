@@ -14,8 +14,13 @@ public class Workspace {
 	private int workspaceNo; // 워크스페이스번호
 	private int projectNo; // 프로젝트번호
 	private String workspaceName; //워크스페이스이름
+<<<<<<< HEAD
 	private String workspaceEmoji; //워크스페이스 이모
+=======
+	private String workspaceEmoji; //워크스페이스이미지
+>>>>>>> ebb89181eb7cf53a81c83fd62aa81fb2b1364a26
 	private String workspaceRegDate; // 워크스페이스 생성일
+	private String workspaceDeleteSt; // 워크스페이스 삭제유무
 	
 	private String workspaceDeleteST;
 }

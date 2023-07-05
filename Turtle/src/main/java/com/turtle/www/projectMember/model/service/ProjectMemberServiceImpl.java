@@ -39,5 +39,13 @@ public class ProjectMemberServiceImpl implements ProjectMemberService {
 		return dao.insertProjectMember(pm);
 	}
 
+	// 프로젝트 내 로그인 회원의 프로젝트 멤버정보 조회 서비스 구현
+	@Override
+	public ProjectMember selectProjectMember(Map<String, Object> map) {
+		return dao.selectProjectMember(map);
+	}
 
+	
+
+	
 }

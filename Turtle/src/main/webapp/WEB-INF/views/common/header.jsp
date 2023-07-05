@@ -156,48 +156,13 @@
 
     
   <ul id="project-nav" class="nav-content collapse " data-bs-parent="">
- <!--    <li>
-      <a href="my-projects/project1.html">
-        <span>project 1</span>
-        <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
-          <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
-          </button>
-          <div class="dropdown-menu" aria-labelledby="project1Dropdown">
-            <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
-            <button class="dropdown-item delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i> 삭제하기</button>
-            <button class="dropdown-item duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i> 복제하기</button>
-          </div>
-        </div>
-      </a>
-    </li> -->
-    <!-- 추가적인 프로젝트 항목들 -->
-  </ul>
-</li><!-- End My Project Nav -->
-
-
-        <li class="nav-item" style="position: relative;">
-          <a class="nav-link collapsed" data-bs-target="#shared-project-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-chevron-down" id="arrow"></i><i class="bi-share-fill"></i> <span>SHARED PROJECT</span>
-          </a>
-         <!--   <button class="add-file-button" onclick="addFileAndToggle('shared-project-nav', event)"><i class="bi bi-plus"></i></button> -->
-          
-          <ul id="shared-project-nav" class="nav-content collapse " data-bs-parent="">
-      <!-- 추가적인 프로젝트 항목들 -->
-    </ul>
-        </li><!-- End Shared Project Nav -->
-
-
-  <li class="nav-item" style="position: relative;">
-          <a class="nav-link collapsed" data-bs-target="#workspace-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-chevron-down" id="arrow"></i><i class="bx bx-desktop"></i><span>WORKSPACE</span>
-          </a>
-         <!--   <button class="add-file-button" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button> -->
-          <ul id="workspace-nav" class="nav-content collapse" data-bs-parent="">
-          <!--   <li>
-              <a href="">
-               <span>파일</span>
-               <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
+    <c:forEach var="project" items="${projectList}">
+      <c:if test="${project.projectNo == projectMember.projectNo}">
+        <c:if test="${projectMember.projectManager == 'Y'}">
+          <li>
+            <a href="${contextPath}/project/${project.projectNo}">
+              <span>${project.projectName}</span>
+              <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
                 <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
                 </button>
@@ -207,48 +172,97 @@
                   <button class="dropdown-item duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i> 복제하기</button>
                 </div>
               </div>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <span>할일 목록</span>
-                <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
-                  <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="project1Dropdown">
-                    <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
-                    <button class="dropdown-item delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i> 삭제하기</button>
-                    <button class="dropdown-item duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i> 복제하기</button>
-                  </div>
-                </div>
-              </a>
-            </li> -->
+            </a>
+          </li>
+        </c:if>
+      </c:if>    
+  </c:forEach>
+    <!-- 추가적인 프로젝트 항목들 -->
+  </ul>
+</li><!-- 내프로젝트 끝 -->
+
+
+    <li class="nav-item" style="position: relative;">
+        <a class="nav-link collapsed" data-bs-target="#shared-project-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-chevron-down" id="arrow"></i><i class="bi-share-fill"></i> <span>SHARED PROJECT</span>
+        </a>
+        <!-- <button class="add-file-button" onclick="addFileAndToggle('shared-project-nav', event)"><i class="bi bi-plus"></i></button> -->
+
+        <ul id="shared-project-nav" class="nav-content collapse " data-bs-parent="">
+                <c:forEach var="project" items="${projectList}">
+                  
+                    <c:if test="${project.projectNo != projectMember.projectNo}">
+                      <li>
+                        <a href="${contextPath}/project/${project.projectNo}">
+                          <span>${project.projectName}</span>
+                          <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
+                            <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="project1Dropdown">
+                              <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
+                              <button class="dropdown-item delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i> 삭제하기</button>
+                              <button class="dropdown-item duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i> 복제하기</button>
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                    
+                  </c:if>    
+              </c:forEach>
+                <!-- 추가적인 프로젝트 항목들 -->
+              </ul>
+    </li><!-- End Shared Project Nav -->
+
+
+  <li class="nav-item" style="position: relative;">
+          <a class="nav-link collapsed" data-bs-target="#workspace-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-chevron-down" id="arrow"></i><i class="bx bx-desktop"></i><span>WORKSPACE</span>
+          </a>
+         <!--   <button class="add-file-button" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button> -->
+          <ul id="workspace-nav" class="nav-content collapse" data-bs-parent="">
+            <c:forEach var="workspace" items="${workspaceList}">
+              <c:if test="${workspace.workspaceName != 'calendar' && workspace.workspaceName != 'loadmap'}">
+                <li>
+                  <a href="${contextPath}/workspace/${projectNo}/${workspace.workspaceNo}">
+                    <span>${workspace.workspaceName}</span>
+                    <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
+                      <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="project1Dropdown">
+                        <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
+                        <button class="dropdown-item delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i> 삭제하기</button>
+                        <button class="dropdown-item duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i> 복제하기</button>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </c:if>                          
+            </c:forEach>
             <!-- 추가적인 작업 공간 항목들 -->
           </ul>
         </li><!-- End Workspace Nav -->
-
-
-
         <br><br><br><br><br><br><br><br>
-
-
-
-
+        <c:forEach var="workspace" items="${workspaceList}">
+        <c:if test="${workspace.workspaceName == 'loadmap'}">
         <li class="nav-item">
-          <a class="nav-link collapsed" href="${contextPath}/workspace/loadmap/1/10"><!-- projectNo, workspaceNo -->
+          <a class="nav-link collapsed" href="${contextPath}/workspace/loadmap/${projectNo}/${workspace.workspaceNo}"><!-- projectNo, workspaceNo -->
             <i class="ri-github-fill"></i>
             <span>GitHub</span>
           </a>
-        </li> 
+        </li>
+        </c:if>
+        <c:if test="${workspace.workspaceName == 'calendar'}"> 
         <li class="nav-item">
-          <a class="nav-link collapsed" href="${contextPath}/calendar/calendar/1/5">
+          <a class="nav-link collapsed" href="${contextPath}/calendar/calendar/${projectNo}/${workspace.workspaceNo}">
             <i class="bi bi-calendar-check"></i>
             <span>Calendar</span>
           </a>
           <div id="line"></div>
-        </li> 
-
+        </li>
+        </c:if>
+        </c:forEach>
         <li class="nav-heading">Report</li>
 
         <!-- 결제 -->
@@ -258,7 +272,8 @@
             <span>Payment Details</span>
           </a>
         </li>
-      </ul>
+        
+      </ul>    
   </aside><!-- End Sidebar-->
 
 
