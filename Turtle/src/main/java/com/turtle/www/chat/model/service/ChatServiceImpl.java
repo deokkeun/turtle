@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.turtle.www.chat.model.dao.ChatDAO;
 import com.turtle.www.chat.model.vo.ChatMessage;
 import com.turtle.www.chat.model.vo.ChatRoom;
+import com.turtle.www.chat.model.vo.ChatRoomJoin;
 import com.turtle.www.common.Util;
 
 @Service
@@ -40,6 +41,20 @@ public class ChatServiceImpl implements ChatService {
 		chatMessage.setChatMessage(Util.newLineHandling(chatMessage.getChatMessage()));
 		
 		return dao.insertMessage(chatMessage);
+	}
+
+
+	// 채팅방 생성 서비스 구현
+	@Override
+	public int insertChatRoom(ChatRoom chatRoom) {
+		return dao.insertChatRoom(chatRoom);
+	}
+
+
+	// 채팅방 조인 서비스 구현
+	@Override
+	public int insertChatRoomJoin(ChatRoomJoin chatRoomJoin) {
+		return dao.insertChatRoomJoin(chatRoomJoin);
 	}
 
 
