@@ -23,9 +23,16 @@ public class ProjectDAO {
 	}
 
 
-	public void insertPmManager(ProjectMember pm) {
-		sqlSession.insert("projectMapper.insertPmManager", pm);
+	// 민수가 살짝 수정했음(딴건아니고 result값 pmNo로)
+	public int insertPmManager(ProjectMember pm) {
 		
+		int result = sqlSession.insert("projectMapper.insertPmManager", pm);
+		
+		if(result > 0) {
+			result = pm.getPmNo();
+		}
+		
+		return result;
 	}
 
 

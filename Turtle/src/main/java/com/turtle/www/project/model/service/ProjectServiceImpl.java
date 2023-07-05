@@ -32,8 +32,8 @@ public class ProjectServiceImpl implements ProjectService{
 	}
 
 	@Override
-	public void insertPmManager(ProjectMember pm) {
-		 dao.insertPmManager(pm);
+	public int insertPmManager(ProjectMember pm) {
+		 return dao.insertPmManager(pm);
 	}
 
 	// 본인 생성 프로젝트넘버 조회 서비스 구현

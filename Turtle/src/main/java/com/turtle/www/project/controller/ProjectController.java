@@ -20,6 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.turtle.www.chat.model.service.ChatService;
+import com.turtle.www.chat.model.vo.ChatRoom;
+import com.turtle.www.chat.model.vo.ChatRoomJoin;
 import com.turtle.www.member.model.vo.Member;
 import com.turtle.www.project.model.service.ProjectService;
 import com.turtle.www.project.model.vo.Project;
@@ -43,6 +46,8 @@ public class ProjectController {
 	private ProjectMemberService pmService;
 	@Autowired
 	private WorkspaceService wService;
+	@Autowired
+	private ChatService cService;
 	
 	
 		
@@ -110,7 +115,34 @@ public class ProjectController {
 			path = "project/inviteMember";
 			session.setAttribute("project", project);
 			logger.info("pm manager 삽입 성공");
-			service.insertPmManager(pm);
+			int pmResult = service.insertPmManager(pm);
+			
+			// 민수
+			// 프로젝트 생성 성공시 채팅방 생성
+			
+			if(pmResult > 0) {
+				Map<String, Object> map = new HashMap<>();
+				ChatRoom chatRoom = new ChatRoom();
+				chatRoom.setChatRoomTitle(project.getProjectName());
+				chatRoom.setProjectNo(project.getProjectNo());
+				chatRoom.setChatRoomType(1);
+				
+				int chatResult = cService.insertChatRoom(chatRoom);
+				
+				// 채팅방 생성 성공시 프로젝트 생성자 채팅방 조인
+				if(chatResult != 0) {
+					ChatRoomJoin chatRoomJoin = new ChatRoomJoin();
+					
+					chatRoomJoin.setChatRoomNo(chatResult);
+					chatRoomJoin.setPmNo(pmResult);
+					
+					int joinResult = cService.insertChatRoomJoin(chatRoomJoin);
+					logger.info(joinResult + "채팅방 초대 성공");
+				}
+			
+			
+				
+			}
 			
 		}else {
 			message = "프로젝트 생성에 실패하였습니다.";
