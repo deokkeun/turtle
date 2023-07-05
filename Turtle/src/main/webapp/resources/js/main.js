@@ -2,7 +2,27 @@
 // var code = "";
 // const accessToken = document.getElementsByName("access_token");
 
-console.log("header.jsp에 정의된 projectNo를 현재 위치(main.js)에서 이용 ProjectNo = " + projectNo);
+
+
+// if(confirm("날씨 조회 서비스를 이용하시려면 동의 해주세요.")) {
+//     function success({ coords, timestamp }) {
+//         const latitude = coords.latitude;   // 위도
+//         const longitude = coords.longitude; // 경도
+        
+//         alert(`위도: ${latitude}, 경도: ${longitude}, 위치 반환 시간: ${timestamp}`);
+//     }
+    
+//     function getUserLocation() {
+//         if (!navigator.geolocation) {
+//             throw "위치 정보가 지원되지 않습니다.";
+//         }
+//         navigator.geolocation.watchPosition(success);
+//     }
+    
+//     getUserLocation();
+// }
+
+
 
 
 // 캘린더 메인페이지 내용 불러오기
@@ -17,17 +37,34 @@ window.onload = function() {
         type: "POST",
         dataType: "JSON",
         success: function(schedule) {   
+
+            const scheduleBox = document.getElementById("schedule-box");
+
             console.log(schedule);
 
-            schedule.forEach(element => {
+            // 남은 일정이 없을때
+            if(schedule.length == 0) {
+                return true;
+            }
 
+            scheduleBox.style.display = "block";
+
+            // 남은 일정이 있을때
+            schedule.forEach(element => {
                 const schedule = document.getElementById("schedule");
 
                 const div = document.createElement('div');
                 div.style.padding = "10px";
                 div.style.margin = "5px";
                 div.style.backgroundColor = element.calColor;
-                
+
+                // var str = "";
+                // if(element.calTitle.length > 5) {
+                //     str = element.calTitle.substr(0, 10);
+                //     str += "...";
+                // }
+
+                // element.calTitle(풀 제목), str(남은일정 제목 자르기)
                 div.innerHTML = "<div class='jb-title'><div class='calTitle'>" + element.calTitle + "</div><div class='calDate'>" + element.startDate + "</div><div class='calDate'>" + element.endDate + "</div></div>"
                 + "<div class='jb-text'>" + element.calContent + "</div>";
                 schedule.append(div);
@@ -35,8 +72,20 @@ window.onload = function() {
             });
         },
         error: function() {
-
+            alert("실행 안됨");
         }
+
+
+
+
+
+
+
+
+
+
+        
+
     })
 
 
