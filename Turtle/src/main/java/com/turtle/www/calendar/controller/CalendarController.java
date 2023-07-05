@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
@@ -39,6 +40,23 @@ public class CalendarController {
 	
 	@Autowired
 	private ProjectMemberService pmService;	
+	
+
+	
+	/** 메인 페이지 캘린더 남은 일정
+	 * @param projectNo
+	 * @return
+	 */
+	@ResponseBody
+	@PostMapping("/schedule")
+	public String schedule(@RequestParam("projectNo") int projectNo) {
+		
+		List<Calendar> schedule = service.schedule(projectNo);
+		
+		return new Gson().toJson(schedule);
+	}
+	
+	
 	
 	
 	/** 캘린더 페이지 이동

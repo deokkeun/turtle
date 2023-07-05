@@ -14,6 +14,17 @@ public class CalendarServiceImpl implements CalendarService{
 
 	@Autowired
 	private CalendarDAO dao;
+	
+	
+
+
+	/** 메인 페이지 캘린더 남은 일정
+	 *
+	 */
+	@Override
+	public List<Calendar> schedule(int projectNo) {
+		return dao.schedule(projectNo);
+	}
 
 	/** 캘린더 리스트 조회
 	 *
