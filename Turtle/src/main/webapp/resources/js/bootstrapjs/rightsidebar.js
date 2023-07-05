@@ -19,7 +19,7 @@ mainToggleButton.addEventListener('click', function() {
   main.classList.toggle('sidebar-active');
 
   if (rightSidebar.classList.contains('active')) {
-    main.style.marginRight = '300px';
+    main.style.marginRight = '600px';
   } else {
     main.style.marginRight = '0';
   }
