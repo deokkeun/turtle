@@ -23,8 +23,6 @@
 // }
 
 
-
-
 // 캘린더 메인페이지 내용 불러오기
 window.onload = function() {
 
@@ -136,6 +134,24 @@ window.onload = function() {
     //     }
     //   });
 }
+
+
+
+//이모티콘
+let button3 = document.querySelector("#emoji_btn2");
+const picker2 = new EmojiButton({
+  position: 'bottom-start'
+});
+
+button3.addEventListener('click', () => {
+  picker2.togglePicker(button3);
+});
+
+picker2.on('emoji', emoji => {
+    const text_box2 = document.querySelector('#emoji_btn2');
+    text_box2.style.fontSize = "50px";
+    text_box2.innerHTML = emoji;
+  });
 
 
 

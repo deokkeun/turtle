@@ -31,13 +31,20 @@
     <!-- header include -->
     <jsp:include page="/WEB-INF/views/common/header.jsp" />
     
-    <main id="main" class="main">
+    <main id="main" class="main" style="background-color: rgba(0, 0, 0, 0.03);">
 
         
         <div class="main-layout">
             <!-- 위 -->
             <div class="projectTitle">
-                <textarea placeholder=" 어렵지 않으면 왼쪽에 이모지 가져오고, 여기에 프로젝트 제목 불러오기"></textarea>
+                <div class="projectTitle-content">
+                    <!-- 이모지 -->
+                    <!-- <i class="fa-regular fa-face-smile"></i> -->
+                    <span id="emoji_btn2" class="projectEmoji"><img src="${contextPath}/resources/images/smilingFace.svg" alt="" width="50px"></span>
+                    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
+                    <!-- 제목 -->
+                    <div id="projectTitle-content-title">제목을 지정해주세요.</div>
+                </div>
             </div>
             <!-- 중간 -->
             <div class="middle-layout">
@@ -48,7 +55,7 @@
                     <div class="d-day">
                         <!-- 캘린더 남은 일정 -->
                         <section id="schedule-box">
-                            <div id="schedule-title">남은 일정</div>
+                            <div id="schedule-title">마감 임박 일정</div>
                             <div id="schedule"></div>
                         </section>
                     </div>
