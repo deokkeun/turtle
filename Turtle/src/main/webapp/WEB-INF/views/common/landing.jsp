@@ -81,8 +81,8 @@
 						</h1>
 						<!-- <h1 data-aos="fade-up">TOTAL 협업툴</h1>
 						<h1 data-aos="fade-up">TURTLE</h1> -->
-						<h6 data-aos="fade-up" data-aos-delay="400">단절된 소통, 번거로운 자료 공유, 보안 위협은 이제 그만!</h6>
-						<h6 data-aos="fade-up" data-aos-delay="400">협업툴 잔디와 함께라면 효율적으로 협업할 수 있습니다.</h6>
+						<h6 data-aos="fade-up" data-aos-delay="400">하나의 공간에서 다양한 협업툴로 쉽고 간편하게!</h6>
+						<h6 data-aos="fade-up" data-aos-delay="400">개인, 팀별 프로젝트도 TURTLE과 함께 효율적으로 관리하세요</h6>
 					
 				
 						<!-- 무료로 사용하기 버튼 -->
@@ -246,10 +246,10 @@
 							<h4>실시간 알림</h4>
 						</a>
 					</li>
-					<!-- 4. 멤버 관리 -->
+					<!-- 4. Git Tree -->
 					<li class="nav-item col-6 col-md-4 col-lg-3">
 						<a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
-							<h4>멤버 관리</h4>
+							<h4>Git Tree</h4>
 						</a>
 					</li>
 	        	</ul>
