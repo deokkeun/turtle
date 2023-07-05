@@ -28,7 +28,7 @@
 		WHERE w.PROJECT_NO = ${projectNo}
 		AND CAL_ST = 'N'
 		AND END_DATE > SYSDATE
-		ORDER BY START_DATE 
+		ORDER BY END_DATE 
 	</select>
 
 	<!-- 캘린더 일정 조회 BOARD_NO,-->

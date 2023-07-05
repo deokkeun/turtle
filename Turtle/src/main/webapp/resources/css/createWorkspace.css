@@ -14,8 +14,8 @@ section {
 }
 html, body {
     height: 100%;
-    /* overflow: hidden; 
-    overflow: auto;  */
+/* overflow: hidden; */
+    overflow: auto;
 }
 .section1 {
     

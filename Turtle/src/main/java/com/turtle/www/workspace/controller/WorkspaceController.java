@@ -74,9 +74,7 @@ public class WorkspaceController {
 		
 		model.addAttribute(workspaceNo);
 		
-		
-		
-		return "redirect:/common/main";
+		return "redirect:/project/" + project.getProjectNo();
 		
 	}
 	
