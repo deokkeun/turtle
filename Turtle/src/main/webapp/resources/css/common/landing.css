@@ -53,7 +53,7 @@ section {
 }
 
 .section-header h2 {
-  font-size: 13px;
+  font-size: 20px;
   letter-spacing: 1px;
   font-weight: 700;
   margin: 10px 0 30px 0;
@@ -65,17 +65,12 @@ section {
   margin: 30px 0 30px 0;
   padding: 0;
   font-size: 38px;
-  line-height: 42px;
+  line-height: 55px;
   font-weight: 700;
   color: #012970;
 }
 
-@media (max-width: 768px) {
-  .section-header p {
-    font-size: 28px;
-    line-height: 32px;
-  }
-}
+
 
 
 /*--------------------------------------------------------------
@@ -112,41 +107,49 @@ section {
   opacity: 1;
 }
 
+
+
+
 /*--------------------------------------------------------------
 # TopBanner Section  첫페이지
 --------------------------------------------------------------*/
 .topbanner {
-  width: 100%;
-  height: 100vh;
-  /*background: url(../img/hero-bg.png) top center no-repeat;*/
-  background-size: cover;
-  /* margin-top: 20px; */
-  padding-top: 100px;
+    width: 100%;
+    height: 100vh;
+    /*background: url(../img/hero-bg.png) top center no-repeat;*/
+    background-size: cover;
+    /* margin-top: 20px; */
+    padding-top: 100px;
 }
 
 .topbanner h1 {
-  margin: 0;
-  font-size: 48px;
-  font-weight: 700;
-  color: #012970;
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    color: #012970;
 }
 
 .topbanner h2 {
-  color: #444444;
-  margin: 15px 0 0 0;
-  font-size: 26px;
+    color: #444444;
+    margin: 15px 0 0 0;
+    font-size: 26px;
+}
+
+/* 첫페이지 상세설명칸 : 하나의 공간에서 ~~*/
+.topbanner h6 {
+    font-size: 1rem;
 }
 
 /* 메인 안 무료로사용하기 버튼 설정 */
 .btn-get-started {
-  margin-top: 30px;
-  line-height: 0;
-  padding: 15px 40px;
-  border-radius: 4px;
-  transition: 0.5s;
-  color: #fff;
-  background: #4154f1; 
-  box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
+    margin-top: 30px;
+    line-height: 0;
+    padding: 15px 40px;
+    border-radius: 4px;
+    transition: 0.5s;
+    color: #fff;
+    background: #4154f1; 
+    box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
 }
 
 /* 메인 안 무료로사용하기 버튼 설정 */
@@ -172,63 +175,6 @@ section {
   text-align: right;
 }
 
-
-
-@media (min-width: 1024px) {
-  .topbanner {
-    background-attachment: fixed;
-  }
-}
-
-@media (max-width: 991px) {
-  .topbanner {
-    height: auto;
-    padding: 120px 0 60px 0;
-  }
-
-  .topbanner .hero-img {
-    text-align: center;
-    margin-top: 80px;
-  }
-
-  .topbanner .hero-img img {
-    width: 80%;
-  }
-}
-
-@media (max-width: 768px) {
-  .topbanner {
-    text-align: center;
-  }
-
-  .topbanner h1 {
-    font-size: 32px;
-  }
-
-  .topbanner h2 {
-    font-size: 24px;
-  }
-
-  .topbanner .hero-img img {
-    width: 100%;
-  }
-}
-
-
-@media (min-width: 320px) {
-    h6 {
-        font-size: 0.6rem;
-    }
-
-    #example1 {
-        font-size: 35px;
-        line-height: 1.4;
-    }
-
-    .features > .nav-link > a {
-        margin: 0px 0px;
-    }
-}
 
 
 /*--------------------------------------------------------------
@@ -319,26 +265,6 @@ section {
 
 
 
-
-@media (max-width: 1199px) {
-  .testimonials .swiper-slide-active {
-    opacity: 1;
-  }
-
-  .testimonials .swiper-pagination {
-    margin-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .testimonials .swiper-slide-next {
-    opacity: 1;
-    transform: scale(1.12);
-  }
-}
-
-
-
 /*--------------------------------------------------------------
 # Features 기능설명
 --------------------------------------------------------------*/
@@ -356,8 +282,9 @@ section {
 }
 
 
+/* 4가지 특징 간격정리 */
 .col-lg-3, .col-md-4 {
-  margin-top: 0px;
+  /* margin-top: 0px; */
 }
 
 /* .features > ul > li .col-lg-3 {
@@ -432,6 +359,7 @@ section {
   line-height: 0;
 }
 
+
 .features .nav-link{
   font-size: 20px;
   font-weight: 600;
@@ -444,6 +372,8 @@ section {
   background-color: #4154f1;
   color: white;
 }
+
+
 
 .features .nav-link:hover {
   /* color: var(--color-primary); */
@@ -503,11 +433,6 @@ section {
 
 
 
-@media (max-width: 768px) {
-  .features .feture-tabs h3 {
-    font-size: 28px;
-  }
-}
 
 .features .feture-tabs .nav-pills {
   border-bottom: 1px solid #eee;
@@ -554,12 +479,6 @@ section {
   font-size: 32px;
   margin-bottom: 20px;
   text-align: center;
-}
-
-@media (max-width: 768px) {
-  .features .feature-icons h3 {
-    font-size: 28px;
-  }
 }
 
 .features .feature-icons .content .icon-box {
@@ -666,10 +585,10 @@ section {
 }
 
 .newsletter h4 {
-    font-size: 24px;
+    font-size: 23px;
     margin: 0 0 10px 0;
     padding: 0;
-    line-height: 1;
+    line-height: 2;
     font-weight: 700;
     color: #012970;
 }
@@ -681,6 +600,167 @@ section {
     position: relative;
     border-radius: 4px;
     border: 1px solid #e1ecff;
+}
+
+
+
+
+/*--------------------------------------------------------------
+# 랜딩페이지 반응형설정
+--------------------------------------------------------------*/
+
+
+@media (max-width: 767px) {
+    /* 프로젝트 특징 4개 */
+    .features > .container > ul > li > a{
+        margin: 3px 15px;  
+    }
+
+    /* 메뉴 4개 일렬로 보이기 */
+    .features > .container >  ul > .col-md-4 {
+        width: 50%;
+    }
+
+	/* 메뉴 2/2보일 때 사이 간격 */
+    .features > .container > .gy-4 {
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+  
+    /* 4가지 특성 안 글자크기 */
+    .features ul > li > a > h4 {
+        font-size: 13px;
+    }
+  
+    .features .nav-link {
+        height: 20px;
+    }
+  
+    .video-wrap > video {
+        width: 100%;
+    }
+  
+    .features .feature-box h3 {
+        font-size: 13px;
+    }
+
+    .section-header h2 {
+        margin: 0 auto;
+    }
+  
+    .recent-blog-posts > .container > .w-100 >
+    .px-vw-5 > .row > .col-12 {
+        margin-bottom: 20px;
+    }
+    
+    /* 첫페이지 상세설명칸 : 하나의 공간에서 ~~*/
+    .topbanner > .container > .row > .col-lg-7 > h6 {
+        font-size: 0.6rem;
+    }
+
+    #example1 {
+        font-size: 35px;
+        line-height: 1.4;
+    }
+
+    .features > .nav-link > a {
+        margin: 0px 0px;
+    }
+
+
+    .section-header p {
+        font-size: 28px;
+        line-height: 38px;
+    }
+
+    .features .feature-icons h3 {
+        font-size: 28px;
+    }
+
+    .features .feture-tabs h3 {
+        font-size: 28px;
+    }
+
+    .topbanner {
+        text-align: center;
+    }
+    
+    .topbanner h1 {
+        font-size: 32px;
+    }
+    
+    .topbanner h2 {
+        font-size: 24px;
+    }
+    
+    .topbanner .hero-img img {
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+@media (min-width: 768px) {
+    /* 메뉴 4개 일렬로 보이기 */
+    .features > .container >  ul > .col-md-4 {
+        width: 25%;
+    }
+
+    .features .nav-link {
+        margin: 0px 0px;
+    }
+
+    .testimonials .swiper-slide-active {
+        opacity: 1;
+    }
+
+    .testimonials .swiper-pagination {
+        margin-top: 0;
+    }
+    
+     .video-wrap > video {
+        width: 100%;
+    }
+  
+}
+
+
+
+@media (min-width: 1200px) {
+    .testimonials .swiper-slide-next {
+        opacity: 1;
+        transform: scale(1.12);
+    }
+}
+
+
+
+
+
+
+@media (min-width: 1024px) {
+  .topbanner {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 991px) {
+  .topbanner {
+    height: auto;
+    padding: 120px 0 60px 0;
+  }
+
+  .topbanner .hero-img {
+    text-align: center;
+    margin-top: 80px;
+  }
+
+  .topbanner .hero-img img {
+    width: 80%;
+  }
 }
 
 
