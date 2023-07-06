@@ -260,3 +260,26 @@ memoContents.forEach((memoContent, index) => {
 		}
     });
 });
+
+
+
+// 시간설정
+function formatTimeAgo(timestamp) {
+    const currentDate = new Date();
+    //const alertDate = new Date(timestamp);
+	const alertDate = new Date(Date.parse(timestamp));
+  
+    const minutes = Math.floor((currentDate - alertDate) / 60000);
+  
+    if (minutes < 1) {
+      return "방금 전";
+    } else if (minutes < 60) {
+      return `${minutes}분 전`;
+    } else if (minutes < 1440) {
+      const hours = Math.floor(minutes / 60);
+      return `${hours}시간 전`;
+    } else {
+      const days = Math.floor(minutes / 1440);
+      return `${days}일 전`;
+    }
+}

@@ -5,18 +5,8 @@
 <%@ page import="java.security.SecureRandom" %>
 <%@ page import="java.math.BigInteger" %>
 
+<script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
 
- <%
-    String clientId = "aQpBvST4iYdjSLDbWXWl";//애플리케이션 클라이언트 아이디값";
-    String redirectURI = URLEncoder.encode("http://localhost:8080/www/member/callback", "UTF-8");
-    SecureRandom random = new SecureRandom();
-    String state = new BigInteger(130, random).toString();
-    String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code"
-         + "&client_id=" + clientId
-         + "&redirect_uri=" + redirectURI
-         + "&state=" + state;
-    session.setAttribute("state", state);
- %>
 
 <!-- ======= 최종작업용 Header ======= -->
 <header id="header" class="header fixed-top">
@@ -100,28 +90,11 @@
 
 <!-- 로그인 모달창 -->
 <section id="login-modal">
-	<!-- 구글 로그인 -->
-<!-- 	<div id="g_id_onload"
-	     data-client_id="713601013116-33sqneo96i1er8o2e6bs5a8o5522k2rq.apps.googleusercontent.com"
-	     data-context="signin"
-	     data-ux_mode="popup"
-	     data-login_uri="http://localhost:8080/member/login/google"
-	     data-auto_prompt="false">
-	</div>
-	
-	<div class="g_id_signin"
-	     data-type="standard"
-	     data-shape="rectangular"
-	     data-theme="outline"
-	     data-text="signin_with"
-	     data-size="large"
-	     data-locale="en-US"
-	     data-logo_alignment="center"
-	     data-width="300">
-	</div> -->
-	
-	<a href="<%=apiURL%>"><img height="50" src="http://static.nid.naver.com/oauth/small_g_in.PNG"/></a>
-	
+
+	<!-- 네이버 로그인 버튼 생성 위치 -->
+	<div id="naverIdLogin"></div>
+
+	<img src="${contextPath}/resources/images/member/naverLogin.png" onclick="naverLogin()" style="margin-top: 30px; cursor:pointer; width:280px; height: 50px"/>
 	<div class="login-divider">or</div>
 	<form action="${contextPath}/member/login" method="POST" onsubmit="return loginValidate()">
 		<div>
@@ -154,18 +127,34 @@
 
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 
-<script>
-function onSignIn(googleUser) {
-	 console.log("구글 로그인");
-	  var profile = googleUser.getBasicProfile();
-	  var id_token = googleUser.getAuthResponse().id_token;
-	  var xhr = new XMLHttpRequest();
-	  xhr.open('POST', 'http://localhost/member/login/google');
-	  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-	  xhr.onload = function() {
-	    console.log('Signed in as: ' + xhr.responseText);
-	  };
-	  xhr.send('idtoken=' + id_token);
-}//onSignIn
+<!-- <script>
+
+function naverLogin() {
+	console.log("네이버 로그인 콜백");
+    // 네이버 로그인 버튼을 클릭했을 때 실행되는 함수
+    var clientId = 'aQpBvST4iYdjSLDbWXWl'; // 네이버 애플리케이션 클라이언트 아이디
+    var redirectUri = 'http://localhost:8080/www/member/callback'; // 로그인 성공 후 리다이렉트될 URI
+
+    // 네아로 인증 URL
+    var url = 'https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=' + clientId + '&redirect_uri=' + redirectUri;
+    
+    // 팝업 또는 리다이렉트로 네아로 인증 페이지 열기
+    window.location.href = url;
+}
+
+</script> -->
+
+<script type="text/javascript">
+	console.log("네이버 로그인 콜백");
+	var naverLogin = new naver.LoginWithNaverId(
+		{
+			clientId: "aQpBvST4iYdjSLDbWXWl",
+			callbackUrl: "http://localhost:8080/member/callback",
+			isPopup: true,
+			loginButton: {color: "white", type: 3, height: 60}
+  			// 네이버 로그인버튼 디자인 설정. 한번 바꿔보세요:D
+		}
+	);
+naverLogin.init();
 </script>
 

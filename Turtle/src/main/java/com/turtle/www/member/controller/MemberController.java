@@ -10,10 +10,17 @@ import javax.mail.internet.MimeMessage;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
@@ -22,23 +29,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
-import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken.Payload;
-import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
-import com.google.api.client.googleapis.util.Utils;
-import com.google.api.client.http.HttpTransport;
-import com.google.api.client.json.JsonFactory;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.turtle.www.member.model.service.MemberService;
 import com.turtle.www.member.model.vo.Member;
 import com.turtle.www.project.model.service.ProjectService;
-import com.turtle.www.projectMember.model.service.ProjectMemberService;
 import com.turtle.www.workspace.model.service.WorkspaceService;
 
 
@@ -129,40 +133,154 @@ public class MemberController {
 	}
 	
 	
-//	@RequestMapping(value="/login/google")
-//	public String googleLogin(String idtoken, Model model) throws GeneralSecurityException, IOException {
-//		logger.info("구글 로그인");
-//		
-//		HttpTransport transport = Utils.getDefaultTransport();
-//		JsonFactory jsonFactory = Utils.getDefaultJsonFactory();
-//		
-//		GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(transport, jsonFactory)
-//				.setAudience(Collections.singletonList("713601013116-33sqneo96i1er8o2e6bs5a8o5522k2rq.apps.googleusercontent.com")).build();
-//		
-//		
-//		GoogleIdToken idToken = verifier.verify(idtoken);
-//		if (idToken != null) {
-//			Payload payload = idToken.getPayload();
-//			
-//			if (((String) payload.get("email")).contains("false")) { //회원가입이 안 되어 있는 경우
-//				Member member = new Member();
-//				member.setMemberEmail((String) payload.get("email"));
-//				member.setSocialEmail((String) payload.get("email"));
-//				member.setMemberName((String) payload.get("given_name"));
-//				member.setProfileImage((String) payload.get("picture"));
-//				member.setAccessToken(idtoken);
-//				
-//				int result = service.googleJoin(member);
-//			}//end if
-//				
-//			model.addAttribute("id", (String) payload.get("email"));
-//				
-//		} else { //유효하지 않은 토큰
-//		}
-//			
+//	@GetMapping("/callback")
+//	public String callback(@RequestParam("code") String code, HttpSession session, Model model) {
+//	    try {
+//	        // 네이버 로그인 콜백 URL 처리를 위한 필요한 정보
+//	        String clientId = "aQpBvST4iYdjSLDbWXWl";
+//	        String clientSecret = "2DbK66epLO";
+//	        String redirectUri = "http://localhost:8080/www/member/callback";
+//
+//	        // 네이버 API에 액세스 토큰 요청을 위한 URL 생성
+//	        String tokenUrl = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&client_id="
+//	                + clientId + "&client_secret=" + clientSecret + "&redirect_uri=" + redirectUri + "&code=" + code;
+//
+//	        // 액세스 토큰 요청을 위한 HTTP 요청 보내기
+//	        RestTemplate restTemplate = new RestTemplate();
+//	        HttpHeaders headers = new HttpHeaders();
+//	        headers.setContentType(MediaType.APPLICATION_JSON);
+//	        HttpEntity<String> entity = new HttpEntity<>(headers);
+//	        ResponseEntity<String> response = restTemplate.exchange(tokenUrl, HttpMethod.GET, entity, String.class);
+//
+//	        if (response.getStatusCode() == HttpStatus.OK) {
+//	            // 액세스 토큰 요청이 성공한 경우
+//	            String responseBody = response.getBody();
+//	            
+//	            // 회원 정보 파싱하여 이름 추출
+////	            JsonNode responseNode = new ObjectMapper().readTree(responseBody);
+////	            JsonNode apiJsonNode = responseNode.get("response");
+////	            String memberName = apiJsonNode.get("name").asText();
+////	            logger.info("네이버 이름 : " + memberName);
+//
+//              
+//                // 회원 정보 파싱하여 프로필 사진 URL 추출
+////                JsonNode apiJsonNode1 = new ObjectMapper().readTree(responseBody);
+////                String profileImage = apiJsonNode1.get("response").get("profile_image").asText();
+////                logger.info("네이버 프로필 사진 : " + profileImage);
+//                
+//	            // 응답 데이터 파싱하여 액세스 토큰 추출
+//	            JsonNode jsonNode = new ObjectMapper().readTree(responseBody);
+//	            String accessToken = jsonNode.get("access_token").asText();
+//	            logger.info("네이버 토큰 : " + accessToken);
+//
+//	            // 소셜 아이디 가져오기
+//	            String socialEmail = "naver_" + jsonNode.get("id").asText(); // 네이버 소셜 아이디
+//	            logger.info("네이버 아이디 : " + socialEmail);
+//	            
+//	            // DB에서 소셜 아이디 확인
+//	            Member member = service.getMemberSocialEmail(socialEmail);
+//
+//	            if (member == null) {
+//	                // DB에 소셜 아이디가 없는 경우
+//	                member = new Member();
+//	                member.setSocialEmail(jsonNode.get("email").asText());
+//	                member.setAccessToken(accessToken);
+////	                member.setMemberName(memberName);
+////	                member.setProfileImage(profileImage);
+//	                // 나머지 회원 정보 설정
+//	                // MEMBER 테이블에 회원 정보를 저장
+//	                service.insertSocialMember(member);
+//	            } else {
+//	                // DB에 소셜 아이디가 있는 경우
+//	                member.setAccessToken(accessToken);
+//	                // 나머지 회원 정보 업데이트
+//	                // MEMBER 테이블의 회원 정보 업데이트
+////	                service.updateMember(member);
+//	            }
+//
+//	            // 세션에 로그인 정보 저장
+//	            session.setAttribute("loginMember", member);
+//	            model.addAttribute("loginMember", member);
+//
+//	            // 로그인 성공 후 무조건 쿠키 생성
+//	            Cookie cookie = new Cookie("saveId", member.getSocialEmail());
+//
+//	            // 쿠키의 유지 시간 설정
+//	            cookie.setMaxAge(60 * 60 * 24 * 365); // 초단위 지정(1년)
+//
+//	            // 쿠키가 적용될 범위(경로) 지정
+//	            cookie.setPath("/");
+//
+//	            // 쿠키를 응답 시 클라이언트에게 전달
+//	            ((HttpServletResponse) response).addCookie(cookie);
+//
+//	            return "redirect:/"; // 로그인 성공 후 리다이렉트할 경로
+//	            
+//	        } else {
+//	            // 액세스 토큰 요청이 실패한 경우
+//	        	logger.info("액세스 토큰 요청이 실패한 경우");
+////	            model.addAttribute("errorMessage", "Failed to retrieve access token.");
+////	            return "error"; // 에러 페이지로 이동하거나 적절한 처리를 수행
+//	        }
+//	    } catch (Exception e) {
+//	        // 예외 처리로그직 작성
+//	    	logger.info("예외 처리");
+//	    	logger.info("예외메시지 : " + e.getMessage());
+//	    	e.printStackTrace();
+////	        model.addAttribute("errorMessage", "An error occurred during login.");
+////	        return "error"; // 에러 페이지로 이동하거나 적절한 처리를 수행
+//	    }
 //		return "redirect:/";
-//	    
 //	}
+
+	
+	@RequestMapping(value="callback", method=RequestMethod.GET)
+	public String callBack(){
+		return "common/callback";
+	}
+	
+	@GetMapping("/callback")
+	public String callback(@RequestParam("code") String code, HttpSession session, Model model) {
+		String socialEmail = "";
+	    try {
+	        // 네이버 로그인 콜백 URL 처리를 위한 필요한 정보
+	        String clientId = "aQpBvST4iYdjSLDbWXWl";
+	        String clientSecret = "2DbK66epLO";
+	        String redirectUri = "http://localhost:8080/www/member/callback";
+
+	        // 네이버 API에 액세스 토큰 요청을 위한 URL 생성
+	        String tokenUrl = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&client_id="
+	                + clientId + "&client_secret=" + clientSecret + "&redirect_uri=" + redirectUri + "&code=" + code;
+
+	        // 액세스 토큰 요청을 위한 HTTP 요청 보내기
+	        RestTemplate restTemplate = new RestTemplate();
+	        HttpHeaders headers = new HttpHeaders();
+	        headers.setContentType(MediaType.APPLICATION_JSON);
+	        HttpEntity<String> entity = new HttpEntity<>(headers);
+	        ResponseEntity<String> response = restTemplate.exchange(tokenUrl, HttpMethod.GET, entity, String.class);
+
+	        if (response.getStatusCode() == HttpStatus.OK) {
+	            // 액세스 토큰 요청이 성공한 경우
+	            String responseBody = response.getBody();
+	            
+	            JsonNode jsonNode = new ObjectMapper().readTree(responseBody);
+	            String id = jsonNode.get("id").asText();
+	            socialEmail = "naver_" + id;
+	            logger.info("네이버 아이디 : " + socialEmail);
+	            
+	            // 응답 데이터 파싱하여 액세스 토큰 추출
+	            String accessToken = jsonNode.get("access_token").asText();
+	            logger.info("네이버 토큰 : " + accessToken);
+	            
+	        }
+	    } catch (Exception e) {
+	        logger.error("소셜 이메일을 가져오는데 예외가 발생하였습니다: " + e.getMessage());
+	        // 예외 처리 로직을 추가하거나 적절한 오류 처리를 수행하세요.
+	    }
+		return "redirect:/";
+	        
+	    }
+
 	
 	
 	

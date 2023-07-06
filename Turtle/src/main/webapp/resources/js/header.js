@@ -49,8 +49,10 @@ function selectAlertList() {
                 h4.textContent = item.memberName;
                 let p1 = document.createElement("p");
                 p1.textContent = item.alertContent;
+                //let p2 = document.createElement("p");
+                //p2.textContent = item.alertRegDate;                
                 let p2 = document.createElement("p");
-                p2.textContent = item.alertRegDate;
+                p2.textContent = formatTimeAgo(item.alertRegDate);
                 a.append(h4, p1, p2);
                 div.append(a);
                 notificationItem.append(i, div);
@@ -139,7 +141,8 @@ alertSock.onmessage = function(e) {
     let p1 = document.createElement("p");
     p1.textContent = alert.alertContent;
     let p2 = document.createElement("p");
-    p2.textContent = alert.alertRegDate;
+    p2.textContent = "방금 전";
+    
     a.append(h4, p1, p2);
     div.append(a);
     notificationItem.append(i, div);
@@ -153,3 +156,33 @@ alertSock.onmessage = function(e) {
     badgeNumber.innerText = ((Number)(badgeNumber.innerText) + 1);
     dropDownHeader.innerText = badgeNumber.innerText + "개의 새로운 알림이 있습니다";
 }
+
+
+// 시간설정
+function formatTimeAgo(timestamp) {
+    const currentDate = new Date();
+    const alertDate = new Date(timestamp);
+  
+    const minutes = Math.floor((currentDate - alertDate) / 60000);
+  
+    if (minutes < 1) {
+      return "방금 전";
+    } else if (minutes < 60) {
+      return `${minutes}분 전`;
+    } else if (minutes < 1440) {
+      const hours = Math.floor(minutes / 60);
+      return `${hours}시간 전`;
+    } else {
+      const days = Math.floor(minutes / 1440);
+      return `${days}일 전`;
+    }
+}
+
+function join() {
+    var url = contextPath + "/chat/chatRoomList/"+ projectNo;		
+    var title = "popup";
+    var status = "toolbar=no,scrollbars=no,resizable=yes,status=no,menubar=no,width=400,location=no, height=400, top=1000,left=1500"; 
+  
+  window.open(url,title,status); 
+};
+
