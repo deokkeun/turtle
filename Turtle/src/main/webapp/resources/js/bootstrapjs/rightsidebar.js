@@ -50,6 +50,8 @@ var main = document.getElementById('main');
 mainToggleButton.addEventListener('click', function() {
   main.style.marginRight = main.style.marginRight === '300px' ? '0px' : '300px';
 });
+
+
 function toggleSidebar() {
   var sidebar = document.getElementById('rightSidebar');
   sidebar.classList.toggle('sidebar-visible');

@@ -335,243 +335,243 @@
   })();
   
   //프로젝트 내용 추가
-function addFile(menuId, event) {
-    if (event) {
-      event.stopPropagation();
-    }
+// function addFile(menuId, event) {
+//     if (event) {
+//       event.stopPropagation();
+//     }
   
-    var projectName = prompt("제목을 입력하세요:");
-    if (projectName) {
-      var fileLink = menuId.split('-')[0] + "-projects/" + projectName.toLowerCase() + ".html";
+//     var projectName = prompt("제목을 입력하세요:");
+//     if (projectName) {
+//       var fileLink = menuId.split('-')[0] + "-projects/" + projectName.toLowerCase() + ".html";
   
-      var newFile = document.createElement("li");
+//       var newFile = document.createElement("li");
   
-      var fileLinkElement = document.createElement("a");
-      fileLinkElement.className = "nav-link";
-      fileLinkElement.innerHTML = '<span>' + projectName + '</span>';
+//       var fileLinkElement = document.createElement("a");
+//       fileLinkElement.className = "nav-link";
+//       fileLinkElement.innerHTML = '<span>' + projectName + '</span>';
   
-      var fileMenu = document.createElement("div");
-      fileMenu.className = "file-menu dropdown ms-auto";
-      fileMenu.oncontextmenu = function () {
-        return false;
-      };
+//       var fileMenu = document.createElement("div");
+//       fileMenu.className = "file-menu dropdown ms-auto";
+//       fileMenu.oncontextmenu = function () {
+//         return false;
+//       };
   
-      var dropdownToggle = document.createElement("button");
-      dropdownToggle.className = "dropdown-nev";
-      dropdownToggle.type = "button";
-      dropdownToggle.dataset.bsToggle = "dropdown";
-      dropdownToggle.setAttribute("aria-haspopup", "true");
-      dropdownToggle.setAttribute("aria-expanded", "false");
-      dropdownToggle.innerHTML = '<i class="bi bi-three-dots-vertical"></i>';
+//       var dropdownToggle = document.createElement("button");
+//       dropdownToggle.className = "dropdown-nev";
+//       dropdownToggle.type = "button";
+//       dropdownToggle.dataset.bsToggle = "dropdown";
+//       dropdownToggle.setAttribute("aria-haspopup", "true");
+//       dropdownToggle.setAttribute("aria-expanded", "false");
+//       dropdownToggle.innerHTML = '<i class="bi bi-three-dots-vertical"></i>';
   
-      var dropdownMenu = document.createElement("div");
-      dropdownMenu.className = "dropdown-menu";
+//       var dropdownMenu = document.createElement("div");
+//       dropdownMenu.className = "dropdown-menu";
   
-      var renameButton = document.createElement("button");
-      renameButton.className = "dropdown-item rename-button";
-      renameButton.innerHTML = '<i class="bi bi-pencil"></i> 이름 바꾸기';
-      renameButton.onclick = function (event) {
-        event.stopPropagation();
-        renameFile(this);
-      };
+//       var renameButton = document.createElement("button");
+//       renameButton.className = "dropdown-item rename-button";
+//       renameButton.innerHTML = '<i class="bi bi-pencil"></i> 이름 바꾸기';
+//       renameButton.onclick = function (event) {
+//         event.stopPropagation();
+//         renameFile(this);
+//       };
   
-      var deleteButton = document.createElement("button");
-      deleteButton.className = "dropdown-item delete-button";
-      deleteButton.innerHTML = '<i class="bi bi-trash"></i> 삭제하기';
-      deleteButton.onclick = function (event) {
-        event.stopPropagation();
-        deleteFile(this);
-        showAddButton(menuId); // 삭제 후 추가 버튼 보이기
-      };
+//       var deleteButton = document.createElement("button");
+//       deleteButton.className = "dropdown-item delete-button";
+//       deleteButton.innerHTML = '<i class="bi bi-trash"></i> 삭제하기';
+//       deleteButton.onclick = function (event) {
+//         event.stopPropagation();
+//         deleteFile(this);
+//         showAddButton(menuId); // 삭제 후 추가 버튼 보이기
+//       };
   
     
   
-      dropdownMenu.appendChild(renameButton);
-      dropdownMenu.appendChild(deleteButton);
+//       dropdownMenu.appendChild(renameButton);
+//       dropdownMenu.appendChild(deleteButton);
     
   
-      fileMenu.appendChild(dropdownToggle);
-      fileMenu.appendChild(dropdownMenu);
+//       fileMenu.appendChild(dropdownToggle);
+//       fileMenu.appendChild(dropdownMenu);
   
-      fileLinkElement.appendChild(fileMenu);
+//       fileLinkElement.appendChild(fileMenu);
   
-      newFile.appendChild(fileLinkElement);
+//       newFile.appendChild(fileLinkElement);
   
-      var menuNav = document.getElementById(menuId);
-      menuNav.appendChild(newFile);
+//       var menuNav = document.getElementById(menuId);
+//       menuNav.appendChild(newFile);
   
-      if (menuId !== "workspace-nav") {
-        hideAddButton(menuId); // 추가 버튼 숨기기
-      }
-    }
-  }
-  var projectNavLink = document.querySelector('[data-bs-target="#project-nav"]');
-projectNavLink.addEventListener('click', function (event) {
-  event.stopPropagation();
-});
+//       if (menuId !== "workspace-nav") {
+//         hideAddButton(menuId); // 추가 버튼 숨기기
+//       }
+//     }
+//   }
+//   var projectNavLink = document.querySelector('[data-bs-target="#project-nav"]');
+// projectNavLink.addEventListener('click', function (event) {
+//   event.stopPropagation();
+// });
 
-// SHARED PROJECT Nav
-var sharedProjectNavLink = document.querySelector('[data-bs-target="#shared-project-nav"]');
-sharedProjectNavLink.addEventListener('click', function (event) {
-  event.stopPropagation();
-});
+// // SHARED PROJECT Nav
+// var sharedProjectNavLink = document.querySelector('[data-bs-target="#shared-project-nav"]');
+// sharedProjectNavLink.addEventListener('click', function (event) {
+//   event.stopPropagation();
+// });
 
-// WORKSPACE Nav
-var workspaceNavLink = document.querySelector('[data-bs-target="#workspace-nav"]');
-workspaceNavLink.addEventListener('click', function (event) {
-  event.stopPropagation();
-});
-  function addFileAndToggle(menuId, event) {
-    if (event) {
-      event.stopPropagation();
-    }
+// // WORKSPACE Nav
+// var workspaceNavLink = document.querySelector('[data-bs-target="#workspace-nav"]');
+// workspaceNavLink.addEventListener('click', function (event) {
+//   event.stopPropagation();
+// });
+//   function addFileAndToggle(menuId, event) {
+//     if (event) {
+//       event.stopPropagation();
+//     }
   
-    // addFile 함수 호출
-    addFile(menuId, event);
+//     // addFile 함수 호출
+//     addFile(menuId, event);
   
-    // 해당 메뉴의 a.nav-link.collapsed 요소를 찾아서 클릭 이벤트 수행
-    var linkElement = document.querySelector(`a.nav-link.collapsed[data-bs-target="#${menuId}"]`);
-    if (linkElement) {
-      linkElement.click();
-    }
-  }
+//     // 해당 메뉴의 a.nav-link.collapsed 요소를 찾아서 클릭 이벤트 수행
+//     var linkElement = document.querySelector(`a.nav-link.collapsed[data-bs-target="#${menuId}"]`);
+//     if (linkElement) {
+//       linkElement.click();
+//     }
+//   }
   
-  function hideAddButton(menuId) {
-    var addButton = document.querySelector('button.add-file-button[onclick="addFileAndToggle(\'' + menuId + '\', event)"]');
-    if (addButton) {
-      addButton.style.display = 'none';
-    }
-  }
+//   function hideAddButton(menuId) {
+//     var addButton = document.querySelector('button.add-file-button[onclick="addFileAndToggle(\'' + menuId + '\', event)"]');
+//     if (addButton) {
+//       addButton.style.display = 'none';
+//     }
+//   }
   
-  function showAddButton(menuId) {
-    var addButton = document.querySelector('button.add-file-button[onclick="addFileAndToggle(\'' + menuId + '\', event)"]');
-    if (addButton) {
-      addButton.style.display = 'inline-block';
-    }
-  }
-  
-  
-  function renameFile(button) {
-    var fileItem = button.closest(".file-menu");
-    var fileSpan = fileItem.previousElementSibling;
-    var newFileName = prompt("새로운 파일 이름을 입력하세요:", fileSpan.innerText);
-    if (newFileName) {
-      fileSpan.innerText = newFileName;
-    }
-  }
-  
-  function deleteFile(button) {
-    var fileItem = button.parentNode.parentNode.parentNode;
-    var menuNav = fileItem.parentNode;
-    menuNav.removeChild(fileItem);
-  }
-  
-  const navLink = document.querySelector('.nav-link');
-  
-  if (navLink) {
-    navLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      return false;
-    });
-  
-    navLink.classList.remove('collapsed');
-  }
+//   function showAddButton(menuId) {
+//     var addButton = document.querySelector('button.add-file-button[onclick="addFileAndToggle(\'' + menuId + '\', event)"]');
+//     if (addButton) {
+//       addButton.style.display = 'inline-block';
+//     }
+//   }
   
   
-  var addButton = document.getElementById('add-file-button');
-  addButton.addEventListener('click', function(event) {
-    if (this.classList.contains('disabled')) {
-      event.preventDefault();
-      return false;
-    }
+//   function renameFile(button) {
+//     var fileItem = button.closest(".file-menu");
+//     var fileSpan = fileItem.previousElementSibling;
+//     var newFileName = prompt("새로운 파일 이름을 입력하세요:", fileSpan.innerText);
+//     if (newFileName) {
+//       fileSpan.innerText = newFileName;
+//     }
+//   }
+  
+//   function deleteFile(button) {
+//     var fileItem = button.parentNode.parentNode.parentNode;
+//     var menuNav = fileItem.parentNode;
+//     menuNav.removeChild(fileItem);
+//   }
+  
+//   const navLink = document.querySelector('.nav-link');
+  
+//   if (navLink) {
+//     navLink.addEventListener('click', (e) => {
+//       e.preventDefault();
+//       return false;
+//     });
+  
+//     navLink.classList.remove('collapsed');
+//   }
+  
+  
+//   var addButton = document.getElementById('add-file-button');
+//   addButton.addEventListener('click', function(event) {
+//     if (this.classList.contains('disabled')) {
+//       event.preventDefault();
+//       return false;
+//     }
     
-    this.classList.add('disabled');
-    addFile('shared-project-nav');
+//     this.classList.add('disabled');
+//     addFile('shared-project-nav');
     
-    setTimeout(function() {
-      addButton.classList.remove('disabled');
-    }, 1000);
-  });
+//     setTimeout(function() {
+//       addButton.classList.remove('disabled');
+//     }, 1000);
+//   });
   
   
   
 
-  const projectNav = document.querySelector('#project-nav');
-  const menuBoard = document.querySelector('#menu-board');
+//   const projectNav = document.querySelector('#project-nav');
+//   const menuBoard = document.querySelector('#menu-board');
   
-  function showMenuBoard() {
-    const content = projectNav.innerHTML;
-    menuBoard.innerHTML = content;
-    menuBoard.style.display = 'block';
-  }
+//   function showMenuBoard() {
+//     const content = projectNav.innerHTML;
+//     menuBoard.innerHTML = content;
+//     menuBoard.style.display = 'block';
+//   }
   
-  function hideMenuBoard() {
-    menuBoard.innerHTML = '';
-    menuBoard.style.display = 'none';
-  }
+//   function hideMenuBoard() {
+//     menuBoard.innerHTML = '';
+//     menuBoard.style.display = 'none';
+//   }
   
-  // 사이드바 토글 버튼 클릭 시 메뉴판 보이기/감추기
-  const toggleSidebarBtn = document.querySelector('.toggle-sidebar-btn');
-  toggleSidebarBtn.addEventListener('click', function() {
-    const isSidebarVisible = document.body.classList.contains('toggle-sidebar');
-    if (isSidebarVisible) {
-      hideMenuBoard();
-    } else {
-      showMenuBoard();
-    }
-  });
+//   // 사이드바 토글 버튼 클릭 시 메뉴판 보이기/감추기
+//   const toggleSidebarBtn = document.querySelector('.toggle-sidebar-btn');
+//   toggleSidebarBtn.addEventListener('click', function() {
+//     const isSidebarVisible = document.body.classList.contains('toggle-sidebar');
+//     if (isSidebarVisible) {
+//       hideMenuBoard();
+//     } else {
+//       showMenuBoard();
+//     }
+//   });
   
   
   
-  function toggleCustomSidebar() {
-  var sidebar = document.querySelector('.sidebar');
-  var arrow = document.getElementById('custom-arrow');
+//   function toggleCustomSidebar() {
+//   var sidebar = document.querySelector('.sidebar');
+//   var arrow = document.getElementById('custom-arrow');
 
-  sidebar.classList.toggle('collapsed');
+//   sidebar.classList.toggle('collapsed');
 
-  if (sidebar.classList.contains('collapsed')) {
-    arrow.innerHTML = '▶'; // 축소된 상태에서 보여질 아이콘 설정
-  } else {
-    arrow.innerHTML = '◀'; // 확장된 상태에서 보여질 아이콘 설정
-  }
-}
+//   if (sidebar.classList.contains('collapsed')) {
+//     arrow.innerHTML = '▶'; // 축소된 상태에서 보여질 아이콘 설정
+//   } else {
+//     arrow.innerHTML = '◀'; // 확장된 상태에서 보여질 아이콘 설정
+//   }
+// }
 
-function toggleSidebar() {
-  const sidebar = document.querySelector('.sidebar');
-  const arrow = documaent.querySelector('#arrow');
-  const sidebarNav = document.querySelector('.sidebar-nav');
+// function toggleSidebar() {
+//   const sidebar = document.querySelector('.sidebar');
+//   const arrow = documaent.querySelector('#arrow');
+//   const sidebarNav = document.querySelector('.sidebar-nav');
 
-  sidebar.classList.toggle('collapsed');
-  arrow.classList.toggle('collapsed');
-  sidebarNav.classList.toggle('collapsed');
-}
+//   sidebar.classList.toggle('collapsed');
+//   arrow.classList.toggle('collapsed');
+//   sidebarNav.classList.toggle('collapsed');
+// }
 
-function toggleSidebar() {
-  var sidebar = document.getElementsByClassName('sidebar')[0];
-  var arrow = document.getElementById('arrow');
-  var addButton = document.getElementsByClassName('add-file-button');
+// function toggleSidebar() {
+//   var sidebar = document.getElementsByClassName('sidebar')[0];
+//   var arrow = document.getElementById('arrow');
+//   var addButton = document.getElementsByClassName('add-file-button');
 
-  sidebar.classList.toggle('collapsed');
+//   sidebar.classList.toggle('collapsed');
 
-  if (sidebar.classList.contains('collapsed')) {
-    arrow.style.display = 'none';
-    for (var i = 0; i < addButton.length; i++) {
-      addButton[i].style.display = 'none';
-    }
-  } else {
-    arrow.style.display = 'inline-block';
-    for (var i = 0; i < addButton.length; i++) {
-      addButton[i].style.display = 'inline-block';
-    }
-  }
-}
+//   if (sidebar.classList.contains('collapsed')) {
+//     arrow.style.display = 'none';
+//     for (var i = 0; i < addButton.length; i++) {
+//       addButton[i].style.display = 'none';
+//     }
+//   } else {
+//     arrow.style.display = 'inline-block';
+//     for (var i = 0; i < addButton.length; i++) {
+//       addButton[i].style.display = 'inline-block';
+//     }
+//   }
+// }
 
-function toggleProjectMenu() {
-  var projectNav = document.getElementById("project-nav");
-  if (projectNav.classList.contains("show")) {
-    projectNav.classList.remove("show");
-  } else {
-    projectNav.classList.add("show");
-  }
-}
+// function toggleProjectMenu() {
+//   var projectNav = document.getElementById("project-nav");
+//   if (projectNav.classList.contains("show")) {
+//     projectNav.classList.remove("show");
+//   } else {
+//     projectNav.classList.add("show");
+//   }
+// }
   

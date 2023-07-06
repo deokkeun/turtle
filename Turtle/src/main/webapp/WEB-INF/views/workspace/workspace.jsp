@@ -77,7 +77,7 @@
                     
                     <div class="board" data-boardNo="${board.boardNo}" data-pmNo="${pmNo}" data-boardSort="${board.boardSort}">
                         <div class="edit-board-area">
-                            <div class="add-board" style="visibility:hidden;">
+                            <div class="add-board"  style="visibility:hidden;">
                                 <button class="add-board-btn"><i class="fa-solid fa-plus"></i></button>
                             </div>
                             <div class="emoji-btn">
