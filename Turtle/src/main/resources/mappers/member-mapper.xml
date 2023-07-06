@@ -51,7 +51,7 @@
 			NULL,
 			DEFAULT,
 			'/resources/images/memberProfile/member.png',
-			DEFAULT, NULL
+			DEFAULT, NULL, NULL
 	)
 	</insert>
 

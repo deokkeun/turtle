@@ -640,12 +640,15 @@ section {
         width: 100%;
     }
   
+    /* 워크스페이스에 대한 특징 글씨 */
     .features .feature-box h3 {
         font-size: 13px;
     }
 
+    /* 섹션별 상세설명 글씨크기 */
     .section-header h2 {
         margin: 0 auto;
+        font-size: 13px;
     }
   
     .recent-blog-posts > .container > .w-100 >
