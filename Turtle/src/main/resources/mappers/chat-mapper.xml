@@ -58,7 +58,6 @@
 		VALUES(SEQ_CM_NO.NEXTVAL, #{chatMessage}, DEFAULT, #{chatRoomNo}, #{pmNo})
 	</insert>
 	
-<<<<<<< HEAD
 	<!-- 채팅방 생성 -->
 	<insert id="insertChatRoom">
 		
@@ -82,6 +81,4 @@
 		WHERE PROJECT_NO = ${projectNo} AND CHATROOM_ST = 'N' AND CHATROOM_TYPE IN (1, 2)
 	</select>
 	
-=======
->>>>>>> dev
 </mapper>
