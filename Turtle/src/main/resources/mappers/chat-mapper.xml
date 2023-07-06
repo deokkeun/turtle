@@ -21,11 +21,6 @@
 		<result property="memberName" column="MEMBER_NAME"/>
 	</resultMap>
 	
-	<resultMap type="chatRoomJoin" id="chatRoomJoin_rm">
-		<result property="pmNo" column="PM_NO"/>
-		<result property="chatRoomNo" column="CHATROOM_NO"/>
-	</resultMap>
-	
 	<!-- 채팅방 리스트 조회 -->
 	<select id="selectChatRoomList" resultMap="chatRoom_rm">
 		SELECT *
@@ -61,22 +56,6 @@
 	<insert id="insertMessage">
 		INSERT INTO CHAT_MESSAGE
 		VALUES(SEQ_CM_NO.NEXTVAL, #{chatMessage}, DEFAULT, #{chatRoomNo}, #{pmNo})
-	</insert>
-	
-	<!-- 채팅방 생성 -->
-	<insert id="insertChatRoom">
-		
-		<selectKey keyProperty="chatRoomNo" resultType="_int" order="BEFORE">
-			SELECT SEQ_CHATROOM_NO.NEXTVAL FROM DUAL
-		</selectKey>
-			INSERT INTO CHATROOM
-			VALUES (${chatRoomNo}, #{chatRoomTitle}, DEFAULT, ${projectNo}, ${chatRoomType})
-	</insert>
-	
-	<!-- 채팅방 조인 -->
-	<insert id="insertChatRoomJoin">
-		INSERT INTO CHATROOM_JOIN
-		VALUES (${chatRoomNo}, ${pmNo})
 	</insert>
 	
 </mapper>
