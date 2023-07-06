@@ -120,12 +120,42 @@
                     </div>
                 </div>
             </div>
-            <!-- 아래 -->
-            <div class="memoLi">
-                    <!-- 메모장 -->
-                <jsp:include page="/WEB-INF/views/workspace/memo.jsp" />
-            </div>
 
+            <!-- 아래 -->
+            <div class="apiLi">
+                <div class="card" style="width: 18rem;">
+                    <img src="${contextPath}/resources/images/main/Google_Maps-Logo.wine.svg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Google Map API</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="https://developers.google.com/maps?hl=ko" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="${contextPath}/resources/images/main/Google_Maps-Logo.wine.svg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Google Map API</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="https://developers.google.com/maps?hl=ko" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="${contextPath}/resources/images/main/Google_Maps-Logo.wine.svg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Google Map API</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="https://developers.google.com/maps?hl=ko" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="${contextPath}/resources/images/main/Google_Maps-Logo.wine.svg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Google Map API</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="https://developers.google.com/maps?hl=ko" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
         </div>
         
 
