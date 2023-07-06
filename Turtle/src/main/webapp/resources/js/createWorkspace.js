@@ -140,7 +140,10 @@ $(document).ready(function() {
 
     })
 
+setTimeout(function load() {
+    $('#load').css('display','block');
 
+},3000);
 
 /*이미지 클릭 시 SELECTED로 이동 */
 
@@ -188,31 +191,35 @@ $(document).ready(function() {
         console.log(arr1);
         console.log(arr2);
         console.log(arr3);
+       
 
-        $.ajax({
+          
 
-            url : "createTemplate",
-            data : {selected : arr1,
-                    workspace : arr2,
-                    wokrspaceName : arr3
-            },
-            traditional : true,
-            type : "POST",
-            success: function() {
-                console.log('전송성공');
+            $.ajax({
 
-            },
-            error : function(request, status, error) {
-        
-                console.log("ajax 에러발생");
-                console.log("상태코드 : " + request.status); // 404, 500
-            }
+                url : "createTemplate",
+                data : {selected : arr1,
+                        workspace : arr2,
+                        wokrspaceName : arr3
+                },
+                traditional : true,
+                type : "POST",
+                success: function() {
+                    console.log('전송성공');
+
+                },
+                error : function(request, status, error) {
+            
+                    console.log("ajax 에러발생");
+                    console.log("상태코드 : " + request.status); // 404, 500
+                }
+                
+            })
+
         })
 
 
-
-
-    });
+   
     
 
 });
