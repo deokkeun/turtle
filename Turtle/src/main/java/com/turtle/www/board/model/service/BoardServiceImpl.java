@@ -85,6 +85,13 @@ public class BoardServiceImpl implements BoardService {
 
 		return dao.updateEventDate(board);
 	}
+
+	// 이모지 업데이트 서비스 구현
+	@Override
+	public int updateEmoji(Board board) {
+
+		return dao.updateEmoji(board);
+	}
 	
 	
 	

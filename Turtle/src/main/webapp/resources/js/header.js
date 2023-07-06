@@ -2,8 +2,8 @@ selectAlertList();
 function selectAlertList() {    
     $.ajax({
         url : contextPath +"/alert/selectAlertList",
-        data : {"pmNo" : 4,
-                "projectNo" : 1,            
+        data : {"pmNo" : pmNo,
+                "projectNo" : projectNo,            
         },
         type : "get",
 

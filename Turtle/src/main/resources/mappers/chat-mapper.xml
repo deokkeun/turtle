@@ -58,4 +58,30 @@
 		VALUES(SEQ_CM_NO.NEXTVAL, #{chatMessage}, DEFAULT, #{chatRoomNo}, #{pmNo})
 	</insert>
 	
+<<<<<<< HEAD
+	<!-- 채팅방 생성 -->
+	<insert id="insertChatRoom">
+		
+		<selectKey keyProperty="chatRoomNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_CHATROOM_NO.NEXTVAL FROM DUAL
+		</selectKey>
+			INSERT INTO CHATROOM
+			VALUES (${chatRoomNo}, #{chatRoomTitle}, DEFAULT, ${projectNo}, ${chatRoomType})
+	</insert>
+	
+	<!-- 채팅방 조인 -->
+	<insert id="insertChatRoomJoin">
+		INSERT INTO CHATROOM_JOIN
+		VALUES (${chatRoomNo}, ${pmNo})
+	</insert>
+	
+	<!-- 공용 채팅방 리스트 번호 조회 -->
+	<select id="selectPublicChatRoomNoList" resultType="_int">
+		SELECT CHATROOM_NO
+		FROM CHATROOM
+		WHERE PROJECT_NO = ${projectNo} AND CHATROOM_ST = 'N' AND CHATROOM_TYPE IN (1, 2)
+	</select>
+	
+=======
+>>>>>>> dev
 </mapper>

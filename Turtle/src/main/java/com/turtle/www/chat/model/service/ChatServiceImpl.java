@@ -58,6 +58,13 @@ public class ChatServiceImpl implements ChatService {
 	}
 
 
+	// 공용 채팅방 번호 리스트 조회 서비스 구현
+	@Override
+	public List<Integer> selectPublicChatRoomNoList(int projectNo) {
+		return dao.selectPublicChatRoomNoList(projectNo);
+	}
+
+
 
 	
 	

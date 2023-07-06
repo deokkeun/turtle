@@ -42,6 +42,12 @@ public interface ChatService {
 	 */
 	int insertChatRoomJoin(ChatRoomJoin chatRoomJoin);
 
+	/** 공용 채팅방 번호 리스트 조회
+	 * @param projectNo
+	 * @return publicChatRoomList
+	 */
+	List<Integer> selectPublicChatRoomNoList(int projectNo);
+
 	
 
 

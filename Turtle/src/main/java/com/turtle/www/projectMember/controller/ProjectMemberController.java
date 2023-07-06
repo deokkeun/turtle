@@ -28,10 +28,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.google.gson.Gson;
+import com.turtle.www.chat.model.service.ChatService;
+import com.turtle.www.chat.model.vo.ChatRoom;
+import com.turtle.www.chat.model.vo.ChatRoomJoin;
 import com.turtle.www.member.model.vo.Member;
+import com.turtle.www.memo.model.service.MemoService;
+import com.turtle.www.memo.model.vo.Memo;
 import com.turtle.www.project.model.vo.Project;
 import com.turtle.www.projectMember.model.service.ProjectMemberService;
 import com.turtle.www.projectMember.model.vo.ProjectMember;
+import com.turtle.www.workspace.model.service.WorkspaceService;
+import com.turtle.www.workspace.model.vo.Workspace;
 
 @Controller
 @RequestMapping("/project")
@@ -42,6 +49,15 @@ public class ProjectMemberController {
 	
 	@Autowired
 	private ProjectMemberService service;
+	
+	@Autowired
+	private ChatService cService;
+	
+	@Autowired
+	private WorkspaceService wService;
+	
+	@Autowired
+	private MemoService mService;
 	
 	
 	// 초대코드 이메일 전송
@@ -182,7 +198,79 @@ public class ProjectMemberController {
 	    	
 	    	if (result > 0) {
 	    		logger.info("pm 삽입 성공");
-	    	}
+	    		// 민수
+	    		// 멤버 추가시 기존 공용 채팅방에 조인
+	    		// 1. 공용 채팅방 번호 확인
+	    		List<Integer> publicChatRoomNoList = cService.selectPublicChatRoomNoList(project.getProjectNo());
+	    		// 2. 각각의 공용 채팅방 번호 안에 pmNo 조인
+	    		for(int publicChatRoomNo : publicChatRoomNoList) {
+	    			ChatRoomJoin chatRoomJoin = new ChatRoomJoin();
+	    			chatRoomJoin.setChatRoomNo(publicChatRoomNo);
+	    			chatRoomJoin.setPmNo(pm.getPmNo());
+	    			
+	    			int joinResult = cService.insertChatRoomJoin(chatRoomJoin);
+	    			if(joinResult > 0) {
+						logger.info(pm.getPmNo() + "번 pm넘버 : " + publicChatRoomNo + "번 채팅방 초대 성공");
+					}
+	    		}	    			    		
+	    		// 개인 채팅방 생성
+	    		// 1. 프로젝트 내 pmNo 리스트 조회(수락멤버 제외)
+	    		List<Integer> pmNoList = service.selectPmNoList(project.getProjectNo());
+	    		for(int pmNo : pmNoList) {
+	    			if(pmNo != pm.getPmNo()) {
+	    				// 수락멤버가 아니면 개인 채팅방 생성
+	    				ChatRoom chatRoom = new ChatRoom();
+	    	    		chatRoom.setProjectNo(project.getProjectNo());
+	    	    		chatRoom.setChatRoomType(3);
+	    	    		
+	    	    		int chatResult = cService.insertChatRoom(chatRoom);
+	    	    		// 채팅방 생성 성공시 나와 프로젝트 멤버 채팅방 조인
+	    	    		if(chatResult > 0) {
+	    	    			// 수락한 사람 조인
+	    	    			ChatRoomJoin chatRoomJoin = new ChatRoomJoin();
+	    					chatRoomJoin.setChatRoomNo(chatResult);
+	    					chatRoomJoin.setPmNo(pm.getPmNo());
+	    					
+	    					int joinResult = cService.insertChatRoomJoin(chatRoomJoin);
+	    					if(joinResult > 0) {
+	    						logger.info( pm.getPmNo() + "번 pm넘버 : " + chatResult + "번 개인 채팅방 초대 성공");
+	    					}
+	    					
+	    					// 기존에 있던 사람 조인
+	    					ChatRoomJoin chatRoomJoin2 = new ChatRoomJoin();
+	    					chatRoomJoin2.setChatRoomNo(chatResult);
+	    					chatRoomJoin2.setPmNo(pmNo);
+	    					
+	    					int joinResult2 = cService.insertChatRoomJoin(chatRoomJoin2);
+	    					if(joinResult2 > 0) {
+	    						logger.info( pmNo + "번 pm넘버 : " + chatResult + "번 개인 채팅방 초대 성공");
+	    					}
+	    	    		}
+	    			}
+	    		}
+	    		
+	    		// 초대수락한 회원의 개인 메모장 생성
+	    		Memo memo = new Memo();
+	    		
+	    		// 워크스페이스 조회
+	    		List<Workspace> workspaceList = wService.selectWorkspaceList(project.getProjectNo());
+	    			
+    			for(Workspace workspace : workspaceList) {
+    				
+	    			memo.setWorkspaceNo(workspace.getWorkspaceNo());
+	    			memo.setPmNo(pm.getPmNo());
+	    			memo.setMemoType("personal");
+    			
+	    			int result1 = mService.insertMemo(memo);
+	    			if(result1 > 0) {
+	    				logger.info(workspace.getWorkspaceNo() + "번워크스페이스 : " + pm.getPmNo() +"회원의 첫번째 개인 메모장 생성");
+	    			}
+	    			int result2 = mService.insertMemo(memo);
+	    			if(result2 > 0) {
+	    				logger.info(workspace.getWorkspaceNo() + "번워크스페이스 : " + pm.getPmNo() +"회원의 두번째 개인 메모장 생성");
+	    			}
+    			}
+    		}
 	    	
 	    	// 경로 + 이미 있으면 삽입 x
 	    	

@@ -29,5 +29,13 @@ public class MemoServiceImpl implements MemoService {
 		return dao.updateMemo(memo);
 	}
 
+	// 워크스페이스 생성시 메모장 생성 서비스 구현
+	@Override
+	public int insertMemo(Memo memo) {
+
+		return dao.insertMemo(memo);
+	}
+
+	
 	
 }

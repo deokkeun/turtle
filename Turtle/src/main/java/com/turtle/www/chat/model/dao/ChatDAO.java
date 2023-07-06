@@ -89,6 +89,15 @@ public class ChatDAO {
 		return sqlSession.insert("chatMapper.insertChatRoomJoin", chatRoomJoin);
 	}
 
+	/** 공용 채팅방 번호 리스트 조회 dao
+	 * @param projectNo
+	 * @return publicChatRoomNoList
+	 */
+	public List<Integer> selectPublicChatRoomNoList(int projectNo) {
+
+		return sqlSession.selectList("chatMapper.selectPublicChatRoomNoList", projectNo);
+	}
+
 	
 
 
