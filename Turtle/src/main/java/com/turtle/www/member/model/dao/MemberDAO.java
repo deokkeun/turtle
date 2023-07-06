@@ -124,8 +124,16 @@ public class MemberDAO {
 	}
 
 
-	public int googleJoin(Member member) {
-		return sqlSession.insert("memberMapper.googleJoin", member);
+
+
+	public Member getMemberSocialEmail(String socialEmail) {
+		return sqlSession.selectOne("memberMapper.getMemberSocialEmail", socialEmail);
+	}
+
+
+	public void insertSocialMember(Member member) {
+		sqlSession.insert("memberMapper.insertSocialMember", member);
+		
 	}
 
 

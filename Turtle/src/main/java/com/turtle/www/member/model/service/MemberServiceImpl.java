@@ -287,10 +287,19 @@ public class MemberServiceImpl implements MemberService {
 
 
 	@Override
-	public int googleJoin(Member member) {
-		return dao.googleJoin(member);
+	public Member getMemberSocialEmail(String socialEmail) {
+		return dao.getMemberSocialEmail(socialEmail);
+	}
+
+
+
+	@Override
+	public void insertSocialMember(Member member) {
+		dao.insertSocialMember(member);
 		
 	}
+
+
 
 
 

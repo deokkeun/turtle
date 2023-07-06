@@ -62,7 +62,7 @@
         </section>
 
 
-        <a class="next-btn" href="createWorkspace">다음</a>
+        <a class="next-btn" href="common/main">다음</a>
     </main>
     
     <script>

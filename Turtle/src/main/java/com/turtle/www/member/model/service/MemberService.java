@@ -77,7 +77,10 @@ public interface MemberService {
 	 */
 	int paymentDateCheck(int memberNo);
 
-	int googleJoin(Member member);
+
+	Member getMemberSocialEmail(String socialEmail);
+
+	void insertSocialMember(Member member);
 
 
 	
