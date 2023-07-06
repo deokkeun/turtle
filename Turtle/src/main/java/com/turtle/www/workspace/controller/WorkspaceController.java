@@ -82,7 +82,7 @@ public class WorkspaceController {
 	@PostMapping("/createTemplate")
 	public void createTemplate(@ModelAttribute("project") Project project,
 						@ModelAttribute("loginMember") Member loginMember,
-//						@RequestParam(value="selected", required=false) List<String> selectEmail
+						@RequestParam(value="selected", required=false) String[] selected,
 						@RequestParam(value="workspace", required=false) String[] template,
 			            @RequestParam(value="wokrspaceName", required=false) String[] templateName) {
 		
@@ -91,6 +91,7 @@ public class WorkspaceController {
 		// 선택한 템플릿
 		System.out.print("template" + Arrays.asList(template)); // ex) [게시판, 캘린더, 스티커, 깃]
 		System.out.print("templateName" + Arrays.asList(templateName)); // 설정한 이름 ex) [공지사항, 일정표, 스티커 메모장, 깃 로드맵]
+		System.out.print("selected" + Arrays.asList(selected)); // 설정한 이름 ex) [공지사항, 일정표, 스티커 메모장, 깃 로드맵]
 		
 		// 선택한 템플릿 생성 구문
 		for(int i = 0; i < template.length; i++) {
@@ -98,65 +99,13 @@ public class WorkspaceController {
 			logger.info("template : " + template[i]);
 			logger.info("templateName : " + templateName[i]);
 			
-			if(template[i].equals("게시판")) {
-				
-				// 게시판 이름
-				String boardName = templateName[i];
-				
-				// 게시판 생성
-				
-			}
+			logger.info(selected[i]);
 			
-			if(template[i].equals("스티커")) {
-				
-				// 메모 이름
-				String memoName = templateName[i];
-				
-				// 메모 생성
-				
-			}
-			
-			if(template[i].equals("캘린더")) {
-				
-				// 캘린더 이름
-				String calendarName = templateName[i];
-				
-				// 캘린더 생성
-				
-			}
-			
-			if(template[i].equals("깃")) {
-				
-				// 깃 이름
-				String loadmapName = templateName[i];
-				
-				// 깃 생성
-				
-			}	
+
 		}	
 	}
 	
-	public void createBoard(@RequestParam(value="wokrspaceName", required=false) String[] templateName,
-							int workspaceNo
-			) {
-		
-		
-	}
-	
-	public void createCalendar(@RequestParam(value="wokrspaceName", required=false) String[] templateName,
-							int workspaceNo
-						) {
-		
-	}
-	
-	public void createMemo(@RequestParam(value="wokrspaceName", required=false) String[] templateName,
-							int workspaceNo) {
-		
-	}
-	public void createLoadmap(@RequestParam(value="wokrspaceName", required=false) String[] templateName,
-							int workspaceNo) {
-		
-	}
+
 	@GetMapping("/{projectNo}/{workspaceNo}")
 	public String enterWorkspace(@PathVariable("projectNo") int projectNo,
 									@PathVariable("workspaceNo") int workspaceNo,
