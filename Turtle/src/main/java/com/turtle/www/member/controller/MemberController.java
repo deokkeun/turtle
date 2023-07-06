@@ -1,8 +1,5 @@
 package com.turtle.www.member.controller;
 
-import java.io.IOException;
-import java.security.GeneralSecurityException;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,17 +7,10 @@ import javax.mail.internet.MimeMessage;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
@@ -29,16 +19,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.turtle.www.member.model.service.MemberService;
 import com.turtle.www.member.model.vo.Member;
@@ -132,9 +118,9 @@ public class MemberController {
 		
 	}
 	
-	
-//	@GetMapping("/callback")
-//	public String callback(@RequestParam("code") String code, HttpSession session, Model model) {
+//	
+////	@GetMapping("/callback")
+//	public String callback1(@RequestParam("code") String code, HttpSession session, Model model) {
 //	    try {
 //	        // 네이버 로그인 콜백 URL 처리를 위한 필요한 정보
 //	        String clientId = "aQpBvST4iYdjSLDbWXWl";
@@ -232,54 +218,54 @@ public class MemberController {
 //	    }
 //		return "redirect:/";
 //	}
-
-	
-	@RequestMapping(value="callback", method=RequestMethod.GET)
-	public String callBack(){
-		return "common/callback";
-	}
-	
-	@GetMapping("/callback")
-	public String callback(@RequestParam("code") String code, HttpSession session, Model model) {
-		String socialEmail = "";
-	    try {
-	        // 네이버 로그인 콜백 URL 처리를 위한 필요한 정보
-	        String clientId = "aQpBvST4iYdjSLDbWXWl";
-	        String clientSecret = "2DbK66epLO";
-	        String redirectUri = "http://localhost:8080/www/member/callback";
-
-	        // 네이버 API에 액세스 토큰 요청을 위한 URL 생성
-	        String tokenUrl = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&client_id="
-	                + clientId + "&client_secret=" + clientSecret + "&redirect_uri=" + redirectUri + "&code=" + code;
-
-	        // 액세스 토큰 요청을 위한 HTTP 요청 보내기
-	        RestTemplate restTemplate = new RestTemplate();
-	        HttpHeaders headers = new HttpHeaders();
-	        headers.setContentType(MediaType.APPLICATION_JSON);
-	        HttpEntity<String> entity = new HttpEntity<>(headers);
-	        ResponseEntity<String> response = restTemplate.exchange(tokenUrl, HttpMethod.GET, entity, String.class);
-
-	        if (response.getStatusCode() == HttpStatus.OK) {
-	            // 액세스 토큰 요청이 성공한 경우
-	            String responseBody = response.getBody();
-	            
-	            JsonNode jsonNode = new ObjectMapper().readTree(responseBody);
-	            String id = jsonNode.get("id").asText();
-	            socialEmail = "naver_" + id;
-	            logger.info("네이버 아이디 : " + socialEmail);
-	            
-	            // 응답 데이터 파싱하여 액세스 토큰 추출
-	            String accessToken = jsonNode.get("access_token").asText();
-	            logger.info("네이버 토큰 : " + accessToken);
-	            
-	        }
-	    } catch (Exception e) {
-	        logger.error("소셜 이메일을 가져오는데 예외가 발생하였습니다: " + e.getMessage());
-	        // 예외 처리 로직을 추가하거나 적절한 오류 처리를 수행하세요.
-	    }
-		return "redirect:/";
-	        
-	    }
+//
+//	
+//	@RequestMapping(value="callback", method=RequestMethod.GET)
+//	public String callBack(){
+//		return "common/callback";
+//	}
+//	
+//	@GetMapping("/callback")
+//	public String callback(@RequestParam("code") String code, HttpSession session, Model model) {
+//		String socialEmail = "";
+//	    try {
+//	        // 네이버 로그인 콜백 URL 처리를 위한 필요한 정보
+//	        String clientId = "aQpBvST4iYdjSLDbWXWl";
+//	        String clientSecret = "2DbK66epLO";
+//	        String redirectUri = "http://localhost:8080/www/member/callback";
+//
+//	        // 네이버 API에 액세스 토큰 요청을 위한 URL 생성
+//	        String tokenUrl = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&client_id="
+//	                + clientId + "&client_secret=" + clientSecret + "&redirect_uri=" + redirectUri + "&code=" + code;
+//
+//	        // 액세스 토큰 요청을 위한 HTTP 요청 보내기
+//	        RestTemplate restTemplate = new RestTemplate();
+//	        HttpHeaders headers = new HttpHeaders();
+//	        headers.setContentType(MediaType.APPLICATION_JSON);
+//	        HttpEntity<String> entity = new HttpEntity<>(headers);
+//	        ResponseEntity<String> response = restTemplate.exchange(tokenUrl, HttpMethod.GET, entity, String.class);
+//
+//	        if (response.getStatusCode() == HttpStatus.OK) {
+//	            // 액세스 토큰 요청이 성공한 경우
+//	            String responseBody = response.getBody();
+//	            
+//	            JsonNode jsonNode = new ObjectMapper().readTree(responseBody);
+//	            String id = jsonNode.get("id").asText();
+//	            socialEmail = "naver_" + id;
+//	            logger.info("네이버 아이디 : " + socialEmail);
+//	            
+//	            // 응답 데이터 파싱하여 액세스 토큰 추출
+//	            String accessToken = jsonNode.get("access_token").asText();
+//	            logger.info("네이버 토큰 : " + accessToken);
+//	            
+//	        }
+//	    } catch (Exception e) {
+//	        logger.error("소셜 이메일을 가져오는데 예외가 발생하였습니다: " + e.getMessage());
+//	        // 예외 처리 로직을 추가하거나 적절한 오류 처리를 수행하세요.
+//	    }
+//		return "redirect:/";
+//	        
+//	    }
 
 	
 	
