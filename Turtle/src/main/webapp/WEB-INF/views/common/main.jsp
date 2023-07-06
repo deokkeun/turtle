@@ -22,7 +22,9 @@
     <link href="${contextPath}/resources/favicon/apple-icon-60x60.png" rel="apple-touch-icon">
      <!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
-
+    <!-- 날씨 조회용 (bootstrap, jquery-ui) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" integrity="sha512-t4GWSVZO1eC8BM339Xd7Uphw5s17a86tIZIj8qRxhnKub6WoyhnrxeCIMeAqBPgdZGlCcG2PrZjMc+Wr78+5Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <title>Turtle</title>
    
 </head>
@@ -60,15 +62,38 @@
                         </section>
                     </div>
                 </div>
-                <div class="boardLi">
-                    <jsp:include page="/WEB-INF/views/board/boardList.jsp" />
+                <!-- 날씨 -->
+                <div class="weather">
+                    <div>
+
+                        <form action="#">
+                            <input type="hidden" id="datepicker" size="30" value="Date" style="padding:  5px 10px;">
+                            <button style="display: none;"></button>
+                        </form>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>날짜</th>
+                                    <th>시간</th>
+                                    <th>온도</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="3">조회 내용이 없습니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-            <!-- 아래-->
-            <div class="memoLi">
-                <!--  메모장 -->
+                <!-- 아래 -->
+                <div class="memoLi">
+                    <!-- 메모장 -->
                 <jsp:include page="/WEB-INF/views/workspace/memo.jsp" />
             </div>
+
         </div>
         
 
@@ -138,6 +163,7 @@
     <script src="${contextPath}/resources/js/chat.js"></script>
     <!-- fullcalendar -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
-
+    <!-- 날씨 조회용  -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </body>
 </html>
