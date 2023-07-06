@@ -1138,7 +1138,7 @@ h6 {
 
 /* ********************************** 캘린더 남은 일정 **************************** */
 #schedule-box {
-  width: 420px;
+  width: 100%;
   /* max-height: 180px; */
   border: 1px solid #eee;
   box-shadow: 3px 4px 5px 3px #d9d9d9;
@@ -1147,7 +1147,7 @@ h6 {
   background-color: white;
 }
 #schedule {
-  width: 410px;
+  /* width: 410px; */
   height: 150px;
   margin: 5px;
   padding: 10px;
@@ -1268,11 +1268,12 @@ h6 {
       /* border : 10px solid yellowgreen; */
     }
 
-  /* 게시판리스트 */
-  .boardLi {
+  /* 날씨 리스트 */
+  .weather {
     background-color: white;
     height: 340px;
     width:100%;
+    overflow-y: scroll;
     /* background-color: grey; */
     /* border: 1px solid grey; */
     border-radius: 5px;
