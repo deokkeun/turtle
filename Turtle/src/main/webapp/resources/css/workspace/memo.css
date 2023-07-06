@@ -71,8 +71,13 @@
 .profile-image > img {
 	width: 20px;
 	height: 20px;
+    border-radius: 8px;
 }
-
+.profile-image2 > img {
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+}
 .memoContent {
 	 /* display: flex; */
     /* flex-basis: 78%; */
