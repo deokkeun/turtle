@@ -169,7 +169,7 @@
                                                     <c:choose>
                                                         <c:when test="${empty memoUpdateDate}">
                                                             <div class="memoUpdateDate">수정일 : ${memoRegDate}</div>
-                                                        </c:when>
+                                                        </c:when> 
                                                         <c:otherwise>
                                                             <div class="memoUpdateDate">수정일 : ${memoUpdateDate}</div>
                                                         </c:otherwise>
