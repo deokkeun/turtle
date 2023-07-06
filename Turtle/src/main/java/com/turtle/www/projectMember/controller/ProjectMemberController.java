@@ -172,7 +172,7 @@ public class ProjectMemberController {
 	    
 	    int memberNo = service.selectMemberNo(memberEmail);
 	    
-	    String path = "redirect:/project/inviteForm";
+	    String path = "redirect:/";
 	    
 	    	ProjectMember pm = new ProjectMember();
 	    	pm.setProjectNo(project.getProjectNo());
