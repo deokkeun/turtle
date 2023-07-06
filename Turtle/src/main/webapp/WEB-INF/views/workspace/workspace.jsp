@@ -3,10 +3,11 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<!--
 <c:set var="memberName" value="${loginMember.memberName}" />
 <c:set var="profileImage" value="${loginMember.profileImage}"/>
 <c:set var="memberNo" value="${loginMember.memberNo}"/>
-
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,24 +30,14 @@
     <link href="${contextPath}/resources/favicon/apple-icon-60x60.png" rel="apple-touch-icon">
      <!-- fontawesome -->
 	<script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
-    <!--
-    <script>
-        const pmNo = "${pmNo}";
-    	const projectNo = "${projectNo}";
-    	const workspaceNo = "${workspaceNo}";
-    	const contextPath = "${contextPath}";
-    	const memberNo = "${memberNo}";
-    	let memberName = "${memberName}";
-    	let profileImage = "${profileImage}"; 
-    </script> -->
-    <title>워크스페이스창</title>
+
+    <title>Turtle</title>
 </head>
 <body>
     
 
     <!-- header include -->
-    
-    
+        
     <main id="main" class="main">
     <jsp:include page="/WEB-INF/views/common/header.jsp" />
         <div class="workspace-layout">
