@@ -86,7 +86,7 @@ public class WorkspaceController {
 		model.addAttribute(workspaceNo);
 		
 		// 민수
-		// 생성된 워크스페이스 채팅방 생성
+		// 생성된 워크스페이스가 로드맵이나 캘린더가 아닐 시 채팅방 생성
 		ChatRoom chatRoom = new ChatRoom();
 		chatRoom.setChatRoomTitle(workspaceName);
 		chatRoom.setProjectNo(project.getProjectNo());

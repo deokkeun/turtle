@@ -191,8 +191,8 @@ memoSock.onmessage = function(e){
 
 			// 수정 멤버 정보 변경
 			changedProfileImage.src = contextPath + memo.profileImg;
-			changedMemberName.innerHTML = memo.memberName;
-			changedMemoUpdateDate.innerHTML =  currentTime();
+			changedMemberName.innerHTML = "수정자 : " +  memo.memberName;
+			changedMemoUpdateDate.innerHTML = "수정일 : " + currentTime();
 			changedMemoContent.dataset.pmno = memo.pmNo;
 
 			// 수정 메모 내용 변경
@@ -260,3 +260,26 @@ memoContents.forEach((memoContent, index) => {
 		}
     });
 });
+
+
+
+// 시간설정
+function formatTimeAgo(timestamp) {
+    const currentDate = new Date();
+    //const alertDate = new Date(timestamp);
+	const alertDate = new Date(Date.parse(timestamp));
+  
+    const minutes = Math.floor((currentDate - alertDate) / 60000);
+  
+    if (minutes < 1) {
+      return "방금 전";
+    } else if (minutes < 60) {
+      return `${minutes}분 전`;
+    } else if (minutes < 1440) {
+      const hours = Math.floor(minutes / 60);
+      return `${hours}시간 전`;
+    } else {
+      const days = Math.floor(minutes / 1440);
+      return `${days}일 전`;
+    }
+}

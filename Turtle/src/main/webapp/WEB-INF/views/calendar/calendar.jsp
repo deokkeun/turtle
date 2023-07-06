@@ -60,11 +60,11 @@
 
         
         <!-- 캘린더 리스트 조회 -->
-        <input type="hidden" id="memberName" value="${loginMember.memberName}">
+        <!-- <input type="hidden" id="memberName" value="${loginMember.memberName}"> -->
         <input type="hidden" id="calendarList" value="${calendarList}">
         <input type="hidden" id="calNo" value="${calNo}">
         <!-- <input type="hidden" id="projectNo" value="${projectNo}"> -->
-        <input type="hidden" id="workspaceNo" value="${workspaceNo}">
+        <!-- <input type="hidden" id="workspaceNo" value="${workspaceNo}"> -->
         <input type="hidden" id="boardNo" value="${boardNo}">
           
         <!-- calendar -->
@@ -116,7 +116,7 @@
               <button id="deleteEvent-btn" onclick="deleteEvent()">삭제</button>
               <button id="updateEvent-btn" onclick="updateEvent()">수정</button>
               <button id="addEvent-btn" onclick="addEvent()">일정 추가</button>
-              <input type="hidden" id="memberNo" value="${loginMember.memberNo}">
+              <!-- <input type="hidden" id="memberNo" value="${loginMember.memberNo}"> -->
             </div> 
           </section>
           <!-- 일정 추가 모달 닫기 -->

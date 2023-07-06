@@ -68,6 +68,7 @@
   <img src="https://img.shields.io/badge/summernote-40AEF0?style=for-the-badge&logo=&logoColor=white">
   <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
   <img src="https://img.shields.io/badge/treeviz-9013FE?style=for-the-badge&logo=nodered&logoColor=white">
+  <img src="https://img.shields.io/badge/기상청(단기예보)-3693F3?style=for-the-badge&logo=icloud&logoColor=white">
   <br><br>
 </div>
 

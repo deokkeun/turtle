@@ -1,8 +1,5 @@
 package com.turtle.www.member.controller;
 
-import java.io.IOException;
-import java.security.GeneralSecurityException;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,7 +26,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -132,9 +128,9 @@ public class MemberController {
 		
 	}
 	
-	
-//	@GetMapping("/callback")
-//	public String callback(@RequestParam("code") String code, HttpSession session, Model model) {
+//	
+////	@GetMapping("/callback")
+//	public String callback1(@RequestParam("code") String code, HttpSession session, Model model) {
 //	    try {
 //	        // 네이버 로그인 콜백 URL 처리를 위한 필요한 정보
 //	        String clientId = "aQpBvST4iYdjSLDbWXWl";
@@ -280,6 +276,7 @@ public class MemberController {
 		return "redirect:/";
 	        
 	    }
+
 
 	
 	
