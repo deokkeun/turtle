@@ -1,6 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 
+<%@ page import="java.net.URLEncoder" %>
+<%@ page import="java.security.SecureRandom" %>
+<%@ page import="java.math.BigInteger" %>
+
+
+ <%
+    String clientId = "aQpBvST4iYdjSLDbWXWl";//애플리케이션 클라이언트 아이디값";
+    String redirectURI = URLEncoder.encode("http://localhost:8080/www/member/callback", "UTF-8");
+    SecureRandom random = new SecureRandom();
+    String state = new BigInteger(130, random).toString();
+    String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code"
+         + "&client_id=" + clientId
+         + "&redirect_uri=" + redirectURI
+         + "&state=" + state;
+    session.setAttribute("state", state);
+ %>
 
 <!-- ======= 최종작업용 Header ======= -->
 <header id="header" class="header fixed-top">
@@ -85,7 +101,7 @@
 <!-- 로그인 모달창 -->
 <section id="login-modal">
 	<!-- 구글 로그인 -->
-	<div id="g_id_onload"
+<!-- 	<div id="g_id_onload"
 	     data-client_id="713601013116-33sqneo96i1er8o2e6bs5a8o5522k2rq.apps.googleusercontent.com"
 	     data-context="signin"
 	     data-ux_mode="popup"
@@ -102,7 +118,9 @@
 	     data-locale="en-US"
 	     data-logo_alignment="center"
 	     data-width="300">
-	</div>
+	</div> -->
+	
+	<a href="<%=apiURL%>"><img height="50" src="http://static.nid.naver.com/oauth/small_g_in.PNG"/></a>
 	
 	<div class="login-divider">or</div>
 	<form action="${contextPath}/member/login" method="POST" onsubmit="return loginValidate()">

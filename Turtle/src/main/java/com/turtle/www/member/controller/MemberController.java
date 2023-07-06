@@ -129,40 +129,41 @@ public class MemberController {
 	}
 	
 	
-	@RequestMapping(value="/login/google")
-	public String googleLogin(String idtoken, Model model) throws GeneralSecurityException, IOException {
-		logger.info("구글 로그인");
-		
-		HttpTransport transport = Utils.getDefaultTransport();
-		JsonFactory jsonFactory = Utils.getDefaultJsonFactory();
-		
-		GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(transport, jsonFactory)
-				.setAudience(Collections.singletonList("713601013116-33sqneo96i1er8o2e6bs5a8o5522k2rq.apps.googleusercontent.com")).build();
-		
-		
-		GoogleIdToken idToken = verifier.verify(idtoken);
-		if (idToken != null) {
-			Payload payload = idToken.getPayload();
-			
-			if (((String) payload.get("email")).contains("false")) { //회원가입이 안 되어 있는 경우
-				Member member = new Member();
-				member.setMemberEmail((String) payload.get("email"));
-				member.setSocialEmail((String) payload.get("email"));
-				member.setMemberName((String) payload.get("given_name"));
-				member.setProfileImage((String) payload.get("picture"));
-				member.setAccessToken(idtoken);
-				
-				int result = service.googleJoin(member);
-			}//end if
-				
-			model.addAttribute("id", (String) payload.get("email"));
-				
-		} else { //유효하지 않은 토큰
-		}//end else
-			
-		return "redirect:/";
-	    
-	}//googleLogin
+//	@RequestMapping(value="/login/google")
+//	public String googleLogin(String idtoken, Model model) throws GeneralSecurityException, IOException {
+//		logger.info("구글 로그인");
+//		
+//		HttpTransport transport = Utils.getDefaultTransport();
+//		JsonFactory jsonFactory = Utils.getDefaultJsonFactory();
+//		
+//		GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(transport, jsonFactory)
+//				.setAudience(Collections.singletonList("713601013116-33sqneo96i1er8o2e6bs5a8o5522k2rq.apps.googleusercontent.com")).build();
+//		
+//		
+//		GoogleIdToken idToken = verifier.verify(idtoken);
+//		if (idToken != null) {
+//			Payload payload = idToken.getPayload();
+//			
+//			if (((String) payload.get("email")).contains("false")) { //회원가입이 안 되어 있는 경우
+//				Member member = new Member();
+//				member.setMemberEmail((String) payload.get("email"));
+//				member.setSocialEmail((String) payload.get("email"));
+//				member.setMemberName((String) payload.get("given_name"));
+//				member.setProfileImage((String) payload.get("picture"));
+//				member.setAccessToken(idtoken);
+//				
+//				int result = service.googleJoin(member);
+//			}//end if
+//				
+//			model.addAttribute("id", (String) payload.get("email"));
+//				
+//		} else { //유효하지 않은 토큰
+//		}
+//			
+//		return "redirect:/";
+//	    
+//	}
+	
 	
 	
 	/** 로그아웃
