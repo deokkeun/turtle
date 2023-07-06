@@ -40,7 +40,6 @@
         
     <main id="main" class="main">
     <jsp:include page="/WEB-INF/views/common/header.jsp" />
-       
             <!-- 게시판 영역 -->
             <div class="board-area">   	
                 <fmt:formatDate var="boardRegDate" value="${board.boardRegDate}" pattern="MM-dd HH:mm"/>
@@ -52,7 +51,7 @@
                             <button class="add-board-btn"><i class="fa-solid fa-plus"></i></button>
                         </div>
                         <div class="select-board-detail">
-                            <div class="boardTitle">
+                            <div class="boardListBoardTitle">
                             </div>
                         </div>
                         <div class="edit-boardTitle" style="visibility:hidden;">
@@ -63,10 +62,10 @@
                                 <span class="profile-image"></span>
                                 <span class="user-name"></span>
                             </div>
-                            <div class="eventDate">
-                                <div class="eventStartDate"></div>
+                            <div class="boardListEventDate">
+                                <div class="boardListEventStartDate"></div>
                                 <div></div>
-                                <div class="eventEndDate"></div>
+                                <div class="boardListEventEndDate"></div>
                             </div>						
                         </div>
                     <div class="delete-board" style="visibility:hidden;">
@@ -92,7 +91,7 @@
                             </div>
                             <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
                             <a onclick="toggleSide()" class="select-board-detail">
-                                <div class="boardTitle" contenteditable="false">
+                                <div class="boardListBoardTitle" contenteditable="false">
                                     ${board.boardTitle}
                                 </div>
                             </a>
@@ -111,10 +110,10 @@
                                 <div class="delete-board" style="visibility:hidden;">
                                     <button class="delete-board-btn"><i class="fa-solid fa-xmark"></i></button>
                                 </div>    	
-                                <div class="eventDate">
-                                    <div class="eventStartDate">${board.eventStartDate}</div>
+                                <div class="boardListEventDate">
+                                    <div class="boardListEventStartDate">${board.eventStartDate}</div>
                                     <div> - </div>
-                                    <div class="eventEndDate">${board.eventEndDate}</div>
+                                    <div class="boardListEventEndDate">${board.eventEndDate}</div>
                                 </div>
                                 </c:when>
                                 <c:otherwise>
@@ -125,10 +124,10 @@
                                 <div class="delete-board" style="visibility:hidden;">
                                     <button class="delete-board-btn"><i class="fa-solid fa-xmark"></i></button>
                                 </div>    	
-                                <div class="eventDate">
-                                    <div class="eventStartDate">${board.eventStartDate}</div>
+                                <div class="boardListEventDate">
+                                    <div class="boardListEventStartDate">${board.eventStartDate}</div>
                                     <div> - </div>
-                                    <div class="eventEndDate">${board.eventEndDate}</div>
+                                    <div class="boardListEventEndDate">${board.eventEndDate}</div>
                                 </div>
                                 </c:otherwise>
                             </c:choose>    							
@@ -235,55 +234,21 @@
 
      <!-- footer include -->
      <jsp:include page="/WEB-INF/views/common/footer.jsp" />
-     <!-- jQuery 라이브러리 추가 -->
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+     
      <!-- main.js 연결 -->
      <script src="${contextPath}/resources/js/main.js"></script>
       <!-- Vendor JS Files -->
  
      <!-- <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script> -->
      <!-- chat js -->
-     <script src="${contextPath}/resources/js/chat.js"></script>
-
-     <!--------------------------------------- sockjs를 이용한 WebSocket 구현을 위해 라이브러리 추가 ---------------------------------------------->
-	<!-- https://github.com/sockjs/sockjs-client -->
-	<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
-    <script>    
-   
-    	
-    	
-        // 로그인이 되어 있을 경우에만
-		// /memo 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
-		let memoSock = new SockJS(contextPath+"/memo");
-		// /boardList 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성		
-		// 게시글 수정용 sock
-		let boardListSock = new SockJS(contextPath+"/boardList");
-		// /insertBoard 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
-		// 게시글 추가용 sock
-		let insertBoardSock = new SockJS(contextPath+"/insertBoard");
-		// /deleteBoard 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
-		// 게시글 삭제용 sock
-		let deleteBoardSock = new SockJS(contextPath+"/deleteBoard");
-        // 이모지 수정용 sock
-        let updateEmojiSock = new SockJS(contextPath+"/updateEmoji");
-		// /updateBoardDetail 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
-		// 게시글 내용 수정용 sock
-		let updateBoardDetailSock = new SockJS(contextPath+"/updateBoardDetail");
-		// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
-		// 게시글 내용 추가용 sock
-		let insertBoardDetailSock = new SockJS(contextPath+"/insertBoardDetail");
-		// 게시글 내용 삭제용 sock
-		let deleteBoardDetailSock = new SockJS(contextPath+"/deleteBoardDetail");
-		// 이벤트 시간 생성용 sock
-        let updateEventDateSock = new SockJS(contextPath+"/updateEventDate");
-		// 알람용 sock
-        //let alertSock = new SockJS(contextPath+"/alert");
-    </script>
+    <!-- <script src="${contextPath}/resources/js/chat.js"></script> -->
 
     <!-- memo.js 연결 -->
     <script src="${contextPath}/resources/js/workspace/memo.js"></script>
     
     <!-- boardList.js 연결 -->
-    <script src="${contextPath}/resources/js/board/boardList.js"></script>    
+    <script src="${contextPath}/resources/js/board/boardList.js"></script>
+    
+    
 </body>
 </html>

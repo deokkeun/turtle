@@ -63,8 +63,9 @@ public class BoardController {
 	}
 	
 	// 게시글 상세조회
+	@ResponseBody
 	@GetMapping("/boardDetail/{projectNo}/{workspaceNo}/{boardNo}")
-	public String selectBoardDetail(@ModelAttribute("loginMember") Member loginMember,
+	public Map<String, Object> selectBoardDetail(@ModelAttribute("loginMember") Member loginMember,
 									Model model,
 									@PathVariable("projectNo") int projectNo,
 									@PathVariable("workspaceNo") int workspaceNo,
@@ -84,14 +85,15 @@ public class BoardController {
 		
 		List<BoardDetail> boardDetailList = service.selectBoardDetail(boardNo);
 		
-		model.addAttribute("board", board);
-		model.addAttribute("boardDetailList", boardDetailList);
-		model.addAttribute("projectNo", projectNo);		
-		model.addAttribute("workspaceNo", workspaceNo); // session에 올림
-		model.addAttribute("boardNo", boardNo); // session에 올림
-		model.addAttribute("pmNo", pmNo);
+		map.put("board", board);
+		map.put("boardDetailList", boardDetailList);
 		
-		return "board/boardDetail";
+		//model.addAttribute("projectNo", projectNo);		
+		//model.addAttribute("workspaceNo", workspaceNo); // session에 올림
+		model.addAttribute("boardNo", boardNo); // session에 올림
+		//model.addAttribute("pmNo", pmNo);
+		
+		return map;
 	}
 	
 	// 게시글 정렬 조회

@@ -1,5 +1,4 @@
-typing();
-titleTyping();
+
 $(document).on("mouseover", ".edit-boardDetail-area", function(){mouseover($(this))});
 $(document).on("mouseout", ".edit-boardDetail-area", function(){mouseout($(this))});
 $(document).on("click", ".add-boardDetail-btn", function(){addBoardDetailBtn($(this))});
@@ -36,6 +35,102 @@ $(document).on("click", ".summernote", function() {
 	});    
 });
 
+$(document).on("click", ".select-board-detail", function(){
+    let boardNo = $(this).parent().parent(".board").data("boardno");
+    $.ajax({
+        url : contextPath + "/board/boardDetail/" + projectNo + "/" + workspaceNo + "/" + boardNo,
+        type : "get",
+        dataType : "JSON",
+        success : function(map) {
+            // 게시글 정보 변경
+            $(".boardTitle").html(map.board.boardTitle);
+            $(".regMemberImage").attr("src", contextPath + map.board.regProfileImg);
+            $(".regMemberName").html(map.board.regMemberName);
+            $(".regDate").html(map.board.boardRegDate);
+
+            if (map.board.updateProfileImg != null) {
+                $(".updateMemberImage").attr("src", contextPath + map.board.updateProfileImg);
+                $(".updateMemberName").html(map.board.updateMemberName);
+            }
+            if (map.board.boardUpdateDate != null) {
+                $(".updateDate").html(map.board.boardUpdateDate);
+            }
+
+            $(".eventStartDate").val(map.board.eventStartDate);
+            $(".eventEndDate").val(map.board.eventEndDate);
+
+            $(".boardContent-area").html("");
+            // boardDetailList의 각 항목에 대해 반복
+            for (let item of map.boardDetailList) {
+                var boardDetailNo = item.boardDetailNo;
+                var boardDetailSort = item.boardDetailSort;
+                var boardContent = item.boardContent;
+                var profileImage = item.profileImage;
+
+                // 요소 생성
+                var editBoardDetailArea = $("<div>", {
+                    class: "edit-boardDetail-area",
+                    "data-boardDetailNo": boardDetailNo,
+                    "data-boardDetailSort": boardDetailSort
+                });
+
+                var addBoardDetail = $("<div>", {class: "add-boardDetail", style: "visibility:hidden;"
+                }).append(
+                    $("<button>", {class: "add-boardDetail-btn", text: "+"})
+                );
+
+                var boardDetail = $("<div>", {class: "boardDetail"
+                }).append(
+                    $("<div>", {class: "summernote", contenteditable: "true", html: boardContent})
+                );
+
+                var updateDetailMember = $("<div>", {class: "updateDetailMember", style: "visibility:hidden;"
+                }).append($("<img>", {class: "boardDetailProfileImage", src: contextPath + profileImage})
+                );
+
+                // 요소 추가
+                editBoardDetailArea.append(addBoardDetail, boardDetail, updateDetailMember);
+                $(".boardContent-area").append(editBoardDetailArea, $("<hr>"));
+            }
+            typing();
+            titleTyping();
+        },
+        error : function(request, status, error){
+            console.log("AJAX 에러 발생");
+            console.log("상태코드 : " + request.status); // 404, 500
+        }
+    });
+});
+
+deleteBoardDetailSock.onmessage = function(e) {
+    const deletedBoardDetail = JSON.parse(e.data);
+
+    let boardDetails = document.querySelectorAll(".edit-boardDetail-area");
+    boardDetails.forEach((boardDetail) => {
+        if(deletedBoardDetail.boardDetailNo == boardDetail.dataset.boarddetailno) {
+            boardDetail.nextElementSibling.remove();
+            boardDetail.remove();            
+        }
+    });
+    // 수정된 게시글 정보 변경
+    $(".updateMemberImage").attr("src", contextPath + deletedBoardDetail.profileImage);
+    $(".updateMemberName").html(deletedBoardDetail.memberName);
+    $(".updateDate").html(currentTime());
+
+    // 알림 웹소켓으로 보냄
+    let alert = {
+        "projectNo" : projectNo,
+        "memberNo" : memberNo,
+        "alertContent" : "님이 게시글을 수정하였습니다.",
+        "link" : contextPath + "/board/boardDetail/" + projectNo + "/" + workspaceNo + "/" + boardNo,
+        "memberName" : memberName
+    }
+
+    console.log(alert);
+    console.log(JSON.stringify(alert));
+
+    alertSock.send( JSON.stringify(alert) );
+}
 // 게시글 내용 변경 웹소켓
 updateBoardDetailSock.onmessage = function(e) {
     // 매개변수 e : 발생한 이벤트에 대한 정보를 담고있는 객체
@@ -159,7 +254,7 @@ insertBoardDetailSock.onmessage = function(e) {
 
     alertSock.send( JSON.stringify(alert) );
 }
-
+/*
 // 게시글 내용 삭제 웹소켓
 deleteBoardDetailSock.onmessage = function(e) {
     const deletedBoardDetail = JSON.parse(e.data);
@@ -190,7 +285,7 @@ deleteBoardDetailSock.onmessage = function(e) {
 
     alertSock.send( JSON.stringify(alert) );
 };
-
+*/
 
 // 이벤트 날짜 변경 웹소켓
 updateEventDateSock.onmessage = function(e) {
@@ -281,6 +376,7 @@ function typing() {
             clearTimeout(typingTimer);
         });
         boardDetail.addEventListener('keyup', function() {
+            console.log("타이핑");
             clearTimeout(typingTimer);
             
             typingTimer = setTimeout(function() {
