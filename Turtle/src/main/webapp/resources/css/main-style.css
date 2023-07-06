@@ -19,6 +19,7 @@ body {
   font-family: "Open Sans", sans-serif;
   background: #f6f9ff;
   color: #444444;
+  position: relative;
 }
 
 a {
@@ -44,9 +45,11 @@ h6 {
 # Main
 --------------------------------------------------------------*/
 #main {
+  height: 100%;
   margin-top: 60px;
   padding: 20px 30px;
   transition: all 0.3s;
+
 }
 
 @media (max-width: 1199px) {
@@ -933,9 +936,9 @@ h6 {
 .right-sidebar {
   position: fixed;
   top: 60px;
-  right: -300px;
+  right: -600px;
   bottom: 0;
-  width: 300px;
+  width: 600px;
   z-index: 996;
   transition: all 0.3s;
   padding: 20px;
@@ -1076,7 +1079,33 @@ h6 {
   
   
 }
-
+.chat-div {
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: #c9dbff;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 3px 3px 1px #666;
+  margin-left: auto;
+  position: sticky;
+  top: 92%;
+  opacity: 0.8;
+  
+}
+.chat-div:hover {
+  cursor: pointer;
+  box-shadow: none;
+  background-color: #c4caff;
+  .chat-btn {
+    color: white;
+  }
+}
+.chat-btn {
+  font-size: 20px;
+}
 
 
 /*--------------------------------------------------------------

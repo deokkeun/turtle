@@ -4,14 +4,19 @@ $(document).on("mouseout", ".board", function(){mouseout($(this))});
 $(document).on("click", ".edit-boardTitle-btn", function(){
     const value = $('.boardTitle').val();
     editBoardTitleBtn($(this));
+    $(this).parents('.edit-boardTitle').css('display', 'none');
 });
 
-$(document).on("click", ".emoji-area", function(){updateEmoji($(this))});
+$(document).on("click", ".emoji-area", function(){
+    updateEmoji($(this))
+
+});
 
 $(document).on('keydown', '.boardTitle', function(key) {
     if(key.keyCode == 13) {
         console.log('2');
         closeEditBoardTitleBtn($(this).parents('.select-board-detail').siblings('.edit-boardTitle').children('.close-edit-boardTitle-btn'));
+        $(this).parents('.select-board-detail').siblings('.edit-boardTitle').css('display','block');
     }
 })
 //$(document).on("click", ".close-edit-boardTitle-btn", function(){closeEditBoardTitleBtn($(this))});
@@ -114,9 +119,11 @@ insertBoardSock.onmessage = function(e) {
     addedEditBoardArea.appendChild(addedAddBoard);
     addedEditBoardArea.appendChild(addedEmoji);
     addedEditBoardArea.appendChild(addedScriptTag);
-
+    
+    
     const addedSelectBoardDetail = document.createElement('a');
-    addedSelectBoardDetail.href = '../../boardDetail/' + projectNo + '/' + workspaceNo + '/' + newBoard.boardNo;
+    addedSelectBoardDetail.onclick="toggleSide()";
+    // addedSelectBoardDetail.href = '../../boardDetail/' + projectNo + '/' + workspaceNo + '/' + newBoard.boardNo;
     addedSelectBoardDetail.classList.add('select-board-detail');
 
     const addedBoardTitle = document.createElement('div');
@@ -375,6 +382,7 @@ function mouseout(board) {
 
 // 제목수정버튼 클릭 함수
 function editBoardTitleBtn(editBoardTitleBtn) {
+    // $(editBoardTitleBtn).parent().siblings(".select-board-detail").removeAttr('href');
     $(editBoardTitleBtn).parent().siblings(".select-board-detail").removeAttr('href');
     $(editBoardTitleBtn).parent().siblings().find(".boardTitle").attr('contenteditable', 'true');
     $(editBoardTitleBtn).siblings(".close-edit-boardTitle-btn").css("display", "block"); 
@@ -385,7 +393,8 @@ function editBoardTitleBtn(editBoardTitleBtn) {
 function closeEditBoardTitleBtn(closeEditBoardTitleBtn) {
     let boardNo = $(closeEditBoardTitleBtn).parents(".board").data('boardno');   
 
-    $(closeEditBoardTitleBtn).parent().siblings(".select-board-detail").attr("href", "../../boardDetail/" + projectNo + '/' + workspaceNo + '/' + boardNo);
+    // $(closeEditBoardTitleBtn).parent().siblings(".select-board-detail").attr("href", "../../boardDetail/" + projectNo + '/' + workspaceNo + '/' + boardNo);
+    $(closeEditBoardTitleBtn).parent().siblings(".select-board-detail").attr("onclick", "toggleSide()");
     $(closeEditBoardTitleBtn).parent().siblings().find(".boardTitle").attr('contenteditable', 'false');
     $(closeEditBoardTitleBtn).css("display", "none");
     $(closeEditBoardTitleBtn).siblings(".edit-boardTitle-btn").css("display", "block");
@@ -571,9 +580,9 @@ for(let i=0; i<button4.length; i++) {
 
 function updateEmoji(emojiBtn) {
 
-    const picker3 = new EmojiButton({
+    let picker3 = new EmojiButton({
         position: 'bottom-start'
-        });
+    });
     picker3.togglePicker(emojiBtn);
         let boardNo = $(emojiBtn).parent().parent().parent(".board").data("boardno");
         console.log(boardNo);

@@ -186,6 +186,10 @@
         
         <a href="javascript:join()">채팅방</a>
      	
+        <form action="../board/boardList/${projectNo}/5" method="get">
+        	<button>게시판 테스트</button>
+        </form>
+       
        
 
     </main>
