@@ -191,8 +191,8 @@ memoSock.onmessage = function(e){
 
 			// 수정 멤버 정보 변경
 			changedProfileImage.src = contextPath + memo.profileImg;
-			changedMemberName.innerHTML = "수정자 : " + memo.memberName;
-			changedMemoUpdateDate.innerHTML =  "수정일 : " + "방금 전";
+			changedMemberName.innerHTML = "수정자 : " +  memo.memberName;
+			changedMemoUpdateDate.innerHTML = "수정일 : " + currentTime();
 			changedMemoContent.dataset.pmno = memo.pmNo;
 
 			// 수정 메모 내용 변경
