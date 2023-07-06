@@ -138,13 +138,30 @@ public class ProjectController {
 					int joinResult = cService.insertChatRoomJoin(chatRoomJoin);
 					if(joinResult > 0) {
 						logger.info(pmResult+ "번 pm넘버 : " + chatResult + "번 프로젝트 채팅방 초대 성공");
-					}
-					
-				}
-			
-			
-				
+					}					
+				}				
 			}
+			
+			// 프로젝트 생성후 로드맵, 캘린더 워크스페이스 생성
+			Workspace workspace1 = new Workspace();
+			workspace1.setProjectNo(project.getProjectNo());
+			workspace1.setWorkspaceName("loadmap");
+			int workspaceNo1 = wService.createWorkspace(workspace1);
+			if(workspaceNo1 > 0) {
+				logger.info("loadmap 워크스페이스 생성");
+			}
+			Workspace workspace2 = new Workspace();
+			workspace2.setProjectNo(project.getProjectNo());
+			workspace2.setWorkspaceName("calendar");
+			int workspaceNo2 = wService.createWorkspace(workspace2);
+			if(workspaceNo2 > 0) {
+				logger.info("calendar 워크스페이스 생성");
+			}
+			
+			
+			
+			// 워크스페이스 워크스페이스 이름
+			
 			
 		}else {
 			message = "프로젝트 생성에 실패하였습니다.";
