@@ -66,7 +66,8 @@
 						<i class="fa-regular fa-file"></i>	
 					</div>
 					<script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
-					<a href="../../boardDetail/${projectNo}/${workspaceNo}/${board.boardNo}" class="select-board-detail">
+					<!-- <a  href="../../boardDetail/${projectNo}/${workspaceNo}/${board.boardNo}" class="select-board-detail"> -->
+					<a onclick="toggleSide()" class="select-board-detail">
 						<div class="boardTitle" contenteditable="false">
 							${board.boardTitle}
 						</div>

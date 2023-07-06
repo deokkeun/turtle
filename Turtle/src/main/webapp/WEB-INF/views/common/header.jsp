@@ -357,7 +357,10 @@
   
  
 </aside>
-  
+<div class="chat-div">
+  <a class ="chat-btn" href="javascript:join()"><i class="fa-regular fa-comments"></i></a>
+</div>
+</body>
   
   <!-- <script src='${contextPath}/resources/js/chat.js'></script>  -->
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.js"></script>

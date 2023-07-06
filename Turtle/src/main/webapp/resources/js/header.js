@@ -153,3 +153,10 @@ alertSock.onmessage = function(e) {
     badgeNumber.innerText = ((Number)(badgeNumber.innerText) + 1);
     dropDownHeader.innerText = badgeNumber.innerText + "개의 새로운 알림이 있습니다";
 }
+function join() {
+    var url = contextPath + "/chat/chatRoomList/"+ projectNo;		
+    var title = "popup";
+    var status = "toolbar=no,scrollbars=no,resizable=yes,status=no,menubar=no,width=400,location=no, height=400, top=1000,left=1500"; 
+  
+  window.open(url,title,status); 
+};
