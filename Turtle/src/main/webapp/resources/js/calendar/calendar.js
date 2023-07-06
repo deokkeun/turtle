@@ -61,8 +61,8 @@ Element.prototype.setStyle = function(styles) {
 
 // ------------------------------------------------------------------------------------------
 
-const memberNo = document.getElementById("memberNo");
-const memberName = document.getElementById("memberName");
+// const memberNo = document.getElementById("memberNo");
+// const memberName = document.getElementById("memberName");
 var inputValue = document.querySelector(".inputValue");
 var startDate = document.querySelector(".startDate");
 var endDate = document.querySelector(".endDate");
@@ -79,7 +79,7 @@ $(".BgColor").click(function() {
 
 const calNo = document.getElementById("calNo");
 // const projectNo = document.getElementById("projectNo");
-const workspaceNo = document.getElementById("workspaceNo");
+// const workspaceNo = document.getElementById("workspaceNo");
 
 var calendar = null;
 
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
    
    console.log(projectNo);
-   console.log(workspaceNo.value);
+   console.log(workspaceNo);
    
 
    var all_events = null;
@@ -247,7 +247,7 @@ function padZero(number) {
               const updateEvent = {
                 "calNo" : info.event.id, // 일정 ID 번호
                 "pmNo" : projectNo,// 프로젝트 멤버 번호
-                "workspaceNo" : workspaceNo.value,// 워크스페이스 번호
+                "workspaceNo" : workspaceNo,// 워크스페이스 번호
                 "calTitle" : inputValue.value,// 캘린더 제목
                 "calContent" : textarea.value, // 캘린더 내용
                 "calColor" : BgColor,// 배경 색상
@@ -287,7 +287,7 @@ function padZero(number) {
               const deleteEvent = {
                 "calNo" : info.event.id, // 일정 ID 번호
                 "pmNo" : projectNo,// 프로젝트 멤버 번호
-                "workspaceNo" : workspaceNo.value,// 워크스페이스 번호
+                "workspaceNo" : workspaceNo,// 워크스페이스 번호
                 "calTitle" : info.event.title, // 일정 제목
                 "calSt" : "Y" // 일정 삭제 여부
               }
@@ -362,7 +362,7 @@ function padZero(number) {
 function loadingEvents() {
 
   $.ajax({
-    url: contextPath + '/calendar/calendar/' + projectNo + '/' + workspaceNo.value,
+    url: contextPath + '/calendar/calendar/' + projectNo + '/' + workspaceNo,
     data: {},
     type: 'POST',
     dataType: 'JSON',
@@ -395,7 +395,7 @@ function addEvent() {
  
     const addEvent = {
       "pmNo" : projectNo,// 프로젝트 멤버 번호
-      "workspaceNo" : workspaceNo.value,// 워크스페이스 번호
+      "workspaceNo" : workspaceNo,// 워크스페이스 번호
       "calTitle" : inputValue.value,// 캘린더 제목
       "calContent" : textarea.value, // 캘린더 내용
       "calColor" : BgColor,// 배경 색상
@@ -463,10 +463,10 @@ calendarSock.onmessage = function(e) {
     // 알람
     let calendarAlert = {
       "projectNo": projectNo,
-      "memberNo": memberNo.value,
+      "memberNo": memberNo,
       "alertContent": '님이 일정을 추가하였습니다.',
-      "link": contextPath + "/calendar/calendar/" + projectNo + "/" + workspaceNo.value,
-      "memberName" : memberName.value
+      "link": contextPath + "/calendar/calendar/" + projectNo + "/" + workspaceNo,
+      "memberName" : memberName
     };
 
     // 알람
@@ -480,10 +480,10 @@ calendarSock.onmessage = function(e) {
     // 알람
     let calendarAlert = {
       "projectNo": projectNo,
-      "memberNo": memberNo.value,
+      "memberNo": memberNo,
       "alertContent": '님이 일정을 수정하였습니다.',
-      "link": contextPath + "/calendar/calendar/" + projectNo + "/" + workspaceNo.value,
-      "memberName" : memberName.value
+      "link": contextPath + "/calendar/calendar/" + projectNo + "/" + workspaceNo,
+      "memberName" : memberName
     };
 
     // 알람
