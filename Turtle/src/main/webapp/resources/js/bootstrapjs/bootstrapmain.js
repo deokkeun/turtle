@@ -538,7 +538,7 @@ workspaceNavLink.addEventListener('click', function (event) {
 
 function toggleSidebar() {
   const sidebar = document.querySelector('.sidebar');
-  const arrow = document.querySelector('#arrow');
+  const arrow = documaent.querySelector('#arrow');
   const sidebarNav = document.querySelector('.sidebar-nav');
 
   sidebar.classList.toggle('collapsed');

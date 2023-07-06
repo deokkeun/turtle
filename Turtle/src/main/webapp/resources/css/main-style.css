@@ -362,7 +362,7 @@ h6 {
 
 @media (min-width: 1200px) {
   .logo {
-    width: 280px;
+    width: 0px;
   }
 }
 
@@ -974,9 +974,7 @@ h6 {
   margin-left: 20px;
 }
 
-.active {
-  display: block;
-}
+
 
 .sidebar-toggle2 {
   position: fixed;
@@ -1016,6 +1014,17 @@ h6 {
     
 
 }
+
+.sidebar-active {
+  transition: margin-right 0.3s ease;
+}
+
+.sidebar-visible {
+  display: block !important;
+  visibility: visible !important;
+}
+
+
 
  .delete-button{
 

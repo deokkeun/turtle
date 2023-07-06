@@ -29,10 +29,10 @@
 <body>
    
     <!-- header include -->
-    <jsp:include page="/WEB-INF/views/common/header.jsp" />
+    
     
     <main id="main" class="main" style="background-color: rgba(0, 0, 0, 0.03);">
-
+<jsp:include page="/WEB-INF/views/common/header.jsp" />
         
         <div class="main-layout">
             <!-- 위 -->
