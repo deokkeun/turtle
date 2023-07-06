@@ -24,13 +24,32 @@
     
     <script src="https://kit.fontawesome.com/0041fb1dcb.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    
+    <style>
+          /* 로딩페이지 */
+         #load {
+            width: 100%;
+            height: 100%;
+            top: 45%;
+            left: 0;
+            position: fixed;
+            display: none;
+            opacity: 0.8;
+            background: white;
+            z-index: 99;
+            text-align: center;       
+        } 
+    </style>
     
     <title>Document</title>
 </head>
 <body>
     <main>
     <jsp:include page="/WEB-INF/views/common/landing-header.jsp" />   
+      <!-- 로딩 -->
+    <div id="load">
+        <div><img id="loading-image" src="${contextPath}/resources/images/top버튼거북이2.png" width="150px"></div>
+        <div><img src="${contextPath}/resources/images/load.gif" width="100px"></div>
+    </div>    
     <section>
         <div>
             
@@ -41,7 +60,7 @@
             <i class="fa-solid fa-layer-group">워크스페이스 관리</i>
         </div>
         <!-- 워크스페이스 이름 입력 section -->
-        <form action="createWorkspace" method="post" enctype="multipart/form-data">
+        <form action="createWorkspace" method="post" enctype="multipart/form-data" onsubmit="load()">
             <div class="section2">
                 <p>워크스페이스명 입력</p>
                 <div>
@@ -266,6 +285,16 @@
         </form>
     </section>
     </main>
+     <!--loading 페이지-->
+    <!-- <script type="text/javascript">
+    $('.next-btn').on('click', function() {
+        setTimeout(function() {
+            $("#load").css('display','block')
+        },1000)
+       
+
+    }); -->
+    </script>
     <script src="${contextPath}/resources/js/createWorkspace.js"></script>
      <!-- Vendor JS Files -->	  
 	<script src="${contextPath}/resources/vendor/purecounter/purecounter_vanilla.js"></script>

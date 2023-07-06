@@ -245,12 +245,12 @@ const interbal = window.setInterval(function() {
 
 
 // 채팅창 팝업 (프로젝트 넘버는 나중에 변수 넣어서 바꿔주기)
-function join() {
-    var url = "../chat/chatRoomList/1";		
-    var title = "popup";
-    var status = "toolbar=no,scrollbars=no,resizable=yes,status=no,menubar=no,width=400,location=no, height=400, top=1000,left=1500"; 
+// function join() {
+//     var url = contextPath + "/chat/chatRoomList/"+ projectNo;		
+//     var title = "popup";
+//     var status = "toolbar=no,scrollbars=no,resizable=yes,status=no,menubar=no,width=400,location=no, height=400, top=1000,left=1500"; 
   
-  window.open(url,title,status); 
-};
+//   window.open(url,title,status); 
+// };
 
 

@@ -158,7 +158,6 @@ alertSock.onmessage = function(e) {
 }
 
 
-
 // 시간설정
 function formatTimeAgo(timestamp) {
     const currentDate = new Date();
@@ -178,3 +177,12 @@ function formatTimeAgo(timestamp) {
       return `${days}일 전`;
     }
 }
+
+function join() {
+    var url = contextPath + "/chat/chatRoomList/"+ projectNo;		
+    var title = "popup";
+    var status = "toolbar=no,scrollbars=no,resizable=yes,status=no,menubar=no,width=400,location=no, height=400, top=1000,left=1500"; 
+  
+  window.open(url,title,status); 
+};
+

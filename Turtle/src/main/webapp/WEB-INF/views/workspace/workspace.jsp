@@ -40,7 +40,7 @@
         
     <main id="main" class="main">
     <jsp:include page="/WEB-INF/views/common/header.jsp" />
-        <div class="workspace-layout">
+       
             <!-- 게시판 영역 -->
             <div class="board-area">   	
                 <fmt:formatDate var="boardRegDate" value="${board.boardRegDate}" pattern="MM-dd HH:mm"/>
@@ -91,7 +91,7 @@
                                 </c:choose>	
                             </div>
                             <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
-                            <a href="../../boardDetail/${projectNo}/${workspaceNo}/${board.boardNo}" class="select-board-detail">
+                            <a onclick="toggleSide()" class="select-board-detail">
                                 <div class="boardTitle" contenteditable="false">
                                     ${board.boardTitle}
                                 </div>
@@ -227,7 +227,7 @@
                 </c:forEach>
                 </div>
             </div>
-        </div>
+      
     </main>
     
     
@@ -282,6 +282,7 @@
 
     <!-- memo.js 연결 -->
     <script src="${contextPath}/resources/js/workspace/memo.js"></script>
+    
     <!-- boardList.js 연결 -->
     <script src="${contextPath}/resources/js/board/boardList.js"></script>    
 </body>
