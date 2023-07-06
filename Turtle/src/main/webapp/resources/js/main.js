@@ -23,8 +23,77 @@
 // }
 
 
-// 캘린더 메인페이지 내용 불러오기
+
 window.onload = function() {
+
+    // 날씨 정보 불러오기
+    $("#datepicker").datepicker({
+        dateFormat: "yymmdd",
+        minDate: "-1d",
+        maxDate: "d",
+    });
+    $( "#datepicker" ).datepicker( "setDate", new Date() );
+
+    let initDate = $("#datepicker").val();
+
+    $('form').submit(() => {
+        let tDate = $( "#datepicker" ).val();
+        weather(tDate);
+    })
+
+    // 날씨 조회 테이블 생성 함수
+    function weather(initDate) {
+        // 날씨 정보 가져오기
+        $.ajax({
+            url: `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=gp1xZJddqq9PaQBIydejkHibd8kVJ7YD8xKBXDqtqOOSJnvf0W5SQp92hkeTIgcVN6Molg7ZTeuGRBLxJjEuOw%3D%3D&pageNo=1&numOfRows=1000&dataType=JSON&base_date=${initDate}&base_time=0500&nx=61&ny=125`,
+            // data: "",
+            // type: "POST",
+            dataType: "JSON",
+            success: function(result) {
+                console.log(result);
+                let items = result.response.body.items.item;
+                
+                let filteredItems = items.filter(item => {
+                    return item.category == "TMP";
+                })
+                makeTable(filteredItems);
+            },
+            error: function() {
+                alert("error");
+            }
+        })
+    } // 날씨 조회 테이블 생성 함수
+    // 처음 한번 실행
+    weather(initDate);
+
+    function makeTable(src) {
+        let tableHTML = '';
+        src.forEach(item => {
+            
+            let icon = '';
+            if(item.fcstValue > 28) {
+                icon = '/resources/images/weather/sunny.svg';
+            } else if(item.fcstValue > 24) {
+                icon = '/resources/images/weather/clear-cloudy.svg';
+            } else if(item.fcstValue > 20) {
+                icon = '/resources/images/weather/partly-cloudy.svg';
+            } else if(item.fcstValue > 16) {
+                icon = '/resources/images/weather/cloudy.svg';
+            } else {
+                icon = '/resources/images/weather/mostly-cloudy.svg';
+            }
+
+            tableHTML += `
+            <tr>
+                <td>${item.fcstDate.substr(0,4)}년 ${item.fcstDate.substr(4,2)}월 ${item.fcstDate.substr(6,2)}일</td>
+                <td>${item.fcstTime.substr(0,2)}시</td>
+                <td>${item.fcstValue}℃</td>
+                <td><img src='${contextPath}${icon}'></td>
+            </tr>`
+        })
+        $('table tbody').html(tableHTML);
+    }
+
 
     // 메인페이지 들어오면 캘린더 남은 일정 불러오기
     $.ajax({
@@ -72,18 +141,6 @@ window.onload = function() {
         error: function() {
             alert("실행 안됨");
         }
-
-
-
-
-
-
-
-
-
-
-        
-
     })
 
 
@@ -133,7 +190,9 @@ window.onload = function() {
     //         console.error(error);
     //     }
     //   });
-}
+
+
+} // onload 종료
 
 
 
@@ -193,3 +252,5 @@ function join() {
   
   window.open(url,title,status); 
 };
+
+

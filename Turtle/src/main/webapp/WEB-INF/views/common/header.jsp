@@ -321,7 +321,7 @@
   </form>
 
     
-  <button class="sidebar-close-btn" onclick="toggleSidebar()"><i class="bi bi-chevron-double-right"></i></button>
+  
   <ul class="right-sidebar-nav" id="right-sidebar-nav">
  
     <li class="nav-item">

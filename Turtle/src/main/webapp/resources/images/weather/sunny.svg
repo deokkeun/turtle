@@ -1,0 +1,90 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M17.5 12C17.5 15.0376 15.0376 17.5 12 17.5C8.96243 17.5 6.5 15.0376 6.5 12C6.5 8.96243 8.96243 6.5 12 6.5C15.0376 6.5 17.5 8.96243 17.5 12Z" stroke="#231815" stroke-width="2"/>
+<g clip-path="url(#clip0_33_801)">
+<line x1="21" y1="12.5" x2="20" y2="12.5" stroke="#F25022" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g clip-path="url(#clip1_33_801)">
+<line x1="4" y1="12.5" x2="3" y2="12.5" stroke="#F25022" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g clip-path="url(#clip2_33_801)">
+<line x1="21" y1="12.5" x2="20" y2="12.5" stroke="#231815" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g clip-path="url(#clip3_33_801)">
+<line x1="4" y1="12.5" x2="3" y2="12.5" stroke="#231815" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g clip-path="url(#clip4_33_801)">
+<line x1="19.5442" y1="16.933" x2="18.6782" y2="16.433" stroke="#231815" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g clip-path="url(#clip5_33_801)">
+<line x1="4.82181" y1="8.43301" x2="3.95578" y2="7.93301" stroke="#231815" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g clip-path="url(#clip6_33_801)">
+<line x1="16.067" y1="20.0442" x2="15.567" y2="19.1782" stroke="#231815" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g clip-path="url(#clip7_33_801)">
+<line x1="7.56699" y1="5.3218" x2="7.06699" y2="4.45577" stroke="#231815" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g clip-path="url(#clip8_33_801)">
+<line x1="11.5" y1="21" x2="11.5" y2="20" stroke="#231815" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g clip-path="url(#clip9_33_801)">
+<line x1="11.5" y1="4" x2="11.5" y2="3" stroke="#231815" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g clip-path="url(#clip10_33_801)">
+<line x1="7.06699" y1="19.5442" x2="7.56699" y2="18.6782" stroke="#231815" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g clip-path="url(#clip11_33_801)">
+<line x1="15.567" y1="4.82179" x2="16.067" y2="3.95577" stroke="#231815" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g clip-path="url(#clip12_33_801)">
+<line x1="3.95578" y1="16.067" x2="4.8218" y2="15.567" stroke="#231815" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g clip-path="url(#clip13_33_801)">
+<line x1="18.6782" y1="7.56699" x2="19.5442" y2="7.06699" stroke="#231815" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="#FFB900"/>
+<defs>
+<clipPath id="clip0_33_801">
+<rect x="18.5" y="11" width="4" height="2" rx="1" fill="white"/>
+</clipPath>
+<clipPath id="clip1_33_801">
+<rect x="1.5" y="11" width="4" height="2" rx="1" fill="white"/>
+</clipPath>
+<clipPath id="clip2_33_801">
+<rect x="18.5" y="11" width="4" height="2" rx="1" fill="white"/>
+</clipPath>
+<clipPath id="clip3_33_801">
+<rect x="1.5" y="11" width="4" height="2" rx="1" fill="white"/>
+</clipPath>
+<clipPath id="clip4_33_801">
+<rect x="18.1292" y="14.384" width="4" height="2" rx="1" transform="rotate(30 18.1292 14.384)" fill="white"/>
+</clipPath>
+<clipPath id="clip5_33_801">
+<rect x="3.40674" y="5.88397" width="4" height="2" rx="1" transform="rotate(30 3.40674 5.88397)" fill="white"/>
+</clipPath>
+<clipPath id="clip6_33_801">
+<rect x="16.116" y="17.1292" width="4" height="2" rx="1" transform="rotate(60 16.116 17.1292)" fill="white"/>
+</clipPath>
+<clipPath id="clip7_33_801">
+<rect x="7.61603" y="2.40673" width="4" height="2" rx="1" transform="rotate(60 7.61603 2.40673)" fill="white"/>
+</clipPath>
+<clipPath id="clip8_33_801">
+<rect x="13" y="18.5" width="4" height="2" rx="1" transform="rotate(90 13 18.5)" fill="white"/>
+</clipPath>
+<clipPath id="clip9_33_801">
+<rect x="13" y="1.5" width="4" height="2" rx="1" transform="rotate(90 13 1.5)" fill="white"/>
+</clipPath>
+<clipPath id="clip10_33_801">
+<rect x="9.61603" y="18.1292" width="4" height="2" rx="1" transform="rotate(120 9.61603 18.1292)" fill="white"/>
+</clipPath>
+<clipPath id="clip11_33_801">
+<rect x="18.116" y="3.40673" width="4" height="2" rx="1" transform="rotate(120 18.116 3.40673)" fill="white"/>
+</clipPath>
+<clipPath id="clip12_33_801">
+<rect x="6.87085" y="16.116" width="4" height="2" rx="1" transform="rotate(150 6.87085 16.116)" fill="white"/>
+</clipPath>
+<clipPath id="clip13_33_801">
+<rect x="21.5933" y="7.61603" width="4" height="2" rx="1" transform="rotate(150 21.5933 7.61603)" fill="white"/>
+</clipPath>
+</defs>
+</svg>

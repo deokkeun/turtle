@@ -17,10 +17,10 @@
 <body id="body">
 
 	<!-- header include -->
-	<jsp:include page="/WEB-INF/views/common/header.jsp" />
+	
 
     <main id="main" class="main">
-
+<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
         <!-- <input type="hidden" id="projectNo" value="1"> -->
 
