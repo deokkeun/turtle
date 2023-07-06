@@ -45,13 +45,14 @@ h6 {
 --------------------------------------------------------------*/
 #main {
   margin-top: 60px;
-  padding: 20px 30px;
+  /* padding: 20px 30px; */
+  padding: 0;
   transition: all 0.3s;
 }
 
 @media (max-width: 1199px) {
   #main {
-    padding: 20px;
+    padding: 0px;
   }
 }
 
@@ -604,7 +605,7 @@ h6 {
     top: 60px;
     left: 0;
     bottom: 0;
-    width: 600px;
+    width: 300px;
     z-index: 996;
     transition: all 0.3s;
     padding: 20px;
@@ -1148,6 +1149,7 @@ h6 {
 /* ********************************** 캘린더 남은 일정 **************************** */
 #schedule-box {
   width: 100%;
+  margin-left: 20px;
   /* max-height: 180px; */
   border: 1px solid #eee;
   box-shadow: 3px 4px 5px 3px #d9d9d9;
@@ -1157,7 +1159,7 @@ h6 {
 }
 #schedule {
   /* width: 410px; */
-  height: 150px;
+  height: 200px;
   margin: 5px;
   padding: 10px;
   border-radius: 5px;
@@ -1165,8 +1167,9 @@ h6 {
   overflow-y: scroll;
 }
 .emptySchedule {
-  color: black;
-  text-align: center;
+  font-size: 21.33px;
+  margin: 70px;
+  color: rgba(0, 0, 0, 0.5);
 }
 #schedule-title {
   font-size: 16px;
@@ -1177,10 +1180,16 @@ h6 {
 .calTitle {
   width: 150px;
   overflow: hidden;
-  font-size: 14px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  padding: 5px;
 }
 .calDate {
-  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
 }
 .jb-title {
   display: flex;
@@ -1231,8 +1240,8 @@ h6 {
   position: absolute;
   justify-content: center;
   align-items: center;
-  left: 30px;
-  bottom: -25px;
+  left: 50px;
+  bottom: -30px;
 }
 #projectTitle-content-title {
   width: 100%;
@@ -1245,7 +1254,7 @@ h6 {
   background-color: transparent;
   text-align: middle;
   padding-top: 5px;
-  margin-left: 20px;
+  margin-left: 25px;
 }
 
 /* 중간(시계,d-day,게시판리스트) */
@@ -1257,14 +1266,15 @@ h6 {
   .watch-N-dDay{
     display: flex;
     flex-direction: column;
+    flex-basis: 40%;
   }
 
     /* 시계 */
     .watch {
       display: flex;
-      flex-basis: 40%;
+      flex-basis: 20%;
       /* background-color:darkgreen; */
-      width: 410px;
+      width: 100%;
       /* border: 10px solid lightcoral; */
     }
 
@@ -1272,35 +1282,38 @@ h6 {
     .d-day{
       display:flex;
       height: 620px; 
-      flex-basis: 70%;
+      flex-basis: 80%;
       /* background-color:yellowgreen; */
       /* border : 10px solid yellowgreen; */
     }
 
   /* 날씨 리스트 */
   .weather {
+    flex-basis: 60%;
     background-color: white;
     height: 340px;
     width:100%;
     overflow-y: scroll;
     /* background-color: grey; */
     /* border: 1px solid grey; */
-    border-radius: 5px;
     padding: 30px;
-    margin-left: 20px;
-    box-shadow: 0 5px 30px 0 rgba(82, 63, 105, 0.2);
+    margin: 0px 20px;
+    border: 1px solid #eee;
+    box-shadow: 3px 4px 5px 3px #d9d9d9;
+    border-radius: 10px;
     
   }
 
 /* 아래 (메모장) */
-/* .memoLi {
+.memoLi {
   background-color: white;
-  padding-top: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px; 
-  display: flex;
-  flex-basis: 30%;
+  /* padding-top: 10px; */
+  /* margin-top: 20px; */
+  /* margin-bottom: 20px;  */
+  /* display: flex;
+  flex-basis: 30%; */
   height: 320px;
-  width: 100%;
-  background-color: yellow;
-} */
+  width: 97%;
+  margin: 20px;
+  /* background-color: yellow; */
+}
