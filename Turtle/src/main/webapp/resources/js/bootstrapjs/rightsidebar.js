@@ -10,6 +10,7 @@ function toggleSubMenu(id) {
   subMenu.classList.toggle("active");
 }
 
+//rightsidebar 열고 닫기 기능 
 var mainToggleButton = document.getElementById('toggleButton');
 var rightSidebar = document.getElementById('rightSidebar');
 var main = document.getElementById('main');
@@ -18,22 +19,42 @@ mainToggleButton.addEventListener('click', function() {
   rightSidebar.classList.toggle('active');
   main.classList.toggle('sidebar-active');
 
-  if (rightSidebar.classList.contains('active')) {
-    main.style.marginRight = '600px';
-  } else {
-    main.style.marginRight = '0';
+});
+
+document.addEventListener('click', function(event) {
+  var sidebar = document.getElementById('rightSidebar');
+  var toggleButton = document.getElementById('toggleButton');
+  
+  if (sidebar.classList.contains('sidebar-visible') && !toggleButton.contains(event.target) && !sidebar.contains(event.target)) {
+    // 오른쪽 사이드바가 열려 있고 토글 버튼과 사이드바 외의 영역을 클릭하면 사이드바 닫기
+    sidebar.classList.remove('sidebar-visible');
+    main.classList.remove('sidebar-active');
+    main.style.marginRight = '0px';
   }
 });
 
+// 초기 로드 시 우측 사이드바 상태에 따라 마진 라이트 값을 설정
+window.addEventListener('DOMContentLoaded', function() {
+  var sidebar = document.getElementById('rightSidebar');
+  
+  if (sidebar.classList.contains('active')) {
+    main.style.marginRight = '300px';
+  } else {
+    main.style.marginRight = '0px';
+  }
+});
+
+var mainToggleButton = document.getElementById('toggleButton');
+var main = document.getElementById('main');
+
+mainToggleButton.addEventListener('click', function() {
+  main.style.marginRight = main.style.marginRight === '300px' ? '0px' : '300px';
+});
 function toggleSidebar() {
   var sidebar = document.getElementById('rightSidebar');
   sidebar.classList.toggle('sidebar-visible');
 }
 
-function toggleSubMenu(id) {
-  var subMenu = document.getElementById(id);
-  subMenu.classList.toggle("active");
-}
 // createElement로 li생성후 ajax로 chatRoomList를 불러와서 append해주기
 
 
