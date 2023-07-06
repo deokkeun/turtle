@@ -234,7 +234,7 @@ public class MemberController {
 //	}
 
 	
-	@RequestMapping(value="callback", method=RequestMethod.GET)
+	@GetMapping("/callback")
 	public String callBack(){
 		return "common/callback";
 	}
