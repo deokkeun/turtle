@@ -150,7 +150,8 @@ public class WorkspaceController {
 		}
 		
 		
-		return "redirect:/project/" + project.getProjectNo();
+//		return "redirect:/project/" + project.getProjectNo();
+		return "redirect:/project/inviteMember";
 		
 		
 	}

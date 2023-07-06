@@ -113,7 +113,7 @@ public class ProjectMemberController {
 				logger.info(toMail);
 				
 			    String acceptLink = "http://localhost:8080/www/project/inviteMember/" + toMail + "/" + inviteCode + "/accept";
-			    String rejectLink = "http://localhost:8080/project/inviteMember/" + toMail + "/" + inviteCode + "/reject";
+			    String rejectLink = "http://localhost:8080/www/project/inviteMember/" + toMail + "/" + inviteCode + "/reject";
 			    String acceptButton = "<a href=\"" + acceptLink + "\">수락</a>";
 			    String rejectButton = "<a href=\"" + rejectLink + "\">거절</a>";
 				
@@ -161,16 +161,19 @@ public class ProjectMemberController {
 
 	
 	@GetMapping("/inviteMember/{memberEmail}/{inviteCode}/accept")
-	public void acceptInvitation(HttpSession session,  @PathVariable("memberEmail") String memberEmail,
+	public String acceptInvitation(HttpSession session,  @PathVariable("memberEmail") String memberEmail,
+			@PathVariable("inviteCode") String inviteCode,
             Model model) { 
 		
-	    Project project = (Project) session.getAttribute("project");
-		acceptPostInvitation(project.getInviteCode(), memberEmail, session, model);
+		acceptPostInvitation(inviteCode, memberEmail, session, model);
+		
+		return "project/acceptForm";
+		
 		
 	}
 	
 	@PostMapping("/inviteMember/{memberEmail}/{inviteCode}/accept")
-	public String acceptPostInvitation(@PathVariable("inviteCode") String inviteCode,
+	public void acceptPostInvitation(@PathVariable("inviteCode") String inviteCode,
 	                               @PathVariable("memberEmail") String memberEmail,
 	                               HttpSession session, Model model) {
 	    logger.info("초대메일 수락");
@@ -188,7 +191,6 @@ public class ProjectMemberController {
 	    
 	    int memberNo = service.selectMemberNo(memberEmail);
 	    
-	    String path = "redirect:/";
 	    
 	    	ProjectMember pm = new ProjectMember();
 	    	pm.setProjectNo(project.getProjectNo());
@@ -273,26 +275,33 @@ public class ProjectMemberController {
     		}
 	    	
 	    	// 경로 + 이미 있으면 삽입 x
-	    	
-	    return path; 
 	    
+	}
+	
+	
+	@GetMapping("/inviteMember/{memberEmail}/{inviteCode}/reject")
+	public String rejectInvitation(HttpSession session,  @PathVariable("memberEmail") String memberEmail,
+			@PathVariable("inviteCode") String inviteCode,
+            Model model) { 
+		
+		rejectPostInvitation(inviteCode, memberEmail, session);
+		
+		return "project/rejectForm";
+		
+		
 	}
 
 
-	@GetMapping("/inviteMember/{memberEmail}/{inviteCode}/reject")
-	public String rejectInvitation(@PathVariable("inviteCode") String inviteCode,
+	@PostMapping("/inviteMember/{memberEmail}/{inviteCode}/reject")
+	public void rejectPostInvitation(@PathVariable("inviteCode") String inviteCode,
 								@PathVariable("memberEmail") String memberEmail,
 								HttpSession session) {
 		
 		logger.info("초대메일 거절");
-	    // 초대 거절 동작 처리
-	    // invitationId를 사용하여 해당 초대를 거절 처리합니다.
-	    
-	    // 거절 처리 후 필요한 동작 수행
-		// 거절하면 project 관리자한테 메일
+		
+
 		
 	    
-	    return "redirect:/";
 	}
 
 

@@ -21,6 +21,8 @@ public class Member {
 	
 	private String socialEmail; // 소셜 아이디
 	private String accessToken;
+	private String isSocialMember;
+	
 
 
 }

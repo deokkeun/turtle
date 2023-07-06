@@ -15,6 +15,7 @@
 		<result property="memberDeleteFG" column="MEMBER_DELETE_FG"/>
 		<result property="sociaEmail" column="SOCIAL_EMAIL"/>
 		<result property="accessToken" column="SOCIAL_TOKEN"/>
+		<result property="isSocialMember" column="IS_SOCIAL_MEMBER"/>
 		
 	</resultMap>
 	
@@ -51,7 +52,7 @@
 			NULL,
 			DEFAULT,
 			'/resources/images/memberProfile/member.png',
-			DEFAULT, NULL
+			DEFAULT, NULL, NULL, DEFAULT
 	)
 	</insert>
 
@@ -134,19 +135,33 @@
 	</select>
 
 
-	<!-- 구글 회원가입 -->
-	<insert id="googleJoin" parameterType="member">
+	<!-- 로그인(회원정보 가져오기) 프로필 이미지 추가하기 -->
+	<select id="getMemberSocialEmail" parameterType="string" resultMap="member_rm">
+		SELECT MEMBER_NO, MEMBER_EMAIL, MEMBER_NAME, PROFILE_IMG,
+		TO_CHAR(ENROLL_DATE, 'YYYY-MM-DD HH24:MI:SS') AS ENROLL_DATE, MEMBER_PW,
+		SOCIAL_EMAIL, SOCIAL_TOKEN
+		FROM MEMBER
+		WHERE SOCIAL_EMAIL = #{socialEmail}
+		AND MEMBER_DELETE_FG = 'N'
+		AND IS_SOCIAL_MEMBER = 1
+	</select>
+
+
+	<insert id="insertSocialMember" parameterType="member">
 		INSERT INTO MEMBER VALUES(
 			SEQ_MEMBER_NO.NEXTVAL,
-			#{memberEmail},
-			'0',
+			NULL,
+			NULL,
 			#{memberName},
 			NULL,
+			DEFAULT,
 			#{profileImage},
-			DEFAULT, #{socialEmail}, #{accessToken}
+			DEFAULT, 
+			#{socialEmail}, 
+			#{accessToken}, 
+			'1'
 	)
 	</insert>
-
 	
 
 </mapper>

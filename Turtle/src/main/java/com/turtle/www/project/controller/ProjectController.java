@@ -112,7 +112,8 @@ public class ProjectController {
 		String path = null;
 		
 		if(result > 0) { // 프로젝트 생성 성공
-			path = "project/inviteMember";
+			path = "project/createWorkspace";
+			
 			session.setAttribute("project", project);
 			logger.info("pm manager 삽입 성공");
 			int pmResult = service.insertPmManager(pm);
