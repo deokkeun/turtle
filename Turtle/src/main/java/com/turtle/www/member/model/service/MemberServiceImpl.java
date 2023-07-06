@@ -286,21 +286,32 @@ public class MemberServiceImpl implements MemberService {
 
 
 
+
 	@Override
-	public Member getMemberSocialEmail(String socialEmail) {
-		return dao.getMemberSocialEmail(socialEmail);
+	public int checkNaverFl(String email) {
+		return dao.checkNaverFl(email);
+	}
+
+	@Override
+	public int naverSignUp(Map<String, Object> map) {
+		return dao.naverSignUp(map);
+	}
+
+	@Override
+	public Member getMember(int memberNo) {
+		return dao.getMember(memberNo);
+	}
+
+	@Override
+	public int changeToken(Map<String, Object> map) {
+		return dao.changeToken(map);
 	}
 
 
-
 	@Override
-	public void insertSocialMember(Member member) {
-		dao.insertSocialMember(member);
-		
+	public int emailCheckForNaver(String email) {
+		return dao.emailCheckForNaver(email);
 	}
-
-
-
 
 
 	
