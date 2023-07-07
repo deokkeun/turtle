@@ -649,6 +649,7 @@ section {
     .section-header h2 {
         margin: 0 auto;
         font-size: 13px;
+        line-height: 1.7;
     }
   
     .recent-blog-posts > .container > .w-100 >
