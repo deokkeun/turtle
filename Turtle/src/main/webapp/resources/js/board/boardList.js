@@ -1,8 +1,8 @@
-typing();
-$(document).on("mouseover", ".board", function(){mouseover($(this))});
-$(document).on("mouseout", ".board", function(){mouseout($(this))});
+boardListTyping();
+$(document).on("mouseover", ".board", function(){boardListmouseover($(this))});
+$(document).on("mouseout", ".board", function(){boardListmouseout($(this))});
 $(document).on("click", ".edit-boardTitle-btn", function(){
-    const value = $('.boardTitle').val();
+    const value = $('.boardListBoardTitle').val();
     editBoardTitleBtn($(this));
     $(this).parents('.edit-boardTitle').css('display', 'none');
 
@@ -13,7 +13,7 @@ $(document).on("click", ".emoji-area", function(){
 
 });
 
-$(document).on('keydown', '.boardTitle', function(key) {
+$(document).on('keydown', '.boardListBoardTitle', function(key) {
     if(key.keyCode == 13) {
         console.log('2');
         closeEditBoardTitleBtn($(this).parents('.select-board-detail').siblings('.edit-boardTitle').children('.close-edit-boardTitle-btn'));
@@ -35,8 +35,8 @@ $(document).on("click", ".add-board-btn", function(){
 });
 $(document).on("click", ".delete-board-btn", function(){deleteBoardBtn($(this))});
 $(document).on("click", ".edit-boardTitle-btn", function() {
-    var value = $('.boardTitle').text();
-    $(this).parents('.edit-boardTitle').siblings('.select-board-detail').children('.boardTitle').focus().val('').val(value);
+    var value = $('.boardListBoardTitle').text();
+    $(this).parents('.edit-boardTitle').siblings('.select-board-detail').children('.boardListBoardTitle').focus().val('').val(value);
     
     
 }) 
@@ -55,7 +55,7 @@ boardListSock.onmessage = function(e) {
     boards = document.querySelectorAll(".board");
     boards.forEach((board) => {
 
-        const changedBoardTitle = board.querySelector(".boardTitle");
+        const changedBoardTitle = board.querySelector(".boardListBoardTitle");
         const changedProfileImage = board.querySelector(".profile-image > img");
 
         if(changedBoard.boardNo == board.dataset.boardno) {
@@ -180,19 +180,19 @@ insertBoardSock.onmessage = function(e) {
     addedUserProfile.appendChild(addedProfileImage);
     addedUserProfile.appendChild(addedUserName);
 
-    const addedEventDate = document.createElement('div');
-    addedEventDate.classList.add('eventDate');
+    const addedBoardListEventDate = document.createElement('div');
+    addedBoardListEventDate.classList.add('boardListEventDate');
 
-    const addedEventStartDate = document.createElement('div');
-    addedEventStartDate.classList.add('eventStartDate');
-    addedEventStartDate.textContent = newBoard.eventStartDate;
+    const addedBoardListEventStartDate = document.createElement('div');
+    addedBoardListEventStartDate.classList.add('boardListEventStartDate');
+    addedBoardListEventStartDate.textContent = newBoard.eventStartDate;
 
     const addedBetweenEventDate = document.createElement('div');
     addedBetweenEventDate.textContent = ' - ';
 
-    const addedEventEndDate = document.createElement('div');
-    addedEventEndDate.classList.add('eventEndDate');
-    addedEventEndDate.textContent = newBoard.eventEndDate;
+    const addedBoardListEventEndDate = document.createElement('div');
+    addedBoardListEventEndDate.classList.add('boardListEventEndDate');
+    addedBoardListEventEndDate.textContent = newBoard.eventEndDate;
 
     const addedDropBoard = document.createElement('div');
     addedDropBoard.classList.add('delete-board');
@@ -203,13 +203,13 @@ insertBoardSock.onmessage = function(e) {
     addedDeleteBoardBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
 
 
-    addedEventDate.appendChild(addedEventStartDate);
-    addedEventDate.appendChild(addedBetweenEventDate);
-    addedEventDate.appendChild(addedEventEndDate);
+    addedBoardListEventDate.appendChild(addedBoardListEventStartDate);
+    addedBoardListEventDate.appendChild(addedBetweenEventDate);
+    addedBoardListEventDate.appendChild(addedBoardListEventEndDate);
 
     addedBoardInfo.appendChild(addedUserProfile);
     addedBoardInfo.appendChild(addedDropBoard);
-    addedBoardInfo.appendChild(addedEventDate);
+    addedBoardInfo.appendChild(addedBoardListEventDate);
 
    
     addedDropBoard.appendChild(addedDeleteBoardBtn);
@@ -234,7 +234,7 @@ insertBoardSock.onmessage = function(e) {
             $(board).after(addedBoard);
         }
     });
-    typing();
+    boardListTyping();
 
     // 알림 웹소켓으로 보냄
     let alert = {
@@ -342,8 +342,8 @@ updateEventDateSock.onmessage = function(e) {
             console.log("같음");
             $(board).find(".profile-image").find("img").attr("src", contextPath + changedBoardInfo.updateProfileImg);
             $(board).find(".user-name").html(changedBoardInfo.updateMemberName);
-            $(board).find(".eventStartDate").html(changedBoardInfo.eventStartDate);
-            $(board).find(".eventEndDate").html(changedBoardInfo.eventEndDate);
+            $(board).find(".boardListEventStartDate").html(changedBoardInfo.eventStartDate);
+            $(board).find(".boardListEventEndDate").html(changedBoardInfo.eventEndDate);
         }
     })
 };
@@ -377,14 +377,14 @@ updateEmojiSock.onmessage = function(e) {
 }
 
 // 마우스 오버 함수
-function mouseover(board) {
+function boardListmouseover(board) {
     $(board).find(".add-board").css("visibility", "visible");          
     $(board).find(".edit-boardTitle").css("visibility", "visible");
     $(board).find(".delete-board").css("visibility", "visible");
 };
 
 // 마우스 아웃 함수
-function mouseout(board) {
+function boardListmouseout(board) {
     $(board).find(".add-board").css("visibility", "hidden");          
     $(board).find(".edit-boardTitle").css("visibility", "hidden");
     $(board).find(".delete-board").css("visibility", "hidden");
@@ -394,25 +394,25 @@ function mouseout(board) {
 function editBoardTitleBtn(editBoardTitleBtn) {
     // $(editBoardTitleBtn).parent().siblings(".select-board-detail").removeAttr('href');
     $(editBoardTitleBtn).parent().siblings(".select-board-detail").removeAttr('href');
-    $(editBoardTitleBtn).parent().siblings().find(".boardTitle").attr('contenteditable', 'true');
+    $(editBoardTitleBtn).parent().siblings().find(".boardListBoardTitle").attr('contenteditable', 'true');
     $(editBoardTitleBtn).siblings(".close-edit-boardTitle-btn").css("display", "block"); 
     $(editBoardTitleBtn).css("display", "none"); 
 };
 
 // 제목수정취소버튼 클릭 함수
 function closeEditBoardTitleBtn(closeEditBoardTitleBtn) {
-    let boardNo = $(closeEditBoardTitleBtn).parents(".board").data('boardno');   
+    //let boardNo = $(closeEditBoardTitleBtn).parents(".board").data('boardno');   
 
     // $(closeEditBoardTitleBtn).parent().siblings(".select-board-detail").attr("href", "../../boardDetail/" + projectNo + '/' + workspaceNo + '/' + boardNo);
     $(closeEditBoardTitleBtn).parent().siblings(".select-board-detail").attr("onclick", "toggleSide()");
-    $(closeEditBoardTitleBtn).parent().siblings().find(".boardTitle").attr('contenteditable', 'false');
+    $(closeEditBoardTitleBtn).parent().siblings().find(".boardListBoardTitle").attr('contenteditable', 'false');
     $(closeEditBoardTitleBtn).css("display", "none");
     $(closeEditBoardTitleBtn).siblings(".edit-boardTitle-btn").css("display", "block");
    
 };
 
 // 게시글 제목 수정 타이핑 함수
-function typing() {
+function boardListTyping() {
     let boards = document.querySelectorAll(".board");
     boards.forEach((board) => {
         // 딜레이 1초 설정
@@ -427,7 +427,7 @@ function typing() {
 
             typingTimer = setTimeout(function() {
                 // 1초동안 아무런 동작이 없으면 로직 실행			
-                updateBoardTitle(board);			
+                updateBoardListBoardTitle(board);			
             }, delay);
         });
     });
@@ -449,9 +449,9 @@ function deleteBoardBtn(deleteBoardBtn) {
 }
 
 // 제목 변경 함수
-function updateBoardTitle(board) {
+function updateBoardListBoardTitle(board) {
     let boardNo = $(board).data('boardno');
-    let boardTitle = $(board).find(".boardTitle");
+    let boardTitle = $(board).find(".boardListBoardTitle");
     // 개행 제거
     const cleanedBoardTitle = $(boardTitle).html().replace(/\n|\t/g, "");
 
@@ -635,7 +635,7 @@ function updateEmoji(emojiBtn) {
 //     var len = $('.boardTitle').val().length;
 // $('.boardTitle').focus();
 // $('.boardTitle')[0].setSelectionRange(len, len);
-var input = document.querySelector(".boardTitle"); 
+var input = document.querySelector(".boardListBoardTitle"); 
 
 // input[name='txt'] 요소에 focus 이벤트 리스너를 지정합니다.
 
