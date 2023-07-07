@@ -1,7 +1,7 @@
-const memberNo = document.getElementById("memberNo");
+// const memberNo = document.getElementById("memberNo");
 // const projectNo = document.getElementById("projectNo");
 
-console.log(memberNo.value);
+// console.log(memberNo.value);
 // console.log(projectNo.value);
 
 //-----------------------------------------------------------
@@ -80,7 +80,7 @@ Element.prototype.setStyle = function(styles) {
 // 유효성 검사 여부를 기록할 객체 생성
 const checkObj = { 
     "memberEmail"   : false,
-    "memberName"    : false,
+    "inputName"    : false,
     "memberTel"     : false,
 };
 
@@ -100,7 +100,7 @@ function payValidate() {
 
             switch(key){
             case "memberEmail":     str="이메일이"; break;
-            case "memberName":      str="이름이"; break;    
+            case "inputName":      str="이름이"; break;    
             case "memberTel":       str="전화번호가"; break;
             }
 
@@ -128,7 +128,7 @@ var payType;
 const memberEmail = document.getElementById("memberEmail"); // 이메일 작성
 const emailMessage = document.querySelector("#emailMessage"); // 이메일 유효성 검사
 
-const memberName = document.getElementById("memberName"); // 이름 작성
+const inputName = document.getElementById("inputName"); // 이름 작성
 const nameMessage = document.getElementById("nameMessage"); // 이름 유효성 검사
 
 const memberTel = document.getElementById("memberTel"); // 전화번호 작성
@@ -136,7 +136,7 @@ const telMessage = document.getElementById("telMessage"); // 전화번호 유효
 
 function reset() {
     memberEmail.value = "";
-    memberName.value = "";
+    inputName.value = "";
     telMessage.value = "";
 }
 
@@ -210,33 +210,33 @@ function requestPay(Type) {
 
     
     // 이름 유효성 검사
-    memberName.addEventListener("input", function(){
+    inputName.addEventListener("input", function(){
 
         // 입력되지 않은 경우
-        if(memberName.value.length == 0){
+        if(inputName.value.length == 0){
             nameMessage.innerText = "이름을 입력해주세요.";
-            memberName.classList.remove("confirm", "error");
+            inputName.classList.remove("confirm", "error");
 
-            checkObj.memberName = false; // 유효 X 기록
+            checkObj.inputName = false; // 유효 X 기록
             return;
         }
 
         const regExp = /^[a-zA-Z0-9가-힣]{2,10}$/;
 
-        if( regExp.test(memberName.value) ){ // 유효한 경우
+        if( regExp.test(inputName.value) ){ // 유효한 경우
             
             nameMessage.innerText = "사용 가능한 이름 입니다.";
-            memberName.classList.add("confirm");
-            memberName.classList.remove("error");
-            checkObj.memberName = true; // 유효 O 기록
+            inputName.classList.add("confirm");
+            inputName.classList.remove("error");
+            checkObj.inputName = true; // 유효 O 기록
 
 
         }else{
             nameMessage.innerText = "이름 형식이 유효하지 않습니다.";
-            memberName.classList.add("error");
-            memberName.classList.remove("confirm");
+            inputName.classList.add("error");
+            inputName.classList.remove("confirm");
 
-            checkObj.memberName = false; // 유효 X 기록
+            checkObj.inputName = false; // 유효 X 기록
         }
 
     });
@@ -353,7 +353,7 @@ function pay() {
                 name : 'Standard',
                 amount : 890,
                 buyer_email : memberEmail.value,
-                buyer_name : memberName.value,
+                buyer_name : inputName.value,
                 buyer_tel : memberTel.value,   //필수 파라미터 입니다.
                 // buyer_addr : '서울특별시 강남구 삼성동',
                 // buyer_postcode : '123-456',
@@ -366,7 +366,7 @@ function pay() {
                 name : 'Pro',
                 amount : 1290,
                 buyer_email : memberEmail.value,
-                buyer_name : memberName.value,
+                buyer_name : inputName.value,
                 buyer_tel : memberTel.value,   //필수 파라미터 입니다.
                 // buyer_addr : '서울특별시 강남구 삼성동',
                 // buyer_postcode : '123-456',
@@ -426,7 +426,7 @@ function pay() {
                                 "projectNo" : projectNo, //프로젝트 번호(상품 번호)
                                 "payType" : rsp.name, // 결제 타입
                                 "payName" : rsp.buyer_name, //결제자
-                                "memberNo" : memberNo.value, //회원번호
+                                "memberNo" : memberNo, //회원번호
                                 "price" : rsp.paid_amount, // 가격
                                 "impUid" : rsp.imp_uid // 거래 고유번호(취소, 환불)
                             });

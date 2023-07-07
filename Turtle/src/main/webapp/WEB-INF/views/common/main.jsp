@@ -120,44 +120,114 @@
                     </div>
                 </div>
             </div>
-
             <!-- 아래 -->
             <div class="apiLi">
-                <div class="card" style="width: 18rem;">
-                    <img src="${contextPath}/resources/images/main/Google_Maps-Logo.wine.svg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Google Map API</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="https://developers.google.com/maps?hl=ko" class="btn btn-primary">Go somewhere</a>
+                <h2 id="api-title">API COLLECTION <span style="color: red; font-size: 16px; font-weight: bold;"> TOP 10</span></h2>
+                <div class="apibanner">
+                    <div class="card" style="width: 20rem;">
+                        <img src="${contextPath}/resources/images/number/1.webp" alt="1" class="card-ranking">
+                        <img src="${contextPath}/resources/images/main/Google_Maps-Logo.wine.svg" class="card-img-top" alt="...">
+                        <!-- 1위: Google Maps API -->
+                        <div class="card-body">
+                            <h5 class="card-title">Google Maps API</h5>
+                            <p class="card-text">지도, 지리적 데이터 및 위치 관련 서비스를 제공합니다.</p>
+                            <a href="https://developers.google.com/maps?hl=ko" class="btn btn-primary" target="_blank">Go somewhere</a>
+                        </div>
                     </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="${contextPath}/resources/images/main/Google_Maps-Logo.wine.svg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Google Map API</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="https://developers.google.com/maps?hl=ko" class="btn btn-primary">Go somewhere</a>
+                    <div class="card" style="width: 20rem;">
+                        <img src="${contextPath}/resources/images/number/2.webp" alt="2" class="card-ranking">
+                        <img src="${contextPath}/resources/images/main/YouTube-Logo.wine.svg" class="card-img-top" alt="...">
+                        <!-- 2위: YouTube API -->
+                        <div class="card-body">
+                            <h5 class="card-title">YouTube API</h5>
+                            <p class="card-text">YouTube 동영상 및 채널 관련 정보와 기능을 제공합니다.</p>
+                            <a href="https://developers.google.com/youtube" class="btn btn-primary" target="_blank">Go somewhere</a>
+                        </div>
                     </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="${contextPath}/resources/images/main/Google_Maps-Logo.wine.svg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Google Map API</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="https://developers.google.com/maps?hl=ko" class="btn btn-primary">Go somewhere</a>
+                    <div class="card" style="width: 20rem;">
+                        <img src="${contextPath}/resources/images/number/3.webp" alt="3" class="card-ranking">
+                        <img src="${contextPath}/resources/images/main/Twitter-Logo.wine.svg" class="card-img-top" alt="...">
+                        <!-- 3위: Twitter API -->
+                        <div class="card-body">
+                            <h5 class="card-title">Twitter API</h5>
+                            <p class="card-text">Twitter 플랫폼의 트윗, 사용자, 트렌드 등과 관련된 정보를 제공합니다.</p>
+                            <a href="https://developer.twitter.com" class="btn btn-primary" target="_blank">Go somewhere</a>
+                        </div>
                     </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="${contextPath}/resources/images/main/Google_Maps-Logo.wine.svg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Google Map API</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="https://developers.google.com/maps?hl=ko" class="btn btn-primary">Go somewhere</a>
+                    <div class="card" style="width: 20rem;">
+                        <img src="${contextPath}/resources/images/number/4.webp" alt="4" class="card-ranking">
+                        <img src="${contextPath}/resources/images/main/Facebook-Logo.wine.svg" class="card-img-top" alt="...">
+                        <!-- 4위: Facebook Graph API -->
+                        <div class="card-body">
+                            <h5 class="card-title">Facebook Graph API</h5>
+                            <p class="card-text">Facebook 플랫폼의 사용자, 페이지, 포스트 등에 대한 정보와 상호작용 기능을 제공합니다.</p>
+                            <a href="https://developers.facebook.com/docs/graph-api" class="btn btn-primary" target="_blank">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 20rem;">
+                        <img src="${contextPath}/resources/images/number/5.webp" alt="5" class="card-ranking">
+                        <img src="${contextPath}/resources/images/main/OpenWeather-Logo-xl.jpg" style="margin: 12px 0" class="card-img-top" alt="...">
+                        <!-- 5위: OpenWeatherMap API -->
+                        <div class="card-body">
+                            <h5 class="card-title">OpenWeatherMap API</h5>
+                            <p class="card-text">실시간 날씨 데이터 및 날씨 예보 정보를 제공합니다.</p>
+                            <a href="https://openweathermap.org/api" class="btn btn-primary" target="_blank">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 20rem;">
+                        <img src="${contextPath}/resources/images/number/6.webp" alt="6" class="card-ranking">
+                        <img src="${contextPath}/resources/images/main/Spotify-Logo.wine.svg" class="card-img-top" alt="...">
+                        <!-- 6위: Spotify API -->
+                        <div class="card-body">
+                            <h5 class="card-title">Spotify API</h5>
+                            <p class="card-text">Spotify 음악 스트리밍 플랫폼의 음악 데이터, 사용자 정보, 재생 목록 등을 제공합니다.</p>
+                            <a href="https://developer.spotify.com" class="btn btn-primary" target="_blank">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 20rem;">
+                        <img src="${contextPath}/resources/images/number/7.webp" alt="7" class="card-ranking">
+                        <img src="${contextPath}/resources/images/main/GitHub-Logo.wine.svg" class="card-img-top" alt="...">
+                        <!-- 7위: GitHub API -->
+                        <div class="card-body">
+                            <h5 class="card-title">GitHub API</h5>
+                            <p class="card-text">GitHub 코드 호스팅 플랫폼의 저장소, 사용자, 이슈 등과 관련된 정보를 제공합니다.</p>
+                            <a href="https://docs.github.com/en/rest" class="btn btn-primary" target="_blank">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 20rem;">
+                        <img src="${contextPath}/resources/images/number/8.webp" alt="8" class="card-ranking">
+                        <img src="${contextPath}/resources/images/main/Stripe_(company)-Logo.wine.svg" class="card-img-top" alt="...">
+                        <!-- 8위: Stripe API -->
+                        <div class="card-body">
+                            <h5 class="card-title">StripeAPI</h5>
+                            <p class="card-text">온라인 결제 및 금융 서비스를 위한 결제 처리 기능을 제공합니다.</p>
+                            <a href="https://stripe.com/docs/api" class="btn btn-primary" target="_blank">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 20rem;">
+                        <img src="${contextPath}/resources/images/number/9.webp" alt="9" class="card-ranking">
+                        <img src="${contextPath}/resources/images/main/Twilio-Logo.wine.svg" class="card-img-top" alt="...">
+                        <!-- 9위: Twilio API -->
+                        <div class="card-body">
+                            <h5 class="card-title">Twilio API</h5>
+                            <p class="card-text">SMS, 음성 및 영상 통화, 인증 등의 통신 기능을 제공합니다.</p>
+                            <a href="https://www.twilio.com/docs/quickstart" class="btn btn-primary" target="_blank">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 20rem;">
+                        <img src="${contextPath}/resources/images/number/10.webp" alt="10" class="card-ranking">
+                        <img src="${contextPath}/resources/images/main/Amazon_Web_Services-Logo.wine.svg" class="card-img-top" alt="...">
+                        <!-- 10위: AWS S3 API -->
+                        <div class="card-body">
+                            <h5 class="card-title">AWS S3 API</h5>
+                            <p class="card-text">Amazon S3 (Simple Storage Service)의 객체 스토리지 서비스를 제어하는 기능을 제공합니다.</p>
+                            <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html" class="btn btn-primary" target="_blank">Go somewhere</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
 
         <!-- <form action="${contextPath}/workspace/loadmap/${projectNo}/10" method="GET">
             <button>git loadMap test(GET)</button>
@@ -193,6 +263,7 @@
        
 
     </main>
+
     
     <!-- main-style-1.css -->
     <link href="${contextPath}/resources/css/main-style-1.css" rel="stylesheet">

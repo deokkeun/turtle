@@ -281,7 +281,7 @@
 
         <!-- 결제 -->
         <li class="nav-item">
-          <a class="nav-link collapsed" href="${contextPath}/payment/pay/1">
+          <a class="nav-link collapsed" href="${contextPath}/payment/pay/${projectNo}">
             <i class="bx bxs-receipt"></i>
             <span>Payment Details</span>
           </a>

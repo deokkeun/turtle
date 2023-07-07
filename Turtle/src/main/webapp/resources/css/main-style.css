@@ -1093,6 +1093,7 @@ h6 {
   position: sticky;
   top: 92%;
   opacity: 0.8;
+  z-index: 10;
   
 }
 .chat-div:hover {
