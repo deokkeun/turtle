@@ -15,6 +15,7 @@
     <!-- Favicons -->
   	<link href="${contextPath}/resources/favicon/favicon-16x16.png" rel="icon">
   	<link href="${contextPath}/resources/favicon/apple-icon-60x60.png" rel="apple-touch-icon">
+  	<script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
   	
   	<!-- Google Fonts -->
   	<!-- 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|

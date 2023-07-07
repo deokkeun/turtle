@@ -126,14 +126,32 @@ public class MemberDAO {
 
 
 
-	public Member getMemberSocialEmail(String socialEmail) {
-		return sqlSession.selectOne("memberMapper.getMemberSocialEmail", socialEmail);
+
+	public int checkNaverFl(String email) {
+		return sqlSession.selectOne("memberMapper.checkNaverFl",email);
+	}
+
+	public int naverSignUp(Map<String, Object> map) {
+
+		int result = sqlSession.insert("memberMapper.naverSignUp", map);
+		
+		if(result > 0) result = (Integer)map.get("memberNo");
+		
+		return result;
+	}
+
+	public Member getMember(int memberNo) {
+		
+		return sqlSession.selectOne("memberMapper.getMember", memberNo);
+	}
+
+	public int changeToken(Map<String, Object> map) {
+		return sqlSession.update("memberMapper.changeToken", map);
 	}
 
 
-	public void insertSocialMember(Member member) {
-		sqlSession.insert("memberMapper.insertSocialMember", member);
-		
+	public int emailCheckForNaver(String email) {
+		return sqlSession.selectOne("memberMapper.emailCheckForNaver", email);
 	}
 
 

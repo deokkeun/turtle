@@ -7,10 +7,17 @@ import javax.mail.internet.MimeMessage;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
@@ -19,12 +26,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.turtle.www.member.model.service.MemberService;
 import com.turtle.www.member.model.vo.Member;
@@ -118,8 +129,45 @@ public class MemberController {
 		
 	}
 	
+	@RequestMapping(value="callBack", method=RequestMethod.GET)
+	public String callBack(){
+		return "member/callBack";
+	}
+	
+	@RequestMapping(value="naverSave", method=RequestMethod.POST)
+	public @ResponseBody String naverSave(@RequestParam("n_age") String n_age, @RequestParam("n_birthday") String n_birthday, @RequestParam("n_email") String n_email, @RequestParam("n_gender") String n_gender, @RequestParam("n_id") String n_id, @RequestParam("n_name") String n_name, @RequestParam("n_nickName") String n_nickName) {
+	System.out.println("#############################################");
+	System.out.println(n_age);
+	System.out.println(n_birthday);
+	System.out.println(n_email);
+	System.out.println(n_gender);
+	System.out.println(n_id);
+	System.out.println(n_name);
+	System.out.println(n_nickName);
+	System.out.println("#############################################");
+
+	Member member = new Member();
+//	naver.setN_age(n_age);
+//	naver.setN_birthday(n_birthday);
+	member.setMemberEmail(n_email);
+	member.setSocialEmail(n_id);
+	member.setMemberName(n_name);
+//	naver.setN_nickName(n_nickName);
+    
+	// ajax에서 성공 결과에서 ok인지 no인지에 따라 다른 페이지에 갈 수 있게끔 result의 기본값을 "no"로 선언
+	String result = "no";
+    
+	if(member!=null) {
+		// naver가 비어있지 않는다는건 데이터를 잘 받아왔다는 뜻이므로 result를 "ok"로 설정
+		result = "ok";
+	}
+
+	return result;
+    
+	}
+	
 //	
-////	@GetMapping("/callback")
+//	@GetMapping("/callback")
 //	public String callback1(@RequestParam("code") String code, HttpSession session, Model model) {
 //	    try {
 //	        // 네이버 로그인 콜백 URL 처리를 위한 필요한 정보
@@ -218,12 +266,7 @@ public class MemberController {
 //	    }
 //		return "redirect:/";
 //	}
-//
-//	
-//	@RequestMapping(value="callback", method=RequestMethod.GET)
-//	public String callBack(){
-//		return "common/callback";
-//	}
+
 //	
 //	@GetMapping("/callback")
 //	public String callback(@RequestParam("code") String code, HttpSession session, Model model) {
@@ -266,7 +309,84 @@ public class MemberController {
 //		return "redirect:/";
 //	        
 //	    }
+//
 
+	
+	
+	/** 가입여부 체크
+	 * @param email
+	 * @return
+	 */
+	@PostMapping("/checkNaverFl")
+	@ResponseBody
+	public int checkNaverFl(@RequestParam("email") String socialEmail) {
+		
+
+		int result = service.checkNaverFl(socialEmail);
+		logger.info("체크 실행");
+		return result;
+		
+	}
+	
+	@PostMapping("/naverSignUp")
+	@ResponseBody
+	public int naverSignUp(@RequestParam Map<String,Object> map, Model model) {
+		
+		int result = service.naverSignUp(map);
+		
+		logger.info("만들어진 유저넘 : " + result);
+		
+		Member member = service.getMember(result);
+
+		model.addAttribute("loginUser", member);
+		logger.info("사인업실행");
+		
+		return result;
+	}
+	
+	@PostMapping("/changeToken")
+	@ResponseBody
+	public int changeToken(@RequestParam Map<String,Object> map, Model model) {
+		
+		int result =service.changeToken(map);
+		Member member = null;
+		if(result>0) {
+			member = service.getMember((Integer)map.get("userNo"));
+		}
+		logger.info("토큰교체 실행");
+		model.addAttribute("loginUser", member);
+		
+		return result;
+	}
+	
+	@GetMapping("/callback")
+	public String callback() {
+		return "common/callback";
+	}
+	
+	@PostMapping("/dupCheckNaver")
+	@ResponseBody
+	public int dupCheckForNaver(@RequestParam("email") String email, @RequestParam("name")String name) {
+		logger.info("네이버 중복 검사");
+		int result = -1;
+		
+		int emailCheck = service.emailCheckForNaver(email);
+		
+		if(emailCheck > 0) {
+			// 네이버 가입이 아닌 메일 중복이 있으면
+			result = 1;
+		}else {
+			
+			result = 0;
+		}
+		
+		logger.info("결과값" + result);
+		
+		return result;
+	}
+	
+	
+	
 	
 	
 	
