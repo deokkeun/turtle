@@ -7,168 +7,146 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
   color: #444444;
 }
 
-/* a {
-  color: #4154f1;
-  text-decoration: none;
+
+/* 폰트(프리텐다드) */
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
 }
 
-a:hover {
-  color: #717ff5;
-  text-decoration: none;
-} */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Nunito", sans-serif;
-}
 
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 .footer {
-  background: #f6f9ff;
-  padding: 0 0 0px 0;
-  font-size: 14px;
+    background: #f6f9ff;
+    padding: 0 0 0px 0;
+    font-size: 14px;
 }
-
-
 
 .footer .footer-top {
-  /* background: white url(../img/footer-bg.png) no-repeat right top; */
-  background: #7F7F7F;
-  background-size: contain;
-  border-top: 1px solid #e1ecff;
-  border-bottom: 1px solid #e1ecff;
-  /* padding: 60px 0 30px 0; */
+    /* background: white url(../img/footer-bg.png) no-repeat right top; */
+    background: #7F7F7F;
+    background-size: contain;
+    border-top: 1px solid #e1ecff;
+    border-bottom: 1px solid #e1ecff;
+    padding-left: 10px;
 }
 
+/* 회사정보 */
 .footer .footer-top .footer-info {
-  margin-bottom: 0;
+    margin-top : 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    list-style: none;
+    display: inline-block;
+}
+
+.footer .footer-top .footer-info li {
+    margin-top : 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    list-style: none;
+}
+
+.footer .footer-top .terms li {
+    margin-top : 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    list-style: none;
+}
+
+
+.footer .footer-top .container .gy-4 {
+    margin-top : 0px;
+    margin-bottom: 0px;
 }
 
 
 
 .footer .footer-top .footer-info .logo {
-  line-height: 2.5;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  display: flex;
-  text-decoration: none;
+    line-height: 2.5;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    text-decoration: none;
 }
 
 .footer .footer-top .footer-info .logo img {
-  max-height: 50px;
-  margin-right: 14px;
+    max-height: 50px;
+    margin-right: 14px;
 }
 
 
 
 .footerLogo {
-  font-size: 30px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #D9D9D9;
-  font-family: "Nunito", sans-serif;
-  margin-top: 3px;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #D9D9D9;
+    margin-top: 3px;
 }
 
 
-
+/* 회사정보 영역 */
 .footer .footer-top .footer-info p {
-  font-size: 14px;
-  line-height: 24px;
-  color: #D9D9D9;
-  margin-bottom: 10px;
-  font-family: "Nunito", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: #D9D9D9;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    display: inline-block;
 }
 
 
-.footer .footer-top .social-links a {
-  font-size: 20px;
-  display: inline-block;
-  color: rgba(1, 41, 112, 0.5);
-  line-height: 0;
-  margin-right: 10px;
-  transition: 0.3s;
+
+
+/* 이용약관, copyright 영역 */
+.footer .footer-top .terms {
+    padding-left: 0px;
+    list-style: none;
+    margin-top: 20px;
+    margin-bottom : 30px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.footer .footer-top .social-links a:hover {
-  color: #012970;
-}
-
-.footer .footer-top h4 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #012970;
-  text-transform: uppercase;
-  position: relative;
-  padding-bottom: 12px;
-}
-
-.footer .footer-top .footer-links {
-  margin-bottom: 30px;
-}
-
-.footer .footer-top .footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer .footer-top .footer-links ul i {
-  padding-right: 2px;
-  color: #d0d4fc;
-  font-size: 12px;
-  line-height: 0;
-}
-
-.footer .footer-top .footer-links ul li {
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
-}
-
-.footer .footer-top .footer-links ul li:first-child {
-  padding-top: 0;
-  padding-bottom: 30px;
-}
-
-.footer .footer-top .footer-links ul a {
-  color: #013289;
-  transition: 0.3s;
-  display: inline-block;
-  line-height: 1;
-}
-
-.footer .footer-top .footer-links ul a:hover {
-  color: #4154f1;
-}
-
-.footer .footer-top .footer-contact p {
-  line-height: 26px;
+/* 이용약관, copyright 영역 */
+.footer .footer-top .terms p {
+    padding-left: 0px;
+    display: inline-block;
 }
 
 
-.copyright {
-  margin-bottom : 40px;
+/* copyright */
+.footer .footer-top .terms .copylight {
+    display: flex;
+    font-weight: 500;
 }
 
-.footer .copyright a {
-  /* text-align: center; */
-  padding-top: 30px;
-  color: #D9D9D9;
-  text-decoration: none;
+.footer .terms a {
+    /* text-align: center; */
+    /* padding-top: 30px; */
+    color: #D9D9D9;
+    text-decoration: none;
 }
 
-.footer .copyright a:hover {
-  color: #3e3e3e;
+.footer .terms b:hover {
+    color: #3e3e3e;
 }
 
+
+/* 풋터 반응형 */
+@media screen and (max-width: 767px) {
+    .footer .footer-top .footer-info p {
+        font-size: 12px;
+    }
+    .footer .footer-top .terms .copylight {
+        font-size: 12px;
+    }
+}

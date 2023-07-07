@@ -163,5 +163,34 @@
 	)
 	</insert>
 	
+		<select id="checkNaverFl" parameterType="string" resultType="_int">
+		SELECT COUNT(*) FROM "MEMBER" WHERE SOCIAL_EMAIL = #{socialEmail} AND IS_SOCIAL_MEMBER = 1
+	</select>
+	
+	<insert id="naverSignUp" parameterType="map" useGeneratedKeys="true">
+		<selectKey keyProperty="memberNo" resultType="_int" order="BEFORE">
+			SELECT MEMBER_NO_SEQ.NEXTVAL FROM DUAL
+		</selectKey>
+		INSERT INTO "MEMBER" VALUES (${memberNo}, #{memberEmail}, NULL, SYSDATE, 'N', #{nick}, 'Y','NAVER', NULL, 'N', #{profileImg} )
+		
+		INSERT INTO MEMBER VALUES(${memberNo}, NULL, NULL, #{memberName}, NULL, DEFAULT, #{profileImage}, DEFAULT, #{socialEmail}, #{accessToken}, '1')
+		
+	</insert>
+	
+	<select id="getMember" parameterType="_int" resultMap="member_rm">
+		SELECT MEMBER_NO, SOCIAL_EMAIL, MEMBER_NAME, MEMBER_GIT, PROFILE_IMAGE FROM "MEMBER" WHERE MEMBER_NO = ${memberNo}
+	</select>
+	
+	<update id="changeToken" parameterType="map" useGeneratedKeys="true">
+		<selectKey keyProperty="memberNo" resultType="_int" order="BEFORE">
+			SELECT MEMBER_NO FROM "MEMBER" WHERE IS_SOCIAL_MEMBER = 1 AND MEMBER_EMAIL = #{socialEmail}
+		</selectKey>
+		UPDATE "MEMBER" SET SOCIAL_TOKEN = #{accessToken} WHERE MEMBER_NO = ${memberNo}
+	</update>
+	
+	<select id="emailCheckForNaver" parameterType="string" resultType="_int">
+	 	SELECT COUNT(*) FROM "MEMBER" WHERE SOCIAL_EMAIL = #{socialEmail} AND IS_SOCIAL_MEMBER = 0
+	</select>
+	
 
 </mapper>

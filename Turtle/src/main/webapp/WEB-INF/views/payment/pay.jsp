@@ -47,10 +47,8 @@
                                 <p class="intro2"><b>소규모팀에 추천</b>합니다</p>
                             </div>
                             <ul>
-                                <!-- <li><i class="fa-solid fa-check"></i>프로젝트 1개 생성</li> -->
                                 <li><i class="fa-solid fa-check"></i>워크스페이스 최대 3개 생성</li>
                                 <li><i class="fa-solid fa-check"></i>멤버 초대 최대 5명</li>
-                                <!-- <li><i class="fa-solid fa-check"></i>기초 단체 채팅방, 개인 채팅방 제공 </li> -->
                             </ul>
                         </div>
                     </div>
@@ -81,7 +79,6 @@
                                 <li><i class="fa-solid fa-check"></i>멤버 초대 최대 10명</li>
                             </ul>
                         </div>
-                        <input type="hidden" name="memberName" value="${loginMember.memberName}">
                     </div>
 
                     <c:if test="${workspaceCount > 5 && projectMemberCount > 10}"></c:if>
@@ -167,7 +164,7 @@
                             </li>
                             <li class="form-list__row">
                                 <label id="nameMessage">이름</label>
-                                <input id="memberName" type="text" autocomplete="false"/>
+                                <input id="inputName" type="text" autocomplete="false" value="${loginMember.memberName}"/>
                             </li>
                             <li class="form-list__row">
                                 <label id="telMessage">전화번호</label>
@@ -188,7 +185,7 @@
 
 
         <!-- 테스트 확인 후 히든처리 예정 -->
-        <input type="text" id="memberNo" value="${loginMember.memberNo}">
+        <!-- <input type="text" id="memberNo" value="${loginMember.memberNo}"> -->
         <input type="text" id="projectNo" value="${projectNo}">
         <div>workspaceCount = ${workspaceCount}</div>
         <div>projectMemberCount =  ${projectMemberCount}</div>

@@ -16,18 +16,27 @@
     <title>Turtle</title>
 	<!-- main-style.css -->
   <link href="${contextPath}/resources/css/main-style.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <!-- bootstrap.css -->
   <link href="${contextPath}/resources/css/booystrapcss/bootstrap.css" rel="stylesheet">
   <link href="${contextPath}/resources/images/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="${contextPath}/resources/images/remixicon/remixicon.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <link href="${contextPath}/resources/css/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <!--섬머노트 전용 css-->
+  <link rel="stylesheet" href="${contextPath}/resources/css/summernote/summernote-lite.css">
+  <!--섬머노트 전용 js -->
+  <script src="${contextPath}/resources/js/summernote/summernote-lite.js"></script>
+  <script src="${contextPath}/resources/js/summernote/lang/summernote-ko-KR.js"></script>
 
+  
+
+  <link rel="stylesheet" href="${contextPath}/resources/css/board/boardDetail.css">
   <script>
     const pmNo = "${pmNo}";
     const projectNo = "${projectNo}";
     const workspaceNo = "${workspaceNo}";
     const contextPath = "${contextPath}";
+    const boardNo = "${boardNo}";
     const memberNo = "${memberNo}";
     let memberName = "${memberName}";
     let profileImage = "${profileImage}";
@@ -281,7 +290,7 @@
 
         <!-- 결제 -->
         <li class="nav-item">
-          <a class="nav-link collapsed" href="${contextPath}/payment/pay/1">
+          <a class="nav-link collapsed" href="${contextPath}/payment/pay/${projectNo}">
             <i class="bx bxs-receipt"></i>
             <span>Payment Details</span>
           </a>
@@ -293,68 +302,77 @@
 
 <!-- right sidebar(오른쪽 사이드바) --> 
   
-  <aside class="right-sidebar" id="rightSidebar" >
-	  <div>${projectNo}</div>
-    <div>3</div>
-    <div style="overflow: scroll; height: 200px;">		
-					<div style="overflow: scroll;">chatRoomList : ${chatRoomList}</div>	
-					<div>projectNo : ${projectNo}</div>
-          <div>workspaceNo : ${workspaceNo}</div>
-					<div>loginMember : ${loginMember}</div>
-					<div>chatRoomNo : ${chatRoomNo}</div>
-					<div>pmNo : ${pmNo}</div>
-				</div>
-        
-    <form id="list">
-      <ul>
-         
-      <c:forEach var="chatRoom" items="${chatRoomList}">
-          <li class="chatList">
-              <form action="../chatRoom/${projectNo}/${chatRoom.chatRoomNo}" id="room" value="${chatRoom.chatRoomNo}">
-                  <button class="chatBtn" value="${chatRoom.chatRoomNo}">${chatRoom.chatRoomTitle}</button>
-              </form>
-          
-          </li>  	    	   	
-      </c:forEach>
-      </ul>
-      <div class="r"></div>
-  </form>
+<aside class="board-detail-area right-sidebar" id="rightSidebar" >
 
+  <div class="board-area">
+    <div class="board-info-area">
+        <div class="boardTitle" contenteditable="true">${board.boardTitle}</div>
+        <div class="regInfo">
+            <div class="regMember"> 
+                <div>최초 작성자 : </div>
+                <div class="regMemberImageAndName">
+                    <img class="regMemberImage" src="${contextPath}${board.regProfileImg}">
+                </div>
+                <div class="regMemberName">${board.regMemberName}</div>
+            </div>
+            <div class="regDate-area">
+                <div>최초 작성일 : </div>
+                <div class="regDate">${board.boardRegDate}</div>
+            </div>
+        </div>
+        <div class="updateInfo">
+            <div class="updateMember">
+                <div>최근 수정자 : </div>                    
+                <div class="updateMemberImageAndName">
+                    <c:choose>
+                        <c:when test="${!empty board.updateProfileImg}">
+                            <img class="updateMemberImage" src="${contextPath}${board.updateProfileImg}">
+                        </c:when>
+                        <c:otherwise>
+                            <img class="updateMemberImage">
+                        </c:otherwise>
+                    </c:choose>
+                </div>
+                <div class="updateMemberName">${board.updateMemberName}</div>
+            </div>
+            <div class="updateDate-area">
+                <div>최근 수정일 : </div>                    
+                    <div class="updateDate">
+                        <c:if test="${!empty board.boardUpdateDate}">
+                            ${board.boardUpdateDate}
+                        </c:if>
+                    </div>
+            </div>
+        </div>
+        <div class="eventDate">                
+            <div>이벤트 : </div>
+            <div><input type="date" class="eventStartDate" value="${board.eventStartDate}"></div>
+            <div> - </div>
+            <div><input type="date" class="eventEndDate" value="${board.eventEndDate}"></div>                
+        </div>
+        
+        
+    </div>
+
+    <hr>
     
-  
-  <ul class="right-sidebar-nav" id="right-sidebar-nav">
- 
-    <li class="nav-item">
-      <span class="nav-link" onclick="toggleSubMenu('project-chatting-nav')">
-        <i class="bi bi-chevron-right"></i><span>Project Chatting</span>
-      </span>
-      <ul class="sub-menu" id="project-chatting-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Project 1</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Project 2</a>
-        </li>
-        <!-- 추가적인 하위 메뉴 항목들 -->
-      </ul>
-    </li>
-    <li class="nav-item">
-      <span class="nav-link" onclick="toggleSubMenu('member-nav')">
-        <i class="bi bi-chevron-right"></i><span>MEMBER</span>
-      </span>
-      <ul class="sub-menu" id="member-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">맴버 1</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">맴버 2</a>
-        </li>
-        <!-- 추가적인 하위 메뉴 항목들 -->
-      </ul>
-    </li>
-    <!-- 추가적인 메뉴 항목들 -->
-  </ul>
-  
+    <div class="boardDetail-area">
+        <div class="edit-boardDetail-area" data-boardDetailNo="0" 
+                                        data-boardDetailSort="0">
+            <div class="add-boardDetail" style="visibility:hidden;">
+                <button class="add-boardDetail-btn">+</button>
+            </div>
+            <div class="boardDetail">
+                <div>
+                </div>
+            </div>                    
+        </div>
+        <hr>
+        <div class="boardContent-area">
+
+        </div>
+    </div>
+</div>
  
 </aside>
 <div class="chat-div">
@@ -373,7 +391,35 @@
 <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
 <script>  
     // 로그인이 되어 있을 경우에만
+    // 로그인이 되어 있을 경우에만
+		// /memo 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
+		let memoSock = new SockJS(contextPath+"/memo");
+		// /boardList 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성		
+		// 게시글 수정용 sock
+		let boardListSock = new SockJS(contextPath+"/boardList");
+		// /insertBoard 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
+		// 게시글 추가용 sock
+		let insertBoardSock = new SockJS(contextPath+"/insertBoard");
+		// /deleteBoard 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
+		// 게시글 삭제용 sock
+		let deleteBoardSock = new SockJS(contextPath+"/deleteBoard");
+    // 이모지 수정용 sock
+    let updateEmojiSock = new SockJS(contextPath+"/updateEmoji");
+		// /updateBoardDetail 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성		
+		// 이벤트 시간 생성용 sock
+    let updateEventDateSock = new SockJS(contextPath+"/updateEventDate");
     // 알람용 sock
-    let alertSock = new SockJS(contextPath+"/alert");    
+    let alertSock = new SockJS(contextPath+"/alert");
+    // 캘린더 연동용 sock
+    let calendarSock = new SockJS(contextPath+"/calendar");
+    // 게시글 내용 수정용 sock
+		let updateBoardDetailSock = new SockJS(contextPath+"/updateBoardDetail");
+		// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
+		// 게시글 내용 추가용 sock
+		let insertBoardDetailSock = new SockJS(contextPath+"/insertBoardDetail");
+		// 게시글 내용 삭제용 sock
+		let deleteBoardDetailSock = new SockJS(contextPath+"/deleteBoardDetail");
 </script>
 <script src="${contextPath}/resources/js/header.js"></script>
+<!-- boardDetail.js 연결 -->
+<script src="${contextPath}/resources/js/board/boardDetail.js"></script>

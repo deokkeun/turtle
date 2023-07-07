@@ -44,7 +44,7 @@ h6 {
 # Main
 --------------------------------------------------------------*/
 #main {
-  margin-top: 60px;
+  margin-top: 0px;
   /* padding: 20px 30px; */
   padding: 0;
   transition: all 0.3s;
@@ -1231,7 +1231,7 @@ h6 {
   height: 120px;
   background-color: rgb(203, 165, 95);
   /* border: 10px solid rgb(203, 165, 95); */
-  margin-top: 20px;
+  margin-top: 0px;
   margin-bottom: 50px;
   position: relative;
 }
@@ -1298,31 +1298,79 @@ h6 {
     /* border: 1px solid grey; */
     padding: 30px;
     margin: 0px 20px;
-    border: 1px solid #eee;
+    /* border: 1px solid #eee; */
+    border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 3px 4px 5px 3px #d9d9d9;
     border-radius: 10px;
     
   }
+
+
+
+
+
+
 
 /* 아래 (메모장) */
 .apiLi {
   display: flex;
   gap: 20px;
   background-color: white;
-  overflow-x: hidden;
-  /* padding-top: 10px; */
-  /* margin-top: 20px; */
-  /* margin-bottom: 20px;  */
-  /* display: flex;
-  flex-basis: 30%; */
-  /* height: 320px; */
+	overflow: hidden;
   width: 97%;
   margin: 20px;
   margin-bottom: 100px;
   padding: 30px;
+  padding-top: 80px;
   padding-bottom: 0px;
-  /* background-color: yellow; */
-  border: 1px solid #eee;
+  background-color: #E6E6FA;
+  /* border: 1px solid #eee; */
+  border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 3px 4px 5px 3px #d9d9d9;
   border-radius: 10px;
+  position: relative;
 }
+.card {
+  position: relative;
+}
+.card-ranking {
+  position: absolute;
+  display: none;
+  width: 80px;
+  top: -25px;
+  left: -40px;
+}
+#api-title {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+}
+
+.apibanner {
+	position: relative;
+	margin-bottom: 30px;
+	display: flex;
+	width: 3000px;
+}
+
+.apibanner .card {
+  margin: 0px 20px;
+  box-shadow: 2px 2px 8px #8a8a8a;
+}
+
+.apibanner {
+  animation: bannermove 20s linear infinite alternate;
+}
+.apibanner:hover {
+  animation-play-state: paused;
+}
+
+@keyframes bannermove {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -1950px;
+  }
+}
+
