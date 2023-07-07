@@ -217,7 +217,6 @@ public class ProjectController {
 			
 		}
 		
-		
 		return new Gson().toJson(result);
 		
 	}

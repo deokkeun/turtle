@@ -21,6 +21,8 @@ public interface WorkspaceService {
 	 */
 	int selectWorkspaceNo(int projectNo);
 
+	int deleteWorkspace(int workspacetNo);
+
 
 
 }

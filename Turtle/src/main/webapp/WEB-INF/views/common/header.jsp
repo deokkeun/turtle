@@ -215,8 +215,8 @@
                               <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="project1Dropdown">
-                              <button class="dropdown-item rename-button" onclick="renameProject(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
-                              <button class="dropdown-item delete-button" onclick="deleteProject(this)"><i class="bi bi-trash"></i> 삭제하기</button>
+                              <button class="dropdown-item rename-button" onclick="renameProject(${project.projectNo})"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
+                              <button class="dropdown-item delete-button" onclick="deleteProject(${project.projectNo})" data-projectNo="${project.projectNo}"><i class="bi bi-trash"></i> 삭제하기</button>
                             </div>
                           </div>
                         </a>
@@ -246,7 +246,7 @@
                       </button>
                       <div class="dropdown-menu" aria-labelledby="project1Dropdown">
                         <button class="dropdown-item rename-button" onclick="renameProject(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
-                        <button class="dropdown-item delete-button" onclick="deleteProject(this)"><i class="bi bi-trash"></i> 삭제하기</button>
+                        <button class="dropdown-item delete-button" onclick="deleteWorkspace(${workspace.workspaceNo})" data-workspaceNo="${workspace.workspaceNo}"><i class="bi bi-trash"></i> 삭제하기</button>
                       </div>
                     </div>
                   </a>

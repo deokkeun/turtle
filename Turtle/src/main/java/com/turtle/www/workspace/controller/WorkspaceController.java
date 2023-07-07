@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.google.gson.Gson;
 import com.turtle.www.board.model.service.BoardService;
 import com.turtle.www.board.model.vo.Board;
 import com.turtle.www.chat.model.service.ChatService;
@@ -206,6 +207,22 @@ public class WorkspaceController {
 			
 		return "workspace/workspace";
 
+	}
+	
+	@PostMapping("/deleteWorkspace")
+	public String deleteWorkspace(Model model, @RequestParam("workspacetNo") int workspacetNo, ProjectMember projectMember) {
+		logger.info("워크스페이스 삭제");
+		
+		int result = 0;
+		
+		if(projectMember.getProjectManager().equals("Y")) {
+			
+			result = service.deleteWorkspace(workspacetNo);
+			
+		}
+		
+		return new Gson().toJson(result);
+		
 	}
 	
 }

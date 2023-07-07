@@ -43,5 +43,11 @@
 			) 
 		WHERE ROWNUM = 1
 	</select>
+	
+	<update id="deleteWorkspace">
+		UPDATE WORKSPACE
+		SET WORKSPACE_DELETE_ST = 'Y'
+		WHERE WORKSPACE_NO = #{workspaceNo}
+	</update>
 		
 </mapper>

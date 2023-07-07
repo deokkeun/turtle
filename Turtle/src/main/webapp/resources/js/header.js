@@ -194,7 +194,7 @@ function deleteProject(projectNo) {
   $.ajax({
     url: 'deleteProject', 
     type: 'POST',
-    data: { projectNo: projectNo },
+    data: { "projectNo": projectNo },
     success: function(result) {
       if(result > 0){
         alert("삭제되었습니다.");
@@ -204,6 +204,26 @@ function deleteProject(projectNo) {
     },
     error: function() {
       console.log('프로젝트 삭제 중 오류가 발생.');
+    }
+  });
+}
+
+function deleteWorkspace(workspaceNo) {
+  console.log("워크스페이스 삭제");
+  
+  $.ajax({
+    url: 'deleteWorkspace', 
+    type: 'POST',
+    data: { "workspaceNo": workspaceNo },
+    success: function(result) {
+      if(result > 0){
+        alert("삭제되었습니다.");
+      }else{
+        alert("삭제에 실패하였습니다. 잠시 후 다시 시도해주세요.");
+      }
+    },
+    error: function() {
+      console.log('워크스페이스 삭제 중 오류가 발생.');
     }
   });
 }
