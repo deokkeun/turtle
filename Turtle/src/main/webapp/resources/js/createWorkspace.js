@@ -19,59 +19,6 @@ $('.pop').click(function(e) {
 });
 
 
-
-
-
-/*워크스페이스 추가하기*/
-/*
-$('.pop-content2').click(function() {
-
-    var target = this;
-    var name = target.querySelector('.content-name > div:nth-child(1)').innerText;
-
-    console.log(name);
-
-    let res = "";
-
-    res = " <div><div><a><i class='fa-solid fa-bars'></i></a></div><div class='workspace-name'><span>" + name +"</span><a class='change-text'><i class='fa-regular fa-pen-to-square'></i></a></div><div class='remove-btn'><a>삭제</a></div></div>"
-
-    $('.workspace').append(res);
-
-
-    $('.pop').fadeOut();
-*/
-    /*추가한 워크스페이스 삭제하기*/
-    /*
-    $('.remove-btn').click(function() {
-
-        console.log($(this).siblings('.workspace-name').text());
-        $(this).parent().remove();
-       
-       });
-
-*/
-    /*워크스페이스 이름 변경*/
-    /*
-    $('.change-text').click(function() {
-        console.log($(this).parents('.workspace-name').text());
-        $(this).parents('.workspace-name').html("<input type='text' class='workspace-input'>");
-        
-        $('.workspace-input').keydown(function(key) {
-            
-            if(key.keyCode == 13) {
-                console.log($(this).val());
-                $(this).parents('.workspace-name').html("<span>" + $(this).val() + "</span><a class='change-text'><i class='fa-regular fa-pen-to-square'></i></a></div>");
-            }
-
-
-        });
-
-    });
-       
-
-});
-*/
-
 $(document).ready(function() {
     /*워크스페이스 추가하기*/
     $('.pop-content2').on('click', function() {
@@ -140,12 +87,8 @@ $(document).ready(function() {
 
     })
 
-// function load() {
 
-//     $('#load').css('display', 'block');
-// }
 
-setTimeout(load(),1000);
 /*이미지 클릭 시 SELECTED로 이동 */
 
 
@@ -225,31 +168,13 @@ setTimeout(load(),1000);
 
 });
 
-
-/*추가된 워크스페이스 bar를 드래그해서 div 이동시키키(진행중,시간남으면하기) */
-/*
-let dragged = null;
-
-document.addEventListener("dragstart", (event) => {
-  // store a ref. on the dragged elem
-  dragged = event.target;
+$('.next-btn').click(function() {
+    if($("input[name=workspaceName]").val().length == 0) {
+    alert('워크스페이스명을 입력해주세요.');
+    $('input[name=workspaceName]').focus();
+    return false;
+   }
 });
-
-document.addEventListener("dragover", (event) => {
-  // prevent default to allow drop
-  event.preventDefault();
-});
-
-document.addEventListener("drop", (event) => {
-  // prevent default action (open as link for some elements)
-  event.preventDefault();
-  // move dragged element to the selected drop target
-  if (event.target.className == "dropzone") {
-    dragged.parentNode.removeChild(dragged);
-    event.target.appendChild(dragged);
-  }
-}); 
-*/
     
 //이모티콘
 let button3 = document.querySelector("#emoji_btn2");
@@ -269,3 +194,4 @@ picker2.on('emoji', emoji => {
   const emojiValueInput = document.querySelector('#emoji_value');
   emojiValueInput.value = emoji;
 });
+

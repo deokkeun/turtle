@@ -256,7 +256,7 @@ $('.next-btn').click(function() {
     $('.note-editable').focus();
     return false;
    }
-   })
+});
 
 //이모티콘
 let button3 = document.querySelector("#emoji_btn2");

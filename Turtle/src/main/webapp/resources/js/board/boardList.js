@@ -25,14 +25,14 @@ $(document).on('keydown', '.boardListBoardTitle', function(key) {
 //$(document).on("keyup", ".board", function(){keyupTyping($(this))});
 $(document).on("click", ".add-board-btn", function(){
     addBoardBtn($(this))
-    // $(event.target).parents('.board').next().children('.edit-board-area').children('.select-board-detail').children('.boardTitle').attr('contenteditable','true');
-    // $(event.target).parents('.board').next().children('.edit-board-area').children('.select-board-detail').children('.boardTitle').focus();
-});
-$(document).on("click", ".add-board-btn", function(){
-    
     $(event.target).parents('.board').next().children('.edit-board-area').children('.select-board-detail').children('.boardTitle').attr('contenteditable','true');
     $(event.target).parents('.board').next().children('.edit-board-area').children('.select-board-detail').children('.boardTitle').focus();
 });
+// // $(document).on("click", ".add-board-btn", function(){
+    
+// //     $(event.target).parents('.board').next().children('.edit-board-area').children('.select-board-detail').children('.boardTitle').attr('contenteditable','true');
+// //     $(event.target).parents('.board').next().children('.edit-board-area').children('.select-board-detail').children('.boardTitle').focus();
+// });
 $(document).on("click", ".delete-board-btn", function(){deleteBoardBtn($(this))});
 $(document).on("click", ".edit-boardTitle-btn", function() {
     var value = $('.boardListBoardTitle').text();
