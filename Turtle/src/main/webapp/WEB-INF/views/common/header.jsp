@@ -233,7 +233,7 @@
           <a class="nav-link collapsed" data-bs-target="#workspace-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-chevron-down" id="arrow"></i><i class="bx bx-desktop"></i><span>WORKSPACE</span>
           </a>
-         <!--   <button class="add-file-button" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button> -->
+         <button class="add-file-button" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button> 
           <ul id="workspace-nav" class="nav-content collapse" data-bs-parent="">
             <c:forEach var="workspace" items="${workspaceList}">
               <c:if test="${workspace.workspaceName != 'calendar' && workspace.workspaceName != 'loadmap'}">
