@@ -154,7 +154,7 @@
     </script>
 
     <script>
-        const contextPath = "${contextPath}";
+        // const contextPath = "${contextPath}";
     </script>
     <!-- treeviz -->
     <script src="https://cdn.jsdelivr.net/npm/treeviz@2.3.0/dist/index.min.js"></script>
