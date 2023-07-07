@@ -7,6 +7,7 @@ naver_id_login.get_naver_userprofile("naverSignInCallback()");
 // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
 
 function naverSignInCallback() {
+	console.log("네이버 로그인");
   
   // 네이버 사용자 프로필 조회
   let token = naver_id_login.oauthParams.access_token;
@@ -15,7 +16,7 @@ function naverSignInCallback() {
   let profileImg = naver_id_login.getProfileData('profile_image');
   
   $.ajax({
-    url : "/dupCheckForNaver",
+    url : "/dupCheckNaver",
     type : "post",
     data : {"email": email, "name" : name},
     success : function (data){

@@ -364,10 +364,10 @@ public class MemberController {
 		return "common/callback";
 	}
 	
-	@PostMapping("/dupCheckForNaver")
+	@PostMapping("/dupCheckNaver")
 	@ResponseBody
 	public int dupCheckForNaver(@RequestParam("email") String email, @RequestParam("name")String name) {
-		
+		logger.info("네이버 중복 검사");
 		int result = -1;
 		
 		int emailCheck = service.emailCheckForNaver(email);
