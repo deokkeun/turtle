@@ -17,9 +17,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.google.gson.Gson;
 import com.turtle.www.chat.model.service.ChatService;
 import com.turtle.www.chat.model.vo.ChatRoom;
 import com.turtle.www.chat.model.vo.ChatRoomJoin;
@@ -203,5 +205,21 @@ public class ProjectController {
 		return "common/main";
 	}
 	
+	@PostMapping("/deleteProject")
+	public String deleteProject(Model model, @RequestParam("projectNo") int projectNo, ProjectMember projectMember) {
+		logger.info("프로젝트 삭제");
+		
+		int result = 0;
+		
+		if(projectMember.getProjectManager().equals("Y")) {
+			
+			result = service.deleteProject(projectNo);
+			
+		}
+		
+		
+		return new Gson().toJson(result);
+		
+	}
 
 }

@@ -181,9 +181,10 @@
                   <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="project1Dropdown">
-                  <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
-                  <button class="dropdown-item delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i> 삭제하기</button>
-                  <button class="dropdown-item duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i> 복제하기</button>
+                  <button class="dropdown-item rename-button" onclick="renameProject(${project.projectNo})"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
+				<button class="dropdown-item delete-button" onclick="deleteProject(${project.projectNo})" data-projectNo="${project.projectNo}"><i class="bi bi-trash"></i> 삭제하기</button>
+
+
                 </div>
               </div>
             </a>
@@ -214,9 +215,8 @@
                               <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="project1Dropdown">
-                              <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
-                              <button class="dropdown-item delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i> 삭제하기</button>
-                              <button class="dropdown-item duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i> 복제하기</button>
+                              <button class="dropdown-item rename-button" onclick="renameProject(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
+                              <button class="dropdown-item delete-button" onclick="deleteProject(this)"><i class="bi bi-trash"></i> 삭제하기</button>
                             </div>
                           </div>
                         </a>
@@ -245,9 +245,8 @@
                         <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
                       </button>
                       <div class="dropdown-menu" aria-labelledby="project1Dropdown">
-                        <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
-                        <button class="dropdown-item delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i> 삭제하기</button>
-                        <button class="dropdown-item duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i> 복제하기</button>
+                        <button class="dropdown-item rename-button" onclick="renameProject(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
+                        <button class="dropdown-item delete-button" onclick="deleteProject(this)"><i class="bi bi-trash"></i> 삭제하기</button>
                       </div>
                     </div>
                   </a>

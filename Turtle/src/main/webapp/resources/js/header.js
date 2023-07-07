@@ -187,3 +187,25 @@ function join() {
 };
 
 
+
+function deleteProject(projectNo) {
+  console.log("프로젝트 삭제");
+  
+  $.ajax({
+    url: 'deleteProject', 
+    type: 'POST',
+    data: { projectNo: projectNo },
+    success: function(result) {
+      if(result > 0){
+        alert("삭제되었습니다.");
+      }else{
+        alert("삭제에 실패하였습니다. 잠시 후 다시 시도해주세요.");
+      }
+    },
+    error: function() {
+      console.log('프로젝트 삭제 중 오류가 발생.');
+    }
+  });
+}
+
+  

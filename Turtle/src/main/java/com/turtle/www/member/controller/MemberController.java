@@ -1,5 +1,6 @@
 package com.turtle.www.member.controller;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,9 +37,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.google.gson.Gson;
 import com.turtle.www.member.model.service.MemberService;
 import com.turtle.www.member.model.vo.Member;
+import com.turtle.www.member.naver.JsonParser;
+import com.turtle.www.member.naver.NaverLoginBO;
 import com.turtle.www.project.model.service.ProjectService;
 import com.turtle.www.workspace.model.service.WorkspaceService;
 
@@ -62,6 +66,15 @@ public class MemberController {
 	private ProjectService pService;
 	@Autowired
 	private WorkspaceService wService;
+	
+    /* NaverLoginBO */
+    private NaverLoginBO naverLoginBO;
+    private String apiResult = null;
+    
+    @Autowired
+    private void setNaverLoginBO(NaverLoginBO naverLoginBO) {
+        this.naverLoginBO = naverLoginBO;
+    }
 	
 	
 	
@@ -128,190 +141,67 @@ public class MemberController {
 		}
 		
 	}
+
 	
-	@RequestMapping(value="callBack", method=RequestMethod.GET)
-	public String callBack(){
-		return "member/callBack";
+	
+	@RequestMapping(value="/common/landing", method = RequestMethod.GET)
+	public String login(HttpSession session, Model model, String url) {
+		
+        /* 네이버아이디로 인증 URL을 생성하기 위하여 naverLoginBO클래스의 getAuthorizationUrl메소드 호출 */
+        String naverAuthUrl = naverLoginBO.getAuthorizationUrl(session);
+        
+        //https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=sE***************&
+        //redirect_uri=http%3A%2F%2F211.63.89.90%3A8090%2Flogin_project%2Fcallback&state=e68c269c-5ba9-4c31-85da-54c16c658125
+        System.out.println("네이버:" + naverAuthUrl);
+        
+        //네이버 
+        model.addAttribute("naverurl", naverAuthUrl);
+ 
+        /* 생성한 인증 URL을 View로 전달 */
+		
+		
+		return "common/landing";
 	}
 	
-	@RequestMapping(value="naverSave", method=RequestMethod.POST)
-	public @ResponseBody String naverSave(@RequestParam("n_age") String n_age, @RequestParam("n_birthday") String n_birthday, @RequestParam("n_email") String n_email, @RequestParam("n_gender") String n_gender, @RequestParam("n_id") String n_id, @RequestParam("n_name") String n_name, @RequestParam("n_nickName") String n_nickName) {
-	System.out.println("#############################################");
-	System.out.println(n_age);
-	System.out.println(n_birthday);
-	System.out.println(n_email);
-	System.out.println(n_gender);
-	System.out.println(n_id);
-	System.out.println(n_name);
-	System.out.println(n_nickName);
-	System.out.println("#############################################");
-
-	Member member = new Member();
-//	naver.setN_age(n_age);
-//	naver.setN_birthday(n_birthday);
-	member.setMemberEmail(n_email);
-	member.setSocialEmail(n_id);
-	member.setMemberName(n_name);
-//	naver.setN_nickName(n_nickName);
+    //네이버 로그인 성공시 callback호출 메소드
+    @RequestMapping(value = "/callback", method = { RequestMethod.GET, RequestMethod.POST })
+    public String callback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session, Member member)
+            throws Exception {
+    	
+    	JsonParser json = new JsonParser();
+    	
+        //System.out.println("여기는 callback");
+        
+        OAuth2AccessToken oauthToken;
+        oauthToken = naverLoginBO.getAccessToken(session, code, state);
+        //로그인 사용자 정보를 읽어온다.
+        String apiResult = naverLoginBO.getUserProfile(oauthToken);
+        
+        member = json.changeJson(apiResult); // dto에 저장
+        
+        
+        System.out.println(apiResult);
+        
+//        if (service.getNaverMember(member) != null) { // 세션만들기 (이미 한번이라도 로그인한 정보가 있으면~)
+//			session.setAttribute("login", member);
+//		}else { //로그인을 한번도 안했다면 가입!
+//			service.joinNaverMember(member);
+//			session.setAttribute(member);
+//			
+//
+//			
+//			model.addAttribute("pd", pd);
+//			model.addAttribute("list", list);
+//		}
+        
+        
+        model.addAttribute("result", apiResult);
+ 
+        /* 네이버 로그인 성공 페이지 View 호출 */
+        return "callback.tiles";
+    }
     
-	// ajax에서 성공 결과에서 ok인지 no인지에 따라 다른 페이지에 갈 수 있게끔 result의 기본값을 "no"로 선언
-	String result = "no";
     
-	if(member!=null) {
-		// naver가 비어있지 않는다는건 데이터를 잘 받아왔다는 뜻이므로 result를 "ok"로 설정
-		result = "ok";
-	}
-
-	return result;
-    
-	}
-	
-//	
-//	@GetMapping("/callback")
-//	public String callback1(@RequestParam("code") String code, HttpSession session, Model model) {
-//	    try {
-//	        // 네이버 로그인 콜백 URL 처리를 위한 필요한 정보
-//	        String clientId = "aQpBvST4iYdjSLDbWXWl";
-//	        String clientSecret = "2DbK66epLO";
-//	        String redirectUri = "http://localhost:8080/www/member/callback";
-//
-//	        // 네이버 API에 액세스 토큰 요청을 위한 URL 생성
-//	        String tokenUrl = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&client_id="
-//	                + clientId + "&client_secret=" + clientSecret + "&redirect_uri=" + redirectUri + "&code=" + code;
-//
-//	        // 액세스 토큰 요청을 위한 HTTP 요청 보내기
-//	        RestTemplate restTemplate = new RestTemplate();
-//	        HttpHeaders headers = new HttpHeaders();
-//	        headers.setContentType(MediaType.APPLICATION_JSON);
-//	        HttpEntity<String> entity = new HttpEntity<>(headers);
-//	        ResponseEntity<String> response = restTemplate.exchange(tokenUrl, HttpMethod.GET, entity, String.class);
-//
-//	        if (response.getStatusCode() == HttpStatus.OK) {
-//	            // 액세스 토큰 요청이 성공한 경우
-//	            String responseBody = response.getBody();
-//	            
-//	            // 회원 정보 파싱하여 이름 추출
-////	            JsonNode responseNode = new ObjectMapper().readTree(responseBody);
-////	            JsonNode apiJsonNode = responseNode.get("response");
-////	            String memberName = apiJsonNode.get("name").asText();
-////	            logger.info("네이버 이름 : " + memberName);
-//
-//              
-//                // 회원 정보 파싱하여 프로필 사진 URL 추출
-////                JsonNode apiJsonNode1 = new ObjectMapper().readTree(responseBody);
-////                String profileImage = apiJsonNode1.get("response").get("profile_image").asText();
-////                logger.info("네이버 프로필 사진 : " + profileImage);
-//                
-//	            // 응답 데이터 파싱하여 액세스 토큰 추출
-//	            JsonNode jsonNode = new ObjectMapper().readTree(responseBody);
-//	            String accessToken = jsonNode.get("access_token").asText();
-//	            logger.info("네이버 토큰 : " + accessToken);
-//
-//	            // 소셜 아이디 가져오기
-//	            String socialEmail = "naver_" + jsonNode.get("id").asText(); // 네이버 소셜 아이디
-//	            logger.info("네이버 아이디 : " + socialEmail);
-//	            
-//	            // DB에서 소셜 아이디 확인
-//	            Member member = service.getMemberSocialEmail(socialEmail);
-//
-//	            if (member == null) {
-//	                // DB에 소셜 아이디가 없는 경우
-//	                member = new Member();
-//	                member.setSocialEmail(jsonNode.get("email").asText());
-//	                member.setAccessToken(accessToken);
-////	                member.setMemberName(memberName);
-////	                member.setProfileImage(profileImage);
-//	                // 나머지 회원 정보 설정
-//	                // MEMBER 테이블에 회원 정보를 저장
-//	                service.insertSocialMember(member);
-//	            } else {
-//	                // DB에 소셜 아이디가 있는 경우
-//	                member.setAccessToken(accessToken);
-//	                // 나머지 회원 정보 업데이트
-//	                // MEMBER 테이블의 회원 정보 업데이트
-////	                service.updateMember(member);
-//	            }
-//
-//	            // 세션에 로그인 정보 저장
-//	            session.setAttribute("loginMember", member);
-//	            model.addAttribute("loginMember", member);
-//
-//	            // 로그인 성공 후 무조건 쿠키 생성
-//	            Cookie cookie = new Cookie("saveId", member.getSocialEmail());
-//
-//	            // 쿠키의 유지 시간 설정
-//	            cookie.setMaxAge(60 * 60 * 24 * 365); // 초단위 지정(1년)
-//
-//	            // 쿠키가 적용될 범위(경로) 지정
-//	            cookie.setPath("/");
-//
-//	            // 쿠키를 응답 시 클라이언트에게 전달
-//	            ((HttpServletResponse) response).addCookie(cookie);
-//
-//	            return "redirect:/"; // 로그인 성공 후 리다이렉트할 경로
-//	            
-//	        } else {
-//	            // 액세스 토큰 요청이 실패한 경우
-//	        	logger.info("액세스 토큰 요청이 실패한 경우");
-////	            model.addAttribute("errorMessage", "Failed to retrieve access token.");
-////	            return "error"; // 에러 페이지로 이동하거나 적절한 처리를 수행
-//	        }
-//	    } catch (Exception e) {
-//	        // 예외 처리로그직 작성
-//	    	logger.info("예외 처리");
-//	    	logger.info("예외메시지 : " + e.getMessage());
-//	    	e.printStackTrace();
-////	        model.addAttribute("errorMessage", "An error occurred during login.");
-////	        return "error"; // 에러 페이지로 이동하거나 적절한 처리를 수행
-//	    }
-//		return "redirect:/";
-//	}
-
-//	
-//	@GetMapping("/callback")
-//	public String callback(@RequestParam("code") String code, HttpSession session, Model model) {
-//		String socialEmail = "";
-//	    try {
-//	        // 네이버 로그인 콜백 URL 처리를 위한 필요한 정보
-//	        String clientId = "aQpBvST4iYdjSLDbWXWl";
-//	        String clientSecret = "2DbK66epLO";
-//	        String redirectUri = "http://localhost:8080/www/member/callback";
-//
-//	        // 네이버 API에 액세스 토큰 요청을 위한 URL 생성
-//	        String tokenUrl = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&client_id="
-//	                + clientId + "&client_secret=" + clientSecret + "&redirect_uri=" + redirectUri + "&code=" + code;
-//
-//	        // 액세스 토큰 요청을 위한 HTTP 요청 보내기
-//	        RestTemplate restTemplate = new RestTemplate();
-//	        HttpHeaders headers = new HttpHeaders();
-//	        headers.setContentType(MediaType.APPLICATION_JSON);
-//	        HttpEntity<String> entity = new HttpEntity<>(headers);
-//	        ResponseEntity<String> response = restTemplate.exchange(tokenUrl, HttpMethod.GET, entity, String.class);
-//
-//	        if (response.getStatusCode() == HttpStatus.OK) {
-//	            // 액세스 토큰 요청이 성공한 경우
-//	            String responseBody = response.getBody();
-//	            
-//	            JsonNode jsonNode = new ObjectMapper().readTree(responseBody);
-//	            String id = jsonNode.get("id").asText();
-//	            socialEmail = "naver_" + id;
-//	            logger.info("네이버 아이디 : " + socialEmail);
-//	            
-//	            // 응답 데이터 파싱하여 액세스 토큰 추출
-//	            String accessToken = jsonNode.get("access_token").asText();
-//	            logger.info("네이버 토큰 : " + accessToken);
-//	            
-//	        }
-//	    } catch (Exception e) {
-//	        logger.error("소셜 이메일을 가져오는데 예외가 발생하였습니다: " + e.getMessage());
-//	        // 예외 처리 로직을 추가하거나 적절한 오류 처리를 수행하세요.
-//	    }
-//		return "redirect:/";
-//	        
-//	    }
-//
-
-	
 	
 	/** 가입여부 체크
 	 * @param email

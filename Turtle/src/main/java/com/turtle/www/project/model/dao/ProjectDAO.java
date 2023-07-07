@@ -65,4 +65,9 @@ public class ProjectDAO {
 		return sqlSession.selectList("projectMapper.selectProjectList", loginMember);
 	}
 
+
+	public int deleteProject(int projectNo) {
+		return sqlSession.update("projectMapper.deleteProject", projectNo);
+	}
+
 }

@@ -49,6 +49,11 @@ public class ProjectServiceImpl implements ProjectService{
 
 		return dao.selectProjectList(loginMember);
 	}
+
+	@Override
+	public int deleteProject(int projectNo) {
+		return dao.deleteProject(projectNo);
+	}
 	
 	
 	
