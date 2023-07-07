@@ -21,6 +21,11 @@
 		<result property="memberName" column="MEMBER_NAME"/>
 	</resultMap>
 	
+	<resultMap type="chatRoomJoin" id="chatRoomJoin_rm">
+		<result property="pmNo" column="PM_NO"/>
+		<result property="chatRoomNo" column="CHATROOM_NO"/>
+	</resultMap>
+	
 	<!-- 채팅방 리스트 조회 -->
 	<select id="selectChatRoomList" resultMap="chatRoom_rm">
 		SELECT *

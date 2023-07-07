@@ -18,7 +18,7 @@
            
         <c:forEach var="chatRoom" items="${chatRoomList}">
             <li class="chatList">
-                <form action="../chatRoom/${projectNo}/${chatRoom.chatRoomNo}" id="room" value="${chatRoom.chatRoomNo}">
+                <form action="../chatRoom/${projectNo}/${chatRoom.chatRoomNo}" class="room" value="${chatRoom.chatRoomNo}">
                     <button class="chatBtn" value="${chatRoom.chatRoomNo}">${chatRoom.chatRoomTitle}</button>
                 </form>
             
