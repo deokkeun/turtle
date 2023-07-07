@@ -102,9 +102,9 @@
   <aside id="sidebar" class="sidebar"> 
 
     <ul class="sidebar-nav" id="sidebar-nav">
-      <li class="nav-item dropdown pe-3"> 
+      <li class="nav-item dropdown pe-0"> 
         <!-- 프로필 --> 
-        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="${contextPath}/member/myPage/info" data-bs-toggle="dropdown">
+        <a class="nav-link nav-profile d-flex align-items-center pe-0" id="nav-link-size" href="${contextPath}/member/myPage/info" data-bs-toggle="dropdown">
           <c:if test="${empty loginMember.profileImage}">
             <img src="${contextPath}/resources/images/memberProfile/member.png" alt="Profile" class="rounded-circle">
           </c:if>
@@ -242,7 +242,7 @@
           <a class="nav-link collapsed" data-bs-target="#workspace-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-chevron-down" id="arrow"></i><i class="bx bx-desktop"></i><span>WORKSPACE</span>
           </a>
-         <!--   <button class="add-file-button" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button> -->
+         <button class="add-file-button" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button> 
           <ul id="workspace-nav" class="nav-content collapse" data-bs-parent="">
             <c:forEach var="workspace" items="${workspaceList}">
               <c:if test="${workspace.workspaceName != 'calendar' && workspace.workspaceName != 'loadmap'}">
@@ -385,7 +385,7 @@
   <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script> 
 
   <!-- Template Main JS File -->
-  <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js?ver=4"></script>
+  <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js"></script>
 <!--------------------------------------- sockjs를 이용한 WebSocket 구현을 위해 라이브러리 추가 ---------------------------------------------->	
 <!-- https://github.com/sockjs/sockjs-client -->
 <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>

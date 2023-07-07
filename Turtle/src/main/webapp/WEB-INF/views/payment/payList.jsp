@@ -20,9 +20,9 @@
 <body>
 
 	<!-- header include -->
-	<jsp:include page="/WEB-INF/views/common/header.jsp" />
-
+	
     <main id="main" class="main">
+    <jsp:include page="/WEB-INF/views/common/header.jsp" />
     
         <section id="payList-content">
 
