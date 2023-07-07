@@ -78,13 +78,19 @@ public interface MemberService {
 	int paymentDateCheck(int memberNo);
 
 
-	Member getMemberSocialEmail(String socialEmail);
-
-	void insertSocialMember(Member member);
 
 
 	
+	public int checkNaverFl(String email);
 
+	public int naverSignUp(Map<String, Object> map);
+
+	public Member getMember(int memberNo);
+
+	public int changeToken(Map<String, Object> map);
+	
+
+	public int emailCheckForNaver(String email);
 
 
 }

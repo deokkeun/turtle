@@ -5,8 +5,8 @@
 <%@ page import="java.security.SecureRandom" %>
 <%@ page import="java.math.BigInteger" %>
 
-<script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
 
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 
 <!-- ======= 최종작업용 Header ======= -->
 <header id="header" class="header fixed-top">
@@ -92,10 +92,10 @@
 <section id="login-modal">
 
 	<!-- 네이버 로그인 버튼 생성 위치 -->
-	<div id="naverIdLogin"></div>
-
-	<img src="${contextPath}/resources/images/member/naverLogin.png" onclick="naverLogin()" style="margin-top: 30px; cursor:pointer; width:280px; height: 50px"/>
+     <div id="naver_id_login" title="네이버 아이디로 로그인"></div>
+	
 	<div class="login-divider">or</div>
+
 	<form action="${contextPath}/member/login" method="POST" onsubmit="return loginValidate()">
 		<div>
 			<input type="text" name="memberEmail" class="login-modal-input" placeholder="아이디(이메일)" autocomplete="off" value="${cookie.saveId.value}">
@@ -116,6 +116,7 @@
 		</div>
 
 	</form>
+	
 	<p id="login-modal-find-box">
 		<a href="${contextPath}/member/findAccount">아이디 찾기</a><span class="more-action-divider"></span><a href="${contextPath}/member/findPassword">비밀번호 찾기</a>
 		<br><br>
@@ -125,36 +126,17 @@
 	<a class="login-modal-close fa-solid fa-xmark"></a>
 </section>
 
-<script src="https://accounts.google.com/gsi/client" async defer></script>
 
-<!-- <script>
-
-function naverLogin() {
-	console.log("네이버 로그인 콜백");
-    // 네이버 로그인 버튼을 클릭했을 때 실행되는 함수
-    var clientId = 'aQpBvST4iYdjSLDbWXWl'; // 네이버 애플리케이션 클라이언트 아이디
-    var redirectUri = 'http://localhost:8080/www/member/callback'; // 로그인 성공 후 리다이렉트될 URI
-
-    // 네아로 인증 URL
-    var url = 'https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=' + clientId + '&redirect_uri=' + redirectUri;
-    
-    // 팝업 또는 리다이렉트로 네아로 인증 페이지 열기
-    window.location.href = url;
-}
-
-</script> -->
 
 <script type="text/javascript">
 	console.log("네이버 로그인 콜백");
-	var naverLogin = new naver.LoginWithNaverId(
-		{
-			clientId: "aQpBvST4iYdjSLDbWXWl",
-			callbackUrl: "http://localhost:8080/member/callback",
-			isPopup: true,
-			loginButton: {color: "white", type: 3, height: 60}
-  			// 네이버 로그인버튼 디자인 설정. 한번 바꿔보세요:D
-		}
-	);
-naverLogin.init();
+	
+	var naver_id_login = new naver_id_login("aQpBvST4iYdjSLDbWXWl", "http://localhost:8080/www/member/callback");
+	var state = naver_id_login.getUniqState();
+	naver_id_login.setButton("white", 3, 45);
+	naver_id_login.setDomain("http://localhost:8080/www");
+	naver_id_login.setState(state);
+	naver_id_login.setPopup();
+	naver_id_login.init_naver_id_login();
 </script>
 
