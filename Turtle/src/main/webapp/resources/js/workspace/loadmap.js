@@ -3,7 +3,7 @@ let theInput = document.querySelector(".get-repos input");
 let getButton = document.querySelector(".get-button");
 let reposData = document.querySelector(".show-data");
 
-var workspaceNo = document.getElementById("workspaceNo");
+// var workspaceNo = document.getElementById("workspaceNo");
 var gitRepo = document.getElementById("gitRepo");
 var branch = document.getElementById("branch");
 var ignore = document.getElementById("ignore");
@@ -61,7 +61,7 @@ getButton.onclick = function () {
 
   $.ajax({
       url: contextPath + "/workspace/loadmap/upload",
-      data : {workspaceNo: workspaceNo.value,
+      data : {workspaceNo: workspaceNo,
               gitRepo: gitRepo.value,
               branch: branch.value,
               ignore: ignore.value

@@ -17,13 +17,13 @@
     
     <link rel="stylesheet" href="${contextPath}/resources/css/chat-style.css">
 </head>
-<body id="page2" class="slide-in">
+<body id="page2">
 	
 		<!-- 채팅입력 날짜와 이전채팅의 날짜가 다른경우 날짜를 보여주는 div 추가 -->
 		<!-- 이전 채팅과 현재 입력채팅의 입력시간이 다를 경우 시간 출력((AM || PM)시,분) ,이미지,이름과 같이 출력-->
 		<!-- 채팅입력한 멤버와 로그인멤버가 다를 경우 프로필 이미지하고 같이 출력, 같을경우는 채팅내용과 시간만 출력 -->
 	<div id="back-area">
-		<button class="btn btn-outline-danger" id="back-btn"><i class="fa-solid fa-bars"></i></button>
+		<button class="btn btn-outline-danger" id="back-btn" onsubmit="change2()"><i class="fa-solid fa-bars"></i></button>
 		<div><span>${chatRoomTitle}</span></div>
 		<div></div>
 	</div>

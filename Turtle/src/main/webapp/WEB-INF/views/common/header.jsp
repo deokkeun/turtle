@@ -93,9 +93,9 @@
   <aside id="sidebar" class="sidebar"> 
 
     <ul class="sidebar-nav" id="sidebar-nav">
-      <li class="nav-item dropdown pe-3"> 
+      <li class="nav-item dropdown pe-0"> 
         <!-- 프로필 --> 
-        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="${contextPath}/member/myPage/info" data-bs-toggle="dropdown">
+        <a class="nav-link nav-profile d-flex align-items-center pe-0" id="nav-link-size" href="${contextPath}/member/myPage/info" data-bs-toggle="dropdown">
           <c:if test="${empty loginMember.profileImage}">
             <img src="${contextPath}/resources/images/memberProfile/member.png" alt="Profile" class="rounded-circle">
           </c:if>
@@ -233,7 +233,7 @@
           <a class="nav-link collapsed" data-bs-target="#workspace-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-chevron-down" id="arrow"></i><i class="bx bx-desktop"></i><span>WORKSPACE</span>
           </a>
-         <!--   <button class="add-file-button" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button> -->
+         <button class="add-file-button" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button> 
           <ul id="workspace-nav" class="nav-content collapse" data-bs-parent="">
             <c:forEach var="workspace" items="${workspaceList}">
               <c:if test="${workspace.workspaceName != 'calendar' && workspace.workspaceName != 'loadmap'}">
@@ -390,7 +390,6 @@
     let memberName = "${memberName}";
     let profileImage = "${profileImage}";
 
-    
 		// /updateBoardDetail 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성		
 		// 이벤트 시간 생성용 sock
     let updateEventDateSock = new SockJS(contextPath+"/updateEventDate");

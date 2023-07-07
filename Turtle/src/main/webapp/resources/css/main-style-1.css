@@ -608,7 +608,7 @@ h6 {
     width: 300px;
     z-index: 996;
     transition: all 0.3s;
-    padding: 20px;
+    padding: 0px 0px 20px 0px;
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: thin;
@@ -634,6 +634,10 @@ h6 {
 
 .nav-content li {
   padding: 5px 0;
+}
+
+#nav-link-size{
+	 height: 80px;
 }
 
 

@@ -216,9 +216,15 @@ function addZero(temp){
 
 
 //뒤로가기
+function back() {
+	history.back()
+};
 document.querySelector('#back-btn').onclick = function() {
-  history.back();
+	$('#page2').addClass('slide-in2')
+	setTimeout(back,500)
+
 }
+
 
 //이모티콘
  let button2 = document.querySelector("#emoji_btn");
@@ -236,3 +242,9 @@ picker.on('emoji', emoji => {
 });
 
 //입력중
+function change() {
+	$('.ani').addClass('slide-in');
+}
+function change2() {
+	$('#page2').addClass('slide-in2')
+}

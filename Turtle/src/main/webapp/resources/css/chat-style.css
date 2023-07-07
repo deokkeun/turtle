@@ -154,16 +154,32 @@
 }
 /* 페이지 넘어갈떄 효과 */
 .slide-in {
-	animation: change 0.5s ease forwards;
+	animation: change 0.8s ease forwards;
+}
+.slide-in2 {
+	animation: change2 1.0s ease forwards;
 }
 @keyframes change {
 	from {
-		transform: translateX(100%);
+		transform: translateX(0%);
    		visibility: visible;
   }
 
   	to {
-    transform: translateX(0%);
+    transform: translateX(100%);
+	visibility: visible;
+  }
+	
+}
+@keyframes change2 {
+	from {
+		transform: translateY(0%);
+   		visibility: visible;
+  }
+
+  	to {
+    transform: translateY(100%);
+	visibility: visible;
   }
 	
 }

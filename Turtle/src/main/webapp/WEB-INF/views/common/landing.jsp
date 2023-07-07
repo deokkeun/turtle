@@ -179,25 +179,25 @@
 						<!-- 슬라이더1 -->
 						<div class="swiper-slide">
 							<div class="testimonial-item">
-								<img src="${contextPath}/resources/images/landing/오둥1.jpeg" class="img-fluid" alt="안보여요">
+								<img src="${contextPath}/resources/images/landing/달력기능.png" class="img-fluid" alt="안보여요">
 							</div>
 						</div>
 						<!-- 슬라이더2-->
 						<div class="swiper-slide">
 							<div class="testimonial-item">
-								<img src="${contextPath}/resources/images/landing/오둥2.jpg" class="img-fluid" alt="안보여요">       
+								<img src="${contextPath}/resources/images/landing/채팅기능.png" class="img-fluid" alt="안보여요">       
 							</div>
 						</div>
 						<!-- 슬라이더3 -->
 						<div class="swiper-slide">
 							<div class="testimonial-item">
-								<img src="${contextPath}/resources/images/landing/오둥3.jpg" class="img-fluid" alt="안보여요">               
+								<img src="${contextPath}/resources/images/landing/메모기능.png" class="img-fluid" alt="안보여요">               
 							</div>
 						</div>
 						<!-- 슬라이더4 -->
 						<div class="swiper-slide">
 							<div class="testimonial-item">			
-								<img src="${contextPath}/resources/images/landing/오둥4.jpg" class="img-fluid" alt="안보여요">               
+								<img src="${contextPath}/resources/images/landing/알림기능.png" class="img-fluid" alt="안보여요">               
 							</div>
 						</div>
 						<!-- 슬라이더5 -->
