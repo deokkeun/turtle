@@ -23,3 +23,11 @@
    
     border: 1px solid #4154f1;
 }
+/* .ani {
+    -webkit-animation: scaleUp .4s ease-out both;
+    animation: scaleUp .4s ease-out both;
+}
+
+@keyframes scaleUp {
+from { opacity: 0; -webkit-transform: scale(.8); }
+} */

@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/board/boardDetail.css">
 </head>
 <body>
-    <div class="board-area">
+    <div class="board-area2">
         <div class="board-info-area">
             <div class="boardTitle" contenteditable="true">${board.boardTitle}</div>
             <div class="regInfo">

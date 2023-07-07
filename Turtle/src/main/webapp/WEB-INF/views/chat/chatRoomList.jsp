@@ -11,24 +11,23 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <title>Turtle</title>
 </head>
-<body id="page1" class="slide-in">
+<body id="page1" class="ani">
   
-    <form id="list">
-        <ul>
-           
-        <c:forEach var="chatRoom" items="${chatRoomList}">
-            <li class="chatList">
-                <form action="../chatRoom/${projectNo}/${chatRoom.chatRoomNo}" id="room" value="${chatRoom.chatRoomNo}">
-                    <button class="chatBtn" value="${chatRoom.chatRoomNo}">${chatRoom.chatRoomTitle}</button>
-                </form>
-            
-            </li>  	    	   	
-        </c:forEach>
-        </ul>
-        <div class="r"></div>
-    </form>
-    <!-- <script src="${contextPath}/resources/js/chat.js"></script> -->
-    <script src="${contextPath}/resources/js/chatRoomList.js"></script>
+
+    <ul>
+        
+    <c:forEach var="chatRoom" items="${chatRoomList}">
+        <li class="chatList">
+            <form action="../chatRoom/${projectNo}/${chatRoom.chatRoomNo}" id="room" value="${chatRoom.chatRoomNo}" onsubmit="change()">
+                <button class="chatBtn" value="${chatRoom.chatRoomNo}">${chatRoom.chatRoomTitle}</button>
+            </form>
+        </li>  	    	   	
+    </c:forEach>
+    </ul>
+    
+  
+    <script src="${contextPath}/resources/js/chat.js"></script>
+    <!-- <script src="${contextPath}/resources/js/chatRoomList.js"></script> -->
      <!-- <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script> -->
     <script>
         
