@@ -176,7 +176,7 @@
                                                     </c:choose>
                                                 </div>
                                                 <!-- 수정자 프로필사진 -->
-                                                <div class="profile-image">
+                                                <div class="profile-image2">
                                                     <img src="${contextPath}${memo.profileImg}">
                                                 </div>	
                                             </div>	    			
@@ -214,7 +214,7 @@
                                                     </c:choose>
                                                 </div>
                                                 <!-- 수정자 프로필사진 -->
-                                                <div class="profile-image">
+                                                <div class="profile-image2">
                                                     <img src="${contextPath}${memo.profileImg}">
                                                 </div>
                                             </div>	  

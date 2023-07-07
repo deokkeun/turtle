@@ -60,7 +60,7 @@
             <i class="fa-solid fa-layer-group">워크스페이스 관리</i>
         </div>
         <!-- 워크스페이스 이름 입력 section -->
-        <form action="createWorkspace" method="post" enctype="multipart/form-data" onsubmit="load()">
+        <form action="createWorkspace" method="post" enctype="multipart/form-data">
             <div class="section2">
                 <p>워크스페이스명 입력</p>
                 <div>

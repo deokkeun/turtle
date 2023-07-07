@@ -5,6 +5,7 @@ $(document).on("click", ".edit-boardTitle-btn", function(){
     const value = $('.boardTitle').val();
     editBoardTitleBtn($(this));
     $(this).parents('.edit-boardTitle').css('display', 'none');
+
 });
 
 $(document).on("click", ".emoji-area", function(){
@@ -22,7 +23,16 @@ $(document).on('keydown', '.boardTitle', function(key) {
 //$(document).on("click", ".close-edit-boardTitle-btn", function(){closeEditBoardTitleBtn($(this))});
 //$(document).on("keydown", ".board", function(){inputTyping()});
 //$(document).on("keyup", ".board", function(){keyupTyping($(this))});
-$(document).on("click", ".add-board-btn", function(){addBoardBtn($(this))});
+$(document).on("click", ".add-board-btn", function(){
+    addBoardBtn($(this))
+    // $(event.target).parents('.board').next().children('.edit-board-area').children('.select-board-detail').children('.boardTitle').attr('contenteditable','true');
+    // $(event.target).parents('.board').next().children('.edit-board-area').children('.select-board-detail').children('.boardTitle').focus();
+});
+$(document).on("click", ".add-board-btn", function(){
+    
+    $(event.target).parents('.board').next().children('.edit-board-area').children('.select-board-detail').children('.boardTitle').attr('contenteditable','true');
+    $(event.target).parents('.board').next().children('.edit-board-area').children('.select-board-detail').children('.boardTitle').focus();
+});
 $(document).on("click", ".delete-board-btn", function(){deleteBoardBtn($(this))});
 $(document).on("click", ".edit-boardTitle-btn", function() {
     var value = $('.boardTitle').text();
@@ -429,6 +439,7 @@ function addBoardBtn(addBoardBtn) {
     //clickedBoard = $(board).data("boardsort");
 
     insertBoard(board);
+    console.log(event.target);
 }
 
 // 게시글 삭제버튼 함수

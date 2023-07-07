@@ -140,11 +140,12 @@ $(document).ready(function() {
 
     })
 
-setTimeout(function load() {
-    $('#load').css('display','block');
+// function load() {
 
-},3000);
+//     $('#load').css('display', 'block');
+// }
 
+setTimeout(load(),1000);
 /*이미지 클릭 시 SELECTED로 이동 */
 
 
