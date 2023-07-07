@@ -192,7 +192,7 @@ memoSock.onmessage = function(e){
 			// 수정 멤버 정보 변경
 			changedProfileImage.src = contextPath + memo.profileImg;
 			changedMemberName.innerHTML = "수정자 : " +  memo.memberName;
-			changedMemoUpdateDate.innerHTML = "수정일 : " + currentTime();
+			changedMemoUpdateDate.innerHTML = "수정일 : " + recurrentTime();
 			changedMemoContent.dataset.pmno = memo.pmNo;
 
 			// 수정 메모 내용 변경
@@ -201,7 +201,10 @@ memoSock.onmessage = function(e){
 			// 수정 메모 색상 변경
 			changedMemoInfo.style.backgroundColor = memo.memoBgColor;
 			changedMemoContent.style.backgroundColor = memo.memoBgColor;
+			
 		}
+
+
 
 	});
 	// 알림 웹소켓으로 보냄
@@ -220,17 +223,32 @@ memoSock.onmessage = function(e){
 
 };
 
-function currentTime() {
+// 출력되는 형식 yyyy-mm-dd 출력됨 (원래꺼)
+// function currentTime() {
+// 	const now = new Date();
+	
+// 	const time = now.getFullYear()
+// 				+ "-" + addZero(now.getMonth()+1)
+// 				+ "-" + addZero(now.getDate());
+	
+// 	return time;
+// }
+
+
+// 시간 형식을  mm-dd hh:mm 으로 출력 
+function recurrentTime() {
 	const now = new Date();
 	
-	const time = now.getFullYear()
-				+ "-" + addZero(now.getMonth()+1)
-				+ "-" + addZero(now.getDate());
+	const month = addZero(now.getMonth() + 1);
+	const date = addZero(now.getDate());
+	const hours = addZero(now.getHours());
+	const minutes = addZero(now.getMinutes());
+	
+	const time = month + "-" + date + " " + hours + ":" + minutes;
 	
 	return time;
+  }
 
-
-}
 
 // 10보다 작을 경우 앞에 0을 붙이는 함수
 function addZero(temp){
@@ -240,7 +258,6 @@ function addZero(temp){
 
 
 // 메모지 안에 글자수 제한 카운트하기 
-
 // memoContents는 제일 위에 이미 선언해줌.
 const counters = document.querySelectorAll('.counter');
 
@@ -267,9 +284,10 @@ memoContents.forEach((memoContent, index) => {
 function formatTimeAgo(timestamp) {
     const currentDate = new Date();
     //const alertDate = new Date(timestamp);
-	const alertDate = new Date(Date.parse(timestamp));
-  
-    const minutes = Math.floor((currentDate - alertDate) / 60000);
+	const updateDate = new Date(Number(timestamp));
+	const timeDifference = currentDate.getTime() - updateDate.getTime(); // 현재 시간과의 차이(ms) 계산
+
+    const minutes = Math.floor(timeDifference / (1000 * 60)); // 분 단위로 변환
   
     if (minutes < 1) {
       return "방금 전";

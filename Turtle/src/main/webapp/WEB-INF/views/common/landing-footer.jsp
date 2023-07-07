@@ -24,22 +24,30 @@
                         <div class="footerLogo">TURTLE</div>
                     </a>
                     <!-- 회사정보 (주소.대표자.전화.이메일 등등) -->
-                    <div class="footer-info">
-                        <p><b>주소</b>&nbsp;&nbsp;서울특별시 강남구 테헤란로14길 6 남도빌딩 2F</p>
-                        <h6></h6>
-                        <p><b>대표자</b>&nbsp;&nbsp;조미현&nbsp;&nbsp;&nbsp;&nbsp;<b>전화</b>&nbsp;&nbsp;1588-8181&nbsp;&nbsp;&nbsp;&nbsp;<b>이메일</b>&nbsp;&nbsp;turtle@turtle.com</p>
-                        <h6></h6>
-                        <p><b>사업자등록번호</b>&nbsp;&nbsp;123-81-45678&nbsp;&nbsp;&nbsp;&nbsp;<b>통신판매업신고번호</b>&nbsp;&nbsp;2023-서울강남-0081</p>
-                    </div>
+                    <ul class="footer-info">
+                        <li>
+                            <p>
+                                <b>주소</b> 서울특별시 강남구 테헤란로14길 6 남도빌딩 2F
+                            </p>
+                        </li>
+                        <li>
+                            <p><b>대표자</b> 조미현</p>
+                            <p><b>전화</b> 1588-8181</p>
+                            <p><b>이메일</b> turtle@turtle.com</p>
+                        </li>
+                        <li>
+                            <p><b> 사업자등록번호 </b> 123-81-45678<b></b>
+                            <p><b> 통신판매업신고번호 </b> 2023-서울강남-0081</p>
+                    </ul>
                     
                     <!-- 이용약관 링크 -->
-                    <div class="copyright">
-                        <a href="${contextPath}/etc/terms"><span><b>서비스 이용약관</b></span></a>&nbsp;&nbsp;&nbsp;
-                        <a href="${contextPath}/etc/terms"><span><b>개인정보 처리방침</b></span></a>&nbsp;&nbsp;&nbsp;
-                        <a href="${contextPath}/etc/terms"><span><b>전자금융거래 이용약관</b></span></a>&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;
-                        &copy; Copyright <strong>TURTLE</strong>. All Rights Reserved
-                    </div>
+                    <ul class="terms">
+                        <li><a href="${contextPath}/etc/terms"><p><b>서비스 이용약관</b></p></a></li>
+                        <li><a href="${contextPath}/etc/terms"><p><b>개인정보 처리방침</b></p></a></li>
+                        <li><a href="${contextPath}/etc/terms"><p><b>전자금융거래 이용약관</b></p></a></li>
+                        
+                        <li class="copylight"> ⓒ Copyright TURTLE All Rights Reserved</li>
+                    </ul>
                 </div>
             </div>
         </div>
