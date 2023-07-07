@@ -139,6 +139,8 @@
 
             <!-- 메모 영역 -->
             <div>
+            <jsp:include page="/WEB-INF/views/workspace/memo.jsp" />
+                <!--
                 <div id="memo-area">
                     <c:forEach var="memo" items="${memoList}"> 
                         <fmt:formatDate var="memoRegDate" value="${memo.memoRegDate}" pattern="MM-dd HH:mm"/>
@@ -146,22 +148,22 @@
                         <c:choose>
                             <c:when test="${memo.memoType eq 'workspace'}">
             
-                                <!-- 팀 메모 영역-->
+                                
                                 <div class="team">
                                 
                                     <div class="division1">Team Memo</div>
             
                                     <div class="division2">
-                                        <!-- 팀 메모지 -->
+                                        
                                         <div class="memoDetail workspace" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
-                                            <!-- 팀메모 작성 부분 -->
+                                            
                                             <div class="memoContent" contenteditable="true"
                                                 data-pmNo="${pmNo}" data-memoNo="${memo.memoNo}" data-memoType="${memo.memoType}"  style="background-color: ${memo.memoBgColor}">					
                                                 ${memo.memoContent} 
                                             </div>
-                                            <!-- 메모 글자수 카운트 -->
+                                            
                                             <p><span class="counter"> 0 </span> / 150</p>
-                                            <!-- 메모 수정자 정보 -->
+                                           
                                             <div class="memoInfo"  style="background-color: ${memo.memoBgColor}">
                                                 <div class="modifyInfo">
                                                     <div class="memberName">수정자 : ${memo.memberName}</div>
@@ -174,32 +176,32 @@
                                                         </c:otherwise>
                                                     </c:choose>
                                                 </div>
-                                                <!-- 수정자 프로필사진 -->
+                                                
                                                 <div class="profile-image2">
                                                     <img src="${contextPath}${memo.profileImg}">
                                                 </div>	
                                             </div>	    			
-                                        </div><!-- memodetail 끝-->
-                                    </div><!-- division2 끝-->
-                                </div><!-- 팀 메모끝-->
+                                        </div>
+                                    </div>
+                                </div>
                             </c:when>
                             
                             <c:otherwise>
-                                <!-- 개인 메모 영역-->
+                                
                                 <div class="solo">
                                     <div class="division1">Personal Memo</div>
             
                                     <div class="division2">
-                                        <!-- 개인 메모지-->
+                                        
                                         <div class="memoDetail personal" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
-                                            <!-- 개인메모 작성 부분 -->	
+                                            	
                                             <div class="memoContent" contenteditable="true"
                                                 data-pmNo="${pmNo}" data-memoNo="${memo.memoNo}" data-memoType="${memo.memoType}" style="background-color: ${memo.memoBgColor}">					
                                                 ${memo.memoContent}
                                             </div>
-                                            <!-- 메모 글자수 카운트 -->
+                                            
                                             <p><span class="counter"> 0 </span> / 150</p>
-                                            <!-- 메모 수정자 정보-->
+                                            
                                             <div class="memoInfo" style="background-color: ${memo.memoBgColor}">
                                                 <div class="modifyInfo">
                                                     <div class="memberName">수정자 : ${memo.memberName}</div> 
@@ -212,21 +214,22 @@
                                                         </c:otherwise>
                                                     </c:choose>
                                                 </div>
-                                                <!-- 수정자 프로필사진 -->
+                                                
                                                 <div class="profile-image2">
                                                     <img src="${contextPath}${memo.profileImg}">
                                                 </div>
                                             </div>	  
-                                        </div><!-- memodetail 끝-->
-                                    </div><!-- division2 끝-->
-                                </div><!--개인메모 끝-->
+                                        </div>
+                                    </div>
+                                </div>
                             </c:otherwise>
                         </c:choose>
                                 
                 </c:forEach>
                 </div>
+                 -->
             </div>
-      
+            
     </main>
     
     
@@ -242,10 +245,18 @@
      <!-- <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script> -->
      <!-- chat js -->
     <!-- <script src="${contextPath}/resources/js/chat.js"></script> -->
-
-    <!-- memo.js 연결 -->
-    <script src="${contextPath}/resources/js/workspace/memo.js"></script>
     
+    <script>
+        // 로그인이 되어 있을 경우에만
+		// /memo 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
+		//let memoSock = new SockJS(contextPath+"/memo");
+        // 로그인이 되어 있을 경우에만    
+		// /boardList 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성		
+		
+    </script>
+    <!-- memo.js 연결
+    <script src="${contextPath}/resources/js/workspace/memo.js"></script>
+     -->
     <!-- boardList.js 연결 -->
     <script src="${contextPath}/resources/js/board/boardList.js"></script>
     

@@ -12,8 +12,6 @@
     <title>Turtle</title>
 </head>
 <body id="page1" class="ani">
-  
-
     <ul>
         
     <c:forEach var="chatRoom" items="${chatRoomList}">

@@ -31,16 +31,7 @@
   
 
   <link rel="stylesheet" href="${contextPath}/resources/css/board/boardDetail.css">
-  <script>
-    const pmNo = "${pmNo}";
-    const projectNo = "${projectNo}";
-    const workspaceNo = "${workspaceNo}";
-    const contextPath = "${contextPath}";
-    const boardNo = "${boardNo}";
-    const memberNo = "${memberNo}";
-    let memberName = "${memberName}";
-    let profileImage = "${profileImage}";
-</script>
+  
 </head>
 <body>
 
@@ -385,29 +376,25 @@
   <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script> 
 
   <!-- Template Main JS File -->
-  <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js"></script>
-<!--------------------------------------- sockjs를 이용한 WebSocket 구현을 위해 라이브러리 추가 ---------------------------------------------->	
-<!-- https://github.com/sockjs/sockjs-client -->
-<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
-<script>  
-    // 로그인이 되어 있을 경우에만
-    // 로그인이 되어 있을 경우에만
-		// /memo 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
-		let memoSock = new SockJS(contextPath+"/memo");
-		// /boardList 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성		
-		// 게시글 수정용 sock
-		let boardListSock = new SockJS(contextPath+"/boardList");
-		// /insertBoard 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
-		// 게시글 추가용 sock
-		let insertBoardSock = new SockJS(contextPath+"/insertBoard");
-		// /deleteBoard 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
-		// 게시글 삭제용 sock
-		let deleteBoardSock = new SockJS(contextPath+"/deleteBoard");
-    // 이모지 수정용 sock
-    let updateEmojiSock = new SockJS(contextPath+"/updateEmoji");
+  <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js?ver=4"></script>
+  <!--------------------------------------- sockjs를 이용한 WebSocket 구현을 위해 라이브러리 추가 ---------------------------------------------->	
+  <!-- https://github.com/sockjs/sockjs-client -->
+  <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+  <script>
+    const pmNo = "${pmNo}";
+    const projectNo = "${projectNo}";
+    const workspaceNo = "${workspaceNo}";
+    const contextPath = "${contextPath}";
+    const boardNo = "${boardNo}";
+    const memberNo = "${memberNo}";
+    let memberName = "${memberName}";
+    let profileImage = "${profileImage}";
+
 		// /updateBoardDetail 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성		
 		// 이벤트 시간 생성용 sock
     let updateEventDateSock = new SockJS(contextPath+"/updateEventDate");
+    // /memo 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
+		let memoSock = new SockJS(contextPath+"/memo");
     // 알람용 sock
     let alertSock = new SockJS(contextPath+"/alert");
     // 캘린더 연동용 sock
@@ -419,6 +406,16 @@
 		let insertBoardDetailSock = new SockJS(contextPath+"/insertBoardDetail");
 		// 게시글 내용 삭제용 sock
 		let deleteBoardDetailSock = new SockJS(contextPath+"/deleteBoardDetail");
+    // 게시글 수정용 sock
+		let boardListSock = new SockJS(contextPath+"/boardList");
+		// /insertBoard 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
+		// 게시글 추가용 sock
+		let insertBoardSock = new SockJS(contextPath+"/insertBoard");
+		// /deleteBoard 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
+		// 게시글 삭제용 sock
+		let deleteBoardSock = new SockJS(contextPath+"/deleteBoard");
+        // 이모지 수정용 sock
+    let updateEmojiSock = new SockJS(contextPath+"/updateEmoji");
 </script>
 <script src="${contextPath}/resources/js/header.js"></script>
 <!-- boardDetail.js 연결 -->

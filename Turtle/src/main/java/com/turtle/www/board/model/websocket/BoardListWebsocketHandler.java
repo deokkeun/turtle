@@ -70,11 +70,12 @@ public class BoardListWebsocketHandler extends TextWebSocketHandler {
 					
 				// WebSocketSession == HttpSession(로그인정보, 워크스페이스번호)을 가로챈 것
 				int workspaceNo = (Integer)s.getAttributes().get("workspaceNo");
+				int boardNo = (Integer)s.getAttributes().get("boardNo");
 					
 				// WebSocketSession에 담겨있는 워크스페이스넘버와
 				// 메시지에 담겨있는 워크스페이스넘버가 같을경우
 				// 같은 워크스페이스넘버 클라이언트다.				
-				if(workspaceNo == board.getWorkspaceNo())  {
+				if(boardNo == board.getBoardNo() || workspaceNo == board.getWorkspaceNo())  {
 					
 					// 같은 워크스페이스넘버 클라이언트에게 JSON형식 메시지를 보냄
 					s.sendMessage(new TextMessage(new Gson().toJson(board)));
