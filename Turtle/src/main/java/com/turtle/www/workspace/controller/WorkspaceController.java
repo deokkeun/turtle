@@ -71,6 +71,7 @@ public class WorkspaceController {
 	// 워크스페이스 생성
 	@PostMapping("/createWorkspace")
 	public String createWorkspace(@ModelAttribute("project") Project project,
+							
 							@ModelAttribute("loginMember") Member loginMember,
 							@ModelAttribute("workspace") Workspace workspace,
                             @RequestParam("workspaceName") String workspaceName,

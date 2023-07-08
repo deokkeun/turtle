@@ -186,7 +186,6 @@ public class ProjectController {
 	@GetMapping("/{projectNo}")
 	public String enterProject(@ModelAttribute("loginMember") Member loginMember,
 							@PathVariable("projectNo") int projectNo,
-							@ModelAttribute("project") Project project,
 								Model model) {
 		
 		Map<String, Object> map = new HashMap<>();
@@ -200,6 +199,7 @@ public class ProjectController {
 		// 프로젝트 내 워크스페이스 조회
 		List<Workspace> workspaceList = wService.selectWorkspaceList(projectNo);
 		
+		Project project = service.selectProject(projectNo);
 		
 		model.addAttribute("projectNo", projectNo);
 		model.addAttribute("projectList", projectList);
@@ -207,6 +207,7 @@ public class ProjectController {
 		model.addAttribute("projectMember", projectMember);
 		model.addAttribute("workspaceList", workspaceList);
 		model.addAttribute("project", project);
+		
 		
 		return "common/main";
 	}

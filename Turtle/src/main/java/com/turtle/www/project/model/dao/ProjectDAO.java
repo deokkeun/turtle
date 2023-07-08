@@ -75,4 +75,9 @@ public class ProjectDAO {
 		return sqlSession.update("projectMapper.renameProject", project);
 	}
 
+
+	public Project selectProject(int projectNo) {
+		return sqlSession.selectOne("projectMapper.selectProject", projectNo);
+	}
+
 }

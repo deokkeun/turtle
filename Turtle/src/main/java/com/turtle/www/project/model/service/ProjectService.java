@@ -34,4 +34,7 @@ public interface ProjectService {
 
 	int renameProject(Project project);
 
+
+	Project selectProject(int projectNo);
+
 }
