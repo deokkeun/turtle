@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -63,6 +64,7 @@ public class ProjectController {
 	public String createProject(@ModelAttribute("loginMember") Member loginMember,
 								@ModelAttribute("project") Project project,
 //								@RequestParam("emoji_value") String emojiValue,
+								Model model,
 								HttpSession session,
 								HttpServletRequest req,
 								RedirectAttributes ra) {
@@ -117,6 +119,7 @@ public class ProjectController {
 			path = "project/createWorkspace";
 			
 			session.setAttribute("project", project);
+			model.addAttribute("project", project);
 			logger.info("pm manager 삽입 성공");
 			int pmResult = service.insertPmManager(pm);
 			
@@ -183,6 +186,7 @@ public class ProjectController {
 	@GetMapping("/{projectNo}")
 	public String enterProject(@ModelAttribute("loginMember") Member loginMember,
 							@PathVariable("projectNo") int projectNo,
+							@ModelAttribute("project") Project project,
 								Model model) {
 		
 		Map<String, Object> map = new HashMap<>();
@@ -196,29 +200,64 @@ public class ProjectController {
 		// 프로젝트 내 워크스페이스 조회
 		List<Workspace> workspaceList = wService.selectWorkspaceList(projectNo);
 		
+		
 		model.addAttribute("projectNo", projectNo);
 		model.addAttribute("projectList", projectList);
 		model.addAttribute("pmNo", projectMember.getPmNo());
 		model.addAttribute("projectMember", projectMember);
 		model.addAttribute("workspaceList", workspaceList);
+		model.addAttribute("project", project);
 		
 		return "common/main";
 	}
 	
+	@ResponseBody
 	@PostMapping("/deleteProject")
 	public String deleteProject(Model model, @RequestParam("projectNo") int projectNo, ProjectMember projectMember) {
+		logger.info("============================");
 		logger.info("프로젝트 삭제");
-		
+		System.out.println(projectNo);
+		logger.info(projectMember.getProjectManager());
 		int result = 0;
+	
 		
 		if(projectMember.getProjectManager().equals("Y")) {
 			
 			result = service.deleteProject(projectNo);
+			System.out.println(result);
 			
+		}else {
+			result = 2;
 		}
 		
 		return new Gson().toJson(result);
+	}
+	
+	
+	@ResponseBody
+	@PostMapping("/renameProject")
+	public String renameProject(@RequestParam("projectNo") int projectNo, @RequestParam("projectName") String projectName, ProjectMember projectMember) {
+		logger.info("============================");
+		logger.info("프로젝트 이름 변경");
+		System.out.println(projectNo);
+		logger.info(projectName);
+		logger.info(projectMember.getProjectManager());
+		int result = 0;
 		
+		Project project = new Project();
+		project.setProjectNo(projectNo);
+		project.setProjectName(projectName);
+	
+		if(projectMember.getProjectManager().equals("Y")) {
+			
+			result = service.renameProject(project);
+			System.out.println(result);
+			
+		}else {
+			result = 2;
+		}
+		
+		return new Gson().toJson(result);
 	}
 
 }

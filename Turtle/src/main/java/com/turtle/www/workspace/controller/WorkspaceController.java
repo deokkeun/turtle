@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.google.gson.Gson;
@@ -36,7 +38,7 @@ import com.turtle.www.workspace.model.vo.Workspace;
 
 @Controller
 @RequestMapping("/project")
-@SessionAttributes({"loginMember", "project", "workspaceNo", "boardNo", "projectNo", "pmNo"})
+@SessionAttributes({"loginMember", "projectMember", "project", "workspaceNo", "boardNo", "projectNo", "pmNo"})
 public class WorkspaceController {
 	
 	private Logger logger = LoggerFactory.getLogger(WorkspaceController.class);
@@ -209,8 +211,9 @@ public class WorkspaceController {
 
 	}
 	
+	@ResponseBody
 	@PostMapping("/deleteWorkspace")
-	public String deleteWorkspace(Model model, @RequestParam("workspacetNo") int workspacetNo, ProjectMember projectMember) {
+	public String deleteWorkspace(@RequestParam("workspacetNo") int workspacetNo, ProjectMember projectMember) {
 		logger.info("워크스페이스 삭제");
 		
 		int result = 0;
@@ -219,10 +222,38 @@ public class WorkspaceController {
 			
 			result = service.deleteWorkspace(workspacetNo);
 			
+		}else {
+			result = 2;
 		}
 		
 		return new Gson().toJson(result);
 		
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/renameWorkspace", method = RequestMethod.POST)
+	public String renameWorkspace(@RequestParam("workspaceNo") int workspaceNo, @RequestParam("workspaceName") String workspaceName, @ModelAttribute() ProjectMember projectMember) {
+		logger.info("============================");
+		logger.info("워크스페이스 이름 변경");
+		System.out.println(workspaceNo);
+		logger.info(workspaceName);
+		logger.info(projectMember.getProjectManager());
+		int result = 0;
+		
+		Workspace workspace = new Workspace();
+		workspace.setWorkspaceNo(workspaceNo);
+		workspace.setWorkspaceName(workspaceName);
+	
+		if(projectMember.getProjectManager().equals("Y")) {
+			
+			result = service.renameWorkspace(workspace);
+			System.out.println(result);
+			
+		}else {
+			result = 2;
+		}
+		
+		return new Gson().toJson(result);
 	}
 	
 }

@@ -181,16 +181,13 @@
                   <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="project1Dropdown">
-                  <button class="dropdown-item rename-button" onclick="renameProject(${project.projectNo})"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
-				<button class="dropdown-item delete-button" onclick="deleteProject(${project.projectNo})" data-projectNo="${project.projectNo}"><i class="bi bi-trash"></i> 삭제하기</button>
-
-
+                  <button class="dropdown-item rename-button" type="button" onclick="renameProject(${project.projectNo})"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
+				<button class="dropdown-item delete-button" type="button" onclick="deleteProject(${project.projectNo})" data-projectNo="${project.projectNo}"><i class="bi bi-trash"></i> 삭제하기</button>
                 </div>
               </div>
             </a>
           </li>
         </c:if>
-         
   </c:forEach>
     <!-- 추가적인 프로젝트 항목들 -->
   </ul>
@@ -215,8 +212,8 @@
                               <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="project1Dropdown">
-                              <button class="dropdown-item rename-button" onclick="renameProject(${project.projectNo})"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
-                              <button class="dropdown-item delete-button" onclick="deleteProject(${project.projectNo})" data-projectNo="${project.projectNo}"><i class="bi bi-trash"></i> 삭제하기</button>
+                              <button class="dropdown-item rename-button" type="button" onclick="renameProject(${project.projectNo})"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
+                              <button class="dropdown-item delete-button" type="button" onclick="deleteProject(${project.projectNo})" data-projectNo="${project.projectNo}"><i class="bi bi-trash"></i> 삭제하기</button>
                             </div>
                           </div>
                         </a>
@@ -233,7 +230,7 @@
           <a class="nav-link collapsed" data-bs-target="#workspace-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-chevron-down" id="arrow"></i><i class="bx bx-desktop"></i><span>WORKSPACE</span>
           </a>
-         <button class="add-file-button" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button> 
+         <button class="add-file-button" type="button" onclick="redirectToCreateWorkspace(${project})"><i class="bi bi-plus"></i></button>
           <ul id="workspace-nav" class="nav-content collapse" data-bs-parent="">
             <c:forEach var="workspace" items="${workspaceList}">
               <c:if test="${workspace.workspaceName != 'calendar' && workspace.workspaceName != 'loadmap'}">
@@ -245,8 +242,8 @@
                         <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
                       </button>
                       <div class="dropdown-menu" aria-labelledby="project1Dropdown">
-                        <button class="dropdown-item rename-button" onclick="renameProject(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
-                        <button class="dropdown-item delete-button" onclick="deleteWorkspace(${workspace.workspaceNo})" data-workspaceNo="${workspace.workspaceNo}"><i class="bi bi-trash"></i> 삭제하기</button>
+                        <button class="dropdown-item rename-button" type="button" onclick="renameWorkspace(${workspace.workspaceNo})"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
+                        <button class="dropdown-item delete-button" type="button" onclick="deleteWorkspace(${workspace.workspaceNo})" data-workspaceNo="${workspace.workspaceNo}"><i class="bi bi-trash"></i> 삭제하기</button>
                       </div>
                     </div>
                   </a>

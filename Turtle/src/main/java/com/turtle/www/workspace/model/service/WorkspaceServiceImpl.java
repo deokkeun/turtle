@@ -35,6 +35,10 @@ public class WorkspaceServiceImpl implements WorkspaceService{
 	public int deleteWorkspace(int workspacetNo) {
 		return dao.deleteWorkspace(workspacetNo);
 	}
+	@Override
+	public int renameWorkspace(Workspace workspace) {
+		return dao.renameWorkspace(workspace);
+	}
 	
 	
 	

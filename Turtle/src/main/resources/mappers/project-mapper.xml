@@ -69,4 +69,10 @@
 		SET PROJECT_DELETE_FG = 'Y'
 		WHERE PROJECT_NO = #{projectNo}
 	</update>
+	
+	<update id="renameProject">
+		UPDATE PROJECT
+		SET PROJECT_NAME = #{projectName}
+		WHERE PROJECT_NO = #{projectNo}
+	</update>
 </mapper>

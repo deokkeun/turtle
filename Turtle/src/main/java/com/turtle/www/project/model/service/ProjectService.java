@@ -32,4 +32,6 @@ public interface ProjectService {
 
 	int deleteProject(int projectNo);
 
+	int renameProject(Project project);
+
 }

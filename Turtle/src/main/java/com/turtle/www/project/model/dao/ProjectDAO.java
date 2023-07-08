@@ -70,4 +70,9 @@ public class ProjectDAO {
 		return sqlSession.update("projectMapper.deleteProject", projectNo);
 	}
 
+
+	public int renameProject(Project project) {
+		return sqlSession.update("projectMapper.renameProject", project);
+	}
+
 }

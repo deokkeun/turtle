@@ -49,5 +49,11 @@
 		SET WORKSPACE_DELETE_ST = 'Y'
 		WHERE WORKSPACE_NO = #{workspaceNo}
 	</update>
+	
+		<update id="renameWorkspace">
+		UPDATE WORKSPACE
+		SET WORKSPACE_NAME = #{workspaceName}
+		WHERE WORKSPACE_NO = #{workspaceNo}
+	</update>
 		
 </mapper>

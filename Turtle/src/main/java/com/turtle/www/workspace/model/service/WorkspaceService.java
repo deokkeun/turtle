@@ -23,6 +23,8 @@ public interface WorkspaceService {
 
 	int deleteWorkspace(int workspacetNo);
 
+	int renameWorkspace(Workspace workspace);
+
 
 
 }

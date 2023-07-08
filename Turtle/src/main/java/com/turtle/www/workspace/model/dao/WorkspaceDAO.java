@@ -43,6 +43,10 @@ public class WorkspaceDAO {
 	public int deleteWorkspace(int workspacetNo) {
 		return sqlSession.update("workspaceMapper.deleteWorkspace", workspacetNo);
 	}
+
+	public int renameWorkspace(Workspace workspace) {
+		return sqlSession.update("workspaceMapper.renameWorkspace", workspace);
+	}
 	
 	
 	

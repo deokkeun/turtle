@@ -54,6 +54,11 @@ public class ProjectServiceImpl implements ProjectService{
 	public int deleteProject(int projectNo) {
 		return dao.deleteProject(projectNo);
 	}
+
+	@Override
+	public int renameProject(Project project) {
+		return dao.renameProject(project);
+	}
 	
 	
 	
