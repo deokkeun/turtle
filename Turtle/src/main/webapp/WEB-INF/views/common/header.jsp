@@ -384,7 +384,7 @@
     // 알람용 sock
     let alertSock = new SockJS(contextPath+"/alert");
     // 캘린더 연동용 sock
-    // let calendarSock = new SockJS(contextPath+"/calendar");
+    let calendarSock = new SockJS(contextPath+"/calendar");
     // 게시글 내용 수정용 sock
 		let updateBoardDetailSock = new SockJS(contextPath+"/updateBoardDetail");
 		// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
