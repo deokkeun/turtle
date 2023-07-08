@@ -10,7 +10,7 @@ function selectAlertList() {
         dataType : "JSON",
 
         success : function(alertList) {
-                let badgeNumber = document.querySelector(".badge-number");
+            let badgeNumber = document.querySelector(".badge-number");
             let notifications = document.getElementById("alert-area");
             
             notifications.innerHTML = "";
@@ -24,7 +24,6 @@ function selectAlertList() {
             alertListArea.style.maxHeight ="450px";
 
             for(let item of alertList) {
-                if(item.memberName != memberName) {
                 let dropDownDividerLi = document.createElement("li");
                 let dropDownDividerHr = document.createElement("hr");
                 dropDownDividerHr.classList.add("dropdown-divider");
@@ -59,7 +58,6 @@ function selectAlertList() {
 
                 count ++;
             }
-            }
 
             notifications.append(alertListArea);
 
@@ -69,12 +67,6 @@ function selectAlertList() {
                 badgeNumber.innerHTML = count;
                 dropDownHeader.innerText = count + "개의 새로운 알림이 있습니다";
             }
-            
-            
-            
-            
-            
-
         },
         error : function(request, status, error){
             console.log("AJAX 에러 발생");
@@ -93,17 +85,11 @@ let alerts = document.querySelector("#alert-area");
         dataType : "JSON",
 
         success : function(result) {
-        if(result > 0) {
-            
-
-            selectAlertList();
-            let badgeNumber = document.querySelector(".badge-number");
-            badgeNumber.innerHTML = "";
-        }
-        
-            
-            
-
+            if(result > 0) {
+                selectAlertList();
+                let badgeNumber = document.querySelector(".badge-number");
+                badgeNumber.innerHTML = "";
+            }
         },
         error : function(request, status, error){
             console.log("AJAX 에러 발생");
@@ -114,7 +100,8 @@ let alerts = document.querySelector("#alert-area");
 
 alertSock.onmessage = function(e) {
     let alert = JSON.parse(e.data);  // JSON -> JS Object
-    if(alert.memberName != memberName) {
+    if(alert.pmNo = pmNo) {
+    
     let notifications = document.getElementById("alert-area");
     let dropDownHeader = notifications.querySelector(".dropdown-header");
     let alertListArea = document.querySelector(".alertListArea");

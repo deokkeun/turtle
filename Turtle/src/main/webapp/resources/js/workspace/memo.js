@@ -23,8 +23,6 @@ for (let i = 0; i < memoDivs.length; i++) {
   });
 }
 
-
-
 // 메모 색상 동기화
 const colors = ['#FEE182', '#F6A9B0', '#A1D5AE', '#9FDFEB', '#D8BBDC'];
 
@@ -37,7 +35,6 @@ memoDetails.forEach((memoDetail) => {
 	const memoNo = memoContent.dataset.memono;
 	let memoBgColor = memoDetail.dataset.memobgcolor;
 	const memoType = memoContent.dataset.memotype;
-
 
 	// 딜레이 1초 설정
 	let typingTimer;
@@ -60,7 +57,6 @@ memoDetails.forEach((memoDetail) => {
   	});
 
 	memoContent.addEventListener('click', function(memoContent) {
-
     	if (isFocused) {
       		if (isFirstClick) {
 		        currentColor = this.style.backgroundColor;
@@ -76,8 +72,7 @@ memoDetails.forEach((memoDetail) => {
 
 		        currentColor = nextColor;
 		        memoBgColor = currentColor;
-				
-		        
+						        
 		        clearTimeout(typingTimer);
 
 		  		typingTimer = setTimeout(function() {
@@ -89,13 +84,11 @@ memoDetails.forEach((memoDetail) => {
     	}    	
   	});
 
-	memoContent.addEventListener('input', function() {
-		
+	memoContent.addEventListener('input', function() {		
 		clearTimeout(typingTimer);		
 	});
 
 	memoContent.addEventListener('keyup', function() {
-
 		if(currentColor != '') {
 			memoBgColor = currentColor;
 		} else {
@@ -110,10 +103,8 @@ memoDetails.forEach((memoDetail) => {
 		}, delay);		
 	});
 
-
 	//메모 보내기 함수
 	function updateMemo() {
-
 		// 개행 제거
 		const cleanedmemoContent = memoContent.innerHTML.replace(/\n|\t/g, "");
 
@@ -175,24 +166,23 @@ memoSock.onmessage = function(e){
 
 	// 전달 받은 메세지를 JS 객체로 변환
 	const memo = JSON.parse(e.data);  // JSON -> JS Object
-	
 
 	memoDetails.forEach((memoDetail) => {
 		const changedMemoContent = memoDetail.querySelector(".memoContent");
-
+		
 		if(memo.memoNo == changedMemoContent.dataset.memono) {
 		
 			const changedMemoInfo = memoDetail.querySelector(".memoInfo");
 			
 			const changedMemberName = changedMemoInfo.querySelector(".memberName");
-			const changedProfileImage = changedMemoInfo.querySelector(".profile-image > img");
+			const changedProfileImage = changedMemoInfo.querySelector(".memoProfileImg");
 			const changedMemoUpdateDate = changedMemoInfo.querySelector(".memoUpdateDate");
-
+			
 			
 			// 수정 멤버 정보 변경
 
-			//changedProfileImage.src = (contextPath + memo.profileImg);
-			$(changedProfileImage).attr('src', contextPath + memo.profileImg);
+			changedProfileImage.src = (contextPath + memo.profileImg);
+			//$(changedProfileImage).attr(src, contextPath + memo.profileImg);
 			changedMemberName.innerHTML = "수정자 : " +  memo.memberName;
 			changedMemoUpdateDate.innerHTML = "수정일 : " + recurrentTime();
 			changedMemoContent.dataset.pmno = memo.pmNo;
@@ -203,11 +193,10 @@ memoSock.onmessage = function(e){
 			// 수정 메모 색상 변경
 			changedMemoInfo.style.backgroundColor = memo.memoBgColor;
 			changedMemoContent.style.backgroundColor = memo.memoBgColor;
-			//memoDetail.style.backgroundColor = memo.memoBgColor;
+			memoDetail.style.backgroundColor = memo.memoBgColor;
+			memoDetail.dataset.memobgcolor = memo.memoBgColor;
 			
 		}
-
-
 
 	});
 	// 알림 웹소켓으로 보냄
@@ -226,18 +215,6 @@ memoSock.onmessage = function(e){
 
 };
 
-// 출력되는 형식 yyyy-mm-dd 출력됨 (원래꺼)
-// function currentTime() {
-// 	const now = new Date();
-	
-// 	const time = now.getFullYear()
-// 				+ "-" + addZero(now.getMonth()+1)
-// 				+ "-" + addZero(now.getDate());
-	
-// 	return time;
-// }
-
-
 // 시간 형식을  mm-dd hh:mm 으로 출력 
 function recurrentTime() {
 	const now = new Date();
@@ -252,13 +229,10 @@ function recurrentTime() {
 	return time;
   }
 
-
 // 10보다 작을 경우 앞에 0을 붙이는 함수
 function addZero(temp){
 	return temp < 10 ? "0" + temp : temp;;
 }
-
-
 
 // 메모지 안에 글자수 제한 카운트하기 
 // memoContents는 제일 위에 이미 선언해줌.
@@ -280,8 +254,6 @@ memoContents.forEach((memoContent, index) => {
 		}
     });
 });
-
-
 
 // 시간설정
 function formatTimeAgo(timestamp) {

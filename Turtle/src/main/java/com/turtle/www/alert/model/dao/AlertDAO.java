@@ -23,13 +23,17 @@ public class AlertDAO {
 		int result = 0;
 		// 알림을 보낼 프로젝트 멤버들 조회
 		List<Integer> pmNoList = sqlSession.selectList("alertMapper.selectPmNoList", alert.getProjectNo());
+		// 내 pmNo 조회
+		int myPmNo = sqlSession.selectOne("alertMapper.selectMyPmNo", alert);
+		
 		
 		for(int pmNo : pmNoList) {
-			
-			alert.setPmNo(pmNo);
-			result = sqlSession.insert("alertMapper.insertAlert", alert);
-			if(result > 0) {
-				result = 0;
+			if(pmNo != myPmNo) {
+				alert.setPmNo(pmNo);
+				result = sqlSession.insert("alertMapper.insertAlert", alert);
+				if(result > 0) {
+					result = 0;
+				}			
 			}
 		}
 		if(result == 0) {

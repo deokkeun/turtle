@@ -175,7 +175,7 @@
                                             </div>
                                             
                                             <div class="profile-image2">
-                                                <img src="${contextPath}${memo.profileImg}">
+                                                <img class="memoProfileImg" src="${contextPath}${memo.profileImg}">
                                             </div>	
                                         </div>	    			
                                     </div>
@@ -213,7 +213,7 @@
                                             </div>
                                             
                                             <div class="profile-image2">
-                                                <img src="${contextPath}${memo.profileImg}">
+                                                <img class="memoProfileImg" src="${contextPath}${memo.profileImg}">
                                             </div>
                                         </div>	  
                                     </div>
@@ -257,9 +257,6 @@
 		// /boardList 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성		
 		
     </script>
-    <!-- memo.js 연결
-    <script src="${contextPath}/resources/js/workspace/memo.js"></script>
-     -->
     <!-- boardList.js 연결 -->
     <script src="${contextPath}/resources/js/board/boardList.js"></script>
     <!-- memo.js 연결 -->
