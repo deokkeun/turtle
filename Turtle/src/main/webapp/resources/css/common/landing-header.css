@@ -135,8 +135,17 @@ ul a:hover {
   line-height: 3;
   padding: 10px 15px;
   border-radius: 4px;
-  color: #012970;
-  background: #f6f9ff;
+  color: #ffffff;
+  background: #4154f1;
+}
+
+
+.nav-btn:hover {
+  /* color: var(--color-primary); */
+  background-color :  #f6f9ff;
+  color: #4154f1;
+  border: 1px solid #4154f1;
+
 }
 
 /* 반응형시 보이는 햄버거버튼 */

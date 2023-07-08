@@ -138,3 +138,4 @@ function loginValidate(){ // 로그인 유효성 검사
 
     return true; // form 태그 기본 이벤트 정상 수행
 }
+

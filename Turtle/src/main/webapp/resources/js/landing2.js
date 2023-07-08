@@ -425,8 +425,12 @@ bar.addEventListener('click', ()=> {
         spaceBetween: 40
       },
 
+      768: {
+        slidesPerView: 2,
+      },
+
       1200: {
-        slidesPerView: 3,
+        slidesPerView: 4,
       }
     }
   });

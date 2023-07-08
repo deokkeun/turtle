@@ -147,7 +147,7 @@
 			
 					<!--오른쪽 사진설정 col-lg-5(크기) -->
 					<div class="col-lg-5 hero-img" data-aos="zoom-out" data-aos-delay="200">
-						<img src="${contextPath}/resources/images/landing/hero-img.png" class="img-fluid" alt="메인사진안보여요">
+						<img src="${contextPath}/resources/images/landing/pc사진1.png" class="img-fluid" alt="메인사진안보여요">
 					</div>
 			
 				</div>
@@ -179,32 +179,83 @@
 						<!-- 슬라이더1 -->
 						<div class="swiper-slide">
 							<div class="testimonial-item">
-								<img src="${contextPath}/resources/images/landing/달력기능.png" class="img-fluid" alt="안보여요">
+                                <div class="imoticon">
+								    <img src="${contextPath}/resources/images/landing/이모티콘-채팅.png" class="img-fluid" alt="안보여요">
+                                </div>
+                                <div class="imoticon-name">메신저</div>
+                                <div class="imoticon-info">개인별, 워크스페이스별로 <br>효율적인 업무용 메신저</div>
 							</div>
 						</div>
 						<!-- 슬라이더2-->
 						<div class="swiper-slide">
 							<div class="testimonial-item">
-								<img src="${contextPath}/resources/images/landing/채팅기능.png" class="img-fluid" alt="안보여요">       
+								<div class="imoticon">
+								    <img src="${contextPath}/resources/images/landing/이모티콘-게시판.png" class="img-fluid" alt="안보여요">
+                                </div>
+                                <div class="imoticon-name">게시판</div>
+                                <div class="imoticon-info">목록별로 업무내용을 공유하고 <br>소통하는 게시판</div>
 							</div>
 						</div>
 						<!-- 슬라이더3 -->
 						<div class="swiper-slide">
 							<div class="testimonial-item">
-								<img src="${contextPath}/resources/images/landing/메모기능.png" class="img-fluid" alt="안보여요">               
-							</div>
-						</div>
+                                <div class="imoticon">
+								    <img src="${contextPath}/resources/images/landing/이모티콘-달력.png" class="img-fluid" alt="안보여요">
+                                </div>
+                                <div class="imoticon-name">캘린더</div>
+                                <div class="imoticon-info">캘린더 형태로 업무일정을 <br>한눈에 파악하고 관리</div>
+						    </div>
+                        </div>
 						<!-- 슬라이더4 -->
 						<div class="swiper-slide">
 							<div class="testimonial-item">			
-								<img src="${contextPath}/resources/images/landing/알림기능.png" class="img-fluid" alt="안보여요">               
-							</div>
+                                <div class="imoticon">
+								    <img src="${contextPath}/resources/images/landing/이모티콘-메모.png" class="img-fluid" alt="안보여요">
+                                </div>
+                                <div class="imoticon-name">메모</div>
+                                <div class="imoticon-info">간단한 내용이나 공지사항 등<br>필요한 정보를 빠르게 메모</div>
+                            </div>
 						</div>
 						<!-- 슬라이더5 -->
 						<div class="swiper-slide">
-							<div class="testimonial-item">
-								<img src="${contextPath}/resources/images/landing/오둥5.jpg" class="img-fluid" alt="안보여요">       
-							</div>
+							<div class="testimonial-item">			
+                                <div class="imoticon">
+								    <img src="${contextPath}/resources/images/landing/이모티콘-알림.png" class="img-fluid" alt="안보여요">
+                                </div>
+                                <div class="imoticon-name">실시간 알림</div>
+                                <div class="imoticon-info">업데이트 된 내용을<br>실시간으로 알려주는 알림기능</div>
+                            </div>
+						</div>
+                        <!-- 슬라이더6 -->
+						<div class="swiper-slide">
+							<div class="testimonial-item">			
+                                <div class="imoticon">
+								    <img src="${contextPath}/resources/images/landing/이모티콘-github.png" class="img-fluid" alt="안보여요">
+                                </div>
+                                <div class="imoticon-name">gitHub</div>
+                                <div class="imoticon-info">gitHub 연동을 통해<br>저장소를 트리형태로 시각화</div>
+                            </div>
+						</div>
+                        <!-- 슬라이더7 -->
+						<div class="swiper-slide">
+							<div class="testimonial-item">			
+                                <div class="imoticon">
+								    <img src="${contextPath}/resources/images/landing/이모티콘-api.png" class="img-fluid" alt="안보여요">
+                                </div>
+                                <div class="imoticon-name">추천api</div>
+                                <div class="imoticon-info">개발관련 업무에 활용 가능한<br>api 추천리스트</div>
+                            </div>
+						</div>
+						<!-- 슬라이더8 -->
+                        <div class="swiper-slide">
+							<div class="testimonial-item">			
+                                <div class="imoticon">
+								    <img src="${contextPath}/resources/images/landing/이모티콘-날씨.png" class="img-fluid" alt="안보여요">
+                                    <img src="${contextPath}/resources/images/landing/이모티콘-시계.png" class="img-fluid" alt="안보여요">
+                                </div>
+                                <div class="imoticon-name">부가 위젯기능</div>
+                                <div class="imoticon-info">현재 위치한 장소의<br> 날씨 및 시간 정보</div>
+                            </div>
 						</div>
 	          		</div>
 				
@@ -249,7 +300,7 @@
 					<!-- 2. 실시간 채팅 -->
 					<li class="nav-item col-6 col-md-4 col-lg-3">
 						<a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
-							<h4>실시간 채팅</h4>
+							<h4>실시간 메신저</h4>
 						</a>
 					</li>
 					<!-- 3. 실시간 알림 -->
@@ -286,19 +337,19 @@
 									<!-- 특징1 -->
 									<div class="row-md-4" data-aos="zoom-out" data-aos-delay="200">
 										<div class="feature-box d-flex align-items-center">
-											<i class="bi bi-check"></i> <h3>워크스페이스 기능에 대한 특징1</h3>
+											<i class="bi bi-check"></i> <h3>업무에 다용도로 활용가능한 게시판</h3>
 										</div>
 									</div>
 									<!-- 특징2 -->
 									<div class="row-md-4" data-aos="zoom-out" data-aos-delay="300">
 										<div class="feature-box d-flex align-items-center">
-											<i class="bi bi-check"></i> <h3>워크스페이스  기능에 대한 특징2</h3>
+											<i class="bi bi-check"></i> <h3>일정을 한 눈에 확인할 수 있는 캘린더</h3>
 										</div>
 									</div>
 									<!-- 특징3 -->
 									<div class="row-md-4" data-aos="zoom-out" data-aos-delay="400">
 										<div class="feature-box d-flex align-items-center">
-											<i class="bi bi-check"></i> <h3>워크스페이스 기능에 대한 특징3</h3>
+											<i class="bi bi-check"></i> <h3>간단한 정보를 입력할 수 있는 메모</h3>
 										</div>
 									</div>
 								</div>
@@ -324,19 +375,19 @@
 									<!-- 특징1 -->
 									<div class="row-md-4" data-aos="zoom-out" data-aos-delay="200">
 										<div class="feature-box d-flex align-items-center">
-											<i class="bi bi-check"></i> <h3>실시간 채팅 기능에 대한 특징1</h3>
+											<i class="bi bi-check"></i> <h3>프로젝트별, 개인별로 가능한 메신저</h3>
 										</div>
 									</div>
 									<!-- 특징2 -->
 									<div class="row-md-4" data-aos="zoom-out" data-aos-delay="300">
 										<div class="feature-box d-flex align-items-center">
-											<i class="bi bi-check"></i> <h3>실시간 채팅 기능에 대한 특징2</h3>
+											<i class="bi bi-check"></i> <h3>팝업형태의 메신저로 타작업과 동시 사용</h3>
 										</div>
 									</div>
 									<!-- 특징3 -->
 									<div class="row-md-4" data-aos="zoom-out" data-aos-delay="400">
 										<div class="feature-box d-flex align-items-center">
-											<i class="bi bi-check"></i> <h3>실시간 채팅 기능에 대한 특징3</h3>
+											<i class="bi bi-check"></i> <h3>이모지를 이용하여 재밌는 대화내용 전달</h3>
 										</div>
 									</div>
 								</div>
@@ -450,18 +501,20 @@
 						<!-- 사진 밑에부분 효과(현재 설정없앰) -->
 						<div class="position-absolute w-100 h-50 bg-body-secondary bottom-0 start-0"></div>
 						<!-- 사진 -->
+						
 						<div class="row d-flex align-items-center position-relative justify-content-center px-0 g-5">
 							<div class="col-12 col-lg-6">
-								<img src="${contextPath}/resources/images/landing/abstract18.jpg" width="2280" height="1732" alt="PC사진" 
-										class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
+								<img src="${contextPath}/resources/images/landing/pc사진1.png" width="2280" height="1732" alt="PC사진" 
+										class="img-fluid position-relative shadow" data-aos="fade-up">
+							</div>
+							
+							<div class="col-12 col-md-6 col-lg-3">
+								<img src="${contextPath}/resources/images/landing/태블릿사진최종.png" width="1116" height="500" alt="모바일사진" 
+										class="img-fluid position-relative shadow" data-aos="fade-up" data-aos-duration="3000">
 							</div>
 							<div class="col-12 col-md-6 col-lg-3">
-								<img src="${contextPath}/resources/images/landing/abstract6.jpg" width="1116" height="1578" alt="태블릿사진" 
-										class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="2000">
-							</div>
-							<div class="col-12 col-md-6 col-lg-3">
-								<img src="${contextPath}/resources/images/landing/abstract9.jpg" width="1116" height="848" alt="모바일사진" 
-										class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="3000">
+								<img src="${contextPath}/resources/images/landing/핸드폰사진.png" width="1116" height="1000" alt="태블릿사진" 
+										class="img-fluid  rounded-5 shadow" data-aos="fade-up" data-aos-duration="2000">
 							</div>
 						</div>
 					</div>

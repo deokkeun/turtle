@@ -183,22 +183,58 @@ section {
 
 .AutoSwiper-1 {
   background-color: #f6f9ff;
+  height: 790px;
+ 
+}
+
+.AutoSwiper-1 .container .section-header {
+  margin-top: 100px;
+}
+
+.AutoSwiper-1 .container .section-header h2 {
+  margin: 0px 0px 30px 0px;
+  padding: 20px;
+
 }
 
 
-
+/* 기능설정카드 */
 .AutoSwiper-1 .testimonial-item {
   box-sizing: content-box;
   padding: 30px;
-  margin: 40px 30px;
+  margin: 20px 20px;
   box-shadow: 0px 0 20px rgba(1, 41, 112, 0.1);
   background: #fff;
-  min-height: 320px;
+  /* min-height: 320px; */
   display: flex;
   flex-direction: column;
   text-align: center;
   transition: 0.3s;
+  height: 195px;
+  border-radius : 20px;
 }
+
+/* 이모티콘 */
+.imoticon {
+  text-align: center;
+}
+
+
+.imoticon-name {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 30px 0px 15px 0px;
+}
+
+.imoticon-info {
+  text-align: center;
+  font-size: 16px;
+}
+
+
+
+
 
 .AutoSwiper-1 .testimonial-item .stars {
   margin-bottom: 15px;
@@ -236,8 +272,9 @@ section {
   margin: 0 auto 15px auto;
 }
 
+/* 동그라미 */
 .AutoSwiper-1 .swiper-pagination {
-  margin-top: 20px;
+  margin-top: 70px;
   position: relative;
 }
 
@@ -253,14 +290,17 @@ section {
   background-color: #4154f1;
 }
 
+
+
+
 /* 불투명하게 보임 */
 .swiper-wrapper .swiper-slide img:hover {
-  opacity: 1;
+  /* opacity: 1; */
 }
 
 /* 이미지 선택시 색상 진하게 */
 .swiper-wrapper .swiper-slide img {
-  opacity: 0.3;
+  /* opacity: 0.3; */
 } 
 
 
@@ -525,7 +565,7 @@ section {
 
 .recent-blog-posts .post-box .post-img {
   overflow: hidden;
-  margin: -30px -30px 15px -30px;
+  /* margin: -30px -30px 15px -30px; */
   position: relative;
 }
 
@@ -571,6 +611,11 @@ section {
 .recent-blog-posts .post-box:hover .post-img img {
   transform: rotate(6deg) scale(1.2);
 }
+
+
+.MultiDivice .container #picPC {
+  height: 800px;
+} 
 
 
 
