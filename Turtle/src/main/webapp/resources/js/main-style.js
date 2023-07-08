@@ -256,6 +256,24 @@ const interbal = window.setInterval(function() {
 
 
 
+// //이모티콘
+// let button3 = document.querySelector("#emoji_btn2");
+// const picker2 = new EmojiButton({
+//   position: 'bottom-start'
+// });
+
+// button3.addEventListener('click', () => {
+//   picker2.togglePicker(button3);
+// });
+
+// picker2.on('emoji', emoji => {
+//     const text_box2 = document.querySelector('#emoji_btn2');
+//     text_box2.style.fontSize = "50px";
+//     text_box2.innerHTML = emoji;
+//   });
+
+
+
 // // 채팅창 팝업 (프로젝트 넘버는 나중에 변수 넣어서 바꿔주기)
 // function join() {
 //     var url = "../chat/chatRoomList/1";		

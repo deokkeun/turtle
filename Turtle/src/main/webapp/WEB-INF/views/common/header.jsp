@@ -128,13 +128,13 @@
             <hr class="dropdown-divider">
           </li>
 
-          <li>
+          <!-- <li>
             <a class="dropdown-item d-flex align-items-center" href="">
               <i class="bi bi-gear"></i>
               <span>Account Settings</span>
             </a>
           </li>
-          <li>
+          <li> -->
             <hr class="dropdown-divider">
           </li>
 
@@ -182,15 +182,13 @@
                   <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="project1Dropdown">
-                  <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
-                  <button class="dropdown-item delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i> 삭제하기</button>
-                  <button class="dropdown-item duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i> 복제하기</button>
+                  <button class="dropdown-item rename-button" type="button" onclick="renameProject(${project.projectNo})"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
+				<button class="dropdown-item delete-button" type="button" onclick="deleteProject(${project.projectNo})" data-projectNo="${project.projectNo}"><i class="bi bi-trash"></i> 삭제하기</button>
                 </div>
               </div>
             </a>
           </li>
         </c:if>
-         
   </c:forEach>
     <!-- 추가적인 프로젝트 항목들 -->
   </ul>
@@ -215,9 +213,8 @@
                               <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="project1Dropdown">
-                              <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
-                              <button class="dropdown-item delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i> 삭제하기</button>
-                              <button class="dropdown-item duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i> 복제하기</button>
+                              <button class="dropdown-item rename-button" type="button" onclick="renameProject(${project.projectNo})"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
+                              <button class="dropdown-item delete-button" type="button" onclick="deleteProject(${project.projectNo})" data-projectNo="${project.projectNo}"><i class="bi bi-trash"></i> 삭제하기</button>
                             </div>
                           </div>
                         </a>
@@ -234,7 +231,7 @@
           <a class="nav-link collapsed" data-bs-target="#workspace-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-chevron-down" id="arrow"></i><i class="bx bx-desktop"></i><span>WORKSPACE</span>
           </a>
-         <button class="add-file-button" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button> 
+		   <button class="add-file-button" type="button" onclick="redirectToCreateWorkspace(${project})"><i class="bi bi-plus"></i></button>
           <ul id="workspace-nav" class="nav-content collapse" data-bs-parent="">
             <c:forEach var="workspace" items="${workspaceList}">
               <c:if test="${workspace.workspaceName != 'calendar' && workspace.workspaceName != 'loadmap'}">
@@ -246,9 +243,8 @@
                         <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
                       </button>
                       <div class="dropdown-menu" aria-labelledby="project1Dropdown">
-                        <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
-                        <button class="dropdown-item delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i> 삭제하기</button>
-                        <button class="dropdown-item duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i> 복제하기</button>
+                        <button class="dropdown-item rename-button" type="button" onclick="renameWorkspace(${workspace.workspaceNo})"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
+                        <button class="dropdown-item delete-button" type="button" onclick="deleteWorkspace(${workspace.workspaceNo})" data-workspaceNo="${workspace.workspaceNo}"><i class="bi bi-trash"></i> 삭제하기</button>
                       </div>
                     </div>
                   </a>
@@ -388,7 +384,7 @@
     // 알람용 sock
     let alertSock = new SockJS(contextPath+"/alert");
     // 캘린더 연동용 sock
-    let calendarSock = new SockJS(contextPath+"/calendar");
+    // let calendarSock = new SockJS(contextPath+"/calendar");
     // 게시글 내용 수정용 sock
 		let updateBoardDetailSock = new SockJS(contextPath+"/updateBoardDetail");
 		// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.

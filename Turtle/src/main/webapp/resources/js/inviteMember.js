@@ -151,6 +151,7 @@ $('.uc-btn').on('click', function() {
         }
         console.log(arr);
         console.log("데이터 전송??");
+        
 
     $.ajax({
 

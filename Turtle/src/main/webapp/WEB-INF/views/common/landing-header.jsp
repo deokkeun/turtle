@@ -5,8 +5,7 @@
 <%@ page import="java.security.SecureRandom" %>
 <%@ page import="java.math.BigInteger" %>
 
-
-<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.2.js" charset="utf-8"></script>
 
 <!-- ======= 최종작업용 Header ======= -->
 <header id="header" class="header fixed-top">
@@ -91,9 +90,9 @@
 <!-- 로그인 모달창 -->
 <section id="login-modal">
 
-	<!-- 네이버 로그인 버튼 생성 위치 -->
-     <div id="naver_id_login" title="네이버 아이디로 로그인"></div>
-	
+	<div id="naver_id_login" style="text-align:center"><a href="${naverurl}">
+	<img width="223" src="https://developers.naver.com/doc/review_201802/CK_bEFnWMeEBjXpQ5o8N_20180202_7aot50.png"/></a></div>
+
 	<div class="login-divider">or</div>
 
 	<form action="${contextPath}/member/login" method="POST" onsubmit="return loginValidate()">
@@ -126,17 +125,4 @@
 	<a class="login-modal-close fa-solid fa-xmark"></a>
 </section>
 
-
-
-<script type="text/javascript">
-	console.log("네이버 로그인 콜백");
-	
-	var naver_id_login = new naver_id_login("aQpBvST4iYdjSLDbWXWl", "http://localhost:8080/www/member/callback");
-	var state = naver_id_login.getUniqState();
-	naver_id_login.setButton("white", 3, 45);
-	naver_id_login.setDomain("http://localhost:8080/www");
-	naver_id_login.setState(state);
-	naver_id_login.setPopup();
-	naver_id_login.init_naver_id_login();
-</script>
 
