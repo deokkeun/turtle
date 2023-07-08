@@ -58,7 +58,6 @@ Element.prototype.setStyle = function(styles) {
   return this;
 };
 
-
 // ------------------------------------------------------------------------------------------
 
 // const memberNo = document.getElementById("memberNo");
@@ -93,11 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // initialize the external events
     // -----------------------------------------------------------------
-
-   
-   console.log(projectNo);
-   console.log(workspaceNo);
-   
 
    var all_events = null;
    all_events = loadingEvents(); // 함수 호출

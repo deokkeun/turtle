@@ -22,7 +22,7 @@
   <link href="${contextPath}/resources/images/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="${contextPath}/resources/images/remixicon/remixicon.css" rel="stylesheet">
   <link href="${contextPath}/resources/css/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <!--섬머노트 전용 css-->
+  <!-- 섬머노트 전용 css -->
   <link rel="stylesheet" href="${contextPath}/resources/css/summernote/summernote-lite.css">
   <!--섬머노트 전용 js -->
   <script src="${contextPath}/resources/js/summernote/summernote-lite.js"></script>

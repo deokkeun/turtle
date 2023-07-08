@@ -298,7 +298,7 @@ updateEventDateSock.onmessage = function(e) {
     $(".eventEndDate").val(changedBoardInfo.eventEndDate);
 
         let addEvent = {
-            "pmNo" : pmNo,// 프로젝트 멤버 번호
+            "pmNo" : projectNo,// 프로젝트 멤버 번호
             "workspaceNo" : workspaceNo,// 워크스페이스 번호
             "calTitle" : $(".boardTitle").html(),// 캘린더 제목
             "calContent" : "", // 캘린더 내용
@@ -308,6 +308,7 @@ updateEventDateSock.onmessage = function(e) {
             "calSt" : "N", // 일정 삭제 여부
             "boardNo" : boardNo
         }
+
       
       console.log(addEvent);
       console.log(JSON.stringify(addEvent));
