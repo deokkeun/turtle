@@ -113,7 +113,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td colspan="3">조회 내용이 없습니다.</td>
+                                    <td colspan="4">조회 내용이 없습니다.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -249,7 +249,7 @@
         </form> -->
         
 
-
+<!-- 
         <form action="../project/createProject" method="get">
             <button>성훈 테스트</button>
         </form>
@@ -258,7 +258,7 @@
      	
         <form action="../board/boardList/${projectNo}/5" method="get">
         	<button>게시판 테스트</button>
-        </form>
+        </form> -->
        
        
 

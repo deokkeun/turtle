@@ -22,7 +22,7 @@
   <link href="${contextPath}/resources/images/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="${contextPath}/resources/images/remixicon/remixicon.css" rel="stylesheet">
   <link href="${contextPath}/resources/css/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <!--섬머노트 전용 css-->
+  <!-- 섬머노트 전용 css -->
   <link rel="stylesheet" href="${contextPath}/resources/css/summernote/summernote-lite.css">
   <!--섬머노트 전용 js -->
   <script src="${contextPath}/resources/js/summernote/summernote-lite.js"></script>
@@ -398,7 +398,7 @@
     // 알람용 sock
     let alertSock = new SockJS(contextPath+"/alert");
     // 캘린더 연동용 sock
-    let calendarSock = new SockJS(contextPath+"/calendar");
+    // let calendarSock = new SockJS(contextPath+"/calendar");
     // 게시글 내용 수정용 sock
 		let updateBoardDetailSock = new SockJS(contextPath+"/updateBoardDetail");
 		// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.

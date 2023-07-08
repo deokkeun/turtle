@@ -186,7 +186,7 @@
 
         <!-- 테스트 확인 후 히든처리 예정 -->
         <!-- <input type="text" id="memberNo" value="${loginMember.memberNo}"> -->
-        <input type="text" id="projectNo" value="${projectNo}">
+        <!-- <input type="text" id="projectNo" value="${projectNo}">
         <div>workspaceCount = ${workspaceCount}</div>
         <div>projectMemberCount =  ${projectMemberCount}</div>
         <div>paymentType =  ${paymentType}</div>
@@ -195,7 +195,7 @@
         <div>${paymentType.payType}</div>
         <div>${paymentType.payRegDate}</div>
         <div>${paymentType.payName}</div>
-        <input id="loginMember" type="hidden" value="${loginMember}">
+        <input id="loginMember" type="hidden" value="${loginMember}"> -->
 
 
     </main>
