@@ -30,4 +30,11 @@ public interface ProjectService {
 	 */
 	List<Project> selectProjectList(Member loginMember);
 
+	int deleteProject(int projectNo);
+
+	int renameProject(Project project);
+
+
+	Project selectProject(int projectNo);
+
 }
