@@ -346,7 +346,8 @@ function padZero(number) {
 
     });
 
-    calendar.render();
+      calendar.render();
+
   });
 
 
@@ -373,9 +374,7 @@ function loadingEvents() {
     }
   });
   
-
   return all_events;
-  
 }
 
 
