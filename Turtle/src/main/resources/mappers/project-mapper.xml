@@ -63,4 +63,22 @@
 		JOIN PROJECT_MEMBER USING (PROJECT_NO)
 		WHERE MEMBER_NO = ${memberNo} AND PROJECT_DELETE_FG = 'N' AND PM_ST = 'Y'
 	</select>
+	
+	<update id="deleteProject">
+		UPDATE PROJECT
+		SET PROJECT_DELETE_FG = 'Y'
+		WHERE PROJECT_NO = #{projectNo}
+	</update>
+	
+	<update id="renameProject">
+		UPDATE PROJECT
+		SET PROJECT_NAME = #{projectName}
+		WHERE PROJECT_NO = #{projectNo}
+	</update>
+	
+	<select id="selectProject" resultMap="project_rm">
+		SELECT PROJECT_NO, PROJECT_NAME, CREATE_MEMBER_NO, PROJECT_EMOJI
+		FROM PROJECT 
+		WHERE PROJECT_NO = ${projectNo} AND PROJECT_DELETE_FG = 'N'
+	</select>
 </mapper>

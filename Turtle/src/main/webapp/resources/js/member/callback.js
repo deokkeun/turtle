@@ -1,5 +1,5 @@
 /****************** 네이버 로그인 *******************/
-var naver_id_login = new naver_id_login("aQpBvST4iYdjSLDbWXWl", "http://localhost:8080/www/member/callback");
+var naver_id_login = new naver_id_login("aQpBvST4iYdjSLDbWXWl", "http://127.0.0.1:8080/www/member/callback");
 // 접근 토큰 값 출력
 
 naver_id_login.get_naver_userprofile("naverSignInCallback()");
@@ -14,6 +14,7 @@ function naverSignInCallback() {
   let email = naver_id_login.getProfileData('email');
   let name = naver_id_login.getProfileData('name');
   let profileImg = naver_id_login.getProfileData('profile_image');
+  consoloe.log(token,email,name,profileImg);
   
   $.ajax({
     url : "/dupCheckNaver",
