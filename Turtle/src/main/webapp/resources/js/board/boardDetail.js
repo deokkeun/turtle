@@ -1,4 +1,96 @@
 
+
+$(document).on("click", ".select-board-detail", function(){
+    boardNo = $(this).parent().parent(".board").data("boardno");
+    $.ajax({
+        url : contextPath + "/board/boardDetail/" + projectNo + "/" + workspaceNo + "/" + boardNo,
+        type : "get",
+        dataType : "JSON",
+        success : function(map) {
+            //boardNo = map.board.boardNo;
+            console.log(boardNo);
+            // 게시글 정보 변경
+            document.querySelector(".boardDetailBoard-area").dataset.boardno = map.board.boardNo;
+            $(".boardTitle").html(map.board.boardTitle);
+            $(".regMemberImage").attr("src", contextPath + map.board.regProfileImg);
+            $(".regMemberName").html(map.board.regMemberName);
+            $(".regDate").html(map.board.boardRegDate);
+
+            if (map.board.updateProfileImg != null) {
+                $(".updateMemberImage").attr("src", contextPath + map.board.updateProfileImg);
+                $(".updateMemberName").html(map.board.updateMemberName);
+            }
+            if (map.board.boardUpdateDate != null) {
+                $(".updateDate").html(map.board.boardUpdateDate);
+            }
+
+            $(".eventStartDate").val(map.board.eventStartDate);
+            $(".eventEndDate").val(map.board.eventEndDate);
+
+            $(".boardDetail-area").html("");
+
+            // 요소 생성
+            var editBoardDetailArea = $("<div>", {
+                class: "edit-boardDetail-area",
+                "data-boardDetailNo": "0",
+                "data-boardDetailSort": "0"
+            });
+
+            var addBoardDetail = $("<div>", {class: "add-boardDetail", style: "visibility:hidden;"
+            }).append(
+                $("<button>", {class: "add-boardDetail-btn", text: "+"})
+            );
+
+            var boardDetail = $("<div>", {class: "boardDetail"
+            }).append(
+                $("<div>", {class: "summernote", contenteditable: "true", html: boardContent})
+            );
+            // 요소 추가
+            editBoardDetailArea.append(addBoardDetail, boardDetail);
+            $(".boardDetail-area").append(editBoardDetailArea, $("<hr>"));
+
+            // boardDetailList의 각 항목에 대해 반복
+            for (let item of map.boardDetailList) {
+                var boardDetailNo = item.boardDetailNo;
+                var boardDetailSort = item.boardDetailSort;
+                var boardContent = item.boardContent;
+                var profileImage = item.profileImage;
+
+                // 요소 생성
+                var editBoardDetailArea = $("<div>", {
+                    class: "edit-boardDetail-area",
+                    "data-boardDetailNo": boardDetailNo,
+                    "data-boardDetailSort": boardDetailSort
+                });
+
+                var addBoardDetail = $("<div>", {class: "add-boardDetail", style: "visibility:hidden;"
+                }).append(
+                    $("<button>", {class: "add-boardDetail-btn", text: "+"})
+                );
+
+                var boardDetail = $("<div>", {class: "boardDetail"
+                }).append(
+                    $("<div>", {class: "summernote", contenteditable: "true", html: boardContent})
+                );
+
+                var updateDetailMember = $("<div>", {class: "updateDetailMember", style: "visibility:hidden;"
+                }).append($("<img>", {class: "boardDetailProfileImage", src: contextPath + profileImage})
+                );
+
+                // 요소 추가
+                editBoardDetailArea.append(addBoardDetail, boardDetail, updateDetailMember);
+                $(".boardDetail-area").append(editBoardDetailArea, $("<hr>"));
+            }
+            typing();
+            titleTyping();
+        },
+        error : function(request, status, error){
+            console.log("AJAX 에러 발생");
+            console.log("상태코드 : " + request.status); // 404, 500
+        }
+    });
+});
+
 $(document).on("mouseover", ".edit-boardDetail-area", function(){mouseover($(this))});
 $(document).on("mouseout", ".edit-boardDetail-area", function(){mouseout($(this))});
 $(document).on("click", ".add-boardDetail-btn", function(){addBoardDetailBtn($(this))});
@@ -35,102 +127,6 @@ $(document).on("click", ".summernote", function() {
 	});    
 });
 
-$(document).on("click", ".select-board-detail", function(){
-    let boardNo = $(this).parent().parent(".board").data("boardno");
-    $.ajax({
-        url : contextPath + "/board/boardDetail/" + projectNo + "/" + workspaceNo + "/" + boardNo,
-        type : "get",
-        dataType : "JSON",
-        success : function(map) {
-            // 게시글 정보 변경
-            $(".boardTitle").html(map.board.boardTitle);
-            $(".regMemberImage").attr("src", contextPath + map.board.regProfileImg);
-            $(".regMemberName").html(map.board.regMemberName);
-            $(".regDate").html(map.board.boardRegDate);
-
-            if (map.board.updateProfileImg != null) {
-                $(".updateMemberImage").attr("src", contextPath + map.board.updateProfileImg);
-                $(".updateMemberName").html(map.board.updateMemberName);
-            }
-            if (map.board.boardUpdateDate != null) {
-                $(".updateDate").html(map.board.boardUpdateDate);
-            }
-
-            $(".eventStartDate").val(map.board.eventStartDate);
-            $(".eventEndDate").val(map.board.eventEndDate);
-
-            $(".boardContent-area").html("");
-            // boardDetailList의 각 항목에 대해 반복
-            for (let item of map.boardDetailList) {
-                var boardDetailNo = item.boardDetailNo;
-                var boardDetailSort = item.boardDetailSort;
-                var boardContent = item.boardContent;
-                var profileImage = item.profileImage;
-
-                // 요소 생성
-                var editBoardDetailArea = $("<div>", {
-                    class: "edit-boardDetail-area",
-                    "data-boardDetailNo": boardDetailNo,
-                    "data-boardDetailSort": boardDetailSort
-                });
-
-                var addBoardDetail = $("<div>", {class: "add-boardDetail", style: "visibility:hidden;"
-                }).append(
-                    $("<button>", {class: "add-boardDetail-btn", text: "+"})
-                );
-
-                var boardDetail = $("<div>", {class: "boardDetail"
-                }).append(
-                    $("<div>", {class: "summernote", contenteditable: "true", html: boardContent})
-                );
-
-                var updateDetailMember = $("<div>", {class: "updateDetailMember", style: "visibility:hidden;"
-                }).append($("<img>", {class: "boardDetailProfileImage", src: contextPath + profileImage})
-                );
-
-                // 요소 추가
-                editBoardDetailArea.append(addBoardDetail, boardDetail, updateDetailMember);
-                $(".boardContent-area").append(editBoardDetailArea, $("<hr>"));
-            }
-            typing();
-            titleTyping();
-        },
-        error : function(request, status, error){
-            console.log("AJAX 에러 발생");
-            console.log("상태코드 : " + request.status); // 404, 500
-        }
-    });
-});
-
-deleteBoardDetailSock.onmessage = function(e) {
-    const deletedBoardDetail = JSON.parse(e.data);
-
-    let boardDetails = document.querySelectorAll(".edit-boardDetail-area");
-    boardDetails.forEach((boardDetail) => {
-        if(deletedBoardDetail.boardDetailNo == boardDetail.dataset.boarddetailno) {
-            boardDetail.nextElementSibling.remove();
-            boardDetail.remove();            
-        }
-    });
-    // 수정된 게시글 정보 변경
-    $(".updateMemberImage").attr("src", contextPath + deletedBoardDetail.profileImage);
-    $(".updateMemberName").html(deletedBoardDetail.memberName);
-    $(".updateDate").html(currentTime());
-
-    // 알림 웹소켓으로 보냄
-    let alert = {
-        "projectNo" : projectNo,
-        "memberNo" : memberNo,
-        "alertContent" : "님이 게시글을 수정하였습니다.",
-        "link" : contextPath + "/board/boardDetail/" + projectNo + "/" + workspaceNo + "/" + boardNo,
-        "memberName" : memberName
-    }
-
-    console.log(alert);
-    console.log(JSON.stringify(alert));
-
-    alertSock.send( JSON.stringify(alert) );
-}
 // 게시글 내용 변경 웹소켓
 updateBoardDetailSock.onmessage = function(e) {
     // 매개변수 e : 발생한 이벤트에 대한 정보를 담고있는 객체
@@ -138,36 +134,47 @@ updateBoardDetailSock.onmessage = function(e) {
 
 	// 전달 받은 메세지를 JS 객체로 변환
 	const changedBoardDetail = JSON.parse(e.data);  // JSON -> JS Object
-
-    // 수정된 게시글 정보 변경
-    $(".updateMemberImage").attr("src", contextPath + changedBoardDetail.profileImage);
-    $(".updateMemberName").html(changedBoardDetail.memberName);
-    $(".updateDate").html(currentTime());
-
-    boardDetails = document.querySelectorAll(".edit-boardDetail-area");
-    boardDetails.forEach((boardDetail) => {
-        // 수정된 게시글 내용 변경
-        const changedBoardContent = boardDetail.querySelector(".summernote");
-        const changedSummernoteContent =boardDetail.querySelector(".note-editable")
-        const changedProfileImage = boardDetail.querySelector(".boardDetailProfileImage");
-
-        if(changedBoardDetail.boardDetailNo == boardDetail.dataset.boarddetailno) {
-            changedBoardContent.innerHTML = changedBoardDetail.boardContent;
-            changedSummernoteContent.innerHTML = changedBoardDetail.boardContent;
-            changedProfileImage.src = contextPath + changedBoardDetail.profileImage;
+    boardDetailBoardAreas = document.querySelectorAll(".boardDetailBoard-area");
+    boardDetailBoardAreas.forEach((boardDetailBoardArea) => {
+        if(changedBoardDetail.boardNo == boardDetailBoardArea.dataset.boardno) {
+            console.log("같음");
+            // 수정된 게시글 정보 변경
+            $(".updateMemberImage").attr("src", contextPath + changedBoardDetail.profileImage);
+            $(".updateMemberName").html(changedBoardDetail.memberName);
+            $(".updateDate").html(currentTime());
+    
+            boardDetails = boardDetailBoardArea.querySelectorAll(".edit-boardDetail-area");
+            boardDetails.forEach((boardDetail) => {
+                // 수정된 게시글 내용 변경
+                const changedBoardContent = boardDetail.querySelector(".summernote");
+                const changedSummernoteContent =boardDetail.querySelector(".note-editable")
+                const changedProfileImage = boardDetail.querySelector(".boardDetailProfileImage");
+    
+                if(changedBoardDetail.boardDetailNo == boardDetail.dataset.boarddetailno) {
+                    changedBoardContent.innerHTML = changedBoardDetail.boardContent;
+                    $(changedSummernoteContent).html(changedBoardDetail.boardContent);
+                    changedProfileImage.src = contextPath + changedBoardDetail.profileImage;
+                }        
+            });
+        }    
+    });
+    
+    // 게시글리스트에서도 수정한 회원의 정보 변경
+    boards = document.querySelectorAll(".board");
+    boards.forEach((board) => {
+        if(board.dataset.boardno == changedBoardDetail.boardNo) {
+            $(board).find(".profile-image").find("img").attr("src", contextPath + changedBoardDetail.profileImage);
+            $(board).find(".user-name").html(changedBoardDetail.memberName);
         }
-        
-        
     });
     // 알림 웹소켓으로 보냄
     let alert = {
         "projectNo" : projectNo,
         "memberNo" : memberNo,
         "alertContent" : "님이 게시글을 수정하였습니다.",
-        "link" : contextPath + "/board/boardDetail/" + projectNo + "/" + workspaceNo + "/" + boardNo,
+        "link" : contextPath + "/project/" + projectNo + "/" + workspaceNo,
         "memberName" : memberName
     }
-
     console.log(alert);
     console.log(JSON.stringify(alert));
 
@@ -177,62 +184,65 @@ updateBoardDetailSock.onmessage = function(e) {
 // 게시글 내용 추가 웹소켓
 insertBoardDetailSock.onmessage = function(e) {
     const newBoardDetail = JSON.parse(e.data);
-
-    const addedEditBoardDetailArea = document.createElement('div');
-    addedEditBoardDetailArea.classList.add('edit-boardDetail-area');
-    addedEditBoardDetailArea.dataset.boarddetailno = newBoardDetail.boardDetailNo;
-    addedEditBoardDetailArea.dataset.boarddetailsort = newBoardDetail.boardDetailSort;
-
-    const addedAddBoardDetail = document.createElement('div');
-    addedAddBoardDetail.classList.add('add-boardDetail');
-    addedAddBoardDetail.style.visibility = 'hidden';
-
-    const addedAddBoardDetailBtn = document.createElement('button');
-    addedAddBoardDetailBtn.classList.add('add-boardDetail-btn');
-    addedAddBoardDetailBtn.textContent = '+';
-
-    addedAddBoardDetail.appendChild(addedAddBoardDetailBtn);
-
-    const addedBoardDetail = document.createElement('div');
-    addedBoardDetail.classList.add('boardDetail');
-
-    const addedSummernote = document.createElement('div');
-    addedSummernote.classList.add('summernote');
-    addedSummernote.contentEditable = 'true';
-
-    addedBoardDetail.appendChild(addedSummernote);
     
-    const addedUpdateDetailMember = document.createElement('div');
-    addedUpdateDetailMember.classList.add('updateDetailMember');
-    addedUpdateDetailMember.style.visibility = 'hidden';
+        const addedEditBoardDetailArea = document.createElement('div');
+        addedEditBoardDetailArea.classList.add('edit-boardDetail-area');
+        addedEditBoardDetailArea.dataset.boarddetailno = newBoardDetail.boardDetailNo;
+        addedEditBoardDetailArea.dataset.boarddetailsort = newBoardDetail.boardDetailSort;
 
-    const addedBoardDetailProfileImage = document.createElement('img');
-    addedBoardDetailProfileImage.classList.add('boardDetailProfileImage');
-    addedBoardDetailProfileImage.src = contextPath + newBoardDetail.profileImage;
+        const addedAddBoardDetail = document.createElement('div');
+        addedAddBoardDetail.classList.add('add-boardDetail');
+        addedAddBoardDetail.style.visibility = 'hidden';
 
-    addedUpdateDetailMember.appendChild(addedBoardDetailProfileImage);
+        const addedAddBoardDetailBtn = document.createElement('button');
+        addedAddBoardDetailBtn.classList.add('add-boardDetail-btn');
+        addedAddBoardDetailBtn.textContent = '+';
 
-    addedEditBoardDetailArea.appendChild(addedAddBoardDetail);
-    addedEditBoardDetailArea.appendChild(addedBoardDetail);
-    addedEditBoardDetailArea.appendChild(addedUpdateDetailMember);
+        addedAddBoardDetail.appendChild(addedAddBoardDetailBtn);
 
-    const addedHr = document.createElement('hr');
+        const addedBoardDetail = document.createElement('div');
+        addedBoardDetail.classList.add('boardDetail');
 
-    let boardDetails = document.querySelectorAll(".edit-boardDetail-area");
+        const addedSummernote = document.createElement('div');
+        addedSummernote.classList.add('summernote');
+        addedSummernote.contentEditable = 'true';
 
-    boardDetails.forEach((boardDetail) => {
-        let boardDetailSort = boardDetail.dataset.boarddetailsort;
-        let currentBoardDetailSort = parseInt(boardDetailSort, 10);
+        addedBoardDetail.appendChild(addedSummernote);
+        
+        const addedUpdateDetailMember = document.createElement('div');
+        addedUpdateDetailMember.classList.add('updateDetailMember');
+        addedUpdateDetailMember.style.visibility = 'hidden';
 
-        if(currentBoardDetailSort >= newBoardDetail.boardDetailSort) {
-            boardDetail.dataset.boarddetailsort = currentBoardDetailSort + 1;
-        }
+        const addedBoardDetailProfileImage = document.createElement('img');
+        addedBoardDetailProfileImage.classList.add('boardDetailProfileImage');
+        addedBoardDetailProfileImage.src = contextPath + newBoardDetail.profileImage;
 
-        if(boardDetailSort == addedEditBoardDetailArea.dataset.boarddetailsort - 1) {
-            $(boardDetail).after(addedEditBoardDetailArea);
-            $(boardDetail).after(addedHr);
-        }
-    });
+        addedUpdateDetailMember.appendChild(addedBoardDetailProfileImage);
+
+        addedEditBoardDetailArea.appendChild(addedAddBoardDetail);
+        addedEditBoardDetailArea.appendChild(addedBoardDetail);
+        addedEditBoardDetailArea.appendChild(addedUpdateDetailMember);
+
+        const addedHr = document.createElement('hr');
+
+        boardDetailBoardArea = document.querySelector(".boardDetailBoard-area");
+        if(newBoardDetail.boardNo == boardDetailBoardArea.dataset.boardno) {
+            let boardDetails = boardDetailBoardArea.querySelectorAll(".edit-boardDetail-area");
+
+            boardDetails.forEach((boardDetail) => {
+                let boardDetailSort = boardDetail.dataset.boarddetailsort;
+                let currentBoardDetailSort = parseInt(boardDetailSort, 10);
+
+                if(currentBoardDetailSort >= newBoardDetail.boardDetailSort) {
+                    boardDetail.dataset.boarddetailsort = currentBoardDetailSort + 1;
+                }
+
+                if(boardDetailSort == addedEditBoardDetailArea.dataset.boarddetailsort - 1) {
+                    $(boardDetail).after(addedEditBoardDetailArea);
+                    $(boardDetail).after(addedHr);
+                }
+            });
+    }
     // 수정된 게시글 정보 변경
     $(".updateMemberImage").attr("src", contextPath + newBoardDetail.profileImage);
     $(".updateMemberName").html(newBoardDetail.memberName);
@@ -240,12 +250,21 @@ insertBoardDetailSock.onmessage = function(e) {
     // 추가된 게시글에도 타이핑 함수 실행
     typing();
 
+    // 게시글리스트에서도 수정한 회원의 정보 변경
+    boards = document.querySelectorAll(".board");
+    boards.forEach((board) => {
+        if(board.dataset.boardno == newBoardDetail.boardNo) {
+            console.log(board);
+            $(board).find(".profile-image").find("img").attr("src", contextPath + newBoardDetail.profileImage);
+            $(board).find(".user-name").html(newBoardDetail.memberName);
+        }
+    });
     // 알림 웹소켓으로 보냄
     let alert = {
         "projectNo" : projectNo,
         "memberNo" : memberNo,
         "alertContent" : "님이 게시글을 수정하였습니다.",
-        "link" : contextPath + "/board/boardDetail/" + projectNo + "/" + workspaceNo + "/" + boardNo,
+        "link" : contextPath + "/project/" + projectNo + "/" + workspaceNo,
         "memberName" : memberName
     }
 
@@ -254,29 +273,40 @@ insertBoardDetailSock.onmessage = function(e) {
 
     alertSock.send( JSON.stringify(alert) );
 }
-/*
+
 // 게시글 내용 삭제 웹소켓
 deleteBoardDetailSock.onmessage = function(e) {
     const deletedBoardDetail = JSON.parse(e.data);
 
-    let boardDetails = document.querySelectorAll(".edit-boardDetail-area");
-    boardDetails.forEach((boardDetail) => {
-        if(deletedBoardDetail.boardDetailNo == boardDetail.dataset.boarddetailno) {
-            boardDetail.nextElementSibling.remove();
-            boardDetail.remove();            
+    boardDetailBoardArea = document.querySelector(".boardDetailBoard-area");
+    if(deletedBoardDetail.boardNo == boardDetailBoardArea.dataset.boardno) {
+        // 수정된 게시글 정보 변경
+        $(".updateMemberImage").attr("src", contextPath + deletedBoardDetail.profileImage);
+        $(".updateMemberName").html(deletedBoardDetail.memberName);
+        $(".updateDate").html(currentTime());
+
+        let boardDetails = boardDetailBoardArea.querySelectorAll(".edit-boardDetail-area");
+        boardDetails.forEach((boardDetail) => {
+            if(deletedBoardDetail.boardDetailNo == boardDetail.dataset.boarddetailno) {
+                boardDetail.nextElementSibling.remove();
+                boardDetail.remove();            
+            }
+        });
+    }
+    // 게시글리스트에서도 수정한 회원의 정보 변경
+    boards = document.querySelectorAll(".board");
+    boards.forEach((board) => {
+        if(board.dataset.boardno == deletedBoardDetail.boardNo) {
+            $(board).find(".profile-image").find("img").attr("src", contextPath + deletedBoardDetail.profileImage);
+            $(board).find(".user-name").html(deletedBoardDetail.memberName);
         }
     });
-    // 수정된 게시글 정보 변경
-    $(".updateMemberImage").attr("src", contextPath + deletedBoardDetail.profileImage);
-    $(".updateMemberName").html(deletedBoardDetail.memberName);
-    $(".updateDate").html(currentTime());
-
     // 알림 웹소켓으로 보냄
     let alert = {
         "projectNo" : projectNo,
         "memberNo" : memberNo,
         "alertContent" : "님이 게시글을 수정하였습니다.",
-        "link" : contextPath + "/board/boardDetail/" + projectNo + "/" + workspaceNo + "/" + boardNo,
+        "link" : contextPath + "/project/" + projectNo + "/" + workspaceNo,
         "memberName" : memberName
     }
 
@@ -285,7 +315,7 @@ deleteBoardDetailSock.onmessage = function(e) {
 
     alertSock.send( JSON.stringify(alert) );
 };
-*/
+
 
 // 이벤트 날짜 변경 웹소켓
 updateEventDateSock.onmessage = function(e) {
@@ -296,6 +326,18 @@ updateEventDateSock.onmessage = function(e) {
     $(".updateDate").html(currentTime());
     $(".eventStartDate").val(changedBoardInfo.eventStartDate);
     $(".eventEndDate").val(changedBoardInfo.eventEndDate);
+
+    // 게시글리스트에서도 수정한 회원의 정보 변경
+    boards = document.querySelectorAll(".board");
+    boards.forEach((board) => {
+        if(board.dataset.boardno == changedBoardInfo.boardNo) {
+            $(board).find(".profile-image").find("img").attr("src", contextPath + deletedBoardDetail.profileImage);
+            $(board).find(".user-name").html(deletedBoardDetail.memberName);
+            $(board).find(".boardListEventStartDate").html(changedBoardInfo.eventStartDate);
+            $(board).find(".boardListEventEndDate").html(changedBoardInfo.eventEndDate);
+
+        }
+    });
 
         let addEvent = {
             "pmNo" : pmNo,// 프로젝트 멤버 번호
@@ -318,7 +360,7 @@ updateEventDateSock.onmessage = function(e) {
         "projectNo" : projectNo,
         "memberNo" : memberNo,
         "alertContent" : "님이 게시글을 수정하였습니다.",
-        "link" : contextPath + "/board/boardDetail/" + projectNo + "/" + workspaceNo + "/" + boardNo,
+        "link" : contextPath + "/project/" + projectNo + "/" + workspaceNo,
         "memberName" : memberName
     }
 
@@ -331,18 +373,36 @@ updateEventDateSock.onmessage = function(e) {
 // 게시글 제목 수정 웹소켓
 boardListSock.onmessage = function(e) {
     const changedBoardInfo = JSON.parse(e.data);
-    // 수정된 게시글 정보 변경
-    $(".boardTitle").html(changedBoardInfo.boardTitle);
-    $(".updateMemberImage").attr("src", contextPath + changedBoardInfo.updateProfileImg);
-    $(".updateMemberName").html(changedBoardInfo.updateMemberName);
-    $(".updateDate").html(currentTime());
+    boardDetailBoardArea = document.querySelector(".boardDetailBoard-area");
+    if(changedBoardInfo.boardNo == boardDetailBoardArea.dataset.boardno) {
+        // 수정된 게시글 정보 변경
+        $(".boardTitle").html(changedBoardInfo.boardTitle);
+        $(".updateMemberImage").attr("src", contextPath + changedBoardInfo.updateProfileImg);
+        $(".updateMemberName").html(changedBoardInfo.updateMemberName);
+        $(".updateDate").html(currentTime());        
+    }
 
+    boards = document.querySelectorAll(".board");
+    boards.forEach((board) => {
+
+        const changedBoardTitle = board.querySelector(".boardListBoardTitle");
+
+        if(changedBoardInfo.boardNo == board.dataset.boardno) {
+
+            // 수정한 멤버 정보 반영
+            $(board).find(".profile-image").find("img").attr("src", contextPath + changedBoardInfo.updateProfileImg);
+            $(board).find(".user-name").html(changedBoardInfo.updateMemberName);
+            board.dataset.pmno = changedBoardInfo.pmNo;
+            // 수정된 제목 변경
+            changedBoardTitle.innerHTML = changedBoardInfo.boardTitle;            
+        }
+    });
     // 알림 웹소켓으로 보냄
     let alert = {
         "projectNo" : projectNo,
         "memberNo" : memberNo,
         "alertContent" : "님이 게시글을 수정하였습니다.",
-        "link" : contextPath + "/board/boardDetail/" + projectNo + "/" + workspaceNo + "/" + boardNo,
+        "link" : contextPath + "/project/" + projectNo + "/" + workspaceNo,
         "memberName" : memberName
     }
 
@@ -410,6 +470,7 @@ function titleTyping() {
 // 게시글 내용 변경 함수
 function updateBoardContent(editBoardDetailArea) {
 
+    console.log(boardNo);
     let boardDetailNo = $(editBoardDetailArea).data("boarddetailno");
     let boardContent = $(editBoardDetailArea).find(".note-editable").html().replace(/\n|\t/g, "");
     let boardDetail = {
@@ -435,8 +496,9 @@ function updateBoardContent(editBoardDetailArea) {
 
 // 게시글 제목 변경 함수
 function updateBoardTitle(boardTitle) {
+    console.log(boardNo);
     let changedBoardTitle = $(boardTitle).html().replace(/\n|\t/g, "");
-    board = {
+    let board = {
         "boardNo" : boardNo,
         "workspaceNo" : workspaceNo,
         "boardTitle" : changedBoardTitle,
@@ -459,6 +521,7 @@ function addBoardDetailBtn(addBoardDetailBtn) {
 
 // 게시글 내용 추가 함수
 function insertBoardDetail(boardDetail) {
+    console.log(boardNo);
     let boardDetailSort = $(boardDetail).data("boarddetailsort");
 
     boardDetail = {
@@ -476,7 +539,8 @@ function insertBoardDetail(boardDetail) {
 }
 
 // 게시글 내용 삭제 함수
-function deleteBoardDetail(editBoardDetailArea) {        
+function deleteBoardDetail(editBoardDetailArea) {  
+    console.log(boardNo);   
     let boardDetailSort = $(editBoardDetailArea).data("boarddetailsort");
     let boardDetailNo = $(editBoardDetailArea).data("boarddetailno");
 

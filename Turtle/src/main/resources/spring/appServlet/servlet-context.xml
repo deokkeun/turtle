@@ -64,7 +64,6 @@
 	<beans:bean id="deleteBoardDetailHandler" class="com.turtle.www.board.model.websocket.DeleteBoardDetailWebsocketHandler"/>
 	<beans:bean id="updateEventDateHandler" class="com.turtle.www.board.model.websocket.UpdateEventDateWebsocketHandler"/>
 	<beans:bean id="alertHandler" class="com.turtle.www.alert.model.websocket.AlertWebsocketHandler"/>
-	
 	 
 	
 	<websocket:handlers>

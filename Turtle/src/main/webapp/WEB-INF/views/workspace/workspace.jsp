@@ -3,11 +3,11 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<!--
+
 <c:set var="memberName" value="${loginMember.memberName}" />
 <c:set var="profileImage" value="${loginMember.profileImage}"/>
 <c:set var="memberNo" value="${loginMember.memberNo}"/>
--->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -110,7 +110,7 @@
                                 <div class="delete-board" style="visibility:hidden;">
                                     <button class="delete-board-btn"><i class="fa-solid fa-xmark"></i></button>
                                 </div>    	
-                                <div class="boardListEventDate">
+                                <div class="boardListEventDatee">
                                     <div class="boardListEventStartDate">${board.eventStartDate}</div>
                                     <div> - </div>
                                     <div class="boardListEventEndDate">${board.eventEndDate}</div>
@@ -137,97 +137,92 @@
             </div>
 
 
-            <!-- 메모 영역 -->
-            <div>
-            <jsp:include page="/WEB-INF/views/workspace/memo.jsp" />
-                <!--
-                <div id="memo-area">
-                    <c:forEach var="memo" items="${memoList}"> 
-                        <fmt:formatDate var="memoRegDate" value="${memo.memoRegDate}" pattern="MM-dd HH:mm"/>
-                        <fmt:formatDate var="memoUpdateDate" value="${memo.memoUpdateDate}" pattern="MM-dd HH:mm"/>
-                        <c:choose>
-                            <c:when test="${memo.memoType eq 'workspace'}">
-            
-                                
-                                <div class="team">
-                                
-                                    <div class="division1">Team Memo</div>
-            
-                                    <div class="division2">
-                                        
-                                        <div class="memoDetail workspace" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
-                                            
-                                            <div class="memoContent" contenteditable="true"
-                                                data-pmNo="${pmNo}" data-memoNo="${memo.memoNo}" data-memoType="${memo.memoType}"  style="background-color: ${memo.memoBgColor}">					
-                                                ${memo.memoContent} 
-                                            </div>
-                                            
-                                            <p><span class="counter"> 0 </span> / 150</p>
-                                           
-                                            <div class="memoInfo"  style="background-color: ${memo.memoBgColor}">
-                                                <div class="modifyInfo">
-                                                    <div class="memberName">수정자 : ${memo.memberName}</div>
-                                                    <c:choose>
-                                                        <c:when test="${empty memoUpdateDate}">
-                                                            <div class="memoUpdateDate">수정일 : ${memoRegDate}</div>
-                                                        </c:when> 
-                                                        <c:otherwise>
-                                                            <div class="memoUpdateDate">수정일 : ${memoUpdateDate}</div>
-                                                        </c:otherwise>
-                                                    </c:choose>
-                                                </div>
-                                                
-                                                <div class="profile-image2">
-                                                    <img src="${contextPath}${memo.profileImg}">
-                                                </div>	
-                                            </div>	    			
-                                        </div>
-                                    </div>
-                                </div>
-                            </c:when>
+            <!-- 메모 영역 -->            
+            <div id="memo-area">
+                <c:forEach var="memo" items="${memoList}"> 
+                    <fmt:formatDate var="memoRegDate" value="${memo.memoRegDate}" pattern="MM-dd HH:mm"/>
+                    <fmt:formatDate var="memoUpdateDate" value="${memo.memoUpdateDate}" pattern="MM-dd HH:mm"/>
+                    <c:choose>
+                        <c:when test="${memo.memoType eq 'workspace'}">
+        
                             
-                            <c:otherwise>
-                                
-                                <div class="solo">
-                                    <div class="division1">Personal Memo</div>
-            
-                                    <div class="division2">
+                            <div class="team">
+                            
+                                <div class="division1">Team Memo</div>
+        
+                                <div class="division2">
+                                    
+                                    <div class="memoDetail workspace" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
                                         
-                                        <div class="memoDetail personal" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
-                                            	
-                                            <div class="memoContent" contenteditable="true"
-                                                data-pmNo="${pmNo}" data-memoNo="${memo.memoNo}" data-memoType="${memo.memoType}" style="background-color: ${memo.memoBgColor}">					
-                                                ${memo.memoContent}
+                                        <div class="memoContent" contenteditable="true"
+                                            data-pmNo="${pmNo}" data-memoNo="${memo.memoNo}" data-memoType="${memo.memoType}"  style="background-color: ${memo.memoBgColor}">					
+                                            ${memo.memoContent} 
+                                        </div>
+                                        
+                                        <p><span class="counter"> 0 </span> / 150</p>
+                                        
+                                        <div class="memoInfo"  style="background-color: ${memo.memoBgColor}">
+                                            <div class="modifyInfo">
+                                                <div class="memberName">수정자 : ${memo.memberName}</div>
+                                                <c:choose>
+                                                    <c:when test="${empty memoUpdateDate}">
+                                                        <div class="memoUpdateDate">수정일 : ${memoRegDate}</div>
+                                                    </c:when> 
+                                                    <c:otherwise>
+                                                        <div class="memoUpdateDate">수정일 : ${memoUpdateDate}</div>
+                                                    </c:otherwise>
+                                                </c:choose>
                                             </div>
                                             
-                                            <p><span class="counter"> 0 </span> / 150</p>
-                                            
-                                            <div class="memoInfo" style="background-color: ${memo.memoBgColor}">
-                                                <div class="modifyInfo">
-                                                    <div class="memberName">수정자 : ${memo.memberName}</div> 
-                                                    <c:choose>
-                                                        <c:when test="${empty memoUpdateDate}">
-                                                            <div class="memoUpdateDate">수정일 : ${memoRegDate}</div>
-                                                        </c:when>
-                                                        <c:otherwise>
-                                                            <div class="memoUpdateDate">수정일 : ${memoUpdateDate}</div>
-                                                        </c:otherwise>
-                                                    </c:choose>
-                                                </div>
-                                                
-                                                <div class="profile-image2">
-                                                    <img src="${contextPath}${memo.profileImg}">
-                                                </div>
-                                            </div>	  
-                                        </div>
+                                            <div class="profile-image2">
+                                                <img src="${contextPath}${memo.profileImg}">
+                                            </div>	
+                                        </div>	    			
                                     </div>
                                 </div>
-                            </c:otherwise>
-                        </c:choose>
-                                
+                            </div>
+                        </c:when>
+                        
+                        <c:otherwise>
+                            
+                            <div class="solo">
+                                <div class="division1">Personal Memo</div>
+        
+                                <div class="division2">
+                                    
+                                    <div class="memoDetail personal" data-memoBgColor="${memo.memoBgColor}" style="background-color: ${memo.memoBgColor}">
+                                            
+                                        <div class="memoContent" contenteditable="true"
+                                            data-pmNo="${pmNo}" data-memoNo="${memo.memoNo}" data-memoType="${memo.memoType}" style="background-color: ${memo.memoBgColor}">					
+                                            ${memo.memoContent}
+                                        </div>
+                                        
+                                        <p><span class="counter"> 0 </span> / 150</p>
+                                        
+                                        <div class="memoInfo" style="background-color: ${memo.memoBgColor}">
+                                            <div class="modifyInfo">
+                                                <div class="memberName">수정자 : ${memo.memberName}</div> 
+                                                <c:choose>
+                                                    <c:when test="${empty memoUpdateDate}">
+                                                        <div class="memoUpdateDate">수정일 : ${memoRegDate}</div>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <div class="memoUpdateDate">수정일 : ${memoUpdateDate}</div>
+                                                    </c:otherwise>
+                                                </c:choose>
+                                            </div>
+                                            
+                                            <div class="profile-image2">
+                                                <img src="${contextPath}${memo.profileImg}">
+                                            </div>
+                                        </div>	  
+                                    </div>
+                                </div>
+                            </div>
+                        </c:otherwise>
+                    </c:choose>
+                            
                 </c:forEach>
-                </div>
-                 -->
             </div>
             
     </main>
@@ -247,6 +242,14 @@
     <!-- <script src="${contextPath}/resources/js/chat.js"></script> -->
     
     <script>
+        var pmNo = "${pmNo}";
+        var projectNo = "${projectNo}";
+        var workspaceNo = "${workspaceNo}";
+        var contextPath = "${contextPath}";
+        var boardNo = "${boardNo}";
+        var memberNo = "${memberNo}";
+        var memberName = "${memberName}";
+        var profileImage = "${profileImage}";
         // 로그인이 되어 있을 경우에만
 		// /memo 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
 		//let memoSock = new SockJS(contextPath+"/memo");
@@ -259,7 +262,8 @@
      -->
     <!-- boardList.js 연결 -->
     <script src="${contextPath}/resources/js/board/boardList.js"></script>
-    
+    <!-- memo.js 연결 -->
+    <script src="${contextPath}/resources/js/workspace/memo.js"></script>
     
 </body>
 </html>

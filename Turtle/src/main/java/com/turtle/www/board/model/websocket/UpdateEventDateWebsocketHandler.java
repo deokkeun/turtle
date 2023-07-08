@@ -69,12 +69,11 @@ public class UpdateEventDateWebsocketHandler extends TextWebSocketHandler {
 					
 				// WebSocketSession == HttpSession(로그인정보, 워크스페이스번호)을 가로챈 것
 				int workspaceNo = (Integer)s.getAttributes().get("workspaceNo");
-				int boardNo = (Integer)s.getAttributes().get("boardNo");
 				
 				// WebSocketSession에 담겨있는 워크스페이스넘버 혹은 게시판번호가
 				// 메시지에 담겨있는 정보와 같을경우
 				// 같은 클라이언트다.				
-				if(boardNo == board.getBoardNo() || workspaceNo == board.getWorkspaceNo())  {
+				if(workspaceNo == board.getWorkspaceNo())  {
 					
 					// 같은 워크스페이스넘버 클라이언트에게 JSON형식 메시지를 보냄
 					s.sendMessage(new TextMessage(new Gson().toJson(board)));

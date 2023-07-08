@@ -65,13 +65,13 @@ public class UpdateBoardDetailWebsocketHandler extends TextWebSocketHandler {
 			for(WebSocketSession s : sessions) {
 					
 				// WebSocketSession == HttpSession(로그인정보, 게시글번호)을 가로챈 것
-				int boardNo = (Integer)s.getAttributes().get("boardNo");
+				//int boardNo = (Integer)s.getAttributes().get("boardNo");
 				int workspaceNo = (Integer)s.getAttributes().get("workspaceNo");
 					
 				// WebSocketSession에 담겨있는 워크스페이스넘버와
 				// 메시지에 담겨있는 워크스페이스넘버가 같을경우
 				// 같은 게시글넘버 클라이언트다.				
-				if(boardNo == boardDetail.getBoardNo() || workspaceNo == boardDetail.getWorkspaceNo())  {					
+				if(workspaceNo == boardDetail.getWorkspaceNo())  {					
 					// 같은 게시글넘버 게시글에게 JSON형식 메시지를 보냄
 					s.sendMessage(new TextMessage(new Gson().toJson(boardDetail)));						
 				}
