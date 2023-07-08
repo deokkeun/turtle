@@ -16,13 +16,14 @@
     <title>Turtle</title>
 	<!-- main-style.css -->
   <link href="${contextPath}/resources/css/main-style.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
   <!-- bootstrap.css -->
   <link href="${contextPath}/resources/css/booystrapcss/bootstrap.css" rel="stylesheet">
   <link href="${contextPath}/resources/images/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="${contextPath}/resources/images/remixicon/remixicon.css" rel="stylesheet">
   <link href="${contextPath}/resources/css/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <!-- 섬머노트 전용 css -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <!--섬머노트 전용 css-->
   <link rel="stylesheet" href="${contextPath}/resources/css/summernote/summernote-lite.css">
   <!--섬머노트 전용 js -->
   <script src="${contextPath}/resources/js/summernote/summernote-lite.js"></script>
@@ -291,9 +292,9 @@
   
 <aside class="board-detail-area right-sidebar" id="rightSidebar" >
 
-  <div class="board-area">
+  <div class="boardDetailBoard-area" data-boardNo="${board.boardNo}">
     <div class="board-info-area">
-        <div class="boardTitle" contenteditable="true">${board.boardTitle}</div>
+        <div class="boardTitle">${board.boardTitle}</div>
         <div class="regInfo">
             <div class="regMember"> 
                 <div>최초 작성자 : </div>
@@ -344,20 +345,7 @@
     <hr>
     
     <div class="boardDetail-area">
-        <div class="edit-boardDetail-area" data-boardDetailNo="0" 
-                                        data-boardDetailSort="0">
-            <div class="add-boardDetail" style="visibility:hidden;">
-                <button class="add-boardDetail-btn">+</button>
-            </div>
-            <div class="boardDetail">
-                <div>
-                </div>
-            </div>                    
-        </div>
-        <hr>
-        <div class="boardContent-area">
-
-        </div>
+        
     </div>
 </div>
  
@@ -373,22 +361,24 @@
 
   <!-- Template Main JS File -->
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js?ver=4"></script>
+
   <!--------------------------------------- sockjs를 이용한 WebSocket 구현을 위해 라이브러리 추가 ---------------------------------------------->	
   <!-- https://github.com/sockjs/sockjs-client -->
   <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
   <script>
-    const pmNo = "${pmNo}";
-    const projectNo = "${projectNo}";
-    const workspaceNo = "${workspaceNo}";
-    const contextPath = "${contextPath}";
-    const boardNo = "${boardNo}";
-    const memberNo = "${memberNo}";
-    let memberName = "${memberName}";
-    let profileImage = "${profileImage}";
+    var pmNo = "${pmNo}";
+    var projectNo = "${projectNo}";
+    var workspaceNo = "${workspaceNo}";
+    var contextPath = "${contextPath}";
+    var memberNo = "${memberNo}";
+    var memberName = "${memberName}";
+    var profileImage = "${profileImage}";
+    var boardNo = "${boardNo}";
 
 		// /updateBoardDetail 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성		
 		// 이벤트 시간 생성용 sock
     let updateEventDateSock = new SockJS(contextPath+"/updateEventDate");
+    
     // /memo 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
 		let memoSock = new SockJS(contextPath+"/memo");
     // 알람용 sock
@@ -410,9 +400,12 @@
 		// /deleteBoard 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
 		// 게시글 삭제용 sock
 		let deleteBoardSock = new SockJS(contextPath+"/deleteBoard");
-        // 이모지 수정용 sock
+    // 이모지 수정용 sock
     let updateEmojiSock = new SockJS(contextPath+"/updateEmoji");
+    // 게시글디테일 수정후 게시글 리스트에 적용할 웹소켓
+    //let updateBoardInfoSock = new SockJS(contextPath+"/updateBoardInfo");
 </script>
 <script src="${contextPath}/resources/js/header.js"></script>
 <!-- boardDetail.js 연결 -->
 <script src="${contextPath}/resources/js/board/boardDetail.js"></script>
+

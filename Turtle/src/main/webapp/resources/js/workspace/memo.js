@@ -175,7 +175,7 @@ memoSock.onmessage = function(e){
 
 	// 전달 받은 메세지를 JS 객체로 변환
 	const memo = JSON.parse(e.data);  // JSON -> JS Object
-
+	
 
 	memoDetails.forEach((memoDetail) => {
 		const changedMemoContent = memoDetail.querySelector(".memoContent");
@@ -188,9 +188,11 @@ memoSock.onmessage = function(e){
 			const changedProfileImage = changedMemoInfo.querySelector(".profile-image > img");
 			const changedMemoUpdateDate = changedMemoInfo.querySelector(".memoUpdateDate");
 
-
+			
 			// 수정 멤버 정보 변경
-			changedProfileImage.src = contextPath + memo.profileImg;
+
+			//changedProfileImage.src = (contextPath + memo.profileImg);
+			$(changedProfileImage).attr('src', contextPath + memo.profileImg);
 			changedMemberName.innerHTML = "수정자 : " +  memo.memberName;
 			changedMemoUpdateDate.innerHTML = "수정일 : " + recurrentTime();
 			changedMemoContent.dataset.pmno = memo.pmNo;
@@ -201,6 +203,7 @@ memoSock.onmessage = function(e){
 			// 수정 메모 색상 변경
 			changedMemoInfo.style.backgroundColor = memo.memoBgColor;
 			changedMemoContent.style.backgroundColor = memo.memoBgColor;
+			//memoDetail.style.backgroundColor = memo.memoBgColor;
 			
 		}
 
