@@ -40,56 +40,6 @@ $(document).on("click", ".edit-boardTitle-btn", function() {
     
     
 }) 
-// 게시글 제목 수정용 웹소켓 작업
-// 웹소켓 핸들러에서
-// s.sendMessage( new TextMessage(message.getPayload()) );
-// 구문이 수행되어 메세지가 전달된 경우
-
-boardListSock.onmessage = function(e) {
-    // 매개변수 e : 발생한 이벤트에 대한 정보를 담고있는 객체
-	// e.data : 전달된 메세지 (message.getPayload())   (JSON 형태)
-
-	// 전달 받은 메세지를 JS 객체로 변환
-	const changedBoard = JSON.parse(e.data);  // JSON -> JS Object
-
-    boards = document.querySelectorAll(".board");
-    boards.forEach((board) => {
-
-        const changedBoardTitle = board.querySelector(".boardListBoardTitle");
-        const changedProfileImage = board.querySelector(".profile-image > img");
-
-        if(changedBoard.boardNo == board.dataset.boardno) {
-
-            // 수정한 멤버 정보 반영
-            board.dataset.pmno = changedBoard.pmNo;
-            changedProfileImage.src = contextPath + changedBoard.updateProfileImg;
-
-            // 수정된 제목 변경
-            changedBoardTitle.innerHTML = changedBoard.boardTitle;            
-        }
-    });
-
-    // 알림 웹소켓으로 보냄
-    let alert = {
-        "projectNo" : projectNo,
-        "memberNo" : memberNo,
-        "alertContent" : "님이 게시글을 수정하였습니다.",
-        "link" : contextPath + "/board/boardDetail/" + projectNo + "/" + workspaceNo + "/" + changedBoard.boardNo,
-        "memberName" : memberName
-    }
-
-    console.log(alert);
-    console.log(JSON.stringify(alert));
-
-    alertSock.send( JSON.stringify(alert) );
-}
-
-// 게시글 추가용 웹소켓 작업
-
-// 웹소켓 핸들러에서
-// s.sendMessage( new TextMessage(message.getPayload()) );
-// 구문이 수행되어 메세지가 전달된 경우
-
 insertBoardSock.onmessage = function(e) {
     // 매개변수 e : 발생한 이벤트에 대한 정보를 담고있는 객체
 	// e.data : 전달된 메세지 (message.getPayload())   (JSON 형태)
@@ -137,7 +87,7 @@ insertBoardSock.onmessage = function(e) {
     addedSelectBoardDetail.classList.add('select-board-detail');
 
     const addedBoardTitle = document.createElement('div');
-    addedBoardTitle.classList.add('boardTitle');
+    addedBoardTitle.classList.add('boardListBoardTitle');
     addedBoardTitle.contentEditable = 'false';
     addedSelectBoardDetail.appendChild(addedBoardTitle);
 
@@ -241,7 +191,7 @@ insertBoardSock.onmessage = function(e) {
         "projectNo" : projectNo,
         "memberNo" : memberNo,
         "alertContent" : "님이 게시글을 추가하였습니다.",
-        "link" : contextPath + "/board/boardDetail/" + projectNo + "/" + workspaceNo + "/" + newBoard.boardNo,
+        "link" : contextPath + "/project/" + projectNo + "/" + workspaceNo + "/" + newBoard.boardNo,
         "memberName" : memberName
     }
 
@@ -250,104 +200,6 @@ insertBoardSock.onmessage = function(e) {
 
     alertSock.send( JSON.stringify(alert) );
 };
-
-// 게시글 삭제용 웹소켓 작업
-
-// 웹소켓 핸들러에서
-// s.sendMessage( new TextMessage(message.getPayload()) );
-// 구문이 수행되어 메세지가 전달된 경우
-
-deleteBoardSock.onmessage = function(e) {
-    // 매개변수 e : 발생한 이벤트에 대한 정보를 담고있는 객체
-	// e.data : 전달된 메세지 (message.getPayload())   (JSON 형태)
-
-	// 전달 받은 메세지를 JS 객체로 변환
-	const deletedBoard = JSON.parse(e.data);  // JSON -> JS Object
-    let boards = document.querySelectorAll(".board");
-    boards.forEach((board) => {
-        if(deletedBoard.boardNo == board.dataset.boardno) {
-            if(!board.previousSibling && !board.nextElementSibling) {
-                location.reload();
-            } else {
-                board.remove();
-            }            
-        }        
-    });
-};
-
-// 게시글 내용 수정시 수정 멤버 정보 바꾸는 웹소켓 작업
-updateBoardDetailSock.onmessage = function(e) {
-    // 매개변수 e : 발생한 이벤트에 대한 정보를 담고있는 객체
-	// e.data : 전달된 메세지 (message.getPayload())   (JSON 형태)
-
-	// 전달 받은 메세지를 JS 객체로 변환
-	const changedBoardDetail = JSON.parse(e.data);  // JSON -> JS Object
-
-    // 수정된 게시글 정보 변경
-    boards = document.querySelectorAll(".board");
-
-    boards.forEach((board) => {
-        if(board.dataset.boardno == changedBoardDetail.boardNo) {
-            $(board).find(".profile-image").find("img").attr("src", contextPath + changedBoardDetail.profileImage);
-            $(board).find(".user-name").html(changedBoardDetail.memberName);
-        }
-    });
-
-    
-}
-
-// 게시글 내용 추가시 수정 멤버 정보 바꾸는 웹소켓 작업
-insertBoardDetailSock.onmessage = function(e) {
-    // 매개변수 e : 발생한 이벤트에 대한 정보를 담고있는 객체
-	// e.data : 전달된 메세지 (message.getPayload())   (JSON 형태)
-
-	// 전달 받은 메세지를 JS 객체로 변환
-	const changedBoardDetail = JSON.parse(e.data);  // JSON -> JS Object
-
-    // 수정된 게시글 정보 변경
-    boards = document.querySelectorAll(".board");
-
-    boards.forEach((board) => {
-        if(board.dataset.boardno == changedBoardDetail.boardNo) {
-            $(board).find(".profile-image").find("img").attr("src", contextPath + changedBoardDetail.profileImage);
-            $(board).find(".user-name").html(changedBoardDetail.memberName);
-        }
-    });    
-}
-
-
-// 게시글 내용 삭제시 수정 멤버 정보 바꾸는 웹소켓 작업
-deleteBoardDetailSock.onmessage = function(e) {
-	const changedBoardDetail = JSON.parse(e.data);  // JSON -> JS Object
-
-    // 수정된 게시글 정보 변경
-    boards = document.querySelectorAll(".board");
-
-    boards.forEach((board) => {
-        if(board.dataset.boardno == changedBoardDetail.boardNo) {
-            $(board).find(".profile-image").find("img").attr("src", contextPath + changedBoardDetail.profileImage);
-            $(board).find(".user-name").html(changedBoardDetail.memberName);
-        }
-    });    
-};
-
-// 이벤트 날짜 변경 웹소켓
-updateEventDateSock.onmessage = function(e) {
-    const changedBoardInfo = JSON.parse(e.data);
-
-    boards = document.querySelectorAll(".board");
-
-    boards.forEach((board) => {
-        if(board.dataset.boardno == changedBoardInfo.boardNo) {
-            console.log("같음");
-            $(board).find(".profile-image").find("img").attr("src", contextPath + changedBoardInfo.updateProfileImg);
-            $(board).find(".user-name").html(changedBoardInfo.updateMemberName);
-            $(board).find(".boardListEventStartDate").html(changedBoardInfo.eventStartDate);
-            $(board).find(".boardListEventEndDate").html(changedBoardInfo.eventEndDate);
-        }
-    })
-};
-
 // 이모지 변경 웹소켓
 updateEmojiSock.onmessage = function(e) {
 
@@ -370,10 +222,7 @@ updateEmojiSock.onmessage = function(e) {
             }
 
         }
-    })
-    /*
-           
-*/    
+    })   
 }
 
 // 마우스 오버 함수

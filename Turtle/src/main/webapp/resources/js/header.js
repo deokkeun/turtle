@@ -10,8 +10,7 @@ function selectAlertList() {
         dataType : "JSON",
 
         success : function(alertList) {
-            
-            let badgeNumber = document.querySelector(".badge-number");
+                let badgeNumber = document.querySelector(".badge-number");
             let notifications = document.getElementById("alert-area");
             
             notifications.innerHTML = "";
@@ -25,7 +24,7 @@ function selectAlertList() {
             alertListArea.style.maxHeight ="450px";
 
             for(let item of alertList) {
-
+                if(item.memberName != memberName) {
                 let dropDownDividerLi = document.createElement("li");
                 let dropDownDividerHr = document.createElement("hr");
                 dropDownDividerHr.classList.add("dropdown-divider");
@@ -59,7 +58,7 @@ function selectAlertList() {
                 alertListArea.append(notificationItem);
 
                 count ++;
-                
+            }
             }
 
             notifications.append(alertListArea);
@@ -70,6 +69,8 @@ function selectAlertList() {
                 badgeNumber.innerHTML = count;
                 dropDownHeader.innerText = count + "개의 새로운 알림이 있습니다";
             }
+            
+            
             
             
             
@@ -113,7 +114,7 @@ let alerts = document.querySelector("#alert-area");
 
 alertSock.onmessage = function(e) {
     let alert = JSON.parse(e.data);  // JSON -> JS Object
-    
+    if(alert.memberName != memberName) {
     let notifications = document.getElementById("alert-area");
     let dropDownHeader = notifications.querySelector(".dropdown-header");
     let alertListArea = document.querySelector(".alertListArea");
@@ -155,6 +156,7 @@ alertSock.onmessage = function(e) {
 
     badgeNumber.innerText = ((Number)(badgeNumber.innerText) + 1);
     dropDownHeader.innerText = badgeNumber.innerText + "개의 새로운 알림이 있습니다";
+    }
 }
 
 
@@ -186,4 +188,129 @@ function join() {
   window.open(url,title,status); 
 };
 
+
+
+function deleteProject(projectNo) {
+  console.log("deleteProject");
+  console.log(projectNo);
+  $.ajax({
+    url: 'deleteProject', 
+    type: 'POST',
+    data: { "projectNo": projectNo },
+    success: function(result) {
+    	console.log(result);
+      if(result == 1){
+        alert("삭제되었습니다.");
+      }else if (result == 2){
+        alert("관리자만 삭제할 수 있습니다.")
+      }else{
+        alert("삭제에 실패하였습니다. 잠시 후 다시 시도해주세요.");
+      }
+    },
+    error: function() {
+      console.log('프로젝트 삭제 중 오류가 발생.');
+    }
+  });
+}
+
+function deleteWorkspace(workspaceNo) {
+  console.log("워크스페이스 삭제");
+  
+  $.ajax({
+    url: 'deleteWorkspace', 
+    type: 'POST',
+    data: { "workspaceNo": workspaceNo },
+    success: function(result) {
+      if(result == 1){
+        alert("삭제되었습니다.");
+      }else if (result == 2){
+        alert("관리자만 삭제할 수 있습니다.")
+      }else{
+        alert("삭제에 실패하였습니다. 잠시 후 다시 시도해주세요.");
+      }
+    },
+    error: function() {
+      console.log('워크스페이스 삭제 중 오류가 발생.');
+    }
+  });
+}
+
+  
+function renameProject(projectNo) {
+    var projectName = prompt("변경할 프로젝트 이름을 입력하세요:");
+  
+    if (projectName === null) {
+      return;
+    }
+  
+    $.ajax({
+      url: 'renameProject',
+      type: 'POST',
+      data: {
+        "projectNo": projectNo,
+        "projectName": projectName
+      },
+      success: function(result) {
+        console.log(result);
+        if (result == 1) {
+          alert("프로젝트 이름이 변경되었습니다.");
+        } else if (result == 2) {
+          alert("관리자만 이름을 변경할 수 있습니다.");
+        } else {
+          alert("프로젝트 이름 변경에 실패하였습니다. 잠시 후 다시 시도해주세요.");
+        }
+      },
+      error: function() {
+        console.log('프로젝트 이름 변경 중 오류가 발생.');
+      }
+    });
+  }
+  
+  function renameWorkspace(workspaceNo) {
+    var workspaceName = prompt("변경할 워크스페이스 이름을 입력하세요:");
+  
+    if (workspaceName === null) {
+      return;
+    }
+    console.log(workspaceName);
+    $.ajax({
+      url: 'renameWorkspace',
+      type: 'POST',
+      data: {
+        "workspaceNo": workspaceNo,
+        "workspaceName": workspaceName
+      },
+      success: function(result) {
+        console.log(result);
+        if (result == 1) {
+          alert("워크스페이스 이름이 변경되었습니다.");
+        } else if (result == 2) {
+          alert("관리자만 이름을 변경할 수 있습니다.");
+        } else {
+          alert("워크스페이스 이름 변경에 실패하였습니다. 잠시 후 다시 시도해주세요.");
+        }
+      },
+      error: function() {
+        console.log('워크스페이스 이름 변경 중 오류가 발생.');
+      }
+    });
+  }
+
+
+  function redirectToCreateWorkspace(project) {
+    
+    $.ajax({
+      url: 'createWorkspace',
+      type: 'POST',
+      data: { "project": JSON.stringify(project)},
+      success: function(result) {
+        console.log(result);
+        window.location.href = contextPath + '/project/createWorkspace';
+        
+      },
+      error: function() {
+        console.log('Ajax 요청 중 오류가 발생');
+      }
+    });
+  }
 

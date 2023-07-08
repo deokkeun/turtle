@@ -3,6 +3,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -294,7 +296,6 @@
        
 
     }); -->
-    </script>
     <script src="${contextPath}/resources/js/createWorkspace.js"></script>
      <!-- Vendor JS Files -->	  
 	<script src="${contextPath}/resources/vendor/purecounter/purecounter_vanilla.js"></script>

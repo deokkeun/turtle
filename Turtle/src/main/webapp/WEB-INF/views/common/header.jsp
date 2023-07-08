@@ -16,12 +16,13 @@
     <title>Turtle</title>
 	<!-- main-style.css -->
   <link href="${contextPath}/resources/css/main-style.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
   <!-- bootstrap.css -->
   <link href="${contextPath}/resources/css/booystrapcss/bootstrap.css" rel="stylesheet">
   <link href="${contextPath}/resources/images/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="${contextPath}/resources/images/remixicon/remixicon.css" rel="stylesheet">
   <link href="${contextPath}/resources/css/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <!--섬머노트 전용 css-->
   <link rel="stylesheet" href="${contextPath}/resources/css/summernote/summernote-lite.css">
   <!--섬머노트 전용 js -->
@@ -127,13 +128,13 @@
             <hr class="dropdown-divider">
           </li>
 
-          <li>
+          <!-- <li>
             <a class="dropdown-item d-flex align-items-center" href="">
               <i class="bi bi-gear"></i>
               <span>Account Settings</span>
             </a>
           </li>
-          <li>
+          <li> -->
             <hr class="dropdown-divider">
           </li>
 
@@ -181,15 +182,13 @@
                   <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="project1Dropdown">
-                  <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
-                  <button class="dropdown-item delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i> 삭제하기</button>
-                  <button class="dropdown-item duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i> 복제하기</button>
+                  <button class="dropdown-item rename-button" type="button" onclick="renameProject(${project.projectNo})"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
+				<button class="dropdown-item delete-button" type="button" onclick="deleteProject(${project.projectNo})" data-projectNo="${project.projectNo}"><i class="bi bi-trash"></i> 삭제하기</button>
                 </div>
               </div>
             </a>
           </li>
         </c:if>
-         
   </c:forEach>
     <!-- 추가적인 프로젝트 항목들 -->
   </ul>
@@ -214,9 +213,8 @@
                               <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="project1Dropdown">
-                              <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
-                              <button class="dropdown-item delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i> 삭제하기</button>
-                              <button class="dropdown-item duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i> 복제하기</button>
+                              <button class="dropdown-item rename-button" type="button" onclick="renameProject(${project.projectNo})"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
+                              <button class="dropdown-item delete-button" type="button" onclick="deleteProject(${project.projectNo})" data-projectNo="${project.projectNo}"><i class="bi bi-trash"></i> 삭제하기</button>
                             </div>
                           </div>
                         </a>
@@ -233,7 +231,7 @@
           <a class="nav-link collapsed" data-bs-target="#workspace-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-chevron-down" id="arrow"></i><i class="bx bx-desktop"></i><span>WORKSPACE</span>
           </a>
-         <button class="add-file-button" onclick="addFile('workspace-nav', event)"><i class="bi bi-plus"></i></button> 
+		   <button class="add-file-button" type="button" onclick="redirectToCreateWorkspace(${project})"><i class="bi bi-plus"></i></button>
           <ul id="workspace-nav" class="nav-content collapse" data-bs-parent="">
             <c:forEach var="workspace" items="${workspaceList}">
               <c:if test="${workspace.workspaceName != 'calendar' && workspace.workspaceName != 'loadmap'}">
@@ -245,9 +243,8 @@
                         <i class="bi bi-three-dots-vertical" style="padding-right: 11px;"></i>
                       </button>
                       <div class="dropdown-menu" aria-labelledby="project1Dropdown">
-                        <button class="dropdown-item rename-button" onclick="renameFile(this)"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
-                        <button class="dropdown-item delete-button" onclick="deleteFile(this)"><i class="bi bi-trash"></i> 삭제하기</button>
-                        <button class="dropdown-item duplicate-button" onclick="duplicateFile(this)"><i class="bi bi-files"></i> 복제하기</button>
+                        <button class="dropdown-item rename-button" type="button" onclick="renameWorkspace(${workspace.workspaceNo})"><i class="bi bi-pencil"></i> 이름 바꾸기</button>
+                        <button class="dropdown-item delete-button" type="button" onclick="deleteWorkspace(${workspace.workspaceNo})" data-workspaceNo="${workspace.workspaceNo}"><i class="bi bi-trash"></i> 삭제하기</button>
                       </div>
                     </div>
                   </a>
@@ -295,9 +292,9 @@
   
 <aside class="board-detail-area right-sidebar" id="rightSidebar" >
 
-  <div class="board-area">
+  <div class="boardDetailBoard-area" data-boardNo="${board.boardNo}">
     <div class="board-info-area">
-        <div class="boardTitle" contenteditable="true">${board.boardTitle}</div>
+        <div class="boardTitle">${board.boardTitle}</div>
         <div class="regInfo">
             <div class="regMember"> 
                 <div>최초 작성자 : </div>
@@ -348,20 +345,7 @@
     <hr>
     
     <div class="boardDetail-area">
-        <div class="edit-boardDetail-area" data-boardDetailNo="0" 
-                                        data-boardDetailSort="0">
-            <div class="add-boardDetail" style="visibility:hidden;">
-                <button class="add-boardDetail-btn">+</button>
-            </div>
-            <div class="boardDetail">
-                <div>
-                </div>
-            </div>                    
-        </div>
-        <hr>
-        <div class="boardContent-area">
-
-        </div>
+        
     </div>
 </div>
  
@@ -377,28 +361,30 @@
 
   <!-- Template Main JS File -->
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js?ver=4"></script>
+
   <!--------------------------------------- sockjs를 이용한 WebSocket 구현을 위해 라이브러리 추가 ---------------------------------------------->	
   <!-- https://github.com/sockjs/sockjs-client -->
   <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
   <script>
-    const pmNo = "${pmNo}";
-    const projectNo = "${projectNo}";
-    const workspaceNo = "${workspaceNo}";
-    const contextPath = "${contextPath}";
-    const boardNo = "${boardNo}";
-    const memberNo = "${memberNo}";
-    let memberName = "${memberName}";
-    let profileImage = "${profileImage}";
+    var pmNo = "${pmNo}";
+    var projectNo = "${projectNo}";
+    var workspaceNo = "${workspaceNo}";
+    var contextPath = "${contextPath}";
+    var memberNo = "${memberNo}";
+    var memberName = "${memberName}";
+    var profileImage = "${profileImage}";
+    var boardNo = "${boardNo}";
 
 		// /updateBoardDetail 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성		
 		// 이벤트 시간 생성용 sock
     let updateEventDateSock = new SockJS(contextPath+"/updateEventDate");
+    
     // /memo 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
 		let memoSock = new SockJS(contextPath+"/memo");
     // 알람용 sock
     let alertSock = new SockJS(contextPath+"/alert");
     // 캘린더 연동용 sock
-    let calendarSock = new SockJS(contextPath+"/calendar");
+    // let calendarSock = new SockJS(contextPath+"/calendar");
     // 게시글 내용 수정용 sock
 		let updateBoardDetailSock = new SockJS(contextPath+"/updateBoardDetail");
 		// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
@@ -414,9 +400,12 @@
 		// /deleteBoard 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
 		// 게시글 삭제용 sock
 		let deleteBoardSock = new SockJS(contextPath+"/deleteBoard");
-        // 이모지 수정용 sock
+    // 이모지 수정용 sock
     let updateEmojiSock = new SockJS(contextPath+"/updateEmoji");
+    // 게시글디테일 수정후 게시글 리스트에 적용할 웹소켓
+    //let updateBoardInfoSock = new SockJS(contextPath+"/updateBoardInfo");
 </script>
 <script src="${contextPath}/resources/js/header.js"></script>
 <!-- boardDetail.js 연결 -->
 <script src="${contextPath}/resources/js/board/boardDetail.js"></script>
+
