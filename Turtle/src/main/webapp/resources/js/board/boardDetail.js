@@ -12,14 +12,17 @@ $(document).on("click", ".select-board-detail", function(){
             $(".boardTitle").html(map.board.boardTitle);
             $(".regMemberImage").attr("src", contextPath + map.board.regProfileImg);
             $(".regMemberName").html(map.board.regMemberName);
-            $(".regDate").html(map.board.boardRegDate);
+            //$(".regDate").html(map.board.boardRegDate);
+            $(".regDate").html(formatDate(map.board.boardRegDate));
 
             if (map.board.updateProfileImg != null) {
                 $(".updateMemberImage").attr("src", contextPath + map.board.updateProfileImg);
                 $(".updateMemberName").html(map.board.updateMemberName);
             }
             if (map.board.boardUpdateDate != null) {
-                $(".updateDate").html(map.board.boardUpdateDate);
+            //    $(".updateDate").html(map.board.boardUpdateDate);
+            $(".updateDate").html(formatDate(map.board.boardUpdateDate));
+
             }
 
             $(".eventStartDate").val(map.board.eventStartDate);
@@ -36,7 +39,7 @@ $(document).on("click", ".select-board-detail", function(){
 
             var addBoardDetail = $("<div>", {class: "add-boardDetail", style: "visibility:hidden;"
             }).append(
-                $("<button>", {class: "add-boardDetail-btn", text: "+"})
+                $("<button>", {class: "add-boardDetail-btn", html: "<i class='fa-solid fa-plus'></i>"})
             );
 
             var boardDetail = $("<div>", {class: "boardDetail"
@@ -63,7 +66,7 @@ $(document).on("click", ".select-board-detail", function(){
 
                 var addBoardDetail = $("<div>", {class: "add-boardDetail", style: "visibility:hidden;"
                 }).append(
-                    $("<button>", {class: "add-boardDetail-btn", text: "+"})
+                    $("<button>", {class: "add-boardDetail-btn", html: "<i class='fa-solid fa-plus'></i>"})
                 );
 
                 var boardDetail = $("<div>", {class: "boardDetail"
@@ -88,6 +91,27 @@ $(document).on("click", ".select-board-detail", function(){
         }
     });
 });
+
+
+// 게시판 내 최초작성일, 수정일을 yyyy-mm-dd hh:ss 형식으로 변환
+function formatDate(dateString) {
+            
+    const date = new Date(dateString);   
+    const year = date.getFullYear();
+            const month = ("0" + (date.getMonth() + 1)).slice(-2);
+            const day = ("0" + date.getDate()).slice(-2);
+            const hours = ("0" + date.getHours()).slice(-2);
+            
+    const minutes = ("0" + date.getMinutes()).slice(-2);
+            
+           
+    return year + "-" + month + "-" + day + " " + hours + ":" + minutes;
+}
+
+
+
+
+
 
 $(document).on("mouseover", ".edit-boardDetail-area", function(){mouseover($(this))});
 $(document).on("mouseout", ".edit-boardDetail-area", function(){mouseout($(this))});
@@ -194,7 +218,7 @@ insertBoardDetailSock.onmessage = function(e) {
 
         const addedAddBoardDetailBtn = document.createElement('button');
         addedAddBoardDetailBtn.classList.add('add-boardDetail-btn');
-        addedAddBoardDetailBtn.textContent = '+';
+        addedAddBoardDetailBtn.innerHTML = '<i class="fa-solid fa-plus"></i>';
 
         addedAddBoardDetail.appendChild(addedAddBoardDetailBtn);
 

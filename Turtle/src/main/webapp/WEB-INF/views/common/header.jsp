@@ -176,6 +176,7 @@
       <c:if test="${project.createMemberNo == loginMember.memberNo}">        
           <li>
             <a href="${contextPath}/project/${project.projectNo}">
+            <span>${project.projectEmoji}&nbsp</span> 
               <span>${project.projectName}</span>
               <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
                 <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -207,6 +208,7 @@
                     <c:if test="${project.createMemberNo != loginMember.memberNo}">
                       <li>
                         <a href="${contextPath}/project/${project.projectNo}">
+                          <span>${project.projectEmoji}&nbsp</span> 
                           <span>${project.projectName}</span>
                           <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
                             <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -237,6 +239,7 @@
               <c:if test="${workspace.workspaceName != 'calendar' && workspace.workspaceName != 'loadmap'}">
                 <li>
                   <a href="${contextPath}/project/${projectNo}/${workspace.workspaceNo}">
+                  	<span>${workspace.workspaceEmoji}&nbsp</span>
                     <span>${workspace.workspaceName}</span>
                     <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
                       <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -297,20 +300,21 @@
         <div class="boardTitle">${board.boardTitle}</div>
         <div class="regInfo">
             <div class="regMember"> 
-                <div>최초 작성자 : </div>
+                <div><i class="fa-regular fa-circle-user">  생성자</i></div>
                 <div class="regMemberImageAndName">
                     <img class="regMemberImage" src="${contextPath}${board.regProfileImg}">
                 </div>
                 <div class="regMemberName">${board.regMemberName}</div>
             </div>
             <div class="regDate-area">
-                <div>최초 작성일 : </div>
+                <div><i class="fa-regular fa-clock">  생성일</i></div>
                 <div class="regDate">${board.boardRegDate}</div>
             </div>
         </div>
+
         <div class="updateInfo">
             <div class="updateMember">
-                <div>최근 수정자 : </div>                    
+                <div><i class="fa-regular fa-circle-user">  최근 수정자</i></div>                    
                 <div class="updateMemberImageAndName">
                     <c:choose>
                         <c:when test="${!empty board.updateProfileImg}">
@@ -324,7 +328,7 @@
                 <div class="updateMemberName">${board.updateMemberName}</div>
             </div>
             <div class="updateDate-area">
-                <div>최근 수정일 : </div>                    
+                <div><i class="fa-regular fa-clock">  최근 수정일</i></div>                    
                     <div class="updateDate">
                         <c:if test="${!empty board.boardUpdateDate}">
                             ${board.boardUpdateDate}
@@ -333,7 +337,7 @@
             </div>
         </div>
         <div class="eventDate">                
-            <div>이벤트 : </div>
+            <div><i class="fa-regular fa-calendar">  이벤트</i></div>
             <div><input type="date" class="eventStartDate" value="${board.eventStartDate}"></div>
             <div> - </div>
             <div><input type="date" class="eventEndDate" value="${board.eventEndDate}"></div>                
