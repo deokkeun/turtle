@@ -68,6 +68,27 @@ function toggleSide() {
   rightSidebar.classList.toggle('sidebar-visible');
  
 }
+
+document.addEventListener('click', function(event) {
+  var sidebar = document.getElementById('rightSidebar');
+  var toggleButton = document.getElementById('toggleButton');
+  var selectBoardDetail = document.getElementsByClassName('select-board-detail');
+  
+  if (rightSidebar.classList.contains('active') && !sidebar.contains(event.target) && !toggleButton.contains(event.target) && !isDescendant(event.target, selectBoardDetail)) {
+    toggleSide();
+  }
+});
+
+function isDescendant(child, parentArray) {
+  for (var i = 0; i < parentArray.length; i++) {
+    var parent = parentArray[i];
+    if (parent.contains(child)) {
+      return true;
+    }
+  }
+  return false;
+}
+
 // createElement로 li생성후 ajax로 chatRoomList를 불러와서 append해주기
 
 
