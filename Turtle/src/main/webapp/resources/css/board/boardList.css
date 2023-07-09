@@ -57,9 +57,9 @@ a {
 	font-size: 16px;
 	color: rgba(55, 53, 47, 0.35);
 	border: none;
-	padding: 2px;
-	margin: 2px;
-	
+	padding-bottom: 2px;
+	margin-bottom: 2px;
+
 }
 .add-board-btn:hover {
 	cursor: pointer;
@@ -78,7 +78,7 @@ a {
 	color: black;
 
 }
-.boardTitle {
+.boardListBoardTitle {
 	max-width: 50vw;
 	display: inline-block;
 	height: 25px;
@@ -99,7 +99,7 @@ a {
 }
 .board-info {
 	display: flex;
-	justify-content: space-between;
+	
 }
 .profile-image {
 	width: 20px;
@@ -156,6 +156,6 @@ a {
 .profile-image:hover  ~ .user-name{	
 	visibility: visible;
 }
-.board:hover .eventDate {
+.board:hover .boardListEventDate {
 	visibility: visible;
 }

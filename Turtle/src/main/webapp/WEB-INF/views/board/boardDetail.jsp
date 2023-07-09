@@ -26,7 +26,7 @@
 <body>
     <div class="board-area2">
         <div class="board-info-area">
-            <div class="boardTitle" contenteditable="true">${board.boardTitle}</div>
+            <div class="boardTitle2" contenteditable="true">${board.boardTitle}</div>
             <div class="regInfo">
                 <div class="regMember"> 
                     <div>최초 작성자 : </div>
@@ -64,11 +64,11 @@
                         </div>
                 </div>
             </div>
-            <div class="eventDate">                
+            <div class="eventDate2">                
                 <div>이벤트 : </div>
-                <div><input type="date" class="eventStartDate" value="${board.eventStartDate}"></div>
+                <div><input type="date" class="eventStartDate2" value="${board.eventStartDate}"></div>
                 <div> - </div>
-                <div><input type="date" class="eventEndDate" value="${board.eventEndDate}"></div>                
+                <div><input type="date" class="eventEndDate2" value="${board.eventEndDate}"></div>                
             </div>
             
             
