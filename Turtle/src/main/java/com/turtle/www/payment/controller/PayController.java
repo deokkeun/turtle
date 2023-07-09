@@ -37,7 +37,7 @@ public class PayController {
 	private PayService service;
 	
 	// Iamport
-	private IamportClient client = new IamportClient("impKey", "impSecret");
+	private IamportClient client = new IamportClient("", "");
 	
 	Logger logger = LoggerFactory.getLogger(CalendarController.class);
 	
@@ -45,6 +45,23 @@ public class PayController {
 	  @GetMapping("/payment")
 	  public String showPaymentPage() {
 		  return "payment/payment";
+	  }
+	  
+	  @ResponseBody
+	  @PostMapping("/confirm")
+	  public Map<String, Object> payConfirm(int projectNo) {
+		  
+		  Pay payInfo = service.paymentType(projectNo);
+		  
+		  String payType = payInfo.getPayType();
+		  int workspaceCount = service.workspaceCount(projectNo);
+		  
+		  Map<String, Object> map = new HashMap<>();
+		  
+		  map.put("payType", payType);
+		  map.put("workspaceCount", workspaceCount);
+	
+		  return map;
 	  }
 	
 	/** 결제 페이지로 이동

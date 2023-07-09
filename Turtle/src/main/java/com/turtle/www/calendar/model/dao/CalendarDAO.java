@@ -38,6 +38,13 @@ public class CalendarDAO {
 	 * @return
 	 */
 	public int calendarAddEvent(Calendar calendar) {
+		
+		if(calendar.getBoardNo() != 0) {
+			int workspaceNo = sqlSession.selectOne("calendarMapper.selectWorkspaceNo", calendar);
+			calendar.setWorkspaceNo(workspaceNo);
+		}
+		
+		
 		return sqlSession.insert("calendarMapper.calendarAddEvent", calendar);
 	}
 
@@ -56,6 +63,12 @@ public class CalendarDAO {
 	 * @return
 	 */
 	public int calendarUpdateEvent(Calendar calendar) {
+		
+		if(calendar.getBoardNo() != 0) {
+			int workspaceNo = sqlSession.selectOne("calendarMapper.selectWorkspaceNo", calendar);
+			calendar.setWorkspaceNo(workspaceNo);
+		}
+		
 		return sqlSession.update("calendarMapper.calendarUpdateEvent", calendar);
 	}
 
