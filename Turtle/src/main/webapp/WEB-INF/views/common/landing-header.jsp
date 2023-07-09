@@ -55,10 +55,17 @@
 							<a href="${contextPath}/member/logout" id="login-modal-btn">로그아웃</a>
 						</div>
 					</li>
-					<li><a href="${contextPath}/project/createProject" class="nav-btn">프로젝트</a></li>
+					<c:choose>
+						<c:when test="${projectNo != 0}">
+							<li><a href="${contextPath}/project/${projectNo}" class="nav-btn">프로젝트 이동</a></li>
+						</c:when>
+						<c:otherwise>
+							<li><a href="${contextPath}/project/createProject" class="nav-btn">프로젝트 생성</a></li>
+						</c:otherwise>
+					</c:choose>
+					
 				</c:if>	
 			</ul>
- 
 			<!--  로그인 상태일 때 특정 js 작동 안하게 하는 코드(화면에서 안보임)-->
 			<script>
 				// 로그인버튼 이메일 포커스 js 

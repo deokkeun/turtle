@@ -42,7 +42,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <i class="bi bi-list toggle-sidebar-btn"></i>
-      <a href="${contextPath}/member/login" class="logo d-flex align-items-center">
+      <a href="${contextPath}/project/${projectNo}" class="logo d-flex align-items-center">
         <img src="${contextPath}/resources/images/logo/turtleLogo-green.png" alt="Turtle"/>
         <span class="d-none d-lg-block">TURTLE</span>
       </a>

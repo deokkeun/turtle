@@ -29,7 +29,7 @@
 	<!-- 로그인(회원정보 가져오기) 프로필 이미지 추가하기 -->
 	<select id="login" parameterType="member" resultMap="member_rm">
 		SELECT MEMBER_NO, MEMBER_EMAIL, MEMBER_NAME, PROFILE_IMG,
-		TO_CHAR(ENROLL_DATE, 'YYYY-MM-DD HH24:MI:SS') AS ENROLL_DATE, MEMBER_PW
+		TO_CHAR(ENROLL_DATE, 'YYYY-MM-DD HH24:MI:SS') AS ENROLL_DATE, MEMBER_PW, SOCIAL_EMAIL
 		FROM MEMBER
 		WHERE MEMBER_EMAIL = #{memberEmail}
 		AND MEMBER_DELETE_FG = 'N'

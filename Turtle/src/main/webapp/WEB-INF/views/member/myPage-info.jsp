@@ -65,6 +65,12 @@
 										<c:if test="${!empty loginMember.profileImage}">
 											<img src="${contextPath}${loginMember.profileImage}" alt="profile-image" id="profile-image">
 										</c:if>
+										
+										<!-- 네이버 로그인 테스트 -->
+										<c:if test="${!empty loginMember.socialEmail}">
+											<img src="${loginMember.profileImage}" alt="profile-image" id="profile-image">
+										</c:if>
+
 										<!-- camera-icon -->
 										<img src="${contextPath}/resources/images/member/camera.svg" alt="camera" id="camera">
 									</div>
@@ -80,6 +86,12 @@
 											<c:if test="${!empty loginMember.profileImage}">
 												<img src="${contextPath}${loginMember.profileImage}" alt="profile-image" id="profile-image-modal">
 											</c:if>
+
+											<!-- 네이버 로그인 테스트 -->
+											<c:if test="${!empty loginMember.socialEmail}">
+												<img src="${loginMember.profileImage}" alt="profile-image" id="profile-image">
+											</c:if>
+
 										</div>
 				
 										<div class="profile-btn-area">
