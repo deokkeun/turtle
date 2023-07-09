@@ -106,7 +106,7 @@ memoDetails.forEach((memoDetail) => {
 	//메모 보내기 함수
 	function updateMemo() {
 		// 개행 제거
-		const cleanedmemoContent = memoContent.innerHTML.replace(/\n|\t/g, "");
+		const cleanedmemoContent = memoContent.innerText.replace(/\n|\t/g, "");
 
 		if(memoType == "workspace") {
 			let memo = {
@@ -127,6 +127,21 @@ memoDetails.forEach((memoDetail) => {
 			// memoSock(웹소켓 객체)을 이용하여 메세지 보내기
 			// memoSock.send(값) : 웹소켓 핸들러로 값을 보냄
 			memoSock.send( JSON.stringify(memo) );
+
+			// 알림 웹소켓으로 보냄
+			let alert = {
+				"projectNo" : projectNo,
+				"memberNo" : memberNo,
+				"alertContent" : "님이 메모장을 수정하였습니다.",
+				"link" : contextPath + "/workspace/memo/" + projectNo + "/" + workspaceNo + "/",
+				"memberName" : memberName
+			}
+		
+			console.log(alert);
+			console.log(JSON.stringify(alert));
+		
+			alertSock.send( JSON.stringify(alert) );
+		
 		} else if(memoType == "personal") {
 			// ajax 코드 작성
 			$.ajax({
@@ -199,20 +214,6 @@ memoSock.onmessage = function(e){
 		}
 
 	});
-	// 알림 웹소켓으로 보냄
-    let alert = {
-        "projectNo" : projectNo,
-        "memberNo" : memberNo,
-        "alertContent" : "님이 메모장을 수정하였습니다.",
-        "link" : contextPath + "/workspace/memo/" + projectNo + "/" + workspaceNo + "/",
-        "memberName" : memberName
-    }
-
-    console.log(alert);
-    console.log(JSON.stringify(alert));
-
-    alertSock.send( JSON.stringify(alert) );
-
 };
 
 // 시간 형식을  mm-dd hh:mm 으로 출력 

@@ -189,18 +189,6 @@ updateBoardDetailSock.onmessage = function(e) {
             $(board).find(".user-name").html(changedBoardDetail.memberName);
         }
     });
-    // 알림 웹소켓으로 보냄
-    let alert = {
-        "projectNo" : projectNo,
-        "memberNo" : memberNo,
-        "alertContent" : "님이 게시글을 수정하였습니다.",
-        "link" : contextPath + "/project/" + projectNo + "/" + workspaceNo,
-        "memberName" : memberName
-    }
-    console.log(alert);
-    console.log(JSON.stringify(alert));
-
-    alertSock.send( JSON.stringify(alert) );
 }
 
 // 게시글 내용 추가 웹소켓
@@ -281,19 +269,6 @@ insertBoardDetailSock.onmessage = function(e) {
             $(board).find(".user-name").html(newBoardDetail.memberName);
         }
     });
-    // 알림 웹소켓으로 보냄
-    let alert = {
-        "projectNo" : projectNo,
-        "memberNo" : memberNo,
-        "alertContent" : "님이 게시글을 수정하였습니다.",
-        "link" : contextPath + "/project/" + projectNo + "/" + workspaceNo,
-        "memberName" : memberName
-    }
-
-    console.log(alert);
-    console.log(JSON.stringify(alert));
-
-    alertSock.send( JSON.stringify(alert) );
 }
 
 // 게시글 내용 삭제 웹소켓
@@ -323,19 +298,6 @@ deleteBoardDetailSock.onmessage = function(e) {
             $(board).find(".user-name").html(deletedBoardDetail.memberName);
         }
     });
-    // 알림 웹소켓으로 보냄
-    let alert = {
-        "projectNo" : projectNo,
-        "memberNo" : memberNo,
-        "alertContent" : "님이 게시글을 수정하였습니다.",
-        "link" : contextPath + "/project/" + projectNo + "/" + workspaceNo,
-        "memberName" : memberName
-    }
-
-    console.log(alert);
-    console.log(JSON.stringify(alert));
-
-    alertSock.send( JSON.stringify(alert) );
 };
 
 
@@ -359,34 +321,6 @@ updateEventDateSock.onmessage = function(e) {
             $(board).find(".boardListEventEndDate").html(changedBoardInfo.eventEndDate);
         }
     });
-
-        let addEvent = {
-            "pmNo" : projectNo,// 프로젝트 멤버 번호
-            "workspaceNo" : workspaceNo,// 워크스페이스 번호
-            "calTitle" : $(".boardTitle").html(),// 캘린더 제목
-            "calContent" : "", // 캘린더 내용
-            "calColor" : '#1A73E8',// 배경 색상
-            "startDate" : changedBoardInfo.eventStartDate, // 일정 시작일
-            "endDate" : changedBoardInfo.eventEndDate,// 일정 종료일
-            "calSt" : "N", // 일정 삭제 여부
-            "boardNo" : boardNo
-        }      
-        console.log(addEvent);
-        console.log(JSON.stringify(addEvent));
-        calendarSock.send( JSON.stringify(addEvent));
-
-    // 알림 웹소켓으로 보냄
-    let alert = {
-        "projectNo" : projectNo,
-        "memberNo" : memberNo,
-        "alertContent" : "님이 게시글을 수정하였습니다.",
-        "link" : contextPath + "/project/" + projectNo + "/" + workspaceNo,
-        "memberName" : memberName
-    }
-
-    console.log(alert);
-    console.log(JSON.stringify(alert));
-    alertSock.send( JSON.stringify(alert) );
 };
 
 // 게시글 제목 수정 웹소켓
@@ -414,19 +348,6 @@ boardListSock.onmessage = function(e) {
             changedBoardTitle.innerHTML = changedBoardInfo.boardTitle;            
         }
     });
-    // 알림 웹소켓으로 보냄
-    let alert = {
-        "projectNo" : projectNo,
-        "memberNo" : memberNo,
-        "alertContent" : "님이 게시글을 수정하였습니다.",
-        "link" : contextPath + "/project/" + projectNo + "/" + workspaceNo,
-        "memberName" : memberName
-    }
-
-    console.log(alert);
-    console.log(JSON.stringify(alert));
-
-    alertSock.send( JSON.stringify(alert) );
 }
 
 // 마우스 오버 함수
@@ -508,7 +429,21 @@ function updateBoardContent(editBoardDetailArea) {
 
     // updateBoardDetailSock(웹소켓 객체)을 이용하여 메세지 보내기
     // updateBoardDetailSock.send(값) : 웹소켓 핸들러로 값을 보냄
-    updateBoardDetailSock.send( JSON.stringify(boardDetail) );    
+    updateBoardDetailSock.send( JSON.stringify(boardDetail) );
+    
+    // 알림 웹소켓으로 보냄
+    let alert = {
+        "projectNo" : projectNo,
+        "memberNo" : memberNo,
+        "alertContent" : "님이 게시글을 수정하였습니다.",
+        "link" : contextPath + "/project/" + projectNo + "/" + workspaceNo,
+        "memberName" : memberName
+    }
+
+    console.log(alert);
+    console.log(JSON.stringify(alert));
+
+    alertSock.send( JSON.stringify(alert) );
 };
 
 // 게시글 제목 변경 함수
@@ -527,6 +462,20 @@ function updateBoardTitle(boardTitle) {
     console.log(JSON.stringify(board));
 
     boardListSock.send( JSON.stringify(board) );
+
+    // 알림 웹소켓으로 보냄
+    let alert = {
+        "projectNo" : projectNo,
+        "memberNo" : memberNo,
+        "alertContent" : "님이 게시글을 수정하였습니다.",
+        "link" : contextPath + "/project/" + projectNo + "/" + workspaceNo,
+        "memberName" : memberName
+    }
+
+    console.log(alert);
+    console.log(JSON.stringify(alert));
+
+    alertSock.send( JSON.stringify(alert) );
 }
 
 // 게시글 내용 추가버튼 함수
@@ -553,6 +502,20 @@ function insertBoardDetail(boardDetail) {
     console.log(JSON.stringify(boardDetail));
 
     insertBoardDetailSock.send( JSON.stringify(boardDetail));
+
+    // 알림 웹소켓으로 보냄
+    let alert = {
+        "projectNo" : projectNo,
+        "memberNo" : memberNo,
+        "alertContent" : "님이 게시글을 수정하였습니다.",
+        "link" : contextPath + "/project/" + projectNo + "/" + workspaceNo,
+        "memberName" : memberName
+    }
+
+    console.log(alert);
+    console.log(JSON.stringify(alert));
+
+    alertSock.send( JSON.stringify(alert) );
 }
 
 // 게시글 내용 삭제 함수
@@ -594,6 +557,21 @@ function updateEventDate(eventDate) {
     console.log(JSON.stringify(board));
 
     updateEventDateSock.send( JSON.stringify(board));
+
+    
+    let addEvent = {
+        "pmNo" : projectNo,// 프로젝트 멤버 번호
+        "calTitle" : $(".boardTitle").html(),// 캘린더 제목
+        "calContent" : "", // 캘린더 내용
+        "calColor" : '#1A73E8',// 배경 색상
+        "startDate" : eventStartDate, // 일정 시작일
+        "endDate" : eventEndDate,// 일정 종료일
+        "calSt" : "N", // 일정 삭제 여부
+        "boardNo" : boardNo
+    }      
+    console.log(addEvent);
+    console.log(JSON.stringify(addEvent));
+    calendarSock.send( JSON.stringify(addEvent));
 }
 
 function currentTime() {

@@ -70,7 +70,7 @@ public class WorkspaceController {
 	
 	// 워크스페이스 생성
 	@PostMapping("/createWorkspace")
-	public String createWorkspace(@ModelAttribute("project") Project project,
+	public String createWorkspace(@ModelAttribute("projectNo") int projectNo,
 							
 							@ModelAttribute("loginMember") Member loginMember,
 							@ModelAttribute("workspace") Workspace workspace,
@@ -82,7 +82,7 @@ public class WorkspaceController {
 		logger.info("워크스페이스 생성");
 		logger.info(workspaceName);
 		
-		workspace.setProjectNo(project.getProjectNo());
+		workspace.setProjectNo(projectNo);
 		
 		// 워크스페이스 이모지, 워크스페이스 이름
 		int workspaceNo = service.createWorkspace(workspace);
@@ -93,14 +93,14 @@ public class WorkspaceController {
 		// 생성된 워크스페이스가 로드맵이나 캘린더가 아닐 시 채팅방 생성
 		ChatRoom chatRoom = new ChatRoom();
 		chatRoom.setChatRoomTitle(workspaceName);
-		chatRoom.setProjectNo(project.getProjectNo());
+		chatRoom.setProjectNo(projectNo);
 		chatRoom.setChatRoomType(2);
 		
 		int chatResult = cService.insertChatRoom(chatRoom);
 		// 채팅방 생성 성공시 프로젝트멤버 확인 후 채팅방 조인
 		if(chatResult > 0) {
 			// 프로젝트 멤버내 pmNo 리스트 조회
-			List<Integer> pmNoList = pmService.selectPmNoList(project.getProjectNo());
+			List<Integer> pmNoList = pmService.selectPmNoList(projectNo);
 			for(int pmNo : pmNoList) {
 				ChatRoomJoin chatRoomJoin = new ChatRoomJoin();
 				chatRoomJoin.setChatRoomNo(chatResult);
@@ -121,8 +121,8 @@ public class WorkspaceController {
 		memo.setWorkspaceNo(workspaceNo);
 		// 생성자 pmNo 받아오기
 		Map<String, Object> map = new HashMap<>();
-		map.put("memberNo", project.getCreateMemberNo());
-		map.put("projectNo", project.getProjectNo());
+		map.put("memberNo", loginMember.getMemberNo());
+		map.put("projectNo", projectNo);
 		int projectManagerNo = pmService.selectPmNo(map);
 		memo.setPmNo(projectManagerNo);
 		memo.setMemoType("workspace");
@@ -137,7 +137,7 @@ public class WorkspaceController {
 			logger.info(workspaceNo + "두번째 공용 메모장 생성");
 		}
 		// 2. 개인 메모장 생성
-		List<Integer> pmNoList = pmService.selectPmNoList(project.getProjectNo());
+		List<Integer> pmNoList = pmService.selectPmNoList(projectNo);
 		for(int pmNo : pmNoList) {
 			memo.setWorkspaceNo(workspaceNo);
 			memo.setPmNo(pmNo);
@@ -214,7 +214,7 @@ public class WorkspaceController {
 	
 	@ResponseBody
 	@PostMapping("/deleteWorkspace")
-	public String deleteWorkspace(@RequestParam("workspacetNo") int workspacetNo, ProjectMember projectMember) {
+	public String deleteWorkspace(@RequestParam("workspaceNo") int workspacetNo, ProjectMember projectMember) {
 		logger.info("워크스페이스 삭제");
 		
 		int result = 0;
