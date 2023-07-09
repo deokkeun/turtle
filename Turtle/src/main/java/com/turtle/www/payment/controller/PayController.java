@@ -47,7 +47,11 @@ public class PayController {
 		  return "payment/payment";
 	  }
 	  
-	  @ResponseBody
+	  /** 워크스페이스 생성시 추후 구현
+	 * @param projectNo
+	 * @return
+	 */
+	@ResponseBody
 	  @PostMapping("/confirm")
 	  public Map<String, Object> payConfirm(int projectNo) {
 		  
