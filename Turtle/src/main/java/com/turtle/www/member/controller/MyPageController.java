@@ -262,10 +262,8 @@ public class MyPageController {
 			return "member/myPage-deleteAccount";
 		}
 		
-		return "redirect:/";
+		return "member/myPage-deletecomplete";
 	}
-	
-	
 	
 	
 	

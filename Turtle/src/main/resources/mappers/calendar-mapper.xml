@@ -92,20 +92,10 @@
 			</otherwise>
 		</choose>
 	</update>
-				<!-- 캘린더 일정 수정 -->
-<!-- 			<otherwise>
-				UPDATE CALENDAR
-				SET CAL_TITLE = #{calTitle},
-				CAL_CONTENT = #{calContent},
-				CAL_COLOR = #{calColor},
-				CAL_REG_DATE = SYSDATE,
-				START_DATE = #{startDate},
-				END_DATE = #{endDate}
-				WHERE CAL_NO = ${calNo}
-				AND PM_NO = ${pmNo}
-				AND WORKSPACE_NO = ${workspaceNo}
-				AND CAL_ST = #{calSt}
-			</otherwise> -->
+
+	<select id="selectWorkspaceNo" resultType="_int">
+		SELECT WORKSPACE_NO FROM WORKSPACE WHERE PROJECT_NO = ${pmNo} AND WORKSPACE_NAME = 'calendar'
+	</select>
 	
 	<select id="selectBoardCalendar" resultType="_int">
 		SELECT COUNT(*) FROM CALENDAR c WHERE BOARD_NO = ${boardNo} AND CAL_ST = 'N'

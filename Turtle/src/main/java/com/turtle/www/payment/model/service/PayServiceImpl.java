@@ -28,9 +28,9 @@ public class PayServiceImpl implements PayService{
 	@Autowired
 	private PayDAO dao;
 	
-	private String impKey = "impKey";
+	private String impKey = "";
 
-	private String impSecret = "impSecret";
+	private String impSecret = "";
 
 	
 	

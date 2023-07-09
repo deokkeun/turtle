@@ -503,7 +503,4 @@ public class MemberController {
 //chat 테스트용
 	
 	
-	
-	
-	
 }
