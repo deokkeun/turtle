@@ -58,18 +58,34 @@
 								<form action="profile" method="POST" name="myPage-form"
 										enctype="multipart/form-data" onsubmit="return profileValidate()">
 									<div class="profile-image-area">
-										<c:if test="${empty loginMember.profileImage}">
+
+										<c:choose>
+											<c:when test="${!empty loginMember.socialEmail}">
+												<img src="${loginMember.profileImage}" alt="profile-image" id="profile-image">
+											</c:when>
+											<c:otherwise>
+												<c:if test="${empty loginMember.profileImage}">
+													<img src="${contextPath}/resources/images/memberProfile/member.png" alt="profile-image" id="profile-image">
+												</c:if>
+								
+												<c:if test="${!empty loginMember.profileImage}">
+													<img src="${contextPath}${loginMember.profileImage}" alt="profile-image" id="profile-image">
+												</c:if>
+											</c:otherwise>
+										</c:choose>
+
+										<!-- <c:if test="${empty loginMember.profileImage}">
 											<img src="${contextPath}/resources/images/memberProfile/member.png" alt="profile-image" id="profile-image">
 										</c:if>
 						
 										<c:if test="${!empty loginMember.profileImage}">
 											<img src="${contextPath}${loginMember.profileImage}" alt="profile-image" id="profile-image">
-										</c:if>
+										</c:if> -->
 										
 										<!-- 네이버 로그인 테스트 -->
-										<c:if test="${!empty loginMember.socialEmail}">
+										<!-- <c:if test="${!empty loginMember.socialEmail}">
 											<img src="${loginMember.profileImage}" alt="profile-image" id="profile-image">
-										</c:if>
+										</c:if> -->
 
 										<!-- camera-icon -->
 										<img src="${contextPath}/resources/images/member/camera.svg" alt="camera" id="camera">
@@ -79,18 +95,32 @@
 									<!-- 프로필 모달창 -->
 									<section id="profile-modal">
 										<div class="profile-image-modal-area">
-											<c:if test="${empty loginMember.profileImage}">
+											<c:choose>
+												<c:when test="${!empty loginMember.socialEmail}">
+													<img src="${loginMember.profileImage}" alt="profile-image" id="profile-image">
+												</c:when>
+												<c:otherwise>
+													<c:if test="${empty loginMember.profileImage}">
+														<img src="${contextPath}/resources/images/memberProfile/member.png" alt="profile-image" id="profile-image">
+													</c:if>
+									
+													<c:if test="${!empty loginMember.profileImage}">
+														<img src="${contextPath}${loginMember.profileImage}" alt="profile-image" id="profile-image">
+													</c:if>
+												</c:otherwise>
+											</c:choose>
+											<!-- <c:if test="${empty loginMember.profileImage}">
 												<img src="${contextPath}/resources/images/memberProfile/member.png" alt="profile-image" id="profile-image-modal">
 											</c:if>
 							
 											<c:if test="${!empty loginMember.profileImage}">
 												<img src="${contextPath}${loginMember.profileImage}" alt="profile-image" id="profile-image-modal">
-											</c:if>
+											</c:if> -->
 
 											<!-- 네이버 로그인 테스트 -->
-											<c:if test="${!empty loginMember.socialEmail}">
+											<!-- <c:if test="${!empty loginMember.socialEmail}">
 												<img src="${loginMember.profileImage}" alt="profile-image" id="profile-image">
-											</c:if>
+											</c:if> -->
 
 										</div>
 				

@@ -98,13 +98,32 @@
       <li class="nav-item dropdown pe-0"> 
         <!-- 프로필 --> 
         <a class="nav-link nav-profile d-flex align-items-center pe-0" id="nav-link-size" href="${contextPath}/member/myPage/info" data-bs-toggle="dropdown">
-          <c:if test="${empty loginMember.profileImage}">
+
+          <c:choose>
+            <c:when test="${!empty loginMember.socialEmail}">
+              <img src="${loginMember.profileImage}" alt="Profile" class="rounded-circle">
+            </c:when>
+            <c:otherwise>
+              <c:if test="${empty loginMember.profileImage}">
+                <img src="${contextPath}/resources/images/memberProfile/member.png" alt="Profile" class="rounded-circle">
+              </c:if>
+      
+              <c:if test="${!empty loginMember.profileImage}">
+                <img src="${contextPath}${loginMember.profileImage}" alt="Profile" class="rounded-circle">
+              </c:if>
+            </c:otherwise>
+          </c:choose>
+
+
+          <!-- <c:if test="${empty loginMember.profileImage}">
             <img src="${contextPath}/resources/images/memberProfile/member.png" alt="Profile" class="rounded-circle">
           </c:if>
   
           <c:if test="${!empty loginMember.profileImage}">
             <img src="${contextPath}${loginMember.profileImage}" alt="Profile" class="rounded-circle">
-          </c:if>
+          </c:if> -->
+
+
           <!-- <img src="${loginMember.profileImage}" alt="Profile" class="rounded-circle"> -->
           <span class="d-none d-md-block dropdown-toggle ps-2">${loginMember.memberName}</span>
         </a><!-- End Profile Iamge Icon -->
