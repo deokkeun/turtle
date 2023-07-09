@@ -75,13 +75,14 @@ signUp-input-area > input,
 #sendBtn {
  background-color: #4154f1;
   color: white;
-  padding: 0px 13px 0px 7px;
+  padding: 0px 13px 0px 15px;
   border: 2px solid #4154f1;
   cursor: pointer;
   text-align: center;
   font-size: 12px;
   white-space: nowrap;
-  margin-right: 10px;
+ border-radius: 10px;
+
 }
 
 
@@ -93,7 +94,9 @@ signUp-input-area > input,
   cursor: pointer;
   text-align: center;
   white-space: nowrap;
-  margin-right: 10px;
+  border-radius: 10px;
+ 
+
 }
 /* button 태그 */
 .signUp-input-area > button{
@@ -131,6 +134,16 @@ signUp-input-area > input,
     cursor: pointer;
 }
 
+#memberPw,
+#memberPwConfirm,
+#memberName {
+  border-radius: 10px; 
+}
+
+#memberEmail,
+#cNumber {
+ border-radius: 10px;
+}
 
 .hr-sect {
     display: flex;
