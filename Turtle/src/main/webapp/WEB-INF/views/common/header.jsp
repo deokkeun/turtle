@@ -361,7 +361,7 @@
   
   <!-- <script src='${contextPath}/resources/js/chat.js'></script>  -->
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrap.bundle.js"></script>
-  <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js"></script> 
+  <script src="${contextPath}/resources/js/bootstrapjs/rightsidebar.js?ver=5"></script> 
 
   <!-- Template Main JS File -->
   <script src="${contextPath}/resources/js/bootstrapjs/bootstrapmain.js?ver=4"></script>
