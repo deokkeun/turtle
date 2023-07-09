@@ -4,10 +4,12 @@
 --------------------------------------------------------------*/
 :root {
   scroll-behavior: smooth;
+  
 }
 
 body {
   color: #444444;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 a {

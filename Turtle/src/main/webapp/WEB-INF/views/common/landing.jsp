@@ -12,6 +12,7 @@
   	
     <title>랜딩페이지</title>
     
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <!-- Favicons -->
   	<link href="${contextPath}/resources/favicon/favicon-16x16.png" rel="icon">
   	<link href="${contextPath}/resources/favicon/apple-icon-60x60.png" rel="apple-touch-icon">
@@ -225,8 +226,8 @@
                                 <div class="imoticon">
 								    <img src="${contextPath}/resources/images/landing/이모티콘-api.png" class="img-fluid" alt="안보여요">
                                 </div>
-                                <div class="imoticon-name">추천api</div>
-                                <div class="imoticon-info">개발관련 업무에 활용 가능한<br>api 추천리스트</div>
+                                <div class="imoticon-name">추천 API</div>
+                                <div class="imoticon-info">개발관련 업무에 활용 가능한<br>API 추천리스트</div>
                             </div>
 						</div>
 						<!-- 슬라이더8 -->
@@ -261,7 +262,7 @@
 		        <header class="section-header">
 					<!-- 큰제목 -->
 					<p>
-						Turtle 사용하는 이유
+						TURTLE을 사용하는 이유
 						<br>
 						
 					</p>
@@ -515,7 +516,7 @@
 				<div class="justify-content-center">
 	          		<div class="col-lg-12 text-center">
 						<!-- 홍보문구 글씨 -->
-	           			<h4>Turtle과 함께 업무 효율성을 높여보세요</h4>
+	           			<h4>TURTLE과 함께 업무 효율성을 높여보세요</h4>
 
 	    				<!-- 무료로 사용하기 버튼 -->
 	            		<div data-aos="zoom-out" data-aos-delay="400">

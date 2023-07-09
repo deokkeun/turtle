@@ -12,6 +12,7 @@
 /* 네비바 기본 글씨색 */
 body {
   color: #444444;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* 폰트(프리텐다드) */
@@ -118,14 +119,14 @@ ul a:hover {
 
 /* 로그인, 로그아웃 버튼 */
 #login-modal-btn {
-	color: #609966;
+	color: #4D4D4D;
 	text-decoration: none;
 }
 
 
 /* 로그인, 로그아웃 버튼 */
 #login-modal-btn:hover{
-	color: #609966; 
+	color: #4D4D4D; 
  transition: 50ms;
 }
 
