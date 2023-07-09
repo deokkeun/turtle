@@ -110,7 +110,7 @@
                                 <div class="delete-board" style="visibility:hidden;">
                                     <button class="delete-board-btn"><i class="fa-solid fa-xmark"></i></button>
                                 </div>    	
-                                <div class="boardListEventDatee">
+                                <div class="boardListEventDate">
                                     <div class="boardListEventStartDate">${board.eventStartDate}</div>
                                     <div> - </div>
                                     <div class="boardListEventEndDate">${board.eventEndDate}</div>

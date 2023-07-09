@@ -68,6 +68,7 @@ function toggleSide() {
   rightSidebar.classList.toggle('sidebar-visible');
  
 }
+
 // createElement로 li생성후 ajax로 chatRoomList를 불러와서 append해주기
 
 

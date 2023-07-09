@@ -36,7 +36,7 @@ $(document).on("click", ".select-board-detail", function(){
 
             var addBoardDetail = $("<div>", {class: "add-boardDetail", style: "visibility:hidden;"
             }).append(
-                $("<button>", {class: "add-boardDetail-btn", text: "+"})
+                $("<button>", {class: "add-boardDetail-btn", html: "<i class='fa-solid fa-plus'></i>"})
             );
 
             var boardDetail = $("<div>", {class: "boardDetail"
@@ -63,7 +63,7 @@ $(document).on("click", ".select-board-detail", function(){
 
                 var addBoardDetail = $("<div>", {class: "add-boardDetail", style: "visibility:hidden;"
                 }).append(
-                    $("<button>", {class: "add-boardDetail-btn", text: "+"})
+                    $("<button>", {class: "add-boardDetail-btn", html: "<i class='fa-solid fa-plus'></i>"})
                 );
 
                 var boardDetail = $("<div>", {class: "boardDetail"
@@ -194,7 +194,7 @@ insertBoardDetailSock.onmessage = function(e) {
 
         const addedAddBoardDetailBtn = document.createElement('button');
         addedAddBoardDetailBtn.classList.add('add-boardDetail-btn');
-        addedAddBoardDetailBtn.textContent = '+';
+        addedAddBoardDetailBtn.innerHTML = '<i class="fa-solid fa-plus"></i>';
 
         addedAddBoardDetail.appendChild(addedAddBoardDetailBtn);
 
