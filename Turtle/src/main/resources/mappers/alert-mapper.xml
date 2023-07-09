@@ -16,6 +16,11 @@
 		<result property="pmNo" column="PM_NO"/>
 	</resultMap>
 	
+	<!-- 내pmNo 조회 -->
+	<select id="selectMyPmNo" resultType="_int">
+		SELECT PM_NO FROM PROJECT_MEMBER WHERE PROJECT_NO = ${projectNo} AND MEMBER_NO = ${memberNo}
+	</select>
+	
 	<!-- 프로젝트 멤버 넘버 조회 -->
 	<select id="selectPmNoList" resultType="_int">
 		SELECT PM_NO FROM PROJECT_MEMBER WHERE PROJECT_NO = ${projectNo}	

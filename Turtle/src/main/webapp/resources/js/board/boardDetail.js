@@ -1,5 +1,3 @@
-
-
 $(document).on("click", ".select-board-detail", function(){
     boardNo = $(this).parent().parent(".board").data("boardno");
     $.ajax({
@@ -331,11 +329,10 @@ updateEventDateSock.onmessage = function(e) {
     boards = document.querySelectorAll(".board");
     boards.forEach((board) => {
         if(board.dataset.boardno == changedBoardInfo.boardNo) {
-            $(board).find(".profile-image").find("img").attr("src", contextPath + deletedBoardDetail.profileImage);
-            $(board).find(".user-name").html(deletedBoardDetail.memberName);
+            $(board).find(".profile-image").find("img").attr("src", contextPath + changedBoardInfo.updateProfileImg);
+            $(board).find(".user-name").html(changedBoardInfo.updateMemberName);
             $(board).find(".boardListEventStartDate").html(changedBoardInfo.eventStartDate);
             $(board).find(".boardListEventEndDate").html(changedBoardInfo.eventEndDate);
-
         }
     });
 
@@ -349,12 +346,10 @@ updateEventDateSock.onmessage = function(e) {
             "endDate" : changedBoardInfo.eventEndDate,// 일정 종료일
             "calSt" : "N", // 일정 삭제 여부
             "boardNo" : boardNo
-        }
-
-      
-      console.log(addEvent);
-      console.log(JSON.stringify(addEvent));
-    calendarSock.send( JSON.stringify(addEvent));
+        }      
+        console.log(addEvent);
+        console.log(JSON.stringify(addEvent));
+        calendarSock.send( JSON.stringify(addEvent));
 
     // 알림 웹소켓으로 보냄
     let alert = {
@@ -367,7 +362,6 @@ updateEventDateSock.onmessage = function(e) {
 
     console.log(alert);
     console.log(JSON.stringify(alert));
-
     alertSock.send( JSON.stringify(alert) );
 };
 
@@ -382,10 +376,8 @@ boardListSock.onmessage = function(e) {
         $(".updateMemberName").html(changedBoardInfo.updateMemberName);
         $(".updateDate").html(currentTime());        
     }
-
     boards = document.querySelectorAll(".board");
     boards.forEach((board) => {
-
         const changedBoardTitle = board.querySelector(".boardListBoardTitle");
 
         if(changedBoardInfo.boardNo == board.dataset.boardno) {

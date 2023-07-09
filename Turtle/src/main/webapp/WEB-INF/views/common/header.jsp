@@ -375,10 +375,8 @@
     var profileImage = "${profileImage}";
     var boardNo = "${boardNo}";
 
-		// /updateBoardDetail 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성		
 		// 이벤트 시간 생성용 sock
-    let updateEventDateSock = new SockJS(contextPath+"/updateEventDate");
-    
+    let updateEventDateSock = new SockJS(contextPath+"/updateEventDate");  
     // /memo 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
 		let memoSock = new SockJS(contextPath+"/memo");
     // 알람용 sock
@@ -387,23 +385,18 @@
     let calendarSock = new SockJS(contextPath+"/calendar");
     // 게시글 내용 수정용 sock
 		let updateBoardDetailSock = new SockJS(contextPath+"/updateBoardDetail");
-		// -> websocket 프로토콜을 이용해서 해당 주소로 데이터를 송/수신 할 수 있다.
 		// 게시글 내용 추가용 sock
 		let insertBoardDetailSock = new SockJS(contextPath+"/insertBoardDetail");
 		// 게시글 내용 삭제용 sock
 		let deleteBoardDetailSock = new SockJS(contextPath+"/deleteBoardDetail");
     // 게시글 수정용 sock
 		let boardListSock = new SockJS(contextPath+"/boardList");
-		// /insertBoard 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
 		// 게시글 추가용 sock
 		let insertBoardSock = new SockJS(contextPath+"/insertBoard");
-		// /deleteBoard 이라는 요청 주소로 통신할 수 있는  WebSocket 객체 생성
 		// 게시글 삭제용 sock
 		let deleteBoardSock = new SockJS(contextPath+"/deleteBoard");
     // 이모지 수정용 sock
     let updateEmojiSock = new SockJS(contextPath+"/updateEmoji");
-    // 게시글디테일 수정후 게시글 리스트에 적용할 웹소켓
-    //let updateBoardInfoSock = new SockJS(contextPath+"/updateBoardInfo");
 </script>
 <script src="${contextPath}/resources/js/header.js"></script>
 <!-- boardDetail.js 연결 -->
