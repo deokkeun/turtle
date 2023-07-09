@@ -116,7 +116,7 @@
 	</form>
 	
 	<p id="login-modal-find-box">
-		<a href="${contextPath}/member/findAccount">아이디 찾기</a><span class="more-action-divider"></span><a href="${contextPath}/member/findPassword">비밀번호 찾기</a>
+		<a href="${contextPath}/member/findPassword">비밀번호 찾기</a>
 		<br><br>
 		<span class="question">회원이 아니신가요? </span><a href="${contextPath}/member/signUp"> 회원가입</a>
 	</p>
