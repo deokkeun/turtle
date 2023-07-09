@@ -1,13 +1,11 @@
 package com.turtle.www.member.model.dao;
 
-import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.turtle.www.chat.model.vo.ChatRoom;
 import com.turtle.www.member.model.vo.Certification;
 import com.turtle.www.member.model.vo.Member;
 
