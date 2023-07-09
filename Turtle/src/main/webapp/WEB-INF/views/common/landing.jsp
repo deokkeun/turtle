@@ -147,7 +147,7 @@
 			
 					<!--오른쪽 사진설정 col-lg-5(크기) -->
 					<div class="col-lg-5 hero-img" data-aos="zoom-out" data-aos-delay="200">
-						<img src="${contextPath}/resources/images/landing/pc사진1.png" class="img-fluid" alt="메인사진안보여요">
+						<img src="${contextPath}/resources/images/landing/pc-main.png" class="img-fluid" alt="메인사진안보여요">
 					</div>
 			
 				</div>
@@ -324,8 +324,13 @@
 						<div class="row gy-4">
 							<!-- 왼쪽특징 -->
 							<div class="col-lg-7 video-wrap">
+<<<<<<< HEAD
+								<video autoplay="" loop="" muted="" class="custom-video" poster="" width="90%">
+								<source src="${contextPath}/resources/video/GitHubLoadmap.mp4" type="video/mp4">
+=======
 								<video autoplay="" loop="" muted="" class="custom-video" poster="" width="340px">
 								<source src="${contextPath}/resources/video/동영상-워크스페이스.mp4" type="video/mp4">
+>>>>>>> c9ea3ca759d1ac637e314524322e5d7d76a82239
 							</div>
 						
 							<!-- 가운데공백 -->
@@ -362,8 +367,13 @@
 						<div class="row gy-4">
 							<!-- 왼쪽특징 -->
 							<div class="col-lg-7 video-wrap">
+<<<<<<< HEAD
+								<video autoplay="" loop="" muted="" class="custom-video" poster="" width="90%">
+								<source src="${contextPath}/resources/video/GitHubLoadmap.mp4" type="video/mp4">
+=======
 								<video autoplay="" loop="" muted="" class="custom-video" poster="" height="340px">
 								<source src="${contextPath}/resources/video/동영상-메신저.mp4" type="video/mp4">
+>>>>>>> c9ea3ca759d1ac637e314524322e5d7d76a82239
 							</div>
 						
 							<!-- 가운데공백 -->
@@ -400,8 +410,13 @@
 						<div class="row gy-4">
 							<!-- 왼쪽특징 -->
 							<div class="col-lg-7 video-wrap">
+<<<<<<< HEAD
+								<video autoplay="" loop="" muted="" class="custom-video" poster="" width="90%">
+								<source src="${contextPath}/resources/video/GitHubLoadmap.mp4" type="video/mp4">
+=======
 								<video autoplay="" loop="" muted="" class="custom-video" poster="" height="340px">
 								<source src="${contextPath}/resources/video/동영상-실시간알림.mp4" type="video/mp4">
+>>>>>>> c9ea3ca759d1ac637e314524322e5d7d76a82239
 							</div>
 						
 							<!-- 가운데공백 -->
@@ -439,7 +454,11 @@
 							<!-- 왼쪽특징 -->
 							<div class="col-lg-7 video-wrap">
 								<video autoplay="" loop="" muted="" class="custom-video" poster="" width="90%">
+<<<<<<< HEAD
+								<source src="${contextPath}/resources/video/GitHubLoadmap.mp4" type="video/mp4">
+=======
 								<source src="${contextPath}/resources/video/동영상-github.mp4" type="video/mp4">
+>>>>>>> c9ea3ca759d1ac637e314524322e5d7d76a82239
 							</div>
 						
 							<!-- 가운데공백 -->
@@ -451,19 +470,27 @@
 									<!-- 특징1 -->
 									<div class="row-md-4" data-aos="zoom-out" data-aos-delay="200">
 										<div class="feature-box d-flex align-items-center">
+<<<<<<< HEAD
+											<i class="bi bi-check"></i> <h3>GitHub 저장소 목록 조회</h3>
+=======
 											<i class="bi bi-check"></i> <h3>개발자 협업툴인 gitHub 연동지원</h3>
+>>>>>>> c9ea3ca759d1ac637e314524322e5d7d76a82239
 										</div>
 									</div>
 									<!-- 특징2 -->
 									<div class="row-md-4" data-aos="zoom-out" data-aos-delay="300">
 										<div class="feature-box d-flex align-items-center">
+<<<<<<< HEAD
+											<i class="bi bi-check"></i> <h3>GitHub 저장소 사이트 바로가기</h3>
+=======
 											<i class="bi bi-check"></i> <h3>repository를 tree구조로 시각화</h3>
+>>>>>>> c9ea3ca759d1ac637e314524322e5d7d76a82239
 										</div>
 									</div>
 									<!-- 특징3 -->
 									<!-- <div class="row-md-4" data-aos="zoom-out" data-aos-delay="400">
 										<div class="feature-box d-flex align-items-center">
-											<i class="bi bi-check"></i> <h3>멤버관리 기능에 대한 특징3</h3>
+											<i class="bi bi-check"></i> <h3>GitHub 저장소 로드맵 기능</h3>
 										</div>
 									</div> -->
 								</div>
@@ -504,7 +531,7 @@
 						
 						<div class="row d-flex align-items-center position-relative justify-content-center px-0 g-5">
 							<div class="col-12 col-lg-6">
-								<img src="${contextPath}/resources/images/landing/pc사진1.png" width="2280" height="1732" alt="PC사진" 
+								<img src="${contextPath}/resources/images/landing/pc-main.png" width="2280" height="1732" alt="PC사진" 
 										class="img-fluid position-relative shadow" data-aos="fade-up">
 							</div>
 							

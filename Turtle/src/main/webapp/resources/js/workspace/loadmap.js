@@ -71,11 +71,11 @@ getButton.onclick = function () {
        success: function(res) {
         console.log(res);
         if(res == "complete") {
-          alert("upload 성공");
+          console.log("upload 성공");
           location.reload();
           
         } else {
-          alert("upload 실패");
+          console.log("upload 실패");
     
         }
         
@@ -116,9 +116,6 @@ function getRepos() {
         console.log("--------------- ropo ---------------");
 
         console.log(repo);
-
-
-
 
 
         // Create The Main Div Element

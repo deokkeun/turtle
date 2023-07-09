@@ -148,8 +148,8 @@ section {
     border-radius: 4px;
     transition: 0.5s;
     color: #fff;
-    background: #4154f1; 
-    box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
+    background: #1A73E8; 
+    /* box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4); */
 }
 
 /* 메인 안 무료로사용하기 버튼 설정 */
@@ -409,7 +409,7 @@ section {
   box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
   border-radius: 70px;
   border: 1px solid #4154f1;
-  background-color: #4154f1;
+  background-color: #1A73E8;
   color: white;
 }
 
@@ -812,4 +812,18 @@ section {
   }
 }
 
+.img-fluid {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  max-width: 130%;
+}
 
+@media (min-width: 992px) {
+  .col-lg-7 {
+    width: 52%;
+  }
+}
+
+.px-vw-5 > div{
+  width: 100%;
+}
