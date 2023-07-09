@@ -38,19 +38,7 @@
 		    <version>${org.springframework-version}</version>
 		</dependency> 
 
-		<!-- 네이버 api -->
-		<dependency>
-		    <groupId>com.github.scribejava</groupId>
-		    <artifactId>scribejava-apis</artifactId>
-		    <version>3.3.0</version>
-		</dependency>
-		
-		<dependency>  <!-- 유틸 라이브러리 -->
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-			<version>2.3</version>
-		</dependency>
-		
+
 		
 		<!-- JDBC, Mybatis, DBCP 관련 라이브러리 -->
 	

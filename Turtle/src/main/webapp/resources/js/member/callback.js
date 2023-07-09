@@ -53,7 +53,7 @@ function naverSignUp(email, name, profile_image, token){
     type : "post",
     data: {"socialEmail" :email, "memberName" : name, "profileImage" : profile_image, "accessToken" : token},
     success : function(){
-        opener.location.href= contextPath; 
+        opener.location.href= contextPath + '/www'; 
         window.close();
     }
 });
