@@ -150,9 +150,7 @@ public class MemberDAO {
 	}
 
 
-	public int emailCheckForNaver(String email) {
-		return sqlSession.selectOne("memberMapper.emailCheckForNaver", email);
-	}
+
 
 
 

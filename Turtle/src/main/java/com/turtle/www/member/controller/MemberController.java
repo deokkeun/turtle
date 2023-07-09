@@ -140,6 +140,7 @@ public class MemberController {
 		logger.info("체크 실행");
 
 		int result = service.checkNaverFl(socialEmail);
+		logger.info("네이버 체크 : " + result);
 		return result;
 		
 	}
@@ -166,39 +167,20 @@ public class MemberController {
 		logger.info("토큰교체 실행");
 		
 		int result = service.changeToken(map);
+		
 		Member member = null;
-		if(result>0) {
-			member = service.getMember((Integer)map.get("userNo"));
+		
+		if(result > 0) {
+			member = service.getMember((Integer)map.get("memberNo"));
 		}
 		
-		model.addAttribute("loginUser", member);
+		model.addAttribute("loginMember", member);
 		
 		return result;
 	}
 	
 	
-	@PostMapping("/dupCheckNaver")
-	@ResponseBody
-	public int dupCheckForNaver(@RequestParam("email") String email, @RequestParam("name") String name) {
-		logger.info("네이버 중복 검사");
-		logger.info(email + " " + name);
-		int result = -1;
-		
-		int emailCheck = service.emailCheckForNaver(email);
-		
-		if(emailCheck > 0) {
-			// 네이버 가입이 아닌 메일 중복이 있으면
-			result = 1;
-		}else {
-			
-			result = 0;
-		}
-		
-		logger.info("결과값" + result);
-		
-		return result;
-	}
-	
+
 	
 	
 	
