@@ -354,7 +354,7 @@ function renameProject(projectNo) {
 
         } else {
 
-          window.location.href = contextPath + '/payment/pay/' + project.projectNo;
+          window.location.href = contextPath + '/payment/pay/' + projectNo;
 
         }
 
