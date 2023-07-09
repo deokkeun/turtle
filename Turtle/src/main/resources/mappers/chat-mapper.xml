@@ -86,4 +86,35 @@
 		WHERE PROJECT_NO = ${projectNo} AND CHATROOM_ST = 'N' AND CHATROOM_TYPE IN (1, 2)
 	</select>
 	
+	<!-- 삭제할 채팅방 이름 얻어오기 -->
+	<select id="selectChatRoomTitle" resultType="string">
+		SELECT WORKSPACE_NAME FROM WORKSPACE WHERE WORKSPACE_NO = ${workspaceNo}
+	</select>
+	
+	<!-- 채팅방 이름으로 채팅방 삭제 -->
+	<update id="deleteChatRoom">
+		UPDATE CHATROOM SET CHATROOM_ST = 'Y' WHERE CHATROOM_TITLE = #{chatRoomTitle}
+	</update>
+	
+	<!-- 프로젝트 번호 얻어오기 -->
+	<select id="selectProjectNo" resultType="_int">
+		SELECT PROJECT_NO FROM WORKSPACE WHERE WORKSPACE_NO = ${workspaceNo}
+	</select>
+	
+	<!-- 워크스페이스 이름 변경한 채팅방 이름 변경 -->
+	<update id="updateChatRoomTitle">
+		UPDATE CHATROOM SET 
+		<choose>
+			<when test="projectNo != 0">
+				CHATROOM_TITLE = #{projectName}
+				WHERE PROJECT_NO = ${projectNo} AND CHATROOM_TYPE = '1'
+			</when>
+			<otherwise>
+				CHATROOM_TITLE = #{newWorkspaceName} 
+				WHERE CHATROOM_TITLE = #{currentWorkspaceName} AND CHATROOM_TYPE = '2' AND PROJECT_NO = ${projectNo}
+			</otherwise>
+		</choose>		
+	</update>
+	
+	
 </mapper>

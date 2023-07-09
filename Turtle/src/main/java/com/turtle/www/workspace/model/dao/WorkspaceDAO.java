@@ -1,6 +1,8 @@
 package com.turtle.www.workspace.model.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,11 +43,32 @@ public class WorkspaceDAO {
 	}
 
 	public int deleteWorkspace(int workspacetNo) {
+		
 		return sqlSession.update("workspaceMapper.deleteWorkspace", workspacetNo);
 	}
 
 	public int renameWorkspace(Workspace workspace) {
-		return sqlSession.update("workspaceMapper.renameWorkspace", workspace);
+		
+		int result = 0;
+		
+		// 워크스페이스 이름 변경 전 채팅방 이름도 같이 변경
+		// 1. 워크스페이스의 기존 이름 확인
+		int workspaceNo = workspace.getWorkspaceNo();
+		String currentWorkspaceName = sqlSession.selectOne("workspaceMapper.selectCurrentWorkspaceName", workspaceNo);
+		
+		Map<String, Object> map = new HashMap<>();
+		
+		map.put("currentWorkspaceName", currentWorkspaceName);
+		map.put("projectNo", sqlSession.selectOne("chatMapper.selectProjectNo", workspaceNo));
+		map.put("newWorkspaceName", workspace.getWorkspaceName());
+		
+		result = sqlSession.update("chatMapper.updateChatRoomTitle", map);
+			
+		if(result > 0) {
+			result = sqlSession.update("workspaceMapper.renameWorkspace", workspace);
+		}
+		
+		return result;
 	}
 	
 	

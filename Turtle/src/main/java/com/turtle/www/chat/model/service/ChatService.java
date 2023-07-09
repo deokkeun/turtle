@@ -48,6 +48,12 @@ public interface ChatService {
 	 */
 	List<Integer> selectPublicChatRoomNoList(int projectNo);
 
+	/** 워크스페이스 삭제시 채팅방 삭제
+	 * @param workspaceNo
+	 * @return result
+	 */
+	int deleteChatRoom(int workspaceNo);
+
 	
 
 

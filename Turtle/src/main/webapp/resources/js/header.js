@@ -192,10 +192,13 @@ function deleteProject(projectNo) {
     	console.log(result);
       if(result == 1){
         alert("삭제되었습니다.");
+        location.href = contextPath;
       }else if (result == 2){
         alert("관리자만 삭제할 수 있습니다.")
+        location.href = contextPath + "/project/" + projectNo;
       }else{
         alert("삭제에 실패하였습니다. 잠시 후 다시 시도해주세요.");
+        location.href = contextPath + "/project/" + projectNo;
       }
     },
     error: function() {
@@ -214,10 +217,13 @@ function deleteWorkspace(workspaceNo) {
     success: function(result) {
       if(result == 1){
         alert("삭제되었습니다.");
+        location.href = contextPath + "/project/" + projectNo;
       }else if (result == 2){
         alert("관리자만 삭제할 수 있습니다.")
+        location.href = contextPath + "/project/" + projectNo + "/" + workspaceNo;
       }else{
         alert("삭제에 실패하였습니다. 잠시 후 다시 시도해주세요.");
+        location.href = contextPath + "/project/" + projectNo + "/" + workspaceNo;
       }
     },
     error: function() {
@@ -281,6 +287,7 @@ function renameProject(projectNo) {
         } else {
           alert("워크스페이스 이름 변경에 실패하였습니다. 잠시 후 다시 시도해주세요.");
         }
+        location.href = contextPath + "/project/" + projectNo;
       },
       error: function() {
         console.log('워크스페이스 이름 변경 중 오류가 발생.');

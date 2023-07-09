@@ -72,7 +72,18 @@ public class ProjectDAO {
 
 
 	public int renameProject(Project project) {
-		return sqlSession.update("projectMapper.renameProject", project);
+		
+		int result = 0;
+	
+		
+		// 프로젝트 채팅방 이름 변경
+		result = sqlSession.update("chatMapper.updateChatRoomTitle", project);
+		
+		if(result > 0) {
+			sqlSession.update("projectMapper.renameProject", project);
+		}
+		
+		return result;
 	}
 
 

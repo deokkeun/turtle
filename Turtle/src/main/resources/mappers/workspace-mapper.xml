@@ -50,6 +50,11 @@
 		WHERE WORKSPACE_NO = #{workspaceNo}
 	</update>
 	
+	<!-- 변경할 워크스페이스 채팅방 이름 조회 -->
+	<select id="selectCurrentWorkspaceName" resultType="string">
+		SELECT WORKSPACE_NAME FROM WORKSPACE WHERE WORKSPACE_NO = ${workspaceNo}
+	</select>
+	
 		<update id="renameWorkspace">
 		UPDATE WORKSPACE
 		SET WORKSPACE_NAME = #{workspaceName}
