@@ -50,7 +50,7 @@
                 <div>
                     <span id="emoji_btn2" class="projectEmoji"><i class="fa-regular fa-face-smile"></i></span>
                     <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
-                    <input type="text" id="projectName" name="projectName" placeholder="프로젝트명을 입력해주세요.">
+                    <input type="text" id="projectName" name="projectName" placeholder="프로젝트명을 입력해주세요." onfocus="this.placeholder=''" onblur="this.placeholder='프로젝트명을 입력해주세요.'">
                 </div>
             </div>
             <div class="section2">

@@ -68,7 +68,7 @@
                 <div>
                     <span id="emoji_btn2" class="projectEmoji"><i class="fa-regular fa-face-smile"></i></span>
                     <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
-                    <input type="text" name="workspaceName" placeholder="워크스페이스명을 입력해주세요.">
+                    <input type="text" name="workspaceName" placeholder="워크스페이스명을 입력해주세요." onfocus="this.placeholder=''" onblur="this.placeholder='워크스페이스명을 입력해주세요.'">
                 </div>
             </div>
      
@@ -237,7 +237,7 @@
                 <div class="workspace"></div>
         
             
-            <a class="plus-btn"><i class="fa-solid fa-circle-plus"> 템플릿 추가</i></a>
+            <a class="plus-btn"><i class="fa-regular fa-folder-open">템플릿 소개</i></a>
             <div class="pop">
                 <div class="pop-content">
                     <div class="pop-content2">
