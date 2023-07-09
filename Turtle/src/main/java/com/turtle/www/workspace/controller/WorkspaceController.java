@@ -214,14 +214,21 @@ public class WorkspaceController {
 	
 	@ResponseBody
 	@PostMapping("/deleteWorkspace")
-	public String deleteWorkspace(@RequestParam("workspaceNo") int workspacetNo, ProjectMember projectMember) {
+	public String deleteWorkspace(@RequestParam("workspaceNo") int workspaceNo, ProjectMember projectMember) {
 		logger.info("워크스페이스 삭제");
 		
 		int result = 0;
 		
 		if(projectMember.getProjectManager().equals("Y")) {
 			
-			result = service.deleteWorkspace(workspacetNo);
+			result = service.deleteWorkspace(workspaceNo);
+			if(result > 0) {
+				// 삭제 되었다면 채팅방도 삭제
+				result = cService.deleteChatRoom(workspaceNo);
+				if(result > 0) {
+					logger.info(workspaceNo + "번 채팅방 삭제");
+				}
+			}
 			
 		}else {
 			result = 2;
@@ -233,7 +240,8 @@ public class WorkspaceController {
 	
 	@ResponseBody
 	@RequestMapping(value = "/renameWorkspace", method = RequestMethod.POST)
-	public String renameWorkspace(@RequestParam("workspaceNo") int workspaceNo, @RequestParam("workspaceName") String workspaceName, @ModelAttribute() ProjectMember projectMember) {
+	public String renameWorkspace(@RequestParam("workspaceNo") int workspaceNo,
+								@RequestParam("workspaceName") String workspaceName, @ModelAttribute() ProjectMember projectMember) {
 		logger.info("============================");
 		logger.info("워크스페이스 이름 변경");
 		System.out.println(workspaceNo);

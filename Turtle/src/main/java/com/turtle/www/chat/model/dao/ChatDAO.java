@@ -99,6 +99,18 @@ public class ChatDAO {
 	}
 
 	
+	/** 워크스페이스 삭제시 채팅방 삭제 dao
+	 * @param workspaceNo
+	 * @return result
+	 */
+	public int deleteChatRoom(int workspaceNo) {
+		// 삭제할 채팅룸의 채팅룸 정보 얻어오기
+		String chatRoomTitle = sqlSession.selectOne("chatMapper.selectChatRoomTitle", workspaceNo);
+		
+		return sqlSession.update("chatMapper.deleteChatRoom", chatRoomTitle);
+	}
+
+	
 
 
 	

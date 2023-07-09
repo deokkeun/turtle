@@ -65,6 +65,13 @@ public class ChatServiceImpl implements ChatService {
 	}
 
 
+	// 워크스페이스 삭제시 채팅방 삭제
+	@Override
+	public int deleteChatRoom(int workspaceNo) {
+		return dao.deleteChatRoom(workspaceNo);
+	}
+
+
 
 	
 	
