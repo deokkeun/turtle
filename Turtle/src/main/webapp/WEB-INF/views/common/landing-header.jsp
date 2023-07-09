@@ -90,8 +90,7 @@
 <!-- 로그인 모달창 -->
 <section id="login-modal">
 
-	<div id="naver_id_login" style="text-align:center"><a href="${naverurl}">
-	<img width="223" src="https://developers.naver.com/doc/review_201802/CK_bEFnWMeEBjXpQ5o8N_20180202_7aot50.png"/></a></div>
+	<div id="naver_id_login" title="네이버 아이디로 로그인"> </div>
 
 	<div class="login-divider">or</div>
 
@@ -124,5 +123,15 @@
 	
 	<a class="login-modal-close fa-solid fa-xmark"></a>
 </section>
+
+	<script>
+		var naver_id_login = new naver_id_login("aQpBvST4iYdjSLDbWXWl", "http://127.0.0.1:8080/www/member/callback");
+		var state = naver_id_login.getUniqState();
+		naver_id_login.setButton("white", 3,45);
+		naver_id_login.setDomain("http://127.0.0.1:8080/www");
+		naver_id_login.setState(state);
+		naver_id_login.setPopup();
+		naver_id_login.init_naver_id_login();
+	</script>
 
 
