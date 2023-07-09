@@ -176,6 +176,7 @@
       <c:if test="${project.createMemberNo == loginMember.memberNo}">        
           <li>
             <a href="${contextPath}/project/${project.projectNo}">
+            <span>${project.projectEmoji}&nbsp</span> 
               <span>${project.projectName}</span>
               <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
                 <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -207,6 +208,7 @@
                     <c:if test="${project.createMemberNo != loginMember.memberNo}">
                       <li>
                         <a href="${contextPath}/project/${project.projectNo}">
+                          <span>${project.projectEmoji}&nbsp</span> 
                           <span>${project.projectName}</span>
                           <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
                             <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -237,6 +239,7 @@
               <c:if test="${workspace.workspaceName != 'calendar' && workspace.workspaceName != 'loadmap'}">
                 <li>
                   <a href="${contextPath}/project/${projectNo}/${workspace.workspaceNo}">
+                  	<span>${workspace.workspaceEmoji}&nbsp</span>
                     <span>${workspace.workspaceName}</span>
                     <div class="file-menu dropdown ms-auto" oncontextmenu="return false;">
                       <button class="dropdown-nev" type="button" id="project1Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
