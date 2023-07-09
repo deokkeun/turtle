@@ -172,11 +172,11 @@
 		<selectKey keyProperty="memberNo" resultType="_int" order="BEFORE">
 			SELECT SEQ_MEMBER_NO.NEXTVAL FROM DUAL
 		</selectKey>
-		INSERT INTO MEMBER VALUES(${memberNo}, NULL, NULL, #{memberName}, NULL, DEFAULT, #{profileImage}, DEFAULT, #{socialEmail}, #{accessToken}, '1')
+		INSERT INTO MEMBER VALUES(${memberNo}, #{socialEmail}, NULL, #{memberName}, NULL, DEFAULT, #{profileImage}, DEFAULT, #{socialEmail}, #{accessToken}, '1')
 	</insert>
 	
 	<select id="getMember" parameterType="_int" resultMap="member_rm">
-		SELECT MEMBER_NO, SOCIAL_EMAIL, MEMBER_NAME, MEMBER_GIT, PROFILE_IMG FROM "MEMBER" WHERE MEMBER_NO = ${memberNo}
+		SELECT MEMBER_NO, MEMBER_EMAIL, SOCIAL_EMAIL, MEMBER_NAME, MEMBER_GIT, PROFILE_IMG FROM "MEMBER" WHERE MEMBER_NO = ${memberNo}
 	</select>
 	
 	<update id="changeToken" parameterType="map" useGeneratedKeys="true">
