@@ -299,66 +299,13 @@ function renameProject(projectNo) {
   function redirectToCreateWorkspace(project) {
     
     $.ajax({
-      url: 'payment/confirm',
+      url: 'createWorkspace',
       type: 'POST',
-      data: { "project": project.projectNo},
-      success: function(map) {
-        if(map.payType == 'Pro') {
-
-          $.ajax({
-            url: 'createWorkspace',
-            type: 'POST',
-            data: { "project": JSON.stringify(project)},
-            success: function(result) {
-              console.log(result);
-              window.location.href = contextPath + '/project/createWorkspace';
-              
-            },
-            error: function() {
-              console.log('Ajax 요청 중 오류가 발생');
-            }
-          });
-        } else if(map.payType == 'Standard' && map.workspaceCount < 5) {
-
-
-          $.ajax({
-            url: 'createWorkspace',
-            type: 'POST',
-            data: { "project": JSON.stringify(project)},
-            success: function(result) {
-              console.log(result);
-              window.location.href = contextPath + '/project/createWorkspace';
-              
-            },
-            error: function() {
-              console.log('Ajax 요청 중 오류가 발생');
-            }
-          });
-
-
-        } else if(map.payType == 'Basic' &&  map.workspaceCount < 3) {
-
-          $.ajax({
-            url: 'createWorkspace',
-            type: 'POST',
-            data: { "project": JSON.stringify(project)},
-            success: function(result) {
-              console.log(result);
-              window.location.href = contextPath + '/project/createWorkspace';
-              
-            },
-            error: function() {
-              console.log('Ajax 요청 중 오류가 발생');
-            }
-          });
-
-        } else {
-
-          window.location.href = contextPath + '/payment/pay/' + projectNo;
-
-        }
-
-
+      data: { "project": JSON.stringify(project)},
+      success: function(result) {
+        console.log(result);
+        window.location.href = contextPath + '/project/createWorkspace';
+        
       },
       error: function() {
         console.log('Ajax 요청 중 오류가 발생');

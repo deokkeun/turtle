@@ -27,6 +27,7 @@ import com.turtle.www.chat.model.service.ChatService;
 import com.turtle.www.chat.model.vo.ChatRoom;
 import com.turtle.www.chat.model.vo.ChatRoomJoin;
 import com.turtle.www.member.model.vo.Member;
+import com.turtle.www.payment.model.service.PayService;
 import com.turtle.www.project.model.service.ProjectService;
 import com.turtle.www.project.model.vo.Project;
 import com.turtle.www.projectMember.model.service.ProjectMemberService;
@@ -42,7 +43,8 @@ public class ProjectController {
 	private Logger logger = LoggerFactory.getLogger(ProjectController.class);
 	
 
-	
+	@Autowired
+	private PayService pService;
 	@Autowired
 	private ProjectService service;
 	@Autowired
@@ -117,6 +119,7 @@ public class ProjectController {
 		String path = null;
 		
 		if(result > 0) { // 프로젝트 생성 성공
+			
 			path = "project/createWorkspace";
 			
 			session.setAttribute("project", project);
