@@ -173,12 +173,10 @@ $(document).ready(function() {
         //
      
         $.ajax({
-
             url : "inviteMember",
             data : {"selectEmail" : arr},
             type : "POST",
             error : function(request, status, error) {
-            
                 console.log("ajax 에러발생");
                 console.log("상태코드 : " + request.status); // 404, 500
             }

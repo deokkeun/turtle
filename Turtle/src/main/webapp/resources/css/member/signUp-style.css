@@ -73,10 +73,10 @@ signUp-input-area > input,
 }
 
 #sendBtn {
- background-color: #4154f1;
+ background-color: #609966;
   color: white;
   padding: 0px 13px 0px 15px;
-  border: 2px solid #4154f1;
+  border: 2px solid #609966;
   cursor: pointer;
   text-align: center;
   font-size: 12px;
@@ -87,7 +87,7 @@ signUp-input-area > input,
 
 
 #cBtn {
-  background-color: #4154f1;
+  background-color: #609966;
   color: white;
   padding: 0px 30px;
   cursor: pointer;
@@ -129,7 +129,7 @@ signUp-input-area > input,
     font-weight: bold;
  border-radius: 10px;
     color : white;
-    background-color:#4154f1;
+    background-color:#609966;
 
     cursor: pointer;
 }

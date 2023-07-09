@@ -4,10 +4,12 @@
 --------------------------------------------------------------*/
 :root {
   scroll-behavior: smooth;
+  
 }
 
 body {
   color: #444444;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 a {
@@ -57,7 +59,7 @@ section {
   letter-spacing: 1px;
   font-weight: 700;
   margin: 10px 0 30px 0;
-  color: #4154f1;
+  color: #609966;
   text-transform: uppercase;
 }
 
@@ -67,7 +69,7 @@ section {
   font-size: 38px;
   line-height: 55px;
   font-weight: 700;
-  color: #012970;
+  color: #4D4D4D;
 }
 
 
@@ -126,7 +128,7 @@ section {
     margin: 0;
     font-size: 48px;
     font-weight: 700;
-    color: #012970;
+    color: #4D4D4D;
 }
 
 .topbanner h2 {
@@ -148,7 +150,7 @@ section {
     border-radius: 4px;
     transition: 0.5s;
     color: #fff;
-    background: #1A73E8; 
+    background: #609966; 
     /* box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4); */
 }
 
@@ -283,11 +285,11 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #4154f1;
+  border: 1px solid #609966;
 }
 
 .AutoSwiper-1 .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #4154f1;
+  background-color: #609966;
 }
 
 
@@ -333,7 +335,7 @@ section {
 
 .features .feature-box h3 {
   font-size: 18px;
-  color: #012970;
+  color: #609966;
   font-weight: 700;
   margin: 0;
 }
@@ -357,7 +359,7 @@ section {
 }
 
 .features .feature-box:hover i {
-  background: #4154f1;
+  background: #609966;
   color: #fff;
 }
 
@@ -366,7 +368,7 @@ section {
 }
 
 .features .feture-tabs h3 {
-  color: #012970;
+  color: #609966;
   font-weight: 700;
   font-size: 32px;
   margin-bottom: 10px;
@@ -408,8 +410,8 @@ section {
   
   box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
   border-radius: 70px;
-  border: 1px solid #4154f1;
-  background-color: #1A73E8;
+  border: 1px solid #609966;
+  background-color: #609966;
   color: white;
 }
 
@@ -418,8 +420,8 @@ section {
 .features .nav-link:hover {
   /* color: var(--color-primary); */
   background-color :  #f6f9ff;
-  color: #4154f1;
-  border: 1px solid #4154f1;
+  color: #609966;
+  border: 1px solid #609966;
 
 }
 
@@ -483,7 +485,7 @@ section {
   text-transform: uppercase;
   font-size: 15px;
   font-weight: 600;
-  color: #012970;
+  color: #609966;
   padding: 12px 0;
   margin-right: 25px;
   margin-bottom: -2px;
@@ -491,22 +493,22 @@ section {
 }
 
 .features .feture-tabs .nav-link.active {
-  color: #4154f1;
-  border-bottom: 3px solid #4154f1;
+  color: #609966;
+  border-bottom: 3px solid #609966;
 }
 
 .features .feture-tabs .tab-content h4 {
   font-size: 18px;
   margin: 0;
   font-weight: 700;
-  color: #012970;
+  color: #609966;
 }
 
 .features .feture-tabs .tab-content i {
   font-size: 24px;
   line-height: 0;
   margin-right: 8px;
-  color: #4154f1;
+  color: #609966;
 }
 
 .features .feature-icons {
@@ -514,7 +516,7 @@ section {
 }
 
 .features .feature-icons h3 {
-  color: #012970;
+  color: #609966;
   font-weight: 700;
   font-size: 32px;
   margin-bottom: 20px;
@@ -529,13 +531,13 @@ section {
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 10px 0;
-  color: #012970;
+  color: #609966;
 }
 
 .features .feature-icons .content .icon-box i {
   font-size: 44px;
   line-height: 44px;
-  color: #0245bc;
+  color: #609966;
   margin-right: 15px;
 }
 
@@ -605,7 +607,7 @@ section {
 }
 
 .recent-blog-posts .post-box:hover .post-title {
-  color: #4154f1;
+  color: #609966;
 }
 
 .recent-blog-posts .post-box:hover .post-img img {
@@ -635,7 +637,7 @@ section {
     padding: 0;
     line-height: 2;
     font-weight: 700;
-    color: #012970;
+    color: #4D4D4D;
 }
 
 .newsletter form {
