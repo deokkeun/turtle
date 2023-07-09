@@ -61,8 +61,8 @@
  
 			<!--  로그인 상태일 때 특정 js 작동 안하게 하는 코드(화면에서 안보임)-->
 			<script>
+				// 로그인버튼 이메일 포커스 js 
 				<c:if test="${empty loginMember}">
-					// 로그인버튼 이메일 포커스 js 
 					window.onload = function() {
 						document.getElementById("login-modal-btn").addEventListener("click", function() {
 							const memberEmail = document.getElementsByName("memberEmail");
