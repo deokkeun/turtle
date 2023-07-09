@@ -37,7 +37,7 @@
                 </div>
                 <div class="regDate-area">
                     <div>최초 작성일 : </div>
-                    <div class="regDate">${board.boardRegDate}</div>
+                    <div class="regDate"> ${board.boardRegDate}</div>
                 </div>
             </div>
             <div class="updateInfo">
