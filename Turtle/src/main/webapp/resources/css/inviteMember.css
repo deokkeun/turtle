@@ -84,7 +84,7 @@ section {
     display: none;
 }
 .user:hover {
-    background-color: #eeeaf5;
+    background-color: #f6f9ff;
 }
 .user > div{
     display: flex;
@@ -111,10 +111,10 @@ section {
     font-size: 12px;
 }
 .user-plus {
-    color : #bd9ff0;
+    color : #012970;
 }
 .user-plus:hover {
-    color: #834edf;
+    color: #4154f1;
 }
 
 
@@ -135,8 +135,8 @@ section {
     margin: 0 auto;
     border-radius: 8px;
     padding: 4px 0px;
-    background-color: #eeeaf5;
-    border: 1px solid #eeeaf5;
+    background-color: #f6f9ff;
+    border: 1px solid #f6f9ff;
 }
 .user-checked > div  {
    margin-top : 10px;
@@ -147,16 +147,16 @@ section {
     color: rgb(151, 151, 151);
 }
 .user-checked > div > a:hover {
-    color: #bd9ff0;
+    color: #4154f1;
 }
 .user-checked > div > i {
-    color: #bd9ff0;
+    color: #4154f1;
     font-size: 18px;
 
 }
 
 .user-checked > div:hover {
-    border: 0.1px solid #bd9ff0;
+    border: 0.1px solid #4154f1;
 }
 .user-checked > div > span {
     font-weight: bold;

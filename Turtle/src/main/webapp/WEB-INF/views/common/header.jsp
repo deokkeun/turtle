@@ -74,15 +74,16 @@
 
         </li><!-- End Notification Nav -->
 
-        <li class="nav-item dropdown">
+        <!-- 사이드버튼 (필요없음) -->
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
           <button class="sidebar-toggle" id="toggleButton">
            
-            <i class="bi bi-chat-left-text"></i> <!-- 아이콘 추가 -->
+            <i class="bi bi-chat-left-text"></i> 
        
           </button>
           </a>
-          </li>
+        </li> -->
        
       </ul>
     </nav><!-- End Icons Navigation -->
