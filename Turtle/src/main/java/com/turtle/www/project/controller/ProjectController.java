@@ -72,6 +72,7 @@ public class ProjectController {
 		logger.info("프로젝트 생성");
 		
 		// 생성자 멤버 번호 추가
+		//Project project = new Project();
 		project.setCreateMemberNo(loginMember.getMemberNo());
 //		project.setProjectEmoji(emojiValue);
 //		logger.info(emojiValue);
@@ -120,6 +121,7 @@ public class ProjectController {
 			
 			session.setAttribute("project", project);
 			model.addAttribute("project", project);
+			model.addAttribute("projectNo", project.getProjectNo());
 			logger.info("pm manager 삽입 성공");
 			int pmResult = service.insertPmManager(pm);
 			

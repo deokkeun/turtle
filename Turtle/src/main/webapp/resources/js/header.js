@@ -24,6 +24,9 @@ function selectAlertList() {
             alertListArea.style.maxHeight ="450px";
 
             for(let item of alertList) {
+              if(item.memberNo != memberNo) {
+
+              
                 let dropDownDividerLi = document.createElement("li");
                 let dropDownDividerHr = document.createElement("hr");
                 dropDownDividerHr.classList.add("dropdown-divider");
@@ -57,6 +60,7 @@ function selectAlertList() {
                 alertListArea.append(notificationItem);
 
                 count ++;
+              }
             }
 
             notifications.append(alertListArea);
@@ -100,7 +104,7 @@ let alerts = document.querySelector("#alert-area");
 
 alertSock.onmessage = function(e) {
     let alert = JSON.parse(e.data);  // JSON -> JS Object
-    if(alert.pmNo = pmNo) {
+    if(alert.memberNo != memberNo) {
     
     let notifications = document.getElementById("alert-area");
     let dropDownHeader = notifications.querySelector(".dropdown-header");
@@ -246,6 +250,7 @@ function renameProject(projectNo) {
         } else {
           alert("프로젝트 이름 변경에 실패하였습니다. 잠시 후 다시 시도해주세요.");
         }
+        location.href = contextPath + "/project/" + projectNo;
       },
       error: function() {
         console.log('프로젝트 이름 변경 중 오류가 발생.');

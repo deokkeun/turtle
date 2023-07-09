@@ -185,21 +185,26 @@ insertBoardSock.onmessage = function(e) {
         }
     });
     boardListTyping();
-
-    // 알림 웹소켓으로 보냄
-    let alert = {
-        "projectNo" : projectNo,
-        "memberNo" : memberNo,
-        "alertContent" : "님이 게시글을 추가하였습니다.",
-        "link" : contextPath + "/project/" + projectNo + "/" + workspaceNo + "/" + newBoard.boardNo,
-        "memberName" : memberName
-    }
-
-    console.log(alert);
-    console.log(JSON.stringify(alert));
-
-    alertSock.send( JSON.stringify(alert) );
 };
+
+deleteBoardSock.onmessage = function(e) {
+    // 매개변수 e : 발생한 이벤트에 대한 정보를 담고있는 객체
+	// e.data : 전달된 메세지 (message.getPayload())   (JSON 형태)
+
+	// 전달 받은 메세지를 JS 객체로 변환
+	const deletedBoard = JSON.parse(e.data);  // JSON -> JS Object
+    let boards = document.querySelectorAll(".board");
+    boards.forEach((board) => {
+        if(deletedBoard.boardNo == board.dataset.boardno) {
+            if(!board.previousSibling && !board.nextElementSibling) {
+                location.reload();
+            } else {
+                board.remove();
+            }            
+        }        
+    });
+};
+
 // 이모지 변경 웹소켓
 updateEmojiSock.onmessage = function(e) {
 
@@ -321,6 +326,20 @@ function updateBoardListBoardTitle(board) {
     // boardSock(웹소켓 객체)을 이용하여 메세지 보내기
     // boardSock.send(값) : 웹소켓 핸들러로 값을 보냄
     boardListSock.send( JSON.stringify(board) );
+
+    // 알림 웹소켓으로 보냄
+    let alert = {
+        "projectNo" : projectNo,
+        "memberNo" : memberNo,
+        "alertContent" : "님이 게시글을 수정하였습니다.",
+        "link" : contextPath + "/project/" + projectNo + "/" + workspaceNo,
+        "memberName" : memberName
+    }
+
+    console.log(alert);
+    console.log(JSON.stringify(alert));
+
+    alertSock.send( JSON.stringify(alert) );
 }
 
 // 게시글 추가 함수
@@ -343,6 +362,20 @@ function insertBoard(board) {
     // insertBoardSock(웹소켓 객체)을 이용하여 메세지 보내기
     // insertBoardSock.send(값) : 웹소켓 핸들러로 값을 보냄
     insertBoardSock.send( JSON.stringify(board));
+
+    // 알림 웹소켓으로 보냄
+    let alert = {
+        "projectNo" : projectNo,
+        "memberNo" : memberNo,
+        "alertContent" : "님이 게시글을 추가하였습니다.",
+        "link" : contextPath + "/project/" + projectNo + "/" + workspaceNo,
+        "memberName" : memberName
+    }
+
+    console.log(alert);
+    console.log(JSON.stringify(alert));
+
+    alertSock.send( JSON.stringify(alert) );
 
 };
 
