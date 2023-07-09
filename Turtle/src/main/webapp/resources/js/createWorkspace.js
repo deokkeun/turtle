@@ -21,42 +21,42 @@ $('.pop').click(function(e) {
 
 $(document).ready(function() {
     /*워크스페이스 추가하기*/
-    $('.pop-content2').on('click', function() {
+    // $('.pop-content2').on('click', function() {
 
-        var target = this;
-        var name = target.querySelector('.content-name > div:nth-child(1)').innerText;
+    //     var target = this;
+    //     var name = target.querySelector('.content-name > div:nth-child(1)').innerText;
 
-        console.log(name);
+    //     console.log(name);
 
-        let res = "";
+    //     let res = "";
 
-        res = " <div class='wor'><div><a><i class='fa-solid fa-bars'></i></a></div><div class='workspace-name'><span id="+name+">" + name +"</span><a class='change-text'><i class='fa-regular fa-pen-to-square' style='color : black;'></i></a></div><div class='remove-btn'><span>삭제</span></div></div>"
+    //     res = " <div class='wor'><div><a><i class='fa-solid fa-bars'></i></a></div><div class='workspace-name'><span id="+name+">" + name +"</span><a class='change-text'><i class='fa-regular fa-pen-to-square' style='color : black;'></i></a></div><div class='remove-btn'><span>삭제</span></div></div>"
 
-        $('.workspace').append(res);
+    //     $('.workspace').append(res);
 
 
-        $('.pop').fadeOut();
-    })
+    //     $('.pop').fadeOut();
+    // })
     
-      /*추가한 워크스페이스 삭제하기*/
-    $(document).on('click','.remove-btn',function() {
-         console.log($(this).siblings('.workspace-name').text());
-        $(this).parent().remove();
+    //   /*추가한 워크스페이스 삭제하기*/
+    // $(document).on('click','.remove-btn',function() {
+    //      console.log($(this).siblings('.workspace-name').text());
+    //     $(this).parent().remove();
        
-    })
-    /*워크스페이스 이름 변경*/
-    $(document).on('click','.change-text', function() {
-          console.log($(this).parents('.workspace-name').text());
-        $(this).parents('.workspace-name').html("<input id = "+$(this).siblings('span').attr('id') +" type='text' class='workspace-input'>");
+    // })
+    // /*워크스페이스 이름 변경*/
+    // $(document).on('click','.change-text', function() {
+    //       console.log($(this).parents('.workspace-name').text());
+    //     $(this).parents('.workspace-name').html("<input id = "+$(this).siblings('span').attr('id') +" type='text' class='workspace-input'>");
         
-    })
+    // })
 
-    $(document).on('keydown','.workspace-input', function(key) {
-         if(key.keyCode == 13) {
-                console.log($(this).val());
-                $(this).parents('.workspace-name').html("<span id="+$(this).attr('id')+">" + $(this).val() + "</span><a class='change-text'><i class='fa-regular fa-pen-to-square' style='color : black;'></i></a></div>");
-            }
-    })
+    // $(document).on('keydown','.workspace-input', function(key) {
+    //      if(key.keyCode == 13) {
+    //             console.log($(this).val());
+    //             $(this).parents('.workspace-name').html("<span id="+$(this).attr('id')+">" + $(this).val() + "</span><a class='change-text'><i class='fa-regular fa-pen-to-square' style='color : black;'></i></a></div>");
+    //         }
+    // })
 
 
 
