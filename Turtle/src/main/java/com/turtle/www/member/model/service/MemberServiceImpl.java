@@ -308,10 +308,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 
-	@Override
-	public int emailCheckForNaver(String email) {
-		return dao.emailCheckForNaver(email);
-	}
+
 
 
 	

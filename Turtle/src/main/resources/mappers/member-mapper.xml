@@ -163,9 +163,10 @@
 	)
 	</insert>
 	
-		<select id="checkNaverFl" parameterType="string" resultType="_int">
-		SELECT COUNT(*) FROM "MEMBER" WHERE SOCIAL_EMAIL = #{socialEmail} AND IS_SOCIAL_MEMBER = 1
+	<select id="checkNaverFl" parameterType="string" resultType="_int">
+	  SELECT COUNT(*) FROM MEMBER WHERE SOCIAL_EMAIL = #{socialEmail}
 	</select>
+
 	
 	<insert id="naverSignUp" parameterType="map" useGeneratedKeys="true">
 		<selectKey keyProperty="memberNo" resultType="_int" order="BEFORE">
@@ -180,14 +181,12 @@
 	
 	<update id="changeToken" parameterType="map" useGeneratedKeys="true">
 		<selectKey keyProperty="memberNo" resultType="_int" order="BEFORE">
-			SELECT MEMBER_NO FROM "MEMBER" WHERE IS_SOCIAL_MEMBER = 1 AND SOCIAL_EMAIL = #{socialEmail}
+			SELECT MEMBER_NO FROM MEMBER WHERE SOCIAL_EMAIL = #{socialEmail}
 		</selectKey>
-		UPDATE "MEMBER" SET SOCIAL_TOKEN = #{accessToken} WHERE MEMBER_NO = ${memberNo}
+		UPDATE MEMBER SET SOCIAL_TOKEN = #{accessToken} WHERE MEMBER_NO = ${memberNo}
 	</update>
 	
-	<select id="emailCheckForNaver" parameterType="string" resultType="_int">
-	 	SELECT COUNT(*) FROM "MEMBER" WHERE SOCIAL_EMAIL = #{socialEmail}
-	</select>
+
 	
 
 </mapper>

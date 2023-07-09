@@ -87,11 +87,9 @@ public class ProjectMemberController {
 		
 	}
 	
-	// , consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE}
 	@PostMapping(value = "/inviteMember", produces="text/plain;charset=UTF-8" )
 	public String inviteMember(HttpSession session,
-						@RequestParam(value="selectEmail", required=false) List<String> selectEmail
-								) {
+							@RequestParam(value="selectEmail", required=false) List<String> selectEmail) {
 		
 		logger.info("프로젝트멤버 초대");
 		

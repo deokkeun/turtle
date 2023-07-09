@@ -20,38 +20,31 @@ function naverSignInCallback() {
   console.log("프로필 : " + profileImg);
 
 
-
-
   $.ajax({
-    url : "dupCheckNaver",
+    url : "checkNaverFl",
     type : "post",
-    data : {"email" :email, "name" : name},
-    success : function (data){
-
-      dupCheck(data, email, name, token, profileImg);
+    data: {"email" : email},
+    success : function(data){
+      console.log("중복 네이버 회원:" + data)
+      if(data == 0) { // 만약 가입된 멤버가 없으면
+        naverSignUp(email, name, profileImg, token);
+      }else { // 가입된 멤버가 있으면 
+        changeToken(email,token);
+      }
     }
   });
   
 
 };
 
-// 중복 여부 체크
-function dupCheck(datas, email, name , token, profileImg){
-
-  if(datas == 1){
-    swal.fire("이메일이 중복되었습니다. 확인해주세요");
-  }else{
-    naverCheck(email, name ,token,profileImg);
-  }
-};
 
 // 네이버 DB가입처리
-function naverSignUp(email, name, profile_image, token){
+function naverSignUp(email, name, profileImg, token){
   
   $.ajax({
     url : "naverSignUp",
     type : "post",
-    data: {"socialEmail" :email, "memberName" : name, "profileImage" : profile_image, "accessToken" : token},
+    data: {"socialEmail" :email, "memberName" : name, "profileImage" : profileImg, "accessToken" : token},
     success : function(){
         opener.location.href= contextPath;
         window.close();
@@ -74,17 +67,3 @@ function changeToken(email,token){
   
 };
 
-function naverCheck(email, name, token, profileImg){
-  $.ajax({
-    url : "checkNaverFl",
-    type : "post",
-    data: {"email" :email},
-    success : function(data){
-      if(data == 0) { // 만약 가입된 멤버가 없으면
-        naverSignUp(email, name, profileImg, token);
-      }else { // 가입된 멤버가 있으면 
-        changeToken(email,token);
-      }
-    }
-  });
-}

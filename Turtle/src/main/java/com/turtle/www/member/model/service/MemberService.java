@@ -90,7 +90,6 @@ public interface MemberService {
 	public int changeToken(Map<String, Object> map);
 	
 
-	public int emailCheckForNaver(String email);
 
 
 }
