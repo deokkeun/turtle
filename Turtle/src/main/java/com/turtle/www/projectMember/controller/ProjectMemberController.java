@@ -164,21 +164,14 @@ public class ProjectMemberController {
 		
 		return "project/acceptForm";
 		
-		
 	}
+	
 	
 	@PostMapping("/inviteMember/{memberEmail}/{inviteCode}/accept")
 	public void acceptPostInvitation(@PathVariable("inviteCode") String inviteCode,
 	                               @PathVariable("memberEmail") String memberEmail,
 	                               HttpSession session, Model model) {
 	    logger.info("초대메일 수락");
-	    
-	    // 초대 수락 동작 처리
-	    // invitationId를 사용하여 해당 초대를 수락 처리합니다.
-	    
-	    // 수락 처리 후 필요한 동작 수행
-	    // 수락하면 projectmember에 추가
-	    // shared project에 추가
 	    
 	    Project project = (Project) session.getAttribute("project");
 	    model.addAttribute("project", project);
