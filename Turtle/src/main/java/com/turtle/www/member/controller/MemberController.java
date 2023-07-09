@@ -187,6 +187,10 @@ public class MemberController {
 		
 		model.addAttribute("loginMember", member);
 		
+		int projectNo = pService.selectMyProjectNo(member.getMemberNo());
+		
+		model.addAttribute("projectNo", projectNo);
+		
 		return result;
 	}
 	
