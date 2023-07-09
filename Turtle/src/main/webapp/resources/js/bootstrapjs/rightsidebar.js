@@ -74,7 +74,7 @@ document.addEventListener('click', function(event) {
   var toggleButton = document.getElementById('toggleButton');
   var selectBoardDetail = document.getElementsByClassName('select-board-detail');
   
-  if (rightSidebar.classList.contains('active') && !sidebar.contains(event.target) && !toggleButton.contains(event.target) && !isDescendant(event.target, selectBoardDetail)) {
+  if (rightSidebar.classList.contains('active') && !sidebar.contains(event.target) && !isDescendant(event.target, selectBoardDetail)) {
     toggleSide();
   }
 });

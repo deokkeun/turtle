@@ -7,7 +7,6 @@ import javax.mail.internet.MimeMessage;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,19 +19,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.google.gson.Gson;
 import com.turtle.www.member.model.service.MemberService;
 import com.turtle.www.member.model.vo.Member;
-import com.turtle.www.member.naver.JsonParser;
-import com.turtle.www.member.naver.NaverLoginBO;
 import com.turtle.www.project.model.service.ProjectService;
 import com.turtle.www.workspace.model.service.WorkspaceService;
 
@@ -57,15 +52,7 @@ public class MemberController {
 	@Autowired
 	private WorkspaceService wService;
 	
-    /* NaverLoginBO */
-    private NaverLoginBO naverLoginBO;
-    private String apiResult = null;
-    
-    @Autowired
-    private void setNaverLoginBO(NaverLoginBO naverLoginBO) {
-        this.naverLoginBO = naverLoginBO;
-    }
-	
+
 	
 	
 	/** 로그인 세션이 있는 경우 바로 main페이지로 이동
@@ -134,61 +121,11 @@ public class MemberController {
 
 	
 	
-//	// 로그인 첫 화면 요청 메소드
-//	@RequestMapping(value = "/login", method = { RequestMethod.GET, RequestMethod.POST })
-//	public String naverLogin(Model model, HttpSession session) {
-//
-//		/* 네이버아이디로 인증 URL을 생성하기 위하여 naverLoginBO클래스의 getAuthorizationUrl메소드 호출 */
-//		String naverAuthUrl = naverLoginBO.getAuthorizationUrl(session);
-//
-//		// https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=sE***************&
-//		// redirect_uri=http%3A%2F%2F211.63.89.90%3A8090%2Flogin_project%2Fcallback&state=e68c269c-5ba9-4c31-85da-54c16c658125
-//		System.out.println("네이버:" + naverAuthUrl);
-//
-//		// 네이버
-//		model.addAttribute("url", naverAuthUrl);
-//
-//		/* 생성한 인증 URL을 View로 전달 */
-//		return "common/landing-header";
-//	}
-	
-    //네이버 로그인 성공시 callback호출 메소드
-    @RequestMapping(value = "/callback", method = { RequestMethod.GET, RequestMethod.POST })
-    public String callback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session, Member member)
-            throws Exception {
-    	
-    	JsonParser json = new JsonParser();
-    	
-        //System.out.println("여기는 callback");
-        
-        OAuth2AccessToken oauthToken;
-        oauthToken = naverLoginBO.getAccessToken(session, code, state);
-        //로그인 사용자 정보를 읽어온다.
-        String apiResult = naverLoginBO.getUserProfile(oauthToken);
-        
-        member = json.changeJson(apiResult); // dto에 저장
-        
-        
-        System.out.println(apiResult);
-        
-//        if (service.getNaverMember(member) != null) { // 세션만들기 (이미 한번이라도 로그인한 정보가 있으면~)
-//			session.setAttribute("login", member);
-//		}else { //로그인을 한번도 안했다면 가입!
-//			service.joinNaverMember(member);
-//			session.setAttribute(member);
-//			
-//
-//			
-//			model.addAttribute("pd", pd);
-//			model.addAttribute("list", list);
-//		}
-        
-        
-        model.addAttribute("result", apiResult);
- 
-        /* 네이버 로그인 성공 페이지 View 호출 */
-        return "callback";
-    }
+	@GetMapping("/callback")
+	public String callback() {
+		logger.info("callback 들어옴");
+		return "common/callback";
+	}
     
     
 	
@@ -200,9 +137,9 @@ public class MemberController {
 	@ResponseBody
 	public int checkNaverFl(@RequestParam("email") String socialEmail) {
 		
+		logger.info("체크 실행");
 
 		int result = service.checkNaverFl(socialEmail);
-		logger.info("체크 실행");
 		return result;
 		
 	}
@@ -210,6 +147,7 @@ public class MemberController {
 	@PostMapping("/naverSignUp")
 	@ResponseBody
 	public int naverSignUp(@RequestParam Map<String,Object> map, Model model) {
+		logger.info("사인업실행");
 		
 		int result = service.naverSignUp(map);
 		
@@ -217,8 +155,7 @@ public class MemberController {
 		
 		Member member = service.getMember(result);
 
-		model.addAttribute("loginUser", member);
-		logger.info("사인업실행");
+		model.addAttribute("loginMember", member);
 		
 		return result;
 	}
@@ -226,27 +163,25 @@ public class MemberController {
 	@PostMapping("/changeToken")
 	@ResponseBody
 	public int changeToken(@RequestParam Map<String,Object> map, Model model) {
+		logger.info("토큰교체 실행");
 		
-		int result =service.changeToken(map);
+		int result = service.changeToken(map);
 		Member member = null;
 		if(result>0) {
 			member = service.getMember((Integer)map.get("userNo"));
 		}
-		logger.info("토큰교체 실행");
+		
 		model.addAttribute("loginUser", member);
 		
 		return result;
 	}
 	
-	@GetMapping("/callback")
-	public String callback() {
-		return "common/callback";
-	}
 	
 	@PostMapping("/dupCheckNaver")
 	@ResponseBody
-	public int dupCheckForNaver(@RequestParam("email") String email, @RequestParam("name")String name) {
+	public int dupCheckForNaver(@RequestParam("email") String email, @RequestParam("name") String name) {
 		logger.info("네이버 중복 검사");
+		logger.info(email + " " + name);
 		int result = -1;
 		
 		int emailCheck = service.emailCheckForNaver(email);
@@ -566,9 +501,6 @@ public class MemberController {
 		return "redirect:/";
 	}
 //chat 테스트용
-	
-	
-	
 	
 	
 }

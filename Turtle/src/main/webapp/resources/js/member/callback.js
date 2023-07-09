@@ -7,19 +7,25 @@ naver_id_login.get_naver_userprofile("naverSignInCallback()");
 // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
 
 function naverSignInCallback() {
-	console.log("네이버 로그인");
   
   // 네이버 사용자 프로필 조회
   let token = naver_id_login.oauthParams.access_token;
   let email = naver_id_login.getProfileData('email');
   let name = naver_id_login.getProfileData('name');
   let profileImg = naver_id_login.getProfileData('profile_image');
-  consoloe.log(token,email,name,profileImg);
   
+  console.log("토근 : " + token);
+  console.log("이메일 : " + email);
+  console.log("이름 : " + name);
+  console.log("프로필 : " + profileImg);
+
+
+
+
   $.ajax({
-    url : "/dupCheckNaver",
+    url : "dupCheckNaver",
     type : "post",
-    data : {"email": email, "name" : name},
+    data : {"email" :email, "name" : name},
     success : function (data){
 
       dupCheck(data, email, name, token, profileImg);
@@ -33,20 +39,21 @@ function naverSignInCallback() {
 function dupCheck(datas, email, name , token, profileImg){
 
   if(datas == 1){
-    alert("이메일이 중복되었습니다. 확인해주세요");
-  }else
+    swal.fire("이메일이 중복되었습니다. 확인해주세요");
+  }else{
     naverCheck(email, name ,token,profileImg);
+  }
 };
 
 // 네이버 DB가입처리
 function naverSignUp(email, name, profile_image, token){
   
   $.ajax({
-    url : "/naverSignUp",
+    url : "naverSignUp",
     type : "post",
-    data: {"email" :email, "name" : name, "profileImg" : profile_image, "token" : token},
+    data: {"socialEmail" :email, "memberName" : name, "profileImage" : profile_image, "accessToken" : token},
     success : function(){
-        opener.location.href='/common/main'; 
+        opener.location.href= contextPath;
         window.close();
     }
 });
@@ -56,11 +63,11 @@ function naverSignUp(email, name, profile_image, token){
 function changeToken(email,token){
   
   $.ajax({
-    url : "/changeToken",
+    url : "changeToken",
     type : "post",
-    data: {"email" :email, "token" : token},
+    data: {"socialEmail" :email, "accessToken" : token},
     success : function(){
-        opener.location.href='/common/main'; 
+        opener.location.href= contextPath; 
         window.close();
     }
   });
@@ -69,12 +76,12 @@ function changeToken(email,token){
 
 function naverCheck(email, name, token, profileImg){
   $.ajax({
-    url : "/checkNaverFl",
+    url : "checkNaverFl",
     type : "post",
     data: {"email" :email},
     success : function(data){
       if(data == 0) { // 만약 가입된 멤버가 없으면
-        naverSignUp(email, nick, profileImg, token);
+        naverSignUp(email, name, profileImg, token);
       }else { // 가입된 멤버가 있으면 
         changeToken(email,token);
       }
