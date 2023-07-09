@@ -155,7 +155,7 @@ public class MemberController {
 		
 		Member member = service.getMember(result);
 
-		model.addAttribute("loginUser", member);
+		model.addAttribute("loginMember", member);
 		
 		return result;
 	}
@@ -170,6 +170,7 @@ public class MemberController {
 		if(result>0) {
 			member = service.getMember((Integer)map.get("userNo"));
 		}
+		
 		model.addAttribute("loginUser", member);
 		
 		return result;
