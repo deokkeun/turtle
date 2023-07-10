@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="payMapper">
+
+ 	<resultMap type="pay" id="pay_rm">
+		<id property="payNo" column="PAY_NO"/>
+		
+		<result property="projectNo" column="PROJECT_NO"/>
+		<result property="payType" column="PAY_TYPE"/>
+		<result property="payRegDate" column="PAY_REG_DATE"/>
+		<result property="payName" column="PAY_NAME"/>
+		<result property="memberNo" column="MEMBER_NO"/>
+		<result property="price" column="PRICE"/>
+		<result property="impUid" column="IMP_UID"/>
+		<result property="expireDate" column="EXPIRE_DATE"/>
+		<result property="expireType" column="EXPIRE_TYPE"/>
+	</resultMap>
+	
+	<!-- 결제 정보(전체) 불러오기(결제 완료) -->
+	<select id="paymentType" resultMap="pay_rm">
+		SELECT *
+		FROM PAYMENT
+		WHERE PAY_NO = (
+		  SELECT MAX(PAY_NO)
+		  FROM PAYMENT
+		)AND PROJECT_NO = ${projectNo}
+	</select>
+	
+	<!-- 워크스페이스 개수 조회 -->
+	<select id="workspaceCount" resultType="_int">
+		SELECT COUNT(*) 
+		FROM PROJECT p 
+		JOIN WORKSPACE w ON(p.PROJECT_NO = w.PROJECT_NO)
+		WHERE w.WORKSPACE_DELETE_ST = 'N'
+		AND w.PROJECT_NO = ${projectNo}
+	</select>
+	
+	<!-- 프로젝트 멤버 참여자 수 조회 -->
+	<select id="projectMemberCount" resultType="_int">
+		SELECT COUNT(*) FROM PROJECT p 
+		JOIN PROJECT_MEMBER pm ON(p.PROJECT_NO = pm.PROJECT_NO)
+		WHERE pm.PM_ST = 'N'
+		AND pm.PROJECT_NO = ${projectNo}
+	</select>
+	
+	<!-- 결제 정보 저장 -->
+	<insert id="insertPay">
+		INSERT INTO PAYMENT (PAY_NO, PROJECT_NO, PAY_TYPE, PAY_REG_DATE, PAY_NAME, MEMBER_NO, PRICE, IMP_UID, EXPIRE_DATE, EXPIRE_TYPE)
+					VALUES (#{payNo}, ${projectNo}, #{payType}, SYSDATE, #{payName}, ${memberNo}, ${price}, #{impUid}, DEFAULT, #{payType})
+	</insert>
+	
+	<!-- 결제 내역 -->
+	<select id="payList" resultMap="pay_rm">
+		SELECT PAY_NO, PAY_TYPE, PAY_REG_DATE, PAY_NAME, PRICE, EXPIRE_DATE, EXPIRE_TYPE
+		FROM PAYMENT p
+		WHERE MEMBER_NO = ${memberNo}
+		AND PROJECT_NO = ${projectNo}
+		ORDER BY PAY_NO DESC
+	</select>
+	
+
+</mapper>

@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    cursor: pointer;
+}
+/*section 구성*/
+section {
+    text-align: center;
+    height: 100%;
+    
+}
+html, body {
+    height: 100%;
+/* overflow: hidden; */
+    overflow: auto;
+}
+.section1 {
+    
+    margin-top: 22vh;
+    font-size: 48px;
+}
+.section1 > i:nth-child(2) {
+    padding-bottom: 30px;
+    box-shadow: 0 3px 3px -3px black;
+}
+.section2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 6vh;
+    margin-bottom: 5vh;
+    
+}
+.section2 p {
+    margin-right: 120px;
+    margin-bottom: 5px;
+}
+.section2 input {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    border: none;
+    background-color: #F8F8F8;
+    border-radius: 10px;
+}
+
+.projectEmoji {
+   
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 20px;
+}
+.projectEmoji:hover  > i{
+    cursor: pointer;
+  
+    border-radius: 20px;
+}
+.workspace-plus {
+    margin-top: 6vh;
+}
+.workspace-plus span{
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 105px;
+    
+}
+
+.workspace {
+    overflow: auto;
+    margin: 0 auto;
+    width: 400px;
+    max-height: 200px;
+    margin-top: 20px;
+    position: relative;
+    
+
+}
+.workspace > div {
+    display: flex;
+    background-color: #F8F8F8;
+    font-size: 20px;
+    padding: 5px 10px;
+    position: relative;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+.remove-btn {
+    padding-bottom: 5px;
+}
+
+.remove-btn > span {
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: black;
+    width: 50px;
+    width: 100%;
+    color: white;
+    padding: 5px 10px;
+   
+    
+}
+.remove-btn > span:hover {
+    cursor: pointer;
+}
+
+.workspace-input {
+   
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+.change-text {
+    margin-left: 5px;
+}
+.pop {
+    position: absolute;
+    z-index: 998;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+  
+}
+.pop > div{
+    
+    margin: auto;
+    margin-top: 28vh;
+    width: 520px;
+    height: 420px;
+    background-color: white;
+
+    box-shadow: 0 3px 3px -3px black;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    overflow: auto;
+}
+.black {
+    background-color: rgba(0,0,0,0.6);
+}
+
+
+.pop-content2 { 
+    display: flex;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px 5px 10px 5px;
+}
+.pop-content2:hover {
+    background-color: rgb(174, 174, 174);
+}
+
+
+.pop-content2 > div:nth-child(1) {
+    width: 30%;
+}
+.pop-content2 > div:nth-child(2) {
+    width: 70%;
+}
+
+
+.content-name {
+    padding-top: 7%;
+    
+}
+.content-name > div:nth-child(1) {
+ 
+    font-weight: bold;
+    font-size: 1.5em;
+  
+}
+.content-name > div:nth-child(2) {
+   font-size: 1em;
+}
+
+
+
+
+
+.plus-btn {
+  
+
+    font-size: 24px;
+    color: rgb(77, 77, 77);
+    
+}
+.plus-btn:hover {
+    color: black;
+}
+
+.next-btn {
+    align-items: center;
+    margin-top: 5vh;
+    width: 100%;
+    margin-bottom: 5%;
+}
+.next-btn > button {
+    margin: 0 auto;
+    display: block;
+    width: 300px;
+    background-color: rgb(77, 77, 77);
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 5px;
+}
+.next-btn > button:hover {
+    background-color: black;
+    cursor: pointer;
+}
+/* 워크스페이스 언어 설정 section */
+
+.language-section {
+    width: 400px;
+    margin: 0 auto;
+    min-height: 23vh;
+    box-shadow: 0 3px 3px -3px black;
+}
+
+.workspace-language {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 3px -3px black;
+}
+.workspace-language a {
+    padding: 5px;
+   
+}
+.workspace-language > div {
+    margin-bottom: 5px;
+}
+
+.workspace-language a:hover {
+    background-color: black;
+    color: white;
+}
+
+
+
+
+
+.language {
+    flex-wrap: wrap;
+    display: flex;
+    
+    justify-content: center;
+}
+
+
+.language > div img {
+    margin: 5px 15px 0px 0px;   
+    box-shadow: 2px 2px 2px 2px black;
+    border-radius: 8px;
+}
+.language > div {
+    position: relative;
+    
+   
+}
+
+.language {
+    display: none
+}
+
+.language-section .active {
+ display: flex;
+ 
+}
+
+
+.language > div a {
+    position: absolute;
+ 
+    top: 70%;
+    left: 60%;
+}
+
+.language > div {
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.language > div .hide {
+    visibility: hidden;
+}
+
+/*img 클릭시 animation 미완성*/
+.img .animate{
+    animation: append-animate 1s;
+  
+}
+
+@keyframes append-animate {
+    from {
+        transform: scale(1);
+      
+    } 
+    to {
+        transform: scale(0);
+        
+    }
+}
+/*------------------------------*/
+@media screen and (max-width:768px) {
+ 
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+       height: auto;
+    }
+   
+    .logo img {
+        width: 60px;
+    }
+    .nav-links {
+       visibility: hidden;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 0vh;
+        margin: 0;
+        flex-basis: auto;
+     
+    }
+    .nav-links li {
+      
+        text-align: center;
+        margin: 0;
+       
+        
+    }
+    .nav-links2 {
+       visibility: hidden;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: 0vh;
+     
+    }
+    .bar {
+        display: block;
+        
+    }
+ 
+    .nav-links.active {
+        overflow: hidden;
+        height: 20vh;
+        display: block;
+        visibility: visible;
+        transition: all 1s;
+        
+    }
+    .nav-links2.active {
+        margin-top: 2vh;
+        height: 4vh;
+        display: flex;
+       visibility: visible;
+       transition: all 1s;
+    }
+    .section1 i{
+        font-size: 36px;
+    }
+    .pop > div {
+        width:500px;
+        height: 420px;
+    }
+    .select {
+        z-index: 999;
+    }
+    .select i {
+    position: absolute;
+    top: 40%;
+    left: 15%;
+}
+}

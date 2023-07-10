@@ -1,0 +1,929 @@
+<<<<<<< HEAD
+2023-06-24 14:25:35 [INFO] 초기화 필터 파괴
+=======
+2023-06-24 00:00:18 [INFO] 초기화 필터 생성
+2023-06-24 00:00:35 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-24 00:00:39 [DEBUG] password999! / $2a$10$GC.I8S8hMZ.OnS0H4NjdcuHsufy13b2p6kPB4lv9K/Fvl5LCHJIum
+2023-06-24 00:00:39 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-24 00:00:39 [INFO] Running Time : 3467ms
+2023-06-24 00:00:39 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-24 00:00:39 [INFO] 일일맨 로그인 성공
+2023-06-24 00:00:48 [INFO] ---------------------------------------
+Start : PayServiceImpl - workspaceCount
+Parameter : [1]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 00:00:49 [INFO] Return Value : 4
+2023-06-24 00:00:49 [INFO] Running Time : 96ms
+2023-06-24 00:00:49 [INFO] End : PayServiceImpl - workspaceCount
+---------------------------------------------
+
+2023-06-24 00:00:49 [INFO] ---------------------------------------
+Start : PayServiceImpl - projectMemberCount
+Parameter : [1]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 00:00:49 [INFO] Return Value : 5
+2023-06-24 00:00:49 [INFO] Running Time : 38ms
+2023-06-24 00:00:49 [INFO] End : PayServiceImpl - projectMemberCount
+---------------------------------------------
+
+2023-06-24 00:00:49 [DEBUG] workspaceCount4
+2023-06-24 00:00:49 [DEBUG] projectMemberCount5
+2023-06-24 00:00:49 [INFO] ---------------------------------------
+Start : PayServiceImpl - paymentType
+Parameter : [1]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 00:00:49 [INFO] Return Value : Pay(payNo=230623203921910, projectNo=1, payType=Basic, payRegDate=2023-06-23, payName=김자바, memberNo=999, price=890, impUid=imp_074363358785, expireDate=2023-07-23, expireType=Standard)
+2023-06-24 00:00:49 [INFO] Running Time : 42ms
+2023-06-24 00:00:49 [INFO] End : PayServiceImpl - paymentType
+---------------------------------------------
+
+2023-06-24 00:00:49 [DEBUG] paymentTypePay(payNo=230623203921910, projectNo=1, payType=Basic, payRegDate=2023-06-23, payName=김자바, memberNo=999, price=890, impUid=imp_074363358785, expireDate=2023-07-23, expireType=Standard)
+2023-06-24 00:01:11 [INFO] 초기화 필터 파괴
+2023-06-24 00:01:53 [INFO] 초기화 필터 생성
+2023-06-24 00:02:02 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-24 00:02:05 [DEBUG] password999! / $2a$10$mZhAPZQvNQf6r/8uLCI1zeKiojRfbM9vrVHj0lnNeslLFmi8kzTgK
+2023-06-24 00:02:06 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-24 00:02:06 [INFO] Running Time : 3494ms
+2023-06-24 00:02:06 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-24 00:02:06 [INFO] 일일맨 로그인 성공
+2023-06-24 00:02:15 [INFO] ---------------------------------------
+Start : PayServiceImpl - workspaceCount
+Parameter : [1]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 00:02:15 [INFO] Return Value : 4
+2023-06-24 00:02:15 [INFO] Running Time : 101ms
+2023-06-24 00:02:15 [INFO] End : PayServiceImpl - workspaceCount
+---------------------------------------------
+
+2023-06-24 00:02:15 [INFO] ---------------------------------------
+Start : PayServiceImpl - projectMemberCount
+Parameter : [1]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 00:02:15 [INFO] Return Value : 5
+2023-06-24 00:02:15 [INFO] Running Time : 39ms
+2023-06-24 00:02:15 [INFO] End : PayServiceImpl - projectMemberCount
+---------------------------------------------
+
+2023-06-24 00:02:15 [DEBUG] workspaceCount4
+2023-06-24 00:02:15 [DEBUG] projectMemberCount5
+2023-06-24 00:02:15 [INFO] ---------------------------------------
+Start : PayServiceImpl - paymentType
+Parameter : [1]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 00:02:15 [INFO] Return Value : Pay(payNo=230623203921910, projectNo=1, payType=Basic, payRegDate=2023-06-23, payName=김자바, memberNo=999, price=890, impUid=imp_074363358785, expireDate=2023-07-23, expireType=Standard)
+2023-06-24 00:02:15 [INFO] Running Time : 44ms
+2023-06-24 00:02:15 [INFO] End : PayServiceImpl - paymentType
+---------------------------------------------
+
+2023-06-24 00:02:15 [DEBUG] paymentTypePay(payNo=230623203921910, projectNo=1, payType=Basic, payRegDate=2023-06-23, payName=김자바, memberNo=999, price=890, impUid=imp_074363358785, expireDate=2023-07-23, expireType=Standard)
+2023-06-24 00:03:26 [INFO] 초기화 필터 파괴
+2023-06-24 00:09:10 [INFO] 초기화 필터 생성
+2023-06-24 00:09:19 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-24 00:09:23 [DEBUG] password999! / $2a$10$jOWJGLisN/A9z5DKX6CsGOQuOS8ttMJDfyIcoe/RL/OgZhG0XHPeC
+2023-06-24 00:09:23 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-24 00:09:23 [INFO] Running Time : 3765ms
+2023-06-24 00:09:23 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-24 00:09:23 [INFO] 일일맨 로그인 성공
+2023-06-24 00:09:28 [INFO] ---------------------------------------
+Start : PayServiceImpl - workspaceCount
+Parameter : [1]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 00:09:28 [INFO] Return Value : 4
+2023-06-24 00:09:28 [INFO] Running Time : 102ms
+2023-06-24 00:09:28 [INFO] End : PayServiceImpl - workspaceCount
+---------------------------------------------
+
+2023-06-24 00:09:28 [INFO] ---------------------------------------
+Start : PayServiceImpl - projectMemberCount
+Parameter : [1]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 00:09:28 [INFO] Return Value : 5
+2023-06-24 00:09:28 [INFO] Running Time : 42ms
+2023-06-24 00:09:28 [INFO] End : PayServiceImpl - projectMemberCount
+---------------------------------------------
+
+2023-06-24 00:09:28 [DEBUG] workspaceCount4
+2023-06-24 00:09:28 [DEBUG] projectMemberCount5
+2023-06-24 00:09:28 [INFO] ---------------------------------------
+Start : PayServiceImpl - paymentType
+Parameter : [1]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 00:09:28 [INFO] Return Value : Pay(payNo=230623203921910, projectNo=1, payType=Basic, payRegDate=2023-06-23, payName=김자바, memberNo=999, price=890, impUid=imp_074363358785, expireDate=2023-07-23, expireType=Standard)
+2023-06-24 00:09:28 [INFO] Running Time : 70ms
+2023-06-24 00:09:28 [INFO] End : PayServiceImpl - paymentType
+---------------------------------------------
+
+2023-06-24 00:09:28 [DEBUG] paymentTypePay(payNo=230623203921910, projectNo=1, payType=Basic, payRegDate=2023-06-23, payName=김자바, memberNo=999, price=890, impUid=imp_074363358785, expireDate=2023-07-23, expireType=Standard)
+2023-06-24 00:11:28 [INFO] 초기화 필터 파괴
+2023-06-24 00:14:34 [INFO] 초기화 필터 생성
+2023-06-24 00:14:45 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-24 00:14:48 [DEBUG] password999! / $2a$10$89S8eEcXC/Q4YRUPQZjMiuG.ybZt4LhJJIwEPmhko7QgS3ElPrALO
+2023-06-24 00:14:48 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230623204046_81311.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-24 00:14:48 [INFO] Running Time : 3497ms
+2023-06-24 00:14:48 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-24 00:14:48 [INFO] 구구맨 로그인 성공
+2023-06-24 00:14:54 [INFO] ---------------------------------------
+Start : PayServiceImpl - workspaceCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 00:14:54 [INFO] Return Value : 4
+2023-06-24 00:14:54 [INFO] Running Time : 94ms
+2023-06-24 00:14:54 [INFO] End : PayServiceImpl - workspaceCount
+---------------------------------------------
+
+2023-06-24 00:14:54 [INFO] ---------------------------------------
+Start : PayServiceImpl - projectMemberCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 00:14:54 [INFO] Return Value : 5
+2023-06-24 00:14:54 [INFO] Running Time : 38ms
+2023-06-24 00:14:54 [INFO] End : PayServiceImpl - projectMemberCount
+---------------------------------------------
+
+2023-06-24 00:14:54 [DEBUG] workspaceCount4
+2023-06-24 00:14:54 [DEBUG] projectMemberCount5
+2023-06-24 00:14:54 [INFO] ---------------------------------------
+Start : PayServiceImpl - paymentType
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 00:14:54 [INFO] Return Value : Pay(payNo=230623203921910, projectNo=1, payType=Basic, payRegDate=2023-06-23, payName=김자바, memberNo=999, price=890, impUid=imp_074363358785, expireDate=2023-07-23, expireType=Standard)
+2023-06-24 00:14:54 [INFO] Running Time : 84ms
+2023-06-24 00:14:54 [INFO] End : PayServiceImpl - paymentType
+---------------------------------------------
+
+2023-06-24 00:14:54 [DEBUG] paymentTypePay(payNo=230623203921910, projectNo=1, payType=Basic, payRegDate=2023-06-23, payName=김자바, memberNo=999, price=890, impUid=imp_074363358785, expireDate=2023-07-23, expireType=Standard)
+2023-06-24 00:15:32 [INFO] ---------------------------------------
+Start : PayServiceImpl - getToken
+Parameter : []
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 00:15:33 [ERROR] <<exception>> : java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1913) - Server returned HTTP response code: 401 for URL: https://api.iamport.kr/users/getToken
+
+2023-06-24 00:15:33 [INFO] End : PayServiceImpl - getToken
+---------------------------------------------
+
+2023-06-24 00:16:40 [INFO] 초기화 필터 파괴
+2023-06-24 00:46:22 [INFO] 초기화 필터 생성
+2023-06-24 00:46:31 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-24 00:46:34 [DEBUG] password999! / $2a$10$EcuEg/cuW/nIUFmkIJ8zwuHV8rOD4J9JDUQvGQTt9BAw.u/jHxtq.
+2023-06-24 00:46:34 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230623204046_81311.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-24 00:46:34 [INFO] Running Time : 3377ms
+2023-06-24 00:46:34 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-24 00:46:34 [INFO] 구구맨 로그인 성공
+2023-06-24 00:46:39 [INFO] ---------------------------------------
+Start : PayServiceImpl - workspaceCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 00:46:39 [INFO] Return Value : 4
+2023-06-24 00:46:39 [INFO] Running Time : 107ms
+2023-06-24 00:46:39 [INFO] End : PayServiceImpl - workspaceCount
+---------------------------------------------
+
+2023-06-24 00:46:39 [INFO] ---------------------------------------
+Start : PayServiceImpl - projectMemberCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 00:46:39 [INFO] Return Value : 5
+2023-06-24 00:46:39 [INFO] Running Time : 50ms
+2023-06-24 00:46:39 [INFO] End : PayServiceImpl - projectMemberCount
+---------------------------------------------
+
+2023-06-24 00:46:39 [DEBUG] workspaceCount4
+2023-06-24 00:46:39 [DEBUG] projectMemberCount5
+2023-06-24 00:46:39 [INFO] ---------------------------------------
+Start : PayServiceImpl - paymentType
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 00:46:39 [INFO] Return Value : Pay(payNo=230623203921910, projectNo=1, payType=Basic, payRegDate=2023-06-23, payName=김자바, memberNo=999, price=890, impUid=imp_074363358785, expireDate=2023-07-23, expireType=Standard)
+2023-06-24 00:46:39 [INFO] Running Time : 76ms
+2023-06-24 00:46:39 [INFO] End : PayServiceImpl - paymentType
+---------------------------------------------
+
+2023-06-24 00:46:39 [DEBUG] paymentTypePay(payNo=230623203921910, projectNo=1, payType=Basic, payRegDate=2023-06-23, payName=김자바, memberNo=999, price=890, impUid=imp_074363358785, expireDate=2023-07-23, expireType=Standard)
+2023-06-24 00:54:54 [INFO] 초기화 필터 파괴
+2023-06-24 00:57:15 [INFO] 초기화 필터 생성
+2023-06-24 00:57:33 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-24 00:57:37 [DEBUG] password999! / $2a$10$6Wc.H3xH.f1XupMmrvgpQuClye1yNeWqEbJxLx53YB2fkgD31Idiy
+2023-06-24 00:57:37 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230623204046_81311.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-24 00:57:37 [INFO] Running Time : 3444ms
+2023-06-24 00:57:37 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-24 00:57:37 [INFO] 구구맨 로그인 성공
+2023-06-24 00:57:41 [INFO] ---------------------------------------
+Start : PayServiceImpl - workspaceCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 00:57:42 [INFO] Return Value : 4
+2023-06-24 00:57:42 [INFO] Running Time : 102ms
+2023-06-24 00:57:42 [INFO] End : PayServiceImpl - workspaceCount
+---------------------------------------------
+
+2023-06-24 00:57:42 [INFO] ---------------------------------------
+Start : PayServiceImpl - projectMemberCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 00:57:42 [INFO] Return Value : 5
+2023-06-24 00:57:42 [INFO] Running Time : 38ms
+2023-06-24 00:57:42 [INFO] End : PayServiceImpl - projectMemberCount
+---------------------------------------------
+
+2023-06-24 00:57:42 [DEBUG] workspaceCount4
+2023-06-24 00:57:42 [DEBUG] projectMemberCount5
+2023-06-24 00:57:42 [INFO] ---------------------------------------
+Start : PayServiceImpl - paymentType
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 00:57:42 [INFO] Return Value : Pay(payNo=230623203921910, projectNo=1, payType=Basic, payRegDate=2023-06-23, payName=김자바, memberNo=999, price=890, impUid=imp_074363358785, expireDate=2023-07-23, expireType=Standard)
+2023-06-24 00:57:42 [INFO] Running Time : 72ms
+2023-06-24 00:57:42 [INFO] End : PayServiceImpl - paymentType
+---------------------------------------------
+
+2023-06-24 00:57:42 [DEBUG] paymentTypePay(payNo=230623203921910, projectNo=1, payType=Basic, payRegDate=2023-06-23, payName=김자바, memberNo=999, price=890, impUid=imp_074363358785, expireDate=2023-07-23, expireType=Standard)
+2023-06-24 01:01:56 [INFO] 초기화 필터 파괴
+2023-06-24 01:25:27 [INFO] 초기화 필터 생성
+2023-06-24 01:25:36 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-24 01:25:39 [DEBUG] password999! / $2a$10$gpMociKexybUtiq48ASareUsBDSaH8tXcALOtCzLQeWXntCIVBmlW
+2023-06-24 01:25:39 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-24 01:25:39 [INFO] Running Time : 3408ms
+2023-06-24 01:25:39 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-24 01:25:39 [INFO] 일일맨 로그인 성공
+2023-06-24 01:25:44 [INFO] ---------------------------------------
+Start : PayServiceImpl - workspaceCount
+Parameter : [1]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 01:25:44 [INFO] Return Value : 4
+2023-06-24 01:25:44 [INFO] Running Time : 94ms
+2023-06-24 01:25:44 [INFO] End : PayServiceImpl - workspaceCount
+---------------------------------------------
+
+2023-06-24 01:25:44 [INFO] ---------------------------------------
+Start : PayServiceImpl - projectMemberCount
+Parameter : [1]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 01:25:44 [INFO] Return Value : 5
+2023-06-24 01:25:44 [INFO] Running Time : 38ms
+2023-06-24 01:25:44 [INFO] End : PayServiceImpl - projectMemberCount
+---------------------------------------------
+
+2023-06-24 01:25:44 [DEBUG] workspaceCount4
+2023-06-24 01:25:44 [DEBUG] projectMemberCount5
+2023-06-24 01:25:44 [INFO] ---------------------------------------
+Start : PayServiceImpl - paymentType
+Parameter : [1]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 01:25:44 [INFO] Return Value : Pay(payNo=230623203921910, projectNo=1, payType=Basic, payRegDate=2023-06-23, payName=김자바, memberNo=999, price=890, impUid=imp_074363358785, expireDate=2023-07-23, expireType=Standard)
+2023-06-24 01:25:44 [INFO] Running Time : 73ms
+2023-06-24 01:25:44 [INFO] End : PayServiceImpl - paymentType
+---------------------------------------------
+
+2023-06-24 01:25:44 [DEBUG] paymentTypePay(payNo=230623203921910, projectNo=1, payType=Basic, payRegDate=2023-06-23, payName=김자바, memberNo=999, price=890, impUid=imp_074363358785, expireDate=2023-07-23, expireType=Standard)
+2023-06-24 01:26:31 [INFO] ---------------------------------------
+Start : PayServiceImpl - getToken
+Parameter : []
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 01:26:31 [INFO] Return Value : b1cedc9644289ffe1b19e26c932b4312c4df88c2
+2023-06-24 01:26:31 [INFO] Running Time : 148ms
+2023-06-24 01:26:31 [INFO] End : PayServiceImpl - getToken
+---------------------------------------------
+
+2023-06-24 01:26:31 [DEBUG] b1cedc9644289ffe1b19e26c932b4312c4df88c2
+2023-06-24 01:26:31 [DEBUG] 결제 정보Pay(payNo=230624012605985, projectNo=1, payType=Standard, payRegDate=null, payName=일일맨, memberNo=1, price=890, impUid=imp_919567179596, expireDate=null, expireType=null)
+2023-06-24 01:26:31 [DEBUG] 주문번호230624012605985
+2023-06-24 01:26:31 [DEBUG] 프로젝트번호1
+2023-06-24 01:26:31 [DEBUG] 결제타입Standard
+2023-06-24 01:26:31 [DEBUG] 결제자일일맨
+2023-06-24 01:26:31 [DEBUG] 회원번호1
+2023-06-24 01:26:31 [DEBUG] 가격890
+2023-06-24 01:26:31 [DEBUG] 거래 고유번호imp_919567179596
+2023-06-24 01:26:31 [INFO] ---------------------------------------
+Start : PayServiceImpl - paymentInfo
+Parameter : [imp_919567179596, b1cedc9644289ffe1b19e26c932b4312c4df88c2]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 01:26:31 [INFO] Return Value : 890
+2023-06-24 01:26:31 [INFO] Running Time : 53ms
+2023-06-24 01:26:31 [INFO] End : PayServiceImpl - paymentInfo
+---------------------------------------------
+
+2023-06-24 01:26:31 [DEBUG] 토큰값으로 결제 금액 확인 : 890
+2023-06-24 01:26:31 [INFO] ---------------------------------------
+Start : PayServiceImpl - insertPay
+Parameter : [Pay(payNo=230624012605985, projectNo=1, payType=Standard, payRegDate=null, payName=일일맨, memberNo=1, price=890, impUid=imp_919567179596, expireDate=null, expireType=null)]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 01:26:31 [INFO] Return Value : 1
+2023-06-24 01:26:31 [INFO] Running Time : 47ms
+2023-06-24 01:26:31 [INFO] End : PayServiceImpl - insertPay
+---------------------------------------------
+
+2023-06-24 01:26:32 [INFO] ---------------------------------------
+Start : PayServiceImpl - paymentType
+Parameter : [1]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 01:26:32 [INFO] Return Value : Pay(payNo=230624012605985, projectNo=1, payType=Standard, payRegDate=2023-06-24, payName=일일맨, memberNo=1, price=890, impUid=imp_919567179596, expireDate=2023-07-24, expireType=Standard)
+2023-06-24 01:26:32 [INFO] Running Time : 46ms
+2023-06-24 01:26:32 [INFO] End : PayServiceImpl - paymentType
+---------------------------------------------
+
+2023-06-24 01:26:45 [INFO] ---------------------------------------
+Start : PayServiceImpl - payList
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 01:26:45 [INFO] Return Value : [Pay(payNo=230624012605985, projectNo=0, payType=Standard, payRegDate=2023-06-24, payName=일일맨, memberNo=0, price=890, impUid=null, expireDate=2023-07-24, expireType=Standard), Pay(payNo=230622225633941, projectNo=0, payType=Basic, payRegDate=2023-06-22, payName=일일맨, memberNo=0, price=890, impUid=null, expireDate=2023-07-22, expireType=Standard)]
+2023-06-24 01:26:45 [INFO] Running Time : 78ms
+2023-06-24 01:26:45 [INFO] End : PayServiceImpl - payList
+---------------------------------------------
+
+2023-06-24 01:27:57 [INFO] 초기화 필터 파괴
+2023-06-24 12:16:15 [INFO] 초기화 필터 생성
+2023-06-24 12:16:25 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-24 12:16:28 [DEBUG] password999! / $2a$10$DuMK5JGo2RdTYD/OVTynh.XFwg87IvGXjrK8gLxTdKOHmkUJJ1yNa
+2023-06-24 12:16:28 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230623204046_81311.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-24 12:16:28 [INFO] Running Time : 3723ms
+2023-06-24 12:16:28 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-24 12:16:28 [INFO] 구구맨 로그인 성공
+2023-06-24 12:16:34 [INFO] ---------------------------------------
+Start : PayServiceImpl - workspaceCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:16:34 [INFO] Return Value : 4
+2023-06-24 12:16:34 [INFO] Running Time : 123ms
+2023-06-24 12:16:34 [INFO] End : PayServiceImpl - workspaceCount
+---------------------------------------------
+
+2023-06-24 12:16:34 [INFO] ---------------------------------------
+Start : PayServiceImpl - projectMemberCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:16:34 [INFO] Return Value : 5
+2023-06-24 12:16:34 [INFO] Running Time : 58ms
+2023-06-24 12:16:34 [INFO] End : PayServiceImpl - projectMemberCount
+---------------------------------------------
+
+2023-06-24 12:16:34 [DEBUG] workspaceCount4
+2023-06-24 12:16:34 [DEBUG] projectMemberCount5
+2023-06-24 12:16:34 [INFO] ---------------------------------------
+Start : PayServiceImpl - paymentType
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:16:34 [INFO] Return Value : Pay(payNo=230624012605985, projectNo=1, payType=Standard, payRegDate=2023-06-24, payName=일일맨, memberNo=1, price=890, impUid=imp_919567179596, expireDate=2023-07-24, expireType=Standard)
+2023-06-24 12:16:34 [INFO] Running Time : 82ms
+2023-06-24 12:16:34 [INFO] End : PayServiceImpl - paymentType
+---------------------------------------------
+
+2023-06-24 12:16:34 [DEBUG] paymentTypePay(payNo=230624012605985, projectNo=1, payType=Standard, payRegDate=2023-06-24, payName=일일맨, memberNo=1, price=890, impUid=imp_919567179596, expireDate=2023-07-24, expireType=Standard)
+2023-06-24 12:16:39 [INFO] ---------------------------------------
+Start : PayServiceImpl - workspaceCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:16:39 [INFO] Return Value : 4
+2023-06-24 12:16:39 [INFO] Running Time : 58ms
+2023-06-24 12:16:39 [INFO] End : PayServiceImpl - workspaceCount
+---------------------------------------------
+
+2023-06-24 12:16:39 [INFO] ---------------------------------------
+Start : PayServiceImpl - projectMemberCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:16:39 [INFO] Return Value : 5
+2023-06-24 12:16:39 [INFO] Running Time : 44ms
+2023-06-24 12:16:39 [INFO] End : PayServiceImpl - projectMemberCount
+---------------------------------------------
+
+2023-06-24 12:16:39 [DEBUG] workspaceCount4
+2023-06-24 12:16:39 [DEBUG] projectMemberCount5
+2023-06-24 12:16:39 [INFO] ---------------------------------------
+Start : PayServiceImpl - paymentType
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:16:39 [INFO] Return Value : Pay(payNo=230624012605985, projectNo=1, payType=Standard, payRegDate=2023-06-24, payName=일일맨, memberNo=1, price=890, impUid=imp_919567179596, expireDate=2023-07-24, expireType=Standard)
+2023-06-24 12:16:39 [INFO] Running Time : 50ms
+2023-06-24 12:16:39 [INFO] End : PayServiceImpl - paymentType
+---------------------------------------------
+
+2023-06-24 12:16:39 [DEBUG] paymentTypePay(payNo=230624012605985, projectNo=1, payType=Standard, payRegDate=2023-06-24, payName=일일맨, memberNo=1, price=890, impUid=imp_919567179596, expireDate=2023-07-24, expireType=Standard)
+2023-06-24 12:16:45 [INFO] ---------------------------------------
+Start : PayServiceImpl - payList
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:16:45 [INFO] Return Value : [Pay(payNo=230623203921910, projectNo=0, payType=Basic, payRegDate=2023-06-23, payName=김자바, memberNo=0, price=890, impUid=null, expireDate=2023-07-23, expireType=Standard), Pay(payNo=230623074031256, projectNo=0, payType=Basic, payRegDate=2023-06-23, payName=구구맨, memberNo=0, price=1290, impUid=null, expireDate=2023-07-23, expireType=Pro), Pay(payNo=230420141942470, projectNo=0, payType=Basic, payRegDate=2023-06-22, payName=김자바, memberNo=0, price=890, impUid=null, expireDate=2023-07-22, expireType=Standard)]
+2023-06-24 12:16:45 [INFO] Running Time : 75ms
+2023-06-24 12:16:45 [INFO] End : PayServiceImpl - payList
+---------------------------------------------
+
+2023-06-24 12:17:06 [INFO] ---------------------------------------
+Start : PayServiceImpl - workspaceCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:17:06 [INFO] Return Value : 4
+2023-06-24 12:17:06 [INFO] Running Time : 77ms
+2023-06-24 12:17:06 [INFO] End : PayServiceImpl - workspaceCount
+---------------------------------------------
+
+2023-06-24 12:17:06 [INFO] ---------------------------------------
+Start : PayServiceImpl - projectMemberCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:17:06 [INFO] Return Value : 5
+2023-06-24 12:17:06 [INFO] Running Time : 44ms
+2023-06-24 12:17:06 [INFO] End : PayServiceImpl - projectMemberCount
+---------------------------------------------
+
+2023-06-24 12:17:06 [DEBUG] workspaceCount4
+2023-06-24 12:17:06 [DEBUG] projectMemberCount5
+2023-06-24 12:17:06 [INFO] ---------------------------------------
+Start : PayServiceImpl - paymentType
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:17:06 [INFO] Return Value : Pay(payNo=230624012605985, projectNo=1, payType=Standard, payRegDate=2023-06-24, payName=일일맨, memberNo=1, price=890, impUid=imp_919567179596, expireDate=2023-07-24, expireType=Standard)
+2023-06-24 12:17:06 [INFO] Running Time : 52ms
+2023-06-24 12:17:06 [INFO] End : PayServiceImpl - paymentType
+---------------------------------------------
+
+2023-06-24 12:17:06 [DEBUG] paymentTypePay(payNo=230624012605985, projectNo=1, payType=Standard, payRegDate=2023-06-24, payName=일일맨, memberNo=1, price=890, impUid=imp_919567179596, expireDate=2023-07-24, expireType=Standard)
+2023-06-24 12:17:09 [INFO] ---------------------------------------
+Start : PayServiceImpl - workspaceCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:17:09 [INFO] Return Value : 4
+2023-06-24 12:17:09 [INFO] Running Time : 70ms
+2023-06-24 12:17:09 [INFO] End : PayServiceImpl - workspaceCount
+---------------------------------------------
+
+2023-06-24 12:17:09 [INFO] ---------------------------------------
+Start : PayServiceImpl - projectMemberCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:17:09 [INFO] Return Value : 5
+2023-06-24 12:17:09 [INFO] Running Time : 38ms
+2023-06-24 12:17:09 [INFO] End : PayServiceImpl - projectMemberCount
+---------------------------------------------
+
+2023-06-24 12:17:09 [DEBUG] workspaceCount4
+2023-06-24 12:17:09 [DEBUG] projectMemberCount5
+2023-06-24 12:17:09 [INFO] ---------------------------------------
+Start : PayServiceImpl - paymentType
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:17:09 [INFO] Return Value : Pay(payNo=230624012605985, projectNo=1, payType=Standard, payRegDate=2023-06-24, payName=일일맨, memberNo=1, price=890, impUid=imp_919567179596, expireDate=2023-07-24, expireType=Standard)
+2023-06-24 12:17:09 [INFO] Running Time : 39ms
+2023-06-24 12:17:09 [INFO] End : PayServiceImpl - paymentType
+---------------------------------------------
+
+2023-06-24 12:17:09 [DEBUG] paymentTypePay(payNo=230624012605985, projectNo=1, payType=Standard, payRegDate=2023-06-24, payName=일일맨, memberNo=1, price=890, impUid=imp_919567179596, expireDate=2023-07-24, expireType=Standard)
+2023-06-24 12:24:46 [INFO] 초기화 필터 파괴
+2023-06-24 12:25:09 [INFO] 초기화 필터 생성
+2023-06-24 12:25:19 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-24 12:25:23 [DEBUG] password999! / $2a$10$htjeM9GhuvdFCwSrcHU..eub9Kyrm16/V/2irksaA3eSRHe3CzwD2
+2023-06-24 12:25:23 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230623204046_81311.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-24 12:25:23 [INFO] Running Time : 3891ms
+2023-06-24 12:25:23 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-24 12:25:23 [INFO] 구구맨 로그인 성공
+2023-06-24 12:25:28 [INFO] ---------------------------------------
+Start : PayServiceImpl - workspaceCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:25:28 [INFO] Return Value : 4
+2023-06-24 12:25:28 [INFO] Running Time : 97ms
+2023-06-24 12:25:28 [INFO] End : PayServiceImpl - workspaceCount
+---------------------------------------------
+
+2023-06-24 12:25:28 [INFO] ---------------------------------------
+Start : PayServiceImpl - projectMemberCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:25:28 [INFO] Return Value : 5
+2023-06-24 12:25:28 [INFO] Running Time : 39ms
+2023-06-24 12:25:28 [INFO] End : PayServiceImpl - projectMemberCount
+---------------------------------------------
+
+2023-06-24 12:25:28 [DEBUG] workspaceCount4
+2023-06-24 12:25:28 [DEBUG] projectMemberCount5
+2023-06-24 12:25:28 [INFO] ---------------------------------------
+Start : PayServiceImpl - paymentType
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:25:28 [INFO] Return Value : Pay(payNo=230624012605985, projectNo=1, payType=Standard, payRegDate=2023-06-24, payName=일일맨, memberNo=1, price=890, impUid=imp_919567179596, expireDate=2023-07-24, expireType=Standard)
+2023-06-24 12:25:28 [INFO] Running Time : 71ms
+2023-06-24 12:25:28 [INFO] End : PayServiceImpl - paymentType
+---------------------------------------------
+
+2023-06-24 12:25:28 [DEBUG] paymentTypePay(payNo=230624012605985, projectNo=1, payType=Standard, payRegDate=2023-06-24, payName=일일맨, memberNo=1, price=890, impUid=imp_919567179596, expireDate=2023-07-24, expireType=Standard)
+2023-06-24 12:28:26 [INFO] 초기화 필터 파괴
+2023-06-24 12:29:08 [INFO] 초기화 필터 생성
+2023-06-24 12:30:10 [INFO] 초기화 필터 파괴
+2023-06-24 12:31:56 [INFO] 초기화 필터 생성
+2023-06-24 12:32:06 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-24 12:32:09 [DEBUG] password999! / $2a$10$Hv2hZH8VZX2YOhg/B7hCs./7zICJ54XcTWLvdDEGK58y5Ju0qfFSq
+2023-06-24 12:32:09 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230623204046_81311.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-24 12:32:09 [INFO] Running Time : 3621ms
+2023-06-24 12:32:09 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-24 12:32:09 [INFO] 구구맨 로그인 성공
+2023-06-24 12:32:15 [INFO] ---------------------------------------
+Start : PayServiceImpl - workspaceCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:32:15 [INFO] Return Value : 4
+2023-06-24 12:32:15 [INFO] Running Time : 92ms
+2023-06-24 12:32:15 [INFO] End : PayServiceImpl - workspaceCount
+---------------------------------------------
+
+2023-06-24 12:32:15 [INFO] ---------------------------------------
+Start : PayServiceImpl - projectMemberCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:32:15 [INFO] Return Value : 5
+2023-06-24 12:32:15 [INFO] Running Time : 37ms
+2023-06-24 12:32:15 [INFO] End : PayServiceImpl - projectMemberCount
+---------------------------------------------
+
+2023-06-24 12:32:15 [DEBUG] workspaceCount4
+2023-06-24 12:32:15 [DEBUG] projectMemberCount5
+2023-06-24 12:32:15 [INFO] ---------------------------------------
+Start : PayServiceImpl - paymentType
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:32:15 [INFO] Return Value : Pay(payNo=230624012605985, projectNo=1, payType=Standard, payRegDate=2023-06-24, payName=일일맨, memberNo=1, price=890, impUid=imp_919567179596, expireDate=2023-07-24, expireType=Standard)
+2023-06-24 12:32:15 [INFO] Running Time : 77ms
+2023-06-24 12:32:15 [INFO] End : PayServiceImpl - paymentType
+---------------------------------------------
+
+2023-06-24 12:32:15 [DEBUG] paymentTypePay(payNo=230624012605985, projectNo=1, payType=Standard, payRegDate=2023-06-24, payName=일일맨, memberNo=1, price=890, impUid=imp_919567179596, expireDate=2023-07-24, expireType=Standard)
+2023-06-24 12:34:26 [INFO] 초기화 필터 파괴
+2023-06-24 12:35:15 [INFO] 초기화 필터 생성
+2023-06-24 12:37:27 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-24 12:37:31 [DEBUG] password999! / $2a$10$Wjp2stJxECFKuT8eCMCfyeQoOEfdhx6rpzi.aFXDb24Ah.Tay5b8C
+2023-06-24 12:37:31 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230623204046_81311.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-24 12:37:31 [INFO] Running Time : 3756ms
+2023-06-24 12:37:31 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-24 12:37:31 [INFO] 구구맨 로그인 성공
+2023-06-24 12:37:37 [INFO] ---------------------------------------
+Start : PayServiceImpl - workspaceCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:37:37 [INFO] Return Value : 4
+2023-06-24 12:37:37 [INFO] Running Time : 84ms
+2023-06-24 12:37:37 [INFO] End : PayServiceImpl - workspaceCount
+---------------------------------------------
+
+2023-06-24 12:37:37 [INFO] ---------------------------------------
+Start : PayServiceImpl - projectMemberCount
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:37:37 [INFO] Return Value : 5
+2023-06-24 12:37:37 [INFO] Running Time : 41ms
+2023-06-24 12:37:37 [INFO] End : PayServiceImpl - projectMemberCount
+---------------------------------------------
+
+2023-06-24 12:37:37 [DEBUG] workspaceCount4
+2023-06-24 12:37:37 [DEBUG] projectMemberCount5
+2023-06-24 12:37:37 [INFO] ---------------------------------------
+Start : PayServiceImpl - paymentType
+Parameter : [1]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-24 12:37:37 [INFO] Return Value : Pay(payNo=230624012605985, projectNo=1, payType=Standard, payRegDate=2023-06-24, payName=일일맨, memberNo=1, price=890, impUid=imp_919567179596, expireDate=2023-07-24, expireType=Standard)
+2023-06-24 12:37:37 [INFO] Running Time : 80ms
+2023-06-24 12:37:37 [INFO] End : PayServiceImpl - paymentType
+---------------------------------------------
+
+2023-06-24 12:37:37 [DEBUG] paymentTypePay(payNo=230624012605985, projectNo=1, payType=Standard, payRegDate=2023-06-24, payName=일일맨, memberNo=1, price=890, impUid=imp_919567179596, expireDate=2023-07-24, expireType=Standard)
+2023-06-24 12:55:21 [INFO] 초기화 필터 파괴
+2023-06-24 12:55:34 [INFO] 초기화 필터 생성
+2023-06-24 12:55:43 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-24 12:55:46 [DEBUG] password999! / $2a$10$4bxWxPT4yhnC/B4rNDDv6eYpwMPULhIHHX2rtgtnTgcCo8vbupmSq
+2023-06-24 12:55:46 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230623204046_81311.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-24 12:55:46 [INFO] Running Time : 3666ms
+2023-06-24 12:55:46 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-24 12:55:46 [INFO] 구구맨 로그인 성공
+2023-06-24 12:55:53 [DEBUG] 깃 로드맵1
+2023-06-24 12:56:34 [DEBUG] 깃 로드맵1
+2023-06-24 12:57:54 [DEBUG] 깃 로드맵1
+2023-06-24 12:59:08 [DEBUG] 깃 로드맵1
+2023-06-24 12:59:20 [DEBUG] 깃 로드맵1
+2023-06-24 12:59:31 [DEBUG] 깃 로드맵1
+2023-06-24 12:59:55 [DEBUG] 깃 로드맵1
+2023-06-24 13:00:06 [DEBUG] 깃 로드맵1
+2023-06-24 13:00:08 [DEBUG] 깃 로드맵1
+2023-06-24 13:00:56 [DEBUG] 깃 로드맵1
+2023-06-24 13:00:57 [DEBUG] 깃 로드맵1
+2023-06-24 13:01:27 [DEBUG] 깃 로드맵1
+2023-06-24 13:01:28 [DEBUG] 깃 로드맵1
+2023-06-24 13:01:43 [DEBUG] 깃 로드맵1
+2023-06-24 13:01:57 [DEBUG] 깃 로드맵1
+2023-06-24 13:02:27 [DEBUG] 깃 로드맵1
+2023-06-24 13:02:28 [DEBUG] 깃 로드맵1
+2023-06-24 13:03:38 [DEBUG] 깃 로드맵1
+2023-06-24 13:03:40 [DEBUG] 깃 로드맵1
+2023-06-24 13:03:52 [DEBUG] 깃 로드맵1
+2023-06-24 13:04:00 [DEBUG] 깃 로드맵1
+2023-06-24 13:04:13 [DEBUG] 깃 로드맵1
+2023-06-24 13:05:49 [DEBUG] 깃 로드맵1
+2023-06-24 13:06:10 [DEBUG] 깃 로드맵1
+2023-06-24 13:06:34 [DEBUG] 깃 로드맵1
+2023-06-24 13:07:48 [DEBUG] 깃 로드맵1
+2023-06-24 13:07:51 [DEBUG] 깃 로드맵1
+2023-06-24 13:07:57 [DEBUG] 깃 로드맵1
+2023-06-24 13:07:58 [DEBUG] 깃 로드맵1
+2023-06-24 13:08:29 [DEBUG] 깃 로드맵1
+2023-06-24 13:08:31 [DEBUG] 깃 로드맵1
+2023-06-24 13:08:40 [DEBUG] 깃 로드맵1
+2023-06-24 13:09:05 [DEBUG] 깃 로드맵1
+2023-06-24 13:09:06 [DEBUG] 깃 로드맵1
+2023-06-24 13:09:15 [DEBUG] 깃 로드맵1
+2023-06-24 13:09:27 [DEBUG] 깃 로드맵1
+2023-06-24 13:09:46 [DEBUG] 깃 로드맵1
+2023-06-24 13:10:03 [DEBUG] 깃 로드맵1
+2023-06-24 13:10:25 [DEBUG] 깃 로드맵1
+2023-06-24 13:10:35 [DEBUG] 깃 로드맵1
+2023-06-24 13:11:04 [DEBUG] 깃 로드맵1
+2023-06-24 13:11:06 [INFO] 로그아웃 수행됨
+2023-06-24 13:11:10 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-24 13:11:10 [DEBUG] password999! / $2a$10$O4NqGuTB6PKyevS0uoE0buL9fehofZyEYxHlMedP09kaJr.V59Qx6
+2023-06-24 13:11:10 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-24 13:11:10 [INFO] Running Time : 235ms
+2023-06-24 13:11:10 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-24 13:11:10 [INFO] 일일맨 로그인 성공
+2023-06-24 13:11:14 [INFO] ---------------------------------------
+Start : PayServiceImpl - workspaceCount
+Parameter : [1]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:11:14 [INFO] Return Value : 4
+2023-06-24 13:11:14 [INFO] Running Time : 91ms
+2023-06-24 13:11:14 [INFO] End : PayServiceImpl - workspaceCount
+---------------------------------------------
+
+2023-06-24 13:11:14 [INFO] ---------------------------------------
+Start : PayServiceImpl - projectMemberCount
+Parameter : [1]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:11:14 [INFO] Return Value : 5
+2023-06-24 13:11:14 [INFO] Running Time : 36ms
+2023-06-24 13:11:14 [INFO] End : PayServiceImpl - projectMemberCount
+---------------------------------------------
+
+2023-06-24 13:11:14 [DEBUG] workspaceCount4
+2023-06-24 13:11:14 [DEBUG] projectMemberCount5
+2023-06-24 13:11:14 [INFO] ---------------------------------------
+Start : PayServiceImpl - paymentType
+Parameter : [1]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:11:14 [INFO] Return Value : Pay(payNo=230624012605985, projectNo=1, payType=Standard, payRegDate=2023-06-24, payName=일일맨, memberNo=1, price=890, impUid=imp_919567179596, expireDate=2023-07-24, expireType=Standard)
+2023-06-24 13:11:14 [INFO] Running Time : 75ms
+2023-06-24 13:11:14 [INFO] End : PayServiceImpl - paymentType
+---------------------------------------------
+
+2023-06-24 13:11:14 [DEBUG] paymentTypePay(payNo=230624012605985, projectNo=1, payType=Standard, payRegDate=2023-06-24, payName=일일맨, memberNo=1, price=890, impUid=imp_919567179596, expireDate=2023-07-24, expireType=Standard)
+2023-06-24 13:11:52 [INFO] ---------------------------------------
+Start : PayServiceImpl - getToken
+Parameter : []
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:11:52 [INFO] Return Value : e459f98313cc84ab33ec942d17a7ad3c41ec78a3
+2023-06-24 13:11:52 [INFO] Running Time : 162ms
+2023-06-24 13:11:52 [INFO] End : PayServiceImpl - getToken
+---------------------------------------------
+
+2023-06-24 13:11:52 [DEBUG] e459f98313cc84ab33ec942d17a7ad3c41ec78a3
+2023-06-24 13:11:52 [DEBUG] 결제 정보Pay(payNo=230624131122320, projectNo=1, payType=Pro, payRegDate=null, payName=일일맨, memberNo=1, price=1290, impUid=imp_911882698171, expireDate=null, expireType=null)
+2023-06-24 13:11:52 [DEBUG] 주문번호230624131122320
+2023-06-24 13:11:52 [DEBUG] 프로젝트번호1
+2023-06-24 13:11:52 [DEBUG] 결제타입Pro
+2023-06-24 13:11:52 [DEBUG] 결제자일일맨
+2023-06-24 13:11:52 [DEBUG] 회원번호1
+2023-06-24 13:11:52 [DEBUG] 가격1290
+2023-06-24 13:11:52 [DEBUG] 거래 고유번호imp_911882698171
+2023-06-24 13:11:52 [INFO] ---------------------------------------
+Start : PayServiceImpl - paymentInfo
+Parameter : [imp_911882698171, e459f98313cc84ab33ec942d17a7ad3c41ec78a3]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:11:52 [INFO] Return Value : 1290
+2023-06-24 13:11:52 [INFO] Running Time : 59ms
+2023-06-24 13:11:52 [INFO] End : PayServiceImpl - paymentInfo
+---------------------------------------------
+
+2023-06-24 13:11:52 [DEBUG] 토큰값으로 결제 금액 확인 : 1290
+2023-06-24 13:11:52 [INFO] ---------------------------------------
+Start : PayServiceImpl - insertPay
+Parameter : [Pay(payNo=230624131122320, projectNo=1, payType=Pro, payRegDate=null, payName=일일맨, memberNo=1, price=1290, impUid=imp_911882698171, expireDate=null, expireType=null)]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:11:52 [INFO] Return Value : 1
+2023-06-24 13:11:52 [INFO] Running Time : 103ms
+2023-06-24 13:11:52 [INFO] End : PayServiceImpl - insertPay
+---------------------------------------------
+
+2023-06-24 13:11:53 [INFO] ---------------------------------------
+Start : PayServiceImpl - paymentType
+Parameter : [1]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:11:53 [INFO] Return Value : Pay(payNo=230624131122320, projectNo=1, payType=Pro, payRegDate=2023-06-24, payName=일일맨, memberNo=1, price=1290, impUid=imp_911882698171, expireDate=2023-07-24, expireType=Pro)
+2023-06-24 13:11:53 [INFO] Running Time : 57ms
+2023-06-24 13:11:53 [INFO] End : PayServiceImpl - paymentType
+---------------------------------------------
+
+2023-06-24 13:12:07 [INFO] ---------------------------------------
+Start : PayServiceImpl - payList
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:12:07 [INFO] Return Value : [Pay(payNo=230624131122320, projectNo=0, payType=Pro, payRegDate=2023-06-24, payName=일일맨, memberNo=0, price=1290, impUid=null, expireDate=2023-07-24, expireType=Pro), Pay(payNo=230624012605985, projectNo=0, payType=Standard, payRegDate=2023-06-24, payName=일일맨, memberNo=0, price=890, impUid=null, expireDate=2023-07-24, expireType=Standard), Pay(payNo=230622225633941, projectNo=0, payType=Basic, payRegDate=2023-06-22, payName=일일맨, memberNo=0, price=890, impUid=null, expireDate=2023-07-22, expireType=Standard)]
+2023-06-24 13:12:07 [INFO] Running Time : 72ms
+2023-06-24 13:12:07 [INFO] End : PayServiceImpl - payList
+---------------------------------------------
+
+2023-06-24 13:12:18 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:12:19 [INFO] Return Value : 4
+2023-06-24 13:12:19 [INFO] Running Time : 53ms
+2023-06-24 13:12:19 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-24 13:12:19 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=9, pmNo=4}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:12:19 [INFO] Return Value : [Calendar(calNo=2, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=일정정정, calContent=내용1일정정정, calColor=#dd4124, calRegDate=2023-06-20, startDate=2023-06-12, endDate=2023-06-22, calSt=null), Calendar(calNo=4, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=결제시스템aaㅁㅁ, calContent=aaㅁㅁ, calColor=#BB2649, calRegDate=2023-06-20, startDate=2023-06-02, endDate=2023-06-08, calSt=null), Calendar(calNo=8, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=주말 일정, calContent=놀러가자, calColor=#dd4124, calRegDate=2023-06-18, startDate=2023-06-01, endDate=2023-06-04, calSt=null), Calendar(calNo=10, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목 11, calContent=내용11, calColor=#6667AB, calRegDate=2023-06-18, startDate=2023-06-26, endDate=2023-06-29, calSt=null), Calendar(calNo=12, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=프로젝, calContent=야근 각...dd, calColor=#0f4c81, calRegDate=2023-06-21, startDate=2023-06-05, endDate=2023-06-08, calSt=null), Calendar(calNo=23, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=프로젝트, calContent=완성 삽 가능, calColor=#6667AB, calRegDate=2023-06-23, startDate=2023-06-07, endDate=2023-06-27, calSt=null), Calendar(calNo=26, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=테스트, calContent=테스트, calColor=#6667AB, calRegDate=2023-06-22, startDate=2023-06-02, endDate=2023-06-14, calSt=null)]
+2023-06-24 13:12:19 [INFO] Running Time : 141ms
+2023-06-24 13:12:19 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-24 13:12:19 [DEBUG] 1페이지 이동
+2023-06-24 13:12:19 [DEBUG] 1데이터가져오기 컨트롤러 전
+2023-06-24 13:12:19 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:12:19 [INFO] Return Value : 4
+2023-06-24 13:12:19 [INFO] Running Time : 46ms
+2023-06-24 13:12:19 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-24 13:12:19 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=9, pmNo=4}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:12:19 [INFO] Return Value : [Calendar(calNo=2, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=일정정정, calContent=내용1일정정정, calColor=#dd4124, calRegDate=2023-06-20, startDate=2023-06-12, endDate=2023-06-22, calSt=null), Calendar(calNo=4, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=결제시스템aaㅁㅁ, calContent=aaㅁㅁ, calColor=#BB2649, calRegDate=2023-06-20, startDate=2023-06-02, endDate=2023-06-08, calSt=null), Calendar(calNo=8, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=주말 일정, calContent=놀러가자, calColor=#dd4124, calRegDate=2023-06-18, startDate=2023-06-01, endDate=2023-06-04, calSt=null), Calendar(calNo=10, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목 11, calContent=내용11, calColor=#6667AB, calRegDate=2023-06-18, startDate=2023-06-26, endDate=2023-06-29, calSt=null), Calendar(calNo=12, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=프로젝, calContent=야근 각...dd, calColor=#0f4c81, calRegDate=2023-06-21, startDate=2023-06-05, endDate=2023-06-08, calSt=null), Calendar(calNo=23, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=프로젝트, calContent=완성 삽 가능, calColor=#6667AB, calRegDate=2023-06-23, startDate=2023-06-07, endDate=2023-06-27, calSt=null), Calendar(calNo=26, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=테스트, calContent=테스트, calColor=#6667AB, calRegDate=2023-06-22, startDate=2023-06-02, endDate=2023-06-14, calSt=null)]
+2023-06-24 13:12:19 [INFO] Running Time : 43ms
+2023-06-24 13:12:19 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-24 13:12:19 [INFO] jsonArrCheck: [{"color":"#dd4124","start":2023-06-12,"end":2023-06-22,"id":2,"title":"일정정정","content":"내용1일정정정"},{"color":"#BB2649","start":2023-06-02,"end":2023-06-08,"id":4,"title":"결제시스템aaㅁㅁ","content":"aaㅁㅁ"},{"color":"#dd4124","start":2023-06-01,"end":2023-06-04,"id":8,"title":"주말 일정","content":"놀러가자"},{"color":"#6667AB","start":2023-06-26,"end":2023-06-29,"id":10,"title":"제목 11","content":"내용11"},{"color":"#0f4c81","start":2023-06-05,"end":2023-06-08,"id":12,"title":"프로젝","content":"야근 각...dd"},{"color":"#6667AB","start":2023-06-07,"end":2023-06-27,"id":23,"title":"프로젝트","content":"완성 삽 가능"},{"color":"#6667AB","start":2023-06-02,"end":2023-06-14,"id":26,"title":"테스트","content":"테스트"}]
+2023-06-24 13:12:42 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:12:42 [INFO] Return Value : 4
+2023-06-24 13:12:42 [INFO] Running Time : 75ms
+2023-06-24 13:12:42 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-24 13:12:42 [INFO] ---------------------------------------
+Start : BoardServiceImpl - selectBoardList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:12:42 [INFO] Return Value : [Board(boardNo=822, workspaceNo=0, boardTitle=null, pmNo=0, updatePmNo=0, boardRegDate=2023-06-24, boardUpdateDate=null, eventStartDate=null, eventEndDate=null, boardSort=1, boardSt=null, regMemberName=일일맨, regProfileImg=/resources/images/memberProfile/20230607144506_10190.gif, updateMemberName=null, updateProfileImg=null), Board(boardNo=821, workspaceNo=0, boardTitle=null, pmNo=0, updatePmNo=0, boardRegDate=2023-06-24, boardUpdateDate=null, eventStartDate=null, eventEndDate=null, boardSort=2, boardSt=null, regMemberName=일일맨, regProfileImg=/resources/images/memberProfile/20230607144506_10190.gif, updateMemberName=null, updateProfileImg=null), Board(boardNo=820, workspaceNo=0, boardTitle=null, pmNo=0, updatePmNo=0, boardRegDate=2023-06-24, boardUpdateDate=null, eventStartDate=null, eventEndDate=null, boardSort=3, boardSt=null, regMemberName=일일맨, regProfileImg=/resources/images/memberProfile/20230607144506_10190.gif, updateMemberName=null, updateProfileImg=null), Board(boardNo=819, workspaceNo=0, boardTitle=null, pmNo=0, updatePmNo=0, boardRegDate=2023-06-24, boardUpdateDate=null, eventStartDate=null, eventEndDate=null, boardSort=4, boardSt=null, regMemberName=일일맨, regProfileImg=/resources/images/memberProfile/20230607144506_10190.gif, updateMemberName=null, updateProfileImg=null), Board(boardNo=818, workspaceNo=0, boardTitle=null, pmNo=0, updatePmNo=0, boardRegDate=2023-06-24, boardUpdateDate=null, eventStartDate=null, eventEndDate=null, boardSort=5, boardSt=null, regMemberName=일일맨, regProfileImg=/resources/images/memberProfile/20230607144506_10190.gif, updateMemberName=null, updateProfileImg=null)]
+2023-06-24 13:12:42 [INFO] Running Time : 81ms
+2023-06-24 13:12:42 [INFO] End : BoardServiceImpl - selectBoardList
+---------------------------------------------
+
+2023-06-24 13:12:46 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:12:47 [INFO] Return Value : 4
+2023-06-24 13:12:47 [INFO] Running Time : 64ms
+2023-06-24 13:12:47 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-24 13:12:47 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=5, pmNo=4}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:12:47 [INFO] Return Value : [Memo(memoNo=5, workspaceNo=5, pmNo=4, memoContent=null, memoRegDate=2023-06-09, memoUpdateDate=2023-06-24, memoBgColor=#FEE182, memoSt=N, memoType=workspace, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif), Memo(memoNo=2, workspaceNo=5, pmNo=4, memoContent=  여기가 원래 개인메모장 입니다  , memoRegDate=2023-06-09, memoUpdateDate=2023-06-23, memoBgColor=rgb(254, 225, 130), memoSt=N, memoType=personal, memberName=일일맨, profileImg=/resources/images/memberProfile/20230607144506_10190.gif)]
+2023-06-24 13:12:47 [INFO] Running Time : 83ms
+2023-06-24 13:12:47 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-06-24 13:12:48 [INFO] projectNo : 1
+2023-06-24 13:12:48 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:12:48 [INFO] Return Value : 4
+2023-06-24 13:12:48 [INFO] Running Time : 53ms
+2023-06-24 13:12:48 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-24 13:12:48 [INFO] memberNo 1의 1번 프로젝트 안 PmNo : 4
+2023-06-24 13:12:48 [INFO] ---------------------------------------
+Start : ChatServiceImpl - selectChatRoomList
+Parameter : [{memberNo=1, projectNo=1, pmNo=4}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:12:49 [INFO] Return Value : [ChatRoom(chatRoomNo=1, chatRoomTitle=Final 프로젝트, chatRoomST=N, projectNo=1, chatRoomType=1), ChatRoom(chatRoomNo=2, chatRoomTitle=Java, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=3, chatRoomTitle=Front, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=4, chatRoomTitle=DB, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=7, chatRoomTitle=구구맨, chatRoomST=N, projectNo=1, chatRoomType=3), ChatRoom(chatRoomNo=9, chatRoomTitle=삼삼맨, chatRoomST=N, projectNo=1, chatRoomType=3), ChatRoom(chatRoomNo=10, chatRoomTitle=오오맨, chatRoomST=N, projectNo=1, chatRoomType=3), ChatRoom(chatRoomNo=24, chatRoomTitle=유저십, chatRoomST=N, projectNo=1, chatRoomType=3)]
+2023-06-24 13:12:49 [INFO] Running Time : 343ms
+2023-06-24 13:12:49 [INFO] End : ChatServiceImpl - selectChatRoomList
+---------------------------------------------
+
+2023-06-24 13:12:51 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:12:52 [INFO] Return Value : 4
+2023-06-24 13:12:52 [INFO] Running Time : 58ms
+2023-06-24 13:12:52 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-24 13:12:52 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=9, pmNo=4}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:12:52 [INFO] Return Value : [Calendar(calNo=2, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=일정정정, calContent=내용1일정정정, calColor=#dd4124, calRegDate=2023-06-20, startDate=2023-06-12, endDate=2023-06-22, calSt=null), Calendar(calNo=4, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=결제시스템aaㅁㅁ, calContent=aaㅁㅁ, calColor=#BB2649, calRegDate=2023-06-20, startDate=2023-06-02, endDate=2023-06-08, calSt=null), Calendar(calNo=8, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=주말 일정, calContent=놀러가자, calColor=#dd4124, calRegDate=2023-06-18, startDate=2023-06-01, endDate=2023-06-04, calSt=null), Calendar(calNo=10, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목 11, calContent=내용11, calColor=#6667AB, calRegDate=2023-06-18, startDate=2023-06-26, endDate=2023-06-29, calSt=null), Calendar(calNo=12, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=프로젝, calContent=야근 각...dd, calColor=#0f4c81, calRegDate=2023-06-21, startDate=2023-06-05, endDate=2023-06-08, calSt=null), Calendar(calNo=23, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=프로젝트, calContent=완성 삽 가능, calColor=#6667AB, calRegDate=2023-06-23, startDate=2023-06-07, endDate=2023-06-27, calSt=null), Calendar(calNo=26, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=테스트, calContent=테스트, calColor=#6667AB, calRegDate=2023-06-22, startDate=2023-06-02, endDate=2023-06-14, calSt=null)]
+2023-06-24 13:12:52 [INFO] Running Time : 43ms
+2023-06-24 13:12:52 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-24 13:12:52 [DEBUG] 1페이지 이동
+2023-06-24 13:12:52 [DEBUG] 1데이터가져오기 컨트롤러 전
+2023-06-24 13:12:52 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:12:52 [INFO] Return Value : 4
+2023-06-24 13:12:52 [INFO] Running Time : 39ms
+2023-06-24 13:12:52 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-24 13:12:52 [INFO] ---------------------------------------
+Start : CalendarServiceImpl - selectCalendarList
+Parameter : [{memberNo=1, projectNo=1, workspaceNo=9, pmNo=4}]
+ip : 127.0.0.1 (email : test01@gmail.com)
+2023-06-24 13:12:52 [INFO] Return Value : [Calendar(calNo=2, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=일정정정, calContent=내용1일정정정, calColor=#dd4124, calRegDate=2023-06-20, startDate=2023-06-12, endDate=2023-06-22, calSt=null), Calendar(calNo=4, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=결제시스템aaㅁㅁ, calContent=aaㅁㅁ, calColor=#BB2649, calRegDate=2023-06-20, startDate=2023-06-02, endDate=2023-06-08, calSt=null), Calendar(calNo=8, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=주말 일정, calContent=놀러가자, calColor=#dd4124, calRegDate=2023-06-18, startDate=2023-06-01, endDate=2023-06-04, calSt=null), Calendar(calNo=10, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=제목 11, calContent=내용11, calColor=#6667AB, calRegDate=2023-06-18, startDate=2023-06-26, endDate=2023-06-29, calSt=null), Calendar(calNo=12, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=프로젝, calContent=야근 각...dd, calColor=#0f4c81, calRegDate=2023-06-21, startDate=2023-06-05, endDate=2023-06-08, calSt=null), Calendar(calNo=23, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=프로젝트, calContent=완성 삽 가능, calColor=#6667AB, calRegDate=2023-06-23, startDate=2023-06-07, endDate=2023-06-27, calSt=null), Calendar(calNo=26, workspaceNo=9, pmNo=1, updatePmNo=0, calTitle=테스트, calContent=테스트, calColor=#6667AB, calRegDate=2023-06-22, startDate=2023-06-02, endDate=2023-06-14, calSt=null)]
+2023-06-24 13:12:52 [INFO] Running Time : 41ms
+2023-06-24 13:12:52 [INFO] End : CalendarServiceImpl - selectCalendarList
+---------------------------------------------
+
+2023-06-24 13:12:52 [INFO] jsonArrCheck: [{"color":"#dd4124","start":2023-06-12,"end":2023-06-22,"id":2,"title":"일정정정","content":"내용1일정정정"},{"color":"#BB2649","start":2023-06-02,"end":2023-06-08,"id":4,"title":"결제시스템aaㅁㅁ","content":"aaㅁㅁ"},{"color":"#dd4124","start":2023-06-01,"end":2023-06-04,"id":8,"title":"주말 일정","content":"놀러가자"},{"color":"#6667AB","start":2023-06-26,"end":2023-06-29,"id":10,"title":"제목 11","content":"내용11"},{"color":"#0f4c81","start":2023-06-05,"end":2023-06-08,"id":12,"title":"프로젝","content":"야근 각...dd"},{"color":"#6667AB","start":2023-06-07,"end":2023-06-27,"id":23,"title":"프로젝트","content":"완성 삽 가능"},{"color":"#6667AB","start":2023-06-02,"end":2023-06-14,"id":26,"title":"테스트","content":"테스트"}]
+2023-06-24 13:12:53 [DEBUG] 깃 로드맵1
+2023-06-24 13:12:58 [INFO] 로그아웃 수행됨
+2023-06-24 13:13:07 [INFO] 초기화 필터 파괴
+>>>>>>> dacc1db469e2184716e5b5c26e457933fea2d0ab

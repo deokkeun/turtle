@@ -1,0 +1,113 @@
+#deleteAccount-title {
+    width: 500px;
+    margin: 50px auto 30px auto;
+    font-size: 28.43px;
+    text-align: left;
+}
+#deleteAccount-title > div:nth-child(1){
+    /* width: 500px; */
+    margin: 30px auto;
+    font-size: 16px;
+    text-align: left;
+}
+#deleteAccount-title > div:nth-child(2){
+    /* width: 500px; */
+    margin: 20px auto;
+    font-size: 12px;
+    text-align: left;
+}
+
+#deleteAccount-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 520px;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#deleteAccount-box > section:nth-child(1) {
+    width: 100%;
+    /* border: 2px solid hotpink; */
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 12px;
+}
+#deleteAccount-box > section:nth-child(1) div{
+    padding: 2px;
+
+}
+#deleteAccount-box > section:nth-child(2) {
+    margin: 10px 0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#deleteAccount-box > section:nth-child(3) {
+    margin: 20px 0;
+    position: relative;
+}
+#deleteAccount-box > section:nth-child(4) {
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+}
+
+.inputPw {
+    width: 360px;
+    height: 45px;
+    padding: 10px;
+    margin: 10px 0 0 0;
+    outline: none;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+.inputPw-message {
+    position: absolute;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    color: rgba(0, 0, 0, 0.5);
+    top: 20px;
+    left: 15px;
+    pointer-events: none;
+}
+.inputPw-message-move {
+    position: absolute;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    top: 0px;
+    left: 15px;
+    font-size: 14px;
+    color: #1A73E8;
+    background-color: white;
+}
+#deleteAccount-btn {
+    font-size: 16px;
+    color: white;
+    border: none;
+    background-color: #1A73E8;
+    border-radius: 5px;
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+
+.confirm {
+    color: #1A73E8;
+}
+.error {
+    color: #d93025;
+}
+.confirm-border {
+    border-color: #1A73E8;
+    border: 2px solid #1A73E8;
+}
+.error-border {
+    border-color: #d93025;
+    border: 2px solid #d93025;
+}

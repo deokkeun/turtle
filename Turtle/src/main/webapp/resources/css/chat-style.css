@@ -1,0 +1,185 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+#page2 {
+	position: relative;
+}
+/* 채팅창 관련 */
+.chatting-area{ 
+	margin: auto;
+	justify-content: center;
+	height: 100vh;  
+	max-width : 100%;
+	z-index: 1;
+	
+}
+.display-chatting{
+	max-width: 100%;
+	height: 90vh;
+	border : 0px solid black;
+	overflow: auto;
+	list-style : none;
+	padding : 10px 10px;
+	margin: 0;
+	border-bottom: none;
+}
+
+.chat{
+	display: inline-block;
+	border-radius: 5px;
+	padding : 5px;
+	background-color: #eee;
+	
+	position: relative;
+	
+}
+
+.yourChat {
+	margin-top: 15px;
+}
+.chat-user {
+	margin-bottom: 5px;
+}
+.input-area{
+	position: fixed;
+	height: 10vh;
+	width: 100%;
+	display: flex;
+	bottom: 0;
+}
+
+#inputChatting{
+	width : 90%;
+	resize : none;
+}
+.send-area {
+	width: 10%;
+	display: flex;
+
+}
+.send-area > button:nth-child(1) {
+	width: 100%;
+	flex-basis: 50%;
+	background-color: transparent;
+	
+}
+.send-area > button:nth-child(2) {
+	width: 100%;
+	flex-basis: 50%;
+	background-color: #f6f9ff;
+}
+
+
+.chatDate{
+	font-size: 9px;
+}
+
+#back-area{
+	text-align: right;
+	margin-bottom : 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #d2e1ff;
+	width: 100%;
+	z-index: 999;
+	justify-content: space-between;
+	display: flex;
+	padding: 5px;
+	opacity: 0.8;
+
+}
+#back-area > button {
+	background-color: transparent;
+	border: none;
+	
+	font-size: 24px;
+	color: #4154f1;;
+ 
+	z-index: 999;
+}
+#back-area > button:hover {
+	color: #4154f1;
+	cursor: pointer;
+}
+
+.user-img > i {
+	font-size: 30px;
+}
+
+.chatDate {
+	font-size: 12px;
+}
+.chatCalender {
+
+	text-align: center;
+}
+/*채팅 위치로 구별하기*/
+#myChat{	
+	margin-top: 30px;
+	text-align: right;
+}
+#myChat > p {
+	background-color: #f6f9ff;
+}
+
+/* 최대크기 설정하고 넘어갈시에는 아랫줄로 이동하는것 */
+.chat {
+	max-width: 200px;
+	display: inline-block;
+	word-break: break-all;
+	
+}
+/* chatList.jsp css */
+.chatList  {
+    list-style: none;
+   
+   text-align: center;
+}
+.chatBtn {
+    width: 40%;
+    height: 40px;
+    margin-top: 10px;
+    font-weight: bold;
+    background-color: #f6f9ff;
+    border: 1px solid white;
+    border-radius: 8px;
+    color: #4154f1;
+}
+.chatBtn:hover {
+   
+    border: 1px solid #4154f1;
+}
+/* 페이지 넘어갈떄 효과 */
+.slide-in {
+	animation: change 0.8s ease forwards;
+}
+.slide-in2 {
+	animation: change2 1.0s ease forwards;
+}
+@keyframes change {
+	from {
+		transform: translateX(0%);
+   		visibility: visible;
+  }
+
+  	to {
+    transform: translateX(100%);
+	visibility: visible;
+  }
+	
+}
+@keyframes change2 {
+	from {
+		transform: translateY(0%);
+   		visibility: visible;
+  }
+
+  	to {
+    transform: translateY(100%);
+	visibility: visible;
+  }
+	
+}

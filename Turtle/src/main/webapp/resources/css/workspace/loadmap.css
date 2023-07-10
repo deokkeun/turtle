@@ -1,0 +1,149 @@
+
+#loadmap-container {
+  width: 100%;
+  height: 850px;
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid black; */
+  padding: 10px;
+}
+.repos-container {
+  font-size: 12px;
+  min-width: 340px;
+  height: 100%;
+  background-color: #F6F6F6;
+  /* margin: auto; */
+  overflow: scroll;
+}
+  .repos-container .get-repos {
+    padding: 20px;
+    display: flex;
+    background-color: #EEE;
+  }
+  .repos-container .get-repos input {
+    width: 80%;
+    padding: 10px 10px;
+    border: none;
+    font-size: 20px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .repos-container .get-repos input:nth-child(2) {
+    width: 40%;
+    margin: 0 5px;
+  }
+  .repos-container .get-repos input:nth-child(3) {
+    width: 35%;
+    margin: 0 5px;
+  }
+  .repos-container .get-repos input:focus {
+    outline: 2px solid #F44336;
+  }
+  .repos-container .get-repos .get-button {
+    width: 140px;
+    margin-left: 10px;
+    height: 40px;
+    background-color: #F44336;
+    color: #FFF;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .repos-container .show-data {
+    padding: 20px;
+    background-color: #E0E0E0;
+  }
+  .repos-container .show-data .repo-box {
+    background-color: #FFF;
+    padding: 15px;
+  }
+  .repos-container .show-data .repo-box:not(:last-child) {
+    margin-bottom: 5px;
+  }
+  .repos-container .show-data .repo-box a,
+  .repos-container .show-data .repo-box span {
+    float: right;
+    margin-left: 4px;
+    border-radius: 4px;
+    color: #FFF;
+    font-size: 12px;
+    width: 90px;
+    text-align: center;
+    padding: 4px;
+  }
+  .repos-container .show-data .repo-box a {
+    text-decoration: none;
+    background-color: #E91E63;
+  }
+  .repos-container .show-data .repo-box span {
+    background-color: #009688;
+  }
+
+
+
+  /* --------------------------------------------------------------- */
+
+ #tree-box {
+  width: 100%;
+  height: 100%;
+  margin: 10px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid red; */
+  overflow: hidden;
+  position: relative;
+ }
+#tree {
+  font-size: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  /* width: 1000px; */
+  width: 100%;
+  height: 750px;
+  padding: 10px;
+  margin: 10px 0 0 0;
+}
+
+
+  /* html {
+    font-family:Arial;
+  } */
+  
+  input[type="button"] {
+    background-color:#44c767;
+    -moz-border-radius:28px;
+    -webkit-border-radius:28px;
+    border-radius:28px;
+    border:1px solid #18ab29;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-size:14px;
+    padding:10px 25px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+  }
+  input[type="button"]hover {
+    background-color:#5cbf2a;
+  }
+  input[type="active"]:active {
+    position:relative;
+    top:1px;
+  }
+  
+
+
+
+  .git-commit {
+    width: 100%;
+    height: 100%;
+  }
+
+  #commitList-box {
+    position: absolute;
+    z-index: 1;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    bottom: 20px;
+    padding: 5px;
+  }

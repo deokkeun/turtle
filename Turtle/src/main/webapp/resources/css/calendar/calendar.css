@@ -1,0 +1,123 @@
+/* 드래그 앤 드롭 */
+#external-events {
+    margin: 50px;
+    float: left;
+}
+.fc-event {
+    margin: 5px;
+    cursor: move;
+}
+
+/* calendar구간 */
+#calendar-box {
+    margin: 50px;
+    /* width: 80%;
+    height: 80%; */
+    /* float: left; */
+    text-align: center;
+    cursor: pointer;
+}
+
+/* 켈린더 모달창 */
+#calendar-modal {
+    text-align: center;
+    display: none;
+    position: relative;
+    width: 380px;
+    padding: 30px 30px;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 5px;
+}
+#calendar-modal .calendar-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+
+
+
+#calendar-modal-box {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+#calendar-modal-box > div:not(:last-child) {
+    width: 100%;
+    margin: 10px 0;
+    color: rgba(0, 0, 0, 0.5);
+    display: flex;
+}
+#calendar-modal-box > div > div:nth-child(1) {
+    width: 80px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+#calendar-modal-btn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+#calendar-modal-btn > button:not(:nth-child(2)) {
+    font-size: 14px;
+    width: 80px;
+    height: 35px;
+    background-color: #1A73E8;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-align: center;
+}
+#deleteEvent-btn {
+    font-size: 14px;
+    width: 80px;
+    height: 35px;
+    background-color: white;
+    border-radius: 5px;
+    color: #1A73E8;
+    border: 1px solid #1A73E8;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-align: center;
+}
+.input-box {
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    /* border-radius: 5px; */
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+.input-box:focus {
+    border: none;
+    border-bottom: 2px solid #1A73E8;
+}
+
+#textarea {
+    padding: 10px;
+    resize: none;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+#color-box {
+    display: flex;
+}
+#color-box > div {
+    border: 2px solid #939597;
+    margin-right: 10px;
+    padding: 2px;
+    cursor: pointer;
+}
+#color-box > div > div {
+    width: 24px;
+    height: 24px;
+}

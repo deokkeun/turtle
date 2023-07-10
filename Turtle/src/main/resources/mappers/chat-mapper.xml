@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="chatMapper">
+
+	<resultMap type="chatRoom" id="chatRoom_rm">
+		<id property="chatRoomNo" column="CHATROOM_NO"/>
+		
+		<result property="chatRoomTitle" column="CHATROOM_TITLE"/>
+		<result property="chatRoomST" column="CHATROOM_ST"/>
+		<result property="projectNo" column="PROJECT_NO"/>
+		<result property="chatRoomType" column="CHATROOM_TYPE"/>
+	</resultMap>
+	
+	<resultMap type="chatMessage" id="chatMessage_rm">
+		<id property="cmNo" column="CM_NO"/>
+		
+		<result property="chatMessage" column="CHAT_MESSAGE"/>
+		<result property="cmRegDate" column="CM_REG_DATE"/>
+		<result property="chatRoomNo" column="CHATROOM_NO"/>
+		<result property="pmNo" column="PM_NO"/>
+		<result property="memberName" column="MEMBER_NAME"/>
+	</resultMap>
+	
+	<resultMap type="chatRoomJoin" id="chatRoomJoin_rm">
+		<result property="pmNo" column="PM_NO"/>
+		<result property="chatRoomNo" column="CHATROOM_NO"/>
+	</resultMap>
+	
+	<!-- 채팅방 리스트 조회 -->
+	<select id="selectChatRoomList" resultMap="chatRoom_rm">
+		SELECT *
+		FROM CHATROOM
+		JOIN CHATROOM_JOIN USING (CHATROOM_NO)
+		WHERE PM_NO = ${pmNo}
+		AND PROJECT_NO = ${projectNo}
+		AND CHATROOM_ST = 'N'
+		ORDER BY CHATROOM_TYPE, CHATROOM_NO
+	</select>
+	
+	<!-- 개인 채팅방 제목 조회 -->
+	<select id="selectChatRoomJoinMember" resultType="string">
+		SELECT MEMBER_NAME
+		FROM MEMBER
+		JOIN PROJECT_MEMBER USING(MEMBER_NO)
+		JOIN CHATROOM_JOIN USING(PM_NO)
+		WHERE CHATROOM_NO = ${chatRoomNo}
+		AND PM_NO NOT IN ${pmNo}
+	</select>
+	
+	<!-- 채팅 메세지 목록 조회 -->
+	<select id="selectChatMessageList" resultMap="chatMessage_rm">
+	 	SELECT CHAT_MESSAGE, CM_REG_DATE, MEMBER_NAME
+		FROM CHAT_MESSAGE
+		JOIN PROJECT_MEMBER USING (PM_NO)
+		JOIN MEMBER USING (MEMBER_NO)
+		WHERE CHATROOM_NO = ${chatRoomNo}
+		ORDER BY CM_NO
+	</select>
+	
+	<!-- 채팅 메세지 삽입 -->
+	<insert id="insertMessage">
+		INSERT INTO CHAT_MESSAGE
+		VALUES(SEQ_CM_NO.NEXTVAL, #{chatMessage}, DEFAULT, #{chatRoomNo}, #{pmNo})
+	</insert>
+	
+	<!-- 채팅방 생성 -->
+	<insert id="insertChatRoom">
+		
+		<selectKey keyProperty="chatRoomNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_CHATROOM_NO.NEXTVAL FROM DUAL
+		</selectKey>
+			INSERT INTO CHATROOM
+			VALUES (${chatRoomNo}, #{chatRoomTitle}, DEFAULT, ${projectNo}, ${chatRoomType})
+	</insert>
+	
+	<!-- 채팅방 조인 -->
+	<insert id="insertChatRoomJoin">
+		INSERT INTO CHATROOM_JOIN
+		VALUES (${chatRoomNo}, ${pmNo})
+	</insert>
+	
+	<!-- 공용 채팅방 리스트 번호 조회 -->
+	<select id="selectPublicChatRoomNoList" resultType="_int">
+		SELECT CHATROOM_NO
+		FROM CHATROOM
+		WHERE PROJECT_NO = ${projectNo} AND CHATROOM_ST = 'N' AND CHATROOM_TYPE IN (1, 2)
+	</select>
+	
+	<!-- 삭제할 채팅방 이름 얻어오기 -->
+	<select id="selectChatRoomTitle" resultType="string">
+		SELECT WORKSPACE_NAME FROM WORKSPACE WHERE WORKSPACE_NO = ${workspaceNo}
+	</select>
+	
+	<!-- 채팅방 이름으로 채팅방 삭제 -->
+	<update id="deleteChatRoom">
+		UPDATE CHATROOM SET CHATROOM_ST = 'Y' WHERE CHATROOM_TITLE = #{chatRoomTitle}
+	</update>
+	
+	<!-- 프로젝트 번호 얻어오기 -->
+	<select id="selectProjectNo" resultType="_int">
+		SELECT PROJECT_NO FROM WORKSPACE WHERE WORKSPACE_NO = ${workspaceNo}
+	</select>
+	
+	<!-- 워크스페이스 이름 변경한 채팅방 이름 변경 -->
+	<update id="updateChatRoomTitle">
+		UPDATE CHATROOM SET 
+		<choose>
+			<when test="projectNo != 0">
+				CHATROOM_TITLE = #{projectName}
+				WHERE PROJECT_NO = ${projectNo} AND CHATROOM_TYPE = '1'
+			</when>
+			<otherwise>
+				CHATROOM_TITLE = #{newWorkspaceName} 
+				WHERE CHATROOM_TITLE = #{currentWorkspaceName} AND CHATROOM_TYPE = '2' AND PROJECT_NO = ${projectNo}
+			</otherwise>
+		</choose>		
+	</update>
+	
+	
+</mapper>

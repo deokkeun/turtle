@@ -1,5 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper>
-  <cache-ref namespace=""/>
+<mapper namespace="projectMapper">
+
+	<resultMap type="project" id="project_rm">
+		<id property="projectNo" column="PROJECT_NO"/>
+		
+		<result property="projectName"  column="PROJECT_NAME"/>
+		<result property="projectDescription"  column="PROJECT_DESCRIPTION"/>
+		<result property="inviteCode"  column="INVITE_CODE"/>
+		<result property="projectDeleteFG"  column="PROJECT_DELETE_FG"/>
+		<result property="regDate"  column="REG_DATE"/>
+		<result property="createMemberNo"  column="CREATE_MEMBER_NO"/>
+		<result property="projectEmoji"  column="PROJECT_EMOJI"/>
+	</resultMap>
+	
+ 	<insert id="createProject" parameterType="project" useGeneratedKeys="true">
+ 	
+ 		<selectKey keyProperty="projectNo" resultType="_int" order="BEFORE">
+ 			SELECT SEQ_PROJECT_NO.NEXTVAL FROM DUAL
+ 		</selectKey>
+			INSERT INTO PROJECT VALUES(
+				#{projectNo},
+				#{projectName},
+				#{projectDescription},
+				#{inviteCode},
+				DEFAULT, DEFAULT,
+				#{createMemberNo},
+				#{projectEmoji}
+			)
+	
+	</insert> 
+	
+	<insert id="insertPmManager" parameterType="projectMember" useGeneratedKeys="true">
+
+	<selectKey keyProperty="pmNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_PM_NO.NEXTVAL FROM DUAL
+		</selectKey>
+		
+		INSERT INTO PROJECT_MEMBER VALUES(
+			#{pmNo},
+			#{projectNo},
+			#{memberNo},
+			'Y',
+			'Y',
+			DEFAULT
+		)
+	</insert>
+	
+	<!-- 내프로젝트 존재여부 확인 -->
+	<select id="selectMyProject" resultType="_int">
+		SELECT COUNT(*) FROM PROJECT_MEMBER WHERE MEMBER_NO = ${memberNo} AND PROJECT_MANAGER = 'Y'
+	</select>
+	
+	<select id="selectMyProjectNo" resultType="_int">
+		SELECT PROJECT_NO FROM PROJECT_MEMBER WHERE MEMBER_NO = ${memberNo} AND PROJECT_MANAGER = 'Y'
+	</select>
+	
+	<!-- 프로젝트 리스트 조회 -->
+	<select id="selectProjectList" resultMap="project_rm">
+		SELECT PROJECT_NO, PROJECT_NAME, CREATE_MEMBER_NO, PROJECT_EMOJI
+		FROM PROJECT 
+		JOIN PROJECT_MEMBER USING (PROJECT_NO)
+		WHERE MEMBER_NO = ${memberNo} AND PROJECT_DELETE_FG = 'N' AND PM_ST = 'Y'
+	</select>
+	
+	<update id="deleteProject">
+		UPDATE PROJECT
+		SET PROJECT_DELETE_FG = 'Y'
+		WHERE PROJECT_NO = #{projectNo}
+	</update>
+	
+	<update id="renameProject">
+		UPDATE PROJECT
+		SET PROJECT_NAME = #{projectName}
+		WHERE PROJECT_NO = #{projectNo}
+	</update>
+	
+	<select id="selectProject" resultMap="project_rm">
+		SELECT PROJECT_NO, PROJECT_NAME, CREATE_MEMBER_NO, PROJECT_EMOJI, INVITE_CODE
+		FROM PROJECT 
+		WHERE PROJECT_NO = ${projectNo} AND PROJECT_DELETE_FG = 'N'
+	</select>
 </mapper>

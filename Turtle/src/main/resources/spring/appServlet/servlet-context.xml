@@ -4,9 +4,15 @@
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:websocket="http://www.springframework.org/schema/websocket"
+	xsi:schemaLocation="http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.3.xsd
+		http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.3.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
@@ -24,6 +30,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.turtle.www" />
+
 	
 	<!-- 트랜잭션 처리 시 @Transactional 어노테이션 사용할 예정 
 	@Transactional : 클래스 또는 메서드 수행 후 트랜잭션 처리를 하라고 알려주는 어노테이션
@@ -33,4 +40,65 @@
 	<!-- <tx:annotation-driven proxy-target-class="true"/> -->
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	
+	
+	<!-- aop auto proxy -->
+	<aop:aspectj-autoproxy proxy-target-class="false"/>
+	
+	
+	<!-- @Scheduled 어노테이션 인식을 위한 태그 -->
+	<task:annotation-driven/>
+	
+	
+	<!-- Websocket 요청 시 핸들러 클래스와 연결하기 -->
+	
+	<beans:bean id="chatHandler" class="com.turtle.www.chat.model.websocket.ChatWebsocketHandler"/>
+	<beans:bean id="memoHandler" class="com.turtle.www.memo.model.websocket.MemoWebsocketHandler"/>
+	<beans:bean id="calendarHandler" class="com.turtle.www.calendar.model.websocket.CalendarWebsocketHandler"/>	
+	<beans:bean id="boardListHandler" class="com.turtle.www.board.model.websocket.BoardListWebsocketHandler"/>
+	<beans:bean id="insertBoardHandler" class="com.turtle.www.board.model.websocket.InsertBoardWebsocketHandler"/>
+	<beans:bean id="deleteBoardHandler" class="com.turtle.www.board.model.websocket.DeleteBoardWebsocketHandler"/>
+	<beans:bean id="updateEmojiHandler" class="com.turtle.www.board.model.websocket.UpdateEmojiWebsocketHandler"/>
+	<beans:bean id="updateBoardDetailHandler" class="com.turtle.www.board.model.websocket.UpdateBoardDetailWebsocketHandler"/>	
+	<beans:bean id="insertBoardDetailHandler" class="com.turtle.www.board.model.websocket.InsertBoardDetailWebsocketHandler"/>
+	<beans:bean id="deleteBoardDetailHandler" class="com.turtle.www.board.model.websocket.DeleteBoardDetailWebsocketHandler"/>
+	<beans:bean id="updateEventDateHandler" class="com.turtle.www.board.model.websocket.UpdateEventDateWebsocketHandler"/>
+	<beans:bean id="alertHandler" class="com.turtle.www.alert.model.websocket.AlertWebsocketHandler"/>
+	 
+	
+	<websocket:handlers>
+		
+		<!-- 웹소켓 요청을 처리한 bean 지정 -->
+		<websocket:mapping handler="chatHandler" path="/chat" />
+		<websocket:mapping handler="memoHandler" path="/memo"/>
+		<websocket:mapping handler="calendarHandler" path="/calendar"/>		
+		<websocket:mapping handler="boardListHandler" path="/boardList"/>
+		<websocket:mapping handler="insertBoardHandler" path="/insertBoard"/>
+		<websocket:mapping handler="deleteBoardHandler" path="/deleteBoard"/>
+		<websocket:mapping handler="updateEmojiHandler" path="/updateEmoji"/>
+		<websocket:mapping handler="updateBoardDetailHandler" path="/updateBoardDetail"/>
+		<websocket:mapping handler="insertBoardDetailHandler" path="/insertBoardDetail"/>
+		<websocket:mapping handler="deleteBoardDetailHandler" path="/deleteBoardDetail"/>
+		<websocket:mapping handler="updateEventDateHandler" path="/updateEventDate"/>
+		<websocket:mapping handler="alertHandler" path="/alert"/>
+		
+		<websocket:handshake-interceptors>
+			<!-- interceptor : http 통신 req, resp 가로채는 역할 
+			
+			handshake-interceptor : 
+					요청 관련 데이터 중 HttpSession(로그인정보, 채팅방번호)을 가로채서
+					WebsocketSession에 넣어주는 역할
+			
+			-->			
+			<beans:bean class="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor" />
+		</websocket:handshake-interceptors>
+		
+		<!-- SockJS 라이브러리를 이용해서 만들어진 웹소켓 객체임을 인식 -->
+		<websocket:sockjs></websocket:sockjs>
+		
+	</websocket:handlers>
+	
+	
+
+
+
 </beans:beans>

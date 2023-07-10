@@ -1,0 +1,77 @@
+/* 모달 스타일 */
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.modal-contentAccount {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 40px 30px;
+    border: 1px solid #888;
+    border-radius: 5%;
+    width: 310px;
+    height: 280px;
+    /* text-align: left; */
+}
+
+.modal-contentAccount p {
+    /* padding-top: 10px;
+    text-align: left; */
+  }
+
+.modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 21.33px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-buttons {
+    /* text-align: center; */
+    /* margin-top: 50px; */
+}
+
+.modal-buttons button {
+    cursor: pointer;
+    /* margin-left: 10px; */
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+}
+
+#closeModal{
+    /* width: 300px; */
+    height: 40px;
+    background-color: white;
+    color: black;
+    border: 1px solid gray;
+    border-radius: 5px;
+
+}
+
+#confirmDelete{
+    /* width: 300px; */
+    height: 40px;
+    border: currentColor;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+
+}

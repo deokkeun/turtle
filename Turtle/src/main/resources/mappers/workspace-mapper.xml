@@ -1,5 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper>
-  <cache-ref namespace=""/>
+<mapper namespace="workspaceMapper">
+
+	<resultMap type="workspace" id="workspace_rm">
+		<id property="workspaceNo" column="WORKSPACE_NO"/>
+		
+		<result property="projectNo"  column="PROJECT_NO"/>
+		<result property="workspaceName"  column="WORKSPACE_NAME"/>
+		<result property="workspaceEmoji"  column="WORKSPACE_EMOJI"/>
+		<result property="workspaceRegDate"  column="WORKSPACE_REG_DATE"/>
+		<result property="workspaceDeleteST"  column="WORKSPACE_DELETE_ST"/>
+	</resultMap>
+	
+	
+ 	<insert id="createWorkspace" parameterType="workspace" useGeneratedKeys="true">	
+		<selectKey keyProperty="workspaceNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_WORKSPACE_NO.NEXTVAL FROM DUAL
+		</selectKey>
+			INSERT INTO WORKSPACE VALUES(
+				#{workspaceNo},
+				#{projectNo},
+				#{workspaceName},
+				#{workspaceEmoji},
+				DEFAULT, DEFAULT
+			)	
+	</insert> 
+	
+	<!-- 프로젝트 내 워크스페이스 조회 -->
+	<select id="selectWorkspaceList" resultMap="workspace_rm">
+		SELECT *
+		FROM WORKSPACE
+		WHERE PROJECT_NO = ${projectNo} AND WORKSPACE_DELETE_ST = 'N'
+	</select>
+	
+	<!-- 프로젝트 내의 세션에 담을 워크스페이스넘버 하나 얻어오기 -->
+	<select id="selectWorkspaceNo" resultType="_int">
+		SELECT WORKSPACE_NO
+		FROM (
+  			SELECT WORKSPACE_NO
+  			FROM WORKSPACE
+  			WHERE PROJECT_NO = ${projectNo} AND WORKSPACE_NAME NOT IN ('calendar', 'loadmap')
+			) 
+		WHERE ROWNUM = 1
+	</select>
+	
+	<update id="deleteWorkspace">
+		UPDATE WORKSPACE
+		SET WORKSPACE_DELETE_ST = 'Y'
+		WHERE WORKSPACE_NO = #{workspaceNo}
+	</update>
+	
+	<!-- 변경할 워크스페이스 채팅방 이름 조회 -->
+	<select id="selectCurrentWorkspaceName" resultType="string">
+		SELECT WORKSPACE_NAME FROM WORKSPACE WHERE WORKSPACE_NO = ${workspaceNo}
+	</select>
+	
+		<update id="renameWorkspace">
+		UPDATE WORKSPACE
+		SET WORKSPACE_NAME = #{workspaceName}
+		WHERE WORKSPACE_NO = #{workspaceNo}
+	</update>
+		
 </mapper>

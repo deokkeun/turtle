@@ -1,0 +1,503 @@
+<<<<<<< HEAD
+2023-06-13 09:01:16 [INFO] 초기화 필터 파괴
+2023-06-13 09:44:22 [INFO] 초기화 필터 생성
+2023-06-13 09:44:30 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-13 09:44:34 [DEBUG] password999! / $2a$10$JR/JpYz3p1gKG8pwBlscuu3r1vudoF3gdIRIUlmyyR1ACWz/SCdRu
+2023-06-13 09:44:34 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-13 09:44:34 [INFO] Running Time : 3910ms
+2023-06-13 09:44:34 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 09:44:34 [INFO] 일일맨 로그인 성공
+2023-06-13 12:27:44 [INFO] 초기화 필터 파괴
+2023-06-13 12:27:56 [INFO] 초기화 필터 생성
+2023-06-13 12:28:12 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmail.co]
+ip : 127.0.0.1
+2023-06-13 12:28:12 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmail.c]
+ip : 127.0.0.1
+2023-06-13 12:28:12 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmail.com]
+ip : 127.0.0.1
+2023-06-13 12:28:16 [INFO] Return Value : 0
+2023-06-13 12:28:16 [INFO] Return Value : 0
+2023-06-13 12:28:16 [INFO] Running Time : 4205ms
+2023-06-13 12:28:16 [INFO] Running Time : 4206ms
+2023-06-13 12:28:16 [INFO] Return Value : 1
+2023-06-13 12:28:16 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:28:16 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:28:16 [INFO] Running Time : 4010ms
+2023-06-13 12:28:16 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:29:35 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmail.c]
+ip : 127.0.0.1
+2023-06-13 12:29:35 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmail.co]
+ip : 127.0.0.1
+2023-06-13 12:29:35 [INFO] Return Value : 0
+2023-06-13 12:29:35 [INFO] Running Time : 136ms
+2023-06-13 12:29:35 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:29:35 [INFO] Return Value : 0
+2023-06-13 12:29:35 [INFO] Running Time : 104ms
+2023-06-13 12:29:35 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:29:35 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmail.com]
+ip : 127.0.0.1
+2023-06-13 12:29:35 [INFO] Return Value : 1
+2023-06-13 12:29:35 [INFO] Running Time : 38ms
+2023-06-13 12:29:35 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:30:15 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmal.c]
+ip : 127.0.0.1
+2023-06-13 12:30:15 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmal.co]
+ip : 127.0.0.1
+2023-06-13 12:30:15 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmal.com]
+ip : 127.0.0.1
+2023-06-13 12:30:15 [INFO] Return Value : 0
+2023-06-13 12:30:15 [INFO] Return Value : 0
+2023-06-13 12:30:15 [INFO] Running Time : 226ms
+2023-06-13 12:30:15 [INFO] Running Time : 317ms
+2023-06-13 12:30:15 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:30:15 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:30:15 [INFO] Return Value : 0
+2023-06-13 12:30:15 [INFO] Running Time : 23ms
+2023-06-13 12:30:15 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:33:25 [INFO] 초기화 필터 파괴
+2023-06-13 12:34:24 [INFO] 초기화 필터 생성
+2023-06-13 12:34:38 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmail.c]
+ip : 127.0.0.1
+2023-06-13 12:34:38 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmail.co]
+ip : 127.0.0.1
+2023-06-13 12:34:39 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [98chltnwls@gmail.com]
+ip : 127.0.0.1
+2023-06-13 12:34:42 [INFO] Return Value : 0
+2023-06-13 12:34:42 [INFO] Return Value : 0
+2023-06-13 12:34:42 [INFO] Return Value : 0
+2023-06-13 12:34:42 [INFO] Running Time : 3776ms
+2023-06-13 12:34:42 [INFO] Running Time : 3573ms
+2023-06-13 12:34:42 [INFO] Running Time : 3776ms
+2023-06-13 12:34:42 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:34:42 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:34:42 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-13 12:34:50 [INFO] ---------------------------------------
+Start : MemberServiceImpl - insertCertification
+Parameter : [{inputEmail=98chltnwls@gmail.com, cNumber=o7P16Q}]
+ip : 127.0.0.1
+2023-06-13 12:34:50 [INFO] Return Value : 1
+2023-06-13 12:34:50 [INFO] Running Time : 67ms
+2023-06-13 12:34:50 [INFO] End : MemberServiceImpl - insertCertification
+---------------------------------------------
+
+2023-06-13 17:24:14 [INFO] 초기화 필터 파괴
+=======
+<<<<<<< HEAD
+2023-06-13 08:10:51 [INFO] 초기화 필터 생성
+2023-06-13 08:10:58 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-13 08:11:01 [DEBUG] deokkeun! / $2a$10$ZjWjOrXw/3XmDlt7CT4gy.14E1kwJdMxodTdKnZZuUJU/Sc3PDn6.
+2023-06-13 08:11:01 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-13 08:11:01 [INFO] Running Time : 3254ms
+2023-06-13 08:11:01 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 08:11:01 [INFO] 김덕근 로그인 성공
+2023-06-13 11:23:17 [INFO] 로그아웃 수행됨
+2023-06-13 11:23:18 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-13 11:23:19 [DEBUG] deokkeun! / $2a$10$x4L5EwQCGb8MlghDggLAee3HuEdncU.9aC9Bc3E0GGb4I1VZyUOae
+2023-06-13 11:23:19 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-13 11:23:19 [INFO] Running Time : 292ms
+2023-06-13 11:23:19 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 11:23:19 [INFO] 김덕근 로그인 성공
+2023-06-13 12:07:39 [INFO] 로그아웃 수행됨
+2023-06-13 12:08:05 [INFO] 초기화 필터 파괴
+2023-06-13 12:20:26 [INFO] 초기화 필터 생성
+2023-06-13 12:20:35 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-13 12:20:44 [DEBUG] deokkeun! / $2a$10$Sow23.MegFL/PDOgh4Cbq.n9sQQkiQJtOppgE6VzvZ7IQK2X5xqCq
+2023-06-13 12:20:44 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-13 12:20:44 [INFO] Running Time : 8855ms
+2023-06-13 12:20:44 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 12:20:44 [INFO] 김덕근 로그인 성공
+2023-06-13 12:35:10 [INFO] 초기화 필터 파괴
+2023-06-13 12:35:47 [INFO] 초기화 필터 생성
+2023-06-13 12:35:55 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-13 12:35:59 [DEBUG] deokkeun! / $2a$10$rwVdJOMEUjdMI9Wv9g2oq.VMTbNMXjTBRdE1vWJ5StvepkcOj.bAW
+2023-06-13 12:35:59 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-13 12:35:59 [INFO] Running Time : 4179ms
+2023-06-13 12:35:59 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 12:35:59 [INFO] 김덕근 로그인 성공
+2023-06-13 12:36:12 [INFO] ---------------------------------------
+Start : MemberServiceImpl - memberConfirmation
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-13 12:36:12 [INFO] Return Value : deokk91@gmail.com
+2023-06-13 12:36:12 [INFO] Running Time : 120ms
+2023-06-13 12:36:12 [INFO] End : MemberServiceImpl - memberConfirmation
+---------------------------------------------
+
+2023-06-13 12:36:14 [INFO] ---------------------------------------
+Start : MemberServiceImpl - passwordSelectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-13 12:36:14 [INFO] Return Value : 1
+2023-06-13 12:36:14 [INFO] Running Time : 35ms
+2023-06-13 12:36:14 [INFO] End : MemberServiceImpl - passwordSelectCertification
+---------------------------------------------
+
+2023-06-13 12:36:14 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-13 12:36:14 [INFO] ---------------------------------------
+Start : MemberServiceImpl - passwordUpdateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-13 12:36:20 [INFO] Return Value : 1
+2023-06-13 12:36:20 [INFO] Running Time : 6186ms
+2023-06-13 12:36:20 [INFO] End : MemberServiceImpl - passwordUpdateCertification
+---------------------------------------------
+
+2023-06-13 12:36:20 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-13 12:36:40 [INFO] ---------------------------------------
+Start : MemberServiceImpl - certificationNumber
+Parameter : [XP4114]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-13 12:36:40 [INFO] Return Value : 1000
+2023-06-13 12:36:40 [INFO] Running Time : 67ms
+2023-06-13 12:36:40 [INFO] End : MemberServiceImpl - certificationNumber
+---------------------------------------------
+
+2023-06-13 12:36:40 [DEBUG] 인증번호 확인 후 회원 번호 조회 memberNo = 1000
+2023-06-13 12:37:40 [INFO] 초기화 필터 파괴
+2023-06-13 12:38:56 [INFO] 초기화 필터 생성
+2023-06-13 12:39:05 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-13 12:39:09 [DEBUG] deokkeun! / $2a$10$8CrgOL9WGOsiAaBqTugUtOOLTRrTXe3sCH1Zh8sThKVVEj3lLOV0m
+2023-06-13 12:39:09 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-13 12:39:09 [INFO] Running Time : 4170ms
+2023-06-13 12:39:09 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 12:39:09 [INFO] 김덕근 로그인 성공
+2023-06-13 12:50:36 [INFO] 초기화 필터 파괴
+2023-06-13 13:23:00 [INFO] 초기화 필터 생성
+2023-06-13 13:23:15 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-13 13:23:19 [DEBUG] deokkeun! / $2a$10$GoNHMJ1DUWqWvmVzQPNHIuf3.hWFV7UsaWJQNzDaIuH.iMJf/dYPO
+2023-06-13 13:23:20 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-13 13:23:20 [INFO] Running Time : 4246ms
+2023-06-13 13:23:20 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 13:23:20 [INFO] 김덕근 로그인 성공
+2023-06-13 13:47:53 [INFO] 로그아웃 수행됨
+2023-06-13 13:47:55 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-13 13:47:55 [DEBUG] password999! / $2a$10$O1h0k39YYl9Wtnp4bNuLNOrmt/SXQjmW/df3O0/FRWv28Kp0G5rdi
+2023-06-13 13:47:55 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-13 13:47:55 [INFO] Running Time : 266ms
+2023-06-13 13:47:55 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 13:47:55 [INFO] 구구맨 로그인 성공
+2023-06-13 13:48:06 [INFO] 로그아웃 수행됨
+2023-06-13 13:48:17 [INFO] 로그인 기능 수행됨
+2023-06-13 13:48:17 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-13 13:48:18 [DEBUG] deokkeun! / $2a$10$aPk/ndVhGG3d8Daa7PHkrOwQ7KfdmIDbiaaPTDgWjh/5LrS06Umvy
+2023-06-13 13:48:18 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-13 13:48:18 [INFO] Running Time : 233ms
+2023-06-13 13:48:18 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 13:48:18 [DEBUG] Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)로그인 성공시 로그인 멤버 정보
+2023-06-13 13:48:27 [INFO] 로그아웃 수행됨
+2023-06-13 13:48:28 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-13 13:48:29 [DEBUG] password999! / $2a$10$CMzqSFs2sfmIfrpgApqOSeNaaIUrAS0vA04VrBtwJjO3CpJmT0ahq
+2023-06-13 13:48:29 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-13 13:48:29 [INFO] Running Time : 435ms
+2023-06-13 13:48:29 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 13:48:29 [INFO] 구구맨 로그인 성공
+2023-06-13 13:55:37 [INFO] 초기화 필터 파괴
+2023-06-13 14:01:27 [INFO] 초기화 필터 생성
+2023-06-13 14:01:34 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-13 14:01:38 [DEBUG] deokkeun! / $2a$10$sz.re5/S8OoTmCdRwIybhuCjWs3M.6N/kL3wD38ZevYg3JrmmENUO
+2023-06-13 14:01:38 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-13 14:01:38 [INFO] Running Time : 3981ms
+2023-06-13 14:01:38 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 14:01:38 [INFO] 김덕근 로그인 성공
+2023-06-13 14:40:08 [INFO] 초기화 필터 파괴
+2023-06-13 14:40:14 [INFO] 초기화 필터 생성
+2023-06-13 14:40:22 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-13 14:40:26 [DEBUG] deokkeun! / $2a$10$lRb1b5u7Le27B4X4mqw8N.0sH0HfJlfMHqku4K9zlJ5OSj7pa2FF6
+2023-06-13 14:40:26 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-13 14:40:26 [INFO] Running Time : 4158ms
+2023-06-13 14:40:26 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 14:40:26 [INFO] 김덕근 로그인 성공
+2023-06-13 15:01:15 [INFO] 초기화 필터 파괴
+2023-06-13 15:09:42 [INFO] 초기화 필터 생성
+2023-06-13 15:09:51 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-13 15:10:00 [DEBUG] deokkeun! / $2a$10$FFouDF0hzVzNKDbiThGJj.YMnop9fPvIwM3YvRPNK1Nw5.bmhmcxO
+2023-06-13 15:10:00 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-13 15:10:00 [INFO] Running Time : 8850ms
+2023-06-13 15:10:00 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 15:10:00 [INFO] 김덕근 로그인 성공
+2023-06-13 15:10:33 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-13 15:10:33 [DEBUG] deokkeun! / $2a$10$cSKqivViwvdbIDAWIM/hZeQuJJyXM2L0npQqD.NkS4ADfQCpUIidS
+2023-06-13 15:10:33 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-13 15:10:33 [INFO] Running Time : 407ms
+2023-06-13 15:10:33 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 15:10:33 [INFO] 김덕근 로그인 성공
+2023-06-13 15:11:56 [INFO] 초기화 필터 파괴
+2023-06-13 16:48:06 [INFO] 초기화 필터 생성
+2023-06-13 16:48:14 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-13 16:48:18 [DEBUG] deokkeun! / $2a$10$CiWmn52cZtHzsm8bMBXRDOJ0AeATI50VNnJCiHPPFNPKbaoBKoNO6
+2023-06-13 16:48:18 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-13 16:48:18 [INFO] Running Time : 3501ms
+2023-06-13 16:48:18 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 16:48:18 [INFO] 김덕근 로그인 성공
+2023-06-13 16:48:53 [INFO] 로그아웃 수행됨
+2023-06-13 16:50:42 [INFO] 초기화 필터 파괴
+2023-06-13 22:02:06 [INFO] 초기화 필터 생성
+2023-06-13 22:02:14 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-13 22:02:17 [DEBUG] deokkeun! / $2a$10$NzOYbeZcP0TowZ9BBQxL3urAmSqUybKJCQ8vxGZ2k98RkPl.HSCBG
+2023-06-13 22:02:17 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-13 22:02:17 [INFO] Running Time : 3513ms
+2023-06-13 22:02:17 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 22:02:17 [INFO] 김덕근 로그인 성공
+2023-06-13 22:02:21 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-13 22:02:21 [DEBUG] deokkeun! / $2a$10$XjwxbB0mOm/hxIUFPxu7A.D3rZ1J/QHm8MjIbfry/GbwI/NTNSn12
+2023-06-13 22:02:21 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-13 22:02:21 [INFO] Running Time : 237ms
+2023-06-13 22:02:21 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 22:02:21 [INFO] 김덕근 로그인 성공
+2023-06-13 23:59:10 [INFO] 초기화 필터 파괴
+=======
+2023-06-13 13:57:23 [INFO] 초기화 필터 생성
+2023-06-13 13:57:47 [INFO] 로그인 기능 수행됨
+2023-06-13 13:57:47 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=jjewwi12@gmail.com, memberPw=jjewwi12, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 0:0:0:0:0:0:0:1
+2023-06-13 13:57:50 [DEBUG] jjewwi12 / $2a$10$IdUo2YOZb0kK3E0pDw3hy.PKYlD3ZtxJs7mL8jJyT0AbK2oO1hYfS
+2023-06-13 13:57:50 [INFO] Return Value : Member(memberNo=8, memberEmail=jjewwi12@gmail.com, memberPw=null, memberName=하이요, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-13 12:47:19, memberDeleteFG=null, socialId=null)
+2023-06-13 13:57:50 [INFO] Running Time : 2767ms
+2023-06-13 13:57:50 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 13:57:50 [DEBUG] Member(memberNo=8, memberEmail=jjewwi12@gmail.com, memberPw=null, memberName=하이요, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-13 12:47:19, memberDeleteFG=null, socialId=null)로그인 성공시 로그인 멤버 정보
+2023-06-13 14:07:58 [INFO] 초기화 필터 생성
+2023-06-13 17:03:16 [INFO] 초기화 필터 생성
+2023-06-13 17:04:08 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 0:0:0:0:0:0:0:1
+2023-06-13 17:04:12 [DEBUG] password999! / $2a$10$FF2D.VPQ97Y7B8foBXuYTuokntcmFqAuuZ7UE3ob1sqoCSv3vGrdi
+2023-06-13 17:04:12 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-13 17:04:12 [INFO] Running Time : 4166ms
+2023-06-13 17:04:12 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 17:04:12 [INFO] 일일맨 로그인 성공
+2023-06-13 17:06:51 [INFO] 로그아웃 수행됨
+2023-06-13 17:06:52 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 0:0:0:0:0:0:0:1
+2023-06-13 17:06:52 [DEBUG] password999! / $2a$10$Wq9q8MmM5.jYevj1OJvFru4mRHEOiT2fYAKmD71Mib8KG0IvRKada
+2023-06-13 17:06:52 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-13 17:06:52 [INFO] Running Time : 207ms
+2023-06-13 17:06:52 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 17:06:52 [INFO] 구구맨 로그인 성공
+2023-06-13 17:07:00 [INFO] 로그아웃 수행됨
+2023-06-13 17:07:08 [INFO] 로그아웃 수행됨
+2023-06-13 17:07:09 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 0:0:0:0:0:0:0:1
+2023-06-13 17:07:10 [DEBUG] password999! / $2a$10$DUXyu/jzxSGOm.X9.63Y4el7vbOW92MXbqL1cyWW4ziHRK5BsR4W.
+2023-06-13 17:07:10 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-13 17:07:10 [INFO] Running Time : 260ms
+2023-06-13 17:07:10 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 17:07:10 [INFO] 일일맨 로그인 성공
+2023-06-13 17:07:11 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-13 17:07:11 [DEBUG] password999! / $2a$10$kPbLr2DszCqyoubYO/ErMuHjow7bDqjY5RoxOLTF7.BwnaBrBblZe
+2023-06-13 17:07:11 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-13 17:07:11 [INFO] Running Time : 264ms
+2023-06-13 17:07:11 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-13 17:07:11 [INFO] 일일맨 로그인 성공
+2023-06-13 17:07:28 [INFO] projectNo : 1
+2023-06-13 17:07:28 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-13 17:07:29 [INFO] Return Value : 4
+2023-06-13 17:07:29 [INFO] Running Time : 138ms
+2023-06-13 17:07:29 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-13 17:07:29 [INFO] memberNo 1의 1번 프로젝트 안 PmNo : 4
+2023-06-13 17:07:29 [INFO] ---------------------------------------
+Start : ChatServiceImpl - selectChatRoomList
+Parameter : [{memberNo=1, projectNo=1, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-13 17:07:29 [INFO] Return Value : [ChatRoom(chatRoomNo=1, chatRoomTitle=Final 프로젝트, chatRoomST=N, projectNo=1, chatRoomType=1), ChatRoom(chatRoomNo=2, chatRoomTitle=Java, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=3, chatRoomTitle=Front, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=4, chatRoomTitle=DB, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=7, chatRoomTitle=구구맨, chatRoomST=N, projectNo=1, chatRoomType=3), ChatRoom(chatRoomNo=9, chatRoomTitle=삼삼맨, chatRoomST=N, projectNo=1, chatRoomType=3), ChatRoom(chatRoomNo=10, chatRoomTitle=오오맨, chatRoomST=N, projectNo=1, chatRoomType=3)]
+2023-06-13 17:07:29 [INFO] Running Time : 78ms
+2023-06-13 17:07:29 [INFO] End : ChatServiceImpl - selectChatRoomList
+---------------------------------------------
+
+2023-06-13 17:07:30 [INFO] ---------------------------------------
+Start : ChatServiceImpl - selectChatMessageList
+Parameter : [1]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-13 17:07:30 [INFO] Return Value : [ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇㅎ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇㅁㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅎㅇㅁ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅋㅎㅇㅁ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㄴㄴ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=1111111, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=gdgd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=zz, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=gdgd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=zz, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=gdgd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=zz, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=gdgd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=gd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=zz, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=gdgd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=zzz, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=gdgd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=dd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=gd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=zz, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅈㅈ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=gd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=gdgd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=zz, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=??, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=gdgd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=dd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=dd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=zz, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅇㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅇㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=gdgd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=gdgd, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=zz, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅇㅇ<br>, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅋㅋ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=일일맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅎㅇㅎㅇ, cmRegDate=2023-06-08, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=gggg, cmRegDate=2023-06-09, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨), ChatMessage(cmNo=0, chatMessage=ㅇㅇㅇ, cmRegDate=2023-06-12, chatRoomNo=0, pmNo=0, pmProfile=null, memberName=구구맨)]
+2023-06-13 17:07:30 [INFO] Running Time : 104ms
+2023-06-13 17:07:30 [INFO] End : ChatServiceImpl - selectChatMessageList
+---------------------------------------------
+
+2023-06-13 17:07:30 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-13 17:07:30 [INFO] Return Value : 4
+2023-06-13 17:07:30 [INFO] Running Time : 15ms
+2023-06-13 17:07:30 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-13 17:07:33 [INFO] projectNo : 1
+2023-06-13 17:07:33 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=1, projectNo=1}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-13 17:07:33 [INFO] Return Value : 4
+2023-06-13 17:07:33 [INFO] Running Time : 17ms
+2023-06-13 17:07:33 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-13 17:07:33 [INFO] memberNo 1의 1번 프로젝트 안 PmNo : 4
+2023-06-13 17:07:33 [INFO] ---------------------------------------
+Start : ChatServiceImpl - selectChatRoomList
+Parameter : [{memberNo=1, projectNo=1, pmNo=4}]
+ip : 0:0:0:0:0:0:0:1 (email : test01@gmail.com)
+2023-06-13 17:07:33 [INFO] Return Value : [ChatRoom(chatRoomNo=1, chatRoomTitle=Final 프로젝트, chatRoomST=N, projectNo=1, chatRoomType=1), ChatRoom(chatRoomNo=2, chatRoomTitle=Java, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=3, chatRoomTitle=Front, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=4, chatRoomTitle=DB, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=7, chatRoomTitle=구구맨, chatRoomST=N, projectNo=1, chatRoomType=3), ChatRoom(chatRoomNo=9, chatRoomTitle=삼삼맨, chatRoomST=N, projectNo=1, chatRoomType=3), ChatRoom(chatRoomNo=10, chatRoomTitle=오오맨, chatRoomST=N, projectNo=1, chatRoomType=3)]
+2023-06-13 17:07:33 [INFO] Running Time : 78ms
+2023-06-13 17:07:33 [INFO] End : ChatServiceImpl - selectChatRoomList
+---------------------------------------------
+
+>>>>>>> a2b6c92aa9d1485edd14cf5cb451238afade3296
+>>>>>>> c3b854229e51f0091858dc7136553701fc9e10ac

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="projectMemberMapper">
+	
+	<resultMap type="projectMember" id="projectMember_rm">
+		<id property="pmNo" column="PM_NO"/>
+		
+		<result property="projectNo" column="PROJECT_NO"/>
+		<result property="memberNo" column="MEMBER_NO"/>
+		<result property="projectManager" column="PROJECT_MANAGER"/>
+		<result property="profileColor" column="PROFILE_COLOR"/>
+		<result property="pmST" column="PM_ST"/>
+		<result property="regDate" column="REG_DATE"/>
+		<result property="profileImg" column="PROFILE_IMG"/>
+	</resultMap>
+	
+	
+	<!-- pmNo 조회 -->
+	<select id="selectPmNo" resultType="_int">
+		SELECT PM_NO
+		FROM PROJECT_MEMBER
+		WHERE MEMBER_NO = ${memberNo}
+		AND PROJECT_NO = ${projectNo}
+	</select>
+	
+	
+	<select id="selectMemberNo" resultType="_int">
+		SELECT MEMBER_NO
+		FROM MEMBER
+		WHERE MEMBER_EMAIL = #{memberEmail}
+		AND MEMBER_DELETE_FG = 'N'
+	</select>
+	
+	<insert id="insertProjectMember" parameterType="projectMember" useGeneratedKeys="true">
+	
+		<selectKey keyProperty="pmNo" resultType="_int" order="BEFORE">
+ 			SELECT SEQ_PM_NO.NEXTVAL FROM DUAL
+ 		</selectKey>
+ 		
+			INSERT INTO PROJECT_MEMBER VALUES(
+				#{pmNo},
+				#{projectNo},
+				#{memberNo},
+				DEFAULT,
+				'Y',
+				DEFAULT
+			)
+	</insert>
+	
+	<!-- 프로젝트 내 로그인 회원의 프로젝트 멤버정보 조회 -->
+	<select id="selectProjectMember" resultMap="projectMember_rm">
+		SELECT *
+		FROM PROJECT_MEMBER
+		WHERE MEMBER_NO = ${memberNo} AND PROJECT_NO = ${projectNo} AND PM_ST = 'Y'
+	</select>
+	
+	<!-- 프로젝트 내 pmNo 리스트 조회 -->
+	<select id="selectPmNoList" resultType="_int">
+		SELECT PM_NO
+		FROM PROJECT_MEMBER
+		WHERE PROJECT_NO = ${projectNo}
+	</select>
+	
+		<select id="getInviteCode" resultType="string">
+		SELECT INVITE_CODE
+		FROM PROJECT_MEMBER
+		WHERE PROJECT_NO = ${projectNo}
+	</select>
+</mapper>

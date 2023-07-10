@@ -1,0 +1,831 @@
+
+/*--------------------------------------------------------------
+# General (공통)
+--------------------------------------------------------------*/
+:root {
+  scroll-behavior: smooth;
+  
+}
+
+body {
+  color: #444444;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+a {
+  color: #4154f1;
+  text-decoration: none;
+}
+
+a:hover {
+  /* color: #717ff5; */
+  /* text-decoration: none; */
+} 
+
+/* 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nunito", sans-serif;
+}  */
+
+
+/* 폰트(프리텐다드) */
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*--------------------------------------------------------------
+# Sections (공통) - 각 페이지별 메인제목 및 부제목설명
+--------------------------------------------------------------*/
+section {
+  padding: 25px 0;
+  overflow: hidden;
+}
+
+.section-header {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.section-header h2 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin: 10px 0 30px 0;
+  color: #609966;
+  text-transform: uppercase;
+}
+
+.section-header p {
+  margin: 30px 0 30px 0;
+  padding: 0;
+  font-size: 38px;
+  line-height: 55px;
+  font-weight: 700;
+  color: #4D4D4D;
+}
+
+
+
+
+/*--------------------------------------------------------------
+# top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 30px;
+  bottom: 15px;
+  z-index: 99999;
+  /* background: #4154f1; */
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+
+.back-to-top i {
+  font-size: 24px;
+  /* color: #fff; */
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  /* background: #6776f4; */
+  color: #fff;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+
+/*--------------------------------------------------------------
+# TopBanner Section  첫페이지
+--------------------------------------------------------------*/
+.topbanner {
+    width: 100%;
+    height: 100vh;
+    /*background: url(../img/hero-bg.png) top center no-repeat;*/
+    background-size: cover;
+    /* margin-top: 20px; */
+    padding-top: 100px;
+}
+
+.topbanner h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    color: #4D4D4D;
+}
+
+.topbanner h2 {
+    color: #444444;
+    margin: 15px 0 0 0;
+    font-size: 26px;
+}
+
+/* 첫페이지 상세설명칸 : 하나의 공간에서 ~~*/
+.topbanner h6 {
+    font-size: 1rem;
+}
+
+/* 메인 안 무료로사용하기 버튼 설정 */
+.btn-get-started {
+    margin-top: 30px;
+    line-height: 0;
+    padding: 15px 40px;
+    border-radius: 4px;
+    transition: 0.5s;
+    color: #fff;
+    background: #609966; 
+    /* box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4); */
+}
+
+/* 메인 안 무료로사용하기 버튼 설정 */
+.btn-get-started span {
+  /* font-family: "Nunito", sans-serif; */
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+/* 버튼안 아이콘 */
+.btn-get-started i {
+  margin-left: 5px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.btn-get-started:hover i {
+  transform: translateX(5px);
+}
+
+.topbanner .hero-img {
+  text-align: right;
+}
+
+
+
+/*--------------------------------------------------------------
+#AutoSwiper-1 Section 슬라이드기능1
+--------------------------------------------------------------*/
+
+.AutoSwiper-1 {
+  background-color: #f6f9ff;
+  height: 790px;
+ 
+}
+
+.AutoSwiper-1 .container .section-header {
+  margin-top: 100px;
+}
+
+.AutoSwiper-1 .container .section-header h2 {
+  margin: 0px 0px 30px 0px;
+  padding: 20px;
+
+}
+
+
+/* 기능설정카드 */
+.AutoSwiper-1 .testimonial-item {
+  box-sizing: content-box;
+  padding: 30px;
+  margin: 20px 20px;
+  box-shadow: 0px 0 20px rgba(1, 41, 112, 0.1);
+  background: #fff;
+  /* min-height: 320px; */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: 0.3s;
+  height: 195px;
+  border-radius : 20px;
+}
+
+/* 이모티콘 */
+.imoticon {
+  text-align: center;
+}
+
+
+.imoticon-name {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 30px 0px 15px 0px;
+}
+
+.imoticon-info {
+  text-align: center;
+  font-size: 16px;
+}
+
+
+
+
+
+.AutoSwiper-1 .testimonial-item .stars {
+  margin-bottom: 15px;
+}
+
+.AutoSwiper-1 .testimonial-item .stars i {
+  color: #ffc107;
+  margin: 0 1px;
+}
+
+.AutoSwiper-1 .testimonial-item .testimonial-img {
+  width: 90px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  margin: 0 auto;
+}
+
+
+
+.AutoSwiper-1 .testimonial-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+  color: #111;
+}
+
+.AutoSwiper-1 .testimonial-item h4 {
+  font-size: 14px;
+  /* color: #999; */
+  margin: 0;
+}
+
+.AutoSwiper-1 .testimonial-item p {
+  font-style: italic;
+  margin: 0 auto 15px auto;
+}
+
+/* 동그라미 */
+.AutoSwiper-1 .swiper-pagination {
+  margin-top: 70px;
+  position: relative;
+}
+
+.AutoSwiper-1 .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #609966;
+}
+
+.AutoSwiper-1 .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #609966;
+}
+
+
+
+
+/* 불투명하게 보임 */
+.swiper-wrapper .swiper-slide img:hover {
+  /* opacity: 1; */
+}
+
+/* 이미지 선택시 색상 진하게 */
+.swiper-wrapper .swiper-slide img {
+  /* opacity: 0.3; */
+} 
+
+
+
+/*--------------------------------------------------------------
+# Features 기능설명
+--------------------------------------------------------------*/
+.features .feature-box {
+  padding: 24px 20px;
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+  transition: 0.3s;
+  height: 100%;
+}
+
+.gy-4 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  /* border: 1px solid black; */
+}
+
+
+/* 4가지 특징 간격정리 */
+.col-lg-3, .col-md-4 {
+  /* margin-top: 0px; */
+}
+
+/* .features > ul > li .col-lg-3 {
+  margin-top : 0px;
+} */
+
+.features .feature-box h3 {
+  font-size: 18px;
+  color: #609966;
+  font-weight: 700;
+  margin: 0;
+}
+
+
+/* 프로젝트관리 버튼 4개 설정 */
+.features ul > li > a > h4 {
+  margin-bottom : 0rem;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.features .feature-box i {
+  line-height: 0;
+  background: #ecf3ff;
+  padding: 4px;
+  margin-right: 10px;
+  font-size: 24px;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.features .feature-box:hover i {
+  background: #609966;
+  color: #fff;
+}
+
+.features .feture-tabs {
+  margin-top: 120px;
+}
+
+.features .feture-tabs h3 {
+  color: #609966;
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+
+/* =====================탭버튼 누르는 효과================ */
+
+.features .nav-tabs {
+  border: 0;
+}
+
+.features .nav-link {
+  border: 0;
+  padding: 20px 0px;
+  color: var(--color-secondary);
+  box-shadow: 5px 5px 25px rgba(var(--color-secondary-rgb), 0.15);
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: 0s;
+  cursor: pointer;
+  height: 100%;
+}
+
+.features .nav-link i {
+  font-size: 32px;
+  line-height: 0;
+}
+
+
+.features .nav-link{
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0px 55px;
+  /* color: var(--color-secondary); */
+  
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+  border-radius: 70px;
+  border: 1px solid #609966;
+  background-color: #609966;
+  color: white;
+}
+
+
+
+.features .nav-link:hover {
+  /* color: var(--color-primary); */
+  background-color :  #f6f9ff;
+  color: #609966;
+  border: 1px solid #609966;
+
+}
+
+.features .nav-link.active {
+  transition: 0.3s;
+  /* background: var(--color-secondary) linear-gradient(rgba(var(--color-primary-rgb), 0.95), rgba(var(--color-primary-rgb), 0.6)); */
+  border-color: var(--color-primary);
+}
+
+.features .nav-link.active h4 {
+  color: var(--color-white);
+}
+
+.features .nav-link.active h4 {
+  color: var(--color-white) !important;
+}
+
+.features .tab-content {
+  margin-top: 30px;
+}
+
+.features .tab-pane.active {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.features .tab-pane h3 {
+  font-weight: 600;
+  /* font-size: 36px; */
+  color: var(--color-secondary);
+}
+
+.features .tab-pane ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features .tab-pane ul li {
+  padding-bottom: 10px;
+}
+
+.features .tab-pane ul i {
+  font-size: 24px;
+  margin-right: 4px;
+  color: var(--color-primary);
+}
+
+.features .tab-pane p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+
+
+.features .feture-tabs .nav-pills {
+  border-bottom: 1px solid #eee;
+}
+
+.features .feture-tabs .nav-link {
+  background: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 600;
+  color: #609966;
+  padding: 12px 0;
+  margin-right: 25px;
+  margin-bottom: -2px;
+  border-radius: 0;
+}
+
+.features .feture-tabs .nav-link.active {
+  color: #609966;
+  border-bottom: 3px solid #609966;
+}
+
+.features .feture-tabs .tab-content h4 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 700;
+  color: #609966;
+}
+
+.features .feture-tabs .tab-content i {
+  font-size: 24px;
+  line-height: 0;
+  margin-right: 8px;
+  color: #609966;
+}
+
+.features .feature-icons {
+  margin-top: 120px;
+}
+
+.features .feature-icons h3 {
+  color: #609966;
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.features .feature-icons .content .icon-box {
+  display: flex;
+}
+
+.features .feature-icons .content .icon-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: #609966;
+}
+
+.features .feature-icons .content .icon-box i {
+  font-size: 44px;
+  line-height: 44px;
+  color: #609966;
+  margin-right: 15px;
+}
+
+.features .feature-icons .content .icon-box p {
+  font-size: 15px;
+  color: #848484;
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+# Recent Blog Posts 기기설정
+--------------------------------------------------------------*/
+.recent-blog-posts .post-box {
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+  transition: 0.3s;
+  height: 100%;
+  overflow: hidden;
+  padding: 30px;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.recent-blog-posts .post-box .post-img {
+  overflow: hidden;
+  /* margin: -30px -30px 15px -30px; */
+  position: relative;
+}
+
+.recent-blog-posts .post-box .post-img img {
+  transition: 0.5s;
+}
+
+.recent-blog-posts .post-box .post-date {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(1, 41, 112, 0.6);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.recent-blog-posts .post-box .post-title {
+  font-size: 24px;
+  color: #012970;
+  font-weight: 700;
+  margin-bottom: 18px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.recent-blog-posts .post-box .readmore {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  line-height: 1;
+  transition: 0.3s;
+}
+
+.recent-blog-posts .post-box .readmore i {
+  line-height: 0;
+  margin-left: 4px;
+  font-size: 18px;
+}
+
+.recent-blog-posts .post-box:hover .post-title {
+  color: #609966;
+}
+
+.recent-blog-posts .post-box:hover .post-img img {
+  transform: rotate(6deg) scale(1.2);
+}
+
+
+.MultiDivice .container #picPC {
+  height: 800px;
+} 
+
+
+
+/*--------------------------------------------------------------
+# 업무의 효율을 높여보세요
+--------------------------------------------------------------*/
+
+.newsletter {
+    padding: 50px 0;
+    background: #f6f9ff;
+    border-top: 1px solid #e1ecff;
+}
+
+.newsletter h4 {
+    font-size: 23px;
+    margin: 0 0 10px 0;
+    padding: 0;
+    line-height: 2;
+    font-weight: 700;
+    color: #4D4D4D;
+}
+
+.newsletter form {
+    margin-top: 20px;
+    background: #fff;
+    padding: 6px 10px;
+    position: relative;
+    border-radius: 4px;
+    border: 1px solid #e1ecff;
+}
+
+
+
+
+/*--------------------------------------------------------------
+# 랜딩페이지 반응형설정
+--------------------------------------------------------------*/
+
+
+@media (max-width: 767px) {
+    /* 프로젝트 특징 4개 */
+    .features > .container > ul > li > a{
+        margin: 3px 15px;  
+    }
+
+    /* 메뉴 4개 일렬로 보이기 */
+    .features > .container >  ul > .col-md-4 {
+        width: 50%;
+    }
+
+	/* 메뉴 2/2보일 때 사이 간격 */
+    .features > .container > .gy-4 {
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+  
+    /* 4가지 특성 안 글자크기 */
+    .features ul > li > a > h4 {
+        font-size: 13px;
+    }
+  
+    .features .nav-link {
+        height: 20px;
+    }
+  
+    .video-wrap > video {
+        width: 100%;
+    }
+  
+    /* 워크스페이스에 대한 특징 글씨 */
+    .features .feature-box h3 {
+        font-size: 13px;
+    }
+
+    /* 섹션별 상세설명 글씨크기 */
+    .section-header h2 {
+        margin: 0 auto;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+  
+    .recent-blog-posts > .container > .w-100 >
+    .px-vw-5 > .row > .col-12 {
+        margin-bottom: 20px;
+    }
+    
+    /* 첫페이지 상세설명칸 : 하나의 공간에서 ~~*/
+    .topbanner > .container > .row > .col-lg-7 > h6 {
+        font-size: 0.6rem;
+    }
+
+    #example1 {
+        font-size: 35px;
+        line-height: 1.4;
+    }
+
+    .features > .nav-link > a {
+        margin: 0px 0px;
+    }
+
+
+    .section-header p {
+        font-size: 28px;
+        line-height: 38px;
+    }
+
+    .features .feature-icons h3 {
+        font-size: 28px;
+    }
+
+    .features .feture-tabs h3 {
+        font-size: 28px;
+    }
+
+    .topbanner {
+        text-align: center;
+    }
+    
+    .topbanner h1 {
+        font-size: 32px;
+    }
+    
+    .topbanner h2 {
+        font-size: 24px;
+    }
+    
+    .topbanner .hero-img img {
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+@media (min-width: 768px) {
+    /* 메뉴 4개 일렬로 보이기 */
+    .features > .container >  ul > .col-md-4 {
+        width: 25%;
+    }
+
+    .features .nav-link {
+        margin: 0px 0px;
+    }
+
+    .testimonials .swiper-slide-active {
+        opacity: 1;
+    }
+
+    .testimonials .swiper-pagination {
+        margin-top: 0;
+    }
+    
+     .video-wrap > video {
+        width: 100%;
+    }
+  
+}
+
+
+
+@media (min-width: 1200px) {
+    .testimonials .swiper-slide-next {
+        opacity: 1;
+        transform: scale(1.12);
+    }
+}
+
+
+
+
+
+
+@media (min-width: 1024px) {
+  .topbanner {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 991px) {
+  .topbanner {
+    height: auto;
+    padding: 120px 0 60px 0;
+  }
+
+  .topbanner .hero-img {
+    text-align: center;
+    margin-top: 80px;
+  }
+
+  .topbanner .hero-img img {
+    width: 80%;
+  }
+}
+
+.img-fluid {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  max-width: 130%;
+}
+
+@media (min-width: 992px) {
+  .col-lg-7 {
+    width: 52%;
+  }
+}
+
+.px-vw-5 > div{
+  width: 100%;
+}

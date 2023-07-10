@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper>
-  <cache-ref namespace=""/>
+<mapper namespace="alertMapper">
+
+	<resultMap type="alert" id="alert_rm">
+		<id property="alertNo" column="ALERT_NO"/>
+		
+		<result property="alertContent" column="ALERT_CONTENT"/>
+		<result property="projectNo" column="PROJECT_NO"/>
+		<result property="memberNo" column="MEMBER_NO"/>
+		<result property="alertRegDate" column="ALERT_REG_DATE"/>
+		<result property="alertCheckFg" column="ALERT_CHECK_FG"/>
+		<result property="link" column="LINK"/>
+		<result property="projectName" column="PROJECT_NAME"/>
+		<result property="memberName" column="MEMBER_NAME"/>
+		<result property="pmNo" column="PM_NO"/>
+	</resultMap>
+	
+	<!-- 내pmNo 조회 -->
+	<select id="selectMyPmNo" resultType="_int">
+		SELECT PM_NO FROM PROJECT_MEMBER WHERE PROJECT_NO = ${projectNo} AND MEMBER_NO = ${memberNo}
+	</select>
+	
+	<!-- 프로젝트 멤버 넘버 조회 -->
+	<select id="selectPmNoList" resultType="_int">
+		SELECT PM_NO FROM PROJECT_MEMBER WHERE PROJECT_NO = ${projectNo}	
+	</select>
+	
+	<!-- 알림 삽입 -->
+	<insert id="insertAlert">
+		INSERT INTO ALERT VALUES(SEQ_ALERT_NO.NEXTVAL, #{alertContent}, ${projectNo}, ${memberNo},
+									DEFAULT, DEFAULT, #{link}, ${pmNo})
+	</insert>
+	
+	<!-- 알림 리스트 조회 -->
+	<select id="selectAlertList" resultMap="alert_rm">
+		SELECT ALERT_NO, ALERT_CONTENT, PROJECT_NO, MEMBER_NAME, ALERT_REG_DATE, LINK
+		FROM ALERT
+		JOIN MEMBER USING (MEMBER_NO)
+		WHERE PROJECT_NO = ${projectNo} AND PM_NO = ${pmNo} AND ALERT_CHECK_FG = 'N'
+		ORDER BY ALERT_REG_DATE DESC
+	</select>
+	
+	<!-- 알림 확인 업데이트 -->
+	<update id="updateAlertCheckFg">
+		UPDATE ALERT SET ALERT_CHECK_FG = 'Y'
+		WHERE PM_NO = ${pmNo}
+	</update>
 </mapper>

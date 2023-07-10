@@ -13,14 +13,49 @@
 	<!-- 별칭 작성 부분 -->
 	<typeAliases>
 		<!-- VO 클래스의 패키지명 + 클래스명 모두 작성하는것이 불편하기 때문에 짧은 별칭 부여 -->
-		<!-- <typeAlias type="com.turtle.www.member.model.vo.Member" alias="member"/> -->
+		<typeAlias type="com.turtle.www.member.model.vo.Member" alias="member"/>
+		<typeAlias type="com.turtle.www.member.model.vo.Certification" alias="certification"/>
+		
+		<typeAlias type="com.turtle.www.projectMember.model.vo.ProjectMember" alias="projectMember"/>
+		<typeAlias type="com.turtle.www.project.model.vo.Project" alias="project"/>
+		<typeAlias type="com.turtle.www.workspace.model.vo.Workspace" alias="workspace"/>
+		
+		<typeAlias type="com.turtle.www.chat.model.vo.ChatRoom" alias="chatRoom"/>
+		<typeAlias type="com.turtle.www.chat.model.vo.ChatRoomJoin" alias="chatRoomJoin"/>
+		<typeAlias type="com.turtle.www.chat.model.vo.ChatMessage" alias="chatMessage"/>
+		
+		<typeAlias type="com.turtle.www.calendar.model.vo.Calendar" alias="calendar"/>
+		<typeAlias type="com.turtle.www.payment.model.vo.Pay" alias="pay"/>
+		
+		<typeAlias type="com.turtle.www.loadmap.model.vo.Loadmap" alias="loadmap"/>
+		<typeAlias type="com.turtle.www.loadmap.model.vo.GitCommit" alias="gitCommit"/>
+		
+		<typeAlias type="com.turtle.www.memo.model.vo.Memo" alias="memo"/>
+		
+		<typeAlias type="com.turtle.www.board.model.vo.Board" alias="board"/>
+		<typeAlias type="com.turtle.www.board.model.vo.BoardDetail" alias="boardDetail"/>
+		
+		<typeAlias type="com.turtle.www.alert.model.vo.Alert" alias="alert"/>
+		
 	</typeAliases>
 	
 	<!-- SQL이 작성되는 mapper 파일 위치를 등록 -->
 	<mappers>
 		<!-- <mapper resource="mapper 파일 경로"
 		경로를 작성하는 기준(시작지점)은 src/main/resources 폴더-->
-		<!-- <mapper resource="/mappers/member-mapper.xml"/> -->
+		<mapper resource="/mappers/member-mapper.xml"/>
+		<mapper resource="/mappers/myPage-mapper.xml"/>
+		<mapper resource="/mappers/chat-mapper.xml"/>
+		<mapper resource="/mappers/projectMember-mapper.xml"/>		
+		<mapper resource="/mappers/project-mapper.xml"/>		
+		<mapper resource="/mappers/workspace-mapper.xml"/>		
+		<mapper resource="/mappers/calendar-mapper.xml"/>
+		<mapper resource="/mappers/pay-mapper.xml"/>
+		<mapper resource="/mappers/memo-mapper.xml"/>
+		<mapper resource="/mappers/board-mapper.xml"/>
+		<mapper resource="/mappers/loadmap-mapper.xml"/>
+		<mapper resource="/mappers/gitCommit-mapper.xml"/>
+		<mapper resource="/mappers/alert-mapper.xml"/>
 	</mappers>
 
 </configuration>

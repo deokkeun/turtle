@@ -17,9 +17,9 @@
 	<!-- destroy-method="close" : 주어진 세션을 자동으로 반환(close)하는 설정 -->
 	<bean id="realDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-		<property name="username" value="community"/>
-		<property name="password" value="1234"/>
+		<property name="url" value="jdbc:oracle:thin:@112.220.137.37:1521:xe"/>
+		<property name="username" value="turtle"/>
+		<property name="password" value="turtle"/>
 		
 		<!-- SQL이 수행된 후 자동으로 Commit 되는것을 지정 -->
 		<property name="defaultAutoCommit" value="false"/>
@@ -86,11 +86,11 @@
 	
 	<!-- ******************************** 파일 업로드 ******************************** -->
 	
-<!-- 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		 <property name="maxUploadSize" value="104857600"/>
 		 <property name="maxUploadSizePerFile" value="104857600"/>
 		 <property name="maxInMemorySize" value="104857600"/>
-	</bean> -->
+	</bean>
 	
 	
 	
@@ -113,7 +113,38 @@
 	 		사이즈가 이보다 클 경우 이 사이즈 이상의 데이터는 파일에 저장됩니다. 
 			 기본값은 10240 바이트.
 	 -->	
-	
+	 
+	 
 
+	 
+	<!--  이메일 인증 관련 빈 등록  -->
+	 <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	 	<property name="locations">
+		    <list>
+		      <value>classpath:private-info.xml</value>
+		    </list>
+	  	</property>
+	</bean>
+
+ 	 <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	 	<property name="host" value="smtp.gmail.com" />
+	 	<property name="port" value="587" />
+	 	<property name="username" value="${smtpEmail}" />
+	 	<property name="password" value="${password}" />
+	 	<property name="javaMailProperties" >
+	 		<props>
+		 		<prop key="mail.transport.protocol">smtp</prop>	
+		 		<prop key="mail.smtp.auth">true</prop>
+		 		<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+		 		<prop key="mail.smtp.starttls.enable">true</prop>
+		 		<prop key="mail.debug">true</prop>
+		 		<prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
+		 		<prop key="mail.smtp.ssl.protocols">TLSv1.2</prop>
+		 	</props>
+	 	</property>
+	 </bean> 
+		
+	
+		
 		
 </beans>

@@ -1,0 +1,35 @@
+2023-06-10 12:51:45 [INFO] 초기화 필터 생성
+2023-06-10 12:51:53 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-10 12:51:57 [DEBUG] password999! / $2a$10$aLFYobk9LPuLGguG/sDFiOykE6gudlDbg3.bnRkm/lBaNVIOsPI2S
+2023-06-10 12:51:57 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230608105346_86361.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-10 12:51:57 [INFO] Running Time : 3671ms
+2023-06-10 12:51:57 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-10 12:51:57 [INFO] 구구맨 로그인 성공
+2023-06-10 12:52:17 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - updateProfile
+Parameter : [{delete=1, webPath=/resources/images/memberProfile/, folderPath=/Users/deokkeun/eclipse-workspace/turtle/Turtle/src/main/webapp/resources/images/memberProfile/, uploadImage=MultipartFile[field="uploadImage", filename=, contentType=application/octet-stream, size=0], memberNo=999}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-10 12:52:17 [DEBUG] DAO 반환 성공
+2023-06-10 12:52:17 [DEBUG] 1수정 성공
+2023-06-10 12:52:17 [INFO] Return Value : 1
+2023-06-10 12:52:17 [INFO] Running Time : 181ms
+2023-06-10 12:52:17 [INFO] End : MyPageServiceImpl - updateProfile
+---------------------------------------------
+
+2023-06-10 12:52:24 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - updateProfile
+Parameter : [{delete=0, webPath=/resources/images/memberProfile/, folderPath=/Users/deokkeun/eclipse-workspace/turtle/Turtle/src/main/webapp/resources/images/memberProfile/, uploadImage=MultipartFile[field="uploadImage", filename=라이언.jpeg, contentType=image/jpeg, size=480432], memberNo=999}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-10 12:52:25 [DEBUG] DAO 반환 성공
+2023-06-10 12:52:25 [DEBUG] 1수정 성공
+2023-06-10 12:52:25 [INFO] Return Value : 1
+2023-06-10 12:52:25 [INFO] Running Time : 44ms
+2023-06-10 12:52:25 [INFO] End : MyPageServiceImpl - updateProfile
+---------------------------------------------
+
+2023-06-10 12:55:06 [INFO] 초기화 필터 파괴

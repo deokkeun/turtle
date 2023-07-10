@@ -1,0 +1,3534 @@
+<<<<<<< HEAD
+2023-06-12 09:49:19 [INFO] 초기화 필터 생성
+2023-06-12 09:49:34 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 09:49:38 [DEBUG] password999! / $2a$10$9DlQMbQvFoglkKUxid.KQufw6W/VBSwjBfLqDrhldmW1C..sWT.ba
+2023-06-12 09:49:38 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-12 09:49:38 [INFO] Running Time : 4426ms
+2023-06-12 09:49:38 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 09:49:38 [INFO] 구구맨 로그인 성공
+2023-06-12 10:06:54 [INFO] 초기화 필터 파괴
+2023-06-12 10:30:06 [INFO] 초기화 필터 생성
+2023-06-12 11:20:54 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [hohosuu@naver.co]
+ip : 127.0.0.1
+2023-06-12 11:20:54 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [hohosuu@naver.c]
+ip : 127.0.0.1
+2023-06-12 11:20:54 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [hohosuu@naver.com]
+ip : 127.0.0.1
+2023-06-12 11:20:59 [INFO] Return Value : 0
+2023-06-12 11:20:59 [INFO] Return Value : 0
+2023-06-12 11:20:59 [INFO] Running Time : 4845ms
+2023-06-12 11:20:59 [INFO] Running Time : 4845ms
+2023-06-12 11:20:59 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:20:59 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:20:59 [INFO] Return Value : 0
+2023-06-12 11:20:59 [INFO] Running Time : 4877ms
+2023-06-12 11:20:59 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:30:22 [INFO] 초기화 필터 파괴
+2023-06-12 11:30:35 [INFO] 초기화 필터 생성
+2023-06-12 11:30:49 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [hohosuu@naver.c]
+ip : 127.0.0.1
+2023-06-12 11:30:49 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [hohosuu@naver.co]
+ip : 127.0.0.1
+2023-06-12 11:30:49 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [hohosuu@naver.com]
+ip : 127.0.0.1
+2023-06-12 11:30:53 [INFO] Return Value : 0
+2023-06-12 11:30:53 [INFO] Return Value : 0
+2023-06-12 11:30:53 [INFO] Running Time : 4538ms
+2023-06-12 11:30:53 [INFO] Return Value : 0
+2023-06-12 11:30:53 [INFO] Running Time : 4743ms
+2023-06-12 11:30:53 [INFO] Running Time : 4744ms
+2023-06-12 11:30:53 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:30:53 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:30:53 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:31:02 [INFO] ---------------------------------------
+Start : MemberServiceImpl - insertCertification
+Parameter : [{inputEmail=hohosuu@naver.com, cNumber=Hi42VM}]
+ip : 127.0.0.1
+2023-06-12 11:31:03 [ERROR] <<exception>> : org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239) - 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: ORA-00904: "ISSUE_DT": 부적합한 식별자
+
+### The error may exist in /mappers/member-mapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: UPDATE CERTIFICATION SET       C_NUMBER =  ?,       ISSUE_DT = SYSDATE       WHERE EMAIL = ?
+### Cause: java.sql.SQLSyntaxErrorException: ORA-00904: "ISSUE_DT": 부적합한 식별자
+
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: ORA-00904: "ISSUE_DT": 부적합한 식별자
+
+
+2023-06-12 11:31:03 [INFO] End : MemberServiceImpl - insertCertification
+---------------------------------------------
+
+2023-06-12 11:31:58 [INFO] 초기화 필터 파괴
+2023-06-12 11:32:09 [INFO] 초기화 필터 생성
+2023-06-12 11:32:20 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [hohosuu@naver.co]
+ip : 127.0.0.1
+2023-06-12 11:32:20 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [hohosuu@naver.c]
+ip : 127.0.0.1
+2023-06-12 11:32:21 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [hohosuu@naver.com]
+ip : 127.0.0.1
+2023-06-12 11:32:23 [INFO] Return Value : 0
+2023-06-12 11:32:23 [INFO] Return Value : 0
+2023-06-12 11:32:23 [INFO] Return Value : 0
+2023-06-12 11:32:23 [INFO] Running Time : 3106ms
+2023-06-12 11:32:23 [INFO] Running Time : 2050ms
+2023-06-12 11:32:23 [INFO] Running Time : 3106ms
+2023-06-12 11:32:23 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:32:23 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:32:23 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:32:23 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [hohosuu@naver.co]
+ip : 127.0.0.1
+2023-06-12 11:32:23 [INFO] Return Value : 0
+2023-06-12 11:32:23 [INFO] Running Time : 24ms
+2023-06-12 11:32:23 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:32:45 [INFO] ---------------------------------------
+Start : MemberServiceImpl - insertCertification
+Parameter : [{inputEmail=hohosuu@naver.com, cNumber=79o7rX}]
+ip : 127.0.0.1
+2023-06-12 11:32:45 [INFO] Return Value : 1
+2023-06-12 11:32:45 [INFO] Running Time : 64ms
+2023-06-12 11:32:45 [INFO] End : MemberServiceImpl - insertCertification
+---------------------------------------------
+
+2023-06-12 11:33:14 [INFO] ---------------------------------------
+Start : MemberServiceImpl - checkNumber
+Parameter : [{inputEmail=hohosuu@naver.com, cNumber=79o7rX}]
+ip : 127.0.0.1
+2023-06-12 11:33:15 [INFO] Return Value : 1
+2023-06-12 11:33:15 [INFO] Running Time : 149ms
+2023-06-12 11:33:15 [INFO] End : MemberServiceImpl - checkNumber
+---------------------------------------------
+
+2023-06-12 11:33:28 [INFO] 회원가입 기능 수행됨
+2023-06-12 11:33:28 [INFO] ---------------------------------------
+Start : MemberServiceImpl - signUp
+Parameter : [Member(memberNo=0, memberEmail=hohosuu@naver.com, memberPw=wlduddl33!, memberName=최수진, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 11:33:28 [DEBUG] 암호화 전 : wlduddl33! / 암호화 후 : $2a$10$v/zc/7F.zBZU.cyJUhp7FOaPizYyhfRC11sb4.O7A9mRwwI.7X3oC
+2023-06-12 11:33:28 [ERROR] <<exception>> : org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:93) - 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: ORA-00984: 열을 사용할 수 없습니다
+
+### The error may exist in /mappers/member-mapper.xml
+### The error may involve memberMapper.signUp-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO MEMBER VALUES(    SEQ_MEMBER_NO.NEXTVAL,    ?,    ?,    ?,    NULL,    "/resources/images/memberProfile/member.png",    DEFAULT, DEFAULT, NULL  )
+### Cause: java.sql.SQLSyntaxErrorException: ORA-00984: 열을 사용할 수 없습니다
+
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: ORA-00984: 열을 사용할 수 없습니다
+
+
+2023-06-12 11:33:28 [INFO] End : MemberServiceImpl - signUp
+---------------------------------------------
+
+2023-06-12 11:34:52 [INFO] 초기화 필터 파괴
+2023-06-12 11:35:02 [INFO] 초기화 필터 생성
+2023-06-12 11:35:13 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [hohosuu@naver.c]
+ip : 127.0.0.1
+2023-06-12 11:35:13 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [hohosuu@naver.co]
+ip : 127.0.0.1
+2023-06-12 11:35:13 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [hohosuu@naver.com]
+ip : 127.0.0.1
+2023-06-12 11:35:15 [INFO] Return Value : 0
+2023-06-12 11:35:15 [INFO] Return Value : 0
+2023-06-12 11:35:15 [INFO] Return Value : 0
+2023-06-12 11:35:15 [INFO] Running Time : 2710ms
+2023-06-12 11:35:15 [INFO] Running Time : 2531ms
+2023-06-12 11:35:15 [INFO] Running Time : 2710ms
+2023-06-12 11:35:15 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:35:15 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:35:15 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:35:21 [INFO] ---------------------------------------
+Start : MemberServiceImpl - insertCertification
+Parameter : [{inputEmail=hohosuu@naver.com, cNumber=0S13W8}]
+ip : 127.0.0.1
+2023-06-12 11:35:21 [INFO] Return Value : 1
+2023-06-12 11:35:21 [INFO] Running Time : 35ms
+2023-06-12 11:35:21 [INFO] End : MemberServiceImpl - insertCertification
+---------------------------------------------
+
+2023-06-12 11:35:36 [INFO] ---------------------------------------
+Start : MemberServiceImpl - checkNumber
+Parameter : [{inputEmail=hohosuu@naver.com, cNumber=0S13W8}]
+ip : 127.0.0.1
+2023-06-12 11:35:36 [INFO] Return Value : 1
+2023-06-12 11:35:36 [INFO] Running Time : 65ms
+2023-06-12 11:35:36 [INFO] End : MemberServiceImpl - checkNumber
+---------------------------------------------
+
+2023-06-12 11:35:44 [INFO] 회원가입 기능 수행됨
+2023-06-12 11:35:44 [INFO] ---------------------------------------
+Start : MemberServiceImpl - signUp
+Parameter : [Member(memberNo=0, memberEmail=hohosuu@naver.com, memberPw=wlduddl33!, memberName=최수진, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 11:35:44 [DEBUG] 암호화 전 : wlduddl33! / 암호화 후 : $2a$10$P4m2Syvf06/g48dyMd.O7utNHVrgDYbli5US9Ye6pEGTS7HFeJo9q
+2023-06-12 11:35:44 [ERROR] <<exception>> : org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:93) - 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: ORA-00984: 열을 사용할 수 없습니다
+
+### The error may exist in /mappers/member-mapper.xml
+### The error may involve memberMapper.signUp-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO MEMBER VALUES(    SEQ_MEMBER_NO.NEXTVAL,    ?,    ?,    ?,    NULL,    DEFAULT,    "/resources/images/memberProfile/member.png",    DEFAULT, NULL  )
+### Cause: java.sql.SQLSyntaxErrorException: ORA-00984: 열을 사용할 수 없습니다
+
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: ORA-00984: 열을 사용할 수 없습니다
+
+
+2023-06-12 11:35:44 [INFO] End : MemberServiceImpl - signUp
+---------------------------------------------
+
+2023-06-12 11:39:26 [INFO] 초기화 필터 파괴
+2023-06-12 11:39:38 [INFO] 초기화 필터 생성
+2023-06-12 11:39:49 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [hohosuu@naver.o]
+ip : 127.0.0.1
+2023-06-12 11:39:50 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [hohosuu@naver.c]
+ip : 127.0.0.1
+2023-06-12 11:39:50 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [hohosuu@naver.co]
+ip : 127.0.0.1
+2023-06-12 11:39:50 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [hohosuu@naver.com]
+ip : 127.0.0.1
+2023-06-12 11:39:54 [INFO] Return Value : 0
+2023-06-12 11:39:54 [INFO] Return Value : 0
+2023-06-12 11:39:54 [INFO] Running Time : 3694ms
+2023-06-12 11:39:54 [INFO] Running Time : 4358ms
+2023-06-12 11:39:54 [INFO] Return Value : 0
+2023-06-12 11:39:54 [INFO] Return Value : 0
+2023-06-12 11:39:54 [INFO] Running Time : 4010ms
+2023-06-12 11:39:54 [INFO] Running Time : 3932ms
+2023-06-12 11:39:54 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:39:54 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:39:54 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:39:54 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:40:00 [INFO] ---------------------------------------
+Start : MemberServiceImpl - insertCertification
+Parameter : [{inputEmail=hohosuu@naver.com, cNumber=5Zu39f}]
+ip : 127.0.0.1
+2023-06-12 11:40:00 [INFO] Return Value : 1
+2023-06-12 11:40:00 [INFO] Running Time : 79ms
+2023-06-12 11:40:00 [INFO] End : MemberServiceImpl - insertCertification
+---------------------------------------------
+
+2023-06-12 11:40:08 [INFO] ---------------------------------------
+Start : MemberServiceImpl - checkNumber
+Parameter : [{inputEmail=hohosuu@naver.com, cNumber=5Zu39f}]
+ip : 127.0.0.1
+2023-06-12 11:40:08 [INFO] Return Value : 1
+2023-06-12 11:40:08 [INFO] Running Time : 67ms
+2023-06-12 11:40:08 [INFO] End : MemberServiceImpl - checkNumber
+---------------------------------------------
+
+2023-06-12 11:40:16 [INFO] 회원가입 기능 수행됨
+2023-06-12 11:40:16 [INFO] ---------------------------------------
+Start : MemberServiceImpl - signUp
+Parameter : [Member(memberNo=0, memberEmail=hohosuu@naver.com, memberPw=wlduddl33!, memberName=최수진, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 11:40:16 [DEBUG] 암호화 전 : wlduddl33! / 암호화 후 : $2a$10$f.smqwho.fcgp77ygaw93.xxCKqcjWpxBhU4bdwjbBi5IbS2sNkRC
+2023-06-12 11:40:16 [INFO] Return Value : 1
+2023-06-12 11:40:16 [INFO] Running Time : 201ms
+2023-06-12 11:40:16 [INFO] End : MemberServiceImpl - signUp
+---------------------------------------------
+
+2023-06-12 11:40:51 [INFO] 로그인 기능 수행됨
+2023-06-12 11:40:51 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=hohosuu@naver.com, memberPw=wlduddl33!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 11:40:51 [DEBUG] wlduddl33! / $2a$10$.xhHjeklyla73xnQaVEe5OPZ2A05HUhk.UM151nNzMcz6mHzoc.n2
+2023-06-12 11:40:51 [INFO] Return Value : Member(memberNo=6, memberEmail=hohosuu@naver.com, memberPw=null, memberName=최수진, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-12 11:40:16, memberDeleteFG=null, socialId=null)
+2023-06-12 11:40:51 [INFO] Running Time : 241ms
+2023-06-12 11:40:51 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 11:40:51 [DEBUG] Member(memberNo=6, memberEmail=hohosuu@naver.com, memberPw=null, memberName=최수진, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-12 11:40:16, memberDeleteFG=null, socialId=null)로그인 성공시 로그인 멤버 정보
+2023-06-12 14:10:44 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 14:10:44 [DEBUG] password999! / $2a$10$rScUueX2/XvB5ktIjlCk1uxjpMaGOG2ncNN/7vp4oQ6lgZ3oi5cdy
+2023-06-12 14:10:44 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@gmail.com, memberPw=null, memberName=일일맨, memberGit=null, profileImage=/resources/images/memberProfile/20230607144506_10190.gif, enrollDate=2023-06-01 12:50:55, memberDeleteFG=null, socialId=null)
+2023-06-12 14:10:44 [INFO] Running Time : 210ms
+2023-06-12 14:10:44 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 14:10:44 [INFO] 일일맨 로그인 성공
+2023-06-12 14:11:18 [INFO] 초기화 필터 파괴
+2023-06-12 14:11:29 [INFO] 초기화 필터 생성
+2023-06-12 15:03:28 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 15:03:30 [DEBUG] password999! / $2a$10$tq5unFG/yOHJjjkd1z3QO.Z4QxSl40MfzmBurYHXTeOKkAprSI9cy
+2023-06-12 15:03:30 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-12 15:03:30 [INFO] Running Time : 2706ms
+2023-06-12 15:03:30 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 15:03:30 [INFO] 구구맨 로그인 성공
+2023-06-12 15:03:42 [INFO] 로그아웃 수행됨
+2023-06-12 15:04:36 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 15:04:36 [DEBUG] password999! / $2a$10$0SRz5a08B601roPt5PUrZ.Obzx5n83DHg6kzvOdZ9J4Gd5fWDnQ8G
+2023-06-12 15:04:36 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-12 15:04:36 [INFO] Running Time : 204ms
+2023-06-12 15:04:36 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 15:04:36 [INFO] 구구맨 로그인 성공
+2023-06-12 15:05:30 [INFO] 로그아웃 수행됨
+2023-06-12 15:06:04 [INFO] 로그아웃 수행됨
+2023-06-12 15:06:06 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 15:06:06 [DEBUG] password999! / $2a$10$o5ikxpH1w2dybUSpqR19iOaLTyZe.qoSO/E7QcqSNx7cfPKnPClK.
+2023-06-12 15:06:06 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-12 15:06:06 [INFO] Running Time : 216ms
+2023-06-12 15:06:06 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 15:06:06 [INFO] 구구맨 로그인 성공
+2023-06-12 15:06:08 [INFO] projectNo : 1
+2023-06-12 15:06:08 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-12 15:06:08 [INFO] Return Value : 1
+2023-06-12 15:06:08 [INFO] Running Time : 92ms
+2023-06-12 15:06:08 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-12 15:06:08 [INFO] memberNo 999의 1번 프로젝트 안 PmNo : 1
+2023-06-12 15:06:08 [INFO] ---------------------------------------
+Start : ChatServiceImpl - selectChatRoomList
+Parameter : [{memberNo=999, projectNo=1, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-12 15:06:08 [INFO] Return Value : [ChatRoom(chatRoomNo=1, chatRoomTitle=Final 프로젝트, chatRoomST=N, projectNo=1, chatRoomType=1), ChatRoom(chatRoomNo=2, chatRoomTitle=Java, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=3, chatRoomTitle=Front, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=4, chatRoomTitle=DB, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=5, chatRoomTitle=삼삼맨, chatRoomST=N, projectNo=1, chatRoomType=3), ChatRoom(chatRoomNo=6, chatRoomTitle=오오맨, chatRoomST=N, projectNo=1, chatRoomType=3), ChatRoom(chatRoomNo=7, chatRoomTitle=일일맨, chatRoomST=N, projectNo=1, chatRoomType=3)]
+2023-06-12 15:06:08 [INFO] Running Time : 107ms
+2023-06-12 15:06:08 [INFO] End : ChatServiceImpl - selectChatRoomList
+---------------------------------------------
+
+2023-06-12 15:06:11 [INFO] ---------------------------------------
+Start : ChatServiceImpl - selectChatMessageList
+Parameter : [6]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-12 15:06:11 [INFO] Return Value : []
+2023-06-12 15:06:11 [INFO] Running Time : 206ms
+2023-06-12 15:06:11 [INFO] End : ChatServiceImpl - selectChatMessageList
+---------------------------------------------
+
+2023-06-12 15:06:11 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-12 15:06:11 [INFO] Return Value : 1
+2023-06-12 15:06:11 [INFO] Running Time : 16ms
+2023-06-12 15:06:11 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-12 15:06:13 [INFO] ---------------------------------------
+Start : ChatServiceImpl - insertMessage
+Parameter : [ChatMessage(cmNo=0, chatMessage=ㄴㄴㄴ, cmRegDate=2023-06-12, chatRoomNo=6, pmNo=1, pmProfile=null, memberName=구구맨)]
+[스케줄러 동작]
+2023-06-12 15:06:14 [INFO] Return Value : 1
+2023-06-12 15:06:14 [INFO] Running Time : 56ms
+2023-06-12 15:06:14 [INFO] End : ChatServiceImpl - insertMessage
+---------------------------------------------
+
+2023-06-12 15:06:16 [INFO] projectNo : 1
+2023-06-12 15:06:16 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-12 15:06:16 [INFO] Return Value : 1
+2023-06-12 15:06:16 [INFO] Running Time : 303ms
+2023-06-12 15:06:16 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-12 15:06:16 [INFO] memberNo 999의 1번 프로젝트 안 PmNo : 1
+2023-06-12 15:06:16 [INFO] ---------------------------------------
+Start : ChatServiceImpl - selectChatRoomList
+Parameter : [{memberNo=999, projectNo=1, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-12 15:06:16 [INFO] Return Value : [ChatRoom(chatRoomNo=1, chatRoomTitle=Final 프로젝트, chatRoomST=N, projectNo=1, chatRoomType=1), ChatRoom(chatRoomNo=2, chatRoomTitle=Java, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=3, chatRoomTitle=Front, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=4, chatRoomTitle=DB, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=5, chatRoomTitle=삼삼맨, chatRoomST=N, projectNo=1, chatRoomType=3), ChatRoom(chatRoomNo=6, chatRoomTitle=오오맨, chatRoomST=N, projectNo=1, chatRoomType=3), ChatRoom(chatRoomNo=7, chatRoomTitle=일일맨, chatRoomST=N, projectNo=1, chatRoomType=3)]
+2023-06-12 15:06:16 [INFO] Running Time : 129ms
+2023-06-12 15:06:16 [INFO] End : ChatServiceImpl - selectChatRoomList
+---------------------------------------------
+
+2023-06-12 15:06:25 [INFO] 로그아웃 수행됨
+=======
+2023-06-12 05:36:54 [INFO] 초기화 필터 생성
+2023-06-12 05:37:14 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 05:37:18 [DEBUG] deokkeun! / $2a$10$Mwj/JR.Dlubh0DdW/1R93OFuVkGHMSM8jW91JjlQDXn73Ibt1DXmq
+2023-06-12 05:37:18 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 05:37:18 [INFO] Running Time : 3728ms
+2023-06-12 05:37:18 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 05:37:18 [INFO] 김덕근 로그인 성공
+2023-06-12 05:37:32 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 05:37:32 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 05:37:32 [INFO] Running Time : 88ms
+2023-06-12 05:37:32 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 05:37:33 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 05:37:33 [INFO] Return Value : 1
+2023-06-12 05:37:33 [INFO] Running Time : 50ms
+2023-06-12 05:37:33 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 05:37:33 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 05:37:33 [INFO] ---------------------------------------
+Start : MemberServiceImpl - updateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 05:37:40 [INFO] Return Value : 1
+2023-06-12 05:37:40 [INFO] Running Time : 6616ms
+2023-06-12 05:37:40 [INFO] End : MemberServiceImpl - updateCertification
+---------------------------------------------
+
+2023-06-12 05:37:40 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 05:38:32 [INFO] 초기화 필터 파괴
+2023-06-12 05:39:15 [INFO] 초기화 필터 생성
+2023-06-12 05:39:29 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 05:39:32 [DEBUG] deokkeun! / $2a$10$Nas4BGbOWkYxdSUOwyauwexSMa6xhJ/Ujp34c6qGGhteZLtCm.o4a
+2023-06-12 05:39:32 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 05:39:32 [INFO] Running Time : 3544ms
+2023-06-12 05:39:32 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 05:39:32 [INFO] 김덕근 로그인 성공
+2023-06-12 05:39:44 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 05:39:44 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 05:39:44 [INFO] Running Time : 62ms
+2023-06-12 05:39:44 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 05:39:45 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 05:39:45 [INFO] Return Value : 0
+2023-06-12 05:39:45 [INFO] Running Time : 53ms
+2023-06-12 05:39:45 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 05:39:45 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 0
+2023-06-12 05:39:45 [INFO] ---------------------------------------
+Start : MemberServiceImpl - insertCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 05:39:49 [INFO] Return Value : 1
+2023-06-12 05:39:49 [INFO] Running Time : 3988ms
+2023-06-12 05:39:49 [INFO] End : MemberServiceImpl - insertCertification
+---------------------------------------------
+
+2023-06-12 05:39:49 [DEBUG] 인증번호 추가(인증 없는경우) result = 1
+2023-06-12 05:41:37 [INFO] 초기화 필터 파괴
+2023-06-12 08:23:46 [INFO] 초기화 필터 생성
+2023-06-12 08:24:12 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 08:24:15 [DEBUG] deokkeun! / $2a$10$.Vzf4FW.C9RcaqmOoxf.9.3s0fZyoaGyMc9HTokLfQGeAXj/7ZLbq
+2023-06-12 08:24:15 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 08:24:15 [INFO] Running Time : 3148ms
+2023-06-12 08:24:15 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 08:24:15 [INFO] 김덕근 로그인 성공
+2023-06-12 08:24:31 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 08:24:31 [INFO] Return Value : 1
+2023-06-12 08:24:31 [INFO] Running Time : 161ms
+2023-06-12 08:24:31 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 08:24:54 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 08:24:54 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 08:24:54 [INFO] Running Time : 45ms
+2023-06-12 08:24:54 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 08:24:56 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 08:24:56 [INFO] Return Value : 1
+2023-06-12 08:24:56 [INFO] Running Time : 35ms
+2023-06-12 08:24:56 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 08:24:56 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 08:24:56 [INFO] ---------------------------------------
+Start : MemberServiceImpl - updateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 08:25:01 [INFO] Return Value : 1
+2023-06-12 08:25:01 [INFO] Running Time : 5317ms
+2023-06-12 08:25:01 [INFO] End : MemberServiceImpl - updateCertification
+---------------------------------------------
+
+2023-06-12 08:25:01 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 08:45:03 [INFO] 초기화 필터 파괴
+2023-06-12 09:22:37 [INFO] 초기화 필터 생성
+2023-06-12 09:22:45 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 09:22:48 [DEBUG] deokkeun! / $2a$10$KAMEw8PXU.cB9ZxyWvY8Mu083ICTa66zs4sUWgjqKVoov24ctWmGS
+2023-06-12 09:22:48 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 09:22:48 [INFO] Running Time : 3436ms
+2023-06-12 09:22:48 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 09:22:48 [INFO] 김덕근 로그인 성공
+2023-06-12 09:23:37 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 09:23:37 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 09:23:37 [INFO] Running Time : 48ms
+2023-06-12 09:23:37 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 09:23:38 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 09:23:38 [INFO] Return Value : 1
+2023-06-12 09:23:38 [INFO] Running Time : 45ms
+2023-06-12 09:23:38 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 09:23:38 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 09:23:38 [INFO] ---------------------------------------
+Start : MemberServiceImpl - updateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 09:23:44 [INFO] Return Value : 1
+2023-06-12 09:23:44 [INFO] Running Time : 6673ms
+2023-06-12 09:23:44 [INFO] End : MemberServiceImpl - updateCertification
+---------------------------------------------
+
+2023-06-12 09:23:44 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 09:26:58 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 09:26:58 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 09:26:58 [INFO] Running Time : 66ms
+2023-06-12 09:26:58 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 09:26:59 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 09:26:59 [INFO] Return Value : 1
+2023-06-12 09:26:59 [INFO] Running Time : 31ms
+2023-06-12 09:26:59 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 09:26:59 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 09:26:59 [INFO] ---------------------------------------
+Start : MemberServiceImpl - updateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 09:27:03 [INFO] Return Value : 1
+2023-06-12 09:27:03 [INFO] Running Time : 4065ms
+2023-06-12 09:27:03 [INFO] End : MemberServiceImpl - updateCertification
+---------------------------------------------
+
+2023-06-12 09:27:03 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 09:27:41 [INFO] ---------------------------------------
+Start : MemberServiceImpl - certificationNumber
+Parameter : [jNamOQ]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 09:27:41 [INFO] Return Value : 1000
+2023-06-12 09:27:41 [INFO] Running Time : 44ms
+2023-06-12 09:27:41 [INFO] End : MemberServiceImpl - certificationNumber
+---------------------------------------------
+
+2023-06-12 09:27:41 [DEBUG] 인증번호 확인 후 회원 번호 조회 memberNo = 1000
+2023-06-12 09:33:30 [INFO] 초기화 필터 파괴
+2023-06-12 09:42:18 [INFO] 초기화 필터 생성
+2023-06-12 09:42:26 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 09:42:29 [DEBUG] deokkeun! / $2a$10$FSux876PBWixcYvwScrCMeTIvEiN/By4A9al.Rp.LHrwiAaPlgmYW
+2023-06-12 09:42:29 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 09:42:29 [INFO] Running Time : 3312ms
+2023-06-12 09:42:29 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 09:42:29 [INFO] 김덕근 로그인 성공
+2023-06-12 09:42:42 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 09:42:42 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 09:42:42 [INFO] Running Time : 52ms
+2023-06-12 09:42:42 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 09:42:43 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 09:42:44 [INFO] Return Value : 1
+2023-06-12 09:42:44 [INFO] Running Time : 50ms
+2023-06-12 09:42:44 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 09:42:44 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 09:42:44 [INFO] ---------------------------------------
+Start : MemberServiceImpl - updateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 09:42:48 [INFO] Return Value : 1
+2023-06-12 09:42:48 [INFO] Running Time : 4066ms
+2023-06-12 09:42:48 [INFO] End : MemberServiceImpl - updateCertification
+---------------------------------------------
+
+2023-06-12 09:42:48 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 09:43:04 [INFO] ---------------------------------------
+Start : MemberServiceImpl - certificationNumber
+Parameter : [mmhE5p]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 09:43:04 [INFO] Return Value : 1000
+2023-06-12 09:43:04 [INFO] Running Time : 40ms
+2023-06-12 09:43:04 [INFO] End : MemberServiceImpl - certificationNumber
+---------------------------------------------
+
+2023-06-12 09:43:04 [DEBUG] 인증번호 확인 후 회원 번호 조회 memberNo = 1000
+2023-06-12 09:45:33 [INFO] 초기화 필터 파괴
+2023-06-12 09:57:28 [INFO] 초기화 필터 생성
+2023-06-12 09:57:40 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 09:57:43 [DEBUG] deokkeun! / $2a$10$nmZ1B2S24O2RE6DgGifFReUNl8IRSRSiyQQ0YfGxKhuVNEM33pZH6
+2023-06-12 09:57:43 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 09:57:43 [INFO] Running Time : 3206ms
+2023-06-12 09:57:43 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 09:57:43 [INFO] 김덕근 로그인 성공
+2023-06-12 09:57:56 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 09:57:56 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 09:57:56 [INFO] Running Time : 52ms
+2023-06-12 09:57:56 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 09:57:57 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 09:57:57 [INFO] Return Value : 1
+2023-06-12 09:57:57 [INFO] Running Time : 50ms
+2023-06-12 09:57:57 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 09:57:57 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 09:57:57 [INFO] ---------------------------------------
+Start : MemberServiceImpl - updateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 09:58:02 [INFO] Return Value : 1
+2023-06-12 09:58:02 [INFO] Running Time : 4453ms
+2023-06-12 09:58:02 [INFO] End : MemberServiceImpl - updateCertification
+---------------------------------------------
+
+2023-06-12 09:58:02 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 09:58:17 [INFO] ---------------------------------------
+Start : MemberServiceImpl - certificationNumber
+Parameter : [88K4e6]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 09:58:17 [INFO] Return Value : 1000
+2023-06-12 09:58:17 [INFO] Running Time : 41ms
+2023-06-12 09:58:17 [INFO] End : MemberServiceImpl - certificationNumber
+---------------------------------------------
+
+2023-06-12 09:58:17 [DEBUG] 인증번호 확인 후 회원 번호 조회 memberNo = 1000
+2023-06-12 10:02:14 [INFO] 초기화 필터 파괴
+2023-06-12 10:08:10 [INFO] 초기화 필터 생성
+2023-06-12 10:08:18 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 10:08:25 [DEBUG] deokkeun! / $2a$10$.5yNweyKJj3vUGHKz9VCJ.hgoXyDKolp.560EDtAr8EgHAMLFlqX.
+2023-06-12 10:08:25 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 10:08:25 [INFO] Running Time : 7680ms
+2023-06-12 10:08:25 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 10:08:25 [INFO] 김덕근 로그인 성공
+2023-06-12 10:08:35 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 10:08:35 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 10:08:35 [INFO] Running Time : 65ms
+2023-06-12 10:08:35 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 10:08:36 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 10:08:36 [INFO] Return Value : 1
+2023-06-12 10:08:36 [INFO] Running Time : 123ms
+2023-06-12 10:08:36 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 10:08:36 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 10:08:36 [INFO] ---------------------------------------
+Start : MemberServiceImpl - updateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 10:08:41 [INFO] Return Value : 1
+2023-06-12 10:08:41 [INFO] Running Time : 4548ms
+2023-06-12 10:08:41 [INFO] End : MemberServiceImpl - updateCertification
+---------------------------------------------
+
+2023-06-12 10:08:41 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 10:08:54 [INFO] ---------------------------------------
+Start : MemberServiceImpl - certificationNumber
+Parameter : [H9pZB5]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 10:08:54 [INFO] Return Value : 1000
+2023-06-12 10:08:54 [INFO] Running Time : 67ms
+2023-06-12 10:08:54 [INFO] End : MemberServiceImpl - certificationNumber
+---------------------------------------------
+
+2023-06-12 10:08:54 [DEBUG] 인증번호 확인 후 회원 번호 조회 memberNo = 1000
+2023-06-12 10:09:49 [INFO] 초기화 필터 파괴
+2023-06-12 10:14:14 [INFO] 초기화 필터 생성
+2023-06-12 10:14:21 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 10:14:24 [DEBUG] deokkeun! / $2a$10$jMgAg5GafnEjqe5u6UjTx.RBCLCMgBczS79zIwb1Iwz7KsrJOb3Da
+2023-06-12 10:14:24 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 10:14:24 [INFO] Running Time : 3193ms
+2023-06-12 10:14:24 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 10:14:24 [INFO] 김덕근 로그인 성공
+2023-06-12 10:14:42 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 10:14:42 [INFO] Return Value : 1
+2023-06-12 10:14:42 [INFO] Running Time : 168ms
+2023-06-12 10:14:42 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 10:14:55 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 10:14:55 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 10:14:55 [INFO] Running Time : 40ms
+2023-06-12 10:14:55 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 10:14:56 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 10:14:56 [INFO] Return Value : 1
+2023-06-12 10:14:56 [INFO] Running Time : 41ms
+2023-06-12 10:14:56 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 10:14:56 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 10:14:56 [INFO] ---------------------------------------
+Start : MemberServiceImpl - updateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 10:15:01 [INFO] Return Value : 1
+2023-06-12 10:15:01 [INFO] Running Time : 4831ms
+2023-06-12 10:15:01 [INFO] End : MemberServiceImpl - updateCertification
+---------------------------------------------
+
+2023-06-12 10:15:01 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 10:15:15 [INFO] ---------------------------------------
+Start : MemberServiceImpl - certificationNumber
+Parameter : [nkFmmH]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 10:15:15 [INFO] Return Value : 1000
+2023-06-12 10:15:15 [INFO] Running Time : 58ms
+2023-06-12 10:15:15 [INFO] End : MemberServiceImpl - certificationNumber
+---------------------------------------------
+
+2023-06-12 10:15:15 [DEBUG] 인증번호 확인 후 회원 번호 조회 memberNo = 1000
+2023-06-12 10:18:25 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 10:18:25 [DEBUG] deokkeun! / $2a$10$moItrkEIZhVplG7MkIGxZOOzqy2Fxch6UJMMnu6MbH7VFYdNMuva.
+2023-06-12 10:18:25 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 10:18:25 [INFO] Running Time : 242ms
+2023-06-12 10:18:25 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 10:18:25 [INFO] 김덕근 로그인 성공
+2023-06-12 10:18:39 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 10:18:39 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 10:18:39 [INFO] Running Time : 68ms
+2023-06-12 10:18:39 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 10:18:40 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 10:18:40 [INFO] Return Value : 1
+2023-06-12 10:18:40 [INFO] Running Time : 42ms
+2023-06-12 10:18:40 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 10:18:40 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 10:18:40 [INFO] ---------------------------------------
+Start : MemberServiceImpl - updateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 10:18:44 [INFO] Return Value : 1
+2023-06-12 10:18:44 [INFO] Running Time : 3576ms
+2023-06-12 10:18:44 [INFO] End : MemberServiceImpl - updateCertification
+---------------------------------------------
+
+2023-06-12 10:18:44 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 10:18:55 [INFO] ---------------------------------------
+Start : MemberServiceImpl - certificationNumber
+Parameter : [98665t]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 10:18:55 [INFO] Return Value : 1000
+2023-06-12 10:18:55 [INFO] Running Time : 47ms
+2023-06-12 10:18:55 [INFO] End : MemberServiceImpl - certificationNumber
+---------------------------------------------
+
+2023-06-12 10:18:55 [DEBUG] 인증번호 확인 후 회원 번호 조회 memberNo = 1000
+2023-06-12 10:22:53 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 10:22:53 [INFO] Return Value : 1
+2023-06-12 10:22:53 [INFO] Running Time : 169ms
+2023-06-12 10:22:53 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 10:33:34 [INFO] 초기화 필터 파괴
+2023-06-12 10:57:57 [INFO] 초기화 필터 생성
+2023-06-12 10:58:04 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 10:58:07 [DEBUG] deokkeun! / $2a$10$Xv36BFX/OsiC2OQjUA.p.Op0aXfTObIsPZnOcEP7shMxZpH5rc1XC
+2023-06-12 10:58:07 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 10:58:07 [INFO] Running Time : 2907ms
+2023-06-12 10:58:07 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 10:58:07 [INFO] 김덕근 로그인 성공
+2023-06-12 10:58:20 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 10:58:20 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 10:58:20 [INFO] Running Time : 50ms
+2023-06-12 10:58:20 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 10:58:23 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 10:58:23 [INFO] Return Value : 1
+2023-06-12 10:58:23 [INFO] Running Time : 42ms
+2023-06-12 10:58:23 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 10:58:23 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 10:58:23 [INFO] ---------------------------------------
+Start : MemberServiceImpl - updateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 10:58:28 [INFO] Return Value : 1
+2023-06-12 10:58:28 [INFO] Running Time : 5744ms
+2023-06-12 10:58:28 [INFO] End : MemberServiceImpl - updateCertification
+---------------------------------------------
+
+2023-06-12 10:58:28 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 10:58:51 [INFO] ---------------------------------------
+Start : MemberServiceImpl - certificationNumber
+Parameter : [lrvj57]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 10:58:51 [INFO] Return Value : 1000
+2023-06-12 10:58:51 [INFO] Running Time : 44ms
+2023-06-12 10:58:51 [INFO] End : MemberServiceImpl - certificationNumber
+---------------------------------------------
+
+2023-06-12 10:58:51 [DEBUG] 인증번호 확인 후 회원 번호 조회 memberNo = 1000
+2023-06-12 11:00:48 [INFO] 초기화 필터 파괴
+2023-06-12 11:04:28 [INFO] 초기화 필터 생성
+2023-06-12 11:04:36 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 11:04:40 [DEBUG] deokkeun! / $2a$10$SbX6IHxxiVoup./kOVykkOwXA5Dpk8ehF6Pkbhcsj.8h/RAusmoT6
+2023-06-12 11:04:40 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 11:04:40 [INFO] Running Time : 3982ms
+2023-06-12 11:04:40 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 11:04:40 [INFO] 김덕근 로그인 성공
+2023-06-12 11:04:50 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:04:50 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 11:04:50 [INFO] Running Time : 60ms
+2023-06-12 11:04:50 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:04:51 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:04:51 [INFO] Return Value : 1
+2023-06-12 11:04:51 [INFO] Running Time : 64ms
+2023-06-12 11:04:51 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 11:04:51 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 11:04:51 [INFO] ---------------------------------------
+Start : MemberServiceImpl - updateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:04:55 [INFO] Return Value : 1
+2023-06-12 11:04:55 [INFO] Running Time : 3870ms
+2023-06-12 11:04:55 [INFO] End : MemberServiceImpl - updateCertification
+---------------------------------------------
+
+2023-06-12 11:04:55 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 11:05:07 [INFO] ---------------------------------------
+Start : MemberServiceImpl - certificationNumber
+Parameter : [FvnY96]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:05:07 [INFO] Return Value : 1000
+2023-06-12 11:05:07 [INFO] Running Time : 45ms
+2023-06-12 11:05:07 [INFO] End : MemberServiceImpl - certificationNumber
+---------------------------------------------
+
+2023-06-12 11:05:07 [DEBUG] 인증번호 확인 후 회원 번호 조회 memberNo = 1000
+2023-06-12 11:08:53 [INFO] 초기화 필터 파괴
+2023-06-12 11:09:15 [INFO] 초기화 필터 생성
+2023-06-12 11:09:21 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 11:09:25 [DEBUG] deokkeun! / $2a$10$Jw2wNZASdCG9Gco6NteeW.9AapNY1OgPQifx50IS9suar2XAMopoW
+2023-06-12 11:09:25 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 11:09:25 [INFO] Running Time : 3155ms
+2023-06-12 11:09:25 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 11:09:25 [INFO] 김덕근 로그인 성공
+2023-06-12 11:09:39 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:09:39 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 11:09:39 [INFO] Running Time : 47ms
+2023-06-12 11:09:39 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:09:40 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:09:40 [INFO] Return Value : 1
+2023-06-12 11:09:40 [INFO] Running Time : 48ms
+2023-06-12 11:09:40 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 11:09:40 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 11:09:40 [INFO] ---------------------------------------
+Start : MemberServiceImpl - updateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:09:46 [INFO] Return Value : 1
+2023-06-12 11:09:46 [INFO] Running Time : 5559ms
+2023-06-12 11:09:46 [INFO] End : MemberServiceImpl - updateCertification
+---------------------------------------------
+
+2023-06-12 11:09:46 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 11:09:58 [INFO] ---------------------------------------
+Start : MemberServiceImpl - certificationNumber
+Parameter : [3uih9N]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:09:58 [INFO] Return Value : 1000
+2023-06-12 11:09:58 [INFO] Running Time : 46ms
+2023-06-12 11:09:58 [INFO] End : MemberServiceImpl - certificationNumber
+---------------------------------------------
+
+2023-06-12 11:09:58 [DEBUG] 인증번호 확인 후 회원 번호 조회 memberNo = 1000
+2023-06-12 11:14:42 [INFO] 초기화 필터 파괴
+2023-06-12 11:15:38 [INFO] 초기화 필터 생성
+2023-06-12 11:15:45 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 11:15:48 [DEBUG] deokkeun! / $2a$10$Q7N8IqiNB/HsNw2UHP5ESulC7iyDbrpF/ACFOi4ljKBv6sdlN3y3C
+2023-06-12 11:15:49 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 11:15:49 [INFO] Running Time : 3157ms
+2023-06-12 11:15:49 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 11:15:49 [INFO] 김덕근 로그인 성공
+2023-06-12 11:16:00 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:16:00 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 11:16:00 [INFO] Running Time : 52ms
+2023-06-12 11:16:00 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:16:00 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:16:00 [INFO] Return Value : 1
+2023-06-12 11:16:00 [INFO] Running Time : 54ms
+2023-06-12 11:16:00 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 11:16:00 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 11:16:00 [INFO] ---------------------------------------
+Start : MemberServiceImpl - updateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:16:04 [INFO] Return Value : 1
+2023-06-12 11:16:04 [INFO] Running Time : 4066ms
+2023-06-12 11:16:04 [INFO] End : MemberServiceImpl - updateCertification
+---------------------------------------------
+
+2023-06-12 11:16:04 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 11:16:19 [INFO] ---------------------------------------
+Start : MemberServiceImpl - certificationNumber
+Parameter : [7wyz1w]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:16:19 [INFO] Return Value : 1000
+2023-06-12 11:16:19 [INFO] Running Time : 35ms
+2023-06-12 11:16:19 [INFO] End : MemberServiceImpl - certificationNumber
+---------------------------------------------
+
+2023-06-12 11:16:19 [DEBUG] 인증번호 확인 후 회원 번호 조회 memberNo = 1000
+2023-06-12 11:19:20 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:19:20 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 11:19:20 [INFO] Running Time : 56ms
+2023-06-12 11:19:20 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:19:21 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:19:21 [INFO] Return Value : 1
+2023-06-12 11:19:21 [INFO] Running Time : 49ms
+2023-06-12 11:19:21 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 11:19:21 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 11:19:21 [INFO] ---------------------------------------
+Start : MemberServiceImpl - updateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:19:26 [INFO] Return Value : 1
+2023-06-12 11:19:26 [INFO] Running Time : 5129ms
+2023-06-12 11:19:26 [INFO] End : MemberServiceImpl - updateCertification
+---------------------------------------------
+
+2023-06-12 11:19:26 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 11:19:37 [INFO] ---------------------------------------
+Start : MemberServiceImpl - certificationNumber
+Parameter : [y4TU5L]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:19:37 [INFO] Return Value : 1000
+2023-06-12 11:19:37 [INFO] Running Time : 47ms
+2023-06-12 11:19:37 [INFO] End : MemberServiceImpl - certificationNumber
+---------------------------------------------
+
+2023-06-12 11:19:37 [DEBUG] 인증번호 확인 후 회원 번호 조회 memberNo = 1000
+2023-06-12 11:20:41 [INFO] 초기화 필터 파괴
+2023-06-12 11:21:49 [INFO] 초기화 필터 생성
+2023-06-12 11:21:56 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 11:22:02 [DEBUG] deokkeun! / $2a$10$OGrK21sG5lv9KM6xQ9o1iOit63PkJ9p2McS5aibqVYhCLB54jWvhq
+2023-06-12 11:22:03 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 11:22:03 [INFO] Running Time : 6873ms
+2023-06-12 11:22:03 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 11:22:03 [INFO] 김덕근 로그인 성공
+2023-06-12 11:22:13 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:22:13 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 11:22:13 [INFO] Running Time : 76ms
+2023-06-12 11:22:13 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:22:15 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:22:15 [INFO] Return Value : 1
+2023-06-12 11:22:15 [INFO] Running Time : 51ms
+2023-06-12 11:22:15 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 11:22:15 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 11:22:15 [INFO] ---------------------------------------
+Start : MemberServiceImpl - updateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:22:19 [INFO] Return Value : 1
+2023-06-12 11:22:19 [INFO] Running Time : 4664ms
+2023-06-12 11:22:19 [INFO] End : MemberServiceImpl - updateCertification
+---------------------------------------------
+
+2023-06-12 11:22:19 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 11:22:32 [INFO] ---------------------------------------
+Start : MemberServiceImpl - certificationNumber
+Parameter : [1f7JBP]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:22:32 [INFO] Return Value : 1000
+2023-06-12 11:22:32 [INFO] Running Time : 41ms
+2023-06-12 11:22:32 [INFO] End : MemberServiceImpl - certificationNumber
+---------------------------------------------
+
+2023-06-12 11:22:32 [DEBUG] 인증번호 확인 후 회원 번호 조회 memberNo = 1000
+2023-06-12 11:24:04 [INFO] 초기화 필터 파괴
+2023-06-12 11:26:23 [INFO] 초기화 필터 생성
+2023-06-12 11:26:44 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 11:26:46 [DEBUG] deokkeun! / $2a$10$cNdyLxtcmfwssojdIfzlY.Yxr6Cb30BvW8.uMQzS7DxOArLxvPQoq
+2023-06-12 11:26:47 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 11:26:47 [INFO] Running Time : 2894ms
+2023-06-12 11:26:47 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 11:26:47 [INFO] 김덕근 로그인 성공
+2023-06-12 11:26:55 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:26:55 [INFO] Return Value : 1
+2023-06-12 11:26:55 [INFO] Running Time : 162ms
+2023-06-12 11:26:55 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 11:27:04 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - newChangePw
+Parameter : [{newPw=deokkeun!!, newPwConfirm=deokkeun!!, memberNo=1000}]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:27:04 [INFO] Return Value : 1
+2023-06-12 11:27:04 [INFO] Running Time : 144ms
+2023-06-12 11:27:04 [INFO] End : MyPageServiceImpl - newChangePw
+---------------------------------------------
+
+2023-06-12 11:27:19 [INFO] 로그인 기능 수행됨
+2023-06-12 11:27:19 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 11:27:19 [DEBUG] deokkeun!! / $2a$10$C99NqBavpNNWpLY8Fqt63.T0ivKNa3x0Lnki/BGrdp1Gd7u/pS/Z2
+2023-06-12 11:27:19 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 11:27:19 [INFO] Running Time : 239ms
+2023-06-12 11:27:19 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 11:27:19 [DEBUG] Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)로그인 성공시 로그인 멤버 정보
+2023-06-12 11:27:35 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:27:35 [INFO] Return Value : 1
+2023-06-12 11:27:35 [INFO] Running Time : 162ms
+2023-06-12 11:27:35 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 11:27:43 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - newChangePw
+Parameter : [{newPw=deokkeun!, newPwConfirm=deokkeun!, memberNo=1000}]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:27:43 [INFO] Return Value : 1
+2023-06-12 11:27:43 [INFO] Running Time : 167ms
+2023-06-12 11:27:43 [INFO] End : MyPageServiceImpl - newChangePw
+---------------------------------------------
+
+2023-06-12 11:27:46 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 11:27:46 [DEBUG] deokkeun! / $2a$10$KMQaao7UB/NeyKeO/vE1cejE5cPrjo7fSjmiTyf/XDYqmSuG04wim
+2023-06-12 11:27:46 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 11:27:46 [INFO] Running Time : 241ms
+2023-06-12 11:27:46 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 11:27:46 [INFO] 김덕근 로그인 성공
+2023-06-12 11:27:56 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:27:56 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 11:27:56 [INFO] Running Time : 45ms
+2023-06-12 11:27:56 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:27:57 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:27:58 [INFO] Return Value : 1
+2023-06-12 11:27:58 [INFO] Running Time : 58ms
+2023-06-12 11:27:58 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 11:27:58 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 11:27:58 [INFO] ---------------------------------------
+Start : MemberServiceImpl - updateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:28:02 [INFO] Return Value : 1
+2023-06-12 11:28:02 [INFO] Running Time : 4536ms
+2023-06-12 11:28:02 [INFO] End : MemberServiceImpl - updateCertification
+---------------------------------------------
+
+2023-06-12 11:28:02 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 11:28:13 [INFO] ---------------------------------------
+Start : MemberServiceImpl - certificationNumber
+Parameter : [78n2EB]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:28:13 [INFO] Return Value : 1000
+2023-06-12 11:28:13 [INFO] Running Time : 38ms
+2023-06-12 11:28:13 [INFO] End : MemberServiceImpl - certificationNumber
+---------------------------------------------
+
+2023-06-12 11:28:13 [DEBUG] 인증번호 확인 후 회원 번호 조회 memberNo = 1000
+2023-06-12 11:29:53 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - newChangePw
+Parameter : [{newPw=deokkeun!!, newPwConfirm=deokkeun!!, memNo=1000, memberNo=1000}]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:29:53 [INFO] Return Value : 1
+2023-06-12 11:29:53 [INFO] Running Time : 139ms
+2023-06-12 11:29:53 [INFO] End : MyPageServiceImpl - newChangePw
+---------------------------------------------
+
+2023-06-12 11:30:05 [INFO] 로그인 기능 수행됨
+2023-06-12 11:30:05 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 11:30:05 [DEBUG] deokkeun!! / $2a$10$0xHEVcvXstK2h42ir9CNIeEY7BO5GpIBJKdEZfuvkYLGpK41spLpq
+2023-06-12 11:30:05 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 11:30:05 [INFO] Running Time : 249ms
+2023-06-12 11:30:05 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 11:30:05 [DEBUG] Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)로그인 성공시 로그인 멤버 정보
+2023-06-12 11:30:16 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:30:16 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 11:30:16 [INFO] Running Time : 45ms
+2023-06-12 11:30:16 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 11:30:17 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:30:17 [INFO] Return Value : 1
+2023-06-12 11:30:17 [INFO] Running Time : 39ms
+2023-06-12 11:30:17 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 11:30:17 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 11:30:17 [INFO] ---------------------------------------
+Start : MemberServiceImpl - updateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:30:21 [INFO] Return Value : 1
+2023-06-12 11:30:21 [INFO] Running Time : 3539ms
+2023-06-12 11:30:21 [INFO] End : MemberServiceImpl - updateCertification
+---------------------------------------------
+
+2023-06-12 11:30:21 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 11:30:31 [INFO] ---------------------------------------
+Start : MemberServiceImpl - certificationNumber
+Parameter : [TxPwaX]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:30:31 [INFO] Return Value : 1000
+2023-06-12 11:30:31 [INFO] Running Time : 35ms
+2023-06-12 11:30:31 [INFO] End : MemberServiceImpl - certificationNumber
+---------------------------------------------
+
+2023-06-12 11:30:31 [DEBUG] 인증번호 확인 후 회원 번호 조회 memberNo = 1000
+2023-06-12 11:30:39 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - newChangePw
+Parameter : [{newPw=deokkeun!, newPwConfirm=deokkeun!, memNo=1000, memberNo=1000}]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:30:39 [INFO] Return Value : 1
+2023-06-12 11:30:39 [INFO] Running Time : 139ms
+2023-06-12 11:30:39 [INFO] End : MyPageServiceImpl - newChangePw
+---------------------------------------------
+
+2023-06-12 11:30:41 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 11:30:41 [DEBUG] deokkeun! / $2a$10$kf1PdrCpTk.fMRHFS.m.aO1hMKr8RYFeeJojwiGVMSWTQZrItnBBy
+2023-06-12 11:30:41 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 11:30:41 [INFO] Running Time : 243ms
+2023-06-12 11:30:41 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 11:30:41 [INFO] 김덕근 로그인 성공
+2023-06-12 11:31:11 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:31:11 [INFO] Return Value : 0
+2023-06-12 11:31:11 [INFO] Running Time : 179ms
+2023-06-12 11:31:11 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 11:31:17 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:31:17 [INFO] Return Value : 1
+2023-06-12 11:31:17 [INFO] Running Time : 176ms
+2023-06-12 11:31:17 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 11:34:21 [INFO] 로그아웃 수행됨
+2023-06-12 11:34:22 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 11:34:23 [DEBUG] deokkeun! / $2a$10$tkj6n.KtQ0pCbK7GK7YbvubHFqQryx6/qHEaCtJrBUcfcUMzYG2gm
+2023-06-12 11:34:23 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 11:34:23 [INFO] Running Time : 241ms
+2023-06-12 11:34:23 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 11:34:23 [INFO] 김덕근 로그인 성공
+2023-06-12 11:34:31 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:34:31 [INFO] Return Value : 1
+2023-06-12 11:34:31 [INFO] Running Time : 173ms
+2023-06-12 11:34:31 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 11:38:02 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:38:02 [INFO] Return Value : 1
+2023-06-12 11:38:02 [INFO] Running Time : 144ms
+2023-06-12 11:38:02 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 11:38:07 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:38:07 [INFO] Return Value : 1
+2023-06-12 11:38:07 [INFO] Running Time : 160ms
+2023-06-12 11:38:07 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 11:38:10 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:38:10 [INFO] Return Value : 1
+2023-06-12 11:38:10 [INFO] Running Time : 158ms
+2023-06-12 11:38:10 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 11:39:31 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:39:31 [INFO] Return Value : 1
+2023-06-12 11:39:31 [INFO] Running Time : 221ms
+2023-06-12 11:39:31 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 11:41:26 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:41:26 [INFO] Return Value : 1
+2023-06-12 11:41:26 [INFO] Running Time : 145ms
+2023-06-12 11:41:26 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 11:42:10 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:42:10 [INFO] Return Value : 1
+2023-06-12 11:42:10 [INFO] Running Time : 128ms
+2023-06-12 11:42:10 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 11:42:12 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:42:13 [INFO] Return Value : 1
+2023-06-12 11:42:13 [INFO] Running Time : 116ms
+2023-06-12 11:42:13 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 11:42:21 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:42:21 [INFO] Return Value : 1
+2023-06-12 11:42:21 [INFO] Running Time : 151ms
+2023-06-12 11:42:21 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 11:42:43 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:42:43 [INFO] Return Value : 1
+2023-06-12 11:42:43 [INFO] Running Time : 124ms
+2023-06-12 11:42:43 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 11:42:45 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:42:45 [INFO] Return Value : 1
+2023-06-12 11:42:45 [INFO] Running Time : 147ms
+2023-06-12 11:42:45 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 11:46:51 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:46:52 [INFO] Return Value : 1
+2023-06-12 11:46:52 [INFO] Running Time : 156ms
+2023-06-12 11:46:52 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 11:47:35 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:47:35 [INFO] Return Value : 1
+2023-06-12 11:47:35 [INFO] Running Time : 117ms
+2023-06-12 11:47:35 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 11:49:08 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:49:08 [INFO] Return Value : 1
+2023-06-12 11:49:08 [INFO] Running Time : 152ms
+2023-06-12 11:49:08 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 11:49:29 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 11:49:29 [INFO] Return Value : 1
+2023-06-12 11:49:29 [INFO] Running Time : 110ms
+2023-06-12 11:49:29 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:01:18 [INFO] 초기화 필터 파괴
+2023-06-12 12:03:51 [INFO] 초기화 필터 생성
+2023-06-12 12:03:58 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 12:04:01 [DEBUG] deokkeun! / $2a$10$cD/Qprq5g9SV2UsesspvcuLa2Sago25Jpyuh8YyII5QO9KrVuXk0q
+2023-06-12 12:04:01 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 12:04:01 [INFO] Running Time : 3185ms
+2023-06-12 12:04:01 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 12:04:01 [INFO] 김덕근 로그인 성공
+2023-06-12 12:04:10 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:04:10 [INFO] Return Value : 1
+2023-06-12 12:04:10 [INFO] Running Time : 171ms
+2023-06-12 12:04:10 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:07:05 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:07:05 [INFO] Return Value : 1
+2023-06-12 12:07:05 [INFO] Running Time : 123ms
+2023-06-12 12:07:05 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:08:17 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:08:17 [INFO] Return Value : 1
+2023-06-12 12:08:17 [INFO] Running Time : 117ms
+2023-06-12 12:08:17 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:08:35 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:08:36 [INFO] Return Value : 1
+2023-06-12 12:08:36 [INFO] Running Time : 166ms
+2023-06-12 12:08:36 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:09:05 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:09:05 [INFO] Return Value : 1
+2023-06-12 12:09:05 [INFO] Running Time : 130ms
+2023-06-12 12:09:05 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:09:26 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:09:26 [INFO] Return Value : 1
+2023-06-12 12:09:26 [INFO] Running Time : 157ms
+2023-06-12 12:09:26 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:11:08 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:11:08 [INFO] Return Value : 1
+2023-06-12 12:11:08 [INFO] Running Time : 134ms
+2023-06-12 12:11:08 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:13:04 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:13:04 [INFO] Return Value : 1
+2023-06-12 12:13:04 [INFO] Running Time : 142ms
+2023-06-12 12:13:04 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:13:32 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:13:32 [INFO] Return Value : 1
+2023-06-12 12:13:32 [INFO] Running Time : 147ms
+2023-06-12 12:13:32 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:13:57 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:13:57 [INFO] Return Value : 1
+2023-06-12 12:13:57 [INFO] Running Time : 157ms
+2023-06-12 12:13:57 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:14:27 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:14:28 [INFO] Return Value : 1
+2023-06-12 12:14:28 [INFO] Running Time : 117ms
+2023-06-12 12:14:28 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:14:37 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:14:37 [INFO] Return Value : 1
+2023-06-12 12:14:37 [INFO] Running Time : 162ms
+2023-06-12 12:14:37 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:14:48 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:14:49 [INFO] Return Value : 1
+2023-06-12 12:14:49 [INFO] Running Time : 158ms
+2023-06-12 12:14:49 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:14:57 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:14:57 [INFO] Return Value : 1
+2023-06-12 12:14:57 [INFO] Running Time : 180ms
+2023-06-12 12:14:57 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:15:31 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:15:31 [INFO] Return Value : 1
+2023-06-12 12:15:31 [INFO] Running Time : 187ms
+2023-06-12 12:15:31 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:15:44 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:15:44 [INFO] Return Value : 1
+2023-06-12 12:15:44 [INFO] Running Time : 158ms
+2023-06-12 12:15:44 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:15:58 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:15:58 [INFO] Return Value : 1
+2023-06-12 12:15:58 [INFO] Running Time : 120ms
+2023-06-12 12:15:58 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:16:14 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:16:14 [INFO] Return Value : 1
+2023-06-12 12:16:14 [INFO] Running Time : 125ms
+2023-06-12 12:16:14 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:16:42 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:16:42 [INFO] Return Value : 1
+2023-06-12 12:16:42 [INFO] Running Time : 158ms
+2023-06-12 12:16:42 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:16:43 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:16:43 [INFO] Return Value : 1
+2023-06-12 12:16:43 [INFO] Running Time : 155ms
+2023-06-12 12:16:43 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:16:52 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:16:52 [INFO] Return Value : 1
+2023-06-12 12:16:52 [INFO] Running Time : 151ms
+2023-06-12 12:16:52 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:17:30 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:17:30 [INFO] Return Value : 1
+2023-06-12 12:17:30 [INFO] Running Time : 149ms
+2023-06-12 12:17:30 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:17:58 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:17:58 [INFO] Return Value : 1
+2023-06-12 12:17:58 [INFO] Running Time : 155ms
+2023-06-12 12:17:58 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:18:07 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:18:07 [INFO] Return Value : 1
+2023-06-12 12:18:07 [INFO] Running Time : 144ms
+2023-06-12 12:18:07 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:18:34 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:18:35 [INFO] Return Value : 1
+2023-06-12 12:18:35 [INFO] Running Time : 139ms
+2023-06-12 12:18:35 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:18:45 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:18:45 [INFO] Return Value : 1
+2023-06-12 12:18:45 [INFO] Running Time : 109ms
+2023-06-12 12:18:45 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:20:09 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:20:10 [INFO] Return Value : 1
+2023-06-12 12:20:10 [INFO] Running Time : 139ms
+2023-06-12 12:20:10 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:20:23 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:20:23 [INFO] Return Value : 1
+2023-06-12 12:20:23 [INFO] Running Time : 144ms
+2023-06-12 12:20:23 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:20:55 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:20:55 [INFO] Return Value : 1
+2023-06-12 12:20:55 [INFO] Running Time : 119ms
+2023-06-12 12:20:55 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:21:15 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:21:15 [INFO] Return Value : 1
+2023-06-12 12:21:15 [INFO] Running Time : 169ms
+2023-06-12 12:21:15 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:21:27 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:21:27 [INFO] Return Value : 1
+2023-06-12 12:21:27 [INFO] Running Time : 131ms
+2023-06-12 12:21:27 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:21:37 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:21:37 [INFO] Return Value : 1
+2023-06-12 12:21:37 [INFO] Running Time : 124ms
+2023-06-12 12:21:37 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:22:21 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:22:21 [INFO] Return Value : 1
+2023-06-12 12:22:21 [INFO] Running Time : 142ms
+2023-06-12 12:22:21 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:22:36 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:22:36 [INFO] Return Value : 1
+2023-06-12 12:22:36 [INFO] Running Time : 113ms
+2023-06-12 12:22:36 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:23:33 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:23:33 [INFO] Return Value : 1
+2023-06-12 12:23:33 [INFO] Running Time : 136ms
+2023-06-12 12:23:33 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:23:46 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:23:46 [INFO] Return Value : 1
+2023-06-12 12:23:46 [INFO] Running Time : 164ms
+2023-06-12 12:23:46 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:24:22 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:24:22 [INFO] Return Value : 1
+2023-06-12 12:24:22 [INFO] Running Time : 152ms
+2023-06-12 12:24:22 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:25:53 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:25:54 [INFO] Return Value : 1
+2023-06-12 12:25:54 [INFO] Running Time : 124ms
+2023-06-12 12:25:54 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:29:28 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:29:28 [INFO] Return Value : 1
+2023-06-12 12:29:28 [INFO] Running Time : 130ms
+2023-06-12 12:29:28 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:30:05 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:30:05 [INFO] Return Value : 1
+2023-06-12 12:30:05 [INFO] Running Time : 146ms
+2023-06-12 12:30:05 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:30:37 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:30:37 [INFO] Return Value : 1
+2023-06-12 12:30:37 [INFO] Running Time : 154ms
+2023-06-12 12:30:37 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:31:50 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:31:51 [INFO] Return Value : 1
+2023-06-12 12:31:51 [INFO] Running Time : 140ms
+2023-06-12 12:31:51 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:36:49 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:36:49 [INFO] Return Value : 1
+2023-06-12 12:36:49 [INFO] Running Time : 139ms
+2023-06-12 12:36:49 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:37:26 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:37:27 [INFO] Return Value : 1
+2023-06-12 12:37:27 [INFO] Running Time : 139ms
+2023-06-12 12:37:27 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:37:28 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:37:28 [INFO] Return Value : 1
+2023-06-12 12:37:28 [INFO] Running Time : 170ms
+2023-06-12 12:37:28 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:38:09 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:38:10 [INFO] Return Value : 1
+2023-06-12 12:38:10 [INFO] Running Time : 137ms
+2023-06-12 12:38:10 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:39:33 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:39:33 [INFO] Return Value : 1
+2023-06-12 12:39:33 [INFO] Running Time : 139ms
+2023-06-12 12:39:33 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:40:06 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:40:06 [INFO] Return Value : 1
+2023-06-12 12:40:06 [INFO] Running Time : 127ms
+2023-06-12 12:40:06 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:40:34 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:40:35 [INFO] Return Value : 1
+2023-06-12 12:40:35 [INFO] Running Time : 156ms
+2023-06-12 12:40:35 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:41:05 [INFO] 로그아웃 수행됨
+2023-06-12 12:41:07 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 12:41:07 [DEBUG] deokkeun! / $2a$10$imfgzpSTVMnkATXOAU1Wluq2ELNYphrW3O/S2yj4m6Nt0BcZGftSO
+2023-06-12 12:41:07 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 12:41:07 [INFO] Running Time : 213ms
+2023-06-12 12:41:07 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 12:41:07 [INFO] 김덕근 로그인 성공
+2023-06-12 12:41:31 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:41:31 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 12:41:31 [INFO] Running Time : 65ms
+2023-06-12 12:41:31 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 12:41:33 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:41:33 [INFO] Return Value : 1
+2023-06-12 12:41:33 [INFO] Running Time : 54ms
+2023-06-12 12:41:33 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 12:41:33 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 12:41:33 [INFO] ---------------------------------------
+Start : MemberServiceImpl - updateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:41:38 [INFO] Return Value : 1
+2023-06-12 12:41:38 [INFO] Running Time : 5711ms
+2023-06-12 12:41:38 [INFO] End : MemberServiceImpl - updateCertification
+---------------------------------------------
+
+2023-06-12 12:41:38 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 12:41:57 [INFO] ---------------------------------------
+Start : MemberServiceImpl - certificationNumber
+Parameter : [fC493Y]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:41:57 [INFO] Return Value : 1000
+2023-06-12 12:41:57 [INFO] Running Time : 49ms
+2023-06-12 12:41:57 [INFO] End : MemberServiceImpl - certificationNumber
+---------------------------------------------
+
+2023-06-12 12:41:57 [DEBUG] 인증번호 확인 후 회원 번호 조회 memberNo = 1000
+2023-06-12 12:42:20 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - newChangePw
+Parameter : [{newPw=deokkeun!!, newPwConfirm=deokkeun!!, memNo=1000, memberNo=1000}]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:42:20 [INFO] Return Value : 1
+2023-06-12 12:42:20 [INFO] Running Time : 130ms
+2023-06-12 12:42:20 [INFO] End : MyPageServiceImpl - newChangePw
+---------------------------------------------
+
+2023-06-12 12:42:35 [INFO] 로그인 기능 수행됨
+2023-06-12 12:42:35 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 12:42:35 [DEBUG] deokkeun!! / $2a$10$IEjxGakWAhq8id524wezc.LMaQSO0AJTGOWZ/5J918hB9smHQn.A.
+2023-06-12 12:42:35 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 12:42:35 [INFO] Running Time : 228ms
+2023-06-12 12:42:35 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 12:42:35 [DEBUG] Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)로그인 성공시 로그인 멤버 정보
+2023-06-12 12:42:56 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:42:56 [INFO] Return Value : 1
+2023-06-12 12:42:56 [INFO] Running Time : 290ms
+2023-06-12 12:42:56 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:43:12 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - newChangePw
+Parameter : [{newPw=deokkeun!, newPwConfirm=deokkeun!, memberNo=1000}]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:43:13 [INFO] Return Value : 1
+2023-06-12 12:43:13 [INFO] Running Time : 171ms
+2023-06-12 12:43:13 [INFO] End : MyPageServiceImpl - newChangePw
+---------------------------------------------
+
+2023-06-12 12:43:17 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 12:43:17 [DEBUG] deokkeun! / $2a$10$LHwP3UDNcrYD6RcssjlhjOo60O6HdzZFwRt.wB.EKUSCkJSJAhBPq
+2023-06-12 12:43:17 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/member.png, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 12:43:17 [INFO] Running Time : 210ms
+2023-06-12 12:43:17 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 12:43:17 [INFO] 김덕근 로그인 성공
+2023-06-12 12:46:47 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - updateProfile
+Parameter : [{delete=0, webPath=/resources/images/memberProfile/, folderPath=/Users/deokkeun/eclipse-workspace/turtle/Turtle/src/main/webapp/resources/images/memberProfile/, uploadImage=MultipartFile[field="uploadImage", filename=라이언.jpeg, contentType=image/jpeg, size=480432], memberNo=1000}]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:46:47 [DEBUG] DAO 반환 성공
+2023-06-12 12:46:47 [DEBUG] 1수정 성공
+2023-06-12 12:46:47 [INFO] Return Value : 1
+2023-06-12 12:46:47 [INFO] Running Time : 51ms
+2023-06-12 12:46:47 [INFO] End : MyPageServiceImpl - updateProfile
+---------------------------------------------
+
+2023-06-12 12:47:03 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 12:47:03 [INFO] Return Value : 1
+2023-06-12 12:47:03 [INFO] Running Time : 176ms
+2023-06-12 12:47:03 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 12:50:32 [INFO] 초기화 필터 파괴
+2023-06-12 13:23:45 [INFO] 초기화 필터 생성
+2023-06-12 13:23:53 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 13:23:56 [DEBUG] deokkeun! / $2a$10$viiH19VlVW0pC6jwZSna9eWuV.fyRzAg5g5QOlPaWFJ7OHGDjt0H2
+2023-06-12 13:23:57 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 13:23:57 [INFO] Running Time : 3110ms
+2023-06-12 13:23:57 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 13:23:57 [INFO] 김덕근 로그인 성공
+2023-06-12 13:23:57 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:23:58 [DEBUG] deokkeun! / $2a$10$2q79ydhddztcBcckgOJvde8xRggmH4jkcCQG/Re7Q6cvt8nAnBQwe
+2023-06-12 13:23:58 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 13:23:58 [INFO] Running Time : 259ms
+2023-06-12 13:23:58 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 13:23:58 [INFO] 김덕근 로그인 성공
+2023-06-12 13:24:07 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:24:07 [INFO] Return Value : 1
+2023-06-12 13:24:07 [INFO] Running Time : 159ms
+2023-06-12 13:24:07 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:27:49 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:27:49 [INFO] Return Value : 1
+2023-06-12 13:27:49 [INFO] Running Time : 142ms
+2023-06-12 13:27:49 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:28:19 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:28:20 [INFO] Return Value : 1
+2023-06-12 13:28:20 [INFO] Running Time : 169ms
+2023-06-12 13:28:20 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:28:26 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:28:26 [INFO] Return Value : 1
+2023-06-12 13:28:26 [INFO] Running Time : 155ms
+2023-06-12 13:28:26 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:28:45 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:28:45 [INFO] Return Value : 1
+2023-06-12 13:28:45 [INFO] Running Time : 145ms
+2023-06-12 13:28:45 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:29:00 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:29:00 [INFO] Return Value : 1
+2023-06-12 13:29:00 [INFO] Running Time : 119ms
+2023-06-12 13:29:00 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:29:52 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:29:52 [INFO] Return Value : 1
+2023-06-12 13:29:52 [INFO] Running Time : 141ms
+2023-06-12 13:29:52 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:29:54 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:29:54 [INFO] Return Value : 1
+2023-06-12 13:29:54 [INFO] Running Time : 123ms
+2023-06-12 13:29:54 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:35:15 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:35:15 [INFO] Return Value : 1
+2023-06-12 13:35:15 [INFO] Running Time : 139ms
+2023-06-12 13:35:15 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:35:23 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:35:23 [INFO] Return Value : 1
+2023-06-12 13:35:23 [INFO] Running Time : 115ms
+2023-06-12 13:35:23 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:39:40 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:39:41 [INFO] Return Value : 1
+2023-06-12 13:39:41 [INFO] Running Time : 135ms
+2023-06-12 13:39:41 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:40:11 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:40:11 [INFO] Return Value : 1
+2023-06-12 13:40:11 [INFO] Running Time : 157ms
+2023-06-12 13:40:11 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:40:24 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:40:24 [INFO] Return Value : 1
+2023-06-12 13:40:24 [INFO] Running Time : 181ms
+2023-06-12 13:40:24 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:41:17 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:41:17 [INFO] Return Value : 1
+2023-06-12 13:41:17 [INFO] Running Time : 116ms
+2023-06-12 13:41:17 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:41:19 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:41:19 [INFO] Return Value : 1
+2023-06-12 13:41:19 [INFO] Running Time : 121ms
+2023-06-12 13:41:19 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:41:42 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:41:42 [INFO] Return Value : 1
+2023-06-12 13:41:42 [INFO] Running Time : 139ms
+2023-06-12 13:41:42 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:51:43 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:51:43 [INFO] Return Value : 1
+2023-06-12 13:51:43 [INFO] Running Time : 143ms
+2023-06-12 13:51:43 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:51:44 [INFO] 로그아웃 수행됨
+2023-06-12 13:52:53 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 13:52:53 [DEBUG] deokkeun! / $2a$10$FcD.Qe/tnB5CSWlJlwSiEu/MkqbyorzYhKKXBuc37WW3gLMhKu9Xe
+2023-06-12 13:52:53 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 13:52:53 [INFO] Running Time : 218ms
+2023-06-12 13:52:53 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 13:52:53 [INFO] 김덕근 로그인 성공
+2023-06-12 13:53:23 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:53:23 [DEBUG] deokkeun! / $2a$10$LWC/5V1JhcaacPjNyWjpZ.sCCdGFypr541RPq2v7vAQzaeUhj9Igu
+2023-06-12 13:53:23 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 13:53:23 [INFO] Running Time : 255ms
+2023-06-12 13:53:23 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 13:53:23 [INFO] 김덕근 로그인 성공
+2023-06-12 13:53:51 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:53:51 [INFO] Return Value : 1
+2023-06-12 13:53:51 [INFO] Running Time : 129ms
+2023-06-12 13:53:51 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:54:19 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:54:19 [INFO] Return Value : 1
+2023-06-12 13:54:19 [INFO] Running Time : 129ms
+2023-06-12 13:54:19 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:54:21 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:54:21 [INFO] Return Value : 1
+2023-06-12 13:54:21 [INFO] Running Time : 161ms
+2023-06-12 13:54:21 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:55:26 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:55:26 [INFO] Return Value : 1
+2023-06-12 13:55:26 [INFO] Running Time : 149ms
+2023-06-12 13:55:26 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 13:56:02 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 13:56:03 [INFO] Return Value : 1
+2023-06-12 13:56:03 [INFO] Running Time : 112ms
+2023-06-12 13:56:03 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:08:06 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:08:07 [INFO] Return Value : 1
+2023-06-12 14:08:07 [INFO] Running Time : 159ms
+2023-06-12 14:08:07 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:09:21 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:09:21 [INFO] Return Value : 1
+2023-06-12 14:09:21 [INFO] Running Time : 179ms
+2023-06-12 14:09:21 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:09:23 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:09:23 [INFO] Return Value : 1
+2023-06-12 14:09:23 [INFO] Running Time : 151ms
+2023-06-12 14:09:23 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:10:15 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:10:15 [INFO] Return Value : 1
+2023-06-12 14:10:15 [INFO] Running Time : 121ms
+2023-06-12 14:10:15 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:11:34 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:11:34 [INFO] Return Value : 1
+2023-06-12 14:11:34 [INFO] Running Time : 142ms
+2023-06-12 14:11:34 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:12:05 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:12:05 [INFO] Return Value : 1
+2023-06-12 14:12:05 [INFO] Running Time : 138ms
+2023-06-12 14:12:05 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:13:01 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:13:01 [INFO] Return Value : 1
+2023-06-12 14:13:01 [INFO] Running Time : 121ms
+2023-06-12 14:13:01 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:13:28 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:13:28 [INFO] Return Value : 1
+2023-06-12 14:13:28 [INFO] Running Time : 147ms
+2023-06-12 14:13:28 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:13:35 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:13:36 [INFO] Return Value : 1
+2023-06-12 14:13:36 [INFO] Running Time : 165ms
+2023-06-12 14:13:36 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:13:42 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:13:43 [INFO] Return Value : 1
+2023-06-12 14:13:43 [INFO] Running Time : 167ms
+2023-06-12 14:13:43 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:13:44 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:13:44 [INFO] Return Value : 1
+2023-06-12 14:13:44 [INFO] Running Time : 127ms
+2023-06-12 14:13:44 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:13:50 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:13:51 [INFO] Return Value : 1
+2023-06-12 14:13:51 [INFO] Running Time : 138ms
+2023-06-12 14:13:51 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:15:29 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:15:29 [INFO] Return Value : 1
+2023-06-12 14:15:29 [INFO] Running Time : 126ms
+2023-06-12 14:15:29 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:15:42 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:15:42 [INFO] Return Value : 1
+2023-06-12 14:15:42 [INFO] Running Time : 157ms
+2023-06-12 14:15:42 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:16:37 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:16:37 [INFO] Return Value : 1
+2023-06-12 14:16:37 [INFO] Running Time : 138ms
+2023-06-12 14:16:37 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:17:24 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:17:24 [INFO] Return Value : 1
+2023-06-12 14:17:24 [INFO] Running Time : 131ms
+2023-06-12 14:17:24 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:18:03 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:18:04 [INFO] Return Value : 1
+2023-06-12 14:18:04 [INFO] Running Time : 131ms
+2023-06-12 14:18:04 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:19:42 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:19:42 [INFO] Return Value : 1
+2023-06-12 14:19:42 [INFO] Running Time : 138ms
+2023-06-12 14:19:42 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:19:56 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:19:56 [INFO] Return Value : 1
+2023-06-12 14:19:56 [INFO] Running Time : 146ms
+2023-06-12 14:19:56 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:21:40 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:21:40 [INFO] Return Value : 1
+2023-06-12 14:21:40 [INFO] Running Time : 142ms
+2023-06-12 14:21:40 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:21:55 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:21:56 [INFO] Return Value : 1
+2023-06-12 14:21:56 [INFO] Running Time : 150ms
+2023-06-12 14:21:56 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:22:04 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:22:04 [INFO] Return Value : 1
+2023-06-12 14:22:04 [INFO] Running Time : 166ms
+2023-06-12 14:22:04 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:22:30 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:22:31 [INFO] Return Value : 1
+2023-06-12 14:22:31 [INFO] Running Time : 140ms
+2023-06-12 14:22:31 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:22:56 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:22:56 [INFO] Return Value : 1
+2023-06-12 14:22:56 [INFO] Running Time : 147ms
+2023-06-12 14:22:56 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:23:31 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:23:31 [INFO] Return Value : 1
+2023-06-12 14:23:31 [INFO] Running Time : 178ms
+2023-06-12 14:23:31 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:25:46 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:25:46 [INFO] Return Value : 1
+2023-06-12 14:25:46 [INFO] Running Time : 155ms
+2023-06-12 14:25:46 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:26:09 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:26:09 [INFO] Return Value : 1
+2023-06-12 14:26:09 [INFO] Running Time : 143ms
+2023-06-12 14:26:09 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:26:28 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:26:28 [INFO] Return Value : 1
+2023-06-12 14:26:28 [INFO] Running Time : 149ms
+2023-06-12 14:26:28 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:26:45 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:26:45 [INFO] Return Value : 1
+2023-06-12 14:26:45 [INFO] Running Time : 153ms
+2023-06-12 14:26:45 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:26:56 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:26:56 [INFO] Return Value : 1
+2023-06-12 14:26:56 [INFO] Running Time : 155ms
+2023-06-12 14:26:56 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:40:16 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:40:17 [INFO] Return Value : 1
+2023-06-12 14:40:17 [INFO] Running Time : 455ms
+2023-06-12 14:40:17 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:40:18 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:40:19 [INFO] Return Value : 1
+2023-06-12 14:40:19 [INFO] Running Time : 120ms
+2023-06-12 14:40:19 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:41:12 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:41:12 [INFO] Return Value : 1
+2023-06-12 14:41:12 [INFO] Running Time : 138ms
+2023-06-12 14:41:12 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:41:39 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:41:39 [INFO] Return Value : 1
+2023-06-12 14:41:39 [INFO] Running Time : 122ms
+2023-06-12 14:41:39 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:41:50 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:41:50 [INFO] Return Value : 1
+2023-06-12 14:41:50 [INFO] Running Time : 166ms
+2023-06-12 14:41:50 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:41:58 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:41:58 [INFO] Return Value : 1
+2023-06-12 14:41:58 [INFO] Running Time : 160ms
+2023-06-12 14:41:58 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:42:04 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:42:04 [INFO] Return Value : 1
+2023-06-12 14:42:04 [INFO] Running Time : 113ms
+2023-06-12 14:42:04 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:42:22 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:42:22 [INFO] Return Value : 1
+2023-06-12 14:42:22 [INFO] Running Time : 153ms
+2023-06-12 14:42:22 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:42:37 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:42:37 [INFO] Return Value : 1
+2023-06-12 14:42:37 [INFO] Running Time : 161ms
+2023-06-12 14:42:37 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:42:58 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:42:58 [INFO] Return Value : 1
+2023-06-12 14:42:58 [INFO] Running Time : 152ms
+2023-06-12 14:42:58 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:43:17 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:43:17 [INFO] Return Value : 1
+2023-06-12 14:43:17 [INFO] Running Time : 159ms
+2023-06-12 14:43:17 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:43:32 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:43:32 [INFO] Return Value : 1
+2023-06-12 14:43:32 [INFO] Running Time : 184ms
+2023-06-12 14:43:32 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:43:54 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:43:54 [INFO] Return Value : 1
+2023-06-12 14:43:54 [INFO] Running Time : 128ms
+2023-06-12 14:43:54 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:44:07 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:44:07 [INFO] Return Value : 1
+2023-06-12 14:44:07 [INFO] Running Time : 166ms
+2023-06-12 14:44:07 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:44:29 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:44:29 [INFO] Return Value : 1
+2023-06-12 14:44:29 [INFO] Running Time : 147ms
+2023-06-12 14:44:29 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:44:50 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:44:51 [INFO] Return Value : 1
+2023-06-12 14:44:51 [INFO] Running Time : 110ms
+2023-06-12 14:44:51 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:45:15 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:45:15 [INFO] Return Value : 1
+2023-06-12 14:45:15 [INFO] Running Time : 123ms
+2023-06-12 14:45:15 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:45:31 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:45:32 [INFO] Return Value : 1
+2023-06-12 14:45:32 [INFO] Running Time : 136ms
+2023-06-12 14:45:32 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:45:42 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:45:42 [INFO] Return Value : 1
+2023-06-12 14:45:42 [INFO] Running Time : 158ms
+2023-06-12 14:45:42 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:46:24 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:46:24 [INFO] Return Value : 1
+2023-06-12 14:46:24 [INFO] Running Time : 157ms
+2023-06-12 14:46:24 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:46:48 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:46:48 [INFO] Return Value : 1
+2023-06-12 14:46:48 [INFO] Running Time : 191ms
+2023-06-12 14:46:48 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:50:19 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:50:19 [INFO] Return Value : 1
+2023-06-12 14:50:19 [INFO] Running Time : 126ms
+2023-06-12 14:50:19 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:52:58 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:52:58 [INFO] Return Value : 1
+2023-06-12 14:52:58 [INFO] Running Time : 148ms
+2023-06-12 14:52:58 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:53:16 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:53:16 [INFO] Return Value : 1
+2023-06-12 14:53:16 [INFO] Running Time : 161ms
+2023-06-12 14:53:16 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:53:22 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:53:23 [INFO] Return Value : 1
+2023-06-12 14:53:23 [INFO] Running Time : 155ms
+2023-06-12 14:53:23 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:58:51 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:58:52 [INFO] Return Value : 1
+2023-06-12 14:58:52 [INFO] Running Time : 153ms
+2023-06-12 14:58:52 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 14:58:53 [INFO] 로그아웃 수행됨
+2023-06-12 14:58:55 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 14:58:55 [DEBUG] deokkeun! / $2a$10$YX0xsdI5HxbRUoszx9NuZudzHaXBs4XxuCm/WT.V7jHI8t5k4CoUu
+2023-06-12 14:58:55 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 14:58:55 [INFO] Running Time : 252ms
+2023-06-12 14:58:55 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 14:58:55 [INFO] 김덕근 로그인 성공
+2023-06-12 14:59:06 [INFO] ---------------------------------------
+Start : MemberServiceImpl - emailDupCheck
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:59:06 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 14:59:06 [INFO] Running Time : 30ms
+2023-06-12 14:59:06 [INFO] End : MemberServiceImpl - emailDupCheck
+---------------------------------------------
+
+2023-06-12 14:59:07 [INFO] ---------------------------------------
+Start : MemberServiceImpl - selectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:59:07 [INFO] Return Value : 1
+2023-06-12 14:59:07 [INFO] Running Time : 52ms
+2023-06-12 14:59:07 [INFO] End : MemberServiceImpl - selectCertification
+---------------------------------------------
+
+2023-06-12 14:59:07 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 14:59:07 [INFO] ---------------------------------------
+Start : MemberServiceImpl - updateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:59:12 [INFO] Return Value : 1
+2023-06-12 14:59:12 [INFO] Running Time : 4782ms
+2023-06-12 14:59:12 [INFO] End : MemberServiceImpl - updateCertification
+---------------------------------------------
+
+2023-06-12 14:59:12 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 14:59:29 [INFO] ---------------------------------------
+Start : MemberServiceImpl - certificationNumber
+Parameter : [LDUMS0]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:59:29 [INFO] Return Value : 1000
+2023-06-12 14:59:29 [INFO] Running Time : 62ms
+2023-06-12 14:59:29 [INFO] End : MemberServiceImpl - certificationNumber
+---------------------------------------------
+
+2023-06-12 14:59:29 [DEBUG] 인증번호 확인 후 회원 번호 조회 memberNo = 1000
+2023-06-12 14:59:41 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - newChangePw
+Parameter : [{newPw=deokkeun!!, newPwConfirm=deokkeun!!, memNo=1000, memberNo=1000}]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 14:59:41 [INFO] Return Value : 1
+2023-06-12 14:59:41 [INFO] Running Time : 139ms
+2023-06-12 14:59:41 [INFO] End : MyPageServiceImpl - newChangePw
+---------------------------------------------
+
+2023-06-12 14:59:57 [INFO] 로그인 기능 수행됨
+2023-06-12 14:59:57 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 14:59:57 [DEBUG] deokkeun!! / $2a$10$Do8djFSSJQFNXih0TIMsauOpzdHtw4TLXyQVp/GnQ4QPymRuvTnCy
+2023-06-12 14:59:57 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 14:59:57 [INFO] Running Time : 246ms
+2023-06-12 14:59:57 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 14:59:57 [DEBUG] Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)로그인 성공시 로그인 멤버 정보
+2023-06-12 15:00:09 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 15:00:09 [INFO] Return Value : 1
+2023-06-12 15:00:09 [INFO] Running Time : 158ms
+2023-06-12 15:00:09 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 15:00:16 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - newChangePw
+Parameter : [{newPw=deokkeun!, newPwConfirm=deokkeun!, memberNo=1000}]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 15:00:16 [INFO] Return Value : 1
+2023-06-12 15:00:16 [INFO] Running Time : 123ms
+2023-06-12 15:00:16 [INFO] End : MyPageServiceImpl - newChangePw
+---------------------------------------------
+
+2023-06-12 15:00:18 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 15:00:19 [DEBUG] deokkeun! / $2a$10$/LZrXd52Hh0uSxMxQR0w8e95lvy2G9.GYFfOeGA9NHbEb2dzt/K/2
+2023-06-12 15:00:19 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 15:00:19 [INFO] Running Time : 251ms
+2023-06-12 15:00:19 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 15:00:19 [INFO] 김덕근 로그인 성공
+2023-06-12 15:00:51 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 15:00:52 [DEBUG] deokkeun! / $2a$10$fAmQr6c3cXtgZsSa3SAtseKjrE3/4YqKwZiZQJInPFS7tP08OlewK
+2023-06-12 15:00:52 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 15:00:52 [INFO] Running Time : 227ms
+2023-06-12 15:00:52 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 15:00:52 [INFO] 김덕근 로그인 성공
+2023-06-12 15:01:11 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 15:01:11 [INFO] Return Value : 1
+2023-06-12 15:01:11 [INFO] Running Time : 142ms
+2023-06-12 15:01:11 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 15:04:36 [INFO] 초기화 필터 파괴
+2023-06-12 15:04:42 [INFO] 초기화 필터 생성
+2023-06-12 15:06:42 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 15:06:45 [DEBUG] deokkeun! / $2a$10$8rVNmkeyvzDxBQMoQPRtkekM7P3uw9KzmS93K6SZAVFmklPgMqJuy
+2023-06-12 15:06:45 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 15:06:45 [INFO] Running Time : 2896ms
+2023-06-12 15:06:45 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 15:06:45 [INFO] 김덕근 로그인 성공
+2023-06-12 15:06:56 [INFO] 초기화 필터 파괴
+2023-06-12 18:00:40 [INFO] 초기화 필터 생성
+2023-06-12 18:00:48 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 18:00:51 [DEBUG] deokkeun! / $2a$10$JlmaAGGHydgCCdu9.R5IYefpKXJ0bWjFLpmNxDEDTtYAIlaTP7Amq
+2023-06-12 18:00:51 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 18:00:51 [INFO] Running Time : 3549ms
+2023-06-12 18:00:51 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 18:00:51 [INFO] 김덕근 로그인 성공
+2023-06-12 18:00:59 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 18:01:00 [INFO] Return Value : 1
+2023-06-12 18:01:00 [INFO] Running Time : 175ms
+2023-06-12 18:01:00 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 18:01:09 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - newChangePw
+Parameter : [{newPw=deokkeun!!, newPwConfirm=deokkeun!!, memberNo=1000}]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 18:01:09 [INFO] Return Value : 1
+2023-06-12 18:01:09 [INFO] Running Time : 167ms
+2023-06-12 18:01:09 [INFO] End : MyPageServiceImpl - newChangePw
+---------------------------------------------
+
+2023-06-12 18:01:13 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 18:01:13 [DEBUG] deokkeun! / $2a$10$Jqn5WuwUQF8JHXKYc/peVeKIk4PN2/yC3ppJBUYWtjWsF1F.Cjpi.
+2023-06-12 18:01:13 [INFO] Return Value : null
+2023-06-12 18:01:13 [INFO] Running Time : 227ms
+2023-06-12 18:01:13 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 18:01:13 [INFO] 로그인 실패
+2023-06-12 18:01:23 [INFO] 로그인 기능 수행됨
+2023-06-12 18:01:23 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 18:01:23 [DEBUG] deokkeun!! / $2a$10$I1TGaqL0eEWVP8fcM0Jljuhd73jjKBI6zs4OLDAB0nqhQvfdGc3EC
+2023-06-12 18:01:23 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 18:01:23 [INFO] Running Time : 256ms
+2023-06-12 18:01:23 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 18:01:23 [DEBUG] Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)로그인 성공시 로그인 멤버 정보
+2023-06-12 18:01:33 [INFO] ---------------------------------------
+Start : MemberServiceImpl - memberConfirmation
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 18:01:33 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 18:01:33 [INFO] Running Time : 43ms
+2023-06-12 18:01:33 [INFO] End : MemberServiceImpl - memberConfirmation
+---------------------------------------------
+
+2023-06-12 18:03:22 [INFO] 로그아웃 수행됨
+2023-06-12 18:03:30 [INFO] 로그인 기능 수행됨
+2023-06-12 18:03:30 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 18:03:30 [DEBUG] deokkeun!! / $2a$10$sdofV.PoVlOGCn7Yhun3SOgxWI2BnDnZZCT58EKsZX1bsY2zsQI6O
+2023-06-12 18:03:30 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 18:03:30 [INFO] Running Time : 255ms
+2023-06-12 18:03:30 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 18:03:30 [DEBUG] Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)로그인 성공시 로그인 멤버 정보
+2023-06-12 18:03:46 [INFO] ---------------------------------------
+Start : MemberServiceImpl - memberConfirmation
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 18:03:46 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 18:03:46 [INFO] Running Time : 52ms
+2023-06-12 18:03:46 [INFO] End : MemberServiceImpl - memberConfirmation
+---------------------------------------------
+
+2023-06-12 18:03:47 [INFO] ---------------------------------------
+Start : MemberServiceImpl - passwordSelectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 18:03:47 [INFO] Return Value : 1
+2023-06-12 18:03:47 [INFO] Running Time : 68ms
+2023-06-12 18:03:47 [INFO] End : MemberServiceImpl - passwordSelectCertification
+---------------------------------------------
+
+2023-06-12 18:03:47 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 18:03:47 [INFO] ---------------------------------------
+Start : MemberServiceImpl - passwordUpdateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 18:03:53 [INFO] Return Value : 1
+2023-06-12 18:03:53 [INFO] Running Time : 5929ms
+2023-06-12 18:03:53 [INFO] End : MemberServiceImpl - passwordUpdateCertification
+---------------------------------------------
+
+2023-06-12 18:03:53 [DEBUG] 인증번호 수정(인증 받은적 있는경우) result = 1
+2023-06-12 18:04:19 [INFO] ---------------------------------------
+Start : MemberServiceImpl - certificationNumber
+Parameter : [L7K43A]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 18:04:19 [INFO] Return Value : 1000
+2023-06-12 18:04:19 [INFO] Running Time : 53ms
+2023-06-12 18:04:19 [INFO] End : MemberServiceImpl - certificationNumber
+---------------------------------------------
+
+2023-06-12 18:04:19 [DEBUG] 인증번호 확인 후 회원 번호 조회 memberNo = 1000
+2023-06-12 18:04:34 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - newChangePw
+Parameter : [{newPw=deokkeun!, newPwConfirm=deokkeun!, memNo=1000, memberNo=1000}]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 18:04:34 [INFO] Return Value : 1
+2023-06-12 18:04:34 [INFO] Running Time : 144ms
+2023-06-12 18:04:34 [INFO] End : MyPageServiceImpl - newChangePw
+---------------------------------------------
+
+2023-06-12 18:04:37 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 18:04:37 [DEBUG] deokkeun! / $2a$10$zvmfLBdt1b3I7AWGMXAIlev.XFuBjZPufbqqQa9zq5gtydYPcWmwO
+2023-06-12 18:04:37 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 18:04:37 [INFO] Running Time : 258ms
+2023-06-12 18:04:37 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 18:04:37 [INFO] 김덕근 로그인 성공
+2023-06-12 18:04:44 [INFO] 초기화 필터 파괴
+2023-06-12 18:35:22 [INFO] 초기화 필터 생성
+2023-06-12 18:35:32 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 18:35:36 [DEBUG] deokkeun! / $2a$10$7pBv4Fp1B64dObxgP0qOnO8vddC/yH4Qxfb.4xe98gwxjF8v.cpyG
+2023-06-12 18:35:36 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 18:35:36 [INFO] Running Time : 3458ms
+2023-06-12 18:35:36 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 18:35:36 [INFO] 김덕근 로그인 성공
+2023-06-12 18:35:56 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 18:35:56 [INFO] Return Value : 1
+2023-06-12 18:35:56 [INFO] Running Time : 176ms
+2023-06-12 18:35:56 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 18:36:14 [INFO] 초기화 필터 파괴
+2023-06-12 18:42:17 [INFO] 초기화 필터 생성
+2023-06-12 18:43:19 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=user999@gmail.com, memberPw=password999!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 18:43:23 [DEBUG] password999! / $2a$10$kOQ33OGmVGaJ1UqUBnpiAe0zCRpIyO39lX6vP.NfyPngWZnRLbXfi
+2023-06-12 18:43:23 [INFO] Return Value : Member(memberNo=999, memberEmail=user999@gmail.com, memberPw=null, memberName=구구맨, memberGit=null, profileImage=/resources/images/memberProfile/20230610125224_28603.jpeg, enrollDate=2023-06-02 08:34:14, memberDeleteFG=null, socialId=null)
+2023-06-12 18:43:23 [INFO] Running Time : 3382ms
+2023-06-12 18:43:23 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 18:43:23 [INFO] 구구맨 로그인 성공
+2023-06-12 18:44:45 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-12 18:44:45 [INFO] Return Value : 1
+2023-06-12 18:44:45 [INFO] Running Time : 78ms
+2023-06-12 18:44:45 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-12 18:44:45 [INFO] ---------------------------------------
+Start : MemoServiceImpl - selectMemoList
+Parameter : [5]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-12 18:44:45 [INFO] Return Value : [Memo(memoNo=1, workspaceNo=5, pmNo=1, updatePmNo=1, memoContent=뭔가 바뀌긴 한다ㅋㅋㅋ, memoRegDate=2023-06-09, memoUpdateDate=2023-06-12, memoBgColor=#fff3cd, memoSt=N), Memo(memoNo=2, workspaceNo=5, pmNo=4, updatePmNo=1, memoContent=일일맨 메모테스트1, memoRegDate=2023-06-09, memoUpdateDate=2023-06-12, memoBgColor=#fff3cd, memoSt=N), Memo(memoNo=5, workspaceNo=5, pmNo=1, updatePmNo=1, memoContent=구구맨 메모테스트3, memoRegDate=2023-06-09, memoUpdateDate=2023-06-12, memoBgColor=#fff3cd, memoSt=N), Memo(memoNo=4, workspaceNo=5, pmNo=1, updatePmNo=1, memoContent=구구맨 메모테스트2, memoRegDate=2023-06-09, memoUpdateDate=2023-06-12, memoBgColor=#fff3cd, memoSt=N), Memo(memoNo=3, workspaceNo=5, pmNo=4, updatePmNo=1, memoContent=일일맨 메모테스트2, memoRegDate=2023-06-09, memoUpdateDate=2023-06-12, memoBgColor=#fff3cd, memoSt=N)]
+2023-06-12 18:44:45 [INFO] Running Time : 47ms
+2023-06-12 18:44:45 [INFO] End : MemoServiceImpl - selectMemoList
+---------------------------------------------
+
+2023-06-12 18:44:48 [INFO] projectNo : 1
+2023-06-12 18:44:48 [INFO] ---------------------------------------
+Start : ProjectMemberServiceImpl - selectPmNo
+Parameter : [{memberNo=999, projectNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-12 18:44:48 [INFO] Return Value : 1
+2023-06-12 18:44:48 [INFO] Running Time : 55ms
+2023-06-12 18:44:48 [INFO] End : ProjectMemberServiceImpl - selectPmNo
+---------------------------------------------
+
+2023-06-12 18:44:48 [INFO] memberNo 999의 1번 프로젝트 안 PmNo : 1
+2023-06-12 18:44:48 [INFO] ---------------------------------------
+Start : ChatServiceImpl - selectChatRoomList
+Parameter : [{memberNo=999, projectNo=1, pmNo=1}]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-12 18:44:49 [INFO] Return Value : [ChatRoom(chatRoomNo=1, chatRoomTitle=Final 프로젝트, chatRoomST=N, projectNo=1, chatRoomType=1), ChatRoom(chatRoomNo=2, chatRoomTitle=Java, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=3, chatRoomTitle=Front, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=4, chatRoomTitle=DB, chatRoomST=N, projectNo=1, chatRoomType=2), ChatRoom(chatRoomNo=5, chatRoomTitle=삼삼맨, chatRoomST=N, projectNo=1, chatRoomType=3), ChatRoom(chatRoomNo=6, chatRoomTitle=오오맨, chatRoomST=N, projectNo=1, chatRoomType=3), ChatRoom(chatRoomNo=7, chatRoomTitle=일일맨, chatRoomST=N, projectNo=1, chatRoomType=3)]
+2023-06-12 18:44:49 [INFO] Running Time : 173ms
+2023-06-12 18:44:49 [INFO] End : ChatServiceImpl - selectChatRoomList
+---------------------------------------------
+
+2023-06-12 18:45:48 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [999, password999!]
+ip : 127.0.0.1 (email : user999@gmail.com)
+2023-06-12 18:45:48 [INFO] Return Value : 1
+2023-06-12 18:45:48 [INFO] Running Time : 151ms
+2023-06-12 18:45:48 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 18:47:19 [INFO] 로그아웃 수행됨
+2023-06-12 18:47:27 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 18:47:27 [DEBUG] deokkeun! / $2a$10$jyBd2UviJaIlioLCCppSf.FsP66YP/H0QEbG5.gkd9y68xPOqSbYu
+2023-06-12 18:47:27 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 18:47:27 [INFO] Running Time : 280ms
+2023-06-12 18:47:27 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 18:47:27 [INFO] 김덕근 로그인 성공
+2023-06-12 18:48:12 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 18:48:12 [INFO] Return Value : 1
+2023-06-12 18:48:12 [INFO] Running Time : 174ms
+2023-06-12 18:48:12 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 18:48:29 [INFO] 로그아웃 수행됨
+2023-06-12 18:48:33 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 18:48:33 [DEBUG] deokkeun! / $2a$10$eHT8WI5fosizOhA.Pm4ryen77RXa88shI5H7NQGTSGn.huaqjLbBC
+2023-06-12 18:48:34 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 18:48:34 [INFO] Running Time : 257ms
+2023-06-12 18:48:34 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 18:48:34 [INFO] 김덕근 로그인 성공
+2023-06-12 18:49:15 [INFO] 로그아웃 수행됨
+2023-06-12 18:49:27 [INFO] 로그아웃 수행됨
+2023-06-12 18:50:04 [INFO] 로그인 기능 수행됨
+2023-06-12 18:50:04 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=, memberPw=, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 18:50:04 [DEBUG]  / $2a$10$EafDoFPH3S0zZkdpb5Uhb.fOdFFHKlQPoBFdLj7p2jUCwgFfBI2.G
+2023-06-12 18:50:04 [INFO] Return Value : null
+2023-06-12 18:50:04 [INFO] Running Time : 149ms
+2023-06-12 18:50:04 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 18:50:14 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 18:50:14 [DEBUG] deokkeun! / $2a$10$EZ9Zat4VoBaMc1RXpD65jucspqr6wZO2LqM/HJMgDYOksFS1d69/.
+2023-06-12 18:50:14 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 18:50:14 [INFO] Running Time : 229ms
+2023-06-12 18:50:14 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 18:50:14 [INFO] 김덕근 로그인 성공
+2023-06-12 18:53:41 [INFO] ---------------------------------------
+Start : MemberServiceImpl - memberConfirmation
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 18:53:41 [INFO] Return Value : deokk91@gmail.com
+2023-06-12 18:53:41 [INFO] Running Time : 49ms
+2023-06-12 18:53:41 [INFO] End : MemberServiceImpl - memberConfirmation
+---------------------------------------------
+
+2023-06-12 18:53:43 [INFO] ---------------------------------------
+Start : MemberServiceImpl - passwordSelectCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 18:53:43 [INFO] Return Value : 1
+2023-06-12 18:53:43 [INFO] Running Time : 58ms
+2023-06-12 18:53:43 [INFO] End : MemberServiceImpl - passwordSelectCertification
+---------------------------------------------
+
+2023-06-12 18:53:43 [DEBUG] 인증 받은적이 있는지 유무 확인 select = 1
+2023-06-12 18:53:43 [INFO] ---------------------------------------
+Start : MemberServiceImpl - passwordUpdateCertification
+Parameter : [deokk91@gmail.com]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 18:53:45 [ERROR] <<exception>> : org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:440) - Authentication failed; nested exception is javax.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials l13-20020a654c4d000000b005307501cfe4sm6558518pgr.44 - gsmtp
+
+
+2023-06-12 18:53:45 [INFO] End : MemberServiceImpl - passwordUpdateCertification
+---------------------------------------------
+
+2023-06-12 18:55:55 [INFO] 초기화 필터 파괴
+2023-06-12 19:53:18 [INFO] 초기화 필터 생성
+2023-06-12 19:53:31 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 19:53:34 [DEBUG] deokkeun! / $2a$10$p3dD8BjEPKgJPC/ylHXDQexht4EbFTb/fDcCQWk5Obi5RjGT2aBoW
+2023-06-12 19:53:35 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 19:53:35 [INFO] Running Time : 3509ms
+2023-06-12 19:53:35 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 19:53:35 [INFO] 김덕근 로그인 성공
+2023-06-12 20:29:23 [INFO] 로그아웃 수행됨
+2023-06-12 20:29:26 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 20:29:26 [DEBUG] deokkeun! / $2a$10$UVkaXImauQmFYQgpF9709uaigIwfbP9DibwRxczEuz0QTDeTHo2h2
+2023-06-12 20:29:26 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 20:29:26 [INFO] Running Time : 289ms
+2023-06-12 20:29:26 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 20:29:26 [INFO] 김덕근 로그인 성공
+2023-06-12 20:30:45 [INFO] 로그아웃 수행됨
+2023-06-12 20:30:46 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 20:30:46 [DEBUG] deokkeun! / $2a$10$R/zG3dXh.NyhElJokpXe6OOB6uDP8vWIpx4oD43bRxVmV.bGsebgO
+2023-06-12 20:30:47 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 20:30:47 [INFO] Running Time : 269ms
+2023-06-12 20:30:47 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 20:30:47 [INFO] 김덕근 로그인 성공
+2023-06-12 20:31:07 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 20:31:07 [INFO] Return Value : 1
+2023-06-12 20:31:07 [INFO] Running Time : 189ms
+2023-06-12 20:31:07 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 20:31:58 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 20:31:58 [INFO] Return Value : 1
+2023-06-12 20:31:58 [INFO] Running Time : 162ms
+2023-06-12 20:31:58 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 20:32:00 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 20:32:00 [INFO] Return Value : 1
+2023-06-12 20:32:00 [INFO] Running Time : 182ms
+2023-06-12 20:32:00 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 20:32:23 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 20:32:23 [INFO] Return Value : 1
+2023-06-12 20:32:23 [INFO] Running Time : 133ms
+2023-06-12 20:32:23 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 20:32:37 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 20:32:37 [INFO] Return Value : 1
+2023-06-12 20:32:37 [INFO] Running Time : 187ms
+2023-06-12 20:32:37 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 20:32:46 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 20:32:47 [INFO] Return Value : 1
+2023-06-12 20:32:47 [INFO] Running Time : 142ms
+2023-06-12 20:32:47 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 20:33:01 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 20:33:01 [INFO] Return Value : 1
+2023-06-12 20:33:01 [INFO] Running Time : 173ms
+2023-06-12 20:33:01 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 20:33:13 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 20:33:13 [INFO] Return Value : 1
+2023-06-12 20:33:13 [INFO] Running Time : 189ms
+2023-06-12 20:33:13 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 20:33:27 [INFO] 로그아웃 수행됨
+2023-06-12 20:33:28 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 20:33:29 [DEBUG] deokkeun! / $2a$10$bi.FrOsZKCRsAECH8kFgueQHKQ9GfnpAPxN6KUseAG1B2StawFS.i
+2023-06-12 20:33:29 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 20:33:29 [INFO] Running Time : 252ms
+2023-06-12 20:33:29 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 20:33:29 [INFO] 김덕근 로그인 성공
+2023-06-12 20:34:40 [INFO] 로그아웃 수행됨
+2023-06-12 20:34:42 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 20:34:42 [DEBUG] deokkeun! / $2a$10$qkLmTr7telEa/YFD6pvuw.TkYUm1x2ko5vlweSm.19NWUiNHT.C6O
+2023-06-12 20:34:42 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 20:34:42 [INFO] Running Time : 223ms
+2023-06-12 20:34:42 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 20:34:42 [INFO] 김덕근 로그인 성공
+2023-06-12 20:38:07 [INFO] 로그아웃 수행됨
+2023-06-12 20:38:11 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 20:38:11 [DEBUG] deokkeun! / $2a$10$62VGp/cKMOAWZgwpGRKPkukHa6E9iBOepisWcn7m6trgFUBiZRoru
+2023-06-12 20:38:12 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 20:38:12 [INFO] Running Time : 284ms
+2023-06-12 20:38:12 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 20:38:12 [INFO] 김덕근 로그인 성공
+2023-06-12 20:38:18 [INFO] 로그아웃 수행됨
+2023-06-12 20:38:20 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 20:38:20 [DEBUG] deokkeun! / $2a$10$pBHBe6QSM.VXA.qG59Bc5eie097F62B1t2xEp2WQX0fyEOLCqvm1u
+2023-06-12 20:38:21 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 20:38:21 [INFO] Running Time : 264ms
+2023-06-12 20:38:21 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 20:38:21 [INFO] 김덕근 로그인 성공
+2023-06-12 20:38:56 [INFO] 초기화 필터 파괴
+2023-06-12 20:47:26 [INFO] 초기화 필터 생성
+2023-06-12 20:47:39 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 20:47:42 [DEBUG] deokkeun! / $2a$10$6lh84VywJq445Qg9YCTe2O7mzrwj3N3EPthHUHjZhZlMcQEhpQQKe
+2023-06-12 20:47:42 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 20:47:42 [INFO] Running Time : 3356ms
+2023-06-12 20:47:42 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 20:47:42 [INFO] 김덕근 로그인 성공
+2023-06-12 21:01:24 [INFO] ---------------------------------------
+Start : MyPageServiceImpl - currentPwCheck
+Parameter : [1000, deokkeun!]
+ip : 127.0.0.1 (email : deokk91@gmail.com)
+2023-06-12 21:01:24 [INFO] Return Value : 1
+2023-06-12 21:01:24 [INFO] Running Time : 196ms
+2023-06-12 21:01:24 [INFO] End : MyPageServiceImpl - currentPwCheck
+---------------------------------------------
+
+2023-06-12 21:02:37 [INFO] 로그아웃 수행됨
+2023-06-12 21:02:39 [INFO] ---------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=deokk91@gmail.com, memberPw=deokkeun!, memberName=null, memberGit=null, profileImage=null, enrollDate=null, memberDeleteFG=null, socialId=null)]
+ip : 127.0.0.1
+2023-06-12 21:02:40 [DEBUG] deokkeun! / $2a$10$95WsJ8CBkxAQYB5jgUem7.CMiUnXkmK.7yVkHU6Qn4fNDNMczL5F6
+2023-06-12 21:02:40 [INFO] Return Value : Member(memberNo=1000, memberEmail=deokk91@gmail.com, memberPw=null, memberName=김덕근, memberGit=null, profileImage=/resources/images/memberProfile/20230612124647_55609.jpeg, enrollDate=2023-06-11 21:00:00, memberDeleteFG=null, socialId=null)
+2023-06-12 21:02:40 [INFO] Running Time : 268ms
+2023-06-12 21:02:40 [INFO] End : MemberServiceImpl - login
+---------------------------------------------
+
+2023-06-12 21:02:40 [INFO] 김덕근 로그인 성공
+2023-06-12 21:04:28 [INFO] 로그아웃 수행됨
+2023-06-12 21:04:39 [INFO] 초기화 필터 파괴
+>>>>>>> 9739bf44c9c7e2c6616b846bee0fa1b42baf6408

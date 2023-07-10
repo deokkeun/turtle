@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+.boardDetailBoard-area {
+    margin: 0 auto;
+}
+.boardDetailBoard-area {
+    
+    width: 560px;
+    height: 700px;
+}
+
+.boardTitle {
+    font-size: 32px;
+    font-weight: bold;
+
+}
+
+.regInfo {
+ 
+}
+hr {
+    color: rgba(55, 53, 47, 0.35);
+}
+input[type='date']:focus {
+    outline: none;
+   
+}
+
+.eventStartDate[type="date"] {
+    width: 92px;
+}
+.eventStartDate[type="date"]::before {
+display:none;
+}
+.eventStartDate[type="date"].after::-webkit-calendar-picker-indicator{
+    margin-left: 0px;
+}
+
+.eventEndDate[type="date"] {
+    width: 92px;
+}
+.eventEndDate[type="date"]::before {
+    display:none;
+}
+.eventEndDate[type="date"].after::-webkit-calendar-picker-indicator{
+    margin-left: 0px;
+}
+.regMember {
+    flex-basis: 50%;
+    display: flex; 
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 10px;
+  
+   
+}
+
+.regMember > div:nth-child(1) {
+    font-size: 14px;
+    color: rgba(55, 53, 47, 0.35);
+    flex-basis: 20%;
+}
+.regMemberName {
+    font-size: 14px;
+}
+.regMemberImage {
+    width: 20px;
+    height: 20px;
+    border-radius: 8px;
+    margin-left: 5px;
+    align-items: center;
+}
+
+.regDate-area {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 5px;
+  
+}
+.regDate {
+    font-size: 14px;
+}
+.regDate-area > div:nth-child(1) {
+    font-size: 14px;
+    color: rgba(55, 53, 47, 0.35);
+    flex-basis: 20%;
+}
+
+
+.updateMember {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 5px;
+  
+}
+.updateMemberName {
+    font-size: 14px;
+}
+.updateMember > div:nth-child(1) {
+    font-size: 14px;
+    color: rgba(55, 53, 47, 0.35);
+    flex-basis: 20%;
+}
+.updateMemberImage {
+    width: 20px;
+    height: 20px;
+    border-radius: 8px;
+    margin-left: 5px;
+    
+}
+
+.updateDate-area {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 5px;
+  
+}
+.updateDate {
+    font-size: 14px;
+}
+.updateDate-area > div:nth-child(1) {
+    color: rgba(55, 53, 47, 0.35);
+    font-size: 14px;
+    flex-basis: 20%;
+}
+.eventDate {
+    display: flex;
+    margin-left: 12px;
+    margin-top: 5px;
+    align-items: center;
+    flex-basis: 50%;
+    
+}
+.eventDate > div:nth-child(1) {
+    font-size: 14px;
+    color: rgba(55, 53, 47, 0.35);
+    flex-basis: 20%;
+}
+.eventStartDate {
+    border: none;
+    font-size: 14px;
+    margin-right: 10px;
+}
+.eventEndDate {
+    border: none;
+    font-size: 14px;
+    margin-left: 10px;
+}
+.edit-boardDetail-area {
+    display: flex;
+    width: 560px;
+}
+
+.add-boardDetail {
+    flex-basis: 6%;
+    width: 30px;
+}
+.add-boardDetail-btn {
+    background-color: transparent;
+	font-size: 16px;
+	color: rgba(55, 53, 47, 0.35);
+	border: none;
+
+}
+.boardDetail {
+    flex-basis: 88%;
+    width: 500px;
+    
+}
+
+.updateDetailMember {
+    flex-basis: 6%;
+    width: 30px;
+}
+
+.boardDetailProfileImage {    
+    width: 30px;
+    height: 30px;
+}

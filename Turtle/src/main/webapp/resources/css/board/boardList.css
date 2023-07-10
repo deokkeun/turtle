@@ -1,0 +1,161 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+.wrapper {
+	position: absolute;
+	top: 10%;
+	left: 30%;
+}
+
+
+.board-area {
+
+	width: 100%;
+	box-shadow: 1px 1px 22px 10px #d9d9d9;
+	border-radius: 10px;
+	padding: 15px;
+	margin-bottom: 20px;
+	max-height: 500px;
+	overflow: auto;
+}
+.board {
+	display: flex;
+	height:25px;
+
+}
+.board > div:nth-child(1) {
+	flex-basis: 60%;
+}
+.board > div:nth-child(2) {
+	flex-basis: 40%;
+}
+
+.board:hover {
+	font-weight: bolder;
+	background-color: #f6f9ff;
+}
+
+.edit-board-area {
+	
+	height: 100%;
+	display: flex;
+}
+
+.add-board-btn {
+	background-color: transparent;
+	font-size: 16px;
+	color: rgba(55, 53, 47, 0.35);
+	border: none;
+	padding-bottom: 2px;
+	margin-bottom: 2px;
+
+}
+.add-board-btn:hover {
+	cursor: pointer;
+	color: black;
+}
+.edit-boardTitle-btn, .close-edit-boardTitle-btn{
+	border: none;
+	background-color: transparent;
+	color: rgba(55, 53, 47, 0.35);
+	font-size: 18px;
+	margin-left: 5px;
+	
+}
+.edit-boardTitle-btn:hover, .close-edit-boardTitle-btn:hover {
+	cursor: pointer;
+	color: black;
+
+}
+.boardListBoardTitle {
+	max-width: 50vw;
+	display: inline-block;
+	height: 25px;
+	overflow: hidden;
+	word-break: break-all;
+	
+}
+.delete-board-btn {
+	background-color: transparent;
+	border: none;
+	font-size: 16px;
+	color: rgba(55, 53, 47, 0.35);
+	margin-left: 5px;
+}
+.delete-board-btn:hover {
+	color: black;
+	cursor: pointer;
+}
+.board-info {
+	display: flex;
+	
+}
+.profile-image {
+	width: 20px;
+	height: 20px;
+	border-radius: 8px;
+}
+
+.boardListEventDate {
+	width: 200px;
+	display: flex;
+	height: 25px;
+	justify-content: center;
+	color: rgba(55, 53, 47, 0.35);
+	visibility: hidden;
+	margin-left: auto;
+	
+}
+.emoji-btn {
+	width: 30px;
+	margin-right: 5px;
+	
+	justify-content: center;
+	text-align: center;
+}
+.emoji-btn:hover {
+	cursor: pointer;
+}
+.emo {
+	width: 100%;
+	font-style: normal;
+	font-size: 16px;
+}
+
+/* hover 시에 이름 확인 */
+.user-profile {
+	display: block;
+	position: relative;
+}
+.user-name {
+	visibility: hidden;
+	background: black;
+	color: white;
+	position: absolute;
+	display: grid;
+	top: 100%;
+	left: -0%;
+	grid-template-columns: minmax(50px, max-content) 1fr;
+	z-index: 998;
+	border-radius: 3px;
+	padding: 3px;
+	
+
+}
+.profile-image:hover  ~ .user-name{	
+	visibility: visible;
+}
+.board:hover .boardListEventDate {
+	visibility: visible;
+}

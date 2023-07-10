@@ -1,0 +1,110 @@
+
+.size{
+	margin-top:100px;
+}
+ 
+
+h1 {
+  text-align: center;
+  padding-bottom: 10px;
+  max-width: 40%;
+  margin: 20px auto;
+}
+
+.container1 {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+#payment-info {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  direction: rtl; /* 입력할 수 있는 글자를 오른쪽에 배치 */
+}
+
+.submit-button {
+  display: block;
+  width: 200px;
+  padding: 15px;
+  margin: 20px auto;
+  background-color: #333;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.radio-box {
+  display: inline-block;
+}
+
+.radio-box input[type="radio"] {
+  display: none;
+}
+
+.radio-box label {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin-right: 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.radio-box label::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #333;
+}
+
+.radio-box input[type="radio"]:checked + label {
+  background-color: #F7E600;
+  border: 1px solid transparent;
+}
+
+
+.input-box {
+  display: flex;
+  align-items: center;
+}
+
+.input-box .input-label {
+  width: 100px;
+  margin-right: 10px;
+  font-weight: bold;
+  direction: ltr; /* 레이블 텍스트를 왼쪽 정렬 */
+}

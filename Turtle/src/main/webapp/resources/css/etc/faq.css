@@ -1,0 +1,251 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    /* font-family: "Open Sans", sans-serif; */
+    color: #444444;
+}
+
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+.bi-list {
+    display:none;
+}
+
+
+section {
+    padding: 25px 0;
+    overflow: hidden;
+}
+
+/* 자주묻는질문 영역 */
+.container > .section-header {
+    text-align: center;
+    padding: 50px 0px 60px 0px;
+}
+
+/* 자주묻는질문 글씨 */
+.section-header p {
+    margin: 100px 0 0 0;
+    padding: 0;
+    font-size: 38px;
+    line-height: 42px;
+    font-weight: 700;
+    color:   #012970;
+}
+
+/*--------------------------------------------------------------
+# F.A.Q section
+--------------------------------------------------------------*/
+
+.faq .accordion-collapse {
+    border: 0;
+}
+
+
+.faq .accordion-button {
+    padding: 15px 15px 20px 0;
+    font-weight: 600;
+    border: 0;
+    font-size: 18px;
+    color: #444444;
+    text-align: left;
+}
+
+
+.faq .accordion-button:hover {
+    color: #4154f1;
+}
+
+.faq .accordion-button:focus {
+    box-shadow: none;
+}
+
+/* 클릭하여 내려갈 때 색깔변함 */
+.faq .accordion-button:not(.collapsed) {
+    background: none;
+    color: #4154f1;
+    border-bottom: 0;
+}
+
+.faq .accordion-body {
+    padding: 0 0 25px 0;
+    border: 0;
+}
+
+
+/*--------------------------------------------------------------
+# Contact section
+--------------------------------------------------------------*/
+
+/* 연락문의 파트 */
+.contact {
+    margin-top: 45px;
+    margin-bottom: 60px;
+    padding: 50px 0px 50px 0px;
+}
+
+/* 원하는 답변을 찾지 못했나요? 부분 */
+.textfaq {
+    text-align: left;
+    color: #707070;
+    /* margin-left : 50px; */
+}
+
+
+.textfaq h3 {
+    font-weight: 700;
+    margin-top: 38px;
+    margin-bottom: 34px;
+    text-align: left;
+    color: #012970;
+}
+
+
+.textfaq h5 {
+    margin-bottom: 0rem;
+    font-weight: 550;  
+}
+
+
+
+/* turtle 이메일문의 부분 */
+.email {
+    text-align: left;
+    width: 255px;
+    border-bottom : 2px solid #dee2e6; 
+    margin-left : 50px;
+    padding-bottom: 5px;
+    color :#012970;
+}
+
+.email h4 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+
+/* 이모티콘과 글씨사이 간격 */
+.email h4 i {
+    margin-right: 10px;
+}
+
+.email span {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  padding-bottom: 13px;
+  /* border-bottom: 2px solid #dee2e6; */
+  font-weight: 600;
+  color: #707070;
+}
+/* 
+.col-lg-1 {
+    display: flex;
+    width: 8.33333333%;
+} */
+
+
+/*************** 반응형 설정하기 **************/
+
+@media screen and (min-width: 320px) {
+
+    .email {
+        margin-left: 0px;
+    }
+
+    .contact {
+        padding: 0px;
+    }
+    .textfaq h3 {
+        /* text-align: center; */
+        font-size : calc(1.2rem + .6vw);
+    }
+  
+    .textfaq {
+        /* margin-left: 50px; */
+        padding-bottom: 50px;
+    }
+    
+    .textfaq h5 {
+        /* text-align: center; */
+        font-size: 1.1rem;
+    }
+    
+    .textfaq2 {
+        /* margin-left: 50px; */
+        margin-top: 60px;
+    }
+
+
+}
+
+
+@media screen and (min-width: 576px) {
+    .section-header {
+      font-size: 36px; 
+    }
+
+    .gy-4 {
+      margin: 0px 0px 0px 0px
+    }
+  
+    .col-sm-4 {
+      width: 100%;
+      margin: auto;
+      /* text-align: center; */
+    }
+
+    .textfaq {
+        margin-left: 50px;
+        padding-bottom: 50px;
+    }
+    
+
+    .textfaq2 {
+        margin-left: 50px;
+    }
+}
+
+
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (max-width: 768px) {
+    .section-header p {
+        font-size: 28px;
+        line-height: 32px;
+    }
+}
+
+
+@media (min-width: 992px) {
+ 
+}
+
+@media (min-width: 1200px) {
+  
+}
+
+@media (min-width: 1400px) {
+
+}

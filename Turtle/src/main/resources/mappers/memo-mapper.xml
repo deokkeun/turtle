@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="memoMapper">
+	
+	<resultMap type="memo" id="memo_rm">
+		<id property="memoNo" column="MEMO_NO"/>
+		
+		<result property="workspaceNo" column="WORKSPACE_NO"/>
+		<result property="pmNo" column="PM_NO"/>
+		<result property="memoContent" column="MEMO_CONTENT"/>
+		<result property="memoRegDate" column="MEMO_REG_DATE"/>
+		<result property="memoUpdateDate" column="MEMO_UPDATE_DATE"/>
+		<result property="memoBgColor" column="MEMO_BG_COLOR"/>
+		<result property="memoSt" column="MEMO_ST"/>
+		<result property="memoType" column="MEMO_TYPE"/>
+		<result property="memberName" column="MEMBER_NAME"/>
+		<result property="profileImg" column="PROFILE_IMG"/>
+		
+	</resultMap>
+	
+	<select id="memoMapper.selectMemoList" resultMap="memo_rm">
+		SELECT MEMO_NO, WORKSPACE_NO, PM_NO, MEMO_CONTENT, MEMO_REG_DATE,
+		MEMO_UPDATE_DATE, MEMO_BG_COLOR, MEMO_ST, MEMO_TYPE, MEMBER_NAME, PROFILE_IMG
+		FROM MEMO
+		JOIN PROJECT_MEMBER USING (PM_NO)
+		JOIN "MEMBER" USING (MEMBER_NO)
+		WHERE WORKSPACE_NO = ${workspaceNo}
+		AND MEMO_ST = 'N'
+		AND (MEMO_TYPE = 'workspace'
+		OR (MEMO_TYPE = 'personal' AND PM_NO = ${pmNo}))
+		ORDER BY MEMO_TYPE DESC, MEMO_REG_DATE DESC
+	</select>
+	
+	
+	<update id="updateMemo">
+		UPDATE MEMO SET 
+		PM_NO = ${pmNo},
+		MEMO_CONTENT = #{memoContent},
+		MEMO_UPDATE_DATE = SYSDATE,
+		MEMO_BG_COLOR = #{memoBgColor}
+		WHERE MEMO_NO = ${memoNo}
+	</update>
+	
+	<!-- 워크스페이스 생성시 메모장 생성 -->
+	<insert id="insertMemo">
+		INSERT INTO MEMO VALUES (
+		SEQ_MEMO_NO.NEXTVAL, ${workspaceNo}, ${pmNo}, NULL, DEFAULT, NULL, DEFAULT, DEFAULT, #{memoType})
+	</insert>
+	
+</mapper>

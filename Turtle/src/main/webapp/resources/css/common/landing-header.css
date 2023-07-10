@@ -1,0 +1,482 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+/* 네비바 기본 글씨색 */
+body {
+  color: #444444;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 폰트(프리텐다드) */
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+.header {
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 20px 0;
+  height: 100px;
+}
+
+/* 헤더 스크롤 내릴 때 박스설정 */
+.header.header-scrolled {
+  background: #fff;
+  padding: 15px 10px;
+  box-shadow: 0px 2px 20px rgba(113, 156, 212, 0.645);
+}
+
+
+/* 로고글씨 TURTLE */
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  /* 글자사이 간격 */
+  letter-spacing: 1px;
+  color: #2D2727;
+  font-family: "Nunito", sans-serif;
+  text-decoration: none;
+  /* margin-top: 3px; */
+  /* margin-right: 30px; */
+}
+
+
+.navbar {
+flex-wrap: nowrap;
+}
+
+
+/* 헤더 글씨 로고랑 맞추기 */
+nav > ul {
+  margin-bottom: 0rem;
+}
+
+
+/* 네비바 안에 a태그 */
+nav > ul > li > a {
+  text-decoration: none;
+  color: #4D4D4D;
+  cursor: pointer;
+}
+
+/* 네비바 안에 a태그 호버시 */
+ul a:hover {
+  color:#45603d; 
+}
+
+
+/* 로고크기 */
+.logo img {
+  max-width: 60px;
+  margin-right: 10px;
+}
+
+
+/* 메뉴 */
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding-left: 10px;
+  /* margin-right: 100px; */
+  flex-basis: 60%; 
+  /* 원래 margin-right: 100px 설정*/
+}
+
+.nav-links li {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.nav-links2 {
+  display: flex;
+  padding-left: 0px;
+  list-style: none;
+  /* flex-basis:26%; */
+}
+
+.nav-links2 li {
+  padding: 8px 12px;
+  font-weight: bold;
+  /* font-size: 20px; */ 
+}
+
+/* 로그인, 로그아웃 버튼 */
+#login-modal-btn {
+	color: #4D4D4D;
+	text-decoration: none;
+}
+
+
+/* 로그인, 로그아웃 버튼 */
+#login-modal-btn:hover{
+	color: #4D4D4D; 
+ transition: 50ms;
+}
+
+/* 무료로 사용하기, 프로젝트 버튼 */
+.nav-btn {
+  margin-top: 30px;
+  line-height: 3;
+  padding: 10px 15px;
+  border-radius: 4px;
+  color: #ffffff;
+  background: #609966;
+}
+
+
+.nav-btn:hover {
+  /* color: var(--color-primary); */
+  background-color :  #f6f9ff;
+  color: #609966;
+  border: 1px solid #609966;
+
+}
+
+/* 반응형시 보이는 햄버거버튼 */
+.bar {
+  display: none;
+  position: absolute;
+  right: 15px;
+  font-size: 24px;
+  color: black;
+  margin-top: 5px;
+}
+
+
+
+/************ 반응형 설정 *************/
+
+@media (max-width: 1400px) {
+  .nav-links2 {
+    display: flex;
+    list-style: none;
+    flex-basis:37%;
+    background-attachment: fixed;
+  }
+  
+  .nav-links {
+    padding-left:10px; 
+  }
+
+}
+
+
+@media (max-width: 992px) {
+  .nav-links {
+    font-size: 16px;
+    padding-left:10px; 
+  }
+
+  .nav-links2 {
+    display: flex;
+    list-style: none;
+    flex-basis: 60%;
+    /* background-attachment: fixed; */
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
+@media (max-width:768px) {
+
+  #navbar {
+	align-items:center;
+	}
+
+  #allnav {
+    max-width:767px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .logo {
+    padding-right: 30px;
+  }
+
+  nav {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+      height: auto;
+  }
+ 
+  .logo img {
+      width: 60px;
+  }
+
+  .nav-links {
+     visibility: hidden;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 0vh;
+      margin: 0;
+      margin-top: 2vh;
+      flex-basis: auto;
+      font-size:16px;
+      padding-left:10px; 
+  }
+
+  .nav-links li {
+      text-align: center;
+      margin: 0;  
+  }
+
+  .nav-links li:hover {
+    background-color: #f6f9ff;
+   
+  } 
+  
+  .nav-links li:hover a {
+    color: #4154f1;
+  }
+
+  .nav-links2 {
+     visibility: hidden;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      height: 0vh;
+      font-size:16px;
+      flex-basis: 32%;
+  }
+
+  .bar {
+      display: block;   
+  }
+
+  .nav-links.active {
+    overflow: hidden;
+    height: 18vh;
+    display: block;
+    visibility: visible;
+    transition: all 1s;
+    background-color: white;   
+  }
+
+  .nav-links2.active {
+    /* margin-top: 2vh; */
+    height: 7vh;
+    display: flex;
+    visibility: visible;
+    transition: all 1s;
+    background-color: white;
+  }
+
+  .nav-links2 li {
+    text-align: center;
+    margin: 0;  
+  }
+
+  
+  /* 자동로그인 (일일맨,구구맨) 테스트부분 */
+  .auto-login {
+    /* margin: 50px; */
+    text-align: center;
+  }
+
+}
+
+
+
+/* ---------------------------------------------------- */
+
+/* 로그인 모달창 */
+#login-modal {
+    text-align: center;
+    display: none;
+    position: relative;
+    width: 380px;
+    padding: 20px 40px;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 5px;
+}
+#login-modal .login-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+.login-modal-logo {
+    margin: 20px 0px;
+}
+
+.login-modal-input {
+	width: 300px;
+	height: 48px;	
+	padding: 13px 12px;
+	font-size: 15px;
+	letter-spacing: -.3px;
+	border: 1px solid #dee2e6;
+	border-radius: 3px;
+	outline: none;
+	margin-bottom: 10px;
+}
+.login-modal-input:focus {
+	border: 2px solid #F9D1CC;
+}
+#save-id-box {
+    /* width: 300px; */
+    display: flex;
+    justify-content: flex-end;
+    float: right;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.3px;
+    color: #616568;
+    margin-bottom: 15px;
+    cursor: pointer;
+    gap: 5px;
+}
+.sign-in-btn {
+	width: 300px;
+	height: 48px;	
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#login-modal-find-box {
+    margin: 20px 0 10px 0;
+}
+#login-modal-find-box > a{
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.5);
+}
+.more-action-divider {
+    margin: 0 8px;
+    width: 1px;
+    height: 10px;
+    background-color: #858a8d;
+    pointer-events: none;
+    display: inline-block;
+}
+
+
+
+/* ----------------- 로그인 모달창 확인 ---------------------- */
+
+
+/* 로그인 전 버튼 */
+#login-box {
+	display: flex;
+}
+#login-modal-btn {
+	width: 100px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: transparent;
+    margin-right: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+#header-signUp-btn {
+	width: 150px;
+    height: 45px;
+    border-radius: 20px;
+    border-color: rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    cursor: pointer;
+    outline: none;
+}
+#login-modal-btn > div:nth-child(1){
+    display: flex;
+    align-items: center;
+}
+#login-modal-btn > div:nth-child(2){
+    font-size: 14px;
+}
+
+#google-btn {
+    width: 300px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 40px 0 0 0;
+    background-color: white;
+    cursor: pointer;
+}
+
+#g_id_onload{
+    margin-top: 30px;
+}
+#google-btn-name {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 20px;
+}
+/* 구글로그인 or 일반로그인 구분 */
+.login-divider {
+	margin: 30px 0;
+    font-size: 16px;
+}
+/* 회원이 아니신가요? */
+.question {
+    font-size: 12px;
+    color:rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+}
+
+
+/*결과값 확인용(임시로 늘려놓은거임)*/
+.empty {
+	margin-top: 20px;	
+}
+
+
+/*결과값 확인용(임시로 늘려놓은거임)*/
+.contentEmpty {
+	margin-top: 20px;
+}
+
+h1 {
+	margin-top: 20px;
+}
+
+
+g_id_signin {
+	margin: auto 0;
+	align-items: center;
+}

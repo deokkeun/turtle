@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.chatList  {
+    list-style: none;
+   
+   text-align: center;
+}
+.chatBtn {
+    width: 40%;
+    height: 40px;
+    margin-top: 10px;
+    font-weight: bold;
+    background-color: #f6f9ff;
+    border: 1px solid white;
+    border-radius: 8px;
+    color: #4154f1;
+}
+.chatBtn:hover {
+   
+    border: 1px solid #4154f1;
+}
+/* .ani {
+    -webkit-animation: scaleUp .4s ease-out both;
+    animation: scaleUp .4s ease-out both;
+}
+
+@keyframes scaleUp {
+from { opacity: 0; -webkit-transform: scale(.8); }
+} */

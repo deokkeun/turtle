@@ -1,0 +1,387 @@
+/* 구간 분할 */
+#myPage-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+#myPage-sub-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+    /* border: 1px solid black; */
+    gap: 20px;
+}
+#myPage-sub-box > section:nth-child(1) {
+    width: 340px;
+    height: 200px;
+    padding: 20px;
+    /* margin: 50px auto; */
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+#myPage-sub-box > section:nth-child(2) {
+    width: 340px;
+    height: 200px;
+    padding: 20px;
+    /* margin: 50px auto; */
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+
+
+#myPage-title-box {
+    text-align: center;
+}
+#myPage-title-box > div:nth-child(1) {
+    font-size: 28.43px;
+    margin: 10px;
+}
+#myPage-title-box > div:nth-child(2) {
+    font-size: 16px;
+    color: rgb(95, 99, 104);
+    margin: 10px;
+}
+
+
+/* ************************* 회원정보 ************************* */
+
+#member-info {
+    width: 700px;
+    padding: 20px;
+    margin: 50px auto;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+#member-info-title {
+    font-size: 21.33px;
+    padding: 5px;
+}
+.member-info-title {
+    width: 120px;
+    font-size: 12px;
+    color:rgba(0, 0, 0, 0.5);
+}
+.member-info-title-sub {
+    font-size: 14px;
+    color:rgba(0, 0, 0, 0.5);
+}
+.member-info-profile {
+    display: flex;
+    justify-content: space-between;
+}
+#member-info > section{
+    width: 100%;
+    float: left;
+    display: flex;
+    align-items: center; 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 15px;
+}
+#member-info > section:nth-of-type(1) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 2px solid white;
+    padding: 10px 10px 20px 10px;
+}
+#member-info > section > div{
+    display: flex;
+    align-items: center; 
+}
+.member-info-main-title {
+    font-size: 14px;
+    color:rgba(0, 0, 0, 0.5);
+}
+
+/* 개인정보 비밀번호 변경, 계정 삭제 버튼 */
+.deleteAccount-btn {
+    font-size: 12px;
+    padding: 5px;
+    background-color: transparent;
+    border-radius: 5px;
+    /* color: rgba(0, 0, 0, 0.5); */
+    color: #d93025;
+    margin-top: 30px;
+    border: none;
+}
+.deleteAccount-btn:hover {
+    /* transition-duration: 0.5s; */
+    /* background-color: #1A73E8; */
+    border: transparent;
+    font-weight: bold;
+    color: #ff1100;
+}
+#changePw-btn {
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 20px 0 0 0;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.5);
+    border: none;
+}
+#changePw-btn:hover {
+    transition-duration: 0.5s;
+    background-color: #1A73E8;
+    border: transparent;
+    color: white;
+}
+
+
+
+
+/* 이미지 구간 */
+.profile-image-area {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: relative;
+    margin: auto;
+}
+.profile-image-modal-area {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: relative;
+    margin: auto;
+}
+#camera {
+    position: absolute;
+}
+
+#profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* 모달 이미지 */
+#profile-modal > .profile-image-area,
+#profile-modal > .profile-image-modal-area {
+    margin: 30px auto;
+}
+
+/* 프로필 이미지(모달창) */
+#profile-image-modal {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#input-image {
+    display: none;
+}
+#camera {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+
+#myPage-title {
+    font-size: 28.43px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ************************ 프로필 모달 ************************ */
+
+/* 프로필 모달창 */
+#profile-modal {
+    display: none;
+    position: relative;
+    width: 380px;
+    padding: 20px 40px;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 5px;
+}
+#profile-modal .profile-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+/* ************************ 비밀번호 변경 모달 ************************ */
+
+/* 비밀번호 변경 모달창 */
+#changePw-modal {
+    display: none;
+    position: relative;
+    padding: 50px;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 5px;
+}
+#changePw-modal-box {
+    width: 100%;
+}
+#changePw-modal .changePw-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+#changePw-modal-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#changePw-modal-top > div:nth-of-type(1) {
+    font-size: 28.43px;
+    margin: 20px 0 40px 0;
+}
+#changePw-modal-top > div:nth-of-type(2) {
+    font-size: 21.33px;
+}
+#changePw-modal-top > div:nth-of-type(3) {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 5px 30px;
+    letter-spacing: 0.5px;
+    margin: 5px 0 30px 0;
+}
+#changePw-modal-top > div:nth-of-type(4) {
+    width: 100%;
+    text-align: left;
+    margin: 5px;
+    color:rgba(0, 0, 0, 0.5);
+}
+
+
+.flex-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0;
+}
+.findPassword {
+    text-decoration: none;
+    color: #1A73E8;
+}
+.next-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+.next {
+    font-size: 14px;
+    padding: 10px 20px;
+    background-color: #1A73E8;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    letter-spacing: 1px;
+}
+
+
+/* ************* 모달 버튼 ************** */
+.profile-btn-area {
+    display: flex;
+}
+
+.select-image {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    width: 120px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+#changes-save {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: white;
+    text-align: center;
+    width: 120px;
+    background-color: #1A73E8;
+    border-radius: 50px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+}
+#delete-btn {
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    top: 55px;
+    right: 120px;
+}
+
+#delete-image {
+    pointer-events: none;
+    border: none;
+    background-color: transparent;
+}
+
+
+
+/* ************************ 현재 비밀번호 ************************ */
+#currentPw-box {
+    position: relative;
+    border: none;
+}
+.currentPw-value {
+    position: absolute;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    top: 22px;
+    left: 15px;
+    color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+.currentPw-value-move {
+    position: absolute;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    top: 0px;
+    left: 15px;
+    font-size: 14px;
+    color: #1A73E8;
+    background-color: white;
+}
+.currentPw {
+    width: 360px;
+    height: 45px;
+    padding: 10px;
+    margin: 10px 0 0 0;
+    outline: none;
+    border-color: black;
+    border-radius: 5px;
+}
+.confirm {
+    color: #1A73E8;
+}
+.error {
+    color: #d93025;
+}
+.confirm-border {
+    border-color: #1A73E8;
+    border: 2px solid #1A73E8;
+}
+.error-border {
+    border-color: #d93025;
+    border: 2px solid #d93025;
+}

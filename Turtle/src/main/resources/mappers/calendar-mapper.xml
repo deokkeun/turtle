@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="calendarMapper">
+
+	<resultMap type="calendar" id="calendar_rm">
+		<id property="calNo" column="CAL_NO"/>
+		
+		<result property="workspaceNo" column="WORKSPACE_NO"/>
+		<result property="pmNo" column="PM_NO"/>
+		<result property="calTitle" column="CAL_TITLE"/>
+		<result property="calContent" column="CAL_CONTENT"/>
+		<result property="calColor" column="CAL_COLOR"/>
+		<result property="calRegDate" column="CAL_REG_DATE"/>
+		<result property="startDate" column="START_DATE"/>
+		<result property="endDate" column="END_DATE"/>
+		<result property="calSt" column="CAL_ST"/>
+		<result property="boardNo" column="BOARD_NO"/>
+	</resultMap>
+
+	<!-- 메인 페이지 캘린더 남은 일정 -->
+	<select id="schedule" parameterType="_int" resultMap="calendar_rm">
+		SELECT PM_NO, CAL_TITLE, CAL_CONTENT, CAL_COLOR,
+		TO_CHAR(CAL_REG_DATE, 'YYYY-MM-DD') AS CAL_REG_DATE, 
+		TO_CHAR(START_DATE, 'YYYY-MM-DD') AS START_DATE, 
+		TO_CHAR(END_DATE, 'YYYY-MM-DD') AS END_DATE, BOARD_NO
+		FROM CALENDAR c
+		JOIN WORKSPACE w ON(c.WORKSPACE_NO = w.WORKSPACE_NO)
+		WHERE w.PROJECT_NO = ${projectNo}
+		AND CAL_ST = 'N'
+		AND END_DATE > SYSDATE
+		ORDER BY END_DATE 
+	</select>
+
+	<!-- 캘린더 일정 조회 BOARD_NO,-->
+	<select id="selectCalendarList" resultMap="calendar_rm">
+		SELECT CAL_NO, WORKSPACE_NO, PM_NO, CAL_TITLE, CAL_CONTENT, CAL_COLOR,
+		TO_CHAR(CAL_REG_DATE, 'YYYY-MM-DD') AS CAL_REG_DATE, 
+		TO_CHAR(START_DATE, 'YYYY-MM-DD') AS START_DATE, 
+		TO_CHAR(END_DATE, 'YYYY-MM-DD') AS END_DATE, BOARD_NO
+		FROM CALENDAR c
+		WHERE WORKSPACE_NO = ${workspaceNo}
+		AND CAL_ST = 'N'
+	</select>
+
+
+	<!-- 캘린더 일정 추가 -->
+	<insert id="calendarAddEvent">
+		<choose>
+			<!-- 게시판 일정 추가 -->
+			<when test="boardNo != 0">
+				INSERT INTO CALENDAR(CAL_NO, WORKSPACE_NO, PM_NO, CAL_TITLE, CAL_CONTENT, CAL_COLOR, CAL_REG_DATE, START_DATE, END_DATE, CAL_ST, BOARD_NO) 
+				VALUES(SEQ_CALENDAR_NO.NEXTVAL, ${workspaceNo}, ${pmNo}, #{calTitle}, #{calContent}, #{calColor}, SYSDATE, #{startDate}, #{endDate}, DEFAULT, #{boardNo})
+			</when>
+			<!-- 캘린더 일정 추가 -->
+			<otherwise>
+				INSERT INTO CALENDAR(CAL_NO, WORKSPACE_NO, PM_NO, CAL_TITLE, CAL_CONTENT, CAL_COLOR, CAL_REG_DATE, START_DATE, END_DATE, CAL_ST) 
+				VALUES(SEQ_CALENDAR_NO.NEXTVAL, ${workspaceNo}, ${pmNo}, #{calTitle}, #{calContent}, #{calColor}, SYSDATE, #{startDate}, #{endDate}, DEFAULT)
+			</otherwise>
+		</choose>
+	</insert>
+	
+	<!-- 캘린더 일정 삭제 -->
+	<update id="calendarDeleteEvent">
+		UPDATE CALENDAR
+		SET CAL_ST = #{calSt}
+		WHERE CAL_NO = ${calNo}
+		AND PM_NO = ${pmNo}
+		AND WORKSPACE_NO = ${workspaceNo}
+		AND CAL_TITLE = #{calTitle}
+	</update>
+	
+	
+	<!-- 캘린더 일정 수정 -->
+	<update id="calendarUpdateEvent">
+		<!-- 게시판 일정 수정 -->
+			UPDATE CALENDAR
+			SET CAL_TITLE = #{calTitle},
+			CAL_CONTENT = #{calContent},
+			CAL_COLOR = #{calColor},
+			CAL_REG_DATE = SYSDATE,
+			START_DATE = #{startDate},
+			END_DATE = #{endDate}
+			WHERE PM_NO = ${pmNo}
+			AND WORKSPACE_NO = ${workspaceNo}
+			AND CAL_ST = #{calSt}
+		<choose>
+			<when test="boardNo != 0">
+			  AND BOARD_NO = #{boardNo}
+			</when>
+			<otherwise>
+			  AND CAL_NO = ${calNo}
+			</otherwise>
+		</choose>
+	</update>
+
+	<select id="selectWorkspaceNo" resultType="_int">
+		SELECT WORKSPACE_NO FROM WORKSPACE WHERE PROJECT_NO = ${pmNo} AND WORKSPACE_NAME = 'calendar'
+	</select>
+	
+	<select id="selectBoardCalendar" resultType="_int">
+		SELECT COUNT(*) FROM CALENDAR c WHERE BOARD_NO = ${boardNo} AND CAL_ST = 'N'
+	</select>
+
+</mapper>

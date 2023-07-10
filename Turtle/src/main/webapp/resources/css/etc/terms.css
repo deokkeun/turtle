@@ -1,0 +1,137 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+}
+
+
+
+.bi-list {
+    display:none;
+}
+
+
+/* 폰트(프리텐다드) */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*--------------------------------------------------------------
+# Features
+--------------------------------------------------------------*/
+
+.terms {
+    display: flex;
+}
+
+
+.terms .term-tabs {
+    margin : auto;
+    margin-top: 180px;
+    margin-bottom: 50px;
+}
+
+
+.term-tabs .col {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.col > ul {
+    display: flex;
+    margin-top: 50px;
+}
+
+.col > ul > li {
+    flex-basis: 33.333333%;
+    text-align: center;
+}
+
+.col-lg-4 {
+    width: 100%;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+/* 이용약관 내부 글씨체 설정 */
+.tab-pane > pre {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    white-space: pre-line;
+    margin : 50px;
+    line-height : 20px;
+}
+
+
+.terms .term-tabs .nav-pills {
+    border-bottom: 2px solid #eee;
+}
+
+.terms .term-tabs .nav-link {
+    background: none;
+    font-size: 17px;
+    font-weight: 600;
+    color: #7F7F7F;
+    padding: 12px 0;
+    /* margin-right: 25px; */
+    /* margin-bottom: -2px; */
+    margin: 0 0 -2px auto;
+    border-radius: 0;
+}
+
+.terms .term-tabs .nav-link.active {
+  color: #4154f1;
+  border-bottom: 3px solid #4154f1;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    
+    .col > ul > li {
+        flex-basis: 100%;
+    }
+
+    .term-tabs .col {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .tab-pane > pre {
+        margin: 10px;
+        font-size : calc(0.675rem +1.5vw);
+    }
+
+    .terms .term-tabs .nav-pills {
+        border-bottom: none;
+    }
+
+    .terms .term-tabs h3 {
+        font-size: 28px;
+    }
+    
+    .terms .feature-icons h3 {
+        font-size: 28px;
+      }
+
+}
+
+
