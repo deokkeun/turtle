@@ -105,10 +105,10 @@ public class ProjectMemberController {
 				
 				logger.info(toMail);
 				
-				//String acceptLink = "http://3.36.176.197:8080/www-1.0.0-BUILD-SNAPSHOT/project/inviteMember/" + toMail + "/" + inviteCode + "/accept";
-				//String rejectLink = "http://3.36.176.197:8080/www-1.0.0-BUILD-SNAPSHOT/project/inviteMember/" + toMail + "/" + inviteCode + "/reject";
-			    String acceptLink = "http://localhost:8080/www/project/inviteMember/" + toMail + "/" + inviteCode + "/accept";
-			    String rejectLink = "http://localhost:8080/www/project/inviteMember/" + toMail + "/" + inviteCode + "/reject";
+				String acceptLink = "http://3.36.176.197:8080/www-1.0.0-BUILD-SNAPSHOT/project/inviteMember/" + toMail + "/" + inviteCode + "/accept";
+				String rejectLink = "http://3.36.176.197:8080/www-1.0.0-BUILD-SNAPSHOT/project/inviteMember/" + toMail + "/" + inviteCode + "/reject";
+//			    String acceptLink = "http://localhost:8080/www/project/inviteMember/" + toMail + "/" + inviteCode + "/accept";
+//			    String rejectLink = "http://localhost:8080/www/project/inviteMember/" + toMail + "/" + inviteCode + "/reject";
 			    String acceptButton = "<a href=\"" + acceptLink + "\">수락</a>";
 			    String rejectButton = "<a href=\"" + rejectLink + "\">거절</a>";
 				
