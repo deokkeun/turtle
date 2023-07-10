@@ -154,9 +154,8 @@
 
 
 
-<h2>2. 프로젝트 생성(팀원 초대)</h2>
-(화면 이미지)
-
+<h2>2. 프로젝트, 워크스페이스 생성(팀원 초대)</h2>
+<img width="1107" alt="스크린샷 2023-07-10 오후 2 44 35" src="https://github.com/deokkeun/turtle/assets/84825191/e8a1bffe-252c-4e01-ad54-2401e0e57e94">
 
 ```
 ✅ 프로젝트 생성(팀원 초대)
@@ -175,31 +174,8 @@
 
 
 
-
-<h2>3. 워크스페이스 생성</h2>
-(화면 이미지)
-
-
-```
-✅ 워크스페이스 생성
-
-💡 화면 설명 :
-      화면 돌아가는 방식 설명
-
-💡 기능 설명 :
-      사용한 기술들 설명(동기, 비동기, 슬라이드, 토글, SockJs, ajax, Fetch, Gmail, api...)
-```
-<a href="" Style="text-decoration: none; color: #1A73E8;">ㅁㅁㅁ 클래스 구현 바로가기</a>
-
-
-
-<br><br>
-
-
-
-<h2>4. 실시간 채팅</h2>
-(화면 이미지)
-
+<h2>3. 실시간 채팅</h2>
+<img width="1107" alt="스크린샷 2023-07-10 오후 2 45 45" src="https://github.com/deokkeun/turtle/assets/84825191/9f0d49e5-e1e8-4556-abba-48d97690fe88">
 
 ```
 ✅ 실시간 채팅
@@ -218,9 +194,8 @@
 
 
 
-<h2>5. 공유 게시판</h2>
-(화면 이미지)
-
+<h2>4. 공유 게시판</h2>
+<img width="1107" alt="스크린샷 2023-07-10 오후 2 44 52" src="https://github.com/deokkeun/turtle/assets/84825191/0e23dbf3-ca23-49eb-a116-de2e1b7821fd">
 
 ```
 ✅ 공유 게시판
@@ -239,8 +214,8 @@
 
 
 
-<h2>6. (공유/개인) 메모장</h2>
-
+<h2>5. (공유/개인) 메모장</h2>
+<img width="1107" alt="스크린샷 2023-07-10 오후 2 45 16" src="https://github.com/deokkeun/turtle/assets/84825191/590d1204-7a11-4c0e-9859-b0e9dfde0d58">
 
 ```
 ✅ (공유/개인) 메모장
@@ -259,12 +234,12 @@
 
 
 
-<h2>7. (공유일정/게시판연동) 캘린더</h2>
-<img width="1425" alt="스크린샷 2023-07-10 오전 4 13 39" src="https://github.com/deokkeun/turtle/assets/84825191/a30f8b10-27bd-48dd-99c5-de782be2d251">
-
+<h2>6. (공유일정/게시판연동) 캘린더</h2>
+<img width="1107" alt="스크린샷 2023-07-10 오후 2 45 30" src="https://github.com/deokkeun/turtle/assets/84825191/de99f67b-a443-4dcc-9754-90252a413b49">
 
 ```
 ✅ (공유일정/게시판연동) 캘린더
+
 
 💡 화면 설명 :
       화면 돌아가는 방식 설명
@@ -280,9 +255,8 @@
 
 
 
-<h2>8. 알람 (게시글 등록, 일정 추가)</h2>
-(화면 이미지)
-
+<h2>7. 알람 (게시글 등록, 일정 추가)</h2>
+<img width="1107" alt="스크린샷 2023-07-10 오후 2 45 52" src="https://github.com/deokkeun/turtle/assets/84825191/b09e9528-7805-4760-9d45-0e53a31750a8">
 
 ```
 ✅ (공유일정/게시판연동) 캘린더
@@ -303,9 +277,8 @@
 
 
 
-<h2>9. 깃 로드맵</h2>
+<h2>8. 깃 로드맵</h2>
 <img width="1091" alt="스크린샷 2023-07-10 오후 2 23 34" src="https://github.com/deokkeun/turtle/assets/84825191/0799ba0d-8e55-4270-9299-0299f0fc20dd">
-
 
 ```
 ✅ 깃 로드맵
@@ -324,9 +297,8 @@
 
 
 
-<h2>10. 결제(PortOne - KG inicis)</h2>
-<img width="1091" alt="스크린샷 2023-07-10 오후 2 23 07" src="https://github.com/deokkeun/turtle/assets/84825191/60b2cfe8-2651-480c-ba26-d76450eca405">
-
+<h2>9. 결제(PortOne - KG inicis)</h2>
+<img width="1091" alt="스크린샷 2023-07-10 오후 2 23 07" src="https://github.com/deokkeun/turtle/assets/84825191/430e7253-b0a6-4ed6-be3e-f41bd97c1570">
 
 ```
 ✅ 결제(PortOne - KG inicis)
