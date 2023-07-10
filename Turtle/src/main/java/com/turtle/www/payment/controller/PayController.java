@@ -37,7 +37,7 @@ public class PayController {
 	private PayService service;
 	
 	// Iamport
-	private IamportClient client = new IamportClient("", "");
+	private IamportClient client = new IamportClient("5706533373164167", "bIUsQURu16zxBH98k91G8N2RmCpxEedf8ngOWL90wUpJJk43l9IYM79WorfGnJdSZ7GcSpBwo79YY4X7");
 	
 	Logger logger = LoggerFactory.getLogger(CalendarController.class);
 	

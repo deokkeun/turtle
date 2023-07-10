@@ -132,10 +132,10 @@
 </section>
 
 	<script>
-		var naver_id_login = new naver_id_login("aQpBvST4iYdjSLDbWXWl", "http://127.0.0.1:8080/www/member/callback");
+		var naver_id_login = new naver_id_login("aQpBvST4iYdjSLDbWXWl", "http://3.36.176.197:8080/www-1.0.0-BUILD-SNAPSHOT/member/callback");
 		var state = naver_id_login.getUniqState();
 		naver_id_login.setButton("white", 3,45);
-		naver_id_login.setDomain("http://127.0.0.1:8080/www");
+		naver_id_login.setDomain("http://3.36.176.197:8080/www-1.0.0-BUILD-SNAPSHOT");
 		naver_id_login.setState(state);
 		naver_id_login.setPopup();
 		naver_id_login.init_naver_id_login();

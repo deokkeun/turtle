@@ -60,4 +60,10 @@
 		FROM PROJECT_MEMBER
 		WHERE PROJECT_NO = ${projectNo}
 	</select>
+	
+		<select id="getInviteCode" resultType="string">
+		SELECT INVITE_CODE
+		FROM PROJECT_MEMBER
+		WHERE PROJECT_NO = ${projectNo}
+	</select>
 </mapper>

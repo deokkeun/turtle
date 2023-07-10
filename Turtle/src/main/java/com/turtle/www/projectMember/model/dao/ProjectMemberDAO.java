@@ -58,6 +58,11 @@ public class ProjectMemberDAO {
 		return sqlSession.selectList("projectMemberMapper.selectPmNoList", projectNo);
 	}
 
+
+	public String getInviteCode(int projectNo) {
+		return sqlSession.selectOne("projectMemberMapper.getInviteCode", projectNo);
+	}
+
 	
 
 }
