@@ -51,6 +51,11 @@ public class ProjectMemberServiceImpl implements ProjectMemberService {
 		return dao.selectPmNoList(projectNo);
 	}
 
+	@Override
+	public String getInviteCode(int projectNo) {
+		return dao.getInviteCode(projectNo);
+	}
+
 	
 
 	

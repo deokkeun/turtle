@@ -42,6 +42,8 @@ public interface ProjectMemberService {
 	 */
 	List<Integer> selectPmNoList(int projectNo);
 
+	String getInviteCode(int i);
+
 	
 
 
